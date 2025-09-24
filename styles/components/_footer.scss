@@ -4,22 +4,26 @@
 .footer {
   display: grid;
   background-color: vars.$bg-black;
-  grid-template-columns: minmax(20rem, 43.75rem) 1fr;
   position: relative;
-  grid-template:
-          'logo arrow'
-  'pages .'
-  'about .'
-  'contact .'
-  'description .'
-;
   min-height: 49.688rem;
   color: white;
   padding-left: 0.625rem;
   padding-top: 2.625rem;
   z-index: 1;
   @include m.line-decor(6px 56% calc(100% - 12px));
-
+  
+  .footer__container {
+    display: grid;
+    grid-template-columns: minmax(20rem, 43.75rem) 1fr;
+    grid-template:
+          'logo arrow'
+  'pages .'
+  'about .'
+  'contact .'
+  'description .'
+  ;
+  }
+  
   .footer__pages {
     padding: 0.625rem;
     grid-area: pages;
