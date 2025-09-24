@@ -30,12 +30,12 @@
     }
 }
 
-@mixin bracket-decor($color: #FFF) {
+@mixin bracket-decor($color: #FFF, $top: -2px, $left: -10px ) {
     &::after {
         content: "[";
         position: absolute;
-        top: -2px;
-        left: -10px;
+        top: $top;
+        left: $left;
     }
 }
 
