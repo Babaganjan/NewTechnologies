@@ -1,0 +1,56 @@
+@use '../variables' as vars;
+@use '../mixins' as m;
+
+.feedback-menu {
+  max-width: 22.5rem;
+  min-height: 51.25rem;
+  background-image: url("/public/background/bg-feedback.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  
+  &::after {
+    content: "";
+    z-index: -1;
+    position: absolute; left:0; right:0; bottom:0;
+    height: 3%;
+    max-width: 22.5rem;
+    background-color: vars.$bg-black;
+    transform: translateY(142px);
+  }
+  
+  &__wrapper {
+    padding: 0 0.75rem;
+  }
+  
+  &__button {
+    position: relative;
+    background-color: vars.$bg-black;
+    padding: 0.938rem 5.75rem;
+    margin-top: 1.125rem;
+    @include m.typography(vars.$color-white, 700 , 1.125rem, 120%);
+    
+    .feedback-menu__decoration-top {
+      position: absolute; top: 0; left: 0;
+      margin-top: 0.188rem;
+      margin-left: 0.188rem;
+    }
+    
+    .feedback-menu__decoration-bottom {
+      position: absolute; bottom: 0; right: 0;
+      rotate: 180deg;
+      margin-bottom: 0.188rem;
+      margin-right: 0.188rem;
+    }
+  }
+  
+  &__title {
+    @include m.typography(vars.$color-black, 500 , 1.938rem, 100%);
+    text-align: center;
+  }
+}
+
+
