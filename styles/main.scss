@@ -1,1 +1,7 @@
-@use 'variables' as vars;
+// @use 'variables' as vars;
+@use 'variables';
+@use 'mixins';
+@use 'base';
+@use 'components/header';
+@use 'components/hero';
+@use 'components/footer';

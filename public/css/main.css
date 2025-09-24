@@ -1,0 +1,314 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+a:focus {
+  outline: none;
+}
+
+button {
+  margin: 0;
+  padding: 0;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: inherit;
+}
+button:focus {
+  outline: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "Oswald";
+  src: local("Oswald-Light"), url("../fonts/Oswald-Light.woff2") format("woff2"), url("../fonts/Oswald-Light.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald";
+  src: local("Oswald-Regular"), url("../fonts/Oswald-Regular.woff2") format("woff2"), url("../fonts/Oswald-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald";
+  src: local("Oswald-Medium"), url("../fonts/Oswald-Medium.woff2") format("woff2"), url("../fonts/Oswald-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald";
+  src: local("Oswald-SemiBold"), url("../fonts/Oswald-SemiBold.woff2") format("woff2"), url("../fonts/Oswald-SemiBold.woff") format("woff");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald";
+  src: local("Oswald-Bold"), url("../fonts/Oswald-Bold.woff2") format("woff2"), url("../fonts/Oswald-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Condensed-Medium"), url("../fonts/Roboto-Condensed-Medium.woff2") format("woff2"), url("../fonts/Roboto-Condensed-Medium.woff") format("woff");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto-Condensed-Regular"), url("../fonts/Roboto-Condensed-Regular.woff2") format("woff2"), url("../fonts/Roboto-Condensed-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Inter";
+  src: local("Inter-Bold"), url("../fonts/Inter-Bold.woff2") format("woff2"), url("../fonts/Inter-Bold.woff") format("woff");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+body {
+  margin: 0;
+  font-family: "Oswald", sans-serif;
+  font-weight: 500;
+  color: #FFFFFF;
+}
+
+.container {
+  width: 360px;
+  padding-inline: 10px;
+  margin: 0 auto;
+}
+
+.flex {
+  display: flex;
+}
+
+.hidden {
+  display: none;
+}
+
+.header {
+  position: relative;
+  background-color: #030303;
+}
+.header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: linear-gradient(90deg, transparent calc(38.7% - 1px), #212121 calc(38.7% - 1px), #212121 calc(38.7% + 1px), transparent calc(38.7% + 1px)), linear-gradient(90deg, transparent calc(50% - 1px), #212121 calc(50% - 1px), #212121 calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(90deg, transparent calc(61.3% - 1px), #212121 calc(61.3% - 1px), #212121 calc(61.3% + 1px), transparent calc(61.3% + 1px));
+}
+.header {
+  height: 59px;
+  padding-block: 15px 36px;
+}
+
+.header__burger {
+  justify-self: flex-end;
+}
+
+.header__btn {
+  width: 28px;
+  height: 8px;
+  position: relative;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.header__btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #FFFFFF;
+  box-shadow: 0 8px 0 #FFFFFF;
+  transition: all 0.3s ease;
+}
+.header__btn.active::before {
+  top: 8px;
+  transform: rotate(45deg);
+  box-shadow: 0 0 0 transparent;
+}
+.header__btn::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #FFFFFF;
+  transition: all 0.3s ease;
+}
+.header__btn.active::after {
+  transform: rotate(-45deg);
+}
+
+.hero {
+  position: relative;
+  padding-block: 134px 21px;
+  background-color: #030303;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 198px;
+  height: 0;
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+  border-top: 12px solid #000;
+}
+
+.hero__container {
+  flex-direction: column;
+}
+
+.heading {
+  order: 3;
+  font-size: 70px;
+  line-height: 81%;
+  letter-spacing: -7px;
+  font-family: "Roboto";
+  font-weight: 400;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.hero__title {
+  margin-bottom: 40px;
+  color: #FFF;
+  text-align: center;
+  font-size: 31px;
+  font-weight: 500;
+  line-height: 100%;
+  letter-spacing: -2.17px;
+  text-transform: uppercase;
+}
+
+.hero__subtitle {
+  position: relative;
+  margin-left: 10px;
+}
+.hero__subtitle::after {
+  content: "[";
+  position: absolute;
+  top: -2px;
+  left: -10px;
+}
+.hero__subtitle {
+  color: #D0D0D0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.84px;
+  text-transform: uppercase;
+}
+
+.hero__content {
+  margin-bottom: 150px;
+  gap: 63px;
+}
+
+.hero__prev {
+  color: #D0D0D0;
+  text-align: center;
+  font-size: 14px;
+  font-weight: 700;
+  line-height: 120%;
+  letter-spacing: -0.84px;
+  text-transform: uppercase;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: 110%;
+  text-align: left;
+}
+
+.hero {
+  position: relative;
+  padding-block: 134px 21px;
+  background-color: #030303;
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 198px;
+  height: 0;
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+  border-top: 12px solid #000;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  background-image: linear-gradient(90deg, transparent calc(38.7% - 1px), #212121 calc(38.7% - 1px), #212121 calc(38.7% + 1px), transparent calc(38.7% + 1px)), linear-gradient(90deg, transparent calc(50% - 1px), #212121 calc(50% - 1px), #212121 calc(50% + 1px), transparent calc(50% + 1px)), linear-gradient(90deg, transparent calc(61.3% - 1px), #212121 calc(61.3% - 1px), #212121 calc(61.3% + 1px), transparent calc(61.3% + 1px));
+}
+
+.hero::after {
+  z-index: 1;
+}
+
+.hero__container {
+  position: relative;
+  flex-direction: column;
+}
+
+.hero__subtitle::after {
+  z-index: 2;
+}
+
+/*# sourceMappingURL=main.css.map */
