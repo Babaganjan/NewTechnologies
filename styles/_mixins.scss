@@ -9,6 +9,49 @@
   color: $color;
 }
 
+@mixin decoration(
+  $image, $size: .75rem, $pos: (left: 0, top: 0), $color: null, $mode: svg
+) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  
+  @each $k, $v in $pos { #{$k}: $v; }
+  
+  @if $color and $mode == svg {
+	color: $color;
+	background: url(#{$image}) no-repeat center/contain;
+  } @else if $color and $mode == mask {
+	background-color: $color;
+	-webkit-mask-image: url(#{$image});
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-size: contain;
+	mask-image: url(#{$image});
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: contain;
+  } @else {
+	background: url(#{$image}) no-repeat center/contain;
+  }
+  
+  pointer-events: none;
+}
+
+@mixin arrow-icon($color: white) {
+  &::after {
+	content: "";
+	display: inline-block;
+	width: 0.75rem;
+	height: 0.938rem;
+	background: url("/public/arrow-black.svg") no-repeat center/contain;
+	margin-left: 0.5rem;
+	filter: brightness(0) invert(if($color == white, 1, 0));
+	cursor: pointer;
+  }
+}
+
+
 @mixin respond-max($breakpoint) {
   @media (max-width: $breakpoint) {
 	@content;

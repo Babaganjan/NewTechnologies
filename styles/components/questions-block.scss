@@ -3,42 +3,39 @@
 
 .questions {
   &__container {
-	margin-top: 110px;
-	margin-bottom: 100px;
+	margin-top: 6.875rem;
+	margin-bottom: 6.25rem;
 	display: grid;
 	grid-template-columns: 1fr;
-	padding: 10px;
-	@include m.typography(vars.$color-black, 500, 18px, 115%);
+	padding: 0.625rem;
+	@include m.typography(vars.$color-black, 500, 1.125rem, 115%);
   }
   
   &__title {
 	position: relative;
-	padding-left: 10px;
-	margin-bottom: 10px;
+	padding-left: 0.625rem;
+	margin-bottom: 0.625rem;
 	@include m.bracket-decor(vars.$color-black, -2, 0);
-	@include m.typography(vars.$color-dark-grey, 700, 14px, 120%);
+	@include m.typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
   }
   
   .card-wrapper {
 	display: grid;
-	gap: 8px;
+	gap: 0.5rem;
   }
   
   &__card {
 	position: relative;
 	background-color: #f5f5f5;
-	min-height: 127px;
-	padding: 10px;
+	min-height: 7.938rem;
+	padding: 0.625rem;
 	transition: all .22s ease;
 	color: vars.$color-dark-grey;
+	overflow: visible;
 	
 	&:hover {
 	  background-color: vars.$bg-black;
 	  color: white;
-	  
-	  &::before {
-		transform: rotate(180deg);
-	  }
 	  
 	  .questions__card-decorative {
 		opacity: 1;
@@ -46,36 +43,29 @@
 	  }
 	}
 	
+	&:not(.questions__card--active):hover::before {
+	  transform: rotate(180deg);
+	}
+	
 	&::before {
 	  content: '';
-	  position: absolute;
-	  width: 20px;
-	  height: 25px;
-	  margin: 10px;
-	  bottom: 0;
-	  right: 0;
+	  @include m.decoration('/public/arrow-black.svg', 1.563rem, (bottom: 0, right: 0), #565656, mask);
+	  margin: 0.625rem;
 	  background-color: currentColor;
-	  mask: url("/public/arrow-black.svg") no-repeat center/contain;
 	  transition: transform .22s ease;
 	}
 	
 	&-title {
-	  @include m.typography(vars.$color-dark-grey, 500, 22px, 115%);
+	  @include m.typography(vars.$color-dark-grey, 500, 1.375rem, 115%);
 	}
 	
 	&-subtitle {
 	  font-family: vars.$second-family;
-	  @include m.typography(vars.$color-dark-grey, 500, 14px, 110%);
+	  @include m.typography(vars.$color-dark-grey, 500, 0.875rem, 110%);
 	}
 	
 	&-decorative {
-	  position: absolute;
-	  top: 0;
-	  right: 0;
-	  width: 24px;
-	  height: 24px;
-	  background: url("/public/kvadrat.svg") no-repeat center/contain;
-	  z-index: 999;
+	  @include m.decoration('/public/kvadrat.svg', 1.5rem, (top: 0, right: 0), #565656, svg);
 	  opacity: 0;
 	  visibility: hidden;
 	  pointer-events: none;
@@ -88,48 +78,55 @@
 	  flex-direction: column;
 	  background-color: vars.$bg-white;
 	  justify-content: center;
-	  gap: 6px;
+	  gap: 0.375rem;
+	  border-bottom-right-radius: 2px;
+	  border-top-left-radius: 2px;
+	  
+	  .questions__card-arrow--active {
+		@include m.decoration('/public/arrow-black.svg', 1.563rem, (bottom: 0, right: 0), #565656, mask);
+		margin: 0.625rem;
+		bottom: 0;
+		right: 0;
+		background-color: currentColor;
+		transition: transform .22s ease;
+		transform: none;
+	  }
+	  
+	  &:hover .questions__card-arrow--active {
+		transform: rotate(180deg);
+	  }
+	  
+	  
+	  &::before {
+		content: "";
+		@include m.decoration('/public/decoration.svg', 1.563rem, (top: -1px, left: -1px), #565656, mask);
+		margin: 0;
+		transform: none;
+		background-color: currentColor;
+	  }
 	  
 	  &::after {
 		content: "";
-		position: absolute;
-		bottom: -3px;
-		right: -1px;
-		width: 20px;
-		height: 25px;
-		z-index: 9999;
+		@include m.decoration('/public/decoration.svg', 1.563rem, (bottom: -1px, right: -1px), #565656, mask);
 		background-color: currentColor;
 		transform: rotate(180deg);
-		mask: url("/public/decoration.svg") no-repeat center/contain;
 	  }
-	}
-	
-	.corner-decor {
-	  position: absolute;
-	  width: 20px;
-	  height: 25px;
-	  top: -4px;
-	  left: 0;
-	  background-color: currentColor;
-	  mask: url("/public/decoration.svg") no-repeat center/contain;
 	}
 	
 	.questions__content {
 	  position: relative;
-	  margin-bottom: 75px;
+	  margin-bottom: 4.688rem;
 	  
 	  &::after {
 		content: '';
-		position: absolute;
-		width: 12px;
-		height: 12px;
-		top: -6px;
-		left: -7px;
-		background-color: currentColor;
-		mask: url("/public/decoration.svg") no-repeat center/contain;
+		@include m.decoration('/public/decoration.svg', 0.75rem, (top: -6px, left: -7px), #565656, mask);
 	  }
 	}
   }
 }
+.questions__card:hover .questions__content::after {
+  background-color: white;
+}
+
 
 
