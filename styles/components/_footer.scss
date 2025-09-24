@@ -1,7 +1,6 @@
 @use '../variables' as vars;
 @use '../mixins' as m;
 
-
 .footer {
   display: grid;
   background-color: vars.$bg-black;
@@ -20,35 +19,7 @@
   padding-left: 0.625rem;
   padding-top: 2.625rem;
   z-index: 1;
-  
-  // Переменные для линии
-  --divider-color: #212121;
-  --divider-width: 1px;
-  --d1: 6px;
-  --d2: 56%;
-  --d3: calc(100% - 12px);
-  
-  // Сами линии через псевдоэлемент
-  &::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-repeat: no-repeat;
-    z-index: -1;
-    background-image:
-            linear-gradient(to bottom, var(--divider-color) 0%, var(--divider-color) 100%),
-            linear-gradient(to bottom, var(--divider-color) 0%, var(--divider-color) 100%),
-            linear-gradient(to bottom, var(--divider-color) 0%, var(--divider-color) 100%);
-    background-position:
-            var(--d1) 0,
-            var(--d2) 0,
-            var(--d3) 0;
-    background-size:
-            var(--divider-width) 100%,
-            var(--divider-width) 100%,
-            var(--divider-width) 100%;
-  }
+  @include m.line-decor(6px 56% calc(100% - 12px));
 
   .footer__pages {
     padding: 0.625rem;
@@ -114,5 +85,4 @@
     }
   }
 }
-
 

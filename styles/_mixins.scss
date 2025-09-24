@@ -1,5 +1,19 @@
+@use 'variables' as vars;
 
-@use '../styles/variables' as vars;
+@mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
+  letter-spacing: -0.06em;
+  text-transform: $transform;
+  color: $color;
+}
+
+@mixin respond-max($breakpoint) {
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}
 
 @mixin section-bg($bg-color: #030303) {
   background-color: $bg-color;
@@ -58,20 +72,5 @@
       $grads: append($grads, $g, comma);
     }
     background-image: $grads;
-  }
-}
-
-@mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
-  font-weight: $weight;
-  font-size: $size;
-  line-height: $line;
-  letter-spacing: -0.06em;
-  text-transform: $transform;
-  color: $color;
-}
-
-@mixin respond-max($breakpoint) {
-  @media (max-width: $breakpoint) {
-    @content;
   }
 }

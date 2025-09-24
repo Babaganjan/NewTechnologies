@@ -15,19 +15,19 @@
 
 .heading {
     order: 3;
-    @include m.heading();
+    @include m.typography(vars.$color-light-grey, 700, 14px)
 }
 
 .hero__title {
     margin-bottom: 40px;
-    @include m.title();
+    @include m.typography(vars.$color-white, 500, 31px, 100%);
 }
 
 .hero__subtitle {
     position: relative;
     margin-left: 10px;
     @include m.bracket-decor();
-    @include m.subtitle();
+    @include m.typography(vars.$color-light-grey, 700, 14px, 120%)
 }
 
 .hero__content {
@@ -36,7 +36,8 @@
 }
 
 .hero__prev {
-    @include m.description();
+    @include m.typography(vars.$color-light-grey, 500, 14px, 110%, none);
+    font-family: vars.$second-family;
 }
 
 .hero {
@@ -44,9 +45,7 @@
     padding-block: 134px 21px;
     @include m.section-bg();
     @include m.trapezoid-decor();
-    @include m.line-decor();
-    
-    
+    @include m.line-decor(6px 56% calc(100% - 12px));
 }
 
 // Убедимся, что трапеция поверх линий
