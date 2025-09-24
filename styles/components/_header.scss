@@ -7,7 +7,7 @@
 
 .header {
     position: relative;
-    @include m.section-bg(vars.$bg-black);
+    background-color:     vars.$bg-black;
     @include m.line-decor(6px 56% calc(100% - 12px));
     height: 59px;
     padding-block: 15px 36px;
@@ -44,7 +44,7 @@
         top: 8px;
         transform: rotate(45deg);
         box-shadow:
-            0 0 0 transparent,          // убираем вторую линию
+            0 0 0 transparent;          // убираем вторую линию
     }
     
     // Создаем вторую линию для анимации

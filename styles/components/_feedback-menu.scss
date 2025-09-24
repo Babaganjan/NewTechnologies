@@ -2,25 +2,16 @@
 @use '../mixins' as m;
 
 .feedback-menu {
-  max-width: 22.5rem;
+  position: relative;
+  z-index: 2;
   min-height: 51.25rem;
   background-image: url("/public/background/bg-feedback.png");
   background-repeat: no-repeat;
-  background-size: cover;
   background-position: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
-  
-  &::after {
-    content: "";
-    z-index: -1;
-    position: absolute; left:0; right:0; bottom:0;
-    height: 3%;
-    max-width: 22.5rem;
-    background-color: vars.$bg-black;
-    transform: translateY(142px);
-  }
+  margin-bottom: -12px;
   
   &__wrapper {
     padding: 0 0.75rem;

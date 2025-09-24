@@ -15,10 +15,6 @@
   }
 }
 
-@mixin section-bg($bg-color: #030303) {
-  background-color: $bg-color;
-}
-
 @mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: center) {
     &::after {
         content: "";
@@ -58,26 +54,16 @@
     pointer-events: none;
     background-repeat: no-repeat;
     
-    
-    // собираем строку с градиентами
     $grads_str: '';
-    
-    
     @each $pos in $positions {
-      $half: $thickness / 2;
+      $half: calc($thickness / 2);
       $g: linear-gradient(#{$angle}, transparent calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} + #{$half}), transparent calc(#{$pos} + #{$half}));
-      
-      
       @if $grads_str == '' {
         $grads_str: $g;
       } @else {
-        // интерполируем их через запятую в одну строку
         $grads_str: #{$grads_str}, #{$g};
       }
     }
-    
-    
-    // ставим итог в свойство (интерполяция убирает кавычки)
     background-image: #{$grads_str};
   }
 }

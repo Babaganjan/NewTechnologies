@@ -5,7 +5,7 @@
 .hero {
     position: relative;
     padding-block: 134px 21px;
-    @include m.section-bg();
+    background-color: vars.$bg-black;
     @include m.trapezoid-decor();
 }
 
@@ -43,7 +43,7 @@
 .hero {
     position: relative;
     padding-block: 134px 21px;
-    @include m.section-bg();
+    background-color: vars.$bg-black;
     @include m.trapezoid-decor();
     @include m.line-decor(6px 56% calc(100% - 12px));
 }
