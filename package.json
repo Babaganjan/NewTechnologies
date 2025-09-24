@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "sass": "sass src/scss:dist/css --watch",
-    "sass-build": "sass src/scss:dist/css --style=compressed",
+    "sass": "sass styles/main.scss:public/css/styles.css --watch",
+    "sass-build": "sass styles/main.scss:public/css/styles.css --style=compressed",
     "build": "npm run sass-build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
