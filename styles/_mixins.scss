@@ -57,20 +57,27 @@
     z-index: 0;
     pointer-events: none;
     background-repeat: no-repeat;
-    $grads: ();
+    
+    
+    // собираем строку с градиентами
+    $grads_str: '';
+    
+    
     @each $pos in $positions {
-      $half: calc($thickness / 2);
-      $start: calc(#{$pos} - #{$half});
-      $end: calc(#{$pos} + #{$half});
-      $g: linear-gradient(
-                      #{$angle},
-                      transparent #{$start},
-                      #{$color} #{$start},
-                      #{$color} #{$end},
-                      transparent #{$end}
-      );
-      $grads: append($grads, $g, comma);
+      $half: $thickness / 2;
+      $g: linear-gradient(#{$angle}, transparent calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} + #{$half}), transparent calc(#{$pos} + #{$half}));
+      
+      
+      @if $grads_str == '' {
+        $grads_str: $g;
+      } @else {
+        // интерполируем их через запятую в одну строку
+        $grads_str: #{$grads_str}, #{$g};
+      }
     }
-    background-image: $grads;
+    
+    
+    // ставим итог в свойство (интерполяция убирает кавычки)
+    background-image: #{$grads_str};
   }
 }
