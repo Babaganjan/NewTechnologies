@@ -1,0 +1,106 @@
+@use '../variables' as vars;
+@use '../mixins' as m;
+
+.about {
+    padding-block: 6.25rem;
+}
+
+.about__container, .about__inner {
+    flex-direction: column;
+    gap: 0.62rem;
+}
+
+// .about__inner {
+//     flex-direction: column;
+// }
+
+.about__title {
+    order: 2;
+    span {
+        color: vars.$color-black;
+    }
+    @include m.typography(vars.$color-light-grey, 500, 1.9rem, 100%);
+}
+
+.about__subtitle {
+    position: relative;
+    margin-left: 10px;
+    @include m.bracket-decor(vars.$color-dark-grey);
+    @include m.typography(vars.$color-dark-grey, 700, 14px, 120%);
+}
+
+.about__images {
+  position: relative;
+}
+
+.about__images--bottom {
+    gap: 0.25rem;
+}
+
+// Декоративные элементы для .image__wrapper 
+.image__wrapper {
+  position: relative;
+  display: inline-block;
+  
+  // Правый верхний угол (на wrapper)
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 24px;
+    height: 24px;
+    background-image: url(../../public/kvadrat.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 3;
+  }
+  
+  // Левый верхний угол (на wrapper)
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 12px;
+    height: 12px;
+    // background-image: url(../../public/decoration.svg);
+    // background-repeat: no-repeat;
+    // background-size: contain;
+    // background-position: center;
+    background-color: #F5F5F5; // Ваш цвет
+  mask-image: url(../../public/decoration.svg);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+    z-index: 3;
+  }
+}
+
+// Дополнительные декоративные элементы через дополнительные span
+.decor-bottom-right {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 12px;
+  height: 12px;
+//   background-image: url(../../public/decoration.svg);
+//   background-repeat: no-repeat;
+//   background-size: contain;
+//   background-position: center;
+background-color: #F5F5F5; // Ваш цвет
+  mask-image: url(../../public/decoration.svg);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  transform: rotate(180deg);
+  z-index: 3;
+}
+
+.image__wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
