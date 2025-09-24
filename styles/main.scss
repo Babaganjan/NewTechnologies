@@ -1,5 +1,9 @@
-@use 'variables' as vars;
+@use 'variables';
+@use 'mixins';
 @use 'base';
+@use 'components/header';
+@use 'components/hero';
+@use 'components/footer';
 @use 'components/footer' as footer;
 @use 'components/button' as button;
 @use 'components/feedback-menu' as feedbackMenu;

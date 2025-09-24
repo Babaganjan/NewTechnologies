@@ -1,4 +1,66 @@
-@use 'variables' as vars;
+
+@use '../styles/variables' as vars;
+
+@mixin section-bg($bg-color: #030303) {
+  background-color: $bg-color;
+}
+
+@mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: center) {
+    &::after {
+        content: "";
+        position: absolute;
+        bottom: -$height;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 198px;
+        height: 0;
+        border-left: $width solid transparent;
+        border-right: $width solid transparent;
+        border-top: $height solid $color;
+    }
+}
+
+@mixin bracket-decor($color: #FFF) {
+    &::after {
+        content: "[";
+        position: absolute;
+        top: -2px;
+        left: -10px;
+    }
+}
+
+@mixin line-decor(
+  $positions: 38.7% 50% 61.3%,
+  $color: #212121,
+  $thickness: 1px,
+  $angle: 90deg
+) {
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background-repeat: no-repeat;
+    $grads: ();
+    @each $pos in $positions {
+      $half: $thickness / 2;
+      $start: calc(#{$pos} - #{$half});
+      $end: calc(#{$pos} + #{$half});
+      $g: linear-gradient(
+                      #{$angle},
+                      transparent #{$start},
+                      #{$color} #{$start},
+                      #{$color} #{$end},
+                      transparent #{$end}
+      );
+      $grads: append($grads, $g, comma);
+    }
+    background-image: $grads;
+  }
+}
+
 @mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
   font-weight: $weight;
   font-size: $size;
