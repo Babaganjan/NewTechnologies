@@ -59,7 +59,7 @@
     background-repeat: no-repeat;
     $grads: ();
     @each $pos in $positions {
-      $half: $thickness / 2;
+      $half: calc($thickness / 2);
       $start: calc(#{$pos} - #{$half});
       $end: calc(#{$pos} + #{$half});
       $g: linear-gradient(
