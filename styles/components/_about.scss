@@ -10,10 +10,6 @@
     gap: 0.62rem;
 }
 
-// .about__inner {
-//     flex-direction: column;
-// }
-
 .about__title {
     order: 2;
     span {
@@ -24,9 +20,9 @@
 
 .about__subtitle {
     position: relative;
-    margin-left: 10px;
+    margin-left: 0.625rem;
     @include m.bracket-decor(vars.$color-dark-grey);
-    @include m.typography(vars.$color-dark-grey, 700, 14px, 120%);
+    @include m.typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
 }
 
 .about__images {
@@ -48,8 +44,8 @@
     position: absolute;
     top: 0;
     right: 0;
-    width: 24px;
-    height: 24px;
+    width: 1.5rem;
+    height: 1.5rem;
     background-image: url(../../public/kvadrat.svg);
     background-repeat: no-repeat;
     background-size: contain;
@@ -63,17 +59,13 @@
     position: absolute;
     top: 3px;
     left: 3px;
-    width: 12px;
-    height: 12px;
-    // background-image: url(../../public/decoration.svg);
-    // background-repeat: no-repeat;
-    // background-size: contain;
-    // background-position: center;
+    width: 0.75rem;
+    height: 0.75rem;
     background-color: #F5F5F5; // Ваш цвет
-  mask-image: url(../../public/decoration.svg);
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  mask-position: center;
+    mask-image: url(../../public/decoration.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
     z-index: 3;
   }
 }
@@ -83,13 +75,9 @@
   position: absolute;
   bottom: 3px;
   right: 3px;
-  width: 12px;
-  height: 12px;
-//   background-image: url(../../public/decoration.svg);
-//   background-repeat: no-repeat;
-//   background-size: contain;
-//   background-position: center;
-background-color: #F5F5F5; // Ваш цвет
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #F5F5F5;
   mask-image: url(../../public/decoration.svg);
   mask-repeat: no-repeat;
   mask-size: contain;

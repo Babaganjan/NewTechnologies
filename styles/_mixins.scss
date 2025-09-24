@@ -11,32 +11,32 @@
 
 @mixin respond-max($breakpoint) {
   @media (max-width: $breakpoint) {
-    @content;
+	@content;
   }
 }
 
 @mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: center) {
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: -$height;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 198px;
-        height: 0;
-        border-left: $width solid transparent;
-        border-right: $width solid transparent;
-        border-top: $height solid $color;
-    }
+  &::after {
+	content: "";
+	position: absolute;
+	bottom: -$height;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 198px;
+	height: 0;
+	border-left: $width solid transparent;
+	border-right: $width solid transparent;
+	border-top: $height solid $color;
+  }
 }
 
 @mixin bracket-decor($color: #FFF, $top: -2px, $left: -10px ) {
-    &::after {
-        content: "[";
-        position: absolute;
-        top: $top;
-        left: $left;
-    }
+  &::after {
+	content: "[";
+	position: absolute;
+	top: $top;
+	left: $left;
+  }
 }
 
 @mixin line-decor(
@@ -47,24 +47,24 @@
 ) {
   position: relative;
   &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-repeat: no-repeat;
-    
-    $grads_str: '';
-    @each $pos in $positions {
-      $half: calc($thickness / 2);
-      $g: linear-gradient(#{$angle}, transparent calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} + #{$half}), transparent calc(#{$pos} + #{$half}));
-      @if $grads_str == '' {
-        $grads_str: $g;
-      } @else {
-        $grads_str: #{$grads_str}, #{$g};
-      }
-    }
-    background-image: #{$grads_str};
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: 0;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	
+	$grads_str: '';
+	@each $pos in $positions {
+	  $half: calc($thickness / 2);
+	  $g: linear-gradient(#{$angle}, transparent calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} + #{$half}), transparent calc(#{$pos} + #{$half}));
+	  @if $grads_str == '' {
+		$grads_str: $g;
+	  } @else {
+		$grads_str: #{$grads_str}, #{$g};
+	  }
+	}
+	background-image: #{$grads_str};
   }
 }
 

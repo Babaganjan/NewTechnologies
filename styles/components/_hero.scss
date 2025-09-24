@@ -5,7 +5,7 @@
 
 .hero {
     position: relative;
-    padding-block: 134px 21px;
+    padding-block: 8.375rem 1.3125rem;
     background-color: vars.$bg-black;
     @include m.trapezoid-decor();
 }
@@ -16,34 +16,34 @@
 
 .heading {
     order: 3;
-    @include m.typography(vars.$color-light-grey, 700, 14px)
+    @include m.typography(vars.$color-light-grey, 700, 0.875rem)
 }
 
 .hero__title {
-    margin-bottom: 40px;
-    @include m.typography(vars.$color-white, 500, 31px, 100%);
+    margin-bottom: 2.5rem;
+    @include m.typography(vars.$color-white, 500, 1.938rem, 100%);
 }
 
 .hero__subtitle {
     position: relative;
-    margin-left: 10px;
+    margin-left: 0.625rem;
     @include m.bracket-decor();
-    @include m.typography(vars.$color-light-grey, 700, 14px, 120%)
+    @include m.typography(vars.$color-light-grey, 700, 0.875rem, 120%)
 }
 
 .hero__content {
-    margin-bottom: 150px;
-    gap: 63px;
+    margin-bottom: 9.375rem;
+    gap: 3.938rem;
 }
 
 .hero__prev {
-    @include m.typography(vars.$color-light-grey, 500, 14px, 110%, none);
+    @include m.typography(vars.$color-light-grey, 500, 0.875rem, 110%, none);
     font-family: vars.$second-family;
 }
 
 .hero {
     position: relative;
-    padding-block: 134px 21px;
+    padding-block: 8.375rem 1.313rem;
     background-color: vars.$bg-black;
     @include m.trapezoid-decor();
     @include m.line-decor(6px 56% calc(100% - 12px));
