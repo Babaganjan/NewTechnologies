@@ -1,0 +1,16 @@
+@use '../variables' as vars;
+@use '../mixins' as m;
+
+.decor__container {
+    @include m.trapezoid-decor(1.313rem, 1.313rem, 0.75rem, center);
+  .line {
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      height: 12px;
+      width: 1px;
+      background-color: vars.$graphics-almost-black;
+      z-index: 1;
+  }
+}

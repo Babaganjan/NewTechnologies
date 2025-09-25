@@ -8,23 +8,27 @@
 .header {
   position: relative;
   background-color: vars.$bg-black;
-  @include m.line-decor(6px 56% calc(100% - 12px));
-  height: 3.688rem;
-  padding-block: 0.938rem 2.25rem;
+  min-height: 10.81rem;
+  z-index: 0;
+}
+
+.header__container {
+    position: relative;
+    justify-content: center;
+    padding-block: 0.625rem 7.125rem;
+    @include m.line-decor();
 }
 
 .header__burger {
-  justify-self: flex-end;
+    position: absolute;
+    top: 0.31rem;
+    right: 0.75rem;
 }
-
 
 .header__btn {
   width: 1.75rem;
   height: 0.5rem;
   position: relative;
-  background: transparent;
-  border: none;
-  cursor: pointer;
   
   &::before {
 	content: '';

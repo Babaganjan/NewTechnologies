@@ -58,32 +58,8 @@
   }
 }
 
-@mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: center) {
-  &::after {
-	content: "";
-	position: absolute;
-	bottom: -$height;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 198px;
-	height: 0;
-	border-left: $width solid transparent;
-	border-right: $width solid transparent;
-	border-top: $height solid $color;
-  }
-}
-
-@mixin bracket-decor($color: #FFF, $top: -2px, $left: -10px ) {
-  &::after {
-	content: "[";
-	position: absolute;
-	top: $top;
-	left: $left;
-  }
-}
-
 @mixin line-decor(
-  $positions: 38.7% 50% 61.3%,
+  $positions: 2% 50% 98%,
   $color: #212121,
   $thickness: 1px,
   $angle: 90deg
@@ -93,7 +69,7 @@
 	content: '';
 	position: absolute;
 	inset: 0;
-	z-index: 0;
+	z-index: -1;
 	pointer-events: none;
 	background-repeat: no-repeat;
 	
@@ -110,4 +86,40 @@
 	background-image: #{$grads_str};
   }
 }
+
+
+@mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: center, $transform: rotate(0deg)) {
+  // position: relative;
+  // &::after {
+	// content: "";
+	// position: absolute;
+	// bottom: -$height;
+	// left: 50%;
+	// transform: translateX(-50%);
+	// width: 198px;
+	// height: 0;
+	// border-left: $width solid transparent;
+	// border-right: $width solid transparent;
+	// border-top: $height solid $color;
+
+
+  position: relative;
+  width: 12.37rem;
+  height: 0;
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+  border-top: 12px solid black;
+  transform: $transform;
+  // }
+}
+
+@mixin bracket-decor($color: #FFF, $top: -2px, $left: -10px ) {
+  &::after {
+	content: "[";
+	position: absolute;
+	top: $top;
+	left: $left;
+  }
+}
+
 

@@ -1,0 +1,8 @@
+@use '../variables' as vars;
+@use '../mixins' as m;
+
+.result {
+    height: 200px;
+    position: relative;
+    background-color: vars.$bg-black;
+}
