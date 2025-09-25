@@ -44,7 +44,7 @@
 	display: inline-block;
 	width: 0.75rem;
 	height: 0.938rem;
-	background: url("/public/arrow-black.svg") no-repeat center/contain;
+	background: url("@img/arrow-black.svg") no-repeat center/contain;
 	margin-left: 0.5rem;
 	filter: brightness(0) invert(if($color == white, 1, 0));
 	cursor: pointer;
@@ -73,12 +73,11 @@
   }
 }
 
-@mixin bracket-decor($color: #FFF, $top: -2px, $left: -10px ) {
+@mixin bracket-decor($color: #FFF, $pos:(top: -2px, left:-10px)) {
   &::after {
 	content: "[";
 	position: absolute;
-	top: $top;
-	left: $left;
+	@each $k, $v in $pos { #{$k}: $v; }
   }
 }
 
