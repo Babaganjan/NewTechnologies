@@ -15,7 +15,7 @@
 	position: relative;
 	padding-left: 0.625rem;
 	margin-bottom: 0.625rem;
-	@include m.bracket-decor(vars.$color-black, -2, 0);
+	@include m.bracket-decor(vars.$color-black, (top: -2px, left: 0));
 	@include m.typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
   }
   
@@ -49,7 +49,7 @@
 	
 	&::before {
 	  content: '';
-	  @include m.decoration('/public/arrow-black.svg', 1.563rem, (bottom: 0, right: 0), #565656, mask);
+	  @include m.decoration('@img/arrow-black.svg', 1.563rem, (bottom: 0, right: 0), #565656, mask);
 	  margin: 0.625rem;
 	  background-color: currentColor;
 	  transition: transform .22s ease;
@@ -65,7 +65,7 @@
 	}
 	
 	&-decorative {
-	  @include m.decoration('/public/kvadrat.svg', 1.5rem, (top: 0, right: 0), #565656, svg);
+	  @include m.decoration('@img/kvadrat.svg', 1.5rem, (top: 0, right: 0), #565656, svg);
 	  opacity: 0;
 	  visibility: hidden;
 	  pointer-events: none;
@@ -83,7 +83,7 @@
 	  border-top-left-radius: 2px;
 	  
 	  .questions__card-arrow--active {
-		@include m.decoration('/public/arrow-black.svg', 1.563rem, (bottom: 0, right: 0), #565656, mask);
+		@include m.decoration('@img/arrow-black.svg', 1.563rem, (bottom: 0, right: 0), #565656, mask);
 		margin: 0.625rem;
 		bottom: 0;
 		right: 0;
@@ -99,7 +99,7 @@
 	  
 	  &::before {
 		content: "";
-		@include m.decoration('/public/decoration.svg', 1.563rem, (top: -1px, left: -1px), #565656, mask);
+		@include m.decoration('@img/decoration.svg', 1.563rem, (top: -1px, left: -1px), #565656, mask);
 		margin: 0;
 		transform: none;
 		background-color: currentColor;
@@ -107,7 +107,7 @@
 	  
 	  &::after {
 		content: "";
-		@include m.decoration('/public/decoration.svg', 1.563rem, (bottom: -1px, right: -1px), #565656, mask);
+		@include m.decoration('@img/decoration.svg', 1.563rem, (bottom: -1px, right: -1px), #565656, mask);
 		background-color: currentColor;
 		transform: rotate(180deg);
 	  }
@@ -119,7 +119,7 @@
 	  
 	  &::after {
 		content: '';
-		@include m.decoration('/public/decoration.svg', 0.75rem, (top: -6px, left: -7px), #565656, mask);
+		@include m.decoration('@img/decoration.svg', 0.75rem, (top: -6px, left: -7px), #565656, mask);
 	  }
 	}
   }
