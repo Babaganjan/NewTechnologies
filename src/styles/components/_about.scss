@@ -50,7 +50,7 @@
     right: 0;
     width: 1.5rem;
     height: 1.5rem;
-    background-image: url(../../public/kvadrat.svg);
+    background-image: url(@img/kvadrat.svg);
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
@@ -66,7 +66,7 @@
     width: 0.75rem;
     height: 0.75rem;
     background-color: #F5F5F5; // Ваш цвет
-    mask-image: url(../../public/decoration.svg);
+    mask-image: url(@img/decoration.svg);
     mask-repeat: no-repeat;
     mask-size: contain;
     mask-position: center;
@@ -82,7 +82,7 @@
   width: 0.75rem;
   height: 0.75rem;
   background-color: #F5F5F5;
-  mask-image: url(../../public/decoration.svg);
+  mask-image: url(@img/decoration.svg);
   mask-repeat: no-repeat;
   mask-size: contain;
   mask-position: center;

@@ -5,7 +5,7 @@
   position: relative;
   z-index: 2;
   min-height: 51.25rem;
-  background-image: url("/public/background/bg-feedback.png");
+  background-image: url("@img/background/bg-feedback.png");
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -28,14 +28,13 @@
 
     
     .feedback-menu__decoration-top {
-      @include m.decoration('/public/decoration.svg', 0.75rem, (top: 0, left: 0), vars.$color-white, mask);
+      @include m.decoration('@img/decoration.svg', 0.75rem, (top: 0, left: 0), vars.$color-white, mask);
       margin-top: 0.188rem;
       margin-left: 0.188rem;
     }
     
     .feedback-menu__decoration-bottom {
-      @include m.decoration('/public/decoration.svg', 0.75rem, (bottom: 0, right: 0), vars.$color-white, mask);
-      position: absolute; bottom: 0; right: 0;
+      @include m.decoration('@img/decoration.svg', 0.75rem, (bottom: 0, right: 0), vars.$color-white, mask);
       transform: rotate(180deg);
       margin-bottom: 0.188rem;
       margin-right: 0.188rem;
