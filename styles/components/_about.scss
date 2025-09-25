@@ -1,0 +1,121 @@
+@use '../variables' as vars;
+@use '../mixins' as m;
+
+.about {
+    padding-block: 6.31rem 6.5rem;
+}
+
+.about__container, .about__inner {
+    flex-direction: column;
+    gap: 0.625rem;
+}
+
+.about__title {
+    order: 2;
+    span {
+        color: vars.$color-black;
+        letter-spacing: -2.17px;
+    }
+    @include m.typography(vars.$color-light-grey, 500, 1.93rem, 100%);
+}
+
+.about__subtitle {
+    position: relative;
+    margin-left: 0.625rem;
+    letter-spacing: -0.84px;
+    @include m.bracket-decor(vars.$color-dark-grey);
+    @include m.typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
+}
+
+.about__images {
+  position: relative;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.about__images--bottom {
+    gap: 0.25rem;
+}
+
+// Декоративные элементы для .image__wrapper 
+.image__wrapper {
+  position: relative;
+  display: inline-block;
+  
+  // Правый верхний угол (на wrapper)
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+    background-image: url(../../public/kvadrat.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    z-index: 3;
+  }
+  
+  // Левый верхний угол (на wrapper)
+  &::before {
+    content: "";
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 0.75rem;
+    height: 0.75rem;
+    background-color: #F5F5F5; // Ваш цвет
+    mask-image: url(../../public/decoration.svg);
+    mask-repeat: no-repeat;
+    mask-size: contain;
+    mask-position: center;
+    z-index: 3;
+  }
+}
+
+// Дополнительные декоративные элементы через дополнительные span
+.decor-bottom-right {
+  position: absolute;
+  bottom: 3px;
+  right: 3px;
+  width: 0.75rem;
+  height: 0.75rem;
+  background-color: #F5F5F5;
+  mask-image: url(../../public/decoration.svg);
+  mask-repeat: no-repeat;
+  mask-size: contain;
+  mask-position: center;
+  transform: rotate(180deg);
+  z-index: 3;
+}
+
+.image__wrapper img {
+  display: block;
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.about__desc {
+    letter-spacing: -1.2px;
+    font-family: vars.$second-family;
+    @include m.typography(vars.$color-dark-grey, 500, 1.25rem, 115%)
+}
+
+.about__btn {
+    position: relative;
+    letter-spacing: -0.96px;
+    @include m.typography(vars.$color-black, 700, 1rem);
+    &::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: -6.813rem;
+        width: 100%;
+        height: 100%;
+        background-image: url(../../public/arrow-btn.svg);
+        background-repeat: no-repeat;
+        background-position: right;
+    }
+}

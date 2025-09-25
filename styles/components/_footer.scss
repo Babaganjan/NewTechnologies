@@ -4,88 +4,102 @@
 .footer {
   display: grid;
   background-color: vars.$bg-black;
-  position: relative;
   min-height: 49.688rem;
   color: white;
-  padding-left: 0.625rem;
+//   padding-left: 0.625rem;
   padding-top: 2.625rem;
-  z-index: 1;
   @include m.line-decor(6px 56% calc(100% - 12px));
   
   .footer__container {
-    display: grid;
-    grid-template-columns: minmax(20rem, 43.75rem) 1fr;
-    grid-template:
+	display: grid;
+	grid-template-columns: minmax(20rem, 43.75rem) 1fr;
+	grid-template:
           'logo arrow'
   'pages .'
   'about .'
   'contact .'
-  'description .'
-  ;
+  'description .';
   }
   
   .footer__pages {
-    padding: 0.625rem;
-    grid-area: pages;
-    position: relative;
+	padding: 0.625rem;
+	grid-area: pages;
+	position: relative;
   }
-
+  
   .footer-decoration {
-    position: absolute;
-    left: 0;
-    top: 0;
+	@include m.decoration("/public/decoration.svg");
   }
-
+  
   .footer__about {
-    grid-area: about;
-    position: relative;
-    padding: 0.625rem;
-    @include m.typography();
-    address {
-      font-style: normal;
-      font-family: inherit;
-    }
+	grid-area: about;
+	position: relative;
+	padding: 0.625rem;
+	@include m.typography();
+	
+	.social-link {
+	  margin-top: 1.25rem;
+	  a {
+		display: flex;
+		align-items: center;
+		
+		@include m.arrow-icon(vars.$color-white);
+	  }
+	}
   }
-
+  
   .footer__copyright {
-    display: grid;
-    grid-area: description;
-    @include m.typography(vars.$color-grey);
-    .footer__copyright-text {
-      span {
-        display: block;
-      }
-    }
-    a {
-      text-decoration: underline;
-      text-decoration-skip-ink: none;
-    }
+	display: grid;
+	grid-area: description;
+	@include m.typography(vars.$color-grey);
+	
+	.footer__copyright-text {
+	  span {
+		display: block;
+	  }
+	}
+	
+	a {
+	  text-decoration: underline;
+	  text-decoration-skip-ink: none;
+	}
   }
-
+  
+  .arrow-container {
+	grid-area: arrow;
+	display: flex;
+	align-items: flex-start;
+	gap: 0.5rem;
+	padding-top: 1.625rem;
+  }
+  
   .arrow {
-    width: 1.875rem;
-    grid-area: arrow;
-    margin-top: 1.875rem;
+	width: 1rem;
+	height: 1.25rem;
+	background: url("/public/arrow-black.svg") no-repeat center/contain;
+	filter: brightness(0) invert(1);
+	transform: rotate(270deg);
   }
-
+  
   .footer__logo {
-    grid-area: logo;
-    @include m.typography(vars.$color-white, 700, 7.5rem, 120%);
-    font-family: vars.$third-family;
+	grid-area: logo;
+	@include m.typography(vars.$color-white, 700, 7.5rem, 120%);
+	font-family: vars.$third-family;
   }
-
+  
   .footer__title {
-    display: block;
-    @include m.typography(vars.$color-grey);
-    padding-bottom: 12px;
+	display: block;
+	@include m.typography(vars.$color-grey);
+	padding-bottom: 0.75rem;
   }
-
+  
   .footer__list {
-    display: grid;
-    gap: 2px;
-    li {
-      @include m.typography();
-    }
+	display: grid;
+	gap: 2px;
+	
+	li {
+	  @include m.typography();
+	}
   }
 }
 

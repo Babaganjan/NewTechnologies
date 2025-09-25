@@ -9,61 +9,117 @@
   color: $color;
 }
 
-@mixin respond-max($breakpoint) {
-  @media (max-width: $breakpoint) {
-    @content;
+@mixin decoration(
+  $image, $size: .75rem, $pos: (left: 0, top: 0), $color: null, $mode: svg
+) {
+  position: absolute;
+  width: $size;
+  height: $size;
+  
+  @each $k, $v in $pos { #{$k}: $v; }
+  
+  @if $color and $mode == svg {
+	color: $color;
+	background: url(#{$image}) no-repeat center/contain;
+  } @else if $color and $mode == mask {
+	background-color: $color;
+	-webkit-mask-image: url(#{$image});
+	-webkit-mask-repeat: no-repeat;
+	-webkit-mask-position: center;
+	-webkit-mask-size: contain;
+	mask-image: url(#{$image});
+	mask-repeat: no-repeat;
+	mask-position: center;
+	mask-size: contain;
+  } @else {
+	background: url(#{$image}) no-repeat center/contain;
+  }
+  
+  pointer-events: none;
+}
+
+@mixin arrow-icon($color: white) {
+  &::after {
+	content: "";
+	display: inline-block;
+	width: 0.75rem;
+	height: 0.938rem;
+	background: url("/public/arrow-black.svg") no-repeat center/contain;
+	margin-left: 0.5rem;
+	filter: brightness(0) invert(if($color == white, 1, 0));
+	cursor: pointer;
   }
 }
 
-@mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: center) {
-    &::after {
-        content: "";
-        position: absolute;
-        bottom: -$height;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 198px;
-        height: 0;
-        border-left: $width solid transparent;
-        border-right: $width solid transparent;
-        border-top: $height solid $color;
-    }
-}
 
-@mixin bracket-decor($color: #FFF) {
-    &::after {
-        content: "[";
-        position: absolute;
-        top: -2px;
-        left: -10px;
-    }
+@mixin respond-max($breakpoint) {
+  @media (max-width: $breakpoint) {
+	@content;
+  }
 }
 
 @mixin line-decor(
-  $positions: 38.7% 50% 61.3%,
+  $positions: 2% 50% 98%,
   $color: #212121,
   $thickness: 1px,
   $angle: 90deg
 ) {
   position: relative;
   &::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    pointer-events: none;
-    background-repeat: no-repeat;
-    
-    $grads_str: '';
-    @each $pos in $positions {
-      $half: calc($thickness / 2);
-      $g: linear-gradient(#{$angle}, transparent calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} + #{$half}), transparent calc(#{$pos} + #{$half}));
-      @if $grads_str == '' {
-        $grads_str: $g;
-      } @else {
-        $grads_str: #{$grads_str}, #{$g};
-      }
-    }
-    background-image: #{$grads_str};
+	content: '';
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	pointer-events: none;
+	background-repeat: no-repeat;
+	
+	$grads_str: '';
+	@each $pos in $positions {
+	  $half: calc($thickness / 2);
+	  $g: linear-gradient(#{$angle}, transparent calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} + #{$half}), transparent calc(#{$pos} + #{$half}));
+	  @if $grads_str == '' {
+		$grads_str: $g;
+	  } @else {
+		$grads_str: #{$grads_str}, #{$g};
+	  }
+	}
+	background-image: #{$grads_str};
   }
 }
+
+
+@mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: center, $transform: rotate(0deg)) {
+  // position: relative;
+  // &::after {
+	// content: "";
+	// position: absolute;
+	// bottom: -$height;
+	// left: 50%;
+	// transform: translateX(-50%);
+	// width: 198px;
+	// height: 0;
+	// border-left: $width solid transparent;
+	// border-right: $width solid transparent;
+	// border-top: $height solid $color;
+
+
+  position: relative;
+  width: 12.37rem;
+  height: 0;
+  border-left: 21px solid transparent;
+  border-right: 21px solid transparent;
+  border-top: 12px solid black;
+  transform: $transform;
+  // }
+}
+
+@mixin bracket-decor($color: #FFF, $top: -2px, $left: -10px ) {
+  &::after {
+	content: "[";
+	position: absolute;
+	top: $top;
+	left: $left;
+  }
+}
+
+

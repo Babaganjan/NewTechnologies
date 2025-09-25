@@ -3,5 +3,9 @@
 @use 'base';
 @use 'components/header';
 @use 'components/hero';
+@use 'components/decor';
+@use 'components/about';
+@use 'components/result';
 @use 'components/footer' as footer;
 @use 'components/feedback-menu' as feedbackMenu;
+@use 'components/questions-block' as questions;
