@@ -58,18 +58,41 @@
   }
 }
 
-@mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: center) {
+@mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: top) {
+  position: relative;
+
+  &::before {
+    content: ""; // Верхняя трапеция
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    width: 198px;
+    height: 0;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+
+    @if $position == top {
+      top: -12px; // Положение сверху
+      border-top: $height solid $color; // Верхняя граница
+      border-bottom: none; // Убираем нижнюю границу
+    }
+  }
+
   &::after {
-	content: "";
-	position: absolute;
-	bottom: -$height;
-	left: 50%;
-	transform: translateX(-50%);
-	width: 198px;
-	height: 0;
-	border-left: $width solid transparent;
-	border-right: $width solid transparent;
-	border-top: $height solid $color;
+    content: ""; // Нижняя трапеция
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    width: 198px;
+    height: 0;
+    border-left: $width solid transparent;
+    border-right: $width solid transparent;
+
+    @if $position == bottom {
+      bottom: -12px; // Позиционирование снизу
+      border-top: none; // Убираем верхнюю границу
+      border-bottom: $height solid $color; // Нижняя граница
+    }
   }
 }
 
@@ -92,7 +115,7 @@
 	content: '';
 	position: absolute;
 	inset: 0;
-	z-index: 0;
+	z-index: -1;
 	pointer-events: none;
 	background-repeat: no-repeat;
 	
@@ -110,3 +133,146 @@
   }
 }
 
+// @mixin item-decor(
+// $bg-colorOne: vars.$color-white, 
+// $bg-colorTwo: vars.$graphics-almost-black, 
+// $urlOne: url(@img/kvadrat.svg), 
+// $urlTwo: url(@img/decoration.svg)
+// ) {
+//   // Правый верхний угол (на wrapper)
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 0;
+//     right: 0;
+//     width: 1.5rem;
+//     height: 1.5rem;
+//     background-color: $bg-colorOne;
+//     mask-image: url(@img/kvadrat.svg);
+//     mask-repeat: no-repeat;
+//     mask-size: contain;
+//     mask-position: center;
+//     z-index: 3;
+//   }
+  
+//   // Левый верхний угол (на wrapper)
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 3px;
+//     left: 3px;
+//     width: 0.75rem;
+//     height: 0.75rem;
+//     background-color: $bg-colorTwo;
+//     mask-image: url(@img/decoration.svg);
+//     mask-repeat: no-repeat;
+//     mask-size: contain;
+//     mask-position: center;
+//     z-index: 3;
+//   }
+// }
+// @mixin item-decor(
+//   $bg-colorOne: vars.$color-white, 
+//   $urlOne: url(@img/kvadrat.svg),
+//   $bg-colorTwo: vars.$graphics-almost-black,  
+//   $urlTwo: url(@img/decoration.svg),
+//   $has-before: true,
+//   $has-after: true
+// ) {
+//   position: relative;
+  
+//   @if $has-after {
+//     // Правый верхний угол (на wrapper)
+//     &::after {
+//       content: "";
+//       position: absolute;
+//       top: 0;
+//       right: 0;
+//       width: 1.5rem;
+//       height: 1.5rem;
+//       background-color: $bg-colorOne;
+//       mask-image: $urlOne;
+//       mask-repeat: no-repeat;
+//       mask-size: contain;
+//       mask-position: center;
+//       z-index: 3;
+//     }
+//   }
+  
+//   @if $has-before {
+//     // Левый верхний угол (на wrapper)
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       top: 3px;
+//       left: 3px;
+//       width: 0.75rem;
+//       height: 0.75rem;
+//       background-color: $bg-colorTwo;
+//       mask-image: $urlTwo;
+//       mask-repeat: no-repeat;
+//       mask-size: contain;
+//       mask-position: center;
+//       z-index: 3;
+//     }
+//   }
+// }
+
+
+@mixin item-decor(
+  $bg-colorOne: vars.$color-white, 
+  $bg-colorTwo: vars.$graphics-almost-black, 
+  $urlOne: url(@img/kvadrat.svg), 
+  $urlTwo: url(@img/decoration.svg),
+  $has-before: true,
+  $has-after: true,
+  $before-position: (top: 3px, left: 3px),
+  $after-position: (top: 0, right: 0),
+  $before-size: (width: 0.75rem, height: 0.75rem),
+  $after-size: (width: 1.5rem, height: 1.5rem),
+  $transform: rotata(0deg)
+) {
+  position: relative;
+  
+  @if $has-after {
+    // Правый верхний угол (на wrapper)
+    &::after {
+      content: "";
+      position: absolute;
+      top: map-get($after-position, top);
+      right: map-get($after-position, right);
+      bottom: map-get($after-position, bottom);
+      left: map-get($after-position, left);
+      width: map-get($after-size, width);
+      height: map-get($after-size, height);
+      background-color: $bg-colorOne;
+      mask-image: $urlOne;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      z-index: 3;
+      transform: $transform;
+    }
+  }
+  
+  @if $has-before {
+    // Левый верхний угол (на wrapper)
+    &::before {
+      content: "";
+      position: absolute;
+      top: map-get($before-position, top);
+      right: map-get($before-position, right);
+      bottom: map-get($before-position, bottom);
+      left: map-get($before-position, left);
+      width: map-get($before-size, width);
+      height: map-get($before-size, height);
+      background-color: $bg-colorTwo;
+      mask-image: $urlTwo;
+      mask-repeat: no-repeat;
+      mask-size: contain;
+      mask-position: center;
+      z-index: 3;
+      transform: $transform;
+    }
+  }
+}

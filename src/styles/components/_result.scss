@@ -2,7 +2,132 @@
 @use '../mixins' as m;
 
 .result {
-    height: 200px;
+  &.with-top-trapezoid {
+    @include m.trapezoid-decor(21px, 12px, black, top);
+  }
+
+  &.with-bottom-trapezoid {
+    @include m.trapezoid-decor(21px, 12px, black, bottom);
+  }
+  position: relative;
+  background-color: vars.$bg-black;
+  z-index: 0;
+  margin-bottom: 40px;
+
+  &__container {
+    @include m.line-decor(2% 50% 98%);
     position: relative;
-    background-color: vars.$bg-black;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-block: 5.5rem;
+  }
+
+  &__inner {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  &__title {
+    @include m.bracket-decor();
+    @include m.typography(vars.$color-light-grey, 700, 0.875rem);
+  }
+
+  &__content {
+    position: relative;
+    flex-direction: column;
+    background-color: vars.$bg-deep-gray;
+    gap: 2.063rem;
+    padding: 0.938rem;
+    &::before {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 38 38' fill='none'%3E%3Crect x='2' width='36' height='2' fill='white'/%3E%3Crect y='38' width='36' height='2' transform='rotate(-90 0 38)' fill='white'/%3E%3C/svg%3E");
+        display: inline-block;
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        top: 0;
+        left: 0;
+    }
+    &::after {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 38 38' fill='none'%3E%3Crect x='2' width='36' height='2' fill='white'/%3E%3Crect y='38' width='36' height='2' transform='rotate(-90 0 38)' fill='white'/%3E%3C/svg%3E");
+        display: inline-block;
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        bottom: 0;
+        right: 0;
+        transform: rotate(180deg);
+    }
+  }
+
+  &__wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__number {
+    @include m.typography(vars.$color-white, 700, 7.5rem, 82%);
+    letter-spacing: -0.525rem;
 }
+
+  &__article-title {
+    @include m.typography(vars.$color-white, 600, 1.375rem, 100%);
+    flex-direction: column;
+    letter-spacing: -0.083rem;
+  }
+
+  &__prev {
+    @include m.typography(vars.$color-light-grey, 500, 0.875rem, 110%, none);
+    width: 80%;
+    font-family: vars.$second-family;
+    letter-spacing: -0.84px;
+  }
+  &__list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__item {
+    @include m.item-decor(vars.$graphics-black);
+    position: relative;
+    min-height: 8.125rem;
+    background-color: vars.$color-white;
+    padding: 0.938rem;
+  }
+.item {
+  &__inner {
+    @include m.item-decor(
+    $has-after: false,
+    $before-position: (bottom: -.75rem, right: -.75rem),
+    $before-size: (width: .75rem, height: .75rem),
+    $transform: rotate(180deg)
+  );
+    position: relative;
+    flex-direction: column;
+    gap: 0.5rem;
+    &:not(:has(.item__prev)) {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 0.938rem;
+    }
+  }
+  &__title {
+    @include m.typography(vars.$bg-black, 600, 1.375rem, 100%);
+    letter-spacing: -0.083rem;
+    &:first-child {
+        width: 80%;
+    }
+  }
+
+  &__prev {
+    @include m.typography(vars.$color-dark-grey, 500, 0.875rem, 110%);
+    font-family: vars.$second-family;
+    letter-spacing: -0.053rem;
+  }
+
+  &__number {
+    @include m.typography(vars.$color-black, 700, 7.5rem, 82%);
+    letter-spacing: -0.525rem;
+  }
+}
+}
+
+  

@@ -1,4 +1,6 @@
 @use 'variables' as vars;
+@use 'mixins' as m;
+
 @font-face {
   font-family: "Oswald";
   src: local("Oswald-Light"),
@@ -93,4 +95,10 @@ body {
 
 .flex {
   display: flex;
+}
+
+.title {
+    position: relative;
+    margin-left: 0.625rem;
+    letter-spacing: -0.84px;
 }

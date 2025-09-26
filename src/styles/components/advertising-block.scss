@@ -1,12 +1,34 @@
 @use '../variables' as vars;
 @use '../mixins' as m;
 
+// Секции
+// .section {
+//   position: relative;
+
+//   &.with-top-trapezoid {
+//     @include trapezoid-decor(21px, 12px, black, top);
+//   }
+
+//   &.with-bottom-trapezoid {
+//     @include trapezoid-decor(21px, 12px, black, bottom);
+//   }
+// }
+
 
 .advertising {
+  position: relative;
   background-color: black;
   min-height: 322px;
   display: flex;
   align-items: center;
+
+  &.with-top-trapezoid {
+    @include m.trapezoid-decor(21px, 12px, black, top);
+  }
+
+  &.with-bottom-trapezoid {
+    @include m.trapezoid-decor(21px, 12px, black, bottom);
+  }
   .advertising__title {
     position: relative;
     margin-bottom: 10px;

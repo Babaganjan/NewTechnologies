@@ -10,8 +10,7 @@
     gap: 0.625rem;
 }
 
-.about__title {
-    order: 2;
+.about__subtitle {
     span {
         color: vars.$color-black;
         letter-spacing: -2.17px;
@@ -19,18 +18,24 @@
     @include m.typography(vars.$color-light-grey, 500, 1.93rem, 100%);
 }
 
-.about__subtitle {
-    position: relative;
-    margin-left: 0.625rem;
-    letter-spacing: -0.84px;
+.about__title {
     @include m.bracket-decor(vars.$color-dark-grey);
     @include m.typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
+}
+
+.about__content {
+  flex-direction: column;
+  gap: 0.94rem;
 }
 
 .about__images {
   position: relative;
   flex-direction: column;
   gap: 0.25rem;
+}
+
+.about__images--top {
+  height: 15.87rem;
 }
 
 .about__images--bottom {
@@ -65,7 +70,7 @@
     left: 3px;
     width: 0.75rem;
     height: 0.75rem;
-    background-color: #F5F5F5; // Ваш цвет
+    background-color: vars.$graphics-almost-black;
     mask-image: url(@img/decoration.svg);
     mask-repeat: no-repeat;
     mask-size: contain;
@@ -81,7 +86,7 @@
   right: 3px;
   width: 0.75rem;
   height: 0.75rem;
-  background-color: #F5F5F5;
+  background-color: vars.$graphics-almost-black;
   mask-image: url(@img/decoration.svg);
   mask-repeat: no-repeat;
   mask-size: contain;
@@ -98,15 +103,16 @@
 }
 
 .about__desc {
+    @include m.typography(vars.$color-dark-grey, 500, 1.25rem, 115%);
     letter-spacing: -1.2px;
     font-family: vars.$second-family;
-    @include m.typography(vars.$color-dark-grey, 500, 1.25rem, 115%)
 }
 
 .about__btn {
+    @include m.typography(vars.$color-black, 700, 1rem);
     position: relative;
     letter-spacing: -0.96px;
-    @include m.typography(vars.$color-black, 700, 1rem);
+    margin-top: 1.25rem;
     &::after {
         content: "";
         position: absolute;

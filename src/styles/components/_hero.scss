@@ -2,48 +2,50 @@
 @use '../mixins' as m;
 
 .hero {
-    position: relative;
-    background-color: vars.$bg-black;
+    &.with-bottom-trapezoid {
+    @include m.trapezoid-decor(21px, 12px, black, bottom);
+  }
+  position: relative;
+  background-color: vars.$bg-black;
 }
 
 .hero__container {
+    @include m.line-decor(2% 50% 98%);
     position: relative;
     padding-block: 1.25rem 1.313rem;
     flex-direction: column;
-    @include m.line-decor(2% 50% 98%);
     z-index: 0;
 }
 
-.hero__subtitle::after {
+.hero__title::after {
     z-index: 2;
 }
 
 .heading {
+    @include m.typography(vars.$color-white, 400, 4.375rem, 81%);
     order: 3;
     text-align: center;
     letter-spacing: -7px;
     font-family: vars.$second-family;
-    @include m.typography(vars.$color-white, 400, 4.375rem, 81%)
+    letter-spacing: -7px;
 }
 
-.hero__title {
+.hero__subtitle {
+    @include m.typography(vars.$color-white, 500, 1.938rem, 100%);
     margin-bottom: 2.5rem;
     letter-spacing: -2.17px;
     text-align: center;
-    @include m.typography(vars.$color-white, 500, 1.938rem, 100%);
 }
 
 
-.hero__subtitle {
-    position: relative;
-    margin-left: 0.625rem;
-    letter-spacing: -0.84px;
+.hero__title {
     @include m.bracket-decor();
-    @include m.typography(vars.$color-light-grey, 700, 0.875rem, 120%)
+    @include m.typography(vars.$color-light-grey, 700, 0.875rem, 120%);
 }
 
 
 .hero__content {
+    order: 2;
     margin-bottom: 9.375rem;
     gap: 4.3rem;
 }
