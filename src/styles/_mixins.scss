@@ -133,92 +133,6 @@
   }
 }
 
-// @mixin item-decor(
-// $bg-colorOne: vars.$color-white, 
-// $bg-colorTwo: vars.$graphics-almost-black, 
-// $urlOne: url(@img/kvadrat.svg), 
-// $urlTwo: url(@img/decoration.svg)
-// ) {
-//   // Правый верхний угол (на wrapper)
-//   &::after {
-//     content: "";
-//     position: absolute;
-//     top: 0;
-//     right: 0;
-//     width: 1.5rem;
-//     height: 1.5rem;
-//     background-color: $bg-colorOne;
-//     mask-image: url(@img/kvadrat.svg);
-//     mask-repeat: no-repeat;
-//     mask-size: contain;
-//     mask-position: center;
-//     z-index: 3;
-//   }
-  
-//   // Левый верхний угол (на wrapper)
-//   &::before {
-//     content: "";
-//     position: absolute;
-//     top: 3px;
-//     left: 3px;
-//     width: 0.75rem;
-//     height: 0.75rem;
-//     background-color: $bg-colorTwo;
-//     mask-image: url(@img/decoration.svg);
-//     mask-repeat: no-repeat;
-//     mask-size: contain;
-//     mask-position: center;
-//     z-index: 3;
-//   }
-// }
-// @mixin item-decor(
-//   $bg-colorOne: vars.$color-white, 
-//   $urlOne: url(@img/kvadrat.svg),
-//   $bg-colorTwo: vars.$graphics-almost-black,  
-//   $urlTwo: url(@img/decoration.svg),
-//   $has-before: true,
-//   $has-after: true
-// ) {
-//   position: relative;
-  
-//   @if $has-after {
-//     // Правый верхний угол (на wrapper)
-//     &::after {
-//       content: "";
-//       position: absolute;
-//       top: 0;
-//       right: 0;
-//       width: 1.5rem;
-//       height: 1.5rem;
-//       background-color: $bg-colorOne;
-//       mask-image: $urlOne;
-//       mask-repeat: no-repeat;
-//       mask-size: contain;
-//       mask-position: center;
-//       z-index: 3;
-//     }
-//   }
-  
-//   @if $has-before {
-//     // Левый верхний угол (на wrapper)
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       top: 3px;
-//       left: 3px;
-//       width: 0.75rem;
-//       height: 0.75rem;
-//       background-color: $bg-colorTwo;
-//       mask-image: $urlTwo;
-//       mask-repeat: no-repeat;
-//       mask-size: contain;
-//       mask-position: center;
-//       z-index: 3;
-//     }
-//   }
-// }
-
-
 @mixin item-decor(
   $bg-colorOne: vars.$color-white, 
   $bg-colorTwo: vars.$graphics-almost-black, 
@@ -230,7 +144,7 @@
   $after-position: (top: 0, right: 0),
   $before-size: (width: 0.75rem, height: 0.75rem),
   $after-size: (width: 1.5rem, height: 1.5rem),
-  $transform: rotata(0deg)
+  $transform: rotate(0deg)
 ) {
   position: relative;
   

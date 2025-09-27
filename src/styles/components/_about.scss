@@ -10,17 +10,18 @@
     gap: 0.625rem;
 }
 
-.about__subtitle {
-    span {
-        color: vars.$color-black;
-        letter-spacing: -2.17px;
-    }
-    @include m.typography(vars.$color-light-grey, 500, 1.93rem, 100%);
-}
-
 .about__title {
     @include m.bracket-decor(vars.$color-dark-grey);
     @include m.typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
+    letter-spacing: -0.053em;
+}
+
+.about__subtitle {
+    span {
+        color: vars.$color-black;
+    }
+    @include m.typography(vars.$color-light-grey, 500, 1.93rem, 100%);
+    letter-spacing: -0.136rem;
 }
 
 .about__content {
