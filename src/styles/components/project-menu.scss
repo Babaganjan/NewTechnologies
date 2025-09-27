@@ -17,7 +17,7 @@
 	
 	.project-menu__subtitle {
 	  font-family: vars.$second-family;
-	  @include m.typography(vars.$color-black, 500, 22px, 110%);
+	  @include m.typography(vars.$color-black, 600, 22px, 100%);
 	  margin-bottom: 30px;
 	  span {
 		color: vars.$color-light-grey

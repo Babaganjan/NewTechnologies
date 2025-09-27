@@ -16,6 +16,7 @@
 	}
   
   &__item {
+	border-bottom: #dfdfdf solid 1px;
 	.favorites-project__img {
 	  @include m.item-decor();
 	  
@@ -40,7 +41,7 @@
 	
 	p {
 	  font-family: vars.$second-family;
-	  @include m.typography(#565656, 500, 14px, 110%);
+	  @include m.typography(#4d4d4d, 500, 14px, 110%);
 	  margin-bottom: 8px;
 	}
   }
