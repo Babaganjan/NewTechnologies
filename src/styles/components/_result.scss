@@ -93,6 +93,7 @@
     background-color: vars.$color-white;
     padding: 0.938rem;
   }
+  
 .item {
   &__inner {
     @include m.item-decor(
