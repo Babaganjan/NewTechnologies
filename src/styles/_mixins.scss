@@ -1,5 +1,5 @@
 @use 'variables' as vars;
-
+@use "sass:map";
 @mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
   font-weight: $weight;
   font-size: $size;
