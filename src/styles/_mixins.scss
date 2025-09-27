@@ -149,12 +149,12 @@
     &::after {
       content: "";
       position: absolute;
-      top: map-get($after-position, top);
-      right: map-get($after-position, right);
-      bottom: map-get($after-position, bottom);
-      left: map-get($after-position, left);
-      width: map-get($after-size, width);
-      height: map-get($after-size, height);
+      top: map.get($after-position, top);
+      right: map.get($after-position, right);
+      bottom: map.get($after-position, bottom);
+      left: map.get($after-position, left);
+      width: map.get($after-size, width);
+      height: map.get($after-size, height);
       background-color: $bg-colorOne;
       mask-image: $urlOne;
       mask-repeat: no-repeat;
@@ -170,12 +170,12 @@
     &::before {
       content: "";
       position: absolute;
-      top: map-get($before-position, top);
-      right: map-get($before-position, right);
-      bottom: map-get($before-position, bottom);
-      left: map-get($before-position, left);
-      width: map-get($before-size, width);
-      height: map-get($before-size, height);
+      top: map.get($before-position, top);
+      right: map.get($before-position, right);
+      bottom: map.get($before-position, bottom);
+      left: map.get($before-position, left);
+      width: map.get($before-size, width);
+      height: map.get($before-size, height);
       background-color: $bg-colorTwo;
       mask-image: $urlTwo;
       mask-repeat: no-repeat;
