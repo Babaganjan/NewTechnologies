@@ -12,7 +12,6 @@
   position: relative;
   background-color: vars.$bg-black;
   z-index: 0;
-  margin-bottom: 40px;
 
   &__container {
     @include m.line-decor(2% 50% 98%);
@@ -30,6 +29,8 @@
   &__title {
     @include m.bracket-decor();
     @include m.typography(vars.$color-light-grey, 700, 0.875rem);
+    letter-spacing: -0.053em;
+
   }
 
   &__content {

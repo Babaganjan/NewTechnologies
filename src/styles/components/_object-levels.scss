@@ -1,0 +1,107 @@
+@use '../variables' as vars;
+@use '../mixins' as m;
+
+
+.object-levels {
+    position: relative;
+    z-index: -1;
+    &__container {
+        @include m.line-decor(2% 50% 98%, vars.$graphics-light-grey);
+        position: relative;
+        z-index: 0;
+
+        flex-direction: column;
+        gap: 1.25rem;
+        padding-block: 6.25rem;
+    }
+
+    &__inner {
+        flex-direction: column;
+        gap: 0.625rem;
+    }
+
+    &__title {
+        @include m.bracket-decor();
+        @include m.typography(vars.$color-dark-grey, 700, 0.875rem);
+        letter-spacing: -0.053em;
+    }
+
+    &__subtitle {
+       @include m.typography(vars.$color-light-grey, 500, 1.93rem, 100%);
+       span {
+        color: vars.$color-black;
+       }
+    letter-spacing: -0.136rem;
+    }
+
+    &__list {
+      counter-reset: section;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    &__item {
+       @include m.item-decor(
+       vars.$graphics-white,
+       vars.$graphics-dark-grey,
+       url(@img/kvadrat.svg), 
+       url(@img/decoration.svg),
+       $has-before: true,
+       $has-after: true,
+       $before-position: (top: 0.188rem, left: 0.188rem),
+       $after-position: (top: 0, right: 0),
+       $before-size: (width: 0.75rem, height: 0.75rem),
+       $after-size: (width: 0.938rem, height: 0.938rem),
+       );
+       position: relative;
+       min-height: 6.25rem;
+       background-color: vars.$bg-middl-grey;
+       padding: 0.625rem 0.625rem 0.625rem 1.313rem;
+    }
+
+.item {
+  &__inner {
+    @include m.item-decor(
+    vars.$graphics-dark-grey,
+    vars.$graphics-dark-grey,
+    url(@img/decoration.svg),
+    $has-before: false,
+    $has-after: true,
+    $after-position: (bottom: -0.438rem, right: -0.438rem),
+    $after-size: (width: .75rem, height: .75rem),
+    $transform: rotate(180deg)
+  );
+    height: 5rem;
+    position: relative;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-image: url(@img/zavod.svg);
+    background-repeat: no-repeat;
+    background-position: top right;
+
+    &::before {
+        @include m.typography(vars.$color-grey, 500, 0.625rem, 40%);
+        counter-increment: section;
+        content: "["counter(section)"]";
+        position: absolute;
+        top: 0;
+        left: -0.875rem;
+        letter-spacing: -0.031rem;
+    }
+
+  }
+  &__title {
+    @include m.typography(vars.$bg-black, 600, 1.375rem, 100%);
+    letter-spacing: -0.083rem;
+    &:first-child {
+        width: 80%;
+    }
+  }
+
+  &__prev {
+    @include m.typography(vars.$color-dark-grey, 500, 0.875rem, 110%);
+    font-family: vars.$second-family;
+    letter-spacing: -0.053rem;
+  }
+}
+}
