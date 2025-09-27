@@ -23,10 +23,6 @@
 	background: url(#{$image}) no-repeat center/contain;
   } @else if $color and $mode == mask {
 	background-color: $color;
-	-webkit-mask-image: url(#{$image});
-	-webkit-mask-repeat: no-repeat;
-	-webkit-mask-position: center;
-	-webkit-mask-size: contain;
 	mask-image: url(#{$image});
 	mask-repeat: no-repeat;
 	mask-position: center;
