@@ -1,0 +1,84 @@
+@use '../variables' as vars;
+@use '../mixins' as m;
+
+.products {
+  margin-top: 100px;
+  
+  &__list {
+	display: grid;
+	grid-template-columns: repeat(2, 170px);
+	counter-reset: section;
+  }
+  
+  .products-title {
+	position: relative;
+	margin-bottom: 10px;
+	@include m.typography(#565656, 700, 14px, 120%);
+	@include m.bracket-decor();
+  }
+  .products-subtitle {
+	@include m.typography(vars.$color-black, 500, 31px, 100%);
+	margin-bottom: 20px;
+	span {
+	  color: vars.$color-light-grey;
+	}
+  }
+  
+  &__item {
+	padding: 10px;
+	border: 1px solid vars.$color-light-grey;
+	display: flex;
+	width: 170px;
+	flex-direction: column;
+	position: relative;
+	align-items: flex-start;
+	&::after {
+	  content: '';
+	  @include m.decoration('@img/decoration.svg', 0.75rem, (bottom: 0, right: 0), #171717, mask);
+	  transform: rotate(-180deg);
+	  margin-bottom: 0.188rem;
+	  margin-right: 0.188rem;
+	}
+	
+	&::before {
+	  content: '';
+	  @include m.decoration('@img/decoration.svg', 0.75rem, (top: 0, left: 0), #171717, mask);
+	  margin-top: 0.188rem;
+	  margin-left: 0.188rem;
+	}
+	
+	.products__title {
+	  position: relative;
+	  &::before {
+		@include m.typography(vars.$color-grey, 500, 0.625rem, 40%);
+		counter-increment: section;
+		content: "["counter(section)"]";
+		position: absolute;
+		top: 0;
+		right: -0.875rem;
+		letter-spacing: -0.05em;
+	  }
+	  h4 {
+		@include m.typography(vars.$color-black, 500, 18px, 115%);
+	  }
+	}
+	
+	&:nth-child(5) {
+	  justify-self: center;
+      grid-column: 1 / -1;
+	}
+  }
+  
+  .products__img {
+	display: flex;
+	justify-content: center;
+	min-height: 110px;
+	margin: 15px 30px 14px 30px;
+	img {
+	  max-height: 100%;
+	  width: auto;
+	  height: auto;
+	  object-fit: contain;
+	}
+  }
+}
