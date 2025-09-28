@@ -23,6 +23,7 @@
   position: absolute;
   width: $size;
   height: $size;
+  background-color: $color;
   mask-image: url(#{$image});
   mask-position: center;
   mask-size: contain;
