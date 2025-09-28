@@ -48,7 +48,7 @@
     background: url("@img/infinity-slider-company.png") no-repeat center #171717;
     
     .advertising__decoration {
-      @include m.decoration('@img/kvadrat.svg', 1.5rem, (top: 0, right: 0), vars.$color-black, mask);
+      @include m.decoration('@img/kvadrat.png', 1.5rem, (top: 0, right: 0), vars.$color-black, mask);
     }
     
       &::after {
