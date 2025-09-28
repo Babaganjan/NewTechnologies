@@ -1,20 +1,6 @@
 @use '../variables' as vars;
 @use '../mixins' as m;
 
-// Секции
-// .section {
-//   position: relative;
-
-//   &.with-top-trapezoid {
-//     @include trapezoid-decor(21px, 12px, black, top);
-//   }
-
-//   &.with-bottom-trapezoid {
-//     @include trapezoid-decor(21px, 12px, black, bottom);
-//   }
-// }
-
-
 .advertising {
   position: relative;
   background-color: black;
@@ -32,8 +18,8 @@
   .advertising__title {
     position: relative;
     margin-bottom: 10px;
-    @include m.typography(vars.$color-light-grey, 700, 14px, 120%);
-    @include m.bracket-decor();
+    @include m.bracket-decor(#d0d0d0, (top: -2px, left: 0));
+    padding-inline: 0.625rem;
   }
   
   .advertising__subtitle {
@@ -46,26 +32,9 @@
   .swiper-slide {
     min-height: 96px;
     background: url("@img/infinity-slider-company.png") no-repeat center #171717;
-    
+    @include m.item-decor(vars.$color-white);
     .advertising__decoration {
-      //@include m.decoration('@img/kvadrat.png', 1.5rem, (top: 0, right: 0), vars.$color-black, mask);
+      @include m.decoration(vars.$color-black, 1.5rem, '@img/kvadrat.png', (top: 0, right: 0));
     }
-    
-      &::after {
-        content: '';
-        //@include m.decoration('@img/decoration.svg', 0.75rem, (top: 0, left: 0), vars.$color-white, svg);
-        margin: 3px;
-        width: 10px;
-        height: 10px;
-      }
-      
-      &::before {
-        content: '';
-        //@include m.decoration('@img/decoration.svg', 0.75rem, (bottom: 0, right: 0), vars.$color-white, svg);
-        margin: 3px;
-        transform: rotate(180deg);
-        width: 10px;
-        height: 10px;
-      }
   }
 }
