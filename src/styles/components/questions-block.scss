@@ -29,7 +29,7 @@
 	background-color: vars.$bg-middl-grey;
 	min-height: 7.938rem;
 	padding: 0.625rem;
-	transition: all .22s ease;
+	transition: background-color .2s ease, color .2s ease, opacity 0s ease, transform .2s ease;
 	color: vars.$color-dark-grey;
 	overflow: visible;
 	
@@ -65,7 +65,7 @@
 	}
 	
 	&-decorative {
-	  @include m.decoration('@img/kvadrat.svg', 1.5rem, (top: 0, right: 0), #565656, svg);
+	  @include m.decoration('@img/kvadrat.png', 1.5rem, (top: 0, right: 0), #565656, svg);
 	  opacity: 0;
 	  visibility: hidden;
 	  pointer-events: none;

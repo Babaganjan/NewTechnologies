@@ -35,7 +35,7 @@
     }
 
     &__list {
-      counter-reset: section;
+      counter-reset: card;
       flex-direction: column;
       gap: 0.5rem;
     }
@@ -44,7 +44,7 @@
        @include m.item-decor(
        vars.$graphics-white,
        vars.$graphics-dark-grey,
-       url(@img/kvadrat.svg), 
+       url(@img/kvadrat.png), 
        url(@img/decoration.svg),
        $has-before: true,
        $has-after: true,
@@ -81,8 +81,8 @@
 
     &::before {
         @include m.typography(vars.$color-grey, 500, 0.625rem, 40%);
-        counter-increment: section;
-        content: "["counter(section)"]";
+        counter-increment: card;
+        content: "["counter(card)"]";
         position: absolute;
         top: 0;
         left: -0.875rem;

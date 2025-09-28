@@ -30,7 +30,6 @@
     @include m.bracket-decor();
     @include m.typography(vars.$color-light-grey, 700, 0.875rem);
     letter-spacing: -0.053em;
-
   }
 
   &__content {

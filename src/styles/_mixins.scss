@@ -54,7 +54,7 @@
   }
 }
 
-@mixin trapezoid-decor($width: 21px, $height: 12px, $color: #000, $position: top) {
+@mixin trapezoid-decor($width: 21px, $height: 13px, $color: #000, $position: top) {
   position: relative;
 
   &::before {
@@ -68,7 +68,7 @@
     border-right: $width solid transparent;
 
     @if $position == top {
-      top: -12px; // Положение сверху
+      top: -11px; // Положение сверху
       border-top: $height solid $color; // Верхняя граница
       border-bottom: none; // Убираем нижнюю границу
     }
@@ -85,7 +85,7 @@
     border-right: $width solid transparent;
 
     @if $position == bottom {
-      bottom: -12px; // Позиционирование снизу
+      bottom: -11px; // Позиционирование снизу
       border-top: none; // Убираем верхнюю границу
       border-bottom: $height solid $color; // Нижняя граница
     }
@@ -132,7 +132,7 @@
 @mixin item-decor(
   $bg-colorOne: vars.$color-white, 
   $bg-colorTwo: vars.$graphics-almost-black, 
-  $urlOne: url(@img/kvadrat.svg), 
+  $urlOne: url(@img/kvadrat.png), 
   $urlTwo: url(@img/decoration.svg),
   $has-before: true,
   $has-after: true,
