@@ -28,7 +28,8 @@
   }
   
   .footer-decoration {
-	@include m.decoration("@img/decoration.svg");
+	@include m.decoration(vars.$color-white, 0.75rem, '@img/decoration.svg',  (bottom: 0, right: 0));
+	// @include m.decoration("@img/decoration.svg");
   }
   
   .footer__about {
@@ -42,8 +43,6 @@
 	  a {
 		display: flex;
 		align-items: center;
-		
-		@include m.arrow-icon(vars.$color-white);
 	  }
 	}
   }

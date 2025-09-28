@@ -1,5 +1,5 @@
 @use 'variables' as vars;
-@use "sass:map";
+
 @mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
   font-weight: $weight;
   font-size: $size;
@@ -10,46 +10,21 @@
 }
 
 @mixin decoration(
-  $image, $size: .75rem, $pos: (left: 0, top: 0), $color: null, $mode: svg
+  $color: vars.$color-white, $size: .75rem, $image: '@img/kvadrat.svg', $pos: (right: 0, top: 0)
 ) {
   position: absolute;
   width: $size;
   height: $size;
-  
-  @each $k, $v in $pos { #{$k}: $v; }
-  
-  @if $color and $mode == svg {
-	color: $color;
-	background: url(#{$image}) no-repeat center/contain;
-  } @else if $color and $mode == mask {
-	background-color: $color;
-	mask-image: url(#{$image});
-	mask-repeat: no-repeat;
-	mask-position: center;
-	mask-size: contain;
-  } @else {
-	background: url(#{$image}) no-repeat center/contain;
-  }
-  
+  mask-image: url(#{$image});
+  mask-position: center;
+  mask-size: contain;
+  mask-repeat: no-repeat;
   pointer-events: none;
+  @each $k, $v in $pos { #{$k}: $v; }
 }
 
-@mixin arrow-icon($color: white) {
-  &::after {
-	content: "";
-	display: inline-block;
-	width: 0.75rem;
-	height: 0.938rem;
-	background: url("@img/arrow-black.svg") no-repeat center/contain;
-	margin-left: 0.5rem;
-	filter: brightness(0) invert(if($color == white, 1, 0));
-	cursor: pointer;
-  }
-}
-
-
-@mixin respond-max($breakpoint) {
-  @media (max-width: $breakpoint) {
+@mixin respond-min($breakpoint) {
+  @media (min-width: $breakpoint) {
 	@content;
   }
 }
@@ -92,7 +67,8 @@
   }
 }
 
-@mixin bracket-decor($color: #FFF, $pos:(top: -2px, left:-10px)) {
+@mixin bracket-decor($color: #FFF, $pos: (top: -2px, left:-10px)) {
+  @include typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
   &::after {
 	content: "[";
 	position: absolute;
@@ -130,59 +106,40 @@
 }
 
 @mixin item-decor(
-  $bg-colorOne: vars.$color-white, 
-  $bg-colorTwo: vars.$graphics-almost-black, 
-  $urlOne: url(@img/kvadrat.png), 
-  $urlTwo: url(@img/decoration.svg),
-  $has-before: true,
-  $has-after: true,
+  $colorAfter: vars.$color-black,
+  $colorBefore: vars.$color-black,
   $before-position: (top: 3px, left: 3px),
-  $after-position: (top: 0, right: 0),
-  $before-size: (width: 0.75rem, height: 0.75rem),
-  $after-size: (width: 1.5rem, height: 1.5rem),
-  $transform: rotate(0deg)
+  $after-position: (bottom: 3px, right: 3px),
+  $size: (width: 12px, height: 12px),
+  $after-size: (width: 12px, height: 12px),
 ) {
   position: relative;
   
-  @if $has-after {
     // Правый верхний угол (на wrapper)
     &::after {
       content: "";
       position: absolute;
-      top: map.get($after-position, top);
-      right: map.get($after-position, right);
-      bottom: map.get($after-position, bottom);
-      left: map.get($after-position, left);
-      width: map.get($after-size, width);
-      height: map.get($after-size, height);
-      background-color: $bg-colorOne;
-      mask-image: $urlOne;
-      mask-repeat: no-repeat;
-      mask-size: contain;
+      @each $k, $v in $after-position { #{$k}: $v; }
+      @each $b, $c in $size { #{$b}: $c; }
+      background-color: $colorAfter;
+      mask-image: url(@img/decoration.svg);
       mask-position: center;
+      mask-size: contain;
+      mask-repeat: no-repeat;
       z-index: 3;
-      transform: $transform;
-    }
+      transform: rotate(180deg);
   }
   
-  @if $has-before {
-    // Левый верхний угол (на wrapper)
     &::before {
       content: "";
       position: absolute;
-      top: map.get($before-position, top);
-      right: map.get($before-position, right);
-      bottom: map.get($before-position, bottom);
-      left: map.get($before-position, left);
-      width: map.get($before-size, width);
-      height: map.get($before-size, height);
-      background-color: $bg-colorTwo;
-      mask-image: $urlTwo;
-      mask-repeat: no-repeat;
-      mask-size: contain;
+      @each $k, $v in $before-position { #{$k}: $v; }
+	  @each $b, $c in $size { #{$b}: $c; }
+      background-color: $colorBefore;
+      mask-image: url(@img/decoration.svg);
       mask-position: center;
+      mask-size: contain;
+      mask-repeat: no-repeat;
       z-index: 3;
-      transform: $transform;
     }
-  }
 }

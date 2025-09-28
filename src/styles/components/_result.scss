@@ -95,12 +95,12 @@
   
 .item {
   &__inner {
-    @include m.item-decor(
-    $has-after: false,
-    $before-position: (bottom: -.75rem, right: -.75rem),
-    $before-size: (width: .75rem, height: .75rem),
-    $transform: rotate(180deg)
-  );
+  //  @include m.item-decor(
+  //  $has-after: false,
+  //  $before-position: (bottom: -.75rem, right: -.75rem),
+  //  $before-size: (width: .75rem, height: .75rem),
+  //  $transform: rotate(180deg)
+  //);
     position: relative;
     flex-direction: column;
     gap: 0.5rem;

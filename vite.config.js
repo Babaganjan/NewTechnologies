@@ -1,17 +1,25 @@
 import { defineConfig } from 'vite';
 import path from 'path';
-import { browserslistToTargets } from 'lightningcss';
-import browserslist from 'browserslist';
+import autoprefixer from 'autoprefixer';
+import pxtorem from 'postcss-pxtorem';
 
 export default defineConfig({
   css: {
-    transformer: 'lightningcss',
-    lightningcss: {
-      targets: browserslistToTargets(browserslist('>= 0.25%')),
+    postcss: {
+      plugins: [
+        autoprefixer,
+        pxtorem({
+          rootValue: 16, // базовый размер шрифта (обычно 16px)
+          unitPrecision: 5, // точность округления
+          propList: ['*', '!border*', '!box-shadow', '!text-shadow', '!letter-spacing'],
+          selectorBlackList: ['ant-', 'el-', 'icon-', 'no-rem', /^border/, /shadow$/, /pixel-/],
+          replace: true, // заменять px на rem
+          mediaQuery: false, // не обрабатывать медиазапросы
+          minPixelValue: 1, // минимальное значение для конвертации
+          exclude: [/\/node_modules\//, /\/index.html/],
+        }),
+      ],
     },
-  },
-  build: {
-    cssMinify: 'lightningcss',
   },
   resolve: {
     alias: {

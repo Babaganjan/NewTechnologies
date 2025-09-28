@@ -41,36 +41,36 @@
     }
 
     &__item {
-       @include m.item-decor(
-       vars.$graphics-white,
-       vars.$graphics-dark-grey,
-       url(@img/kvadrat.png), 
-       url(@img/decoration.svg),
-       $has-before: true,
-       $has-after: true,
-       $before-position: (top: 0.188rem, left: 0.188rem),
-       $after-position: (top: 0, right: 0),
-       $before-size: (width: 0.75rem, height: 0.75rem),
-       $after-size: (width: 0.938rem, height: 0.938rem),
-       );
-       position: relative;
-       min-height: 6.25rem;
-       background-color: vars.$bg-middl-grey;
-       padding: 0.625rem 0.625rem 0.625rem 1.313rem;
+       //@include m.item-decor(
+       //vars.$graphics-white,
+       //vars.$graphics-dark-grey,
+       //url(@img/kvadrat.png),
+       //url(@img/decoration.svg),
+       //$has-before: true,
+       //$has-after: true,
+       //$before-position: (top: 0.188rem, left: 0.188rem),
+       //$after-position: (top: 0, right: 0),
+       //$before-size: (width: 0.75rem, height: 0.75rem),
+       //$after-size: (width: 0.938rem, height: 0.938rem),
+       //);
+       //position: relative;
+       //min-height: 6.25rem;
+       //background-color: vars.$bg-middl-grey;
+       //padding: 0.625rem 0.625rem 0.625rem 1.313rem;
     }
 
 .item {
   &__inner {
-    @include m.item-decor(
-    vars.$graphics-dark-grey,
-    vars.$graphics-dark-grey,
-    url(@img/decoration.svg),
-    $has-before: false,
-    $has-after: true,
-    $after-position: (bottom: -0.438rem, right: -0.438rem),
-    $after-size: (width: .75rem, height: .75rem),
-    $transform: rotate(180deg)
-  );
+  //  @include m.item-decor(
+  //  vars.$graphics-dark-grey,
+  //  vars.$graphics-dark-grey,
+  //  url(@img/decoration.svg),
+  //  $has-before: false,
+  //  $has-after: true,
+  //  $after-position: (bottom: -0.438rem, right: -0.438rem),
+  //  $after-size: (width: .75rem, height: .75rem),
+  //  $transform: rotate(180deg)
+  //);
     height: 5rem;
     position: relative;
     flex-direction: column;

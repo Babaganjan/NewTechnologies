@@ -48,12 +48,12 @@
     background: url("@img/infinity-slider-company.png") no-repeat center #171717;
     
     .advertising__decoration {
-      @include m.decoration('@img/kvadrat.png', 1.5rem, (top: 0, right: 0), vars.$color-black, mask);
+      //@include m.decoration('@img/kvadrat.png', 1.5rem, (top: 0, right: 0), vars.$color-black, mask);
     }
     
       &::after {
         content: '';
-        @include m.decoration('@img/decoration.svg', 0.75rem, (top: 0, left: 0), vars.$color-white, svg);
+        //@include m.decoration('@img/decoration.svg', 0.75rem, (top: 0, left: 0), vars.$color-white, svg);
         margin: 3px;
         width: 10px;
         height: 10px;
@@ -61,7 +61,7 @@
       
       &::before {
         content: '';
-        @include m.decoration('@img/decoration.svg', 0.75rem, (bottom: 0, right: 0), vars.$color-white, svg);
+        //@include m.decoration('@img/decoration.svg', 0.75rem, (bottom: 0, right: 0), vars.$color-white, svg);
         margin: 3px;
         transform: rotate(180deg);
         width: 10px;

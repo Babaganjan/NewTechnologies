@@ -24,17 +24,16 @@
     width: 100%;
     margin: 0 auto;
     @include m.typography(vars.$color-white, 700 , 1.125rem, 120%);
-    @include m.arrow-icon(vars.$color-white);
 
     
     .feedback-menu__decoration-top {
-      @include m.decoration('@img/decoration.svg', 0.75rem, (top: 0, left: 0), vars.$color-white, mask);
+      @include m.decoration(vars.$color-white, 0.75rem, '@img/decoration.svg',  (top: 0, left: 0));
       margin-top: 0.188rem;
       margin-left: 0.188rem;
     }
     
     .feedback-menu__decoration-bottom {
-      @include m.decoration('@img/decoration.svg', 0.75rem, (bottom: 0, right: 0), vars.$color-white, mask);
+      @include m.decoration(vars.$color-white, 0.75rem, '@img/decoration.svg',  (bottom: 0, right: 0));
       transform: rotate(180deg);
       margin-bottom: 0.188rem;
       margin-right: 0.188rem;

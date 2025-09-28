@@ -22,15 +22,13 @@
 	  
 	  .favorites-project__decoration {
 		position: absolute;
-		width: 12px;
-		height: 12px;
-		bottom: 0;
+		width: 32px;
+		height: 32px;
+		top: 0;
 		right: 0;
 		z-index: 3;
-		mask: url("@img/decoration.svg") no-repeat center/contain;
-		background-color: vars.$color-black;
-		transform: rotate(180deg);
-		margin: 3px;
+		mask: url("@img/kvadrat.png") no-repeat center/contain;
+		background-color: vars.$color-white;
 	  }
 	}
 	
