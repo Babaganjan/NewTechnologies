@@ -27,11 +27,12 @@
   &__card {
 	position: relative;
 	background-color: vars.$bg-middl-grey;
-	min-height: 7.938rem;
+	min-height: 130px;
 	padding: 0.625rem;
 	transition: background-color .2s ease, color .2s ease, opacity 0s ease, transform .2s ease;
 	color: vars.$color-dark-grey;
 	overflow: visible;
+	
 	
 	&:hover {
 	  background-color: vars.$bg-black;
@@ -49,8 +50,8 @@
 	
 	&::before {
 	  content: '';
-	  //@include m.decoration('@img/arrow-black.svg', 1.563rem, (bottom: 0, right: 0), #565656, mask);
-	  margin: 0.625rem;
+	  @include m.decoration(#565656, 1.563rem, '@img/arrow-black.svg', (bottom: 0, right: 0));
+	  margin: 10px;
 	  background-color: currentColor;
 	  transition: transform .22s ease;
 	}
@@ -65,7 +66,7 @@
 	}
 	
 	&-decorative {
-	  // @include m.decoration('@img/kvadrat.png', 1.5rem, (top: 0, right: 0), #565656, svg);
+	  @include m.decoration(vars.$color-white, 1.563rem, '@img/kvadrat.png', (top: 0, right: 0));
 	  opacity: 0;
 	  visibility: hidden;
 	  pointer-events: none;
@@ -83,7 +84,7 @@
 	  border-top-left-radius: 2px;
 	  
 	  .questions__card-arrow--active {
-		//@include m.decoration('@img/arrow-black.svg', 1.563rem, (bottom: 0, right: 0), #565656, mask);
+		@include m.decoration(#565656, 1.563rem, '@img/arrow-black.svg', (bottom: 0, right: 0));
 		margin: 0.625rem;
 		bottom: 0;
 		right: 0;
@@ -99,7 +100,7 @@
 	  
 	  &::before {
 		content: "";
-		//@include m.decoration('@img/decoration.svg', 1.563rem, (top: -1px, left: -1px), #565656, mask);
+		@include m.decoration(#565656, 1.563rem, '@img/decoration.svg', (top: -1px, left: -1px));
 		margin: 0;
 		transform: none;
 		background-color: currentColor;
@@ -107,7 +108,7 @@
 	  
 	  &::after {
 		content: "";
-		//@include m.decoration('@img/decoration.svg', 1.563rem, (bottom: -1px, right: -1px), #565656, mask);
+		@include m.decoration(#565656, 1.563rem, '@img/decoration.svg', (bottom: -1px, right: -1px));
 		background-color: currentColor;
 		transform: rotate(180deg);
 	  }
@@ -115,11 +116,9 @@
 	
 	.questions__content {
 	  position: relative;
-	  margin-bottom: 4.688rem;
-	  
 	  &::after {
 		content: '';
-		//@include m.decoration('@img/decoration.svg', 0.75rem, (top: -6px, left: -7px), #565656, mask);
+		@include m.decoration(#565656, 0.75rem, '@img/decoration.svg', (top: -6px, left: -7px));
 	  }
 	}
   }

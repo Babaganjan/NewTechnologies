@@ -13,8 +13,8 @@
   .products-title {
 	position: relative;
 	margin-bottom: 10px;
-	@include m.typography(#565656, 700, 14px, 120%);
-	@include m.bracket-decor();
+	@include m.bracket-decor(#4d4d4d, (top: -1px, left: 0));
+	padding-inline: 10px;
   }
   .products-subtitle {
 	@include m.typography(vars.$color-black, 500, 31px, 100%);
@@ -32,20 +32,7 @@
 	flex-direction: column;
 	position: relative;
 	align-items: flex-start;
-	&::after {
-	  content: '';
-	  //@include m.decoration('@img/decoration.svg', 0.75rem, (bottom: 0, right: 0), #171717, mask);
-	  transform: rotate(-180deg);
-	  margin-bottom: 0.188rem;
-	  margin-right: 0.188rem;
-	}
-	
-	&::before {
-	  content: '';
-	  //@include m.decoration('@img/decoration.svg', 0.75rem, (top: 0, left: 0), #171717, mask);
-	  margin-top: 0.188rem;
-	  margin-left: 0.188rem;
-	}
+    @include m.item-decor();
 	
 	.products__title {
 	  position: relative;
