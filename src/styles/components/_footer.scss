@@ -2,66 +2,79 @@
 @use '../mixins' as m;
 
 .footer {
-  display: grid;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
   background-color: vars.$bg-black;
-  min-height: 49.688rem;
   color: white;
   padding-top: 2.625rem;
   @include m.line-decor(2% 50% 98%);
   
+  .footer__activity {
+	grid-area: activity;
+	padding: 0.625rem;
+	position: relative;
+	@include m.typography();
+  }
+  .footer__about-company {
+	grid-area: aboutCompany;
+	padding: 0.625rem;
+	position: relative;
+	@include m.typography();
+  }
   .footer__container {
 	display: grid;
-	grid-template-columns: minmax(360px, 1920px) 1fr;
+	grid-template-columns: repeat(2, 1fr);
 	grid-template:
-          'logo arrow'
+          'logo .'
   'pages .'
   'about .'
-  'contact .'
-  'description .';
+  'contact .';
   }
   
   .footer__pages {
 	padding: 0.625rem;
+	margin-top: 60px;
 	grid-area: pages;
 	position: relative;
-  }
-  
-  .footer-decoration {
-	@include m.decoration(vars.$color-white, 0.75rem, '@img/decoration.svg',  (bottom: 0, right: 0));
   }
   
   .footer__about {
 	grid-area: about;
 	position: relative;
 	padding: 0.625rem;
+	margin-top: 60px;
 	@include m.typography();
 	
 	.social-link {
 	  margin-top: 1.25rem;
-	  position: relative;
 	  display: flex;
 	  a {
-		&::before {
-		  content: '';
-		  @include m.decoration(vars.$color-white, 16px, '@img/arrow-black.svg',  (top: 3px, right: 0));
-		  margin-right: 150px;
-		}
+		display: inline-flex;
 		align-items: center;
+		gap: 0.5rem;
+		
+		&::after {
+		  content: '';
+		  @include m.decoration(vars.$color-white, 16px, '@img/arrow-black.svg', (top: 0, right: 0));
+		  position: static;
+		}
 	  }
 	}
   }
   
   .footer__copyright {
-	display: grid;
-	grid-area: description;
+	display: flex;
+	flex-direction: column;
+	margin-top: 90px;
+	gap: 10px;
+	padding: m.fluid(10px, 50px);
 	@include m.typography(vars.$color-grey, 500 , m.fluid(18px, 20px));
-	
 	.footer__copyright-text {
 	  span {
 		display: block;
 	  }
 	}
-	
 	a {
 	  text-decoration: underline;
 	  text-decoration-skip-ink: none;
@@ -69,24 +82,18 @@
   }
   
   .arrow-button {
-	grid-area: arrow;
-	position: relative;
-	display: flex;
-	align-items: flex-start;
-	padding-top: 1.625rem;
 	@include m.typography(vars.$color-white, 500, m.fluid(18px, 20px), 1.2);
-	
-	
-	&::before {
-	  content: '';
-	  margin-top: 1.625rem;
-	  margin-left: m.fluid(8px, 10px);
-	  @include m.decoration(vars.$color-white, 20px, "@img/arrow-black.svg");
-	  transform: rotate(-90deg);
+	justify-self: end;
+	display: flex;
+	padding-top: 1.625rem;
+	gap: 10px;
+	  &::after {
+		@include m.decoration(vars.$color-white, 20px, "@img/arrow-black.svg");
+		content: '';
+		position: static;
+		transform: rotate(-90deg);
 	}
   }
-  
-  
   
   .footer__logo {
 	grid-area: logo;
@@ -109,6 +116,60 @@
 	gap: 2px;
 	li {
 	  @include m.typography(vars.$color-white, 500, m.fluid(18px, 20px));
+	}
+  }
+}
+@media (max-width: 1023px) {
+  .footer__activity {
+	display: none;
+  }
+  
+  .footer__about-company {
+	display: none;
+  }
+}
+
+@include m.respond-min(1024px) {
+  .footer {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: auto auto;
+	.footer__container {
+	  grid-column: 1 / -1;
+	  grid-template-columns: repeat(4, 1fr);
+	  grid-template-areas: 'logo activity aboutCompany about'
+	}
+	.footer__about {
+	  margin-top: 0;
+	}
+	
+	.footer__title {
+	  margin-bottom: 40px;
+	}
+	
+	.footer__pages {
+	  display: none;
+	}
+	
+	.arrow-button {
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	  margin: 30px;
+	}
+	.footer__copyright {
+	  grid-column: 1 / 3;
+	  display: grid;
+	  grid-template-columns: 1fr auto;
+	  align-items: end;
+	  .footer__copyright-text {
+		justify-self: start;
+		align-self: end;
+	  }
+	  a {
+		justify-self: end;
+		align-self: end;
+	  }
 	}
   }
 }
