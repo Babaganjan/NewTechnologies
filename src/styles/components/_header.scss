@@ -44,10 +44,9 @@
 	transition: all 0.3s ease;
   }
   
-  // Анимация при активном состоянии
   &.active::before {
 	top: 8px;
 	transform: rotate(45deg);
-	box-shadow: 0 0 0 transparent; // убираем вторую линию
+	box-shadow: 0 0 0 transparent;
   }
 }

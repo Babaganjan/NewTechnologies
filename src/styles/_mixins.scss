@@ -1,3 +1,4 @@
+@use "sass:math";
 @use 'variables' as vars;
 @use 'sass:math';
 
@@ -18,7 +19,8 @@
 }
 
 @mixin decoration(
-  $color: vars.$color-white, $size: .75rem, $image: '@img/kvadrat.png', $pos: (right: 0, top: 0)
+  $color: vars.$color-white, $size: .75rem, $image: '@img/kvadrat.png', $pos: (right: -1px, top: -1px)
+
 ) {
   position: absolute;
   width: $size;
@@ -142,7 +144,7 @@
       content: "";
       position: absolute;
       @each $k, $v in $before-position { #{$k}: $v; }
-	  @each $b, $c in $size { #{$b}: $c; }
+	    @each $b, $c in $size { #{$b}: $c; }
       background-color: $color;
       mask-image: url(@img/decoration.svg);
       mask-position: center;

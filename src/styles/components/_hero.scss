@@ -23,7 +23,7 @@
 }
 
 .heading {
-    @include m.typography(vars.$color-white, 400, 4.375rem, 81%);
+    @include m.typography(vars.$color-white, 400, m.fluid(70px, 243px), 81%);
     order: 3;
     text-align: center;
     letter-spacing: -7px;
@@ -33,13 +33,13 @@
 
 .hero__title {
     @include m.bracket-decor();
-    @include m.typography(vars.$color-light-grey, 700, 0.875rem, 120%);
+    @include m.typography(vars.$color-light-grey, 700, m.fluid(14px, 22px), 120%);
     letter-spacing: -0.053em;
 
 }
 
 .hero__subtitle {
-    @include m.typography(vars.$color-white, 500, 1.938rem, 100%);
+    @include m.typography(vars.$color-white, 500, m.fluid(31px, 68px), 100%);
     margin-bottom: 2.5rem;
     letter-spacing: -2.17px;
     text-align: center;
@@ -52,7 +52,7 @@
 }
 
 .hero__prev {
-    @include m.typography(vars.$color-light-grey, 500, 0.875rem, 110%, none);
+    @include m.typography(vars.$color-light-grey, 500, m.fluid(14px, 22px), 110%, none);
     font-family: vars.$second-family;
     letter-spacing: -0.84px;
 }

@@ -19,7 +19,6 @@
 	border-bottom: #dfdfdf solid 1px;
 	.favorites-project__img {
 	  @include m.item-decor();
-	  
 	  .favorites-project__decoration {
 		@include m.decoration(vars.$color-white, 25px);
 	  }
