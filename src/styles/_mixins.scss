@@ -1,6 +1,6 @@
 @use "sass:math";
 @use 'variables' as vars;
-
+@use 'sass:math';
 
 @function fluid($size-at-min-width, $size-at-max-width, $min-width: 360px, $max-width: 1920px) {
   $slope: math.div($size-at-max-width - $size-at-min-width, $max-width - $min-width);
@@ -9,7 +9,7 @@
   @return $return-value;
 }
 
-@mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
+@mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 1.2, $transform: uppercase) {
   font-weight: $weight;
   font-size: $size;
   line-height: $line;
@@ -20,6 +20,7 @@
 
 @mixin decoration(
   $color: vars.$color-white, $size: .75rem, $image: '@img/kvadrat.png', $pos: (right: -1px, top: -1px)
+
 ) {
   position: absolute;
   width: $size;
@@ -78,7 +79,7 @@
 }
 
 @mixin bracket-decor($color: #FFF, $pos: (top: -2px, left:-10px)) {
-  @include typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
+  @include typography($color, 700, 0.875rem, 120%);
   &::after {
 	content: "[";
 	position: absolute;
@@ -143,7 +144,7 @@
       content: "";
       position: absolute;
       @each $k, $v in $before-position { #{$k}: $v; }
-    @each $b, $c in $size { #{$b}: $c; }
+	    @each $b, $c in $size { #{$b}: $c; }
       background-color: $color;
       mask-image: url(@img/decoration.svg);
       mask-position: center;
