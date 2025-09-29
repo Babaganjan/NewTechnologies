@@ -12,7 +12,7 @@
 
 .about__title {
     @include m.bracket-decor(vars.$color-dark-grey);
-    @include m.typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
+    @include m.typography(vars.$color-dark-grey, 700, m.fluid(14px, 22px), 120%);
     letter-spacing: -0.053em;
 }
 
@@ -20,13 +20,8 @@
     span {
         color: vars.$color-black;
     }
-    @include m.typography(vars.$color-light-grey, 500, 1.93rem, 100%);
+    @include m.typography(vars.$color-light-grey, 500, m.fluid(31px, 68px), 100%);
     letter-spacing: -0.136rem;
-}
-
-.about__content {
-  flex-direction: column;
-  gap: 0.94rem;
 }
 
 .about__images {
@@ -45,72 +40,26 @@
 
 // Декоративные элементы для .image__wrapper 
 .image__wrapper {
+  @include m.item-decor();
   position: relative;
   display: inline-block;
-  
-  // Правый верхний угол (на wrapper)
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 1.5rem;
-    height: 1.5rem;
-    background-image: url(@img/kvadrat.png);
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-    z-index: 3;
-  }
-  
-  // Левый верхний угол (на wrapper)
-  &::before {
-    content: "";
-    position: absolute;
-    top: 3px;
-    left: 3px;
-    width: 0.75rem;
-    height: 0.75rem;
-    background-color: vars.$graphics-almost-black;
-    mask-image: url(@img/decoration.svg);
-    mask-repeat: no-repeat;
-    mask-size: contain;
-    mask-position: center;
-    z-index: 3;
-  }
+
 }
 
-// Дополнительные декоративные элементы через дополнительные span
-.decor-bottom-right {
-  position: absolute;
-  bottom: 3px;
-  right: 3px;
-  width: 0.75rem;
-  height: 0.75rem;
-  background-color: vars.$graphics-almost-black;
-  mask-image: url(@img/decoration.svg);
-  mask-repeat: no-repeat;
-  mask-size: contain;
-  mask-position: center;
-  transform: rotate(180deg);
-  z-index: 3;
-}
-
-.image__wrapper img {
-  display: block;
-  width: 100%;
-  height: auto;
-  position: relative;
+.image__wrapper span {
+  @include m.decoration(vars.$color-white, 1.5rem);
 }
 
 .about__desc {
-    @include m.typography(vars.$color-dark-grey, 500, 1.25rem, 115%);
+    @include m.typography(vars.$color-dark-grey, 500, m.fluid(20px, 28px), 115%);
     letter-spacing: -1.2px;
     font-family: vars.$second-family;
 }
 
 .about__btn {
-    @include m.typography(vars.$color-black, 700, 1rem);
+    @include m.typography(vars.$color-black, 700, m.fluid(18px, 26px));
+    width: 100%;
+    align-self: center;
     position: relative;
     letter-spacing: -0.96px;
     margin-top: 1.25rem;
@@ -118,11 +67,98 @@
         content: "";
         position: absolute;
         top: 0;
-        left: -6.813rem;
+        left: -5.813rem;
         width: 100%;
         height: 100%;
-        background-image: url(../../public/arrow-btn.svg);
+        background-image: url(../../assets/img/arrow-black.svg);
         background-repeat: no-repeat;
         background-position: right;
     }
+}
+
+
+
+// Декстоп
+
+
+.about {
+    padding-block: 6.31rem 6.5rem;
+}
+
+.about__container {
+    flex-direction: column;
+    gap: 0.625rem;
+    
+    @include m.respond-min(1024px) {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        grid-template-areas: 
+            "title title title title title"
+            ". desc desc desc ."
+            "images images images images images"
+            "images images images images images";
+        gap: 2rem;
+        align-items: start;
+        // Сбрасываем flex-стили
+        flex-direction: unset;
+        gap: unset;
+    }
+}
+
+.about__subtitle {
+  @include m.respond-min(1024px) {
+    grid-column-start: 2;
+    grid-column-end: 5;
+    letter-spacing: -4.47px;
+  }
+  
+}
+
+.about__images {
+  @include m.respond-min(1024px) {
+    grid-area: images;
+    grid-column-start: 2;
+    grid-column-end: 5;
+    letter-spacing: -4.47px;
+  }
+  
+}
+
+.about__text-wrapper {
+    @include m.respond-min(1024px) {
+        // Сбрасываем flex-стили
+        display: flex;
+        grid-area: desc;
+        flex-direction: column;
+        gap: unset;
+    }
+}
+
+.about__prevs-wrapper {
+  @include m.respond-min(1024px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 11px;
+  }
+}
+
+.about__desc {
+  @include m.respond-min(1024px) {
+    letter-spacing: -1.68px;
+  }
+}
+
+.about__desc:first-child {
+  @include m.respond-min(1024px) {
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+}
+
+.about__desc:last-child {
+  @include m.respond-min(1024px) {
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  
 }

@@ -7,7 +7,7 @@
   min-height: 49.688rem;
   color: white;
   padding-top: 2.625rem;
-  @include m.line-decor(6px 56% calc(100% - 12px));
+  @include m.line-decor(2% 50% 98%);
   
   .footer__container {
 	display: grid;

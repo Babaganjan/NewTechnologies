@@ -24,8 +24,8 @@
 		position: absolute;
 		width: 32px;
 		height: 32px;
-		top: 0;
-		right: 0;
+		top: -1px;
+		right: -1px;
 		z-index: 3;
 		mask: url("@img/kvadrat.png") no-repeat center/contain;
 		background-color: vars.$color-white;

@@ -25,7 +25,7 @@
 
     &__title {
       @include m.bracket-decor();
-      @include m.typography(vars.$color-light-grey, 700, 0.875rem);
+      @include m.typography(vars.$color-light-grey, 700, m.fluid(14px, 22px));
       letter-spacing: -0.053em;
     }
     &__list {
@@ -36,13 +36,24 @@
   .item {
     padding-bottom: 0.75rem;
     border-bottom: 1px solid vars.$graphics-almost-black;
+    &__btn {
+       width: 25px;
+       height: 20px;
+    }
+
+    &__btn img {
+        filter: brightness(0) invert(1);
+        transform: rotate(90deg);
+        width: 25px;
+        height: 20px;
+    } 
     
     &__inner {
         position: relative;
         justify-content: space-between;
         padding: 1.25rem 0 1.25rem 1.25rem;
         &::before {
-        @include m.typography(vars.$color-grey, 500, 0.625rem, 40%);
+        @include m.typography(vars.$color-grey, 500, m.fluid(10px, 22px), 40%);
         counter-increment: card;
         content: "["counter(card)"]";
         position: absolute;
@@ -53,7 +64,7 @@
     }
 
     &__subtitle {
-        @include m.typography(vars.$color-white, 500, 1.938rem, 100%); 
+        @include m.typography(vars.$color-white, 500, m.fluid(31px, 68px), 100%); 
         letter-spacing: -2.17px;
     }
   }
