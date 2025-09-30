@@ -91,7 +91,6 @@
       @include m.decoration(vars.$graphics-black, 24px);
     }
     position: relative;
-    min-height: 8.125rem;
     background-color: vars.$color-white;
     padding: 0.938rem;
   }
@@ -103,6 +102,7 @@
       $before-position: (top: -13px, left: -12px),
       $after-position: (bottom: -13px, right: -12px)
     );
+    min-height: 8.125rem;
     position: relative;
     flex-direction: column;
     gap: 0.5rem;
@@ -121,7 +121,7 @@
   }
 
   &__prev {
-    @include m.typography(vars.$color-dark-grey, 500, m.fluid(14px, 22px), 110%);
+    @include m.typography(vars.$color-dark-grey, 500, m.fluid(14px, 22px), 110%, none);
     font-family: vars.$second-family;
     letter-spacing: -0.053rem;
   }
@@ -134,3 +134,106 @@
 }
 
   
+// deckstop
+@include m.respond-min(1024px) {
+  .result {
+    &.with-top-trapezoid {
+      @include m.trapezoid-decor(63px, 33px, black, top, 1026px, -32px);
+    }
+
+    &.with-bottom-trapezoid {
+      @include m.trapezoid-decor(63px, 33px, black, bottom, 1026px, -32px);
+    }
+    &__item {
+      &::before {
+        content: "";
+        @include m.decoration(vars.$graphics-black, 40px);
+        padding: 20px;
+      }
+      &:nth-child(2) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+      }
+      &:nth-child(3) {
+        grid-column: 4 / 5;
+        grid-row: 2 / 3;
+      }
+      &:nth-child(4) {
+        grid-column: 4 / 4;
+        grid-row: 1 / 2;
+      }
+      &:nth-child(5) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+      }
+    }
+    .item {
+      &__inner {
+        @include m.item-decor(
+        vars.$graphics-black, 
+        $before-position: (top: -13px, left: -12px),
+        $after-position: (bottom: -13px, right: -12px),
+        $size: (width: 20px, height: 20px),
+        $after-size: (width: 20px, height: 20px),
+        );
+        min-height: 408px;
+        justify-content: space-between;
+        &:not(:has(.item__prev)) {
+          flex-direction: column;
+          align-items: unset;
+          gap: 0.938rem;
+        }
+      }
+      &__inner-layout {
+        display: grid;
+        grid-template-columns: 1.6fr 1fr;
+      }
+      &__number-layout {
+        align-self: flex-end;
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      &__title {
+        letter-spacing: -2.52px;
+      }
+      &__title-width {
+        width: 91%;
+      }
+      &__title-layout {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      &__prev {
+        letter-spacing: -1.1px;
+      }
+      &__prev-layout {
+        text-align: end;
+        align-self: flex-end;
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+    } 
+    &__container {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+    &__inner {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    } 
+    &__list {
+      grid-column: 1 / 5;
+      grid-row: 1 / 3;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+    &__content {
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+  }
+}
