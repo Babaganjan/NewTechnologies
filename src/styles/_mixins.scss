@@ -79,6 +79,7 @@
 
 @mixin bracket-decor($color: #FFF, $pos: (top: -2px, left:-10px)) {
   @include typography($color, 700, 0.875rem, 120%);
+  padding-inline: fluid(10px, 22px);
   &::after {
 	content: "[";
 	position: absolute;

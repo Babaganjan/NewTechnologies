@@ -14,7 +14,6 @@
 	position: relative;
 	margin-bottom: 10px;
 	@include m.bracket-decor(#4d4d4d, (top: -1px, left: 0));
-	padding-inline: 10px;
   }
   .products-subtitle {
 	@include m.typography(vars.$color-black, 500, 31px, 100%);
