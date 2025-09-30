@@ -58,16 +58,16 @@
     $before-position: (top: -7px, left: -18px),
     $after-position: (bottom: -7px, right: -7px)
     );
-    height: 5rem;
+    height: 80px;
     position: relative;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 6px;
     background-image: url(@img/zavod.svg);
     background-repeat: no-repeat;
     background-position: top right;
   }
   &__title {
-    @include m.typography(vars.$bg-black, 600, m.fluid(14px, 22px), 100%);
+    @include m.typography(vars.$bg-black, 600, m.fluid(22px,42px), 100%);
     letter-spacing: -0.083rem;
     &::before {
         @include m.typography(vars.$color-grey, 500, m.fluid(10px, 22px), 40%);
@@ -78,16 +78,70 @@
         left: -13px;
         letter-spacing: -0.031rem;
     }
-
-    &:first-child {
-        width: 80%;
-    }
   }
 
   &__prev {
-    @include m.typography(vars.$color-dark-grey, 500, m.fluid(14px, 22px), 110%);
+    @include m.typography(vars.$color-dark-grey, 500, m.fluid(14px, 22px), 110%, none);
     font-family: vars.$second-family;
     letter-spacing: -0.053rem;
   }
 }
+}
+
+// deckstop
+@include m.respond-min(1024px) {
+  .object-levels {
+    &__container {
+      @include m.line-decor(2% 26.3% 50% 73.7% 98%, vars.$graphics-light-grey);
+    }
+    &__inner {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+    }
+    &__title {
+        
+    }
+    &__subtitle {
+      grid-column: 2/4;
+      letter-spacing: -2.52px;
+      color: vars.$color-black;
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-auto-rows: 1fr;
+    }
+    &__item {
+      min-height: 342px;
+      padding: 20px 30px 12px;
+    }
+    .item__inner {
+      min-height: 312px;
+      justify-content: flex-end;
+    }
+    .item-layout--1 {
+      grid-column: 2/3;
+      grid-row: 1/2;
+    }
+    .item-layout--2 {
+      grid-column: 1/2;
+      grid-row: 2/3;
+    }
+    .item-layout--3 {
+      grid-column: 3/4;
+      grid-row: 2/3;
+    }
+    .item-layout--4 {
+      grid-column: 4/5;
+      grid-row: 2/3;
+    }
+    .item-layout--5 {
+      grid-column: 2/3;
+      grid-row: 3/4;
+    }
+    .item-layout--6 {
+      grid-column: 4/5;
+      grid-row: 3/4;
+    }
+  }
 }

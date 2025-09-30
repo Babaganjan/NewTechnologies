@@ -50,8 +50,13 @@
   @include m.decoration(vars.$color-white, 1.5rem);
 }
 
+.about__prevs-wrapper {
+  flex-direction: column;
+  gap: 12px;
+}
+
 .about__desc {
-    @include m.typography(vars.$color-dark-grey, 500, m.fluid(20px, 28px), 115%);
+    @include m.typography(vars.$color-dark-grey, 500, m.fluid(20px, 28px), 115%, none);
     letter-spacing: -1.2px;
     font-family: vars.$second-family;
 }
