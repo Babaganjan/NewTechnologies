@@ -1,5 +1,7 @@
 @use '../variables' as vars;
 @use '../mixins' as m;
+// bottom: -32px; border-bottom: 33px; width: 1026px; border-left/border-right: 63px;
+// ($width: 21px, $height: 13px, $color: #000, $position: top, $size: 198px)
 
 .hero {
     &.with-bottom-trapezoid {
@@ -57,4 +59,12 @@
     letter-spacing: -0.84px;
 }
 
+
+@include m.respond-min(1024px) {
+   .hero {
+     &.with-bottom-trapezoid {
+     @include m.trapezoid-decor(63px, 33px, black, bottom, 1026px, -32px);
+  }
+  } 
+}
 
