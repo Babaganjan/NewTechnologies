@@ -99,3 +99,16 @@
       }
   }
 }
+
+// deckstop
+@include m.respond-min(1024px) {
+  .services {
+    &.with-top-trapezoid {
+      @include m.trapezoid-decor(63px, 33px, black, top, 1026px, -32px);
+    }
+
+    &.with-bottom-trapezoid {
+      @include m.trapezoid-decor(63px, 33px, black, bottom, 1026px, -32px);
+    }
+  }
+}

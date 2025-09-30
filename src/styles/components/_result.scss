@@ -95,7 +95,7 @@
     padding: 0.938rem;
   }
   
-.item {
+  .item {
   &__inner {
     @include m.item-decor(
       vars.$graphics-black, 
@@ -130,7 +130,7 @@
     @include m.typography(vars.$color-black, 700, m.fluid(120px, 178px), 82%);
     letter-spacing: -0.525rem;
   }
-}
+  }
 }
 
   
@@ -166,6 +166,9 @@
         grid-column: 1 / 3;
         grid-row: 2 / 3;
       }
+    }
+    &__container {
+      @include m.line-decor(2% 26.3% 50% 73.7% 98%);
     }
     .item {
       &__inner {
