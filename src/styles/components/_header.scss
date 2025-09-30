@@ -50,3 +50,12 @@
 	box-shadow: 0 0 0 transparent;
   }
 }
+
+// deckstop
+@include m.respond-min(1024px) {
+  .header {
+    &__container {
+      @include m.line-decor(0.5% 25% 50% 75% 99.5%);
+    }
+  }
+}
