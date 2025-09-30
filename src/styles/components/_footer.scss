@@ -30,9 +30,10 @@
 	grid-template-columns: repeat(2, 1fr);
 	grid-template:
           'logo .'
-  'pages .'
+          'pages .'
   'about .'
-  'contact .';
+  'contact .'
+	'copyright .';
   }
   
   .footer__pages {
@@ -68,6 +69,7 @@
   
   .footer__copyright {
 	display: flex;
+	grid-area: copyright;
 	flex-direction: column;
 	margin-top: 90px;
 	gap: 10px;
@@ -168,6 +170,8 @@
 	  display: grid;
 	  grid-template-columns: minmax(200px, 480px) auto;
 	  align-items: end;
+	  padding: 0;
+	  padding-block: 1.875rem;
 	}
   }
 }

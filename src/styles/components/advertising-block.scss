@@ -7,6 +7,10 @@
   min-height: 322px;
   display: flex;
   align-items: center;
+  
+  &__container {
+    padding-inline: 0.625rem;
+  }
 
   &.with-top-trapezoid {
     @include m.trapezoid-decor(21px, 12px, black, top);
@@ -15,25 +19,74 @@
   &.with-bottom-trapezoid {
     @include m.trapezoid-decor(21px, 12px, black, bottom);
   }
-  .advertising__title {
+  
+  &__title {
     position: relative;
     margin-bottom: 10px;
     @include m.bracket-decor(#d0d0d0, (top: -2px, left: 0));
   }
   
-  .advertising__subtitle {
-    @include m.typography(vars.$color-white, 500, 31px, 100%);
+  &__subtitle {
+    @include m.typography(vars.$color-white, 500, m.fluid(31px, 68px), 100%);
     margin-bottom: 20px;
     span {
       color: #171717;
     }
   }
   .swiper-slide {
-    min-height: 96px;
-    background: url("@img/infinity-slider-company.png") no-repeat center #171717;
+    min-height: m.fluid(96px, 166px);
+    min-width: m.fluid(144px, 251px);
+    background-color: #171717;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+      width: m.fluid(100px, 150px);
+      height: m.fluid(50px, 80px);
+    }
+    
     @include m.item-decor(vars.$color-white);
+    &:hover::before {
+      background-color: #565656;
+    }
+    
+    &:hover::after {
+      background-color: #565656;
+    }
+    
+    &:hover {
+      background-color: vars.$graphics-black;
+    }
     .advertising__decoration {
       @include m.decoration(vars.$color-black, 1.5rem, '@img/kvadrat.png', (top: 0, right: 0));
+    }
+  }
+}
+
+@include m.respond-min(1024px) {
+  .advertising {
+    padding-bottom: 60px;
+    padding-top: 100px;
+    .advertising__subtitle-container {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    &__subtitle {
+      .advertising__subtitle--break {
+        display: block;
+      }
+      span {
+        color: vars.$color-white;
+      }
+    }
+    &.with-top-trapezoid {
+      @include m.trapezoid-decor(63px, 33px, black, top, 1026px, -32px);
+    }
+    
+    &.with-bottom-trapezoid {
+      @include m.trapezoid-decor(63px, 33px, black, bottom, 1026px, -32px);
     }
   }
 }
