@@ -7,8 +7,8 @@
   flex-direction: column;
   background-color: vars.$bg-black;
   color: white;
-  padding-top: 2.625rem;
   @include m.line-decor(2% 50% 98%);
+  z-index: 0;
   
   .footer__activity {
 	grid-area: activity;
@@ -16,14 +16,17 @@
 	position: relative;
 	@include m.typography();
   }
+  
   .footer__about-company {
 	grid-area: aboutCompany;
 	padding: 0.625rem;
 	position: relative;
 	@include m.typography();
   }
+  
   .footer__container {
 	display: grid;
+	padding-top: 2.625rem;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template:
           'logo .'
@@ -131,9 +134,11 @@
 
 @include m.respond-min(1024px) {
   .footer {
+	@include m.line-decor(2.4% 26% 49.8% 73.5% 98.6%);
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: auto auto;
+
 	.footer__container {
 	  grid-column: 1 / -1;
 	  grid-template-columns: repeat(4, 1fr);
@@ -160,16 +165,8 @@
 	.footer__copyright {
 	  grid-column: 1 / 3;
 	  display: grid;
-	  grid-template-columns: 1fr auto;
+	  grid-template-columns: minmax(200px, 480px) auto;
 	  align-items: end;
-	  .footer__copyright-text {
-		justify-self: start;
-		align-self: end;
-	  }
-	  a {
-		justify-self: end;
-		align-self: end;
-	  }
 	}
   }
 }
