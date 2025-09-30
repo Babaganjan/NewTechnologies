@@ -7,8 +7,6 @@
   flex-direction: column;
   background-color: vars.$bg-black;
   color: white;
-  @include m.line-decor(2% 50% 98%);
-  z-index: 0;
   
   .footer__activity {
 	grid-area: activity;
@@ -27,6 +25,8 @@
   .footer__container {
 	display: grid;
 	padding-top: 2.625rem;
+	@include m.line-decor(2% 50% 98%);
+	z-index: 0;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template:
           'logo .'
@@ -136,13 +136,13 @@
 
 @include m.respond-min(1024px) {
   .footer {
-	@include m.line-decor(2.4% 26% 49.8% 73.5% 98.6%);
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: auto auto;
 
 	.footer__container {
 	  grid-column: 1 / -1;
+	  @include m.line-decor(0.8% 26% 49.8% 73.5% 98.6%);
 	  margin-top: 30px;
 	  grid-template-columns: repeat(4, 1fr);
 	  grid-template-areas: 'logo activity aboutCompany about'
