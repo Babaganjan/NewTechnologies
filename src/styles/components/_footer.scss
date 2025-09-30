@@ -141,6 +141,7 @@
 
 	.footer__container {
 	  grid-column: 1 / -1;
+	  margin-top: 30px;
 	  grid-template-columns: repeat(4, 1fr);
 	  grid-template-areas: 'logo activity aboutCompany about'
 	}
