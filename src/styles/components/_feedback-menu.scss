@@ -22,13 +22,25 @@
     align-items: center;
   }
   
+  .feedback-menu__button-container {
+    position: relative;
+    @include m.item-decor(vars.$color-white);
+  }
+  
   &__button {
     display: inline-flex;
-    align-self: center;
+    align-items: center;
     background-color: vars.$bg-black;
     padding: 15px 50px;
     @include m.typography(vars.$color-white, 700 , 1.125rem, 120%);
-    @include m.item-decor(vars.$color-white);
+    gap: 10px;
+    
+    &::after {
+      @include m.decoration(vars.$color-white, 15px, "@img/arrow-black.svg");
+      content: '';
+      position: static;
+      transform: rotate(360deg);
+    }
   }
   
   &__title {
