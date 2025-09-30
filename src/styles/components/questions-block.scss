@@ -8,15 +8,12 @@
 	display: grid;
 	grid-template-columns: 1fr;
 	padding: 0.625rem;
-	@include m.typography(vars.$color-black, 500, 1.125rem, 115%);
   }
   
   &__title {
 	position: relative;
-	padding-left: 0.625rem;
 	margin-bottom: 0.625rem;
-	@include m.bracket-decor(vars.$color-black, (top: -2px, left: 0));
-	@include m.typography(vars.$color-dark-grey, 700, 0.875rem, 120%);
+	@include m.bracket-decor(vars.$color-dark-grey, (top: -2px, left: 0));
   }
   
   .card-wrapper {
@@ -26,13 +23,11 @@
   
   &__card {
 	position: relative;
-	background-color: vars.$bg-middl-grey;
 	min-height: 130px;
 	padding: 0.625rem;
-	transition: background-color .2s ease, color .2s ease, opacity 0s ease, transform .2s ease;
-	color: vars.$color-dark-grey;
-	overflow: visible;
-	
+	background-color: vars.$bg-middl-grey;
+	color: vars.$color-black;
+	transition: background-color .2s ease, color .2s ease, transform .2s ease, opacity 0s ease;
 	
 	&:hover {
 	  background-color: vars.$bg-black;
@@ -56,17 +51,8 @@
 	  transition: transform .22s ease;
 	}
 	
-	&-title {
-	  @include m.typography(vars.$color-dark-grey, 500, 1.375rem, 115%);
-	}
-	
-	&-subtitle {
-	  font-family: vars.$second-family;
-	  @include m.typography(vars.$color-dark-grey, 500, 0.875rem, 110%);
-	}
-	
 	&-decorative {
-	  @include m.decoration(vars.$color-white, 1.563rem, '@img/kvadrat.png', (top: 0, right: 0));
+	  @include m.decoration(vars.$color-white, m.fluid(24px, 40px), '@img/kvadrat.png', (top: 0, right: -1px));
 	  opacity: 0;
 	  visibility: hidden;
 	  pointer-events: none;
@@ -75,13 +61,27 @@
 	
 	&--active {
 	  border: 1px solid vars.$color-grey;
+	  background-color: vars.$bg-white;
 	  display: flex;
 	  flex-direction: column;
-	  background-color: vars.$bg-white;
 	  justify-content: center;
+	  text-align: left;
 	  gap: 0.375rem;
 	  border-bottom-right-radius: 2px;
 	  border-top-left-radius: 2px;
+	  cursor: pointer;
+	  
+	  .questions__card-title {
+		@include m.typography(vars.$color-black, 500, m.fluid(18px, 42px), 1);
+		color: inherit;
+	  }
+	  
+	  .questions__card-subtitle {
+		font-family: vars.$second-family;
+		@include m.typography(vars.$color-black, 500, m.fluid(14px, 22px), 1.10, none);
+		font-size: m.fluid(14px, 22px);
+		color: inherit;
+	  }
 	  
 	  .questions__card-arrow--active {
 		@include m.decoration(#565656, 1.563rem, '@img/arrow-black.svg', (bottom: 0, right: 0));
@@ -94,38 +94,79 @@
 	  }
 	  
 	  &:hover .questions__card-arrow--active {
+		background-color: white;
 		transform: rotate(180deg);
 	  }
-	  
 	  
 	  &::before {
 		content: "";
-		@include m.decoration(#565656, 1.563rem, '@img/decoration.svg', (top: -1px, left: -1px));
+        @include m.decoration(#565656, m.fluid(36px, 60px), '@img/decoration-card.svg', (top: -1px, left: -1px));
 		margin: 0;
-		transform: none;
-		background-color: currentColor;
-	  }
-	  
-	  &::after {
-		content: "";
-		@include m.decoration(#565656, 1.563rem, '@img/decoration.svg', (bottom: -1px, right: -1px));
 		background-color: currentColor;
 		transform: rotate(180deg);
+	  }
+	  &::after {
+		content: "";
+		@include m.decoration(#565656, m.fluid(36px, 60px), '@img/decoration-card.svg', (bottom: -1px, right: -1px));
+		background-color: currentColor;
 	  }
 	}
 	
 	.questions__content {
 	  position: relative;
+	  @include m.typography(vars.$color-black, 500, m.fluid(18px, 28px), 1.15);
+	  color: inherit;
+	  transition: color .2s ease;
+	  
 	  &::after {
 		content: '';
-		@include m.decoration(#565656, 0.75rem, '@img/decoration.svg', (top: -6px, left: -7px));
+		@include m.decoration(#565656, m.fluid(12px, 20px), '@img/decoration.svg', (top: -6px, left: -7px));
 	  }
 	}
   }
+  
+  .questions__card:hover .questions__content::after {
+	background-color: white;
+  }
+  
+  @include m.respond-min(1024px) {
+	&__card {
+	  min-height: m.fluid(240px, 400px);
+	  max-width: m.fluid(240px, 400px);
+	  
+	  &-decorative {
+		bottom: 0;
+		left: 0;
+		top: inherit;
+		transform: rotate(180deg);
+	  }
+	}
+	
+	.card-wrapper {
+	  grid-template-columns: repeat(5, minmax(240px, 400px));
+	  grid-template-areas:
+        'a . b c .'
+        'd e f g .'
+        '. h . q .';
+	}
+	
+	.card--a { grid-area: a; }
+	.card--b { grid-area: b; }
+	.card--c { grid-area: c; }
+	.card--d { grid-area: d; }
+	.card--e { grid-area: e; }
+	.card--f { grid-area: f; }
+	.card--g { grid-area: g; }
+	.card--h { grid-area: h; }
+	.questions__card--active { grid-area: q; }
+  }
+  
+  @include m.respond-min(1250px) {
+	.card-wrapper {
+	  grid-template-areas:
+        'a . b c .'
+        'd e f . g'
+        '. h . q .';
+	}
+  }
 }
-.questions__card:hover .questions__content::after {
-  background-color: white;
-}
-
-
-
