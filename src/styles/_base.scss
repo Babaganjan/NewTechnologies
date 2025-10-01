@@ -1,6 +1,10 @@
 @use 'variables' as vars;
 @use 'mixins' as m;
 
+* {
+  outline: 1px solid red;
+}
+
 @font-face {
   font-family: "Oswald";
   src: local("Oswald-Light"),
@@ -95,15 +99,15 @@ body {
 
 .container {
   width: 100%;
-  max-width: clamp(360px, 100vw - 20px, 1920px);
+  max-width: clamp(360px, 100vw - 20px, 1860px);
   margin-inline: auto;
-  padding-inline: clamp(10px, 2vw, 50px);
+  padding-inline: clamp(10px, 2vw, 20px);
 }
 
 @media (min-width: 1860px) {
   .container {
     max-width: 1860px;
-    padding-inline: 20px;
+    // padding-inline: 20px;
   }
 }
 

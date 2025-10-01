@@ -92,32 +92,50 @@
 @include m.respond-min(1024px) {
   .object-levels {
     &__container {
-      @include m.line-decor(2% 26.3% 50% 73.7% 98%, vars.$graphics-light-grey);
+      @include m.line-decor(1% 25.4% 50% 74.6% 99%, vars.$graphics-light-grey);
     }
     &__inner {
       display: grid;
       grid-template-columns: repeat(4,1fr);
     }
     &__title {
-        
+        letter-spacing: -1.32px;
     }
     &__subtitle {
       grid-column: 2/4;
-      letter-spacing: -2.52px;
+      letter-spacing: -4.76px;
       color: vars.$color-black;
     }
     &__list {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-auto-rows: 1fr;
+      gap: 11px;
     }
     &__item {
       min-height: 342px;
       padding: 20px 30px 12px;
     }
-    .item__inner {
-      min-height: 312px;
-      justify-content: flex-end;
+    .item {
+      &__inner {
+        @include m.item-decor(
+        vars.$graphics-dark-grey,
+        $before-position: (top: -14px, left: -25px),
+        $after-position: (bottom: -5px, right: -25px),
+        $size: (width: 20px, height: 20px)
+        );
+        min-height: 312px;
+        justify-content: flex-end;
+      }
+      &__title {
+        position: relative;
+        letter-spacing: -2.52px;
+        &::before {
+          top: 0;
+          left: -25px;
+          letter-spacing: -1.1px;
+        }
+      }
     }
     .item-layout--1 {
       grid-column: 2/3;

@@ -82,11 +82,11 @@
       }
     }
     &.with-top-trapezoid {
-      @include m.trapezoid-decor(63px, 33px, black, top, 1026px, -32px);
+      @include m.trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
     }
     
     &.with-bottom-trapezoid {
-      @include m.trapezoid-decor(63px, 33px, black, bottom, 1026px, -32px);
+      @include m.trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
     }
   }
 }

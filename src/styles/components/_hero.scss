@@ -63,10 +63,10 @@
 @include m.respond-min(1024px) {
    .hero {
      &.with-bottom-trapezoid {
-     @include m.trapezoid-decor(63px, 33px, black, bottom, 1026px, -32px);
+     @include m.trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
      }
      &__container {
-        @include m.line-decor(0.5% 25% 50% 75% 99.5%);
+        @include m.line-decor(1% 25.4% 50% 74.6% 99%);
      }
   } 
 }
