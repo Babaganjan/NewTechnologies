@@ -80,7 +80,11 @@
 // ===== IMAGE WRAPPERS (MOBILE) =====
 .image__wrapper {
   @include m.item-decor();
-  display: inline-block;
+  display: inline-flex;
+  picture {
+    display: inline-flex;
+  }
+  
   
   span {
     @include m.decoration(vars.$color-white, 1.5rem);
@@ -168,8 +172,8 @@
   %desktop-image-decoration {
     @include m.item-decor(
                     vars.$graphics-almost-black,
-            $before-position: (top: 0, left: 0),
-            $after-position: (bottom: 0, right: 0),
+            $before-position: (top: 5px, left: 5px),
+            $after-position: (bottom: 5px, right: 5px),
             $size: (width: 20px, height: 20px)
     );
     
