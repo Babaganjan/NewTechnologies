@@ -33,52 +33,59 @@
   @each $k, $v in $pos { #{$k}: $v; }
 }
 
-@mixin respond-min($breakpoint) {
-  @media (min-width: $breakpoint) {
-	@content;
+@mixin respond-min($breakpoint, $type: min) {
+  @if $type == min {
+	@media (min-width: $breakpoint) { @content; }
+  } @else if $type == max {
+	@media (max-width: $breakpoint - 1px) { @content; }
+  } @else if $type == between {
+	@media (min-width: nth($breakpoint, 1)) and (max-width: nth($breakpoint, 2)) {
+	  @content;
+	}
   }
 }
 // bottom: -32px; border-bottom: 33px; width: 1026px; border-left/border-right: 63px;
-@mixin trapezoid-decor($width: 21px, $height: 13px, $color: #000, $position: top, $size: 198px, $shift: -11px) {
+@mixin trapezoid-decor(
+  $width: 21px,
+  $height: 13px,
+  $color: #000,
+  $position: both,
+  $size: 198px,
+  $shift: -11px
+) {
   position: relative;
-
-  &::before {
-    content: ""; // Верхняя трапеция
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) rotate(180deg);
-    width: $size;
-    // height: 0;
-    border-left: $width solid transparent;
-    border-right: $width solid transparent;
-
-    @if $position == top {
-      top: $shift; // Положение сверху
-      border-top: $height solid $color; // Верхняя граница
-      border-bottom: none; // Убираем нижнюю границу
-    }
+  
+  @if $position == top or $position == both {
+	&::before {
+	  content: "";
+	  position: absolute;
+	  left: 50%;
+	  transform: translateX(-50%) rotate(180deg);
+	  width: $size;
+	  border-left: $width solid transparent;
+	  border-right: $width solid transparent;
+	  top: $shift;
+	  border-top: $height solid $color;
+	}
   }
-
-  &::after {
-    content: ""; // Нижняя трапеция
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%) rotate(180deg);
-    width: $size;
-    // height: 0;
-    border-left: $width solid transparent;
-    border-right: $width solid transparent;
-
-    @if $position == bottom {
-      bottom: $shift; // Позиционирование снизу
-      border-top: none; // Убираем верхнюю границу
-      border-bottom: $height solid $color; // Нижняя граница
-    }
+  
+  @if $position == bottom or $position == both {
+	&::after {
+	  content: "";
+	  position: absolute;
+	  left: 50%;
+	  transform: translateX(-50%) rotate(180deg);
+	  width: $size;
+	  border-left: $width solid transparent;
+	  border-right: $width solid transparent;
+	  bottom: $shift;
+	  border-bottom: $height solid $color;
+	}
   }
 }
 
 @mixin bracket-decor($color: #FFF, $pos: (top: -2px, left:-10px)) {
-  @include typography($color, 700, 0.875rem, 120%);
+  @include typography($color, 700, fluid(14px, 22px), 120%);
   padding-inline: fluid(10px, 22px);
   &::after {
 	content: "[";
@@ -102,17 +109,19 @@
 	pointer-events: none;
 	background-repeat: no-repeat;
 	
-	$grads_str: '';
+	$gradients: ();
 	@each $pos in $positions {
 	  $half: calc($thickness / 2);
-	  $g: linear-gradient(#{$angle}, transparent calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} - #{$half}), #{$color} calc(#{$pos} + #{$half}), transparent calc(#{$pos} + #{$half}));
-	  @if $grads_str == '' {
-		$grads_str: $g;
-	  } @else {
-		$grads_str: #{$grads_str}, #{$g};
-	  }
+	  $gradient: linear-gradient(
+					  $angle,
+					  transparent calc(#{$pos} - #{$half}),
+					  $color calc(#{$pos} - #{$half}),
+					  $color calc(#{$pos} + #{$half}),
+					  transparent calc(#{$pos} + #{$half})
+	  );
+	  $gradients: append($gradients, $gradient, comma);
 	}
-	background-image: #{$grads_str};
+	background-image: $gradients;
   }
 }
 
@@ -121,34 +130,28 @@
   $before-position: (top: 3px, left: 3px),
   $after-position: (bottom: 3px, right: 3px),
   $size: (width: 12px, height: 12px),
-  $after-size: (width: 12px, height: 12px),
 ) {
   position: relative;
   
-    &::after {
-      content: "";
-      position: absolute;
-      @each $k, $v in $after-position { #{$k}: $v; }
-      @each $b, $c in $size { #{$b}: $c; }
-      background-color: $color;
-      mask-image: url(@img/decoration.svg);
-      mask-position: center;
-      mask-size: contain;
-      mask-repeat: no-repeat;
-      z-index: 3;
-      transform: rotate(180deg);
+  &::before,
+  &::after {
+	content: "";
+	position: absolute;
+	@each $b, $c in $size { #{$b}: $c; }
+	background-color: $color;
+	mask-image: url(@img/decoration.svg);
+	mask-position: center;
+	mask-size: contain;
+	mask-repeat: no-repeat;
+	z-index: 3;
   }
   
-    &::before {
-      content: "";
-      position: absolute;
-      @each $k, $v in $before-position { #{$k}: $v; }
-	    @each $b, $c in $size { #{$b}: $c; }
-      background-color: $color;
-      mask-image: url(@img/decoration.svg);
-      mask-position: center;
-      mask-size: contain;
-      mask-repeat: no-repeat;
-      z-index: 3;
-    }
+  &::before {
+	@each $k, $v in $before-position { #{$k}: $v; }
+  }
+  
+  &::after {
+	@each $k, $v in $after-position { #{$k}: $v; }
+	transform: rotate(180deg);
+  }
 }

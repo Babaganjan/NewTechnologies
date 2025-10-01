@@ -2,9 +2,9 @@
 @use '../variables' as vars;
 
 .questions {
+  // ===== LAYOUT =====
   &__container {
-	margin-top: 6.875rem;
-	margin-bottom: 6.25rem;
+	margin-block: 6.875rem 6.25rem; // ✅ Логическое свойство
 	display: grid;
 	grid-template-columns: 1fr;
 	padding: 0.625rem;
@@ -21,14 +21,39 @@
 	gap: 0.5rem;
   }
   
+  // ===== CARD BASE =====
   &__card {
+	// Layout
 	position: relative;
+	display: flex; // ✅ Добавлено для консистентности
+	flex-direction: column;
 	min-height: 130px;
 	padding: 0.625rem;
+	
+	// Styling
 	background-color: vars.$bg-middl-grey;
 	color: vars.$color-black;
-	transition: background-color .2s ease, color .2s ease, transform .2s ease, opacity 0s ease;
 	
+	// Transitions
+	transition:
+			background-color .2s ease,
+			color .2s ease;
+	
+	// ✅ Общий псевдоэлемент для стрелки
+	&::before {
+	  content: '';
+	  position: absolute;
+	  bottom: 0;
+	  right: 0;
+	  margin: 10px;
+	  width: 1.563rem;
+	  height: 1.563rem;
+	  background-color: currentColor;
+	  mask: url('@img/arrow-black.svg') center / contain no-repeat;
+	  transition: transform .22s ease;
+	}
+	
+	// Hover states
 	&:hover {
 	  background-color: vars.$bg-black;
 	  color: white;
@@ -37,109 +62,138 @@
 		opacity: 1;
 		visibility: visible;
 	  }
+	  
+	  .questions__content::after {
+		background-color: white;
+	  }
 	}
 	
-	&:not(.questions__card--active):hover::before {
+	&:not(&--active):hover::before {
+	  transform: rotate(180deg);
+	}
+  }
+  
+  // ===== CARD CONTENT =====
+  &__content {
+	position: relative;
+	@include m.typography(vars.$color-black, 500, m.fluid(18px, 28px), 1.15);
+	color: inherit;
+	transition: color .2s ease;
+	
+	&::after {
+	  content: '';
+	  position: absolute;
+	  top: -6px;
+	  left: -7px;
+	  width: m.fluid(12px, 20px);
+	  height: m.fluid(12px, 20px);
+	  background-color: #565656;
+	  mask: url('@img/decoration.svg') center / contain no-repeat;
+	}
+  }
+  
+  // ===== DECORATIVE ELEMENT =====
+  &__card-decorative {
+	position: absolute;
+	top: 0;
+	right: -1px;
+	width: m.fluid(24px, 40px);
+	height: m.fluid(24px, 40px);
+	background-color: vars.$color-white;
+	mask: url('@img/kvadrat.png') center / contain no-repeat;
+	opacity: 0;
+	visibility: hidden;
+	pointer-events: none;
+	transition:
+			opacity .22s ease,
+			visibility .22s ease;
+  }
+  
+  // ===== ACTIVE CARD =====
+  &__card--active {
+	// ✅ Переопределяем базовые стили
+	justify-content: center;
+	gap: 0.375rem;
+	padding: 0.625rem;
+	
+	// Styling
+	background-color: vars.$bg-white;
+	border: 1px solid vars.$color-grey;
+	border-radius: 2px 0 2px 0;
+	text-align: left;
+	cursor: pointer;
+	
+	// Переопределяем псевдоэлементы
+	&::before {
+	  top: -1px;
+	  left: -1px;
+	  bottom: auto;
+	  right: auto;
+	  margin: 0;
+	  width: m.fluid(36px, 60px);
+	  height: m.fluid(36px, 60px);
+	  mask-image: url('@img/decoration-card.svg');
 	  transform: rotate(180deg);
 	}
 	
-	&::before {
-	  content: '';
-	  @include m.decoration(#565656, 1.563rem, '@img/arrow-black.svg', (bottom: 0, right: 0));
-	  margin: 10px;
+	&::after {
+	  content: "";
+	  position: absolute;
+	  bottom: -1px;
+	  right: -1px;
+	  width: m.fluid(36px, 60px);
+	  height: m.fluid(36px, 60px);
 	  background-color: currentColor;
-	  transition: transform .22s ease;
+	  mask: url('@img/decoration-card.svg') center / contain no-repeat;
 	}
 	
-	&-decorative {
-	  @include m.decoration(vars.$color-white, m.fluid(24px, 40px), '@img/kvadrat.png', (top: 0, right: -1px));
-	  opacity: 0;
-	  visibility: hidden;
-	  pointer-events: none;
-	  transition: opacity .22s ease, visibility .22s ease;
+	// Hover effect for active card
+	&:hover .questions__card-arrow--active {
+	  background-color: white;
+	  transform: rotate(180deg);
 	}
-	
-	&--active {
-	  border: 1px solid vars.$color-grey;
-	  background-color: vars.$bg-white;
-	  display: flex;
-	  flex-direction: column;
-	  justify-content: center;
-	  text-align: left;
-	  gap: 0.375rem;
-	  border-bottom-right-radius: 2px;
-	  border-top-left-radius: 2px;
-	  cursor: pointer;
-	  
-	  .questions__card-title {
-		@include m.typography(vars.$color-black, 500, m.fluid(18px, 42px), 1);
-		color: inherit;
-	  }
-	  
-	  .questions__card-subtitle {
-		font-family: vars.$second-family;
-		@include m.typography(vars.$color-black, 500, m.fluid(14px, 22px), 1.10, none);
-		font-size: m.fluid(14px, 22px);
-		color: inherit;
-	  }
-	  
-	  .questions__card-arrow--active {
-		@include m.decoration(#565656, 1.563rem, '@img/arrow-black.svg', (bottom: 0, right: 0));
-		margin: 0.625rem;
-		bottom: 0;
-		right: 0;
-		background-color: currentColor;
-		transition: transform .22s ease;
-		transform: none;
-	  }
-	  
-	  &:hover .questions__card-arrow--active {
-		background-color: white;
-		transform: rotate(180deg);
-	  }
-	  
-	  &::before {
-		content: "";
-        @include m.decoration(#565656, m.fluid(36px, 60px), '@img/decoration-card.svg', (top: -1px, left: -1px));
-		margin: 0;
-		background-color: currentColor;
-		transform: rotate(180deg);
-	  }
-	  &::after {
-		content: "";
-		@include m.decoration(#565656, m.fluid(36px, 60px), '@img/decoration-card.svg', (bottom: -1px, right: -1px));
-		background-color: currentColor;
-	  }
-	}
-	
-	.questions__content {
-	  position: relative;
-	  @include m.typography(vars.$color-black, 500, m.fluid(18px, 28px), 1.15);
+  }
+  
+  &__card-title {
+	.questions__card--active & {
+	  @include m.typography(vars.$color-black, 500, m.fluid(18px, 42px), 1);
 	  color: inherit;
-	  transition: color .2s ease;
-	  
-	  &::after {
-		content: '';
-		@include m.decoration(#565656, m.fluid(12px, 20px), '@img/decoration.svg', (top: -6px, left: -7px));
-	  }
 	}
   }
   
-  .questions__card:hover .questions__content::after {
-	background-color: white;
+  &__card-subtitle {
+	.questions__card--active & {
+	  font-family: vars.$second-family;
+	  @include m.typography(vars.$color-black, 500, m.fluid(14px, 22px), 1.10, none);
+	}
   }
   
+  &__card-arrow--active {
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	margin: 0.625rem;
+	width: 1.563rem;
+	height: 1.563rem;
+	background-color: currentColor;
+	mask: url('@img/arrow-black.svg') center / contain no-repeat;
+	transition: transform .22s ease;
+  }
+  
+  // ===== RESPONSIVE =====
   @include m.respond-min(1024px) {
 	&__card {
-	  min-height: m.fluid(240px, 400px);
-	  max-width: m.fluid(240px, 400px);
-	  
-	  &-decorative {
-		bottom: 0;
-		left: 0;
-		top: inherit;
-		transform: rotate(180deg);
-	  }
+	  $card-size: m.fluid(240px, 400px);
+	  min-height: $card-size;
+	  max-width: $card-size;
+	}
+	
+	&__card-decorative {
+	  top: auto;
+	  right: auto;
+	  bottom: 0;
+	  left: 0;
+	  transform: rotate(180deg);
 	}
 	
 	.card-wrapper {
@@ -150,15 +204,11 @@
         '. h . q .';
 	}
 	
-	.card--a { grid-area: a; }
-	.card--b { grid-area: b; }
-	.card--c { grid-area: c; }
-	.card--d { grid-area: d; }
-	.card--e { grid-area: e; }
-	.card--f { grid-area: f; }
-	.card--g { grid-area: g; }
-	.card--h { grid-area: h; }
-	.questions__card--active { grid-area: q; }
+	// ✅ Grid areas через цикл (опционально)
+	@each $letter in (a, b, c, d, e, f, g, h) {
+	  .card--#{$letter} { grid-area: $letter; }
+	}
+	&__card--active { grid-area: q; }
   }
   
   @include m.respond-min(1250px) {
