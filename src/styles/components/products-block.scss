@@ -44,7 +44,7 @@
 		right: -0.875rem;
 		letter-spacing: -0.05em;
 	  }
-	  h4 {
+	  h5 {
 		@include m.typography(vars.$color-black, 500, 18px, 115%);
 	  }
 	}
