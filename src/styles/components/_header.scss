@@ -1,7 +1,7 @@
 @use '../mixins' as m;
 @use '../variables' as vars;
 
-.hidden {
+.hidden, .hidden__phone {
   display: none;
 }
 
@@ -65,7 +65,7 @@
       align-items: center;
       justify-content: space-between;
     }
-    .hidden {
+    .hidden, .hidden__phone {
       display: block;
     }
     .nav {
