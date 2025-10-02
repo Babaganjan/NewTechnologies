@@ -49,9 +49,9 @@
 	  }
 	}
 	
-	&:nth-child(5) {
+	&:last-child {
 	  justify-self: center;
-      grid-column: 1 / -1;
+    grid-column: 1 / -1;
 	}
   }
   
@@ -66,5 +66,35 @@
 	  height: auto;
 	  object-fit: contain;
 	}
+  }
+}
+
+// deckstop
+@include m.respond-min(1024px) {
+  .products {
+		&__container {
+			display: flex;
+			flex-direction: column;
+			gap: 40px;
+		}
+		.products-subtitle {
+			width: 64%;
+			font-size: 68px;
+			letter-spacing: -4.76px;
+		}
+		&__wrapper-text {
+			display: flex;
+			gap: 250px;
+		}
+		&__list {
+			grid-template-columns: repeat(4,1fr);
+		}
+		&__item {
+			width: 455px;
+			min-height: 455px;
+			&:last-child {
+				justify-self: unset;
+			}
+		}
   }
 }

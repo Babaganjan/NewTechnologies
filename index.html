@@ -42,14 +42,16 @@
             <img src="src/assets/img/logo.svg" alt="Логотип" class="header__logo" />
           </a>
         </div>
-        <div class="custom-select">
-          <select name="city" class="header__city">
-            <option value="almaty">Алматы</option>
-            <option value="karaganda">Караганда</option>
-            <option value="shymkent">Шымкент</option>
-          </select>
+        <div class="header__wrapper-contacts flex">
+          <div class="custom-select">
+            <select name="city" class="header__city">
+              <option value="almaty">Алматы</option>
+              <option value="karaganda">Караганда</option>
+              <option value="shymkent">Шымкент</option>
+            </select>
+          </div>
+          <a class="header__phone" href="tel:+74951234567">+7 (700) 346 43 71</a>
         </div>
-        <a class="header__phone" href="tel:+74951234567">+7 (700) 346 43 71</a>
         <div class="header__burger flex hidden__burger--deckstop">
           <button class="header__btn"></button>
         </div>
@@ -510,11 +512,13 @@
 
       <section class="products" aria-labelledby="products-title">
         <div class="products__container container">
-          <h2 id="products-title" class="products-title">Наша продукция</h2>
-          <p class="products-subtitle">
-            <span>надежное Оборудование,</span> соответствующее строгим
-            <span>отраслевым</span> стандартам
-          </p>
+          <div class="products__wrapper-text">
+            <h2 id="products-title" class="products-title">Наша продукция</h2>
+            <p class="products-subtitle">
+              <span>надежное Оборудование,</span> соответствующее строгим
+              <span>отраслевым</span> стандартам
+            </p>
+          </div>
           <ul class="products__list">
             <li class="products__item">
               <div class="products__img">
