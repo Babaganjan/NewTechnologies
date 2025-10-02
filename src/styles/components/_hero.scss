@@ -30,12 +30,11 @@
     text-align: center;
     letter-spacing: -7px;
     font-family: vars.$second-family;
-    letter-spacing: -7px;
 }
 
 .hero__title {
     @include m.bracket-decor();
-    @include m.typography(vars.$color-light-grey, 700, m.fluid(14px, 22px), 120%);
+    @include m.typography(vars.$color-light-grey, 700, m.fluid(14px, 22px));
     letter-spacing: -0.053em;
 
 }
@@ -67,7 +66,19 @@
      }
      &__container {
         @include m.line-decor(1% 25.4% 50% 74.6% 99%);
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 1fr;
      }
+     &__content {
+        flex-direction: column;
+        gap: 34px;
+        width: 35%;
+    }
+     .heading {
+       grid-column: 1/3;
+       letter-spacing: -21.87px;
+    }
   } 
 }
 

@@ -8,7 +8,7 @@
   @return $return-value;
 }
 
-@mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 1.2, $transform: uppercase) {
+@mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
   font-weight: $weight;
   font-size: $size;
   line-height: $line;
@@ -37,7 +37,7 @@
   @if $type == min {
 	@media (min-width: $breakpoint) { @content; }
   } @else if $type == max {
-	@media (max-width: $breakpoint - 1px) { @content; }
+	@media (max-width: ($breakpoint - 1px)) { @content; }
   } @else if $type == between {
 	@media (min-width: nth($breakpoint, 1)) and (max-width: nth($breakpoint, 2)) {
 	  @content;
