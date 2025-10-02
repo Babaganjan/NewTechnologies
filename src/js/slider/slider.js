@@ -7,9 +7,10 @@ export function swiper() {
     modules: [Autoplay],
     slidesPerView: 4,
     spaceBetween: 8,
+    speed: 11000,
     loop: true,
     autoplay: {
-      delay: 2000,
+      delay: 300,
       disableOnInteraction: false,
       pauseOnMouseEnter: true,
     },
