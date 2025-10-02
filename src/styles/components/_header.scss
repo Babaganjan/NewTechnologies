@@ -56,6 +56,83 @@
   .header {
     &__container {
       @include m.line-decor(1% 25.4% 50% 74.6% 99%);
+      align-items: center;
+      justify-content: space-between;
+      padding-block: 20px;
+    }
+    &__wrapper {
+      width: 56.7%;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .hidden {
+      display: block;
+    }
+    .nav {
+      &__list {
+        gap: 30px;
+      }
+      &__link {
+        @include m.typography(vars.$color-white, 500, 20px);
+        letter-spacing: -1px;
+      }
+    }
+    .hidden__burger--deckstop {
+      display: none;
+    }
+    // &__city {
+    //   @include m.typography(vars.$color-white, 500, 20px);
+    //   letter-spacing: -1px;
+    //   .select__city {
+    //     color: vars.$color-black;
+    //     &:hover {
+    //       background-color: vars.$color-black;
+    //       color: vars.$color-white;
+    //     }
+        
+
+    //   }
+    // }
+.custom-select {
+      position: relative;
+      display: inline-block;
+      width: 76px;
+    &::after {
+      @include m.decoration(
+        $color: vars.$color-grey, 
+        $size: 8px, 
+        $image: '@img/arrow-black.svg', 
+        $pos: (top: 12px, right: 0)
+      );
+      content: "";
+      transform: translateY(-50%);
+      pointer-events: none;
+      transition: transform 0.2s ease;
+      transform: rotate(90deg);
+    }
+}
+
+.header__city {
+  color: vars.$color-white;
+  appearance: none;
+  width: 100%;
+  font-size: 20px;
+  cursor: pointer;
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+/* Стили для выпадающего списка */
+.header__city option {
+  background-color: vars.$bg-white; /* Фон option */
+  color: vars.$color-black; /* Фон option */
+  // padding: 10px;
+}
+
+    &__phone {
+      @include m.typography(vars.$color-white, 500, 20px);
+      letter-spacing: -1px;
     }
   }
 }
