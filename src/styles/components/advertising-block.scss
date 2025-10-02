@@ -34,8 +34,8 @@
     }
   }
   .swiper-slide {
-    min-height: m.fluid(96px, 166px);
-    min-width: m.fluid(144px, 251px);
+    min-height: 96px;
+    min-width: 144px;
     background-color: #171717;
     display: flex;
     justify-content: center;
@@ -61,6 +61,18 @@
     .advertising__decoration {
       @include m.decoration(vars.$color-black, 1.5rem, '@img/kvadrat.png', (top: 0, right: 0));
     }
+  }
+}
+
+.swiper {
+  overflow: hidden;
+  &-wrapper {
+    position: relative;
+  }
+  
+  &-slide {
+    position: absolute;
+    top: 0;
   }
 }
 
