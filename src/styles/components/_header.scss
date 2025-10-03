@@ -87,7 +87,7 @@
       width: 76px;
     &::after {
       @include decoration(
-        $color: var(--color-grey), 
+        $color: var(--text-gray), 
         $size: 8px, 
         $image: '/arrow-black.svg', 
         $pos: (top: 12px, right: 0)
@@ -101,7 +101,7 @@
 }
 
 .header__city {
-  color: var(--color-white);
+  color: var(--text-white);
   appearance: none;
   width: 100%;
   font-size: 20px;
@@ -114,12 +114,12 @@
 /* Стили для выпадающего списка */
 .header__city option {
   background-color: var(--bg-white); /* Фон option */
-  color: var(--color-black); /* Фон option */
+  color: var(--text-black); /* Фон option */
   // padding: 10px;
 }
 
     &__phone {
-      @include typography(var(--color-white), 500, 20px);
+      @include typography(var(--text-white), 500, 20px);
       letter-spacing: -1px;
     }
   }

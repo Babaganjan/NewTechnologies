@@ -1,4 +1,6 @@
-export const services = () => {
+import Image from 'next/image';
+
+export const Services = () => {
   return (
       <section className="services with-top-trapezoid with-bottom-trapezoid">
           <div className="container services__container">
@@ -85,7 +87,7 @@ export const services = () => {
                       <div className="item__inner flex">
                           <h3 className="item__subtitle subtitle">IT-решения</h3>
                           <button className="item__btn">
-                              <img src="src/assets/img/arrow-black.svg" alt="arrow"/>
+                              <Image src="/img/arrow-black.svg" alt="arrow" width={25} height={20} />
                           </button>
                           <div className="swiper mySwiper hidden">
                               <div className="swiper-wrapper">

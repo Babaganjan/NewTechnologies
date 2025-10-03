@@ -1,5 +1,4 @@
 @use '../mixins' as m;
-@use '../variables' as vars;
 
 .questions {
   // ===== LAYOUT =====
@@ -13,7 +12,7 @@
   &__title {
 	position: relative;
 	margin-bottom: 0.625rem;
-	@include m.bracket-decor(vars.$color-dark-grey, (top: -2px, left: 0));
+	@include m.bracket-decor(var(--text-deep-gray), (top: -2px, left: 0));
   }
   
   .card-wrapper {
@@ -31,8 +30,8 @@
 	padding: 0.625rem;
 	
 	// Styling
-	background-color: vars.$bg-middl-grey;
-	color: vars.$color-black;
+	background-color: var(--bg-light-gray);
+	color: var(--text-black);
 	
 	// Transitions
 	transition:
@@ -49,13 +48,13 @@
 	  width: 1.563rem;
 	  height: 1.563rem;
 	  background-color: currentColor;
-	  mask: url('@img/arrow-black.svg') center / contain no-repeat;
+	  mask: url('/img/arrow-black.svg') center / contain no-repeat;
 	  transition: transform .22s ease;
 	}
 	
 	// Hover states
 	&:hover {
-	  background-color: vars.$bg-black;
+	  background-color: var(--bg-black);
 	  color: white;
 	  
 	  .questions__card-decorative {
@@ -76,7 +75,7 @@
   // ===== CARD CONTENT =====
   &__content {
 	position: relative;
-	@include m.typography(vars.$color-black, 500, m.fluid(18px, 28px), 1.15);
+	@include m.typography(var(--text-black), 500, m.fluid(18px, 28px), 1.15);
 	color: inherit;
 	transition: color .2s ease;
 	
@@ -88,7 +87,7 @@
 	  width: m.fluid(12px, 20px);
 	  height: m.fluid(12px, 20px);
 	  background-color: #565656;
-	  mask: url('@img/decoration.svg') center / contain no-repeat;
+	  mask: url('/img/decoration.svg') center / contain no-repeat;
 	}
   }
   
@@ -99,8 +98,8 @@
 	right: -1px;
 	width: m.fluid(24px, 40px);
 	height: m.fluid(24px, 40px);
-	background-color: vars.$color-white;
-	mask: url('@img/kvadrat.png') center / contain no-repeat;
+	background-color: var(--text-white);
+	mask: url('/img/kvadrat.png') center / contain no-repeat;
 	opacity: 0;
 	visibility: hidden;
 	pointer-events: none;
@@ -117,8 +116,8 @@
 	padding: 0.625rem;
 	
 	// Styling
-	background-color: vars.$bg-white;
-	border: 1px solid vars.$color-grey;
+	background-color: var(--bg-white);
+	border: 1px solid var(--text-gray);
 	border-radius: 2px 0 2px 0;
 	text-align: left;
 	cursor: pointer;
@@ -132,7 +131,7 @@
 	  margin: 0;
 	  width: m.fluid(36px, 60px);
 	  height: m.fluid(36px, 60px);
-	  mask-image: url('@img/decoration-card.svg');
+	  mask-image: url('/img/decoration-card.svg');
 	  transform: rotate(180deg);
 	}
 	
@@ -144,7 +143,7 @@
 	  width: m.fluid(36px, 60px);
 	  height: m.fluid(36px, 60px);
 	  background-color: currentColor;
-	  mask: url('@img/decoration-card.svg') center / contain no-repeat;
+	  mask: url('/img/decoration-card.svg') center / contain no-repeat;
 	}
 	
 	// Hover effect for active card
@@ -156,15 +155,15 @@
   
   &__card-title {
 	.questions__card--active & {
-	  @include m.typography(vars.$color-black, 500, m.fluid(18px, 42px), 1);
+	  @include m.typography(var(--text-black), 500, m.fluid(18px, 42px), 1);
 	  color: inherit;
 	}
   }
   
   &__card-subtitle {
 	.questions__card--active & {
-	  font-family: vars.$second-family;
-	  @include m.typography(vars.$color-black, 500, m.fluid(14px, 22px), 1.10, none);
+	  font-family: var(--second-family);
+	  @include m.typography(var(--text-black), 500, m.fluid(14px, 22px), 1.10, none);
 	}
   }
   
@@ -176,7 +175,7 @@
 	width: 1.563rem;
 	height: 1.563rem;
 	background-color: currentColor;
-	mask: url('@img/arrow-black.svg') center / contain no-repeat;
+	mask: url('/img/arrow-black.svg') center / contain no-repeat;
 	transition: transform .22s ease;
   }
   

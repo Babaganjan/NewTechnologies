@@ -1,4 +1,4 @@
-import const objectLevel = () => {
+export const ObjectLevel = () => {
     return (
         <section className="object-levels">
             <div className="container object-levels__container flex">
@@ -61,4 +61,4 @@ import const objectLevel = () => {
             </div>
         </section>
     )
-};
+}

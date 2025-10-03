@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const Advertising = () => {
     return (
         <section
@@ -15,70 +17,78 @@ export const Advertising = () => {
                 <div className="swiper mySwiper">
                     <div className="swiper-wrapper" role="list">
                         <div className="swiper-slide" role="listitem">
-                            <img
-                                src="src/assets/img/adverting-img/alhua.svg"
+                            <Image
+                                src="/img/adverting-img/alhua.svg"
                                 alt="Логотип компании Alhua"
-                                loading="lazy"
+                                width={200}
+                                height={100}
                             />
                             <div className="advertising__decoration" aria-hidden="true"></div>
                         </div>
                         <div className="swiper-slide" role="listitem">
-                            <img src="src/assets/img/adverting-img/bosch.svg" alt="bosch" loading="lazy"/>
+                            <Image src="/img/adverting-img/bosch.svg" alt="bosch" width={200} height={100} />
                             <div className="advertising__decoration" aria-hidden="true"></div>
                         </div>
                         <div className="swiper-slide" role="listitem">
-                            <img
-                                src="src/assets/img/adverting-img/hikvision.svg"
+                            <Image
+                                src="/img/adverting-img/hikvision.svg"
                                 alt="Логотип компании Hikvision"
-                                loading="lazy"
+                                width={200}
+                                height={100}
                             />
                             <div className="advertising__decoration" aria-hidden="true"></div>
                         </div>
                         <div className="swiper-slide" role="listitem">
-                            <img
-                                src="src/assets/img/adverting-img/huawei.svg"
+                            <Image
+                                src="/img/adverting-img/huawei.svg"
                                 alt="Логотип компании Huawei"
-                                loading="lazy"
+                                width={200}
+                                height={100}
                             />
                             <div className="advertising__decoration" aria-hidden="true"></div>
                         </div>
                         <div className="swiper-slide" role="listitem">
-                            <img
-                                src="src/assets/img/adverting-img/bosch.svg"
+                            <Image
+                                src="/img/adverting-img/bosch.svg"
                                 alt="Логотип компании Bosch"
-                                loading="lazy"
+                                width={200}
+                                height={100}
                             />
                             <div className="advertising__decoration" aria-hidden="true"></div>
                         </div>
                         <div className="swiper-slide" role="listitem">
-                            <img
-                                src="src/assets/img/adverting-img/hikvision.svg"
+                            <Image
+                                src="/img/adverting-img/hikvision.svg"
                                 alt="Логотип компании Hikvision"
-                                loading="lazy"
+                                width={200}
+                                height={100}
                             />
                             <div className="advertising__decoration" aria-hidden="true"></div>
                         </div>
                         <div className="swiper-slide" role="listitem">
-                            <img
-                                src="src/assets/img/adverting-img/huawei.svg"
+                            <Image
+                                src="/img/adverting-img/huawei.svg"
                                 alt="Логотип компании Huawei"
-                                loading="lazy"
+                                width={200}
+                                height={100}
                             />
                             <div className="advertising__decoration" aria-hidden="true"></div>
                         </div>
                         <div className="swiper-slide" role="listitem">
-                            <img
-                                src="src/assets/img/adverting-img/huawei.svg"
+                            <Image
+                                src="/img/adverting-img/huawei.svg"
                                 alt="Логотип компании Huawei"
-                                loading="lazy"
+                                width={200}
+                                height={100}
                             />
                             <div className="advertising__decoration" aria-hidden="true"></div>
                         </div>
                         <div className="swiper-slide" role="listitem">
-                            <img
-                                src="src/assets/img/adverting-img/bosch.svg"
+                            <Image
+                                src="/img/adverting-img/bosch.svg"
                                 alt="Логотип компании Bosch"
-                                loading="lazy"
+                                width={200}
+                                height={100}
                             />
                             <div className="advertising__decoration" aria-hidden="true"></div>
                         </div>

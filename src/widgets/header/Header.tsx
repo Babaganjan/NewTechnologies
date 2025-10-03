@@ -31,7 +31,7 @@ export const Header = () => {
           </nav>
           <a href="" className="header__link">
             <Image
-              src="img/logo.svg"
+              src="/img/logo.svg"
               width={145}
               height={79}
               alt="Логотип"

@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const FavoritesProject = () => {
   return (
       <section className="favorites-project" aria-labelledby="favorites-project-title">
@@ -5,12 +7,11 @@ export const FavoritesProject = () => {
               <h2 id="favorites-project-title" className="favorites-project__title">Избранные проекты</h2>
               <article className="favorites-project__item">
                   <div className="favorites-project__img">
-                      <img
-                          src="src/assets/img/mainImg-4.jpg"
+                      <Image
+                          src="/img/mainImg-4.jpg"
                           alt="Метрополитен г. алматы"
-                          width="340"
-                          height="242"
-                          loading="lazy"
+                          width={340}
+                          height={242}
                       />
                       <div className="favorites-project__decoration" aria-hidden="true"></div>
                   </div>
@@ -20,12 +21,11 @@ export const FavoritesProject = () => {
               <article className="favorites-project__item">
                   <div className="favorites-project__img">
                       <div className="favorites-project__decoration" aria-hidden="true"></div>
-                      <img
-                          src="src/assets/img/mainImg-5.jpg"
+                      <Image
+                          src="/img/mainImg-5.jpg"
                           alt="Проект «комфортная школа»"
-                          width="340"
-                          height="242"
-                          loading="lazy"
+                          width={340}
+                          height={242}
                       />
                   </div>
                   <h4>Проект «комфортная школа»</h4>
@@ -35,12 +35,11 @@ export const FavoritesProject = () => {
                   <div className="favorites-project__decoration" aria-hidden="true"></div>
                   <div className="favorites-project__img">
                       <div className="favorites-project__decoration"></div>
-                      <img
-                          src="src/assets/img/mainImg-6.jpg"
+                      <Image
+                          src="/img/mainImg-6.jpg"
                           alt="Метрополитен г. алматы"
-                          width="341"
-                          height="242"
-                          loading="lazy"
+                          width={341}
+                          height={242}
                       />
                   </div>
                   <h4>Метрополитен г. алматы</h4>

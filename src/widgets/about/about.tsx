@@ -1,4 +1,6 @@
-export const about = () => {
+import Image from 'next/image';
+
+export const About = () => {
   return (
       <section className="about">
           <div className="container about__container flex">
@@ -13,8 +15,8 @@ export const about = () => {
                       <div className="image__wrapper image__big">
                           <span className="decor-bottom-right"></span>
                           <picture>
-                              <source media="(min-width: 1024px)" srcSet="src/assets/img/about-1-1920.jpg"/>
-                              <img src="src/assets/img/about-1.jpg" alt="Картинка камеры"/>
+                              <source media="(min-width: 1024px)" srcSet="/img/about-1-1920.jpg"/>
+                              <Image src="/img/about-1.jpg" alt="Картинка камеры" width={800} height={600} />
                           </picture>
                       </div>
                   </div>
@@ -22,15 +24,15 @@ export const about = () => {
                       <div className="image__wrapper image__small-top">
                           <span className="decor-bottom-right"></span>
                           <picture>
-                              <source media="(min-width: 1024px)" srcSet="src/assets/img/about-2-1920.jpg"/>
-                              <img src="src/assets/img/about-2.jpg" alt="Картинка камеры"/>
+                              <source media="(min-width: 1024px)" srcSet="/img/about-2-1920.jpg"/>
+                              <Image src="/img/about-2.jpg" alt="Картинка камеры" width={800} height={600} />
                           </picture>
                       </div>
                       <div className="image__wrapper image__small-bottom">
                           <span className="decor-bottom-right"></span>
                           <picture>
-                              <source media="(min-width: 1024px)" srcSet="src/assets/img/about-3-1920.jpg"/>
-                              <img src="src/assets/img/about-3.jpg" alt="Картинка камеры"/>
+                              <source media="(min-width: 1024px)" srcSet="/img/about-3-1920.jpg"/>
+                              <Image src="/img/about-3.jpg" alt="Картинка камеры" width={800} height={600} />
                           </picture>
                       </div>
                   </div>

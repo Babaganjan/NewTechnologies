@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const Products = () => {
   return (
       <section className="products" aria-labelledby="products-title">
@@ -12,12 +14,11 @@ export const Products = () => {
               <ul className="products__list">
                   <li className="products__item">
                       <div className="products__img">
-                          <img
-                              src="src/assets/img/turniket.png"
+                          <Image
+                              src="/img/turniket.png"
                               alt="Турникеты"
-                              width="96"
-                              height="110"
-                              loading="lazy"
+                              width={96}
+                              height={110}
                           />
                       </div>
                       <div className="products__title">
@@ -26,12 +27,11 @@ export const Products = () => {
                   </li>
                   <li className="products__item">
                       <div className="products__img">
-                          <img
-                              src="src/assets/img/camera.png"
+                          <Image
+                              src="/img/camera.png"
                               alt="Камеры"
-                              width="110"
-                              height="100"
-                              loading="lazy"
+                              width={110}
+                              height={100}
                           />
                       </div>
                       <div className="products__title">
@@ -40,12 +40,11 @@ export const Products = () => {
                   </li>
                   <li className="products__item">
                       <div className="products__img">
-                          <img
-                              src="src/assets/img/commutator-v2.png"
+                          <Image
+                              src="/img/commutator-v2.png"
                               alt="Видеорегистраторы"
-                              width="120"
-                              height="54"
-                              loading="lazy"
+                              width={120}
+                              height={54}
                           />
                       </div>
                       <div className="products__title">
@@ -54,12 +53,11 @@ export const Products = () => {
                   </li>
                   <li className="products__item">
                       <div className="products__img">
-                          <img
-                              src="src/assets/img/server.png"
+                          <Image
+                              src="/img/server.png"
                               alt="Сервера"
-                              width="110"
-                              height="110"
-                              loading="lazy"
+                              width={110}
+                              height={110}
                           />
                       </div>
                       <div className="products__title">
@@ -68,12 +66,11 @@ export const Products = () => {
                   </li>
                   <li className="products__item">
                       <div className="products__img">
-                          <img
-                              src="src/assets/img/commutator.png"
+                          <Image
+                              src="/img/commutator.png"
                               alt="Коммутаторы"
-                              width="130"
-                              height="48"
-                              loading="lazy"
+                              width={130}
+                              height={48}
                           />
                       </div>
                       <div className="products__title">

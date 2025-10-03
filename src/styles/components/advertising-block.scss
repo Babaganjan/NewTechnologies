@@ -1,4 +1,3 @@
-@use '../variables' as vars;
 @use '../mixins' as m;
 
 .advertising {
@@ -27,7 +26,7 @@
   }
   
   &__subtitle {
-    @include m.typography(vars.$color-white, 500, m.fluid(31px, 68px), 100%);
+    @include m.typography(var(--text-white), 500, m.fluid(31px, 68px), 100%);
     margin-bottom: 20px;
     span {
       color: #171717;
@@ -46,7 +45,7 @@
       height: m.fluid(50px, 80px);
     }
     
-    @include m.item-decor(vars.$color-white);
+    @include m.item-decor(var(--text-white));
     &:hover::before {
       background-color: #565656;
     }
@@ -56,10 +55,10 @@
     }
     
     &:hover {
-      background-color: vars.$graphics-black;
+      background-color: var(--vector-black);
     }
     .advertising__decoration {
-      @include m.decoration(vars.$color-black, 1.5rem, '@img/kvadrat.png', (top: 0, right: 0));
+      @include m.decoration(var(--text-black), 1.5rem, '/img/kvadrat.png', (top: 0, right: 0));
     }
   }
 }
@@ -90,7 +89,7 @@
         display: block;
       }
       span {
-        color: vars.$color-white;
+        color: var(--text-white);
       }
     }
     &.with-top-trapezoid {

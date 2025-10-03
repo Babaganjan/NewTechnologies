@@ -7,7 +7,7 @@
   @return $return-value;
 }
 
-@mixin typography($color: vars.$color-white, $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
+@mixin typography($color: var(--text-white), $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
   font-weight: $weight;
   font-size: $size;
   line-height: $line;
@@ -17,7 +17,7 @@
 }
 
 @mixin decoration(
-  $color: vars.$color-white, $size: .75rem, $image: '@img/kvadrat.png', $pos: (right: -1px, top: -1px)
+  $color: var(--text-white), $size: .75rem, $image: '/img/kvadrat.png', $pos: (right: -1px, top: -1px)
 
 ) {
   position: absolute;
@@ -125,7 +125,7 @@
 }
 
 @mixin item-decor(
-  $color: vars.$color-black,
+  $color: var(--text-black),
   $before-position: (top: 3px, left: 3px),
   $after-position: (bottom: 3px, right: 3px),
   $size: (width: 12px, height: 12px),
@@ -138,7 +138,7 @@
 	position: absolute;
 	@each $b, $c in $size { #{$b}: $c; }
 	background-color: $color;
-	mask-image: url(@img/decoration.svg);
+	mask-image: url(/img/decoration.svg);
 	mask-position: center;
 	mask-size: contain;
 	mask-repeat: no-repeat;

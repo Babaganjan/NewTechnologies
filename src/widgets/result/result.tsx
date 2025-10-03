@@ -1,4 +1,4 @@
-export const result = () => {
+export const Result = () => {
   return (
       <section
           className="result with-top-trapezoid with-bottom-trapezoid"

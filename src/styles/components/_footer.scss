@@ -1,11 +1,10 @@
-@use '../variables' as vars;
 @use '../mixins' as m;
 
 .footer {
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  background-color: vars.$bg-black;
+  background-color: var(--bg-black);
   color: white;
   
   .footer__activity {
@@ -60,7 +59,7 @@
 		
 		&::after {
 		  content: '';
-		  @include m.decoration(vars.$color-white, 16px, '@img/arrow-black.svg', (top: 0, right: 0));
+		  @include m.decoration(var(--text-white), 16px, '/img/arrow-black.svg', (top: 0, right: 0));
 		  position: static;
 		}
 	  }
@@ -74,7 +73,7 @@
 	margin-top: 90px;
 	gap: 10px;
 	padding: m.fluid(10px, 50px);
-	@include m.typography(vars.$color-grey, 500 , m.fluid(18px, 20px));
+	@include m.typography(var(--text-gray), 500 , m.fluid(18px, 20px));
 	.footer__copyright-text {
 	  span {
 		display: block;
@@ -87,13 +86,13 @@
   }
   
   .arrow-button {
-	@include m.typography(vars.$color-white, 500, m.fluid(18px, 20px), 1.2);
+	@include m.typography(var(--text-white), 500, m.fluid(18px, 20px), 1.2);
 	justify-self: end;
 	display: flex;
 	padding-top: 1.625rem;
 	gap: 10px;
 	  &::after {
-		@include m.decoration(vars.$color-white, 20px, "@img/arrow-black.svg");
+		@include m.decoration(var(--text-white), 20px, "/img/arrow-black.svg");
 		content: '';
 		position: static;
 		transform: rotate(-90deg);
@@ -102,16 +101,16 @@
   
   .footer__logo {
 	grid-area: logo;
-	@include m.typography(vars.$color-white, 700, 7.5rem, 1.2);
-	font-family: vars.$third-family;
+	@include m.typography(var(--text-white), 700, 7.5rem, 1.2);
+	font-family: var(--third-family);
   }
   
   .footer__title {
 	display: block;
-	@include m.typography(vars.$color-grey, 500, m.fluid(18px, 20px));
+	@include m.typography(var(--text-gray), 500, m.fluid(18px, 20px));
 	&::before {
 	  content: '';
-	  @include m.decoration(#919191, 0.75rem, '@img/decoration.svg',  (top: 0, left: 0));
+	  @include m.decoration(#919191, 0.75rem, '/img/decoration.svg',  (top: 0, left: 0));
 	}
 	padding-bottom: 0.75rem;
   }
@@ -120,7 +119,7 @@
 	display: grid;
 	gap: 2px;
 	li {
-	  @include m.typography(vars.$color-white, 500, m.fluid(18px, 20px));
+	  @include m.typography(var(--text-white), 500, m.fluid(18px, 20px));
 	}
   }
 }

@@ -1,11 +1,10 @@
-@use '../variables' as vars;
 @use '../mixins' as m;
 
 .feedback-menu {
   position: relative;
   z-index: 2;
   min-height: 51.25rem;
-  background-image: url("@img/background/bg-feedback.png");
+  background-image: url("/img/background/bg-feedback.png");
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -24,19 +23,19 @@
   
   .feedback-menu__button-container {
     position: relative;
-    @include m.item-decor(vars.$color-white);
+    @include m.item-decor(var(--text-white));
   }
   
   &__button {
     display: inline-flex;
     align-items: center;
-    background-color: vars.$bg-black;
+    background-color: var(--bg-black);
     padding: 15px 50px;
-    @include m.typography(vars.$color-white, 700 , 1.125rem, 120%);
+    @include m.typography(var(--text-white), 700 , 1.125rem, 120%);
     gap: 10px;
     
     &::after {
-      @include m.decoration(vars.$color-white, 15px, "@img/arrow-black.svg");
+      @include m.decoration(var(--text-white), 15px, "/img/arrow-black.svg");
       content: '';
       position: static;
       transform: rotate(360deg);
@@ -44,7 +43,7 @@
   }
   
   &__title {
-    @include m.typography(vars.$color-black, 500, m.fluid(31px, 68px), 100%);
+    @include m.typography(var(--text-black), 500, m.fluid(31px, 68px), 100%);
     min-width: 340px;
     margin-bottom: 18px;
     text-align: center;
@@ -53,7 +52,7 @@
 
 @include m.respond-min(1024px) {
   .feedback-menu {
-    background-image: url("@img/background/bg-1920.png");
+    background-image: url("/img/background/bg-1920.png");
     margin-bottom: -30px;
     background-size: 100% 100%;
     

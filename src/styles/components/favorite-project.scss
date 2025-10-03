@@ -1,4 +1,3 @@
-@use '../variables' as vars;
 @use '../mixins' as m;
 
 .favorites-project {
@@ -20,17 +19,17 @@
 	  @include m.item-decor();
 	  display: inline-flex;
 	  .favorites-project__decoration {
-		@include m.decoration(vars.$color-white, 25px);
+		@include m.decoration(var(--text-white), 25px);
 	  }
 	}
 	
 	h4 {
 	  margin: 2px 0;
-	  @include m.typography(vars.$color-black, 500, 18px, 1.15);
+	  @include m.typography(var(--text-black), 500, 18px, 1.15);
 	}
 	
 	p {
-	  font-family: vars.$second-family;
+	  font-family: var(--second-family);
 	  @include m.typography(#4d4d4d, 500, 14px, 1.1, none);
 	  margin-bottom: 8px;
 	}
