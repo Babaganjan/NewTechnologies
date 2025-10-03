@@ -69,6 +69,7 @@
   &__title {
     @include m.typography(vars.$bg-black, 600, m.fluid(22px,42px), 100%);
     letter-spacing: -0.083rem;
+    width: 70%;
     &::before {
         @include m.typography(vars.$color-grey, 500, m.fluid(10px, 22px), 40%);
         counter-increment: card;

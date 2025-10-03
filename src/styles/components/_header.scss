@@ -1,7 +1,7 @@
 @use '../mixins' as m;
 @use '../variables' as vars;
 
-.hidden {
+.hidden, .hidden__contacts {
   display: none;
 }
 
@@ -65,7 +65,7 @@
       align-items: center;
       justify-content: space-between;
     }
-    .hidden {
+    .hidden, .hidden__contacts {
       display: block;
     }
     .nav {
@@ -80,19 +80,6 @@
     .hidden__burger--deckstop {
       display: none;
     }
-    // &__city {
-    //   @include m.typography(vars.$color-white, 500, 20px);
-    //   letter-spacing: -1px;
-    //   .select__city {
-    //     color: vars.$color-black;
-    //     &:hover {
-    //       background-color: vars.$color-black;
-    //       color: vars.$color-white;
-    //     }
-        
-
-    //   }
-    // }
     &__wrapper-contacts {
       gap: 30px;
     }
