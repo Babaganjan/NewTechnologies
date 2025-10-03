@@ -1,5 +1,4 @@
-@use '../mixins' as m;
-@use '../variables' as vars;
+@import '../variables';
 
 .hidden, .hidden__contacts {
   display: none;
@@ -7,14 +6,14 @@
 
 .header {
   position: relative;
-  background-color: vars.$bg-black;
+  background-color: $bg-black;
   min-height: 10.81rem;
   z-index: 0;
   margin-bottom: -1px;
 }
 
 .header__container {
-    @include m.line-decor(2% 50% 98%);
+    @include line-decor(2% 50% 98%);
     position: relative;
     justify-content: center;
     padding-block: 0.625rem 7.125rem;
@@ -39,8 +38,8 @@
 	left: 0;
 	width: 100%;
 	height: 2px;
-	background: vars.$bg-white;
-	box-shadow: 0 8px 0 vars.$bg-white;
+	background: $bg-white;
+	box-shadow: 0 8px 0 $bg-white;
 	transition: all 0.3s ease;
   }
   
@@ -52,10 +51,10 @@
 }
 
 // deckstop
-@include m.respond-min(1024px) {
+@include respond-min(1024px) {
   .header {
     &__container {
-      @include m.line-decor(1% 25.4% 50% 74.6% 99%);
+      @include line-decor(1% 25.4% 50% 74.6% 99%);
       align-items: center;
       justify-content: space-between;
       padding-block: 20px;
@@ -73,7 +72,7 @@
         gap: 30px;
       }
       &__link {
-        @include m.typography(vars.$color-white, 500, 20px);
+        @include typography($color-white, 500, 20px);
         letter-spacing: -1px;
       }
     }
@@ -88,10 +87,10 @@
       display: inline-block;
       width: 76px;
     &::after {
-      @include m.decoration(
-        $color: vars.$color-grey, 
+      @include decoration(
+        $color: $color-grey, 
         $size: 8px, 
-        $image: '@img/arrow-black.svg', 
+        $image: '../../../public/img/arrow-black.svg', 
         $pos: (top: 12px, right: 0)
       );
       content: "";
@@ -103,7 +102,7 @@
 }
 
 .header__city {
-  color: vars.$color-white;
+  color: $color-white;
   appearance: none;
   width: 100%;
   font-size: 20px;
@@ -115,13 +114,13 @@
 
 /* Стили для выпадающего списка */
 .header__city option {
-  background-color: vars.$bg-white; /* Фон option */
-  color: vars.$color-black; /* Фон option */
+  background-color: $bg-white; /* Фон option */
+  color: $color-black; /* Фон option */
   // padding: 10px;
 }
 
     &__phone {
-      @include m.typography(vars.$color-white, 500, 20px);
+      @include typography($color-white, 500, 20px);
       letter-spacing: -1px;
     }
   }

@@ -1,5 +1,4 @@
 @use "sass:math";
-@use 'variables' as vars;
 
 @function fluid($size-at-min-width, $size-at-max-width, $min-width: 360px, $max-width: 1920px) {
   $slope: math.div($size-at-max-width - $size-at-min-width, $max-width - $min-width);
