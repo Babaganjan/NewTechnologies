@@ -1,25 +1,38 @@
 {
-  "name": "newtechnologies",
-  "version": "1.0.0",
-  "main": "index.js",
+  "name": "untitled5",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "autoprefixer": "^10.4.21",
-    "postcss": "^8.5.6",
-    "postcss-pxtorem": "^6.1.0",
-    "prettier": "^3.6.2",
-    "sass-embedded": "^1.93.2",
-    "vite": "^7.1.7"
+    "dev": "next dev --turbopack",
+    "build": "next build --turbopack",
+    "start": "next start",
+    "lint": "eslint"
   },
   "dependencies": {
+    "globals": "16.4.0",
+    "next": "15.5.4",
+    "react": "19.1.0",
+    "react-dom": "19.1.0",
     "swiper": "^12.0.2"
+  },
+  "devDependencies": {
+    "@eslint/eslintrc": "3",
+    "@eslint/js": "^9.36.0",
+    "@types/node": "20",
+    "@types/react": "19",
+    "@types/react-dom": "19",
+    "@typescript-eslint/eslint-plugin": "8.45.0",
+    "@typescript-eslint/parser": "8.45.0",
+    "autoprefixer": "^10.4.21",
+    "eslint": "9",
+    "eslint-config-next": "15.5.4",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-react": "7.37.5",
+    "postcss": "^8.5.6",
+    "postcss-pxtorem": "^6.1.0",
+    "prettier": "3.6.2",
+    "sass-embedded": "1.93.2",
+    "typescript": "5"
   }
 }
