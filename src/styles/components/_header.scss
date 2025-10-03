@@ -80,19 +80,6 @@
     .hidden__burger--deckstop {
       display: none;
     }
-    // &__city {
-    //   @include m.typography(vars.$color-white, 500, 20px);
-    //   letter-spacing: -1px;
-    //   .select__city {
-    //     color: vars.$color-black;
-    //     &:hover {
-    //       background-color: vars.$color-black;
-    //       color: vars.$color-white;
-    //     }
-        
-
-    //   }
-    // }
     &__wrapper-contacts {
       gap: 30px;
     }
