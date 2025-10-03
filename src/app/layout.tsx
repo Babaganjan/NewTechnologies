@@ -33,7 +33,8 @@ import type { Metadata } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 
 import './globals.css';
-import '@/styles/components/_header.scss';
+import '../styles/components/_header.scss';
+import '../styles/_mixins.scss';
 import { layoutConfig } from '@/shared/config/layout.config';
 import { siteConfig } from '@/shared/config/site.config';
 import { Footer } from '@/widgets/footer/Footer';

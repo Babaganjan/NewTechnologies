@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 export const Header = () => {
   return (
     <header className="header">
@@ -28,7 +30,13 @@ export const Header = () => {
             </ul>
           </nav>
           <a href="" className="header__link">
-            <img src="src/assets/img/logo.svg" alt="Логотип" className="header__logo" />
+            <Image
+              src="img/logo.svg"
+              width={145}
+              height={79}
+              alt="Логотип"
+              className="header__logo"
+            />
           </a>
         </div>
         <div className="header__wrapper-contacts flex">
