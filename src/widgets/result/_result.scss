@@ -1,0 +1,245 @@
+@import "../../shared/styles/functions";
+@import "../../shared/styles/mixins";
+
+.result {
+  &.with-top-trapezoid {
+    @include trapezoid-decor(21px, 12px, black, top);
+  }
+
+  &.with-bottom-trapezoid {
+    @include trapezoid-decor(21px, 12px, black, bottom);
+  }
+  position: relative;
+  background-color: var(--bg-black);
+  z-index: 1;
+
+  &__container {
+    @include line-decor(2% 50% 98%);
+    position: relative;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-block: 5.5rem;
+  }
+
+  &__inner {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
+  &__title {
+    @include bracket-decor();
+    @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
+    letter-spacing: -0.053em;
+  }
+
+  &__content {
+    position: relative;
+    flex-direction: column;
+    background-color: var(--bg-deep-gray);
+    gap: 2.063rem;
+    padding: 0.938rem;
+    &::before {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 38 38' fill='none'%3E%3Crect x='2' width='36' height='2' fill='white'/%3E%3Crect y='38' width='36' height='2' transform='rotate(-90 0 38)' fill='white'/%3E%3C/svg%3E");
+        display: inline-block;
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        top: 0;
+        left: 0;
+    }
+    &::after {
+        content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='38' height='38' viewBox='0 0 38 38' fill='none'%3E%3Crect x='2' width='36' height='2' fill='white'/%3E%3Crect y='38' width='36' height='2' transform='rotate(-90 0 38)' fill='white'/%3E%3C/svg%3E");
+        display: inline-block;
+        position: absolute;
+        width: 38px;
+        height: 38px;
+        bottom: 0;
+        right: 0;
+        transform: rotate(180deg);
+    }
+  }
+
+  &__wrapper {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__number {
+    @include typography(var(--text-white), 700, fluid(120px, 178px), 82%);
+    letter-spacing: -0.525rem;
+}
+
+  &__article-title {
+    @include typography(var(--text-white), 600, fluid(22px, 42px), 100%);
+    flex-direction: column;
+    letter-spacing: -0.083rem;
+  }
+
+  &__prev {
+    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 110%, none);
+    width: 80%;
+    font-family: var(--second-family);
+    letter-spacing: -0.84px;
+  }
+  &__list {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  &__item {
+    &::before {
+      content: "";
+      @include decoration(var(--vector-black), 24px);
+    }
+    position: relative;
+    background-color: var(--text-white);
+    padding: 0.938rem;
+  }
+  
+  .item {
+  &__inner {
+    @include item-decor(
+      var(--vector-black), 
+      $before-position: (top: -13px, left: -12px),
+      $after-position: (bottom: -13px, right: -12px)
+    );
+    min-height: 8.125rem;
+    position: relative;
+    flex-direction: column;
+    gap: 0.5rem;
+    &:not(:has(.item__prev)) {
+      flex-direction: row;
+      align-items: flex-end;
+      gap: 0.938rem;
+    }
+  }
+  &__title {
+    @include typography(var(--bg-black), 600, fluid(22px, 42px), 100%);
+    letter-spacing: -0.083rem;
+    &:first-child {
+        width: 80%;
+    }
+  }
+
+  &__prev {
+    @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 110%, none);
+    font-family: var(--second-family);
+    letter-spacing: -0.053rem;
+  }
+
+  &__number {
+    @include typography(var(--text-black), 700, fluid(120px, 178px), 82%);
+    letter-spacing: -0.525rem;
+  }
+  }
+}
+
+  
+// deckstop
+@include respond-min(1024px) {
+  .result {
+    &.with-top-trapezoid {
+      @include trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
+    }
+
+    &.with-bottom-trapezoid {
+      @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
+    }
+    &__item {
+      &::before {
+        content: "";
+        @include decoration(var(--vector-black), 40px);
+        padding: 20px;
+      }
+      &:nth-child(2) {
+        grid-column: 3 / 4;
+        grid-row: 2 / 3;
+      }
+      &:nth-child(3) {
+        grid-column: 4 / 5;
+        grid-row: 2 / 3;
+      }
+      &:nth-child(4) {
+        grid-column: 4 / 4;
+        grid-row: 1 / 2;
+      }
+      &:nth-child(5) {
+        grid-column: 1 / 3;
+        grid-row: 2 / 3;
+      }
+    }
+    &__container {
+      @include line-decor(1% 25.4% 50% 74.6% 99%);
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 20px;
+    } 
+    &__inner {
+      grid-column: 1 / 2;
+      grid-row: 1 / 2;
+    } 
+    &__list {
+      grid-column: 1 / 5;
+      grid-row: 1 / 3;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: auto auto;
+      gap: 20px;
+    }
+    &__content {
+      @include item-decor(
+      var(--vector-white), 
+      $before-position: (top: 5px, left: 5px), 
+      $after-position: (bottom: 5px, right: 5px), 
+      $size: (width: 64px, height: 64px)
+      );
+      grid-column: 2 / 3;
+      grid-row: 1 / 2;
+    }
+    .item {
+      &__inner {
+        @include item-decor(
+        var(--vector-black), 
+        $before-position: (top: -13px, left: -12px),
+        $after-position: (bottom: -13px, right: -12px),
+        $size: (width: 20px, height: 20px),
+        );
+        min-height: 408px;
+        justify-content: space-between;
+        &:not(:has(.item__prev)) {
+          flex-direction: column;
+          align-items: unset;
+          gap: 0.938rem;
+        }
+      }
+      &__inner-layout {
+        display: grid;
+        grid-template-columns: 1.7fr 1fr;
+      }
+      &__number-layout {
+        align-self: flex-end;
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      &__title {
+        letter-spacing: -2.52px;
+      }
+      &__title-width {
+        width: 91%;
+      }
+      &__title-layout {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      &__prev {
+        letter-spacing: -1.1px;
+      }
+      &__prev-layout {
+        text-align: end;
+        align-self: flex-end;
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+    }
+  }
+}

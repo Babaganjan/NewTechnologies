@@ -2,7 +2,6 @@ import type { Metadata } from 'next';
 import { Oswald, Roboto_Condensed, Inter } from 'next/font/google';
 
 import './globals.css';
-import '../styles/main.scss';
 import { siteConfig } from '@/shared/config/site.config';
 import { Footer } from '@/widgets/footer/Footer';
 import { Header } from '@/widgets/header/Header';
@@ -42,9 +41,7 @@ export default function RootLayout({
     <html lang="ru">
       <body className={`${oswald.variable} ${robotoCondensed.variable} ${inter.variable}`}>
         <Header />
-        <main>
-          {children}
-        </main>
+        <main>{children}</main>
         <Footer />
       </body>
     </html>
