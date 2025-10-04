@@ -389,7 +389,7 @@ const FavoritesProject = ()=>{
                             className: "favorites-project__img",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: "/img/mainImg-4.jpg",
+                                    src: "/img/mainImg-4.webp",
                                     alt: "Метрополитен г. алматы",
                                     width: 340,
                                     height: 242
@@ -403,7 +403,7 @@ const FavoritesProject = ()=>{
                                     "aria-hidden": "true"
                                 }, void 0, false, {
                                     fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                                    lineNumber: 14,
+                                    lineNumber: 19,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
@@ -416,14 +416,14 @@ const FavoritesProject = ()=>{
                             children: "Метрополитен г. алматы"
                         }, void 0, false, {
                             fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                            lineNumber: 16,
+                            lineNumber: 21,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             children: "Реализовали монтаж автоматического порошкового пожаротушения «Тунгус»."
                         }, void 0, false, {
                             fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                            lineNumber: 17,
+                            lineNumber: 22,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
@@ -443,43 +443,43 @@ const FavoritesProject = ()=>{
                                     "aria-hidden": "true"
                                 }, void 0, false, {
                                     fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                                    lineNumber: 21,
+                                    lineNumber: 26,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: "/img/mainImg-5.jpg",
+                                    src: "/img/mainImg-5.webp",
                                     alt: "Проект «комфортная школа»",
                                     width: 340,
                                     height: 242
                                 }, void 0, false, {
                                     fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                                    lineNumber: 22,
+                                    lineNumber: 27,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                            lineNumber: 20,
+                            lineNumber: 25,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                             children: "Проект «комфортная школа»"
                         }, void 0, false, {
                             fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                            lineNumber: 29,
+                            lineNumber: 34,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             children: "Установили турникеты NT по всему Казахстану при поддержке фонда «Самрук-Қазына»."
                         }, void 0, false, {
                             fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                            lineNumber: 30,
+                            lineNumber: 35,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                    lineNumber: 19,
+                    lineNumber: 24,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0)),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("article", {
@@ -490,7 +490,7 @@ const FavoritesProject = ()=>{
                             "aria-hidden": "true"
                         }, void 0, false, {
                             fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                            lineNumber: 33,
+                            lineNumber: 38,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -500,43 +500,43 @@ const FavoritesProject = ()=>{
                                     className: "favorites-project__decoration"
                                 }, void 0, false, {
                                     fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                                    lineNumber: 35,
+                                    lineNumber: 40,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                    src: "/img/mainImg-6.jpg",
+                                    src: "/img/mainImg-6.webp",
                                     alt: "Метрополитен г. алматы",
                                     width: 341,
                                     height: 242
                                 }, void 0, false, {
                                     fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                                    lineNumber: 36,
+                                    lineNumber: 41,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                            lineNumber: 34,
+                            lineNumber: 39,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h4", {
                             children: "Метрополитен г. алматы"
                         }, void 0, false, {
                             fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                            lineNumber: 38,
+                            lineNumber: 48,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0)),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                             children: "Оборудовали объект современными серверными шкафами."
                         }, void 0, false, {
                             fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                            lineNumber: 39,
+                            lineNumber: 49,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]
                 }, void 0, true, {
                     fileName: "[project]/NewTechnologies/src/widgets/favoritesProject/FavoritesProject.tsx",
-                    lineNumber: 32,
+                    lineNumber: 37,
                     columnNumber: 9
                 }, ("TURBOPACK compile-time value", void 0))
             ]
@@ -953,7 +953,7 @@ const Products = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "products__img",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        src: "/img/turniket.png",
+                                        src: "/img/product-item-1.webp",
                                         alt: "Турникеты",
                                         width: 96,
                                         height: 110
@@ -993,7 +993,7 @@ const Products = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "products__img",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        src: "/img/camera.png",
+                                        src: "/img/product-item-2.webp",
                                         alt: "Камеры",
                                         width: 110,
                                         height: 100
@@ -1033,7 +1033,7 @@ const Products = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "products__img",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        src: "/img/commutator-v2.png",
+                                        src: "/img/product-item-3.webp",
                                         alt: "Видеорегистраторы",
                                         width: 120,
                                         height: 54
@@ -1053,12 +1053,12 @@ const Products = ()=>{
                                         children: "Видеорегистраторы"
                                     }, void 0, false, {
                                         fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                                        lineNumber: 39,
+                                        lineNumber: 44,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                                    lineNumber: 38,
+                                    lineNumber: 43,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
@@ -1073,50 +1073,24 @@ const Products = ()=>{
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "products__img",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        src: "/img/server.png",
+                                        src: "/img/product-item-4.webp",
                                         alt: "Сервера",
                                         width: 110,
                                         height: 110
                                     }, void 0, false, {
                                         fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                                        lineNumber: 44,
+                                        lineNumber: 49,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                                    lineNumber: 43,
+                                    lineNumber: 48,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "products__title",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("h5", {
                                         children: "Серверные шкафы"
-                                    }, void 0, false, {
-                                        fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                                        lineNumber: 47,
-                                        columnNumber: 15
-                                    }, ("TURBOPACK compile-time value", void 0))
-                                }, void 0, false, {
-                                    fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                                    lineNumber: 46,
-                                    columnNumber: 13
-                                }, ("TURBOPACK compile-time value", void 0))
-                            ]
-                        }, void 0, true, {
-                            fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                            lineNumber: 42,
-                            columnNumber: 11
-                        }, ("TURBOPACK compile-time value", void 0)),
-                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                            className: "products__item",
-                            children: [
-                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                    className: "products__img",
-                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        src: "/img/commutator.png",
-                                        alt: "Коммутаторы",
-                                        width: 130,
-                                        height: 48
                                     }, void 0, false, {
                                         fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
                                         lineNumber: 52,
@@ -1126,6 +1100,32 @@ const Products = ()=>{
                                     fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
                                     lineNumber: 51,
                                     columnNumber: 13
+                                }, ("TURBOPACK compile-time value", void 0))
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
+                            lineNumber: 47,
+                            columnNumber: 11
+                        }, ("TURBOPACK compile-time value", void 0)),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
+                            className: "products__item",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    className: "products__img",
+                                    children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                                        src: "/img/product-item-5.webp",
+                                        alt: "Коммутаторы",
+                                        width: 130,
+                                        height: 48
+                                    }, void 0, false, {
+                                        fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
+                                        lineNumber: 57,
+                                        columnNumber: 15
+                                    }, ("TURBOPACK compile-time value", void 0))
+                                }, void 0, false, {
+                                    fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
+                                    lineNumber: 56,
+                                    columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0)),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$NewTechnologies$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "products__title",
@@ -1133,18 +1133,18 @@ const Products = ()=>{
                                         children: "Коммутаторы"
                                     }, void 0, false, {
                                         fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                                        lineNumber: 55,
+                                        lineNumber: 60,
                                         columnNumber: 15
                                     }, ("TURBOPACK compile-time value", void 0))
                                 }, void 0, false, {
                                     fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                                    lineNumber: 54,
+                                    lineNumber: 59,
                                     columnNumber: 13
                                 }, ("TURBOPACK compile-time value", void 0))
                             ]
                         }, void 0, true, {
                             fileName: "[project]/NewTechnologies/src/widgets/products/Products.tsx",
-                            lineNumber: 50,
+                            lineNumber: 55,
                             columnNumber: 11
                         }, ("TURBOPACK compile-time value", void 0))
                     ]

@@ -165,8 +165,8 @@
   position: absolute;
   top: -.0625rem;
   right: -.0625rem;
-  -webkit-mask-image: url("/img/kvadrat.png");
-  mask-image: url("/img/kvadrat.png");
+  -webkit-mask-image: url("/img/kvadrat.svg");
+  mask-image: url("/img/kvadrat.svg");
   -webkit-mask-position: center;
   mask-position: center;
   -webkit-mask-size: contain;
@@ -297,8 +297,8 @@
     position: absolute;
     top: -.0625rem;
     right: -.0625rem;
-    -webkit-mask-image: url("/img/kvadrat.png");
-    mask-image: url("/img/kvadrat.png");
+    -webkit-mask-image: url("/img/kvadrat.svg");
+    mask-image: url("/img/kvadrat.svg");
     -webkit-mask-position: center;
     mask-position: center;
     -webkit-mask-size: contain;
@@ -613,8 +613,8 @@
   position: absolute;
   top: -.0625rem;
   right: -.0625rem;
-  -webkit-mask-image: url("/img/kvadrat.png");
-  mask-image: url("/img/kvadrat.png");
+  -webkit-mask-image: url("/img/kvadrat.svg");
+  mask-image: url("/img/kvadrat.svg");
   -webkit-mask-position: center;
   mask-position: center;
   -webkit-mask-size: contain;
@@ -647,7 +647,7 @@
 /* [project]/NewTechnologies/src/widgets/feedbackMenu/_feedback-menu.scss.css [app-client] (css) */
 .feedback-menu {
   z-index: 2;
-  background-image: url("/img/background/bg-feedback.png");
+  background-image: url("/img/feebback-bg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -747,7 +747,7 @@
 
 @media (min-width: 1024px) {
   .feedback-menu {
-    background-image: url("/img/background/bg-1920.png");
+    background-image: url("/img/feebback-bg.webp");
     background-size: 100% 100%;
     margin-bottom: -1.875rem;
   }
@@ -1032,8 +1032,8 @@
   position: absolute;
   top: -.0625rem;
   right: -.0625rem;
-  -webkit-mask-image: url("/img/kvadrat.png");
-  mask-image: url("/img/kvadrat.png");
+  -webkit-mask-image: url("/img/kvadrat.svg");
+  mask-image: url("/img/kvadrat.svg");
   -webkit-mask-position: center;
   mask-position: center;
   -webkit-mask-size: contain;
@@ -1992,8 +1992,8 @@
   position: absolute;
   top: -.0625rem;
   right: -.0625rem;
-  -webkit-mask-image: url("/img/kvadrat.png");
-  mask-image: url("/img/kvadrat.png");
+  -webkit-mask-image: url("/img/kvadrat.svg");
+  mask-image: url("/img/kvadrat.svg");
   -webkit-mask-position: center;
   mask-position: center;
   -webkit-mask-size: contain;
@@ -2131,8 +2131,8 @@
     position: absolute;
     top: -.0625rem;
     right: -.0625rem;
-    -webkit-mask-image: url("/img/kvadrat.png");
-    mask-image: url("/img/kvadrat.png");
+    -webkit-mask-image: url("/img/kvadrat.svg");
+    mask-image: url("/img/kvadrat.svg");
     -webkit-mask-position: center;
     mask-position: center;
     -webkit-mask-size: contain;

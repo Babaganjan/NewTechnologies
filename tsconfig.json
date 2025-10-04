@@ -31,6 +31,16 @@
       ]
     }
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts", "postcss.config.js", "src/js/slider/slider.js"],
-  "exclude": ["node_modules"]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    "next-env.d.ts",
+    "postcss.config.js",
+    "src/js/slider/slider.js",
+    "dist/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules"
+  ]
 }

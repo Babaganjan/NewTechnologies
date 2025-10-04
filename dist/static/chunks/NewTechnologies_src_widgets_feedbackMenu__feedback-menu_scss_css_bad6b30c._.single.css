@@ -1,7 +1,7 @@
 /* [project]/NewTechnologies/src/widgets/feedbackMenu/_feedback-menu.scss.css [app-client] (css) */
 .feedback-menu {
   z-index: 2;
-  background-image: url("/img/background/bg-feedback.png");
+  background-image: url("/img/feebback-bg.webp");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -101,7 +101,7 @@
 
 @media (min-width: 1024px) {
   .feedback-menu {
-    background-image: url("/img/background/bg-1920.png");
+    background-image: url("/img/feebback-bg.webp");
     background-size: 100% 100%;
     margin-bottom: -1.875rem;
   }
