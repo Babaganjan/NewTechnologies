@@ -1,12 +1,13 @@
-@use '../mixins' as m;
+@import "../../shared/styles/functions";
+@import "../../shared/styles/mixins";
 
 .services {
     &.with-top-trapezoid {
-      @include m.trapezoid-decor(21px, 12px, black, top);
+      @include trapezoid-decor(21px, 12px, black, top);
     }
 
     &.with-bottom-trapezoid {
-      @include m.trapezoid-decor(21px, 12px, black, bottom);
+      @include trapezoid-decor(21px, 12px, black, bottom);
     }
     position: relative;
     background-color: var(--bg-black);
@@ -23,8 +24,8 @@
     }
 
     &__title {
-      @include m.bracket-decor();
-      @include m.typography(var(--text-light-gray), 700, m.fluid(14px, 22px));
+      @include bracket-decor();
+      @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
       letter-spacing: -0.053em;
     }
     &__list {
@@ -52,7 +53,7 @@
         justify-content: space-between;
         padding: 1.25rem 0 1.25rem 1.25rem;
         &::before {
-        @include m.typography(var(--text-gray), 500, m.fluid(10px, 22px), 40%);
+        @include typography(var(--text-gray), 500, fluid(10px, 22px), 40%);
         counter-increment: card;
         content: "["counter(card)"]";
         position: absolute;
@@ -63,7 +64,7 @@
     }
 
     &__subtitle {
-        @include m.typography(var(--text-white), 500, m.fluid(31px, 68px), 100%); 
+        @include typography(var(--text-white), 500, fluid(31px, 68px), 100%); 
         letter-spacing: -2.17px;
     }
   }
@@ -100,14 +101,14 @@
 }
 
 // deckstop
-@include m.respond-min(1024px) {
+@include respond-min(1024px) {
   .services {
     &.with-top-trapezoid {
-      @include m.trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
+      @include trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
     }
 
     &.with-bottom-trapezoid {
-      @include m.trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
+      @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
     }
   }
 }

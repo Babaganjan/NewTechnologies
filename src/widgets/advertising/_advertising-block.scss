@@ -1,4 +1,6 @@
-@use '../mixins' as m;
+@import "../../shared/styles/functions";
+@import "../../shared/styles/mixins";
+
 
 .advertising {
   position: relative;
@@ -12,21 +14,21 @@
   }
 
   &.with-top-trapezoid {
-    @include m.trapezoid-decor(21px, 12px, black, top);
+    @include trapezoid-decor(21px, 12px, black, top);
   }
 
   &.with-bottom-trapezoid {
-    @include m.trapezoid-decor(21px, 12px, black, bottom);
+    @include trapezoid-decor(21px, 12px, black, bottom);
   }
   
   &__title {
     position: relative;
     margin-bottom: 10px;
-    @include m.bracket-decor(#d0d0d0, (top: -2px, left: 0));
+    @include bracket-decor(#d0d0d0, (top: -2px, left: 0));
   }
   
   &__subtitle {
-    @include m.typography(var(--text-white), 500, m.fluid(31px, 68px), 100%);
+    @include typography(var(--text-white), 500, fluid(31px, 68px), 100%);
     margin-bottom: 20px;
     span {
       color: #171717;
@@ -41,11 +43,11 @@
     align-items: center;
     
     img {
-      width: m.fluid(100px, 150px);
-      height: m.fluid(50px, 80px);
+      width: fluid(100px, 150px);
+      height: fluid(50px, 80px);
     }
     
-    @include m.item-decor(var(--text-white));
+    @include item-decor(var(--text-white));
     &:hover::before {
       background-color: #565656;
     }
@@ -58,7 +60,7 @@
       background-color: var(--vector-black);
     }
     .advertising__decoration {
-      @include m.decoration(var(--text-black), 1.5rem, '/img/kvadrat.png', (top: 0, right: 0));
+      @include decoration(var(--text-black), 1.5rem, '/img/kvadrat.png', (top: 0, right: 0));
     }
   }
 }
@@ -75,7 +77,7 @@
   }
 }
 
-@include m.respond-min(1024px) {
+@include respond-min(1024px) {
   .advertising {
     padding-bottom: 60px;
     padding-top: 100px;
@@ -93,11 +95,11 @@
       }
     }
     &.with-top-trapezoid {
-      @include m.trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
+      @include trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
     }
     
     &.with-bottom-trapezoid {
-      @include m.trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
+      @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
     }
   }
 }

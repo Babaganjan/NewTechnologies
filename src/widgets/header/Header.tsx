@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import './_header.scss';
 
 export const Header = () => {
   return (
@@ -39,7 +40,7 @@ export const Header = () => {
             />
           </a>
         </div>
-        <div className="header__wrapper-contacts flex">
+        <div className="header__wrapper-contacts hidden__contacts flex">
           <div className="custom-select">
             <select name="city" className="header__city">
               <option value="almaty">Алматы</option>

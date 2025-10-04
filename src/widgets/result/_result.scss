@@ -1,19 +1,20 @@
-@use '../mixins' as m;
+@import "../../shared/styles/functions";
+@import "../../shared/styles/mixins";
 
 .result {
   &.with-top-trapezoid {
-    @include m.trapezoid-decor(21px, 12px, black, top);
+    @include trapezoid-decor(21px, 12px, black, top);
   }
 
   &.with-bottom-trapezoid {
-    @include m.trapezoid-decor(21px, 12px, black, bottom);
+    @include trapezoid-decor(21px, 12px, black, bottom);
   }
   position: relative;
   background-color: var(--bg-black);
   z-index: 1;
 
   &__container {
-    @include m.line-decor(2% 50% 98%);
+    @include line-decor(2% 50% 98%);
     position: relative;
     flex-direction: column;
     gap: 0.5rem;
@@ -26,8 +27,8 @@
   }
 
   &__title {
-    @include m.bracket-decor();
-    @include m.typography(var(--text-light-gray), 700, m.fluid(14px, 22px));
+    @include bracket-decor();
+    @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
     letter-spacing: -0.053em;
   }
 
@@ -64,18 +65,18 @@
   }
 
   &__number {
-    @include m.typography(var(--text-white), 700, m.fluid(120px, 178px), 82%);
+    @include typography(var(--text-white), 700, fluid(120px, 178px), 82%);
     letter-spacing: -0.525rem;
 }
 
   &__article-title {
-    @include m.typography(var(--text-white), 600, m.fluid(22px, 42px), 100%);
+    @include typography(var(--text-white), 600, fluid(22px, 42px), 100%);
     flex-direction: column;
     letter-spacing: -0.083rem;
   }
 
   &__prev {
-    @include m.typography(var(--text-light-gray), 500, m.fluid(14px, 22px), 110%, none);
+    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 110%, none);
     width: 80%;
     font-family: var(--second-family);
     letter-spacing: -0.84px;
@@ -87,7 +88,7 @@
   &__item {
     &::before {
       content: "";
-      @include m.decoration(var(--vector-black), 24px);
+      @include decoration(var(--vector-black), 24px);
     }
     position: relative;
     background-color: var(--text-white);
@@ -96,7 +97,7 @@
   
   .item {
   &__inner {
-    @include m.item-decor(
+    @include item-decor(
       var(--vector-black), 
       $before-position: (top: -13px, left: -12px),
       $after-position: (bottom: -13px, right: -12px)
@@ -112,7 +113,7 @@
     }
   }
   &__title {
-    @include m.typography(var(--bg-black), 600, m.fluid(22px, 42px), 100%);
+    @include typography(var(--bg-black), 600, fluid(22px, 42px), 100%);
     letter-spacing: -0.083rem;
     &:first-child {
         width: 80%;
@@ -120,13 +121,13 @@
   }
 
   &__prev {
-    @include m.typography(var(--text-deep-gray), 500, m.fluid(14px, 22px), 110%, none);
+    @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 110%, none);
     font-family: var(--second-family);
     letter-spacing: -0.053rem;
   }
 
   &__number {
-    @include m.typography(var(--text-black), 700, m.fluid(120px, 178px), 82%);
+    @include typography(var(--text-black), 700, fluid(120px, 178px), 82%);
     letter-spacing: -0.525rem;
   }
   }
@@ -134,19 +135,19 @@
 
   
 // deckstop
-@include m.respond-min(1024px) {
+@include respond-min(1024px) {
   .result {
     &.with-top-trapezoid {
-      @include m.trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
+      @include trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
     }
 
     &.with-bottom-trapezoid {
-      @include m.trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
+      @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
     }
     &__item {
       &::before {
         content: "";
-        @include m.decoration(var(--vector-black), 40px);
+        @include decoration(var(--vector-black), 40px);
         padding: 20px;
       }
       &:nth-child(2) {
@@ -167,7 +168,7 @@
       }
     }
     &__container {
-      @include m.line-decor(1% 25.4% 50% 74.6% 99%);
+      @include line-decor(1% 25.4% 50% 74.6% 99%);
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       grid-template-rows: auto auto;
@@ -186,7 +187,7 @@
       gap: 20px;
     }
     &__content {
-      @include m.item-decor(
+      @include item-decor(
       var(--vector-white), 
       $before-position: (top: 5px, left: 5px), 
       $after-position: (bottom: 5px, right: 5px), 
@@ -197,7 +198,7 @@
     }
     .item {
       &__inner {
-        @include m.item-decor(
+        @include item-decor(
         var(--vector-black), 
         $before-position: (top: -13px, left: -12px),
         $after-position: (bottom: -13px, right: -12px),
