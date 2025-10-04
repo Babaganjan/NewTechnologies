@@ -1,70 +1,69 @@
 @use '../mixins' as m;
 
 .services {
-    &.with-top-trapezoid {
-      @include m.trapezoid-decor(21px, 12px, black, top);
-    }
+  &.with-top-trapezoid {
+    @include m.trapezoid-decor(21px, 12px, black, top);
+  }
 
-    &.with-bottom-trapezoid {
-      @include m.trapezoid-decor(21px, 12px, black, bottom);
-    }
-    position: relative;
-    background-color: var(--bg-black);
-    z-index: 0;
+  &.with-bottom-trapezoid {
+    @include m.trapezoid-decor(21px, 12px, black, bottom);
+  }
+  position: relative;
+  background-color: var(--bg-black);
+  z-index: 0;
 
-    &__container {
-      padding-block: 5.5rem 6.313rem;
-    }
+  &__container {
+    padding-block: 5.5rem 6.313rem;
+  }
 
-    &__wrapper-title {
-      padding-bottom: 0.625rem;
-      border-bottom: 1px solid var(--vector-almost-black);
+  &__wrapper-title {
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid var(--vector-almost-black);
+  }
 
-    }
-
-    &__title {
-      @include m.bracket-decor();
-      @include m.typography(var(--text-light-gray), 700, m.fluid(14px, 22px));
-      letter-spacing: -0.053em;
-    }
-    &__list {
-      counter-reset: card;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+  &__title {
+    @include m.bracket-decor();
+    @include m.typography(var(--text-light-gray), 700, m.fluid(14px, 22px));
+    letter-spacing: -0.053em;
+  }
+  &__list {
+    counter-reset: card;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
   .item {
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--vector-almost-black);
     &__btn {
-       width: 25px;
-       height: 20px;
+      width: 25px;
+      height: 20px;
     }
 
     &__btn img {
-        filter: brightness(0) invert(1);
-        transform: rotate(90deg);
-        width: 25px;
-        height: 20px;
-    } 
-    
+      filter: brightness(0) invert(1);
+      transform: rotate(90deg);
+      width: 25px;
+      height: 20px;
+    }
+
     &__inner {
-        position: relative;
-        justify-content: space-between;
-        padding: 1.25rem 0 1.25rem 1.25rem;
-        &::before {
+      position: relative;
+      justify-content: space-between;
+      padding: 1.25rem 0 1.25rem 1.25rem;
+      &::before {
         @include m.typography(var(--text-gray), 500, m.fluid(10px, 22px), 40%);
         counter-increment: card;
-        content: "["counter(card)"]";
+        content: '[' counter(card) ']';
         position: absolute;
         top: 1.5rem;
         left: 0;
         letter-spacing: -0.031rem;
-        }
+      }
     }
 
     &__subtitle {
-        @include m.typography(var(--text-white), 500, m.fluid(31px, 68px), 100%); 
-        letter-spacing: -2.17px;
+      @include m.typography(var(--text-white), 500, m.fluid(31px, 68px), 100%);
+      letter-spacing: -2.17px;
     }
   }
 
@@ -74,28 +73,29 @@
 
   .swiper-slide {
     min-height: 96px;
-    background: url("/img/infinity-slider-company.png") no-repeat center #171717;
-    
+    /* TODO: Конвертировать infinity-slider-company.png в WebP или удалить */
+    background: #171717;
+
     .services__decoration {
-      //@include m.decoration('/img/kvadrat.png', 1.5rem, (top: 0, right: 0), var(--text-black), mask);
+      //@include m.decoration('/img/kvadrat.svg', 1.5rem, (top: 0, right: 0), var(--text-black), mask);
     }
-    
-      &::after {
-        content: '';
-        //@include m.decoration('/img/decoration.svg', 0.75rem, (top: 0, left: 0), var(--text-white), svg);
-        margin: 3px;
-        width: 10px;
-        height: 10px;
-      }
-      
-      &::before {
-        content: '';
-        //@include m.decoration('/img/decoration.svg', 0.75rem, (bottom: 0, right: 0), var(--text-white), svg);
-        margin: 3px;
-        transform: rotate(180deg);
-        width: 10px;
-        height: 10px;
-      }
+
+    &::after {
+      content: '';
+      //@include m.decoration('/img/decoration.svg', 0.75rem, (top: 0, left: 0), var(--text-white), svg);
+      margin: 3px;
+      width: 10px;
+      height: 10px;
+    }
+
+    &::before {
+      content: '';
+      //@include m.decoration('/img/decoration.svg', 0.75rem, (bottom: 0, right: 0), var(--text-white), svg);
+      margin: 3px;
+      transform: rotate(180deg);
+      width: 10px;
+      height: 10px;
+    }
   }
 }
 

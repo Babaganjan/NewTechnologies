@@ -8,7 +8,7 @@ export const FavoritesProject = () => {
               <article className="favorites-project__item">
                   <div className="favorites-project__img">
                       <Image
-                          src="/img/mainImg-4.jpg"
+                          src="/img/mainImg-4.webp"
                           alt="Метрополитен г. алматы"
                           width={340}
                           height={242}
@@ -22,7 +22,7 @@ export const FavoritesProject = () => {
                   <div className="favorites-project__img">
                       <div className="favorites-project__decoration" aria-hidden="true"></div>
                       <Image
-                          src="/img/mainImg-5.jpg"
+                          src="/img/mainImg-5.webp"
                           alt="Проект «комфортная школа»"
                           width={340}
                           height={242}
@@ -36,7 +36,7 @@ export const FavoritesProject = () => {
                   <div className="favorites-project__img">
                       <div className="favorites-project__decoration"></div>
                       <Image
-                          src="/img/mainImg-6.jpg"
+                          src="/img/mainImg-6.webp"
                           alt="Метрополитен г. алматы"
                           width={341}
                           height={242}
