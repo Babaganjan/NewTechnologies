@@ -9,7 +9,7 @@ import { ProjectMenu } from '../widgets/projectMenu/ProjectMenu';
 import { Questions } from '../widgets/questions/Questions';
 import { Result } from '../widgets/result/Result';
 import { Services } from '../widgets/services/Services';
-// Home
+
 export default function Home() {
   return (
     <>
