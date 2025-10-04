@@ -14,26 +14,38 @@ export const About = () => {
                   <div className="about__images--top">
                       <div className="image__wrapper image__big">
                           <span className="decor-bottom-right"></span>
-                          <picture>
-                              <source media="(min-width: 1024px)" srcSet="/img/about-1-1920.jpg"/>
-                              <Image src="/img/about-1.jpg" alt="Картинка камеры" width={800} height={600} />
-                          </picture>
+                              <Image 
+                                  src="/img/about-1-1920.jpg" 
+                                  alt="Картинка камеры" 
+                                  width={905} 
+                                  height={675}
+                                  sizes="(max-width: 1023px) 340px, 254px"
+                                  quality={85}
+                              />
                       </div>
                   </div>
                   <div className="about__images--bottom flex">
                       <div className="image__wrapper image__small-top">
                           <span className="decor-bottom-right"></span>
-                          <picture>
-                              <source media="(min-width: 1024px)" srcSet="/img/about-2-1920.jpg"/>
-                              <Image src="/img/about-2.jpg" alt="Картинка камеры" width={800} height={600} />
-                          </picture>
+                              <Image 
+                                  src="/img/about-2-1920.jpg" 
+                                  alt="Картинка камеры" 
+                                  width={447} 
+                                  height={328}
+                                  sizes="(max-width: 1023px) 168px, 447px"
+                                  quality={85}
+                              />
                       </div>
                       <div className="image__wrapper image__small-bottom">
                           <span className="decor-bottom-right"></span>
-                          <picture>
-                              <source media="(min-width: 1024px)" srcSet="/img/about-3-1920.jpg"/>
-                              <Image src="/img/about-3.jpg" alt="Картинка камеры" width={800} height={600} />
-                          </picture>
+                              <Image 
+                                  src="/img/about-3-1920.jpg" 
+                                  alt="Картинка камеры" 
+                                  width={448} 
+                                  height={328}
+                                  sizes="(max-width: 1023px) 168px, 448px"
+                                  quality={85}
+                              />
                       </div>
                   </div>
               </div>
