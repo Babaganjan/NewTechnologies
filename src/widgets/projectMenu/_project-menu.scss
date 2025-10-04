@@ -1,5 +1,5 @@
 @use "../../shared/styles/functions";
-@use "../../shared/styles/mixins";
+@use "../../shared/styles/mixins" as *;
 
 .project-menu {
   .project-menu__container {

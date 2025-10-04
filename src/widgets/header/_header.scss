@@ -1,5 +1,5 @@
 @use "../../shared/styles/functions";
-@use "../../shared/styles/mixins";
+@use "../../shared/styles/mixins" as *;
 
 .hidden, .hidden__contacts {
   display: none;
