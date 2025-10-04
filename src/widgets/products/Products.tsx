@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import './_products-block.scss';
 
 export const Products = () => {
   return (

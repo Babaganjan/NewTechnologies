@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import './_about.scss';
 
 export const About = () => {
   return (
@@ -20,6 +21,7 @@ export const About = () => {
                 width={905}
                 height={675}
                 sizes="(max-width: 1023px) 340px, 254px"
+                quality={85}
               />
             </div>
           </div>
@@ -32,6 +34,7 @@ export const About = () => {
                 width={447}
                 height={328}
                 sizes="(max-width: 1023px) 168px, 447px"
+                quality={85}
               />
             </div>
             <div className="image__wrapper image__small-bottom">
@@ -42,6 +45,7 @@ export const About = () => {
                 width={448}
                 height={328}
                 sizes="(max-width: 1023px) 168px, 448px"
+                quality={85}
               />
             </div>
           </div>

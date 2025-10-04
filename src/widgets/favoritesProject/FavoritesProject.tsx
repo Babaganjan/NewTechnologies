@@ -1,7 +1,9 @@
 import Image from 'next/image';
+import './_favorite-project.scss';
 
 export const FavoritesProject = () => {
   return (
+<<<<<<< HEAD
       <section className="favorites-project" aria-labelledby="favorites-project-title">
           <div className="favorites-project__container container">
               <h2 id="favorites-project-title" className="favorites-project__title">Избранные проекты</h2>
@@ -45,7 +47,7 @@ export const FavoritesProject = () => {
                   <h4>Метрополитен г. алматы</h4>
                   <p>Оборудовали объект современными серверными шкафами.</p>
               </article>
-          </div>
-      </section>
-  )
-}
+      </div>
+    </section>
+  );
+};
