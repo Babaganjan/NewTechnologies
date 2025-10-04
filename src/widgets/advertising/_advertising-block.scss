@@ -8,7 +8,7 @@
   min-height: 322px;
   display: flex;
   align-items: center;
-  
+
   &__container {
     padding-inline: 0.625rem;
   }
@@ -20,13 +20,13 @@
   &.with-bottom-trapezoid {
     @include trapezoid-decor(21px, 12px, black, bottom);
   }
-  
+
   &__title {
     position: relative;
     margin-bottom: 10px;
     @include bracket-decor(#d0d0d0, (top: -2px, left: 0));
   }
-  
+
   &__subtitle {
     @include typography(var(--text-white), 500, fluid(31px, 68px), 100%);
     margin-bottom: 20px;
@@ -41,7 +41,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     img {
       width: fluid(100px, 150px);
       height: fluid(50px, 80px);
@@ -51,11 +51,11 @@
     &:hover::before {
       background-color: #565656;
     }
-    
+
     &:hover::after {
       background-color: #565656;
     }
-    
+
     &:hover {
       background-color: var(--vector-black);
     }
@@ -70,7 +70,7 @@
   &-wrapper {
     position: relative;
   }
-  
+
   &-slide {
     position: absolute;
     top: 0;
@@ -97,7 +97,7 @@
     &.with-top-trapezoid {
       @include trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
     }
-    
+
     &.with-bottom-trapezoid {
       @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
     }

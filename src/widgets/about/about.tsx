@@ -16,7 +16,7 @@ export const About = () => {
             <div className="image__wrapper image__big">
               <span className="decor-bottom-right"></span>
               <Image
-                src="/img/about-1-1920.jpg"
+                src="/img/about-1-1920.webp"
                 alt="Картинка камеры"
                 width={905}
                 height={675}
@@ -29,7 +29,7 @@ export const About = () => {
             <div className="image__wrapper image__small-top">
               <span className="decor-bottom-right"></span>
               <Image
-                src="/img/about-2-1920.jpg"
+                src="/img/about-2-1920.webp"
                 alt="Картинка камеры"
                 width={447}
                 height={328}
@@ -40,7 +40,7 @@ export const About = () => {
             <div className="image__wrapper image__small-bottom">
               <span className="decor-bottom-right"></span>
               <Image
-                src="/img/about-3-1920.jpg"
+                src="/img/about-3-1920.webp"
                 alt="Картинка камеры"
                 width={448}
                 height={328}

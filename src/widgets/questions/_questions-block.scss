@@ -8,18 +8,17 @@
 	grid-template-columns: 1fr;
 	padding: 0.625rem;
   }
-  
+
   &__title {
 	position: relative;
 	margin-bottom: 0.625rem;
 	@include bracket-decor(var(--text-deep-gray), (top: -2px, left: 0));
   }
-  
+
   .card-wrapper {
-	display: grid;
-	gap: 0.5rem;
-  }
-  
+    display: grid;
+    gap: 0.5rem;
+  }  
   
   &__card {
 	position: relative;
@@ -141,31 +140,31 @@
 	  transform: rotate(180deg);
 	}
   }
-  
+
   &__card-title {
 	.questions__card--active & {
 	  @include typography(var(--text-black), 500, fluid(18px, 42px), 1);
 	  color: inherit;
 	}
   }
-  
+
   &__card-subtitle {
 	.questions__card--active & {
 	  font-family: var(--second-family);
 	  @include typography(var(--text-black), 500, fluid(14px, 22px), 1.10, none);
 	}
   }
-  
+
   &__card-arrow--active {
-	position: absolute;
-	bottom: 0;
-	right: 0;
-	margin: 0.625rem;
-	width: 1.563rem;
-	height: 1.563rem;
-	background-color: currentColor;
-	mask: url('/img/arrow-black.svg') center / contain no-repeat;
-	transition: transform .22s ease;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 0.625rem;
+    width: 1.563rem;
+    height: 1.563rem;
+    background-color: currentColor;
+    mask: url('/img/arrow-black.svg') center / contain no-repeat;
+    transition: transform 0.22s ease;
   }
   
   @include respond-min(1024px) {
@@ -203,6 +202,6 @@
         'a . b c .'
         'd e f . g'
         '. h . q .';
-	}
+    }
   }
 }

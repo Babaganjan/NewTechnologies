@@ -13,15 +13,14 @@
     background-color: var(--bg-black);
     z-index: 0;
 
-    &__container {
-      padding-block: 5.5rem 6.313rem;
-    }
+  &__container {
+    padding-block: 5.5rem 6.313rem;
+  }
 
-    &__wrapper-title {
-      padding-bottom: 0.625rem;
-      border-bottom: 1px solid var(--vector-almost-black);
-
-    }
+  &__wrapper-title {
+    padding-bottom: 0.625rem;
+    border-bottom: 1px solid var(--vector-almost-black);
+  }
 
     &__title {
       @include bracket-decor();
@@ -37,17 +36,17 @@
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--vector-almost-black);
     &__btn {
-       width: 25px;
-       height: 20px;
+      width: 25px;
+      height: 20px;
     }
 
     &__btn img {
-        filter: brightness(0) invert(1);
-        transform: rotate(90deg);
-        width: 25px;
-        height: 20px;
-    } 
-    
+      filter: brightness(0) invert(1);
+      transform: rotate(90deg);
+      width: 25px;
+      height: 20px;
+    }
+
     &__inner {
         position: relative;
         justify-content: space-between;
@@ -55,12 +54,12 @@
         &::before {
         @include typography(var(--text-gray), 500, fluid(10px, 22px), 40%);
         counter-increment: card;
-        content: "["counter(card)"]";
+        content: '[' counter(card) ']';
         position: absolute;
         top: 1.5rem;
         left: 0;
         letter-spacing: -0.031rem;
-        }
+      }
     }
 
     &__subtitle {

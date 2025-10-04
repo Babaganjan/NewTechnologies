@@ -136,8 +136,6 @@ h6 {
   --vector-deep-gray: #565656;
   --vector-light-gray: #dfdfdf;
   --vector-white: #fff;
-
-  /* Шрифты - Next.js автоматически создает эти переменные */
 }
 
 body {
