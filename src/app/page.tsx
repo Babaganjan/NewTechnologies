@@ -1,14 +1,14 @@
-import { About } from '@/widgets/about/about.tsx';
-import { Advertising } from '@/widgets/advertising/advertising.tsx';
-import { FavoritesProject } from '@/widgets/favoritesProject/favoritesProject.tsx';
-import { FeedbackMenu } from '@/widgets/feedbackMenu/feedbackMenu.tsx';
-import { Hero } from '@/widgets/hero/hero.tsx';
-import { ObjectLevel } from '@/widgets/objectLevel/objectLevels.tsx';
-import { Products } from '@/widgets/products/products.tsx';
-import { ProjectMenu } from '@/widgets/projectMenu/projectMenu.tsx';
-import { Questions } from '@/widgets/questions/questions.tsx';
-import { Result } from '@/widgets/result/result.tsx';
-import { Services } from '@/widgets/services/services.tsx';
+import { About } from '@/widgets/about/About';
+import { Advertising } from '@/widgets/advertising/Advertising';
+import { FavoritesProject } from '@/widgets/favoritesProject/FavoritesProject';
+import { FeedbackMenu } from '@/widgets/feedbackMenu/FeedbackMenu';
+import { Hero } from '@/widgets/hero/Hero';
+import { ObjectLevel } from '@/widgets/objectLevel/ObjectLevels';
+import { Products } from '@/widgets/products/Products';
+import { ProjectMenu } from '@/widgets/projectMenu/ProjectMenu';
+import { Questions } from '@/widgets/questions/Questions';
+import { Result } from '@/widgets/result/Result';
+import { Services } from '@/widgets/services/Services';
 
 export default function Home() {
   return (
