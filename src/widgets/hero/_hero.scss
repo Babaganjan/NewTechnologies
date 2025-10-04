@@ -1,10 +1,9 @@
-@use '../mixins' as m;
-// bottom: -32px; border-bottom: 33px; width: 1026px; border-left/border-right: 63px;
-// ($width: 21px, $height: 13px, $color: #000, $position: top, $size: 198px)
+@import "../../shared/styles/functions";
+@import "../../shared/styles/mixins";
 
 .hero {
     &.with-bottom-trapezoid {
-    @include m.trapezoid-decor(21px, 12px, black, bottom);
+    @include trapezoid-decor(21px, 12px, black, bottom);
   }
   position: relative;
   background-color: var(--bg-black);
@@ -12,7 +11,7 @@
 }
 
 .hero__container {
-    @include m.line-decor(1% 50% 99%);
+    @include line-decor(1% 50% 99%);
     position: relative;
     padding-block: 1.25rem 1.313rem;
     flex-direction: column;
@@ -24,7 +23,7 @@
 }
 
 .heading {
-    @include m.typography(var(--text-white), 400, m.fluid(70px, 243px), 81%);
+    @include typography(var(--text-white), 400, fluid(70px, 243px), 81%);
     order: 3;
     text-align: center;
     letter-spacing: -7px;
@@ -32,14 +31,14 @@
 }
 
 .hero__title {
-    @include m.bracket-decor();
-    @include m.typography(var(--text-light-gray), 700, m.fluid(14px, 22px));
+    @include bracket-decor();
+    @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
     letter-spacing: -0.053em;
 
 }
 
 .hero__subtitle {
-    @include m.typography(var(--text-white), 500, m.fluid(31px, 68px), 100%);
+    @include typography(var(--text-white), 500, fluid(31px, 68px), 100%);
     margin-bottom: 2.5rem;
     letter-spacing: -2.17px;
     text-align: center;
@@ -52,19 +51,19 @@
 }
 
 .hero__prev {
-    @include m.typography(var(--text-light-gray), 500, m.fluid(14px, 22px), 110%, none);
+    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 110%, none);
     font-family: var(--second-family);
     letter-spacing: -0.84px;
 }
 
 
-@include m.respond-min(1024px) {
+@include respond-min(1024px) {
    .hero {
      &.with-bottom-trapezoid {
-     @include m.trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
+     @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
      }
      &__container {
-        @include m.line-decor(1% 25.4% 50% 74.6% 99%);
+        @include line-decor(1% 25.4% 50% 74.6% 99%);
         display: grid;
         grid-template-columns: repeat(2,1fr);
         grid-auto-rows: 1fr;

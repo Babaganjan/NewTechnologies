@@ -1,4 +1,6 @@
-@use '../mixins' as m;
+// @use '../mixins' as m;
+@import "../../shared/styles/functions";
+@import "../../shared/styles/mixins";
 
 .hidden, .hidden__contacts {
   display: none;
@@ -13,7 +15,7 @@
 }
 
 .header__container {
-    @include m.line-decor(2% 50% 98%);
+    @include line-decor(2% 50% 98%);
     position: relative;
     justify-content: center;
     padding-block: 0.625rem 7.125rem;
@@ -51,10 +53,10 @@
 }
 
 // deckstop
-@include m.respond-min(1024px) {
+@include respond-min(1024px) {
   .header {
     &__container {
-      @include m.line-decor(1% 25.4% 50% 74.6% 99%);
+      @include line-decor(1% 25.4% 50% 74.6% 99%);
       align-items: center;
       justify-content: space-between;
       padding-block: 20px;
@@ -72,7 +74,7 @@
         gap: 30px;
       }
       &__link {
-        @include m.typography(var(--bg-white), 500, 20px);
+        @include typography(var(--bg-white), 500, 20px);
         letter-spacing: -1px;
       }
     }
@@ -87,7 +89,7 @@
       display: inline-block;
       width: 76px;
     &::after {
-      @include m.decoration(
+      @include decoration(
         $color: var(--text-gray), 
         $size: 8px, 
         $image: '/arrow-black.svg', 
@@ -120,7 +122,7 @@
 }
 
     &__phone {
-      @include m.typography(var(--text-white), 500, 20px);
+      @include typography(var(--text-white), 500, 20px);
       letter-spacing: -1px;
     }
   }

@@ -1,9 +1,9 @@
-@use '../mixins' as m;
+@import "../../shared/styles/functions";
+@import "../../shared/styles/mixins";
 
 .questions {
-  // ===== LAYOUT =====
   &__container {
-	margin-block: 6.875rem 6.25rem; // ✅ Логическое свойство
+	margin-block: 6.875rem 6.25rem; 
 	display: grid;
 	grid-template-columns: 1fr;
 	padding: 0.625rem;
@@ -12,7 +12,7 @@
   &__title {
 	position: relative;
 	margin-bottom: 0.625rem;
-	@include m.bracket-decor(var(--text-deep-gray), (top: -2px, left: 0));
+	@include bracket-decor(var(--text-deep-gray), (top: -2px, left: 0));
   }
   
   .card-wrapper {
@@ -20,25 +20,21 @@
 	gap: 0.5rem;
   }
   
-  // ===== CARD BASE =====
+  
   &__card {
-	// Layout
 	position: relative;
-	display: flex; // ✅ Добавлено для консистентности
+	display: flex; 
 	flex-direction: column;
 	min-height: 130px;
 	padding: 0.625rem;
 	
-	// Styling
 	background-color: var(--bg-light-gray);
 	color: var(--text-black);
 	
-	// Transitions
 	transition:
 			background-color .2s ease,
 			color .2s ease;
 	
-	// ✅ Общий псевдоэлемент для стрелки
 	&::before {
 	  content: '';
 	  position: absolute;
@@ -72,10 +68,9 @@
 	}
   }
   
-  // ===== CARD CONTENT =====
   &__content {
 	position: relative;
-	@include m.typography(var(--text-black), 500, m.fluid(18px, 28px), 1.15);
+	@include typography(var(--text-black), 500, fluid(18px, 28px), 1.15);
 	color: inherit;
 	transition: color .2s ease;
 	
@@ -84,20 +79,19 @@
 	  position: absolute;
 	  top: -6px;
 	  left: -7px;
-	  width: m.fluid(12px, 20px);
-	  height: m.fluid(12px, 20px);
+	  width: fluid(12px, 20px);
+	  height: fluid(12px, 20px);
 	  background-color: #565656;
 	  mask: url('/img/decoration.svg') center / contain no-repeat;
 	}
   }
   
-  // ===== DECORATIVE ELEMENT =====
   &__card-decorative {
 	position: absolute;
 	top: 0;
 	right: -1px;
-	width: m.fluid(24px, 40px);
-	height: m.fluid(24px, 40px);
+	width: fluid(24px, 40px);
+	height: fluid(24px, 40px);
 	background-color: var(--text-white);
 	mask: url('/img/kvadrat.png') center / contain no-repeat;
 	opacity: 0;
@@ -108,29 +102,25 @@
 			visibility .22s ease;
   }
   
-  // ===== ACTIVE CARD =====
   &__card--active {
-	// ✅ Переопределяем базовые стили
 	justify-content: center;
 	gap: 0.375rem;
 	padding: 0.625rem;
 	
-	// Styling
 	background-color: var(--bg-white);
 	border: 1px solid var(--text-gray);
 	border-radius: 2px 0 2px 0;
 	text-align: left;
 	cursor: pointer;
 	
-	// Переопределяем псевдоэлементы
 	&::before {
 	  top: -1px;
 	  left: -1px;
 	  bottom: auto;
 	  right: auto;
 	  margin: 0;
-	  width: m.fluid(36px, 60px);
-	  height: m.fluid(36px, 60px);
+	  width: fluid(36px, 60px);
+	  height: fluid(36px, 60px);
 	  mask-image: url('/img/decoration-card.svg');
 	  transform: rotate(180deg);
 	}
@@ -140,13 +130,12 @@
 	  position: absolute;
 	  bottom: -1px;
 	  right: -1px;
-	  width: m.fluid(36px, 60px);
-	  height: m.fluid(36px, 60px);
+	  width: fluid(36px, 60px);
+	  height: fluid(36px, 60px);
 	  background-color: currentColor;
 	  mask: url('/img/decoration-card.svg') center / contain no-repeat;
 	}
 	
-	// Hover effect for active card
 	&:hover .questions__card-arrow--active {
 	  background-color: white;
 	  transform: rotate(180deg);
@@ -155,7 +144,7 @@
   
   &__card-title {
 	.questions__card--active & {
-	  @include m.typography(var(--text-black), 500, m.fluid(18px, 42px), 1);
+	  @include typography(var(--text-black), 500, fluid(18px, 42px), 1);
 	  color: inherit;
 	}
   }
@@ -163,7 +152,7 @@
   &__card-subtitle {
 	.questions__card--active & {
 	  font-family: var(--second-family);
-	  @include m.typography(var(--text-black), 500, m.fluid(14px, 22px), 1.10, none);
+	  @include typography(var(--text-black), 500, fluid(14px, 22px), 1.10, none);
 	}
   }
   
@@ -179,10 +168,9 @@
 	transition: transform .22s ease;
   }
   
-  // ===== RESPONSIVE =====
-  @include m.respond-min(1024px) {
+  @include respond-min(1024px) {
 	&__card {
-	  $card-size: m.fluid(240px, 400px);
+	  $card-size: fluid(240px, 400px);
 	  min-height: $card-size;
 	  max-width: $card-size;
 	}
@@ -203,14 +191,13 @@
         '. h . q .';
 	}
 	
-	// ✅ Grid areas через цикл (опционально)
 	@each $letter in (a, b, c, d, e, f, g, h) {
 	  .card--#{$letter} { grid-area: $letter; }
 	}
 	&__card--active { grid-area: q; }
   }
   
-  @include m.respond-min(1250px) {
+  @include respond-min(1250px) {
 	.card-wrapper {
 	  grid-template-areas:
         'a . b c .'
