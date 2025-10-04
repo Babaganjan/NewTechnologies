@@ -1,0 +1,218 @@
+/* [project]/NewTechnologies/src/widgets/advertising/_advertising-block.scss.css [app-client] (css) */
+.advertising {
+  background-color: #000;
+  align-items: center;
+  min-height: 20.125rem;
+  display: flex;
+  position: relative;
+}
+
+.advertising__container {
+  padding-left: .625rem;
+  padding-right: .625rem;
+}
+
+.advertising.with-top-trapezoid {
+  position: relative;
+}
+
+.advertising.with-top-trapezoid:before {
+  content: "";
+  border-top: 12px solid #000;
+  border-left: 21px solid rgba(0, 0, 0, 0);
+  border-right: 21px solid rgba(0, 0, 0, 0);
+  width: 12.375rem;
+  position: absolute;
+  top: -.6875rem;
+  left: 50%;
+  transform: translateX(-50%)rotate(180deg);
+}
+
+.advertising.with-bottom-trapezoid {
+  position: relative;
+}
+
+.advertising.with-bottom-trapezoid:after {
+  content: "";
+  border-bottom: 12px solid #000;
+  border-left: 21px solid rgba(0, 0, 0, 0);
+  border-right: 21px solid rgba(0, 0, 0, 0);
+  width: 12.375rem;
+  position: absolute;
+  bottom: -.6875rem;
+  left: 50%;
+  transform: translateX(-50%)rotate(180deg);
+}
+
+.advertising__title {
+  font-weight: 700;
+  font-size: fluid(.875rem, 1.375rem);
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+  color: #d0d0d0;
+  padding-inline: fluid(.625rem, 1.375rem);
+  margin-bottom: .625rem;
+  line-height: 120%;
+  position: relative;
+}
+
+.advertising__title:after {
+  content: "[";
+  position: absolute;
+  top: -.125rem;
+  left: 0;
+}
+
+.advertising__subtitle {
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+  color: var(--text-white);
+  margin-bottom: 1.25rem;
+  font-size: max(1.9375rem, min(1.40385rem + 2.3718vw, 4.25rem));
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.advertising__subtitle span {
+  color: #171717;
+}
+
+.advertising .swiper-slide {
+  background-color: #171717;
+  justify-content: center;
+  align-items: center;
+  min-width: 9rem;
+  min-height: 6rem;
+  display: flex;
+}
+
+.advertising .swiper-slide img {
+  width: max(6.25rem, min(5.52885rem + 3.20513vw, 9.375rem));
+  height: max(3.125rem, min(2.69231rem + 1.92308vw, 5rem));
+}
+
+.advertising .swiper-slide {
+  position: relative;
+}
+
+.advertising .swiper-slide:before, .advertising .swiper-slide:after {
+  content: "";
+  background-color: var(--text-white);
+  z-index: 3;
+  width: .75rem;
+  height: .75rem;
+  position: absolute;
+  -webkit-mask-image: url("/img/decoration.svg");
+  mask-image: url("/img/decoration.svg");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.advertising .swiper-slide:before {
+  top: .1875rem;
+  left: .1875rem;
+}
+
+.advertising .swiper-slide:after {
+  bottom: .1875rem;
+  right: .1875rem;
+  transform: rotate(180deg);
+}
+
+.advertising .swiper-slide:hover:before, .advertising .swiper-slide:hover:after {
+  background-color: #565656;
+}
+
+.advertising .swiper-slide:hover {
+  background-color: var(--vector-black);
+}
+
+.advertising .swiper-slide .advertising__decoration {
+  background-color: var(--text-black);
+  pointer-events: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  -webkit-mask-image: url("/img/kvadrat.png");
+  mask-image: url("/img/kvadrat.png");
+  -webkit-mask-position: center;
+  mask-position: center;
+  -webkit-mask-size: contain;
+  mask-size: contain;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.swiper {
+  overflow: hidden;
+}
+
+.swiper-wrapper {
+  position: relative;
+}
+
+.swiper-slide {
+  position: absolute;
+  top: 0;
+}
+
+@media (min-width: 1024px) {
+  .advertising {
+    padding-top: 6.25rem;
+    padding-bottom: 3.75rem;
+  }
+
+  .advertising .advertising__subtitle-container {
+    justify-content: center;
+    align-items: flex-start;
+    display: flex;
+  }
+
+  .advertising__subtitle .advertising__subtitle--break {
+    display: block;
+  }
+
+  .advertising__subtitle span {
+    color: var(--text-white);
+  }
+
+  .advertising.with-top-trapezoid {
+    position: relative;
+  }
+
+  .advertising.with-top-trapezoid:before {
+    content: "";
+    border-top: 33px solid #000;
+    border-left: 56px solid rgba(0, 0, 0, 0);
+    border-right: 56px solid rgba(0, 0, 0, 0);
+    width: 64.375rem;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%)rotate(180deg);
+  }
+
+  .advertising.with-bottom-trapezoid {
+    position: relative;
+  }
+
+  .advertising.with-bottom-trapezoid:after {
+    content: "";
+    border-bottom: 33px solid #000;
+    border-left: 56px solid rgba(0, 0, 0, 0);
+    border-right: 56px solid rgba(0, 0, 0, 0);
+    width: 64.375rem;
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%)rotate(180deg);
+  }
+}
+
+/*# sourceMappingURL=NewTechnologies_src_widgets_advertising__advertising-block_scss_css_bad6b30c._.single.css.map*/
