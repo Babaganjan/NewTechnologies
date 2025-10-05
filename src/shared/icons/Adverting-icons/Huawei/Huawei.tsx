@@ -18,7 +18,7 @@ export const Huawei = ({
       role={decorative ? undefined : 'img'}
       {...svgProps}
     >
-      <g clip-path="url(#clip0_1069_704)">
+      <g clipPath="url(#clip0_1069_704)">
         <path
           fillRule="evenodd"
           clipRule="evenodd"
