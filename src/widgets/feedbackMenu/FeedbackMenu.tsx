@@ -1,3 +1,4 @@
+import { Arrow } from '@/shared/icons';
 import './_feedback-menu.scss';
 
 export const FeedbackMenu = () => {
@@ -10,6 +11,7 @@ export const FeedbackMenu = () => {
         <div className="feedback-menu__button-container">
           <button type="submit" className="feedback-menu__button">
             Подобрать решение
+            <Arrow width={12} height={15} />
           </button>
         </div>
       </div>
