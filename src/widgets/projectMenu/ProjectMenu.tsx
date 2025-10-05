@@ -18,7 +18,15 @@ export const ProjectMenu = () => {
           {projectMenuData.map((item) => (
             <li key={item.id} className="project-menu-item">
               <span className="project-menu-item__client">клиент</span>
-              <h5 className="project-menu-item__subtitle">{item.subtitle}</h5>
+              <div className="project-menu-item__subtitle">
+                <h5>{item.subtitle}</h5>
+                <Arrow
+                  color="var(--text-black)"
+                  width={12}
+                  height={15}
+                  className="project-menu-item__arrow"
+                />
+              </div>
               <span>тип услуги</span>
               <p>{item.service}</p>
             </li>

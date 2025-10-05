@@ -32,6 +32,8 @@
     .project-menu-item {
       margin-top: 4px;
       border-bottom: 1px solid #dfdfdf;
+      cursor: pointer;
+
       &:first-child {
         border-top: 1px solid #dfdfdf;
       }
@@ -43,6 +45,9 @@
 
       .project-menu-item__subtitle {
         position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
         @include typography(var(--text-black), 500, 18px, 115%);
       }
 
@@ -51,10 +56,16 @@
         @include typography(#171717, 500, 14px, 110%, none);
         margin-top: 8px;
       }
+
       p {
         @include typography(var(--text-light-gray), 500, 18px, 115%);
       }
     }
+
+    .project-menu-item__arrow {
+      transform: rotate(90deg);
+    }
+
     .project-menu__button {
       display: flex;
       justify-content: center;
