@@ -1,11 +1,11 @@
-@use "../../shared/styles/functions" as *;
-@use "../../shared/styles/mixins" as *;
+@use '../../shared/styles/functions' as *;
+@use '../../shared/styles/mixins' as *;
 
 .feedback-menu {
   position: relative;
   z-index: 2;
   min-height: 51.25rem;
-  background-image: url("/img/feebback-bg.webp");
+  background-image: url('/img/bg-feedback-360.webp');
   background-size: 100% 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -13,7 +13,7 @@
   justify-content: center;
   flex-direction: column;
   margin-bottom: -0.75rem;
-  
+
   &__wrapper {
     padding: 0 0.75rem;
     display: flex;
@@ -21,28 +21,21 @@
     justify-content: center;
     align-items: center;
   }
-  
+
   .feedback-menu__button-container {
     position: relative;
     @include item-decor(var(--text-white));
   }
-  
+
   &__button {
     display: inline-flex;
     align-items: center;
     background-color: var(--bg-black);
     padding: 15px 50px;
-    @include typography(var(--text-white), 700 , 1.125rem, 120%);
+    @include typography(var(--text-white), 700, 1.125rem, 120%);
     gap: 10px;
-    
-    &::after {
-      @include decoration(var(--text-white), 15px, "/img/arrow-black.svg");
-      content: '';
-      position: static;
-      transform: rotate(360deg);
-    }
   }
-  
+
   &__title {
     @include typography(var(--text-black), 500, fluid(31px, 68px), 100%);
     min-width: 340px;
@@ -53,18 +46,16 @@
 
 @include respond-min(1024px) {
   .feedback-menu {
-    /* TODO: Конвертировать bg-1920.png в WebP */
-    background-image: url("/img/feebback-bg.webp");
+    background-image: url('/img/feebback-bg.webp');
     margin-bottom: -30px;
     background-size: 100% 100%;
-    
+
     &__title {
-        max-width: 633px;
+      max-width: 633px;
     }
-    
+
     &__button {
       padding: 20px 100px;
     }
   }
 }
-
