@@ -1,4 +1,7 @@
+import { Arrow } from '@/shared/icons';
+
 import './_project-menu.scss';
+import { projectMenuData } from './projectMenu.const';
 
 export const ProjectMenu = () => {
   return (
@@ -12,38 +15,18 @@ export const ProjectMenu = () => {
           <span>—от уютных кафе у дома до объектов государственного значения.</span>
         </p>
         <ul className="project-menu__list">
-          <li className="project-menu-item">
-            <span className="project-menu-item__client">клиент</span>
-            <h5 className="project-menu-item__subtitle">
-              Филиал «Назарбаев Интеллектуальная школа» г. Тараз,
-              <br />
-              АОО «НИШ»
-            </h5>
-            <span>тип услуги</span>
-            <p>Система видеонаблюдения</p>
-          </li>
-          <li className="project-menu-item">
-            <span className="project-menu-item__client">клиент</span>
-            <h5 className="project-menu-item__subtitle">КГУ «Аппарат акима Жамбылской области»</h5>
-            <span>тип услуги</span>
-            <p>Система видеонаблюдения</p>
-          </li>
-          <li className="project-menu-item">
-            <span className="project-menu-item__client">клиент</span>
-            <h5 className="project-menu-item__subtitle">ЖОФ АО «Казпочта»</h5>
-            <span>тип услуги</span>
-            <p>Комплексная безопасность</p>
-          </li>
-          <li className="project-menu-item">
-            <span className="project-menu-item__client">клиент</span>
-            <h5 className="project-menu-item__subtitle">ТОО «Фиркан»</h5>
-            <span className="">тип услуги</span>
-            <p>пожарная сигнализация</p>
-          </li>
+          {projectMenuData.map((item) => (
+            <li key={item.id} className="project-menu-item">
+              <span className="project-menu-item__client">клиент</span>
+              <h5 className="project-menu-item__subtitle">{item.subtitle}</h5>
+              <span>тип услуги</span>
+              <p>{item.service}</p>
+            </li>
+          ))}
         </ul>
-        <div className="project-menu__button-container">
-          <button className="project-menu__button">Смотреть еще</button>
-        </div>
+        <button className="project-menu__button">
+          Загрузить еще <Arrow width={12} height={15} />
+        </button>
       </div>
     </section>
   );
