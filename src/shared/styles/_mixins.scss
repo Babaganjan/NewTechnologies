@@ -2,7 +2,13 @@
 @use 'sass:list';
 @use 'functions' as *;
 
-@mixin typography($color: var(--text-white), $weight: 500, $size: 1.125rem, $line: 120%, $transform: uppercase) {
+@mixin typography(
+  $color: var(--text-white),
+  $weight: 500,
+  $size: 1.125rem,
+  $line: 120%,
+  $transform: uppercase
+) {
   font-weight: $weight;
   font-size: $size;
   line-height: $line;
