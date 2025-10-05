@@ -1,5 +1,5 @@
-import Image from 'next/image';
 import './_advertising-block.scss';
+import { PARTNERS } from './advertising.const';
 
 export const Advertising = () => {
   return (
@@ -19,84 +19,28 @@ export const Advertising = () => {
             </span>
           </h3>
         </div>
-        <div className="swiper mySwiper">
-          <div className="swiper-wrapper" role="list">
-            <div className="swiper-slide" role="listitem">
-              <Image
-                src="/img/adverting-img/alhua.svg"
-                alt="Логотип компании Alhua"
-                width={200}
-                height={100}
-              />
-              <div className="advertising__decoration" aria-hidden="true"></div>
-            </div>
-            <div className="swiper-slide" role="listitem">
-              <Image src="/img/adverting-img/bosch.svg" alt="bosch" width={200} height={100} />
-              <div className="advertising__decoration" aria-hidden="true"></div>
-            </div>
-            <div className="swiper-slide" role="listitem">
-              <Image
-                src="/img/adverting-img/hikvision.svg"
-                alt="Логотип компании Hikvision"
-                width={200}
-                height={100}
-              />
-              <div className="advertising__decoration" aria-hidden="true"></div>
-            </div>
-            <div className="swiper-slide" role="listitem">
-              <Image
-                src="/img/adverting-img/huawei.svg"
-                alt="Логотип компании Huawei"
-                width={200}
-                height={100}
-              />
-              <div className="advertising__decoration" aria-hidden="true"></div>
-            </div>
-            <div className="swiper-slide" role="listitem">
-              <Image
-                src="/img/adverting-img/bosch.svg"
-                alt="Логотип компании Bosch"
-                width={200}
-                height={100}
-              />
-              <div className="advertising__decoration" aria-hidden="true"></div>
-            </div>
-            <div className="swiper-slide" role="listitem">
-              <Image
-                src="/img/adverting-img/hikvision.svg"
-                alt="Логотип компании Hikvision"
-                width={200}
-                height={100}
-              />
-              <div className="advertising__decoration" aria-hidden="true"></div>
-            </div>
-            <div className="swiper-slide" role="listitem">
-              <Image
-                src="/img/adverting-img/huawei.svg"
-                alt="Логотип компании Huawei"
-                width={200}
-                height={100}
-              />
-              <div className="advertising__decoration" aria-hidden="true"></div>
-            </div>
-            <div className="swiper-slide" role="listitem">
-              <Image
-                src="/img/adverting-img/huawei.svg"
-                alt="Логотип компании Huawei"
-                width={200}
-                height={100}
-              />
-              <div className="advertising__decoration" aria-hidden="true"></div>
-            </div>
-            <div className="swiper-slide" role="listitem">
-              <Image
-                src="/img/adverting-img/bosch.svg"
-                alt="Логотип компании Bosch"
-                width={200}
-                height={100}
-              />
-              <div className="advertising__decoration" aria-hidden="true"></div>
-            </div>
+        <div className="continuous-scroll-container">
+          <div className="continuous-scroll-wrapper">
+            {PARTNERS.map((slide) => {
+              const PartnerComponent = slide.component;
+
+              return (
+                <div key={slide.id} className="continuous-slide">
+                  <PartnerComponent />
+                  <div className="advertising__decoration" aria-hidden="true"></div>
+                </div>
+              );
+            })}
+            {PARTNERS.map((slide) => {
+              const PartnerComponent = slide.component;
+
+              return (
+                <div key={`duplicate-${slide.id}`} className="continuous-slide">
+                  <PartnerComponent />
+                  <div className="advertising__decoration" aria-hidden="true"></div>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>

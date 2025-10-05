@@ -1,0 +1,28 @@
+import { Alhua, Bosch, Huawei, Hikvision } from '@/shared/icons';
+
+export const PARTNERS = [
+  { id: 1, component: Alhua },
+  { id: 2, component: Bosch },
+  { id: 3, component: Hikvision },
+  { id: 4, component: Huawei },
+  { id: 5, component: Alhua },
+  { id: 6, component: Bosch },
+  { id: 7, component: Hikvision },
+  { id: 8, component: Huawei },
+  { id: 10, component: Alhua },
+  { id: 11, component: Bosch },
+  { id: 12, component: Hikvision },
+  { id: 13, component: Huawei },
+  { id: 14, component: Alhua },
+  { id: 15, component: Bosch },
+  { id: 16, component: Hikvision },
+  { id: 17, component: Huawei },
+  { id: 18, component: Alhua },
+  { id: 19, component: Bosch },
+  { id: 20, component: Hikvision },
+  { id: 21, component: Huawei },
+  { id: 22, component: Alhua },
+  { id: 23, component: Bosch },
+  { id: 24, component: Hikvision },
+  { id: 25, component: Huawei },
+];
