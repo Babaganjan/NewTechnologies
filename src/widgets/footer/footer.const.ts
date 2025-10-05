@@ -10,11 +10,6 @@ export interface FooterContactItem {
   className?: string;
 }
 
-export interface FooterSection {
-  title: string;
-  items: FooterNavItem[];
-}
-
 // Основная навигация
 export const footerNavItems: FooterNavItem[] = [
   {
@@ -81,38 +76,5 @@ export const footerCompanyItems: FooterNavItem[] = [
   {
     href: '/contacts',
     title: 'Контакты',
-  },
-];
-
-// Адрес компании
-export const companyAddress = {
-  city: 'Астана',
-  address: '14/1 умай ана',
-  fullAddress: 'Астана, 14/1 умай ана',
-};
-
-// Информация о компании
-export const companyInfo = {
-  name: 'Тоо «Новые технологии»',
-  copyright: 'все права защищены',
-  privacyPolicy: {
-    href: '#',
-    title: 'Политика конфиденциальности',
-  },
-};
-
-// Все секции футера
-export const footerSections: FooterSection[] = [
-  {
-    title: 'Страницы',
-    items: footerNavItems,
-  },
-  {
-    title: 'Деятельность',
-    items: footerActivityItems,
-  },
-  {
-    title: 'О компании',
-    items: footerCompanyItems,
   },
 ];

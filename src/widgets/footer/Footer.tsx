@@ -8,8 +8,6 @@ import {
   footerNavItems,
   footerActivityItems,
   footerCompanyItems,
-  companyAddress,
-  companyInfo,
 } from './footer.const';
 
 export const Footer = () => {
@@ -36,7 +34,7 @@ export const Footer = () => {
 
         <address className="footer__about">
           <span className="footer__title">Связь с нами</span>
-          <p>{companyAddress.fullAddress}</p>
+          <p>Астана, 14/1 умай ана</p>
           <ul>
             {footerAboutItems.map((item) => (
               <li key={item.href}>
@@ -72,12 +70,10 @@ export const Footer = () => {
         </div>
         <div className="footer__copyright">
           <p className="footer__copyright-text">
-            {companyInfo.name}
-            <span>
-              © {new Date().getFullYear()} {companyInfo.copyright}
-            </span>
+            Тоо «Новые технологии»
+            <span>© {new Date().getFullYear()} все права защищены</span>
           </p>
-          <Link href={companyInfo.privacyPolicy.href}>{companyInfo.privacyPolicy.title}</Link>
+          <Link href="#">Политика конфиденциальности</Link>
         </div>
       </div>
     </footer>
