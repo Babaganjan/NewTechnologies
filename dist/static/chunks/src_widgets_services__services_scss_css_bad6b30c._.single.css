@@ -1,0 +1,190 @@
+/* [project]/src/widgets/services/_services.scss.css [app-client] (css) */
+.services.with-top-trapezoid {
+  position: relative;
+}
+
+.services.with-top-trapezoid:before {
+  content: "";
+  border-top: 12px solid #000;
+  border-left: 21px solid rgba(0, 0, 0, 0);
+  border-right: 21px solid rgba(0, 0, 0, 0);
+  width: 12.375rem;
+  position: absolute;
+  top: -.6875rem;
+  left: 50%;
+  transform: translateX(-50%)rotate(180deg);
+}
+
+.services.with-bottom-trapezoid {
+  position: relative;
+}
+
+.services.with-bottom-trapezoid:after {
+  content: "";
+  border-bottom: 12px solid #000;
+  border-left: 21px solid rgba(0, 0, 0, 0);
+  border-right: 21px solid rgba(0, 0, 0, 0);
+  width: 12.375rem;
+  position: absolute;
+  bottom: -.6875rem;
+  left: 50%;
+  transform: translateX(-50%)rotate(180deg);
+}
+
+.services {
+  background-color: var(--bg-black);
+  z-index: 0;
+  position: relative;
+}
+
+.services__container {
+  padding-top: 5.5rem;
+  padding-bottom: 6.313rem;
+}
+
+.services__wrapper-title {
+  border-bottom: 1px solid var(--vector-almost-black);
+  padding-bottom: .625rem;
+}
+
+.services__title {
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+  color: #fff;
+  padding-left: max(.625rem, min(.45192rem + .769231vw, 1.375rem));
+  padding-right: max(.625rem, min(.45192rem + .769231vw, 1.375rem));
+  font-size: max(.875rem, min(.75962rem + .512821vw, 1.375rem));
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.services__title:after {
+  content: "[";
+  position: absolute;
+  top: -.125rem;
+  left: -.625rem;
+}
+
+.services__title {
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+  color: var(--text-light-gray);
+  letter-spacing: -.053em;
+  font-size: max(.875rem, min(.75962rem + .512821vw, 1.375rem));
+  font-weight: 700;
+  line-height: 120%;
+}
+
+.services__list {
+  counter-reset: card;
+  flex-direction: column;
+  gap: .5rem;
+}
+
+.services .item {
+  border-bottom: 1px solid var(--vector-almost-black);
+  padding-bottom: .75rem;
+}
+
+.services .item__btn {
+  width: 1.5625rem;
+  height: 1.25rem;
+}
+
+.services .item__btn img {
+  filter: brightness(0) invert();
+  width: 1.5625rem;
+  height: 1.25rem;
+  transform: rotate(90deg);
+}
+
+.services .item__inner {
+  justify-content: space-between;
+  padding: 1.25rem 0 1.25rem 1.25rem;
+  position: relative;
+}
+
+.services .item__inner:before {
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+  color: var(--text-gray);
+  counter-increment: card;
+  content: "[" counter(card) "]";
+  letter-spacing: -.031rem;
+  font-size: max(.625rem, min(.45192rem + .769231vw, 1.375rem));
+  font-weight: 500;
+  line-height: 40%;
+  position: absolute;
+  top: 1.5rem;
+  left: 0;
+}
+
+.services .item__subtitle {
+  letter-spacing: -.06em;
+  text-transform: uppercase;
+  color: var(--text-white);
+  letter-spacing: -2.17px;
+  font-size: max(1.9375rem, min(1.40385rem + 2.3718vw, 4.25rem));
+  font-weight: 500;
+  line-height: 100%;
+}
+
+.services .hidden {
+  display: none;
+}
+
+.services .swiper-slide {
+  background: #171717 url("/img/infinity-slider-company.png") center no-repeat;
+  min-height: 6rem;
+}
+
+.services .swiper-slide:after {
+  content: "";
+  width: .625rem;
+  height: .625rem;
+  margin: .1875rem;
+}
+
+.services .swiper-slide:before {
+  content: "";
+  width: .625rem;
+  height: .625rem;
+  margin: .1875rem;
+  transform: rotate(180deg);
+}
+
+@media (min-width: 1024px) {
+  .services.with-top-trapezoid {
+    position: relative;
+  }
+
+  .services.with-top-trapezoid:before {
+    content: "";
+    border-top: 33px solid #000;
+    border-left: 56px solid rgba(0, 0, 0, 0);
+    border-right: 56px solid rgba(0, 0, 0, 0);
+    width: 64.375rem;
+    position: absolute;
+    top: -2rem;
+    left: 50%;
+    transform: translateX(-50%)rotate(180deg);
+  }
+
+  .services.with-bottom-trapezoid {
+    position: relative;
+  }
+
+  .services.with-bottom-trapezoid:after {
+    content: "";
+    border-bottom: 33px solid #000;
+    border-left: 56px solid rgba(0, 0, 0, 0);
+    border-right: 56px solid rgba(0, 0, 0, 0);
+    width: 64.375rem;
+    position: absolute;
+    bottom: -2rem;
+    left: 50%;
+    transform: translateX(-50%)rotate(180deg);
+  }
+}
+
+/*# sourceMappingURL=src_widgets_services__services_scss_css_bad6b30c._.single.css.map*/
