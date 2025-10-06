@@ -33,10 +33,6 @@
     flex-direction: column;
     gap: 0.25rem;
     
-    &--top {
-      height: 15.87rem;
-    }
-    
     &--bottom {
       display: flex;
       gap: 0.25rem;
@@ -120,7 +116,7 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       gap: 10px;
-      height: 675px;
+      // height: 675px;
       padding-top: 40px;
       
       &--top {
