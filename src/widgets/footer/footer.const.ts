@@ -11,7 +11,7 @@ export interface FooterContactItem {
 }
 
 // Основная навигация
-export const footerNavItems: FooterNavItem[] = [
+export const FOOTER_NAV_ITEMS: FooterNavItem[] = [
   {
     href: '/service',
     title: 'Сервис',
@@ -32,10 +32,10 @@ export const footerNavItems: FooterNavItem[] = [
     href: '/contacts',
     title: 'Контакты',
   },
-];
+] as const;
 
 // Контактная информация
-export const footerAboutItems: FooterContactItem[] = [
+export const FOOTER_ABOUT_ITEMS: FooterContactItem[] = [
   {
     title: '+7 (700) 836-94-36',
     href: 'tel:+77008369436',
@@ -49,10 +49,10 @@ export const footerAboutItems: FooterContactItem[] = [
     className: 'social-link',
     href: 'https://www.instagram.com/nt-t.kz/',
   },
-];
+] as const;
 
 // Секция "Деятельность"
-export const footerActivityItems: FooterNavItem[] = [
+export const FOOTER_ACTIVITY_ITEMS: FooterNavItem[] = [
   {
     href: '/service',
     title: 'Сервис',
@@ -65,10 +65,10 @@ export const footerActivityItems: FooterNavItem[] = [
     href: '/solution',
     title: 'IT-решения',
   },
-];
+] as const;
 
 // Секция "О компании"
-export const footerCompanyItems: FooterNavItem[] = [
+export const FOOTER_COMPANY_ITEMS: FooterNavItem[] = [
   {
     href: '/about',
     title: 'О нас',
@@ -77,4 +77,4 @@ export const footerCompanyItems: FooterNavItem[] = [
     href: '/contacts',
     title: 'Контакты',
   },
-];
+] as const;

@@ -4,10 +4,10 @@ import { Arrow } from '@/shared/icons';
 
 import './_footer.scss';
 import {
-  footerAboutItems,
-  footerNavItems,
-  footerActivityItems,
-  footerCompanyItems,
+  FOOTER_ABOUT_ITEMS,
+  FOOTER_NAV_ITEMS,
+  FOOTER_ACTIVITY_ITEMS,
+  FOOTER_COMPANY_ITEMS,
 } from './footer.const';
 
 export const Footer = () => {
@@ -24,7 +24,7 @@ export const Footer = () => {
         <nav className="footer__pages" aria-label="Основная навигация">
           <span className="footer__title">Страницы</span>
           <ul className="footer__list">
-            {footerNavItems.map((item) => (
+            {FOOTER_NAV_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link href={item.href}>{item.title}</Link>
               </li>
@@ -36,7 +36,7 @@ export const Footer = () => {
           <span className="footer__title">Связь с нами</span>
           <p>Астана, 14/1 умай ана</p>
           <ul>
-            {footerAboutItems.map((item) => (
+            {FOOTER_ABOUT_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link href={item.href} className={item.className}>
                   {item.title}
@@ -50,7 +50,7 @@ export const Footer = () => {
         <div className="footer__activity">
           <span className="footer__title">Деятельность</span>
           <ul>
-            {footerActivityItems.map((item) => (
+            {FOOTER_ACTIVITY_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link href={item.href}>{item.title}</Link>
               </li>
@@ -61,7 +61,7 @@ export const Footer = () => {
         <div className="footer__about-company">
           <span className="footer__title">О компании</span>
           <ul>
-            {footerCompanyItems.map((item) => (
+            {FOOTER_COMPANY_ITEMS.map((item) => (
               <li key={item.href}>
                 <Link href={item.href}>{item.title}</Link>
               </li>

@@ -1,7 +1,7 @@
 import { Arrow } from '@/shared/icons';
 
 import './_questions-block.scss';
-import { questionsData, activeCardData } from './questions.const';
+import { QUESTIONS_DATA, ACTIVE_CARD_DATA } from './questions.const';
 
 export const Questions = () => {
   return (
@@ -11,7 +11,7 @@ export const Questions = () => {
           Частые вопросы
         </h2>
         <ul className="card-wrapper">
-          {questionsData.map((question) => (
+          {QUESTIONS_DATA.map((question) => (
             <li key={question.id} className="questions__card" data-grid-index={question.gridIndex}>
               <div className="questions__card-decorative"></div>
               <h5 className="questions__content">{question.content}</h5>
@@ -20,7 +20,7 @@ export const Questions = () => {
           ))}
           <li
             className="questions__card--active questions__card"
-            data-grid-index={activeCardData.gridIndex}
+            data-grid-index={ACTIVE_CARD_DATA.gridIndex}
           >
             <div className="questions__card-content">
               <h4 className="questions__card-title">Все еще есть вопросы?</h4>

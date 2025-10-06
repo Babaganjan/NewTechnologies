@@ -4,7 +4,7 @@ export interface QuestionItem {
   gridIndex: number;
 }
 
-export const questionsData: QuestionItem[] = [
+export const QUESTIONS_DATA: QuestionItem[] = [
   {
     id: 'question-1',
     content: 'С какими объектами вы работаете?',
@@ -45,9 +45,9 @@ export const questionsData: QuestionItem[] = [
     content: 'Сколько времени занимает установка систем?',
     gridIndex: 8,
   },
-];
+] as const;
 
-export const activeCardData = {
+export const ACTIVE_CARD_DATA = {
   id: 'active-question',
   gridIndex: 9,
-};
+} as const;

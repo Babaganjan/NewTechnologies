@@ -4,7 +4,7 @@ export interface ProjectMenuData {
   service: string;
 }
 
-export const projectMenuData: ProjectMenuData[] = [
+export const PROJECT_MENU_DATA: ProjectMenuData[] = [
   {
     id: 1,
     subtitle: 'Филиал «Назарбаев Интеллектуальная школа» г. Тараз, АОО «НИШ»',
@@ -45,4 +45,4 @@ export const projectMenuData: ProjectMenuData[] = [
     subtitle: 'НАО «КазНИТУ им. К.И. Сатпаева»',
     service: 'Охранно-пожарная система',
   },
-];
+] as const;

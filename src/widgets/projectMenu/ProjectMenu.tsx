@@ -5,7 +5,7 @@ import { useState } from 'react';
 import { Arrow } from '@/shared/icons';
 
 import './_project-menu.scss';
-import { projectMenuData } from './projectMenu.const';
+import { PROJECT_MENU_DATA } from './projectMenu.const';
 
 export const ProjectMenu = () => {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
@@ -35,7 +35,7 @@ export const ProjectMenu = () => {
         </div>
 
         <div className="project-menu__numbers">
-          {projectMenuData.map((item, index) => (
+          {PROJECT_MENU_DATA.map((item, index) => (
             <div
               key={`number-${item.id}`}
               className={`project-menu-item__number ${hoveredRow === index && 'hovered'}`}
@@ -48,7 +48,7 @@ export const ProjectMenu = () => {
         </div>
 
         <ul className="project-menu__list">
-          {projectMenuData.map((item, index) => (
+          {PROJECT_MENU_DATA.map((item, index) => (
             <li
               key={item.id}
               className={`project-menu-item ${hoveredRow === index && 'hovered'}`}
@@ -76,7 +76,7 @@ export const ProjectMenu = () => {
         </ul>
 
         <div className="project-menu__services">
-          {projectMenuData.map((item, index) => (
+          {PROJECT_MENU_DATA.map((item, index) => (
             <div
               key={`service-${item.id}`}
               className={`project-menu-item__service ${hoveredRow === index && 'hovered'}`}
