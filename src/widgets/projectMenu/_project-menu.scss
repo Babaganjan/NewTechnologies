@@ -12,6 +12,7 @@ $column-gap: 10px;
     grid-template-columns: 1fr;
     padding: 10px;
     margin-top: 100px;
+    margin-bottom: 100px;
 
     .project-menu__title {
       position: relative;
@@ -92,9 +93,8 @@ $column-gap: 10px;
 
     .project-menu__button {
       display: inline-flex;
-      justify-content: center;
       align-items: center;
-      margin: 20px auto 100px auto;
+      margin: 20px auto;
       gap: 8px;
       width: fit-content;
       @include typography(var(--text-black), 700, 16px, 1.2);
@@ -111,7 +111,7 @@ $column-gap: 10px;
         'title subtitle .'
         'headers headers headers'
         'number list type'
-        'button button button';
+        '. button .';
       column-gap: $column-gap;
 
       .project-menu__title {
@@ -260,6 +260,8 @@ $column-gap: 10px;
 
       .project-menu__button {
         grid-area: button;
+        margin: 0;
+        margin-top: 40px;
       }
     }
 
