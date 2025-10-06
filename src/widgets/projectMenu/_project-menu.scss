@@ -89,6 +89,9 @@ $column-gap: 10px;
 
     .project-menu-item__arrow {
       transform: rotate(90deg);
+      flex-shrink: 0;
+      width: 12px;
+      height: 15px;
     }
 
     .project-menu__button {
@@ -272,6 +275,9 @@ $column-gap: 10px;
 
       svg {
         transform: rotate(90deg);
+        flex-shrink: 0;
+        width: 12px;
+        height: 15px;
       }
     }
   }
