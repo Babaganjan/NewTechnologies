@@ -19,8 +19,12 @@ export const FavoritesProject = () => {
             />
             <div className="favorites-project__decoration" aria-hidden="true"></div>
           </div>
-          <h4>Метрополитен г. алматы</h4>
-          <p>Реализовали монтаж автоматического порошкового пожаротушения «Тунгус».</p>
+          <div className="favorites-project__wrapper">
+            <h5 className="item__small-title">Метрополитен г. алматы</h5>
+            <p className="item__prev">
+              Реализовали монтаж автоматического порошкового пожаротушения «Тунгус».
+            </p>
+          </div>
         </article>
         <article className="favorites-project__item">
           <div className="favorites-project__img">
@@ -33,8 +37,12 @@ export const FavoritesProject = () => {
               height={242}
             />
           </div>
-          <h4>Проект «комфортная школа»</h4>
-          <p>Установили турникеты NT по всему Казахстану при поддержке фонда «Самрук-Қазына».</p>
+          <div className="favorites-project__wrapper">
+            <h5 className="item__small-title">Проект «комфортная школа»</h5>
+            <p className="item__prev">
+              Установили турникеты NT по всему Казахстану при поддержке фонда «Самрук-Қазына».
+            </p>
+          </div>
         </article>
         <article className="favorites-project__item">
           <div className="favorites-project__decoration" aria-hidden="true"></div>
@@ -49,8 +57,8 @@ export const FavoritesProject = () => {
             />
           </div>
           <div className="favorites-project__wrapper">
-            <h4>Метрополитен г. алматы</h4>
-            <p>Оборудовали объект современными серверными шкафами.</p>
+            <h5 className="item__small-title">Метрополитен г. алматы</h5>
+            <p className="item__prev">Оборудовали объект современными серверными шкафами.</p>
           </div>
         </article>
       </div>
