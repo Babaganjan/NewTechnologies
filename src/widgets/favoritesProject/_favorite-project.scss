@@ -9,9 +9,11 @@
 	gap: 8px;
   }
 	&__title {
+	  @include bracket-decor(#4d4d4d, (top: -1px, left: 0));
 	  position: relative;
 	  margin-bottom: 10px;
-	  @include bracket-decor(#4d4d4d, (top: -1px, left: 0));
+	  grid-column: 1/-1;
+	  grid-row: 1/2;
 	}
   
   &__item {
@@ -35,4 +37,34 @@
 	  margin-bottom: 8px;
 	}
   }
+}
+
+// deckstop
+
+@include respond-min(1024) {
+	.favorites-project {
+		&__container {
+			grid-template-columns: repeat(2, 1fr);
+	        grid-template-rows: auto;
+		}
+		&__title {
+	        grid-column: 1/-1;
+	        grid-row: 1/2;
+	    }
+		&__item {
+	        border-bottom: #dfdfdf solid 1px;
+	        &:first-of-type {
+              grid-column: 1/-1;
+	          grid-row: 2/3;
+            }
+	        &:nth-of-type(2) {
+	          grid-column: 1/2;
+	          grid-row: 3/4;
+	        }
+	        &:last-of-type {
+	          grid-column: 2/-1;
+	          grid-row: 3/4;
+	        }
+		}
+	}
 }
