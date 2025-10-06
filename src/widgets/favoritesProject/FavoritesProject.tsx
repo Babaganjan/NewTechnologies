@@ -13,7 +13,13 @@ export const FavoritesProject = () => {
         {FAVORITES_PROJECT_DATA.map((item) => (
           <article className="favorites-project__item" key={item.id}>
             <div className="favorites-project__img">
-              <Image src={item.image} alt="Метрополитен г. алматы" width={340} height={242} />
+              <Image
+                src={item.image}
+                alt="Метрополитен г. алматы"
+                width={340}
+                height={242}
+                className="favorites-project__img-item"
+              />
               <div className="favorites-project__decoration" aria-hidden="true"></div>
             </div>
             <div className="favorites-project__wrapper">

@@ -1,76 +1,91 @@
-@use "../../shared/styles/functions" as *;
-@use "../../shared/styles/mixins" as *;
+@use '../../shared/styles/functions' as *;
+@use '../../shared/styles/mixins' as *;
 
 .favorites-project {
   padding: 10px;
   margin-top: 100px;
   &__container {
-	display: grid;
-	gap: 8px;
+    display: grid;
+    gap: 8px;
   }
   &__title {
-	@include bracket-decor(#4d4d4d, (top: -1px, left: 0));
-	position: relative;
-	margin-bottom: 10px;
-	grid-column: 1/-1;
-	grid-row: 1/2;
+    @include bracket-decor(
+      #4d4d4d,
+      (
+        top: -1px,
+        left: 0,
+      )
+    );
+    position: relative;
+    margin-bottom: 10px;
+    grid-column: 1/-1;
+    grid-row: 1/2;
   }
+
   &__item {
-	padding-bottom: 8px;
-	border-bottom: #dfdfdf solid 1px;
-	.favorites-project__img {
-	  @include item-decor();
-	  display: inline-flex;
-	  .favorites-project__decoration {
-		@include decoration(var(--text-white), 25px);
-	  }
-	}
-	
-	.item__small-title {
-	   	@include typography(var(--bg-black), 500, fluid(18px,28px), 115%);
-     	letter-spacing: -1.08px;
-	}
-	
-	.item__prev {
-	  font-family: var(--second-family);
-	  @include typography(#4d4d4d, 500, 14px, 1.1, none);
-	}
+    padding-bottom: 8px;
+    border-bottom: #dfdfdf solid 1px;
+
+    .favorites-project__img-item:first-of-type {
+      filter: grayscale(1);
+    }
+
+    .favorites-project__img {
+      @include item-decor();
+      display: inline-flex;
+      .favorites-project__decoration {
+        @include decoration(var(--text-white), 25px);
+      }
+    }
+
+    .item__small-title {
+      @include typography(var(--bg-black), 500, fluid(18px, 28px), 115%);
+      letter-spacing: -1.08px;
+    }
+
+    .item__prev {
+      font-family: var(--second-family);
+      @include typography(#4d4d4d, 500, 14px, 1.1, none);
+    }
   }
 }
 
 // deckstop
 
 @include respond-min(1024) {
-	.favorites-project {
-		&__container {
-			grid-template-columns: repeat(2, 1fr);
-	        grid-template-rows: auto;
-			gap: 40px;
-		}
-		&__title {
-	        grid-column: 1/-1;
-	        grid-row: 1/2;
-	    }
-		&__item {
-			border-bottom: unset;
-			padding-bottom: 20px;
-			position: relative;
-	        &:first-of-type {
-              grid-column: 1/-1;
-	          grid-row: 2/3;
-            }
-	        &:nth-of-type(2) {
-	          grid-column: 1/2;
-	          grid-row: 3/4;
-	        }
-	        &:last-of-type {
-	          grid-column: 2/-1;
-	          grid-row: 3/4;
-	        }
-		}
-		&__wrapper {
-			position: relative;
-			clip-path: polygon(
+  .favorites-project {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      gap: 40px;
+    }
+    &__title {
+      grid-column: 1/-1;
+      grid-row: 1/2;
+    }
+    &__item {
+      border-bottom: unset;
+      padding-bottom: 20px;
+      position: relative;
+      &:first-of-type {
+        grid-column: 1/-1;
+        grid-row: 2/3;
+        .favorites-project__img-item {
+          filter: none;
+        }
+      }
+      &:nth-of-type(2) {
+        grid-column: 1/2;
+        grid-row: 3/4;
+      }
+      &:last-of-type {
+        grid-column: 2/-1;
+        grid-row: 3/4;
+      }
+    }
+    &__wrapper {
+      position: relative;
+      clip-path: polygon(
         0% 0%,
         calc(100% - 40px) 0%,
         calc(100% - 40px) 20px,
@@ -80,24 +95,24 @@
         100% 100%,
         0% 100%
       );
-			width: 480px;
-			min-height: 118px;
-			// position: absolute;
-			transform: translate(10px, -132px);
-			// bottom: 35px;
-			// left: 10px;
-			padding: 15px;
-			background-color: var(--bg-white);
-		}
-		.item__small-title {
-			@include typography(var(--bg-black), 500, fluid(18px,28px), 115%);
-    		letter-spacing: -1.68px;
-		}
+      width: 480px;
+      min-height: 118px;
+      // position: absolute;
+      transform: translate(10px, -132px);
+      // bottom: 35px;
+      // left: 10px;
+      padding: 15px;
+      background-color: var(--bg-white);
+    }
+    .item__small-title {
+      @include typography(var(--bg-black), 500, fluid(18px, 28px), 115%);
+      letter-spacing: -1.68px;
+    }
 
-		.item__prev {
-			@include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 110%, none);
-    		font-family: var(--second-family);
-    		letter-spacing: -0.053rem;
-		}
-	}
+    .item__prev {
+      @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 110%, none);
+      font-family: var(--second-family);
+      letter-spacing: -0.053rem;
+    }
+  }
 }
