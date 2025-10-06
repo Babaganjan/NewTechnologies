@@ -38,7 +38,7 @@ export const ProjectMenu = () => {
           {projectMenuData.map((item, index) => (
             <div
               key={`number-${item.id}`}
-              className={`project-menu-item__number ${hoveredRow === index ? 'hovered' : ''}`}
+              className={`project-menu-item__number ${hoveredRow === index && 'hovered'}`}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
@@ -51,7 +51,7 @@ export const ProjectMenu = () => {
           {projectMenuData.map((item, index) => (
             <li
               key={item.id}
-              className={`project-menu-item ${hoveredRow === index ? 'hovered' : ''}`}
+              className={`project-menu-item ${hoveredRow === index && 'hovered'}`}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
@@ -79,7 +79,7 @@ export const ProjectMenu = () => {
           {projectMenuData.map((item, index) => (
             <div
               key={`service-${item.id}`}
-              className={`project-menu-item__service ${hoveredRow === index ? 'hovered' : ''}`}
+              className={`project-menu-item__service ${hoveredRow === index && 'hovered'}`}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
