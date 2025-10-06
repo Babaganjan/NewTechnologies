@@ -1,91 +1,91 @@
-@use "../../shared/styles/functions" as *;
-@use "../../shared/styles/mixins" as *;
+@use '../../shared/styles/functions' as *;
+@use '../../shared/styles/mixins' as *;
 
 .object-levels {
+  position: relative;
+  z-index: 0;
+  &__container {
+    @include line-decor(2% 50% 98%, var(--vector-light-gray));
     position: relative;
     z-index: 0;
-    &__container {
-        @include line-decor(2% 50% 98%, var(--vector-light-gray));
-        position: relative;
-        z-index: 0;
 
-        flex-direction: column;
-        gap: 1.25rem;
-        padding-block: 6.25rem;
-    }
-
-    &__inner {
-        flex-direction: column;
-        gap: 0.625rem;
-    }
-
-    &__title {
-        @include bracket-decor();
-        @include typography(var(--text-deep-gray), 700, fluid(14px, 22px));
-        letter-spacing: -0.053em;
-    }
-
-    &__subtitle {
-       @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 100%);
-       span {
-        color: var(--text-black);
-       }
-    letter-spacing: -0.136rem;
-    }
-
-    &__list {
-      counter-reset: card;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
-
-    &__item {
-       &::after {
-         content: "";
-         @include decoration(var(--text-white), 15px);
-       }
-       position: relative;
-       min-height: 6.25rem;
-       background-color: var(--bg-light-gray);
-       padding: 0.625rem 0.625rem 0.625rem 1.313rem;
-    }
-
-.item {
-  &__inner {
-    @include item-decor(
-    var(--vector-deep-gray),
-    $before-position: (top: -7px, left: -18px),
-    $after-position: (bottom: -7px, right: -7px)
-    );
-    height: 80px;
-    position: relative;
     flex-direction: column;
-    gap: 6px;
-    background-image: url(/img/zavod.svg);
-    background-repeat: no-repeat;
-    background-position: top right;
+    gap: 1.25rem;
+    padding-block: 6.25rem;
   }
+
+  &__inner {
+    flex-direction: column;
+    gap: 0.625rem;
+  }
+
   &__title {
-    @include typography(var(--bg-black), 600, fluid(22px,42px), 100%);
-    letter-spacing: -0.083rem;
-    width: 70%;
-    &::before {
+    @include bracket-decor();
+    @include typography(var(--text-deep-gray), 700, fluid(14px, 22px));
+    letter-spacing: -0.053em;
+  }
+
+  &__subtitle {
+    @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 100%);
+    span {
+      color: var(--text-black);
+    }
+    letter-spacing: -0.136rem;
+  }
+
+  &__list {
+    counter-reset: card;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  &__item {
+    &::after {
+      content: '';
+      @include decoration(var(--text-white), 15px);
+    }
+    position: relative;
+    min-height: 6.25rem;
+    background-color: var(--bg-light-gray);
+    padding: 0.625rem 0.625rem 0.625rem 1.313rem;
+  }
+
+  .item {
+    &__inner {
+      @include item-decor(
+        var(--vector-deep-gray),
+        $before-position: (top: -7px, left: -18px),
+        $after-position: (bottom: -7px, right: -7px)
+      );
+      height: 80px;
+      position: relative;
+      flex-direction: column;
+      gap: 6px;
+      background-image: url(/img/zavod.svg);
+      background-repeat: no-repeat;
+      background-position: top right;
+    }
+    &__title {
+      @include typography(var(--bg-black), 600, fluid(22px, 42px), 100%);
+      letter-spacing: -0.083rem;
+      width: 70%;
+      &::before {
         @include typography(var(--text-gray), 500, fluid(10px, 22px), 40%);
         counter-increment: card;
-        content: "["counter(card)"]";
+        content: '[' counter(card) ']';
         position: absolute;
         top: 0;
         left: -13px;
         letter-spacing: -0.031rem;
+      }
+    }
+
+    &__prev {
+      @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 110%, none);
+      font-family: var(--second-family);
+      letter-spacing: -0.053rem;
     }
   }
-
-  &__prev {
-    @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 110%, none);
-    font-family: var(--second-family);
-    letter-spacing: -0.053rem;
-  }
-}
 }
 
 // deckstop
@@ -96,10 +96,10 @@
     }
     &__inner {
       display: grid;
-      grid-template-columns: repeat(4,1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
     &__title {
-        letter-spacing: -1.32px;
+      letter-spacing: -1.32px;
     }
     &__subtitle {
       grid-column: 2/4;
@@ -119,10 +119,10 @@
     .item {
       &__inner {
         @include item-decor(
-        var(--vector-deep-gray),
-        $before-position: (top: -14px, left: -25px),
-        $after-position: (bottom: -5px, right: -25px),
-        $size: (width: 20px, height: 20px)
+          var(--vector-deep-gray),
+          $before-position: (top: -14px, left: -25px),
+          $after-position: (bottom: -5px, right: -25px),
+          $size: (width: 20px, height: 20px)
         );
         min-height: 312px;
         justify-content: flex-end;

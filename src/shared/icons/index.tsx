@@ -4,5 +4,6 @@ import { Hikvision } from './Adverting-icons/Hikvision/Hikvision';
 import { Huawei } from './Adverting-icons/Huawei/Huawei';
 import { Arrow } from './Arrow/Arrow';
 import { Logo } from './Logo/Logo';
+import * as ObjectLevelIcons from './objectLevelIcons';
 
-export { Arrow, Logo, Alhua, Bosch, Hikvision, Huawei };
+export { Arrow, Logo, Alhua, Bosch, Hikvision, Huawei, ObjectLevelIcons };
