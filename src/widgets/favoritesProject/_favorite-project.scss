@@ -69,11 +69,23 @@
 	        }
 		}
 		&__wrapper {
+			position: relative;
+			clip-path: polygon(
+        0% 0%,
+        calc(100% - 40px) 0%,
+        calc(100% - 40px) 20px,
+        calc(100% - 20px) 20px,
+        calc(100% - 20px) 40px,
+        100% 40px,
+        100% 100%,
+        0% 100%
+      );
 			width: 480px;
 			min-height: 118px;
-			position: absolute;
-			bottom: 35px;
-			left: 10px;
+			// position: absolute;
+			transform: translate(10px, -132px);
+			// bottom: 35px;
+			// left: 10px;
 			padding: 15px;
 			background-color: var(--bg-white);
 		}

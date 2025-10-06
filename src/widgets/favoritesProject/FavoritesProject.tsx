@@ -13,7 +13,6 @@ export const FavoritesProject = () => {
             <Image
               src="/img/favorite-1.webp"
               alt="Метрополитен г. алматы"
-              layout="responsive"
               width={340}
               height={242}
             />
@@ -32,7 +31,6 @@ export const FavoritesProject = () => {
             <Image
               src="/img/favorite-2.webp"
               alt="Проект «комфортная школа»"
-              layout="responsive"
               width={340}
               height={242}
             />
@@ -51,7 +49,6 @@ export const FavoritesProject = () => {
             <Image
               src="/img/favorite-3.webp"
               alt="Метрополитен г. алматы"
-              layout="responsive"
               width={341}
               height={242}
             />
