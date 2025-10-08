@@ -1,17 +1,17 @@
-@use "../../shared/styles/functions" as *;
-@use "../../shared/styles/mixins" as *;
+@use '../../shared/styles/functions' as *;
+@use '../../shared/styles/mixins' as *;
 
 .services {
-    &.with-top-trapezoid {
-      @include trapezoid-decor(21px, 12px, black, top);
-    }
+  &.with-top-trapezoid {
+    @include trapezoid-decor(21px, 12px, black, top);
+  }
 
-    &.with-bottom-trapezoid {
-      @include trapezoid-decor(21px, 12px, black, bottom);
-    }
-    position: relative;
-    background-color: var(--bg-black);
-    z-index: 0;
+  &.with-bottom-trapezoid {
+    @include trapezoid-decor(21px, 12px, black, bottom);
+  }
+  position: relative;
+  background-color: var(--bg-black);
+  z-index: 0;
 
   &__container {
     padding-block: 5.5rem 6.313rem;
@@ -22,16 +22,16 @@
     border-bottom: 1px solid var(--vector-almost-black);
   }
 
-    &__title {
-      @include bracket-decor();
-      @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
-      letter-spacing: -0.053em;
-    }
-    &__list {
-      counter-reset: card;
-      flex-direction: column;
-      gap: 0.5rem;
-    }
+  &__title {
+    @include bracket-decor();
+    @include typography(var(--text-light-gray), 700, var(--description-two-font-size));
+    letter-spacing: -0.053em;
+  }
+  &__list {
+    counter-reset: card;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
   .item {
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--vector-almost-black);
@@ -48,11 +48,11 @@
     }
 
     &__inner {
-        position: relative;
-        justify-content: space-between;
-        padding: 1.25rem 0 1.25rem 1.25rem;
-        &::before {
-        @include typography(var(--text-gray), 500, fluid(10px, 22px), 40%);
+      position: relative;
+      justify-content: space-between;
+      padding: 1.25rem 0 1.25rem 1.25rem;
+      &::before {
+        @include typography(var(--text-gray), 500, var(--number-two-font-size), 0.4);
         counter-increment: card;
         content: '[' counter(card) ']';
         position: absolute;
@@ -63,8 +63,8 @@
     }
 
     &__subtitle {
-        @include typography(var(--text-white), 500, fluid(31px, 68px), 100%); 
-        letter-spacing: -2.17px;
+      @include typography(var(--text-white), 500, var(--h3-font-size), 1);
+      letter-spacing: -2.17px;
     }
   }
 
@@ -74,22 +74,22 @@
 
   .swiper-slide {
     min-height: 96px;
-    background: url("/img/infinity-slider-company.png") no-repeat center #171717;
-    
-      &::after {
-        content: '';
-        margin: 3px;
-        width: 10px;
-        height: 10px;
-      }
-      
-      &::before {
-        content: '';
-        margin: 3px;
-        transform: rotate(180deg);
-        width: 10px;
-        height: 10px;
-      }
+    background: url('/img/infinity-slider-company.png') no-repeat center var(--bg-deep-gray);
+
+    &::after {
+      content: '';
+      margin: 3px;
+      width: 10px;
+      height: 10px;
+    }
+
+    &::before {
+      content: '';
+      margin: 3px;
+      transform: rotate(180deg);
+      width: 10px;
+      height: 10px;
+    }
   }
 }
 

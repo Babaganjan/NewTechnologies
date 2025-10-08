@@ -28,7 +28,7 @@ $column-gap: 10px;
 
     .project-menu__subtitle {
       font-family: var(--second-family);
-      @include typography(var(--text-black), 600, fluid(22px, 42px), 100%);
+      @include typography(var(--text-black), 600, var(--h4-font-size), 1);
       margin-bottom: 30px;
 
       span {
@@ -61,7 +61,7 @@ $column-gap: 10px;
 
         .project-menu-item__client {
           font-family: var(--second-family);
-          @include typography(#171717, 500, 14px, 1.1, none);
+          @include typography(var(--text-deep-black), 500, 14px, 1.1, none);
         }
 
         .project-menu-item__subtitle {
@@ -72,7 +72,7 @@ $column-gap: 10px;
           @include typography(var(--text-black), 500, 18px, 1.15);
 
           h5 {
-            @include typography(var(--text-black), 500, fluid(18px, 28px), 1.15);
+            @include typography(var(--text-black), 500, var(--description-font-size), 1.15);
           }
         }
 
