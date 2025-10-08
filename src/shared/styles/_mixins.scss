@@ -7,12 +7,13 @@
   $weight: 500,
   $size: 1.125rem,
   $line: 120%,
-  $transform: uppercase
+  $transform: uppercase,
+  $spacing: -0.06em
 ) {
   font-weight: $weight;
   font-size: $size;
   line-height: $line;
-  letter-spacing: -0.06em;
+  letter-spacing: $spacing;
   text-transform: $transform;
   color: $color;
 }
