@@ -1,7 +1,8 @@
-@use "../../shared/styles/functions" as *;
-@use "../../shared/styles/mixins" as *;
+@use '../../shared/styles/functions' as *;
+@use '../../shared/styles/mixins' as *;
 
-.hidden, .hidden__contacts {
+.hidden,
+.hidden__contacts {
   display: none;
 }
 
@@ -14,16 +15,16 @@
 }
 
 .header__container {
-    @include line-decor(2% 50% 98%);
-    position: relative;
-    justify-content: center;
-    padding-block: 0.625rem 7.125rem;
+  @include line-decor(2% 50% 98%);
+  position: relative;
+  justify-content: center;
+  padding-block: 0.625rem 7.125rem;
 }
 
 .header__burger {
-    position: absolute;
-    top: 0.938rem;
-    right: 0.75rem;
+  position: absolute;
+  top: 0.938rem;
+  right: 0.75rem;
 }
 
 .header__btn {
@@ -31,23 +32,23 @@
   width: 1.75rem;
   height: 0.5rem;
   position: relative;
-  
+
   &::before {
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 2px;
-	background: var(--bg-white);
-	box-shadow: 0 8px 0 var(--bg-white);
-	transition: all 0.3s ease;
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: var(--bg-white);
+    box-shadow: 0 8px 0 var(--bg-white);
+    transition: all 0.3s ease;
   }
-  
+
   &.active::before {
-	top: 8px;
-	transform: rotate(45deg);
-	box-shadow: 0 0 0 transparent;
+    top: 8px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 0 transparent;
   }
 }
 
@@ -65,7 +66,8 @@
       align-items: center;
       justify-content: space-between;
     }
-    .hidden, .hidden__contacts {
+    .hidden,
+    .hidden__contacts {
       display: block;
     }
     .nav {
@@ -74,7 +76,6 @@
       }
       &__link {
         @include typography(var(--bg-white), 500, 20px);
-        letter-spacing: -1px;
       }
     }
     .hidden__burger--deckstop {
@@ -83,46 +84,48 @@
     &__wrapper-contacts {
       gap: 30px;
     }
-.custom-select {
+    .custom-select {
       position: relative;
       display: inline-block;
       width: 76px;
-    &::after {
-      @include decoration(
-        $color: var(--text-gray), 
-        $size: 8px, 
-        $image: '/arrow-black.svg', 
-        $pos: (top: 12px, right: 0)
-      );
-      content: "";
-      transform: translateY(-50%);
-      pointer-events: none;
-      transition: transform 0.2s ease;
-      transform: rotate(90deg);
+      &::after {
+        @include decoration(
+          $color: var(--text-gray),
+          $size: 8px,
+          $image: '/arrow-black.svg',
+          $pos: (
+            top: 12px,
+            right: 0,
+          )
+        );
+        content: '';
+        transform: translateY(-50%);
+        pointer-events: none;
+        transition: transform 0.2s ease;
+        transform: rotate(90deg);
+      }
     }
-}
 
-.header__city {
-  color: var(--text-white);
-  appearance: none;
-  width: 100%;
-  font-size: 20px;
-  cursor: pointer;
-  &::-ms-expand {
-    display: none;
-  }
-}
+    .header__city {
+      color: var(--text-white);
+      appearance: none;
+      width: 100%;
+      font-size: 20px;
+      cursor: pointer;
+      &::-ms-expand {
+        display: none;
+      }
+    }
 
-/* Стили для выпадающего списка */
-.header__city option {
-  background-color: var(--bg-white); /* Фон option */
-  color: var(--text-black); /* Фон option */
-  // padding: 10px;
-}
+    /* Стили для выпадающего списка */
+    .header__city option {
+      background-color: var(--bg-white); /* Фон option */
+      color: var(--text-black); /* Фон option */
+      // padding: 10px;
+    }
 
     &__phone {
       @include typography(var(--text-white), 500, 20px);
-      letter-spacing: -1px;
     }
   }
 }

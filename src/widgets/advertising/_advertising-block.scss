@@ -33,7 +33,7 @@
   }
 
   &__subtitle {
-    @include typography(var(--text-white), 500, fluid(31px, 68px), 100%);
+    @include typography(var(--text-white), 500, var(--h3-font-size), 1);
     margin-bottom: 20px;
     span {
       color: var(--text-deep-black);
@@ -41,8 +41,8 @@
   }
 
   img {
-    width: fluid(100px, 150px);
-    height: fluid(50px, 80px);
+    width: clamp(100px, 8vw, 150px);
+    height: clamp(50px, 4vw, 80px);
   }
 
   .advertising__decoration {
@@ -72,8 +72,8 @@
 
 .continuous-slide {
   position: relative;
-  min-height: fluid(96px, 146px);
-  width: fluid(144px, 251px);
+  min-height: clamp(96px, 7.5vw, 146px);
+  width: clamp(144px, 12vw, 251px);
   background-color: var(--bg-deep-gray);
   padding: 10px;
   display: flex;
@@ -87,8 +87,8 @@
   svg {
     width: 100%;
     height: auto;
-    max-width: fluid(144px, 251px);
-    max-height: fluid(50px, 80px);
+    max-width: clamp(144px, 12vw, 251px);
+    max-height: clamp(50px, 4vw, 80px);
   }
 
   &:hover {

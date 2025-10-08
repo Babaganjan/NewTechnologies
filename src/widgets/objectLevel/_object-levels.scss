@@ -21,12 +21,12 @@
 
   &__title {
     @include bracket-decor();
-    @include typography(var(--text-deep-gray), 700, fluid(14px, 22px));
+    @include typography(var(--text-deep-gray), 700, var(--description-two-font-size));
     letter-spacing: -0.053em;
   }
 
   &__subtitle {
-    @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 100%);
+    @include typography(var(--text-light-gray), 500, var(--h3-font-size), 1);
     span {
       color: var(--text-black);
     }
@@ -66,11 +66,11 @@
       background-position: top right;
     }
     &__title {
-      @include typography(var(--bg-black), 600, fluid(22px, 42px), 100%);
+      @include typography(var(--bg-black), 600, var(--h4-font-size), 1);
       letter-spacing: -0.083rem;
       width: 70%;
       &::before {
-        @include typography(var(--text-gray), 500, fluid(10px, 22px), 40%);
+        @include typography(var(--text-gray), 500, var(--number-two-font-size), 0.4);
         counter-increment: card;
         content: '[' counter(card) ']';
         position: absolute;
@@ -81,7 +81,7 @@
     }
 
     &__prev {
-      @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 110%, none);
+      @include typography(var(--text-deep-gray), 500, var(--description-two-font-size), 1.1, none);
       font-family: var(--second-family);
       letter-spacing: -0.053rem;
     }

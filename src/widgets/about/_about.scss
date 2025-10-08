@@ -1,74 +1,73 @@
-@use "../../shared/styles/functions" as *;
-@use "../../shared/styles/mixins" as *;
-
+@use '../../shared/styles/functions' as *;
+@use '../../shared/styles/mixins' as *;
 
 // ===== MOBILE FIRST =====
 .about {
   padding-block: 6.31rem 6.5rem;
-  
+
   &__container {
     display: flex;
     flex-direction: column;
     gap: 0.625rem;
   }
-  
+
   &__title {
     @include bracket-decor(var(--text-deep-gray));
-    @include typography(var(--text-deep-gray), 700, fluid(14px, 22px), 120%);
+    @include typography(var(--text-deep-gray), 700, var(--h2-font-size), 1.2);
     letter-spacing: -0.053em;
   }
-  
+
   &__subtitle {
-    @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 100%);
+    @include typography(var(--text-light-gray), 500, var(--h3-font-size), 1);
     letter-spacing: -0.136rem;
-    
+
     span {
       color: var(--text-black);
     }
   }
-  
+
   &__images {
     position: relative;
     display: flex;
     flex-direction: column;
     gap: 0.25rem;
-    
+
     &--bottom {
       display: flex;
       gap: 0.25rem;
     }
   }
-  
+
   &__prevs-wrapper {
     display: flex;
     flex-direction: column;
     gap: 12px;
   }
-  
+
   &__desc {
-    @include typography(var(--text-deep-gray), 500, fluid(20px, 28px), 115%, none);
+    @include typography(var(--text-deep-gray), 500, var(--description-font-size), 1.15, none);
     font-family: var(--second-family);
     letter-spacing: -1.2px;
   }
-  
+
   &__btn-wrapper {
     display: flex;
     justify-content: center;
   }
-  
+
   &__btn {
-    @include typography(var(--text-black), 700, fluid(18px, 26px));
+    @include typography(var(--text-black), 700, var(--button-font-size), 1);
     position: relative;
     margin-top: 1.25rem;
     letter-spacing: -0.96px;
-    
+
     &::after {
-      content: "";
+      content: '';
       @include decoration(
-                      var(--vector-black),
-                      15px,
-                      "/img/arrow-black.svg",
-              $pos: (right: -24px, top: 3px)
+        var(--vector-black),
+        15px,
+        '/img/arrow-black.svg',
+        $pos: (right: -24px, top: 3px)
       );
     }
   }
@@ -81,8 +80,7 @@
   picture {
     display: inline-flex;
   }
-  
-  
+
   span {
     @include decoration(var(--text-white), 1.5rem);
   }
@@ -92,24 +90,24 @@
 @include respond-min(1024px) {
   .about {
     padding-block: 190px;
-    
+
     &__container {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
       grid-template-areas:
-        "title title title title title"
-        ". desc desc desc ."
-        "images images images images images"
-        "images images images images images";
+        'title title title title title'
+        '. desc desc desc .'
+        'images images images images images'
+        'images images images images images';
       gap: 2rem;
       align-items: start;
     }
-    
+
     &__subtitle {
       grid-column: 2 / 5;
       letter-spacing: -4.47px;
     }
-    
+
     &__images {
       grid-area: images;
       display: grid;
@@ -118,12 +116,12 @@
       gap: 10px;
       // height: 675px;
       padding-top: 40px;
-      
+
       &--top {
         grid-column: 2 / 3;
         grid-row: 1 / 3;
       }
-      
+
       &--bottom {
         grid-column: 1 / 2;
         grid-row: 1 / 3;
@@ -132,63 +130,63 @@
         grid-auto-rows: 1fr;
       }
     }
-    
+
     &__text-wrapper {
       grid-area: desc;
       display: flex;
       flex-direction: column;
       padding-top: 20px;
     }
-    
+
     &__prevs-wrapper {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       gap: 11px;
     }
-    
+
     &__desc {
       letter-spacing: -1.68px;
     }
-    
+
     &__btn-wrapper {
       justify-content: flex-start;
     }
-    
+
     &__btn::after {
       @include decoration(
-                      var(--vector-black),
-                      20px,
-                      "/img/arrow-black.svg",
-              $pos: (right: -28px, top: 4px)
+        var(--vector-black),
+        20px,
+        '/img/arrow-black.svg',
+        $pos: (right: -28px, top: 4px)
       );
     }
   }
-  
+
   // ===== IMAGE DECORATIONS (DESKTOP) =====
   // Общий миксин для всех изображений на десктопе
   %desktop-image-decoration {
     @include item-decor(
-                    var(--vector-almost-black),
-            $before-position: (top: 5px, left: 5px),
-            $after-position: (bottom: 5px, right: 5px),
-            $size: (width: 20px, height: 20px)
+      var(--vector-almost-black),
+      $before-position: (top: 5px, left: 5px),
+      $after-position: (bottom: 5px, right: 5px),
+      $size: (width: 20px, height: 20px)
     );
-    
+
     span {
       @include decoration(var(--text-white), 40px);
     }
   }
-  
+
   .image__big {
     @extend %desktop-image-decoration;
   }
-  
+
   .image__small-top {
     @extend %desktop-image-decoration;
     grid-column: 2 / 3;
     grid-row: 1 / 2;
   }
-  
+
   .image__small-bottom {
     @extend %desktop-image-decoration;
     grid-column: 1 / 2;

@@ -1,102 +1,108 @@
-@use "../../shared/styles/functions" as *;
-@use "../../shared/styles/mixins" as *;
+@use '../../shared/styles/functions' as *;
+@use '../../shared/styles/mixins' as *;
 
 .products {
   margin-top: 100px;
-  
+
   &__list {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: center;
-	counter-reset: section;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    counter-reset: section;
   }
-  
+
   .products-title {
-	position: relative;
-	margin-bottom: 10px;
-	@include bracket-decor(#4d4d4d, (top: -1px, left: 0));
+    position: relative;
+    margin-bottom: 10px;
+    @include bracket-decor(
+      #4d4d4d,
+      (
+        top: -1px,
+        left: 0,
+      )
+    );
   }
   .products-subtitle {
-	@include typography(var(--text-black), 500, 31px, 100%);
-	margin-bottom: 20px;
-	span {
-	  color: var(--text-light-gray);
-	}
+    @include typography(var(--text-black), 500, var(--h3-font-size), 1);
+    margin-bottom: 20px;
+    span {
+      color: var(--text-light-gray);
+    }
   }
-  
+
   &__item {
-	padding: 15px 10px 10px 10px;
-	border: 1px solid var(--text-light-gray);
-	display: flex;
-	width: 170px;
-	flex-direction: column;
-	position: relative;
-	justify-content: space-between;
-	align-items: flex-start;
+    padding: 15px 10px 10px 10px;
+    border: 1px solid var(--text-light-gray);
+    display: flex;
+    width: 170px;
+    flex-direction: column;
+    position: relative;
+    justify-content: space-between;
+    align-items: flex-start;
     @include item-decor();
-	
-	.products__title {
-	  position: relative;
-	  &::before {
-		@include typography(var(--text-gray), 500, 0.625rem, 40%);
-		counter-increment: section;
-		content: "["counter(section)"]";
-		position: absolute;
-		top: 0;
-		right: -0.875rem;
-		letter-spacing: -0.05em;
-	  }
-	  h5 {
-		@include typography(var(--text-black), 500, 18px, 115%);
-	  }
-	}
-	
-	&:last-child:nth-child(odd) {
-	  grid-column: 1 / -1;
+
+    .products__title {
+      position: relative;
+      &::before {
+        @include typography(var(--text-gray), 500, var(--number-two-font-size), 0.4);
+        counter-increment: section;
+        content: '[' counter(section) ']';
+        position: absolute;
+        top: 0;
+        right: -0.875rem;
+        letter-spacing: -0.05em;
+      }
+      h5 {
+        @include typography(var(--text-black), 500, var(--h5-font-size), 1.5);
+      }
+    }
+
+    &:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
       justify-self: center;
-	}
+    }
   }
-  
+
   .products__img {
-	display: flex;
-	min-height: 110px;
-	img {
-	  max-height: 100%;
-	  width: auto;
-	  height: auto;
-	  object-fit: contain;
-	}
+    display: flex;
+    min-height: 110px;
+    img {
+      max-height: 100%;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
   }
 }
 
 // deckstop v
 @include respond-min(1024px) {
   .products {
-		&__container {
-			display: flex;
-			flex-direction: column;
-			gap: 40px;
-		}
-		.products-subtitle {
-			width: 64%;
-			font-size: 68px;
-			letter-spacing: -4.76px;
-		}
-		&__wrapper-text {
-			display: flex;
-			gap: 250px;
-		}
-		&__list {
-			display: grid;
-			grid-template-columns: repeat(4,1fr);
-		}
-		&__item {
-			width: auto;
-			min-height: 455px;
-			&:last-child:nth-child(odd) {
-	          grid-column: unset;
-	          justify-self: unset;
-	}
-		}
+    &__container {
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+    .products-subtitle {
+      width: 64%;
+      font-size: 68px;
+      letter-spacing: -4.76px;
+    }
+    &__wrapper-text {
+      display: flex;
+      gap: 250px;
+    }
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+    &__item {
+      width: auto;
+      min-height: 455px;
+      &:last-child:nth-child(odd) {
+        grid-column: unset;
+        justify-self: unset;
+      }
+    }
   }
 }
