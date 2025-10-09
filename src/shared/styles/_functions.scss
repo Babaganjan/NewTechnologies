@@ -1,19 +1,12 @@
-@use "sass:math";
+@use 'sass:math';
 
 @function fluid($size-at-min-width, $size-at-max-width, $min-width: 360px, $max-width: 1920px) {
   $slope: math.div($size-at-max-width - $size-at-min-width, $max-width - $min-width);
   $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
-  $return-value: clamp(#{$size-at-min-width}, #{$y-axis-intersection} + #{$slope} * 100vw, #{$size-at-max-width});
+  $return-value: clamp(
+    #{$size-at-min-width},
+    #{$y-axis-intersection} + #{$slope} * 100vw,
+    #{$size-at-max-width}
+  );
   @return $return-value;
 }
-// _functions.scss
-// @function fluid($size-at-min-width, $size-at-max-width, $min-width: 360px, $max-width: 1920px) {
-//   $slope: ($size-at-max-width - $size-at-min-width) / ($max-width - $min-width);
-//   $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
-  
-//   @return clamp(
-//     #{$size-at-min-width}, 
-//     #{$y-axis-intersection} + #{$slope * 100}vw, 
-//     #{$size-at-max-width}
-//   );
-// }

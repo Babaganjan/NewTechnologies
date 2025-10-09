@@ -39,6 +39,7 @@ $column-gap: 10px;
     .project-menu__numbers,
     .project-menu__services,
     .project-menu__headers {
+      padding-left: 5px;
       display: none;
     }
 
@@ -61,7 +62,13 @@ $column-gap: 10px;
 
         .project-menu-item__client {
           font-family: var(--second-family);
-          @include typography(var(--text-deep-black), 500, 14px, 1.1, none);
+          @include typography(
+            var(--text-deep-black),
+            500,
+            var(--description-two-font-size),
+            1.1,
+            none
+          );
         }
 
         .project-menu-item__subtitle {
@@ -71,18 +78,24 @@ $column-gap: 10px;
           align-items: center;
           @include typography(var(--text-black), 500, 18px, 1.15);
 
-          h5 {
-            @include typography(var(--text-black), 500, var(--description-font-size), 1.15);
+          p {
+            @include typography(var(--text-black), 500, fluid(18px, 28px), 1.15);
           }
         }
 
         .project-menu-item__service-label {
           font-family: var(--second-family);
-          @include typography(var(--text-deep-black), 500, 14px, 1.1, none);
+          @include typography(
+            var(--text-deep-black),
+            500,
+            var(--description-two-font-size),
+            1.1,
+            none
+          );
         }
 
         .project-menu-item__service {
-          @include typography(var(--text-light-gray), 500, 18px, 1.15);
+          @include typography(var(--text-light-gray), 500, fluid(18px, 28px), 1.15);
         }
       }
     }
@@ -100,15 +113,21 @@ $column-gap: 10px;
       margin: 20px auto;
       gap: 8px;
       width: fit-content;
-      @include typography(var(--text-black), 700, 16px, 1.2);
+      @include typography(var(--text-black), 700, var(--service-button-font-size), 1.2);
+    }
+    .project-menu__header {
+      font-family: var(--second-family);
+      @include typography(var(--text-deep-gray), 500, 22px, 1.1, none);
     }
   }
+}
+@include respond-min(768px) {
 }
 
 @include respond-min(1024px) {
   .project-menu {
     .project-menu__container {
-      grid-template-columns: 1fr 897px 1fr;
+      grid-template-columns: 0.5fr 2fr 1fr;
       grid-template-areas:
         'project client service'
         'title subtitle .'
@@ -130,13 +149,11 @@ $column-gap: 10px;
       .project-menu__headers {
         grid-area: headers;
         display: grid;
-        grid-template-columns: 1fr 897px 1fr;
+        grid-template-columns: 0.5fr 2fr 1fr;
         column-gap: $column-gap;
         margin-bottom: 20px;
 
         .project-menu__header {
-          font-family: var(--second-family);
-          @include typography(var(--text-deep-gray), 500, 22px, 1.1, none);
           letter-spacing: 0.5px;
           padding-bottom: 10px;
           margin-top: 40px;
@@ -145,6 +162,7 @@ $column-gap: 10px;
           &--client,
           &--service {
             text-align: left;
+            display: inline-flex;
           }
         }
       }
@@ -162,7 +180,7 @@ $column-gap: 10px;
         .project-menu-item__number {
           font-family: var(--second-family);
           border-bottom: 1px solid $border-color-light;
-          @include typography(var(--text-gray), 500, 28px, 100%);
+          @include typography(var(--text-light-gray), 500, 28px, 1);
           min-height: $item-min-height;
           display: flex;
           align-items: center;
@@ -240,11 +258,11 @@ $column-gap: 10px;
 
           &.hovered {
             background-color: var(--text-black);
-            color: white;
+            color: var(--text-white);
 
             .project-menu-item__service-label,
             p {
-              color: white;
+              color: var(--text-white);
             }
           }
 
@@ -255,7 +273,7 @@ $column-gap: 10px;
           }
 
           p {
-            @include typography(var(--text-light-gray), 500, 28px, 1.15);
+            @include typography(var(--text-light-gray), 500, fluid(18px, 28px), 1.15);
             padding-left: 5px;
           }
         }
