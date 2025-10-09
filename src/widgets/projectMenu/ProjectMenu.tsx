@@ -29,9 +29,9 @@ export const ProjectMenu = () => {
           <span>—от уютных кафе у дома до объектов государственного значения.</span>
         </p>
         <div className="project-menu__headers">
-          <div className="project-menu__header project-menu__header--project">Проект</div>
-          <div className="project-menu__header project-menu__header--client">Клиент</div>
-          <div className="project-menu__header project-menu__header--service">Тип услуги</div>
+          <div className="project-menu__header project-menu__header--project">проект</div>
+          <div className="project-menu__header project-menu__header--client">клиент</div>
+          <div className="project-menu__header project-menu__header--service">тип услуги</div>
         </div>
 
         <div className="project-menu__numbers">
@@ -58,7 +58,7 @@ export const ProjectMenu = () => {
               <div className="project-menu-item__content">
                 <span className="project-menu-item__client service-label--services">клиент</span>
                 <div className="project-menu-item__subtitle">
-                  <h5 className="project-menu-item__subtitle-title">{item.subtitle}</h5>
+                  <p className="project-menu-item__subtitle-title">{item.subtitle}</p>
                   <Arrow
                     color="var(--text-black)"
                     width={12}
