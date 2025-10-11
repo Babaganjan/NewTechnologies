@@ -24,12 +24,11 @@
 /* 4. Базовые настройки body */
 body {
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* === Ваши специфичные правила (сохраняем) === */
 html {
-  font-size: 100%;
+  font-size: 16px;
 }
 
 /* 5. Улучшенные медиа-элементы (объединяем) */

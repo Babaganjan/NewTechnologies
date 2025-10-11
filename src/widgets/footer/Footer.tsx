@@ -1,3 +1,4 @@
+'use client';
 import Link from 'next/link';
 
 import { Arrow } from '@/shared/icons';
@@ -11,13 +12,34 @@ import {
 } from './footer.const';
 
 export const Footer = () => {
+  const scrollToTop = () => {
+    let startTime: number | null = null;
+    const start = window.pageYOffset;
+
+    const animate = (time: number) => {
+      if (!startTime) startTime = time;
+      const progress = Math.min((time - startTime) / 1000, 1);
+      const ease = 1 - Math.pow(1 - progress, 4);
+
+      window.scrollTo(0, start * (1 - ease));
+      if (progress < 1) requestAnimationFrame(animate);
+    };
+
+    requestAnimationFrame(animate);
+  };
+
   return (
     <footer className="footer">
       <div className="footer__container container">
         <a href="#" className="footer__logo" aria-label="На главную страницу">
           NT
         </a>
-        <button type="button" className="arrow-button" aria-label="Прокрутить страницу к началу">
+        <button
+          type="button"
+          className="arrow-button"
+          aria-label="Прокрутить страницу к началу"
+          onClick={scrollToTop}
+        >
           Наверх
           <Arrow width={16} height={20} />
         </button>
