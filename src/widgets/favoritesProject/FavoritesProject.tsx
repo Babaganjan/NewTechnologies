@@ -15,7 +15,7 @@ export const FavoritesProject = () => {
             <div className="favorites-project__img">
               <Image
                 src={item.image}
-                alt="Метрополитен г. алматы"
+                alt={item.description}
                 width={340}
                 height={242}
                 className="favorites-project__img-item"

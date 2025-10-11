@@ -1,5 +1,9 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
 import './_header.scss';
+
+import { HEADER_NAV_ITEMS } from './header.const';
 
 export const Header = () => {
   return (
@@ -8,37 +12,25 @@ export const Header = () => {
         <div className="header__wrapper flex">
           <nav className="header__nav nav hidden">
             <ul className="nav__list flex">
-              <li className="nav__item">
-                <a href="" className="nav__link">
-                  Сервис
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="" className="nav__link">
-                  IT-решения
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="" className="nav__link">
-                  О нас
-                </a>
-              </li>
-              <li className="nav__item">
-                <a href="" className="nav__link">
-                  Контакты
-                </a>
-              </li>
+              {HEADER_NAV_ITEMS.map((item) => (
+                <li className="nav__item" key={item.href}>
+                  <Link href={item.href} className="nav__link" key={item.href}>
+                    {item.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </nav>
-          <a href="" className="header__link">
+          <Link href="/" className="header__link">
             <Image
               src="/img/logo.svg"
               width={145}
               height={79}
               alt="Логотип"
               className="header__logo"
+              priority
             />
-          </a>
+          </Link>
         </div>
         <div className="header__wrapper-contacts hidden__contacts flex">
           <div className="custom-select">
@@ -48,9 +40,9 @@ export const Header = () => {
               <option value="shymkent">Шымкент</option>
             </select>
           </div>
-          <a className="header__phone" href="tel:+74951234567">
+          <Link className="header__phone" href="tel:+74951234567">
             +7 (700) 346 43 71
-          </a>
+          </Link>
         </div>
         <div className="header__burger flex hidden__burger--deckstop">
           <button className="header__btn"></button>
