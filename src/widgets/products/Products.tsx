@@ -1,5 +1,8 @@
 import Image from 'next/image';
+import Link from 'next/link';
+
 import './_products-block.scss';
+import { PRODUCTS_DATA } from './products.const';
 
 export const Products = () => {
   return (
@@ -15,51 +18,24 @@ export const Products = () => {
           </p>
         </div>
         <ul className="products__list">
-          <li className="products__item">
-            <div className="products__img">
-              <Image src="/img/product-item-1.webp" alt="Турникеты" width={96} height={110} />
-            </div>
-            <div className="products__title">
-              <h5>Турникеты</h5>
-            </div>
-          </li>
-          <li className="products__item">
-            <div className="products__img">
-              <Image src="/img/product-item-2.webp" alt="Камеры" width={110} height={100} />
-            </div>
-            <div className="products__title">
-              <h5>Видеокамеры</h5>
-            </div>
-          </li>
-          <li className="products__item">
-            <div className="products__img">
-              <Image
-                src="/img/product-item-3.webp"
-                alt="Видеорегистраторы"
-                width={120}
-                height={54}
-              />
-            </div>
-            <div className="products__title">
-              <h5>Видеорегистраторы</h5>
-            </div>
-          </li>
-          <li className="products__item">
-            <div className="products__img">
-              <Image src="/img/product-item-4.webp" alt="Сервера" width={110} height={110} />
-            </div>
-            <div className="products__title">
-              <h5>Серверные шкафы</h5>
-            </div>
-          </li>
-          <li className="products__item">
-            <div className="products__img">
-              <Image src="/img/product-item-5.webp" alt="Коммутаторы" width={130} height={48} />
-            </div>
-            <div className="products__title">
-              <h5>Коммутаторы</h5>
-            </div>
-          </li>
+          {PRODUCTS_DATA.map((item) => (
+            <li className="products__item" key={item.id}>
+              <Link href={`/products/${item.alias}`}>
+                <div className="products__img">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    width={item.width}
+                    height={item.height}
+                  />
+                </div>
+                <div className="products__title">
+                  <span>[{item.amount}]</span>
+                  <h5>{item.title}</h5>
+                </div>
+              </Link>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

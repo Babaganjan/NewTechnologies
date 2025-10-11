@@ -32,12 +32,12 @@
     align-items: center;
     background-color: var(--bg-black);
     padding: 15px 50px;
-    @include typography(var(--text-white), 700, var(--button-font-size), 1.2);
+    @include typography(var(--text-white), 700, fluid(18px, 26px), 1.2);
     gap: 10px;
   }
 
   &__title {
-    @include typography(var(--text-black), 500, var(--h3-font-size), 1);
+    @include typography(var(--text-black), 500, fluid(31px, 68px), 1);
     min-width: 340px;
     margin-bottom: 18px;
     text-align: center;

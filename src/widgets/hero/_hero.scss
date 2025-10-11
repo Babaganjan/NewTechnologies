@@ -32,12 +32,12 @@
 
 .hero__title {
   @include bracket-decor();
-  @include typography(var(--text-light-gray), 700, var(--description-two-font-size));
+  @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
   letter-spacing: -0.053em;
 }
 
 .hero__subtitle {
-  @include typography(var(--text-white), 500, var(--h3-font-size), 1);
+  @include typography(var(--text-white), 500, fluid(31px, 68px), 1);
   margin-bottom: 2.5rem;
   letter-spacing: -2.17px;
   text-align: center;
@@ -50,7 +50,7 @@
 }
 
 .hero__prev {
-  @include typography(var(--text-light-gray), 500, var(--description-two-font-size), 1.1, none);
+  @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
   font-family: var(--second-family);
   letter-spacing: -0.84px;
 }

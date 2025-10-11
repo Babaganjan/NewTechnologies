@@ -39,12 +39,12 @@
     }
 
     .item__small-title {
-      @include typography(var(--bg-black), 500, var(--description-font-size), 115%);
+      @include typography(var(--bg-black), 500, fluid(20px, 28px), 115%);
     }
 
     .item__prev {
       font-family: var(--second-family);
-      @include typography(var(--text-deep-gray), 500, var(--description-two-font-size), 1.1, none);
+      @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
     }
   }
 }
@@ -101,11 +101,11 @@
       background-color: var(--bg-white);
     }
     .item__small-title {
-      @include typography(var(--bg-black), 500, var(--description-font-size), 1.15);
+      @include typography(var(--bg-black), 500, fluid(20px, 28px), 1.15);
     }
 
     .item__prev {
-      @include typography(var(--text-deep-gray), 500, var(--description-two-font-size), 1.1, none);
+      @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
       font-family: var(--second-family);
     }
   }

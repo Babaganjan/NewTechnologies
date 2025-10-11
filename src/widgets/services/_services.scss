@@ -24,7 +24,7 @@
 
   &__title {
     @include bracket-decor();
-    @include typography(var(--text-light-gray), 700, var(--description-two-font-size));
+    @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
     letter-spacing: -0.053em;
   }
   &__list {
@@ -52,7 +52,7 @@
       justify-content: space-between;
       padding: 1.25rem 0 1.25rem 1.25rem;
       &::before {
-        @include typography(var(--text-gray), 500, var(--number-two-font-size), 0.4);
+        @include typography(var(--text-gray), 500, fluid(10px, 22px), 0.4);
         counter-increment: card;
         content: '[' counter(card) ']';
         position: absolute;
@@ -63,7 +63,7 @@
     }
 
     &__subtitle {
-      @include typography(var(--text-white), 500, var(--h3-font-size), 1);
+      @include typography(var(--text-white), 500, fluid(31px, 68px), 1);
       letter-spacing: -2.17px;
     }
   }

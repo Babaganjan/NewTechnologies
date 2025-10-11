@@ -28,7 +28,7 @@
 
   &__title {
     @include bracket-decor();
-    @include typography(var(--text-light-gray), 700, var(--description-two-font-size));
+    @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
     letter-spacing: -0.053em;
   }
 
@@ -65,18 +65,18 @@
   }
 
   &__number {
-    @include typography(var(--text-white), 700, var(--number-one-font-size), 0.82);
+    @include typography(var(--text-white), 700, fluid(120px, 178px), 0.82);
     letter-spacing: -0.525rem;
   }
 
   &__article-title {
-    @include typography(var(--text-white), 600, var(--h4-font-size), 1);
+    @include typography(var(--text-white), 600, fluid(22px, 42px), 1);
     flex-direction: column;
     letter-spacing: -0.083rem;
   }
 
   &__prev {
-    @include typography(var(--text-light-gray), 500, var(--description-two-font-size), 1.1, none);
+    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
     width: 80%;
     font-family: var(--second-family);
     letter-spacing: -0.84px;
@@ -113,7 +113,7 @@
       }
     }
     &__title {
-      @include typography(var(--bg-black), 600, var(--h4-font-size), 1);
+      @include typography(var(--bg-black), 600, fluid(22px, 42px), 1);
       letter-spacing: -0.083rem;
       &:first-child {
         width: 80%;
@@ -121,13 +121,13 @@
     }
 
     &__prev {
-      @include typography(var(--text-deep-gray), 500, var(--description-two-font-size), 1.1, none);
+      @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
       font-family: var(--second-family);
       letter-spacing: -0.053rem;
     }
 
     &__number {
-      @include typography(var(--text-black), 700, var(--number-one-font-size), 0.82);
+      @include typography(var(--text-black), 700, fluid(120px, 178px), 0.82);
       letter-spacing: -0.525rem;
     }
   }
