@@ -10,10 +10,6 @@ export const SERVICES_ITEMS = [
 
   {
     id: 3,
-    title: 'Galion автоматизация',
-  },
-  {
-    id: 4,
-    title: 'Iiko автоматизация',
+    title: 'Обучение',
   },
 ];

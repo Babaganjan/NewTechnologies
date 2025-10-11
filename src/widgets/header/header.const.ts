@@ -4,6 +4,10 @@ export const HEADER_NAV_ITEMS = [
     title: 'Сервис',
   },
   {
+    href: '/production',
+    title: 'Производство',
+  },
+  {
     href: '/solution',
     title: 'IT-Решения',
   },
