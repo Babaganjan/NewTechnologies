@@ -10,8 +10,8 @@ export const PRODUCTS_DATA = [
   },
   {
     id: 2,
-    title: 'Видеокамеры',
-    alias: 'video-cameras',
+    title: 'Коммутаторы',
+    alias: 'switches',
     image: '/img/product-item-2.webp',
     width: 110,
     height: 100,
@@ -19,8 +19,9 @@ export const PRODUCTS_DATA = [
   },
   {
     id: 3,
-    title: 'Видеорегистраторы',
-    alias: 'video-recorders',
+    title: 'Серверные шкафы',
+    alias: 'server-cabinets',
+
     image: '/img/product-item-3.webp',
     width: 110,
     height: 100,
@@ -28,8 +29,8 @@ export const PRODUCTS_DATA = [
   },
   {
     id: 4,
-    title: 'Серверные шкафы',
-    alias: 'server-cabinets',
+    title: 'Видеорегистраторы',
+    alias: 'video-recorders',
     image: '/img/product-item-4.webp',
     width: 110,
     height: 100,
@@ -37,8 +38,8 @@ export const PRODUCTS_DATA = [
   },
   {
     id: 5,
-    title: 'Коммутаторы',
-    alias: 'switches',
+    title: 'Видеокамеры',
+    alias: 'video-cameras',
     image: '/img/product-item-5.webp',
     width: 130,
     height: 48,
