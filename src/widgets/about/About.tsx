@@ -1,15 +1,17 @@
 import Image from 'next/image';
+
+import { Arrow } from '@/shared/icons';
+
 import './_about.scss';
 
 export const About = () => {
   return (
     <section className="about">
       <div className="container about__container flex">
-        <h2 className="about__title title">Что мы&nbsp;делаем</h2>
+        <h2 className="about__title title">Что мы делаем</h2>
         <h3 className="about__subtitle subtitle">
-          <span>реализуем комплексные системы</span> безопасности и&nbsp;оптимизируем&nbsp;бизнес
-          в&nbsp;казахстане
-          <span>С&nbsp;2013 года</span>
+          <span>реализуем комплексные системы</span> безопасности и оптимизируем бизнес в казахстане
+          <span> С 2013 года</span>
         </h3>
         <div className="about__images flex">
           <div className="about__images--top">
@@ -18,7 +20,7 @@ export const About = () => {
               <Image
                 src="/img/about-1-1920.webp"
                 alt="Картинка камеры"
-                layout='responsive'
+                layout="responsive"
                 width={340}
                 height={254}
                 quality={85}
@@ -31,7 +33,7 @@ export const About = () => {
               <Image
                 src="/img/about-2-1920.webp"
                 alt="Картинка камеры"
-                layout='responsive'
+                layout="responsive"
                 width={168}
                 height={134}
                 sizes="(max-width: 1023px) 168px, 447px"
@@ -43,7 +45,7 @@ export const About = () => {
               <Image
                 src="/img/about-3-1920.webp"
                 alt="Картинка камеры"
-                layout='responsive'
+                layout="responsive"
                 width={168}
                 height={134}
                 quality={85}
@@ -54,17 +56,18 @@ export const About = () => {
         <div className="about__text-wrapper">
           <div className="about__prevs-wrapper flex">
             <p className="about__desc">
-              Мы&nbsp;фокусируемся на&nbsp;государственных, промышленных и&nbsp;стратегически важных
-              объектах. А&nbsp;также обеспечиваем защиту частных школ, жилых комплексов
-              и&nbsp;частных домов.
+              Мы фокусируемся на государственных, промышленных и стратегически важных объектах. А
+              также обеспечиваем защиту частных школ, жилых комплексов и частных домов.
             </p>
             <p className="about__desc">
-              Как лидер отрасли, мы&nbsp;разрабатываем и&nbsp;производим собственное оборудование
-              под брендом NTouch, имеющее все необходимые сертификаты качества и&nbsp;соответствия.
+              Как лидер отрасли, мы разрабатываем и производим собственное оборудование под брендом
+              NTouch, имеющее все необходимые сертификаты качества и соответствия.
             </p>
           </div>
           <div className="about__btn-wrapper flex">
-            <button className="about__btn">О&nbsp;компании</button>
+            <button className="about__btn">
+              О компании <Arrow width={25} height={20} />
+            </button>
           </div>
         </div>
       </div>
