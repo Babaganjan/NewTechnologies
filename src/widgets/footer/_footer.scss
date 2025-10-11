@@ -126,7 +126,30 @@
   }
 }
 
-@media (max-width: 1023px) {
+@include respond-min(768px 1022px, between) {
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto auto;
+    .footer__container {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-areas:
+        'logo .'
+        'pages about'
+        'copyright .';
+    }
+
+    .footer__copyright {
+      display: grid;
+      grid-template-columns: minmax(200px, 330px) auto;
+      grid-column: 1 / 3;
+    }
+    .arrow-button {
+      justify-self: end;
+    }
+  }
+}
+
+@include respond-min(1023px, max) {
   .footer__activity,
   .footer__about-company {
     display: none;
