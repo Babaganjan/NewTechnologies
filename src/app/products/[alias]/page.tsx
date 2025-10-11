@@ -1,6 +1,7 @@
 import { PRODUCTS_DATA } from '@/widgets/products/products.const';
-export async function generateMetadata({ params }: { params: { alias: string } }) {
-  const product = PRODUCTS_DATA.find((product) => product.alias === params.alias);
+export async function generateMetadata({ params }: { params: Promise<{ alias: string }> }) {
+  const { alias } = await params;
+  const product = PRODUCTS_DATA.find((product) => product.alias === alias);
 
   return {
     title: product?.title,
@@ -14,10 +15,12 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ProductsPage({ params }: { params: { alias: string } }) {
+export default async function ProductsPage({ params }: { params: Promise<{ alias: string }> }) {
+  const { alias } = await params;
+
   return (
     <div>
-      <p>{params.alias}</p>
+      <p>{alias}</p>
     </div>
   );
 }
