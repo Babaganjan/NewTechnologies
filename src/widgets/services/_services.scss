@@ -38,13 +38,7 @@
     &__btn {
       width: 25px;
       height: 20px;
-    }
-
-    &__btn img {
-      filter: brightness(0) invert(1);
       transform: rotate(90deg);
-      width: 25px;
-      height: 20px;
     }
 
     &__inner {
@@ -74,7 +68,6 @@
 
   .swiper-slide {
     min-height: 96px;
-    background: url('/img/infinity-slider-company.png') no-repeat center var(--bg-deep-gray);
 
     &::after {
       content: '';
