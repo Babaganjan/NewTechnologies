@@ -40,6 +40,11 @@
       background-color 0.2s ease,
       color 0.2s ease;
 
+    .questions__description {
+      font-family: var(--second-family);
+      @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
+    }
+
     &:hover {
       background-color: var(--bg-black);
       color: white;
