@@ -190,9 +190,24 @@
     }
   }
 
+  @include respond-min(768px 1022px, between) {
+    .card-wrapper {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    &__card {
+      $card-size: fluid(240px, 400px);
+      min-height: $card-size;
+
+      &:last-child:nth-child(odd) {
+        grid-column: 1 / -1;
+        justify-self: center;
+      }
+    }
+  }
+
   @include respond-min(1024px) {
     &__card {
-      $card-size: clamp(240px, 20vw, 400px);
+      $card-size: fluid(240px, 400px);
       min-height: $card-size;
       max-width: $card-size;
     }
