@@ -13,8 +13,8 @@ export const Products = () => {
             Наша продукция
           </h2>
           <p className="products-subtitle">
-            <span>надежное Оборудование,</span> соответствующее строгим
-            <span>отраслевым</span> стандартам
+            <span>надежное Оборудование,</span> соответствующее строгим <span>отраслевым</span>{' '}
+            стандартам
           </p>
         </div>
         <ul className="products__list">
