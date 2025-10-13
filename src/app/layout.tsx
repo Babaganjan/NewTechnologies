@@ -3,8 +3,7 @@ import { Oswald, Roboto_Condensed, Inter } from 'next/font/google';
 
 import './globals.css';
 import { siteConfig } from '@/shared/config/site.config';
-import { Footer } from '@/widgets/footer/Footer';
-import { Header } from '@/widgets/header/Header';
+import { Footer, Header } from '@/widgets';
 
 const oswald = Oswald({
   subsets: ['latin', 'cyrillic'],
