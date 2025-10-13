@@ -1,22 +1,22 @@
 export const HEADER_NAV_ITEMS = [
   {
-    href: '/',
+    href: '/services/',
     title: 'Сервис',
   },
   {
-    href: '/production',
+    href: '/production/',
     title: 'Производство',
   },
   {
-    href: '/solution',
+    href: '/solution/',
     title: 'IT-Решения',
   },
   {
-    href: '/about',
+    href: '/about/',
     title: 'О нас',
   },
   {
-    href: '/contacts',
+    href: '/contacts/',
     title: 'Контакты',
   },
 ] as const;

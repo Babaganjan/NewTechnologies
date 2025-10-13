@@ -1,8 +1,8 @@
-@use '../../shared/styles/functions' as *;
-@use '../../shared/styles/mixins' as *;
+@use "../../shared/styles/functions" as *;
+@use "../../shared/styles/mixins" as *;
 
 .hero {
-  &.with-bottom-trapezoid {
+    &.with-bottom-trapezoid {
     @include trapezoid-decor(21px, 12px, black, bottom);
   }
   position: relative;
@@ -11,23 +11,23 @@
 }
 
 .hero__container {
-  @include line-decor(1% 50% 99%);
-  position: relative;
-  padding-block: 1.25rem 1.313rem;
-  flex-direction: column;
-  z-index: 0;
+    @include line-decor(1% 50% 99%);
+    position: relative;
+    padding-block: 1.25rem 1.313rem;
+    flex-direction: column;
+    z-index: 0;
 }
 
 .hero__title::after {
-  z-index: 2;
+    z-index: 2;
 }
 
 .heading {
-  @include typography(var(--text-white), 400, clamp(70px, 12vw, 243px), 81%);
-  order: 3;
-  text-align: center;
-  letter-spacing: -7px;
-  font-family: var(--second-family);
+    @include typography(var(--text-white), 400, fluid(70px, 243px), 81%);
+    order: 3;
+    text-align: center;
+    letter-spacing: -7px;
+    font-family: var(--second-family);
 }
 
 .hero__title {
@@ -38,15 +38,14 @@
 
 .hero__subtitle {
   @include typography(var(--text-white), 500, fluid(31px, 68px), 1);
-  margin-bottom: 2.5rem;
-  letter-spacing: -2.17px;
-  text-align: center;
+  max-width: 80%;
+  letter-spacing: -4.76px;
 }
 
 .hero__content {
-  order: 2;
-  margin-bottom: 9.375rem;
-  gap: 4.3rem;
+    order: 2;
+    margin-bottom: 9.375rem;
+    gap: 4.3rem;
 }
 
 .hero__prev {
@@ -55,25 +54,27 @@
   letter-spacing: -0.84px;
 }
 
+
 @include respond-min(1024px) {
-  .hero {
-    &.with-bottom-trapezoid {
-      @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
+   .hero {
+     &.with-bottom-trapezoid {
+     @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
+     }
+     &__container {
+        @include line-decor(1% 25.4% 50% 74.6% 99%);
+        display: grid;
+        grid-template-columns: repeat(2,1fr);
+        grid-auto-rows: 1fr;
+     }
+     &__content {
+        flex-direction: column;
+        gap: 34px;
+        width: 35%;
     }
-    &__container {
-      @include line-decor(1% 25.4% 50% 74.6% 99%);
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-auto-rows: 1fr;
+     .heading {
+       grid-column: 1/3;
+       letter-spacing: -21.87px;
     }
-    &__content {
-      flex-direction: column;
-      gap: 34px;
-      width: 35%;
-    }
-    .heading {
-      grid-column: 1/3;
-      letter-spacing: -21.87px;
-    }
-  }
+  } 
 }
+
