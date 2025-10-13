@@ -1,4 +1,5 @@
 import './_object-levels.scss';
+import { OBJECT_LEVELS_DATA } from './objectLevels.const';
 
 export const ObjectLevel = () => {
   return (
@@ -10,55 +11,15 @@ export const ObjectLevel = () => {
             Индивидуальные решения <span>для объектов любого уровня</span>
           </h3>
         </div>
-        <ul className="object-levels__list flex" role="list">
-          <li className="object-levels__item item item-layout--1">
-            <article className="item__inner flex">
-              <h4 className="item__title">Промышленные объекты</h4>
-              <p className="item__prev">
-                Металлургические и&nbsp;химические заводы, производственные цеха.
-              </p>
-            </article>
-          </li>
-          <li className="object-levels__item item item-layout--2">
-            <article className="item__inner flex">
-              <h4 className="item__title">Государственные учреждения</h4>
-              <p className="item__prev">
-                Металлургические и&nbsp;химические заводы, производственные цеха.
-              </p>
-            </article>
-          </li>
-          <li className="object-levels__item item item-layout--3">
-            <article className="item__inner flex">
-              <h4 className="item__title">Социальные объекты</h4>
-              <p className="item__prev">
-                Металлургические и&nbsp;химические заводы, производственные цеха.
-              </p>
-            </article>
-          </li>
-          <li className="object-levels__item item item-layout--4">
-            <article className="item__inner flex">
-              <h4 className="item__title">Стратегические объекты</h4>
-              <p className="item__prev">
-                Металлургические и&nbsp;химические заводы, производственные цеха.
-              </p>
-            </article>
-          </li>
-          <li className="object-levels__item item item-layout--5">
-            <article className="item__inner flex">
-              <h4 className="item__title">Жилые объекты</h4>
-              <p className="item__prev">
-                Металлургические и&nbsp;химические заводы, производственные цеха.
-              </p>
-            </article>
-          </li>
-          <li className="object-levels__item item item-layout--6">
-            <article className="item__inner flex">
-              <h4 className="item__title">Административные учреждения</h4>
-              <p className="item__prev">
-                Металлургические и&nbsp;химические заводы, производственные цеха.
-              </p>
-            </article>
-          </li>
+        <ul className="object-levels__list flex">
+          {OBJECT_LEVELS_DATA.map((item) => (
+            <li className={`object-levels__item item item-layout--${item.id}`} key={item.id}>
+              <article className="item__inner flex">
+                <h4 className="item__title">{item.title}</h4>
+                <p className="item__prev">{item.prev}</p>
+              </article>
+            </li>
+          ))}
         </ul>
       </div>
     </section>

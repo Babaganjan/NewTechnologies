@@ -13,13 +13,11 @@
 
   &__title {
     @include bracket-decor(var(--text-deep-gray));
-    @include typography(var(--text-deep-gray), 700, var(--h2-font-size), 1.2);
-    letter-spacing: -0.053em;
+    @include typography(var(--text-deep-gray), 700, fluid(14px, 22px), 1.2, uppercase, -0.053em);
   }
 
   &__subtitle {
-    @include typography(var(--text-light-gray), 500, var(--h3-font-size), 1);
-    letter-spacing: -0.136rem;
+    @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 1, uppercase, -0.136rem);
 
     span {
       color: var(--text-black);
@@ -45,9 +43,8 @@
   }
 
   &__desc {
-    @include typography(var(--text-deep-gray), 500, var(--description-font-size), 1.15, none);
+    @include typography(var(--text-deep-gray), 500, fluid(20px, 28px), 1.15, none, -0.12rem);
     font-family: var(--second-family);
-    letter-spacing: -1.2px;
   }
 
   &__btn-wrapper {
@@ -56,20 +53,9 @@
   }
 
   &__btn {
-    @include typography(var(--text-black), 700, var(--button-font-size), 1);
+    @include typography(var(--text-black), 700, fluid(18px, 26px), 1, uppercase, -0.96px);
     position: relative;
     margin-top: 1.25rem;
-    letter-spacing: -0.96px;
-
-    &::after {
-      content: '';
-      @include decoration(
-        var(--vector-black),
-        15px,
-        '/img/arrow-black.svg',
-        $pos: (right: -24px, top: 3px)
-      );
-    }
   }
 }
 
@@ -114,7 +100,6 @@
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
       gap: 10px;
-      // height: 675px;
       padding-top: 40px;
 
       &--top {

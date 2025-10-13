@@ -11,15 +11,14 @@ export const Result = () => {
           <h2 className="result__title title">Наши достижения</h2>
         </div>
 
-        <ul className="result__list flex" role="list">
+        <ul className="result__list flex">
           <li className="result__content flex">
             <article className="result__wrapper flex">
               <strong className="result__number">100+</strong>
               <h4 className="result__article-title">Опытных сотрудников</h4>
             </article>
             <p className="result__prev">
-              От&nbsp;первых монтажей до&nbsp;инженерных решений&mdash; постоянное обучение
-              и&nbsp;рост.
+              От&nbsp;первых монтажей до инженерных решений &mdash; постоянное обучение и&nbsp;рост.
             </p>
           </li>
           <li className="result__item">

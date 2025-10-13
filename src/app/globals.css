@@ -24,12 +24,11 @@
 /* 4. Базовые настройки body */
 body {
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
 }
 
 /* === Ваши специфичные правила (сохраняем) === */
 html {
-  font-size: 100%;
+  font-size: 16px;
 }
 
 /* 5. Улучшенные медиа-элементы (объединяем) */
@@ -138,20 +137,6 @@ h6 {
   --vector-deep-gray: #565656;
   --vector-light-gray: #dfdfdf;
   --vector-white: #fff;
-
-  --h2-font-size: clamp(14px, 4vw, 22px);
-  --h3-font-size: clamp(31px, 8vw, 68px);
-  --h4-font-size: clamp(22px, 5vw, 42px);
-  --h5-font-size: clamp(20px, 3.5vw, 28px);
-  --menu-font-size: clamp(14px, 2.5vw, 20px);
-  --menu-header-font-size: 31px;
-  --number-one-font-size: clamp(120px, 20vw, 178px);
-  --number-oneToOne-font-size: 200px;
-  --number-two-font-size: clamp(10px, 2.5vw, 22px);
-  --number-three-font-size: 14px;
-  --button-font-size: clamp(18px, 3.5vw, 26px);
-  --description-font-size: clamp(20px, 3.5vw, 28px);
-  --description-two-font-size: clamp(14px, 2.75vw, 22px);
 }
 
 body {

@@ -33,7 +33,7 @@
   }
 
   &__subtitle {
-    @include typography(var(--text-white), 500, var(--h3-font-size), 1);
+    @include typography(var(--text-white), 500, fluid(31px, 68px), 1);
     margin-bottom: 20px;
     span {
       color: var(--text-deep-black);

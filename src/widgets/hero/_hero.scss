@@ -31,17 +31,15 @@
 }
 
 .hero__title {
-    @include bracket-decor();
-    @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
-    letter-spacing: -0.053em;
-
+  @include bracket-decor();
+  @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
+  letter-spacing: -0.053em;
 }
 
 .hero__subtitle {
-    @include typography(var(--text-white), 500, fluid(31px, 68px), 100%);
-    margin-bottom: 2.5rem;
-    letter-spacing: -2.17px;
-    text-align: center;
+  @include typography(var(--text-white), 500, fluid(31px, 68px), 1);
+  max-width: 80%;
+  letter-spacing: -4.76px;
 }
 
 .hero__content {
@@ -51,9 +49,9 @@
 }
 
 .hero__prev {
-    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 110%, none);
-    font-family: var(--second-family);
-    letter-spacing: -0.84px;
+  @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
+  font-family: var(--second-family);
+  letter-spacing: -0.84px;
 }
 
 
@@ -76,8 +74,6 @@
      .heading {
        grid-column: 1/3;
        letter-spacing: -21.87px;
-    //    fill: #FFF;
-filter: drop-shadow(0 4px 4px rgba(0, 0, 0, 0.25));
     }
   } 
 }

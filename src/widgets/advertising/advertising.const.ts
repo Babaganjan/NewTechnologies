@@ -25,4 +25,4 @@ export const PARTNERS = [
   { id: 23, component: Bosch },
   { id: 24, component: Hikvision },
   { id: 25, component: Huawei },
-];
+] as const;

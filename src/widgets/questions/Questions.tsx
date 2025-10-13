@@ -1,9 +1,14 @@
+'use client';
+import { useState } from 'react';
+
 import { Arrow } from '@/shared/icons';
 
 import './_questions-block.scss';
 import { QUESTIONS_DATA, ACTIVE_CARD_DATA } from './questions.const';
 
 export const Questions = () => {
+  const [activeCard, setActiveCard] = useState<string | null>(null);
+
   return (
     <section className="questions" aria-labelledby="questions-title">
       <div className="questions__container container">
@@ -12,9 +17,18 @@ export const Questions = () => {
         </h2>
         <ul className="card-wrapper">
           {QUESTIONS_DATA.map((question) => (
-            <li key={question.id} className="questions__card" data-grid-index={question.gridIndex}>
+            <li
+              key={question.id}
+              className="questions__card"
+              data-grid-index={question.gridIndex}
+              onMouseEnter={() => setActiveCard(question.id)}
+              onMouseLeave={() => setActiveCard(null)}
+            >
               <div className="questions__card-decorative"></div>
               <h5 className="questions__content">{question.content}</h5>
+              {activeCard === question.id && (
+                <p className="questions__description">{question.description}</p>
+              )}
               <Arrow width={20} height={25} className="questions__card-arrow" />
             </li>
           ))}

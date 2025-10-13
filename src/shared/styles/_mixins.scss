@@ -103,8 +103,8 @@
     left: -10px,
   )
 ) {
-  @include typography($color, 700, var(--description-two-font-size), 120%);
-  padding-inline: var(--number-two-font-size);
+  @include typography($color, 700, fluid(14px, 22px), 1.2);
+  padding-inline: fluid(10px, 22px);
   &::after {
     content: '[';
     position: absolute;
