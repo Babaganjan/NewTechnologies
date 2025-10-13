@@ -3,10 +3,7 @@ import { PARTNERS } from './advertising.const';
 
 export const Advertising = () => {
   return (
-    <section
-      className="advertising with-top-trapezoid with-bottom-trapezoid"
-      aria-labelledby="advertising-title"
-    >
+    <section className="advertising with-trapezoids" aria-labelledby="advertising-title">
       <div className="advertising__container container">
         <h2 id="advertising-title" className="advertising__title">
           Наши партнеры

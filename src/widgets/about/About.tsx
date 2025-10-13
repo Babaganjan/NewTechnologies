@@ -20,7 +20,6 @@ export const About = () => {
               <Image
                 src="/img/about-1-1920.webp"
                 alt="Картинка камеры"
-                layout="responsive"
                 width={340}
                 height={254}
                 quality={85}
@@ -33,7 +32,6 @@ export const About = () => {
               <Image
                 src="/img/about-2-1920.webp"
                 alt="Картинка камеры"
-                layout="responsive"
                 width={168}
                 height={134}
                 sizes="(max-width: 1023px) 168px, 447px"
@@ -45,7 +43,6 @@ export const About = () => {
               <Image
                 src="/img/about-3-1920.webp"
                 alt="Картинка камеры"
-                layout="responsive"
                 width={168}
                 height={134}
                 quality={85}

@@ -53,8 +53,10 @@
   }
 
   &__btn {
+    display: flex;
+    align-items: center;
+    gap: 10px;
     @include typography(var(--text-black), 700, fluid(18px, 26px), 1, uppercase, -0.96px);
-    position: relative;
     margin-top: 1.25rem;
   }
 }

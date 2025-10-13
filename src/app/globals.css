@@ -42,6 +42,10 @@ canvas {
   height: auto;
 }
 
+svg {
+  display: block;
+}
+
 /* 6. Ваши правила для ссылок */
 a {
   text-decoration: none;
