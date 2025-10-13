@@ -1,6 +1,9 @@
 import Link from 'next/link';
 
+import { Arrow } from '@/shared/icons';
+
 import { CONTACTS_ITEMS, MAPS_EMBED_URL } from './contacts.const';
+
 import './_contacts.scss';
 
 export const Contacts = () => {
@@ -14,7 +17,15 @@ export const Contacts = () => {
           {CONTACTS_ITEMS.map((item) => (
             <li className={`contacts__item ${item.className}`} key={item.title}>
               <h2>{item.title}</h2>
-              <p>{item.href ? <Link href={item.href}>{item.value}</Link> : item.value}</p>
+              <p>
+                {item.href ? (
+                  <Link href={item.href}>
+                    {item.value} {item.className === 'social' && <Arrow width={16} height={20} />}
+                  </Link>
+                ) : (
+                  item.value
+                )}
+              </p>
               <div className="contacts__decoration" aria-hidden="true"></div>
             </li>
           ))}
