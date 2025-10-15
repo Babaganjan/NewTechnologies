@@ -4,7 +4,7 @@ export const HEADER_NAV_ITEMS = [
     title: 'Сервис',
   },
   {
-    href: '/production/',
+    href: '/products/',
     title: 'Производство',
   },
   {

@@ -1,0 +1,33 @@
+@use '../../shared/styles/functions' as *;
+@use '../../shared/styles/mixins' as *;
+
+body:has(.products-page-section) .header {
+  background-color: transparent;
+}
+
+.products-page-section {
+  margin-top: -119px;
+  padding-top: 724px;
+  background-image: url('/img/products-pages-img.webp');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+
+  .products-page-section__container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 0;
+    h1 {
+      display: inline-flex;
+      font-family: var(--second-family);
+      @include typography(var(--text-white), 400, 262px, 1.2, uppercase, -0.09em);
+    }
+    p {
+      display: inline-flex;
+      white-space: pre-line;
+      @include typography(var(--text-white), 500, 28px, 1.15, uppercase, -0.06em);
+    }
+  }
+}
