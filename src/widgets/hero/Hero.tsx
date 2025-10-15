@@ -1,8 +1,8 @@
 'use client';
 import { usePathname } from 'next/navigation';
 
-import { HEADING_COMPONENTS } from '@/shared/ui/HeadingSvg/heading.const';
 import { Heading } from '@/shared/ui/Heading';
+import { HEADING_COMPONENTS } from '@/shared/ui/HeadingSvg/heading.const';
 
 import './_hero.scss';
 
