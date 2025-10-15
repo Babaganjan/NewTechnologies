@@ -1,6 +1,8 @@
 import Link from 'next/link';
 
 import { Arrow } from '@/shared/icons';
+import { Heading } from '@/shared/ui/Heading';
+import { ContactsHeading } from '@/shared/ui/HeadingSvg/ContactsHeading';
 
 import { CONTACTS_ITEMS, MAPS_EMBED_URL } from './contacts.const';
 
@@ -10,13 +12,13 @@ export const Contacts = () => {
   return (
     <section className="contacts" aria-labelledby="contacts-title">
       <div className="contacts__container container">
-        <h1 id="contacts-title" className="contacts__title">
-          Наши контакты
-        </h1>
+        <Heading level={1} id="contacts-title" className="contacts__title">
+          <ContactsHeading />
+        </Heading>
         <ul className="contacts__list">
           {CONTACTS_ITEMS.map((item) => (
             <li className={`contacts__item ${item.className}`} key={item.title}>
-              <h2>{item.title}</h2>
+              <Heading level={2}>{item.title}</Heading>
               <p>
                 {item.href ? (
                   <Link href={item.href}>
