@@ -12,7 +12,7 @@ export const Contacts = () => {
   return (
     <section className="contacts" aria-labelledby="contacts-title">
       <div className="contacts__container container">
-        <Heading level={1} id="contacts-title" className="contacts__title">
+        <Heading level={1} id="contacts-title" className="contacts__title title">
           <ContactsHeading />
         </Heading>
         <ul className="contacts__list">

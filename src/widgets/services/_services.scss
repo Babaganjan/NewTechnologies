@@ -23,8 +23,8 @@
   }
 
   &__title {
-    @include bracket-decor();
-    @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
+    // @include bracket-decor();
+    // @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
     letter-spacing: -0.053em;
   }
   &__list {
@@ -57,7 +57,7 @@
     }
 
     &__subtitle {
-      @include typography(var(--text-white), 500, fluid(31px, 68px), 1);
+      // @include typography(var(--text-white), 500, fluid(31px, 68px), 1);
       letter-spacing: -2.17px;
     }
   }
