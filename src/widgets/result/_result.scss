@@ -9,6 +9,7 @@
   &.with-bottom-trapezoid {
     @include trapezoid-decor(21px, 12px, black, bottom);
   }
+  padding-block: 88px;
   position: relative;
   background-color: var(--bg-black);
   z-index: 1;
@@ -18,7 +19,6 @@
     position: relative;
     flex-direction: column;
     gap: 0.5rem;
-    padding-block: 5.5rem;
   }
 
   &__inner {
@@ -26,13 +26,7 @@
     gap: 0.625rem;
   }
 
-  &__title {
-    @include bracket-decor();
-    @include typography(var(--text-light-gray), 700, fluid(14px, 22px));
-    letter-spacing: -0.053em;
-  }
-
-  &__content {
+  &__item--fill {
     position: relative;
     flex-direction: column;
     background-color: var(--bg-deep-gray);
@@ -65,22 +59,6 @@
     }
   }
 
-  &__wrapper {
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  &__number {
-    @include typography(var(--text-white), 700, fluid(120px, 178px), 0.82);
-    letter-spacing: -0.525rem;
-  }
-
-  &__article-title {
-    @include typography(var(--text-white), 600, fluid(22px, 42px), 1);
-    flex-direction: column;
-    letter-spacing: -0.083rem;
-  }
-
   &__prev {
     @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
     width: 80%;
@@ -92,6 +70,11 @@
     gap: 0.5rem;
   }
   &__item {
+    &:not(:has(.item__number)):nth-of-type(2) {
+      .item__title {
+        width: 80%;
+      }
+    }
     &::before {
       content: '';
       @include decoration(var(--vector-black), 24px);
@@ -101,6 +84,17 @@
     padding: 0.938rem;
   }
 
+  &__item:first-child {
+    background-color: var(--bg-deep-gray);
+    .item__inner:first-child {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .item__number {
+      @include typography(var(--text-white), 700, fluid(120px, 178px), 0.82);
+    }
+  }
+
   .item {
     &__inner {
       @include item-decor(
@@ -108,7 +102,7 @@
         $before-position: (top: -13px, left: -12px),
         $after-position: (bottom: -13px, right: -12px)
       );
-      min-height: 8.125rem;
+      min-height: 100px;
       position: relative;
       flex-direction: column;
       gap: 0.5rem;
@@ -118,14 +112,7 @@
         gap: 0.938rem;
       }
     }
-    &__title {
-      @include typography(var(--bg-black), 600, fluid(22px, 42px), 1);
-      letter-spacing: -0.083rem;
-      &:first-child {
-        width: 80%;
-      }
-    }
-
+    
     &__prev {
       @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
       font-family: var(--second-family);
@@ -150,10 +137,14 @@
       @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
     }
     &__item {
+      padding: 20px;
       &::before {
         content: '';
         @include decoration(var(--vector-black), 40px);
-        padding: 20px;
+      }
+      &:nth-child(1) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
       }
       &:nth-child(2) {
         grid-column: 3 / 4;
@@ -191,10 +182,6 @@
       grid-template-rows: auto auto;
       gap: 20px;
     }
-    &__content {
-      grid-column: 2 / 3;
-      grid-row: 1 / 2;
-    }
     .item {
       &__inner {
         @include item-decor(
@@ -203,7 +190,7 @@
           $after-position: (bottom: -13px, right: -12px),
           $size: (width: 20px, height: 20px)
         );
-        min-height: 408px;
+        min-height: 368px;
         justify-content: space-between;
         &:not(:has(.item__prev)) {
           flex-direction: column;

@@ -19,17 +19,17 @@
   &__title {
     position: relative;
     margin-bottom: 10px;
-    @include bracket-decor(
-      var(--text-light-gray),
-      (
-        top: -2px,
-        left: 0,
-      )
-    );
+    // @include bracket-decor(
+    //   var(--text-light-gray),
+    //   (
+    //     top: -2px,
+    //     left: 0,
+    //   )
+    // );
   }
 
   &__subtitle {
-    @include typography(var(--text-white), 500, fluid(31px, 68px), 1);
+    // @include typography(var(--text-white), 500, fluid(31px, 68px), 1);
     margin-bottom: 20px;
     span {
       color: var(--text-deep-black);

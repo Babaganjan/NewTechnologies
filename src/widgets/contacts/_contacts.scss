@@ -30,7 +30,7 @@ $large-screen-bottom-padding: 190px;
     .contacts__title {
       grid-area: title;
       font-family: var(--second-family);
-      @include typography(var(--text-white), 400, fluid(84px, 282px), 0.81, uppercase, -0.1em);
+      // @include typography(var(--text-white), 400, fluid(84px, 282px), 0.81, uppercase, -0.1em);
       text-align: center;
     }
 
@@ -47,7 +47,7 @@ $large-screen-bottom-padding: 190px;
 
       h2 {
         font-family: var(--second-family);
-        @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none, -0.06em);
+        // @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none, -0.06em);
         margin-bottom: 10px;
       }
 

@@ -20,13 +20,13 @@
   }
 
   &__title {
-    @include bracket-decor();
-    @include typography(var(--text-deep-gray), 700, fluid(14px, 22px));
+    // @include bracket-decor();
+    // @include typography(var(--text-deep-gray), 700, fluid(14px, 22px));
     letter-spacing: -0.053em;
   }
 
   &__subtitle {
-    @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 1);
+    // @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 1);
     span {
       color: var(--text-black);
     }
@@ -66,7 +66,7 @@
       background-position: top right;
     }
     &__title {
-      @include typography(var(--bg-black), 600, fluid(22px, 42px), 1);
+      // @include typography(var(--bg-black), 600, fluid(22px, 42px), 1);
       letter-spacing: -0.083rem;
       width: 70%;
       &::before {

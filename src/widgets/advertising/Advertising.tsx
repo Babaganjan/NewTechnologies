@@ -1,13 +1,15 @@
 import './_advertising-block.scss';
+import { Heading } from '@/shared/ui/Heading';
+
 import { PARTNERS } from './advertising.const';
 
 export const Advertising = () => {
   return (
     <section className="advertising with-trapezoids" aria-labelledby="advertising-title">
       <div className="advertising__container container">
-        <h2 id="advertising-title" className="advertising__title">
+        <Heading level={2} id="advertising-title" className="advertising__title title">
           Наши партнеры
-        </h2>
+        </Heading>
         <div className="advertising__subtitle-container">
           <h3 className="advertising__subtitle">
             Работаем с лидерами
