@@ -17,7 +17,7 @@ export const Products = () => {
           <H level={2} variant="light" id="products-title" className="products-title title">
             Наша продукция
           </H>
-          <p className="products-subtitle">
+          <H level={3} variant="light" className="products-subtitle">
             {path !== 'products' ? (
               <>
                 <span>надежное оборудование,</span> соответствующее строгим <span>отраслевым</span>{' '}
@@ -26,10 +26,6 @@ export const Products = () => {
             ) : (
               'Производим собственное оборудование с 2022 года для частных лиц и бизнеса.'
             )}
-          </p>
-          <H level={3} variant="light" className="products-subtitle">
-            Надежное Оборудование,<span>соответствующее строгим</span> отраслевым{' '}
-            <span>стандартам</span>
           </H>
         </div>
         <ul className="products__list">
