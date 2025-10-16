@@ -22,10 +22,10 @@
     @include bracket-decor();
   }
   .products-subtitle {
-    @include typography(var(--text-black), 500, fluid(31px, 68px), 1, uppercase, -0.07em);
     margin-bottom: 20px;
     span {
-      color: var(--text-light-gray);
+      display: inline-block;
+      color: var(--text-black);
     }
   }
 }

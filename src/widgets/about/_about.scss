@@ -1,24 +1,17 @@
 @use '../../shared/styles/functions' as *;
 @use '../../shared/styles/mixins' as *;
 
-// ===== MOBILE FIRST =====
 .about {
-  padding-block: 6.31rem 6.5rem;
+  padding-block: 112px 116px;
 
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 0.625rem;
-  }
-
-  &__title {
-    @include bracket-decor(var(--text-deep-gray));
-    @include typography(var(--text-deep-gray), 700, fluid(14px, 22px), 1.2, uppercase, -0.053em);
+    gap: 10px;
   }
 
   &__subtitle {
     @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 1, uppercase, -0.136rem);
-
     span {
       color: var(--text-black);
     }
@@ -28,18 +21,18 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    gap: 0.25rem;
+    gap: 4px;
 
     &--bottom {
       display: flex;
-      gap: 0.25rem;
+      gap: 4px;
     }
   }
 
   &__prevs-wrapper {
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 10px;
   }
 
   &__desc {
@@ -50,6 +43,7 @@
   &__btn-wrapper {
     display: flex;
     justify-content: center;
+    margin-top: 20px;
   }
 
   &__btn {
@@ -57,18 +51,15 @@
     align-items: center;
     gap: 10px;
     @include typography(var(--text-black), 700, fluid(18px, 26px), 1, uppercase, -0.96px);
-    margin-top: 1.25rem;
   }
 }
 
 // ===== IMAGE WRAPPERS (MOBILE) =====
 .image__wrapper {
   @include item-decor();
-  display: inline-flex;
   picture {
     display: inline-flex;
   }
-
   span {
     @include decoration(var(--text-white), 1.5rem);
   }
@@ -101,7 +92,6 @@
       display: grid;
       grid-template-columns: repeat(2, 1fr);
       grid-template-rows: repeat(2, 1fr);
-      gap: 10px;
       padding-top: 40px;
 
       &--top {

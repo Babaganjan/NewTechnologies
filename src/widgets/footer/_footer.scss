@@ -102,7 +102,7 @@
 
 .footer__title {
   display: block;
-  @include typography(var(--text-gray), 500, fluid(14px, 20px));
+  // @include typography(var(--text-gray), 500, fluid(14px, 20px));
   &::before {
     content: '';
     @include decoration(

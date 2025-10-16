@@ -1,3 +1,5 @@
 import { ProductItem } from './ProductItem/ProductItem';
+import { H } from './Heading/H';
 
-export { ProductItem };
+export { H, ProductItem };
+

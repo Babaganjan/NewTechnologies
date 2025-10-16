@@ -2,6 +2,7 @@
 import { useState } from 'react';
 
 import { Arrow } from '@/shared/icons';
+import { H } from '@/shared/ui';
 
 import './_questions-block.scss';
 import { QUESTIONS_DATA, ACTIVE_CARD_DATA } from './questions.const';
@@ -12,9 +13,9 @@ export const Questions = () => {
   return (
     <section className="questions" aria-labelledby="questions-title">
       <div className="questions__container container">
-        <h2 id="questions-title" className="questions__title">
+        <H level={2} variant="light" id="questions-title" className="questions__title title">
           Частые вопросы
-        </h2>
+        </H>
         <ul className="card-wrapper">
           {QUESTIONS_DATA.map((question) => (
             <li

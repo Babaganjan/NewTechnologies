@@ -12,13 +12,13 @@
   &__title {
     position: relative;
     margin-bottom: 0.625rem;
-    @include bracket-decor(
-      var(--text-deep-gray),
-      (
-        top: -2px,
-        left: 0,
-      )
-    );
+    // @include bracket-decor(
+    //   var(--text-deep-gray),
+    //   (
+    //     top: -2px,
+    //     left: 0,
+    //   )
+    // );
   }
 
   .card-wrapper {

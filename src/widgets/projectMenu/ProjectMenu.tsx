@@ -3,6 +3,7 @@
 import { useState } from 'react';
 
 import { Arrow } from '@/shared/icons';
+import { H } from '@/shared/ui';
 
 import './_project-menu.scss';
 import { PROJECT_MENU_DATA } from './projectMenu.const';
@@ -21,13 +22,16 @@ export const ProjectMenu = () => {
   return (
     <section className="project-menu" aria-labelledby="project-menu-title">
       <div className="project-menu__container container">
-        <h2 id="project-menu-title" className="project-menu__title">
+        <H level={2} variant="light" id="project-menu-title" className="project-menu__title">
           Наши проекты
-        </h2>
-        <p className="project-menu__subtitle">
+        </H>
+        <H level={4} variant="light" className="project-menu__subtitle">
           2000+ реализованных проектов
-          <span>—от уютных кафе у дома до объектов государственного значения.</span>
-        </p>
+          <span>
+            &nbsp;&mdash; от&nbsp;уютных кафе у&nbsp;дома до&nbsp;объектов государственного
+            значения.
+          </span>
+        </H>
         <div className="project-menu__headers">
           <div className="project-menu__header project-menu__header--project">проект</div>
           <div className="project-menu__header project-menu__header--client">клиент</div>

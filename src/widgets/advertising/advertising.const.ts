@@ -1,6 +1,13 @@
-import { Alhua, Bosch, Huawei, Hikvision } from '@/shared/icons';
+import type { FC } from 'react';
 
-export const PARTNERS = [
+import { Alhua, Bosch, Huawei, Hikvision, type Icons } from '@/shared/icons';
+
+export interface IPartner {
+  id: number;
+  component: FC<Icons>;
+}
+
+export const PARTNERS: IPartner[] = [
   { id: 1, component: Alhua },
   { id: 2, component: Bosch },
   { id: 3, component: Hikvision },

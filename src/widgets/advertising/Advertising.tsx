@@ -1,21 +1,21 @@
 import './_advertising-block.scss';
+import { H } from '@/shared/ui';
+
 import { PARTNERS } from './advertising.const';
 
 export const Advertising = () => {
   return (
     <section className="advertising with-trapezoids" aria-labelledby="advertising-title">
       <div className="advertising__container container">
-        <h2 id="advertising-title" className="advertising__title">
+        <H level={2} id="advertising-title" className="advertising__title title">
           Наши партнеры
-        </h2>
-        <div className="advertising__subtitle-container">
-          <h3 className="advertising__subtitle">
-            Работаем с лидерами
-            <span>
-              рынка из <span className="advertising__subtitle--break">отрасли</span>
-            </span>
-          </h3>
-        </div>
+        </H>
+        <H level={3} className="advertising__subtitle subtitle">
+          Работаем с лидерами
+          <span>
+            рынка из <span className="advertising__subtitle--break">отрасли</span>
+          </span>
+        </H>
         <div className="continuous-scroll-container">
           <div className="continuous-scroll-wrapper">
             {PARTNERS.map((slide) => {

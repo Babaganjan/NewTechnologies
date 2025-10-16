@@ -38,7 +38,7 @@
   }
 
   &__title {
-    @include typography(var(--text-black), 500, fluid(31px, 68px), 1);
+    // @include typography(var(--text-black), 500, fluid(31px, 68px), 1);
     min-width: 340px;
     margin-bottom: 18px;
     text-align: center;

@@ -1,6 +1,7 @@
 'use client';
 import { usePathname } from 'next/navigation';
 
+import { H } from '@/shared/ui';
 import { HEADING_COMPONENTS } from '@/shared/ui/HeadingSvg/heading.const';
 
 import './_hero.scss';
@@ -16,18 +17,23 @@ export const Hero = () => {
     <section className="hero with-bottom-trapezoid">
       <div className="container hero__container flex">
         {HeadingComponent && (
-          <h1 className="heading">
+          <H level={1} className="heading">
             <HeadingComponent />
-          </h1>
+          </H>
         )}
         <div className="hero__content flex">
-          <h2 className="hero__title title">Мы&nbsp;предлагаем</h2>
+          <H level={2} className="hero__title title">
+            Мы&nbsp;предлагаем
+          </H>
           <p className="hero__prev">
-            системы видеонаблюдения, пожаротушения, охранно-пожарной сигнализации, скуд
-            и&nbsp;оповещения для частых лиц и&nbsp;бизнеса
+            инновационные решения для обеспечения безопасности: системы видеонаблюдения,
+            охранно-пожарная сигнализация, пожаротушение, контроль доступа и&nbsp;системы
+            оповещения.
           </p>
         </div>
-        <h3 className="hero__subtitle subtitle">Безопасность&nbsp;нового поколения</h3>
+        <H level={3} className="hero__subtitle subtitle">
+          Безопасность&nbsp;нового поколения
+        </H>
       </div>
     </section>
   );
