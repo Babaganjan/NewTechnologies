@@ -38,37 +38,30 @@
 // }
 
 // export default Heading;
-import type { ReactNode, JSX } from 'react';
+import clsx from 'clsx';
+import type { ReactNode, HTMLAttributes } from 'react';
 
 import styles from './heading.module.scss';
 
-type HeadingLevel = 1 | 2 | 3 | 4 | 5;
+export type HeadingLevel = '1' | '2' | '3' | '4' | '5';
+export type HeadingTag = `h${HeadingLevel}`;
 type HeadingColor = 'light' | 'dark';
 
-type HeadingProps = {
-  level: HeadingLevel;
+interface HeadingProps extends HTMLAttributes<HTMLHeadingElement> {
+  level?: HeadingLevel;
   children: ReactNode;
   variant?: HeadingColor;
-  className?: string;
-  id?: string;
-};
-
-const levelToTag: Record<HeadingLevel, keyof JSX.IntrinsicElements> = {
-  1: 'h1',
-  2: 'h2',
-  3: 'h3',
-  4: 'h4',
-  5: 'h5',
-};
+}
 
 export function H({
-  level,
+  level = '2',
   children,
-  variant = 'dark', // значение по умолчанию
+  variant = 'dark',
   className,
   id,
+  ...props
 }: HeadingProps) {
-  const Tag = levelToTag[level];
+  const Tag = `h${level}` as HeadingTag;
 
   // 1. Класс для уровня заголовка
   const levelClass = styles[`level${level}`];
@@ -77,7 +70,7 @@ export function H({
   const variantClass = styles[`variant${variant.charAt(0).toUpperCase() + variant.slice(1)}`];
 
   return (
-    <Tag className={`${styles.heading} ${levelClass} ${variantClass} ${className || ''}`} id={id}>
+    <Tag className={clsx(styles.heading, levelClass, variantClass, className)} id={id} {...props}>
       {children}
     </Tag>
   );

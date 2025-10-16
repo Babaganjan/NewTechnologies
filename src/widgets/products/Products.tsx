@@ -14,10 +14,10 @@ export const Products = () => {
     <section className="products" aria-labelledby="products-title">
       <div className="products__container container">
         <div className="products__wrapper-text">
-          <H level={2} variant="light" id="products-title" className="products-title title">
+          <H level={'2'} variant="light" id="products-title" className="products-title title">
             Наша продукция
           </H>
-          <H level={3} variant="light" className="products-subtitle">
+          <H level={'3'} variant="light" className="products-subtitle">
             {path !== 'products' ? (
               <>
                 <span>надежное оборудование,</span> соответствующее строгим <span>отраслевым</span>{' '}

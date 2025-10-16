@@ -55,11 +55,6 @@ body:has(.products-page-section) {
     align-items: flex-start;
     justify-content: flex-start;
     gap: 0;
-    h1 {
-      display: inline-flex;
-      font-family: var(--second-family);
-      @include typography(var(--text-white), 400, fluid(76px, 262px), 1.2, uppercase, -0.09em);
-    }
     p {
       display: inline-flex;
       white-space: pre-line;

@@ -17,12 +17,12 @@ export const Hero = () => {
     <section className="hero with-bottom-trapezoid">
       <div className="container hero__container flex">
         {HeadingComponent && (
-          <H level={1} className="heading">
+          <H level={'1'} className="heading">
             <HeadingComponent />
           </H>
         )}
         <div className="hero__content flex">
-          <H level={2} className="hero__title title">
+          <H level={'2'} className="hero__title title">
             Мы&nbsp;предлагаем
           </H>
           <p className="hero__prev">
@@ -31,7 +31,7 @@ export const Hero = () => {
             оповещения.
           </p>
         </div>
-        <H level={3} className="hero__subtitle subtitle">
+        <H level={'3'} className="hero__subtitle subtitle">
           Безопасность&nbsp;нового поколения
         </H>
       </div>

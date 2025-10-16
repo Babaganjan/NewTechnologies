@@ -12,13 +12,13 @@ export const Contacts = () => {
   return (
     <section className="contacts" aria-labelledby="contacts-title">
       <div className="contacts__container container">
-        <H level={1} id="contacts-title" className="contacts__title title">
+        <H level={'1'} id="contacts-title" className="contacts__title title">
           <ContactsHeading />
         </H>
         <ul className="contacts__list">
           {CONTACTS_ITEMS.map((item) => (
             <li className={`contacts__item ${item.className}`} key={item.title}>
-              <H level={2}>{item.title}</H>
+              <H level={'2'}>{item.title}</H>
               <p>
                 {item.href ? (
                   <Link href={item.href}>

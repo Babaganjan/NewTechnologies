@@ -7,6 +7,6 @@ import type { HeadingComponentsMap } from './headingSvg.type';
 export const HEADING_COMPONENTS: HeadingComponentsMap = {
   '/': HomeHeading,
   '/services/': ServicesHeading,
-  '/production/': ProductionHeading,
+  '/products/': ProductionHeading,
   '/contacts/': ContactsHeading,
 } as const;
