@@ -12,11 +12,11 @@
     "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,css,scss,md}\""
   },
   "dependencies": {
+    "clsx": "^2.1.1",
     "globals": "16.4.0",
     "next": "15.5.4",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "styled-components": "^6.1.19",
     "swiper": "^12.0.2"
   },
   "devDependencies": {

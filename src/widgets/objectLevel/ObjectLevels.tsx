@@ -1,5 +1,5 @@
 import './_object-levels.scss';
-import { Heading } from '@/shared/ui/Heading';
+import { H } from '@/shared/ui';
 
 import { OBJECT_LEVELS_DATA } from './objectLevels.const';
 
@@ -8,12 +8,12 @@ export const ObjectLevel = () => {
     <section className="object-levels">
       <div className="container object-levels__container flex">
         <div className="object-levels__inner flex">
-          <Heading level={2} variant="light" className="object-levels__title title">
+          <H level={2} variant="light" className="object-levels__title title">
             Кому подходит
-          </Heading>
-          <Heading level={3} variant="light" className="object-levels__subtitle subtitle">
+          </H>
+          <H level={3} variant="light" className="object-levels__subtitle subtitle">
             Индивидуальные решения <span>для объектов любого уровня</span>
-          </Heading>
+          </H>
         </div>
         <ul className="object-levels__list flex">
           {OBJECT_LEVELS_DATA.map((item) => (

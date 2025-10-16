@@ -8,6 +8,7 @@ import { Header } from './header/Header';
 import { Hero } from './hero/Hero';
 import { ObjectLevel } from './objectLevel/ObjectLevels';
 import { Products } from './products/Products';
+import { ProductsPage } from './productsPages/ProductsPage';
 import { ProjectMenu } from './projectMenu/ProjectMenu';
 import { Questions } from './questions/Questions';
 import { Result } from './result/Result';
@@ -28,4 +29,5 @@ export {
   Hero,
   Result,
   Services,
+  ProductsPage,
 };

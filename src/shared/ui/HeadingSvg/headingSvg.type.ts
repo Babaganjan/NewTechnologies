@@ -6,6 +6,6 @@ export interface HeadingComponentProps {
 
 export type HeadingComponent = FC<HeadingComponentProps>;
 
-export type AppPath = '/' | '/services/' | '/production/' | '/contacts/';
+export type AppPath = '/' | '/services/' | '/products/' | '/contacts/';
 
 export type HeadingComponentsMap = Record<AppPath, HeadingComponent>;

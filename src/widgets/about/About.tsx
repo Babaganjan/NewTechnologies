@@ -1,7 +1,7 @@
 import Image from 'next/image';
 
 import { Arrow } from '@/shared/icons';
-import { Heading } from '@/shared/ui/Heading';
+import { H } from '@/shared/ui';
 
 import './_about.scss';
 
@@ -9,13 +9,13 @@ export const About = () => {
   return (
     <section className="about">
       <div className="container about__container flex">
-        <Heading level={2} variant="light" className="about__title title">
+        <H level={2} variant="light" className="about__title title">
           Что мы делаем
-        </Heading>
-        <Heading level={3} variant="light" className="about__subtitle subtitle">
+        </H>
+        <H level={3} variant="light" className="about__subtitle subtitle">
           <span>реализуем комплексные системы</span> безопасности и оптимизируем бизнес в казахстане
           <span> С 2013 года</span>
-        </Heading>
+        </H>
         <div className="about__images flex">
           <div className="about__images--top">
             <div className="image__wrapper image__big">

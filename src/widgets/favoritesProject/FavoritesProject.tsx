@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Heading } from '@/shared/ui/Heading';
+import { H } from '@/shared/ui';
 
 import './_favorite-project.scss';
 import { FAVORITES_PROJECT_DATA } from './favorite-project.const';
@@ -9,14 +9,14 @@ export const FavoritesProject = () => {
   return (
     <section className="favorites-project" aria-labelledby="favorites-project-title">
       <div className="favorites-project__container container">
-        <Heading
+        <H
           level={2}
           variant="light"
           id="favorites-project-title"
           className="favorites-project__title"
         >
           Избранные проекты
-        </Heading>
+        </H>
         {FAVORITES_PROJECT_DATA.map((item) => (
           <article className="favorites-project__item" key={item.id}>
             <div className="favorites-project__img">
