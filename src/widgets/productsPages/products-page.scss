@@ -1,17 +1,53 @@
 @use '../../shared/styles/functions' as *;
 @use '../../shared/styles/mixins' as *;
 
-body:has(.products-page-section) .header {
-  background-color: transparent;
+body:has(.products-page-section) {
+  .header {
+    background-color: transparent;
+  }
+
+  .products {
+    margin-top: 0;
+    padding-top: fluid(100px, 190px);
+    padding-bottom: fluid(100px, 190px);
+    background-color: var(--bg-black);
+  }
+
+  .products-page-section__container {
+    p {
+      display: none;
+    }
+  }
+
+  .products-title {
+    display: none;
+  }
+
+  .products__item {
+    background-color: var(--bg-white);
+  }
+
+  .products-subtitle {
+    display: inline-flex;
+    @include typography(var(--text-white), 600, fluid(22px, 42px), 1);
+  }
+
+  @include respond-min(1024px) {
+    .products-page-section__container {
+      p {
+        display: block;
+      }
+    }
+    .products-subtitle {
+      display: none;
+    }
+  }
 }
 
 .products-page-section {
   margin-top: -119px;
-  padding-top: 724px;
-  background-image: url('/img/products-pages-img.webp');
-  background-size: cover;
-  background-position: center top;
-  background-repeat: no-repeat;
+  padding-top: 620px;
+  background: var(--bg-black) url('/img/products-pages-img.webp') center top / cover no-repeat;
 
   .products-page-section__container {
     display: flex;
@@ -22,12 +58,12 @@ body:has(.products-page-section) .header {
     h1 {
       display: inline-flex;
       font-family: var(--second-family);
-      @include typography(var(--text-white), 400, 262px, 1.2, uppercase, -0.09em);
+      @include typography(var(--text-white), 400, fluid(76px, 262px), 1.2, uppercase, -0.09em);
     }
     p {
       display: inline-flex;
       white-space: pre-line;
-      @include typography(var(--text-white), 500, 28px, 1.15, uppercase, -0.06em);
+      @include typography(var(--text-white), 500, fluid(22px, 28px), 1.15, uppercase, -0.06em);
     }
   }
 }

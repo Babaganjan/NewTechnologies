@@ -1,4 +1,14 @@
-export const PRODUCTS_DATA = [
+export interface IProductItem {
+  id: number;
+  title: string;
+  alias: string;
+  image: string;
+  width: number;
+  height: number;
+  amount: number;
+}
+
+export const PRODUCTS_DATA: IProductItem[] = [
   {
     id: 1,
     title: 'Турникеты',
@@ -45,4 +55,4 @@ export const PRODUCTS_DATA = [
     height: 48,
     amount: 7,
   },
-];
+] as const;

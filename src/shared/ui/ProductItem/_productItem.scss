@@ -1,0 +1,45 @@
+@use '../../styles/functions' as *;
+@use '../../styles/mixins' as *;
+
+.products__item {
+  padding: 15px 10px 10px 10px;
+  border: 1px solid var(--text-light-gray);
+  display: flex;
+  width: fluid(170px, 455px);
+  flex-direction: column;
+  position: relative;
+  justify-content: space-between;
+  align-items: flex-start;
+  @include item-decor();
+
+  &:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    justify-self: center;
+  }
+}
+
+.products__img {
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+
+.products__title {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: fit-content;
+  margin-top: auto;
+  span {
+    @include typography(var(--text-gray), 500, fluid(10px, 22px), 0.4, uppercase, -0.05em);
+    position: absolute;
+    top: 5px;
+    right: 0;
+  }
+
+  h5 {
+    margin-right: fluid(15px, 30px);
+    @include typography(var(--text-black), 500, fluid(18px, 28px), 1.5);
+    white-space: nowrap;
+  }
+}
