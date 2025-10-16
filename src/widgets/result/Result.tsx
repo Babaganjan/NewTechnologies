@@ -9,7 +9,7 @@ export const Result = () => {
     >
       <div className="container result__container flex">
         <div className="result__inner flex">
-          <H level={2} className="result__title title">
+          <H level={'2'} className="result__title title">
             Наши достижения
           </H>
         </div>
@@ -18,7 +18,7 @@ export const Result = () => {
           <li className="result__item result__item--fill flex">
             <article className="item__inner flex">
               <strong className="item__number">100+</strong>
-              <H level={4} className="item__title">
+              <H level={'4'} className="item__title">
                 Опытных сотрудников
               </H>
               <p className="result__prev">
@@ -29,7 +29,7 @@ export const Result = () => {
           </li>
           <li className="result__item">
             <article className="item__inner flex">
-              <H level={4} variant="light" className="item__title">
+              <H level={'4'} variant="light" className="item__title">
                 Собственная разработка&nbsp;по
               </H>
               <p className="item__prev">
@@ -41,14 +41,14 @@ export const Result = () => {
           <li className="result__item">
             <article className="item__inner flex">
               <strong className="item__number">12</strong>
-              <H level={4} variant="light" className="item__title item__title-width">
+              <H level={'4'} variant="light" className="item__title item__title-width">
                 Лет успешной работы
               </H>
             </article>
           </li>
           <li className="result__item">
             <article className="item__inner flex">
-              <H level={4} variant="light" className="item__title">
+              <H level={'4'} variant="light" className="item__title">
                 Собственное производство оборудования
               </H>
               <p className="item__prev">
@@ -60,7 +60,7 @@ export const Result = () => {
           <li className="result__item result__item-layout">
             <article className="item__inner item__inner-layout flex">
               <strong className="item__number item__number-layout">2000+</strong>
-              <H level={4} variant="light" className="item__title item__title-layout">
+              <H level={'4'} variant="light" className="item__title item__title-layout">
                 Успешно реализованных проектов
               </H>
               <p className="item__prev item__prev-layout">

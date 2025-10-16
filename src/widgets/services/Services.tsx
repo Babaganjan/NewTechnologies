@@ -9,7 +9,7 @@ export const Services = () => {
     <section className="services with-top-trapezoid with-bottom-trapezoid">
       <div className="container services__container">
         <div className="services__wrapper-title">
-          <H level={2} className="services__title title">
+          <H level={'2'} className="services__title title">
             Наши услуги
           </H>
         </div>
@@ -17,7 +17,7 @@ export const Services = () => {
           {SERVICES_ITEMS.map((item) => (
             <li className="services__item item" key={item.id}>
               <div className="item__inner flex">
-                <H level={3} className="item__subtitle subtitle">
+                <H level={'3'} className="item__subtitle subtitle">
                   {item.title}
                 </H>
                 <button className="item__btn">

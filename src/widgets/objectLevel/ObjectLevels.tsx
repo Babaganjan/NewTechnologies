@@ -8,10 +8,10 @@ export const ObjectLevel = () => {
     <section className="object-levels">
       <div className="container object-levels__container flex">
         <div className="object-levels__inner flex">
-          <H level={2} variant="light" className="object-levels__title title">
+          <H level={'2'} variant="light" className="object-levels__title title">
             Кому подходит
           </H>
-          <H level={3} variant="light" className="object-levels__subtitle subtitle">
+          <H level={'3'} variant="light" className="object-levels__subtitle subtitle">
             Индивидуальные решения <span>для объектов любого уровня</span>
           </H>
         </div>

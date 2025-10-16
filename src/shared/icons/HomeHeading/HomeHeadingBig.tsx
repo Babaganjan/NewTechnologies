@@ -1,6 +1,6 @@
-import type { HeadingComponentProps } from './headingSvg.type';
+import type { Icons } from '../icon.type';
 
-export const HomeHeadingBig = ({ className }: HeadingComponentProps) => {
+export const HomeHeadingBig = ({ className }: Icons) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,6 +1,6 @@
+import { ProductionHeading } from '@/shared/icons';
 import { H } from '@/shared/ui';
 import './products-page.scss';
-import { ProductionHeading } from '@/shared/ui/HeadingSvg/ProductionHeading';
 
 export const ProductsPage = () => {
   return (

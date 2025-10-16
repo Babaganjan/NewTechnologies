@@ -22,10 +22,10 @@ export const ProjectMenu = () => {
   return (
     <section className="project-menu" aria-labelledby="project-menu-title">
       <div className="project-menu__container container">
-        <H level={2} variant="light" id="project-menu-title" className="project-menu__title">
+        <H level={'2'} variant="light" id="project-menu-title" className="project-menu__title">
           Наши проекты
         </H>
-        <H level={4} variant="light" className="project-menu__subtitle">
+        <H level={'4'} variant="light" className="project-menu__subtitle">
           2000+ реализованных проектов
           <span>
             &nbsp;&mdash; от&nbsp;уютных кафе у&nbsp;дома до&nbsp;объектов государственного

@@ -13,7 +13,7 @@ export const Questions = () => {
   return (
     <section className="questions" aria-labelledby="questions-title">
       <div className="questions__container container">
-        <H level={2} variant="light" id="questions-title" className="questions__title title">
+        <H level={'2'} variant="light" id="questions-title" className="questions__title title">
           Частые вопросы
         </H>
         <ul className="card-wrapper">

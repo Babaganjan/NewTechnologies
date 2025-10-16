@@ -1,5 +1,5 @@
+import { HomeHeading } from '@/shared/icons';
 import { H } from '@/shared/ui';
-import { HomeHeading } from '@/shared/ui/HeadingSvg/HomeHeading';
 import './_hero.scss';
 
 export const Hero = () => {

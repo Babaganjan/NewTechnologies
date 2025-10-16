@@ -1,8 +1,7 @@
 import Link from 'next/link';
 
-import { Arrow } from '@/shared/icons';
+import { Arrow, ContactsHeading } from '@/shared/icons';
 import { H } from '@/shared/ui';
-import { ContactsHeading } from '@/shared/ui/HeadingSvg/ContactsHeading';
 
 import { CONTACTS_ITEMS, MAPS_EMBED_URL } from './contacts.const';
 
