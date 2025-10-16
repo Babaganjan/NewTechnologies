@@ -1,5 +1,5 @@
 import './_result.scss';
-import { Heading } from '@/shared/ui/Heading';
+import { H } from '@/shared/ui';
 
 export const Result = () => {
   return (
@@ -9,18 +9,18 @@ export const Result = () => {
     >
       <div className="container result__container flex">
         <div className="result__inner flex">
-          <Heading level={2} className="result__title title">
+          <H level={2} className="result__title title">
             Наши достижения
-          </Heading>
+          </H>
         </div>
 
         <ul className="result__list flex">
           <li className="result__item result__item--fill flex">
             <article className="item__inner flex">
               <strong className="item__number">100+</strong>
-              <Heading level={4} className="item__title">
+              <H level={4} className="item__title">
                 Опытных сотрудников
-              </Heading>
+              </H>
               <p className="result__prev">
                 От&nbsp;первых монтажей до инженерных решений &mdash; постоянное обучение
                 и&nbsp;рост.
@@ -29,9 +29,9 @@ export const Result = () => {
           </li>
           <li className="result__item">
             <article className="item__inner flex">
-              <Heading level={4} variant="light" className="item__title">
+              <H level={4} variant="light" className="item__title">
                 Собственная разработка&nbsp;по
-              </Heading>
+              </H>
               <p className="item__prev">
                 Платформы с&nbsp;простой интеграцией, модульной архитектурой
                 и&nbsp;масштабируемостью под любые задачи.
@@ -41,16 +41,16 @@ export const Result = () => {
           <li className="result__item">
             <article className="item__inner flex">
               <strong className="item__number">12</strong>
-              <Heading level={4} variant="light" className="item__title item__title-width">
+              <H level={4} variant="light" className="item__title item__title-width">
                 Лет успешной работы
-              </Heading>
+              </H>
             </article>
           </li>
           <li className="result__item">
             <article className="item__inner flex">
-              <Heading level={4} variant="light" className="item__title">
+              <H level={4} variant="light" className="item__title">
                 Собственное производство оборудования
-              </Heading>
+              </H>
               <p className="item__prev">
                 От&nbsp;проектирования до&nbsp;монтажа. Надёжные решения под ключ с&nbsp;гарантией
                 до&nbsp;12&nbsp;месяцев.
@@ -60,9 +60,9 @@ export const Result = () => {
           <li className="result__item result__item-layout">
             <article className="item__inner item__inner-layout flex">
               <strong className="item__number item__number-layout">2000+</strong>
-              <Heading level={4} variant="light" className="item__title item__title-layout">
+              <H level={4} variant="light" className="item__title item__title-layout">
                 Успешно реализованных проектов
-              </Heading>
+              </H>
               <p className="item__prev item__prev-layout">
                 Возьмемся за&nbsp;проект любого масштаба: от&nbsp;частных владений до&nbsp;объектов
                 национального значения.

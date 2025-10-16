@@ -38,7 +38,7 @@
 // }
 
 // export default Heading;
-import type { ReactNode } from 'react';
+import type { ReactNode, JSX } from 'react';
 
 import styles from './heading.module.scss';
 
@@ -53,7 +53,7 @@ type HeadingProps = {
   id?: string;
 };
 
-const levelToTag: Record<HeadingLevel, keyof React.JSX.IntrinsicElements> = {
+const levelToTag: Record<HeadingLevel, keyof JSX.IntrinsicElements> = {
   1: 'h1',
   2: 'h2',
   3: 'h3',
@@ -61,7 +61,7 @@ const levelToTag: Record<HeadingLevel, keyof React.JSX.IntrinsicElements> = {
   5: 'h5',
 };
 
-export function Heading({
+export function H({
   level,
   children,
   variant = 'dark', // значение по умолчанию

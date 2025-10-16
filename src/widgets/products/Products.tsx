@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { Heading } from '@/shared/ui/Heading';
+import { H } from '@/shared/ui';
 
 import './_products-block.scss';
 import { PRODUCTS_DATA } from './products.const';
@@ -11,13 +11,13 @@ export const Products = () => {
     <section className="products" aria-labelledby="products-title">
       <div className="products__container container">
         <div className="products__wrapper-text">
-          <Heading level={2} variant="light" id="products-title" className="products-title title">
+          <H level={2} variant="light" id="products-title" className="products-title title">
             Наша продукция
-          </Heading>
-          <Heading level={3} variant="light" className="products-subtitle">
+          </H>
+          <H level={3} variant="light" className="products-subtitle">
             Надежное Оборудование,<span>соответствующее строгим</span> отраслевым{' '}
             <span>стандартам</span>
-          </Heading>
+          </H>
         </div>
         <ul className="products__list">
           {PRODUCTS_DATA.map((item) => (
