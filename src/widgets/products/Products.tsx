@@ -2,7 +2,6 @@
 import { usePathname } from 'next/navigation';
 
 import { ProductItem } from '@/shared/ui';
-
 import { H } from '@/shared/ui';
 
 import './_products-block.scss';
