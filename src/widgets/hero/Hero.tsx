@@ -1,26 +1,15 @@
-'use client';
-import { usePathname } from 'next/navigation';
-
 import { Heading } from '@/shared/ui/Heading';
-import { HEADING_COMPONENTS } from '@/shared/ui/HeadingSvg/heading.const';
+import { HomeHeading } from '@/shared/ui/HeadingSvg/HomeHeading';
 
 import './_hero.scss';
 
 export const Hero = () => {
-  const pathname = usePathname();
-  const HeadingComponent =
-    pathname && HEADING_COMPONENTS
-      ? HEADING_COMPONENTS[pathname as keyof typeof HEADING_COMPONENTS]
-      : null;
-
   return (
     <section className="hero with-bottom-trapezoid">
       <div className="container hero__container flex">
-        {HeadingComponent && (
-          <Heading level={1} className="heading">
-            <HeadingComponent />
-          </Heading>
-        )}
+        <Heading level={1} className="heading">
+          <HomeHeading />
+        </Heading>
         <div className="hero__content flex">
           <Heading level={2} className="hero__title title">
             Мы&nbsp;предлагаем

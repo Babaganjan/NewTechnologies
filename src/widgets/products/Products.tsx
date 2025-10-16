@@ -2,9 +2,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Heading } from '@/shared/ui/Heading';
+import { ProductionHeading } from '@/shared/ui/HeadingSvg/ProductionHeading';
 
-import './_products-block.scss';
 import { PRODUCTS_DATA } from './products.const';
+import './_products-block.scss';
 
 export const Products = () => {
   return (
@@ -12,7 +13,8 @@ export const Products = () => {
       <div className="products__container container">
         <div className="products__wrapper-text">
           <Heading level={2} variant="light" id="products-title" className="products-title title">
-            Наша продукция
+            {/* Наша продукция */}
+            <ProductionHeading />
           </Heading>
           <Heading level={3} variant="light" className="products-subtitle">
             Надежное Оборудование,<span>соответствующее строгим</span> отраслевым{' '}
