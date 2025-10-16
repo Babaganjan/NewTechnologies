@@ -18,7 +18,7 @@
     @include line-decor(2% 50% 98%);
     position: relative;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 10px;
   }
 
   &__inner {
@@ -62,12 +62,13 @@
   &__prev {
     @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
     width: 80%;
+    margin-top: auto;
     font-family: var(--second-family);
     letter-spacing: -0.84px;
   }
   &__list {
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 8px;
   }
   &__item {
     &:not(:has(.item__number)):nth-of-type(2) {
@@ -81,14 +82,16 @@
     }
     position: relative;
     background-color: var(--text-white);
-    padding: 0.938rem;
+    padding: 15px;
   }
 
   &__item:first-child {
+    min-height: 220px;
     background-color: var(--bg-deep-gray);
     .item__inner:first-child {
       flex-direction: column;
       align-items: flex-start;
+      flex-grow: 1;
     }
     .item__number {
       @include typography(var(--text-white), 700, fluid(120px, 178px), 0.82);
@@ -105,7 +108,7 @@
       min-height: 100px;
       position: relative;
       flex-direction: column;
-      gap: 0.5rem;
+      gap: 8px;
       &:not(:has(.item__prev)) {
         flex-direction: row;
         align-items: flex-end;
@@ -117,6 +120,7 @@
       @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
       font-family: var(--second-family);
       letter-spacing: -0.053rem;
+      width: 93%;
     }
 
     &__number {
