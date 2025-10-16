@@ -1,9 +1,12 @@
+html {
+  box-sizing: border-box;
+}
 /* === Modern CSS Reset (основа) === */
 /* 1. Использование интуитивной блочной модели */
 *,
 *::before,
 *::after {
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 /* 2. Удаление стандартных отступов (ваше правило более полное) */
