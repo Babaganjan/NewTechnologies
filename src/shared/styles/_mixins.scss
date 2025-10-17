@@ -56,7 +56,6 @@
     }
   }
 }
-// bottom: -32px; border-bottom: 33px; width: 1026px; border-left/border-right: 63px;
 @mixin trapezoid-decor(
   $width: 21px,
   $height: 13px,
@@ -104,7 +103,7 @@
   )
 ) {
   @include typography($color, 700, fluid(14px, 22px), 1.2);
-  padding-inline: fluid(10px, 22px);
+  padding-left: fluid(10px, 22px);
   &::after {
     content: '[';
     position: absolute;

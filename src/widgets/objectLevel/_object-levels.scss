@@ -20,13 +20,10 @@
   }
 
   &__title {
-    // @include bracket-decor();
-    // @include typography(var(--text-deep-gray), 700, fluid(14px, 22px));
     letter-spacing: -0.053em;
   }
 
   &__subtitle {
-    // @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 1);
     span {
       color: var(--text-black);
     }
@@ -57,7 +54,7 @@
         $before-position: (top: -7px, left: -18px),
         $after-position: (bottom: -7px, right: -7px)
       );
-      height: 80px;
+      min-height: 80px;
       position: relative;
       flex-direction: column;
       gap: 6px;
@@ -66,7 +63,6 @@
       background-position: top right;
     }
     &__title {
-      // @include typography(var(--bg-black), 600, fluid(22px, 42px), 1);
       letter-spacing: -0.083rem;
       width: 70%;
       &::before {
@@ -103,8 +99,6 @@
     }
     &__subtitle {
       grid-column: 2/4;
-      letter-spacing: -4.76px;
-      color: var(--text-black);
     }
     &__list {
       display: grid;
@@ -131,6 +125,7 @@
       }
       &__title {
         position: relative;
+        width: unset;
         letter-spacing: -2.52px;
         &::before {
           top: 0;

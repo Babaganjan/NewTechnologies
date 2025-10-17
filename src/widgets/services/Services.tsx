@@ -6,7 +6,7 @@ import { SERVICES_ITEMS } from './services.const';
 
 export const Services = () => {
   return (
-    <section className="services with-top-trapezoid with-bottom-trapezoid">
+    <section className="services with-trapezoids">
       <div className="container services__container">
         <div className="services__wrapper-title">
           <H level={'2'} className="services__title title">

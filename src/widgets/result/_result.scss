@@ -2,12 +2,8 @@
 @use '../../shared/styles/mixins' as *;
 
 .result {
-  &.with-top-trapezoid {
-    @include trapezoid-decor(21px, 12px, black, top);
-  }
-
-  &.with-bottom-trapezoid {
-    @include trapezoid-decor(21px, 12px, black, bottom);
+  &.with-trapezoids {
+    @include trapezoid-decor(21px, 12px, black, both);
   }
   padding-block: 88px;
   position: relative;
@@ -133,12 +129,8 @@
 // deckstop
 @include respond-min(1024px) {
   .result {
-    &.with-top-trapezoid {
-      @include trapezoid-decor(56px, 33px, black, top, 1030px, -32px);
-    }
-
-    &.with-bottom-trapezoid {
-      @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
+    &.with-trapezoids {
+      @include trapezoid-decor(56px, 33px, black, both, 1030px, -32px);
     }
     &__item {
       padding: 20px;

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { H } from '@/shared/ui';
 import type { IProductItem } from '@/widgets/products/products.const';
 
 import './_productItem.scss';
@@ -19,7 +20,7 @@ export const ProductItem = ({ itemData }: { itemData: IProductItem }) => {
         </div>
         <div className="products__title">
           <span>[{itemData.amount}]</span>
-          <h5>{itemData.title}</h5>
+          <H level={'5'}>{itemData.title}</H>
         </div>
       </Link>
     </li>

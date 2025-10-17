@@ -19,7 +19,6 @@
   .products-title {
     position: relative;
     margin-bottom: 10px;
-    @include bracket-decor();
   }
   .products-subtitle {
     margin-bottom: 20px;
@@ -30,6 +29,7 @@
   }
 }
 
+// dekstop
 @include respond-min(1024px) {
   .products {
     &__container {
