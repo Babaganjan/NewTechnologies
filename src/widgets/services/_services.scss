@@ -87,3 +87,107 @@
     }
   }
 }
+
+
+// _services.scss
+.services {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+
+  &__item {
+    position: relative;
+    
+    .item {
+      &__inner {
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.5rem;
+        background: var(--bg-secondary);
+        border-radius: 12px;
+      }
+
+      &__btn {
+        transition: all 0.3s ease;
+        border: none;
+        background: var(--primary-color);
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        
+        &.active {
+          background: var(--accent-color);
+          transform: rotate(45deg);
+        }
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+
+  &__slider-wrapper {
+    margin-top: 1rem;
+    background: var(--bg-light);
+    border-radius: 12px;
+    animation: slideDown 0.3s ease;
+  }
+}
+
+// Стили для слайдера
+.service-slider {
+  &__title {
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+  }
+
+  .slider__article-title {
+    text-align: start;
+  }
+
+  &__swiper {
+    padding: 0.5rem;
+  }
+}
+
+.slider {
+  &__wrapper {
+    text-align: center;
+  }
+
+  &__image {
+    object-fit: cover;
+  }
+
+  &__caption {
+    color: var(--Text-Light-gray, #D0D0D0);
+font-family: "Roboto Condensed";
+font-size: 14px;
+font-style: normal;
+font-weight: 500;
+line-height: 110%; /* 15.4px */
+letter-spacing: -0.84px;
+text-align: start;
+  }
+}
+
+@keyframes slideDown {
+  from { 
+    opacity: 0; 
+    transform: translateY(-10px);
+    max-height: 0;
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0);
+    max-height: 500px;
+  }
+}
