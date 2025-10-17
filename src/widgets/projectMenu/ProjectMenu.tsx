@@ -40,14 +40,15 @@ export const ProjectMenu = () => {
 
         <div className="project-menu__numbers">
           {PROJECT_MENU_DATA.map((item, index) => (
-            <div
+            <H
+              level={'5'}
               key={`number-${item.id}`}
               className={`project-menu-item__number ${hoveredRow === index && 'hovered'}`}
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
               №{(index + 1).toString().padStart(3, '0')}
-            </div>
+            </H>
           ))}
         </div>
 
@@ -62,7 +63,9 @@ export const ProjectMenu = () => {
               <div className="project-menu-item__content">
                 <span className="project-menu-item__client service-label--services">клиент</span>
                 <div className="project-menu-item__subtitle">
-                  <p className="project-menu-item__subtitle-title">{item.subtitle}</p>
+                  <H level={'5'} className="project-menu-item__subtitle-title">
+                    {item.subtitle}
+                  </H>
                   <Arrow
                     color="var(--text-black)"
                     width={12}
@@ -87,7 +90,7 @@ export const ProjectMenu = () => {
               onMouseEnter={() => handleMouseEnter(index)}
               onMouseLeave={handleMouseLeave}
             >
-              <p>{item.service}</p>
+              <H level={'5'}>{item.service}</H>
             </div>
           ))}
         </div>

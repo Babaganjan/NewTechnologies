@@ -70,11 +70,6 @@
   gap: 10px;
   padding: clamp(10px, 2.5vw, 50px);
   @include typography(var(--text-gray), 500, fluid(14px, 20px));
-  .footer__copyright-text {
-    span {
-      display: block;
-    }
-  }
   a {
     text-decoration: underline;
     text-decoration-skip-ink: none;
@@ -102,7 +97,6 @@
 
 .footer__title {
   display: block;
-  // @include typography(var(--text-gray), 500, fluid(14px, 20px));
   &::before {
     content: '';
     @include decoration(
