@@ -4,7 +4,7 @@ import { H } from '@/shared/ui';
 export const Result = () => {
   return (
     <section
-      className="result with-top-trapezoid with-bottom-trapezoid"
+      className="result with-trapezoids"
       aria-label="Достижения компании"
     >
       <div className="container result__container flex">

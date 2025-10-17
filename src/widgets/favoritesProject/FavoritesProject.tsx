@@ -10,7 +10,7 @@ export const FavoritesProject = () => {
     <section className="favorites-project" aria-labelledby="favorites-project-title">
       <div className="favorites-project__container container">
         <H
-          level={2}
+          level={'2'}
           variant="light"
           id="favorites-project-title"
           className="favorites-project__title"
@@ -30,7 +30,9 @@ export const FavoritesProject = () => {
               <div className="favorites-project__decoration" aria-hidden="true"></div>
             </div>
             <div className="favorites-project__wrapper">
-              <h5 className="item__small-title">{item.title}</h5>
+              <H level={'5'} className="item__small-title">
+                {item.title}
+              </H>
               <p className="item__prev">{item.description}</p>
             </div>
           </article>

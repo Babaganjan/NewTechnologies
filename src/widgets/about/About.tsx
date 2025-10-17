@@ -9,10 +9,10 @@ export const About = () => {
   return (
     <section className="about">
       <div className="container about__container flex">
-        <H level={2} variant="light" className="about__title title">
+        <H level={'2'} variant="light" className="about__title title">
           Что мы делаем
         </H>
-        <H level={3} variant="light" className="about__subtitle subtitle">
+        <H level={'3'} variant="light" className="about__subtitle subtitle">
           <span>реализуем комплексные системы</span> безопасности и оптимизируем бизнес в казахстане
           <span> С 2013 года</span>
         </H>

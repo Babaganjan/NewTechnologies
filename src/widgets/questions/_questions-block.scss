@@ -12,13 +12,6 @@
   &__title {
     position: relative;
     margin-bottom: 0.625rem;
-    // @include bracket-decor(
-    //   var(--text-deep-gray),
-    //   (
-    //     top: -2px,
-    //     left: 0,
-    //   )
-    // );
   }
 
   .card-wrapper {
@@ -83,7 +76,6 @@
 
   &__content {
     position: relative;
-    @include typography(var(--text-black), 500, fluid(20px, 28px), 1.15);
     color: inherit;
     transition: color 0.2s ease;
 

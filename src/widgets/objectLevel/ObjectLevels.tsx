@@ -19,7 +19,9 @@ export const ObjectLevel = () => {
           {OBJECT_LEVELS_DATA.map((item) => (
             <li className={`object-levels__item item item-layout--${item.id}`} key={item.id}>
               <article className="item__inner flex">
-                <h4 className="item__title">{item.title}</h4>
+                <H level={'4'} variant="light"className="item__title">
+                  {item.title}
+                </H>
                 <p className="item__prev">{item.prev}</p>
               </article>
             </li>

@@ -2,7 +2,7 @@
 @use '../../shared/styles/mixins' as *;
 
 .hero {
-  &.with-bottom-trapezoid {
+  &.with-trapezoids {
     @include trapezoid-decor(21px, 12px, black, bottom);
   }
   position: relative;
@@ -41,11 +41,12 @@
   @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
   font-family: var(--second-family);
   letter-spacing: -0.84px;
+  width: fluid(164px, 448px);
 }
 
 @include respond-min(1024px) {
   .hero {
-    &.with-bottom-trapezoid {
+    &.with-trapezoids {
       @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
     }
     &__container {
@@ -57,7 +58,6 @@
     &__content {
       flex-direction: column;
       gap: 34px;
-      width: 51%;
     }
     .heading {
       grid-column: 1/3;

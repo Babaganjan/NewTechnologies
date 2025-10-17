@@ -26,7 +26,9 @@ export const Questions = () => {
               onMouseLeave={() => setActiveCard(null)}
             >
               <div className="questions__card-decorative"></div>
-              <h5 className="questions__content">{question.content}</h5>
+              <H level={'5'} className="questions__content">
+                {question.content}
+              </H>
               {activeCard === question.id && (
                 <p className="questions__description">{question.description}</p>
               )}
@@ -38,7 +40,9 @@ export const Questions = () => {
             data-grid-index={ACTIVE_CARD_DATA.gridIndex}
           >
             <div className="questions__card-content">
-              <h4 className="questions__card-title">Все еще есть вопросы?</h4>
+              <H level={'4'} className="questions__card-title">
+                Все еще есть вопросы?
+              </H>
               <span className="questions__card-subtitle">Мы готовы помочь.</span>
               <Arrow width={20} height={25} className="questions__card-arrow--active" />
             </div>

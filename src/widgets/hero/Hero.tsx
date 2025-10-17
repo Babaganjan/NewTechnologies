@@ -4,7 +4,7 @@ import './_hero.scss';
 
 export const Hero = () => {
   return (
-    <section className="hero with-bottom-trapezoid">
+    <section className="hero with-trapezoids">
       <div className="container hero__container flex">
         <H level={'1'} className="heading">
           <HomeHeading />

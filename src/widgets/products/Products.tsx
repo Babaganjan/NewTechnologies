@@ -8,7 +8,7 @@ import './_products-block.scss';
 import { PRODUCTS_DATA } from './products.const';
 
 export const Products = () => {
-  const path = usePathname().split('/')[1];
+  const path = usePathname();
 
   return (
     <section className="products" aria-labelledby="products-title">
@@ -20,8 +20,8 @@ export const Products = () => {
           <H level={'3'} variant="light" className="products-subtitle">
             {path !== 'products' ? (
               <>
-                <span>надежное оборудование,</span> соответствующее строгим <span>отраслевым</span>{' '}
-                стандартам
+                Надежное оборудование,<span>соответствующее строгим</span>отраслевым{' '}
+                <span>стандартам</span>
               </>
             ) : (
               'Производим собственное оборудование с 2022 года для частных лиц и бизнеса.'

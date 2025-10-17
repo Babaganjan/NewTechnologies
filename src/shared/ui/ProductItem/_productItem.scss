@@ -33,13 +33,14 @@
   span {
     @include typography(var(--text-gray), 500, fluid(10px, 22px), 0.4, uppercase, -0.05em);
     position: absolute;
+    display: inline-block;
+    width: 0;
+    height: 0;
     top: 5px;
-    right: 0;
+    right: -3px;
   }
 
   h5 {
-    margin-right: fluid(15px, 30px);
-    @include typography(var(--text-black), 500, fluid(18px, 28px), 1.5);
-    white-space: nowrap;
+    // white-space: nowrap;
   }
 }
