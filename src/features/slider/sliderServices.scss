@@ -13,10 +13,14 @@
   }
 
   &__btn {
-    @include typography(var(--text-white), 700, fluid(16px, 26px), 1.2, uppercase, -0.96px);
-    text-align: start;
     margin-top: auto;
-  }
+    align-items: center;
+    gap: 8px;
+    span {
+      @include typography(var(--text-white), 700, fluid(16px, 26px), 1.2, uppercase, -0.96px);
+      display: inline-block;
+    }
+  }  
 }
 
 .slider {
