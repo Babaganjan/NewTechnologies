@@ -15,7 +15,7 @@ export const ProjectListItem = ({ item, index, isHovered, onMouseEnter, onMouseL
       <div className="project-menu-item__content">
         <span className="project-menu-item__client service-label--services">клиент</span>
         <div className="project-menu-item__subtitle">
-          <H level={'5'} className="project-menu-item__subtitle-title">
+          <H level={'5'} variant="light" className="project-menu-item__subtitle-title">
             {item.subtitle}
           </H>
           <Arrow

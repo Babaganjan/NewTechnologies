@@ -1,5 +1,5 @@
 'use client';
-
+import Image from 'next/image';
 import { useState, useCallback } from 'react';
 
 import { Arrow } from '@/shared/icons';
@@ -9,6 +9,8 @@ import type { ProjectMenuItemProps } from '@/shared/ui/types/ProjectMenu.types';
 import './_project-menu.scss';
 
 import { PROJECT_MENU_DATA } from './projectMenu.const';
+
+
 interface ProjectItemProps extends Omit<ProjectMenuItemProps, 'item' |'isHovered'>{
   hoveredRow: number | null;
 }
@@ -52,10 +54,22 @@ export const ProjectMenu = () => {
 
         <div className="project-menu__numbers">
           {PROJECT_MENU_DATA.map((item, index) => (
-            <ProjectNumberItem
-              key={`number-${item.id}`}
-              {...createProjectProps({index, hoveredRow, onMouseEnter, onMouseLeave})}
-            />
+            <div key={`number-${item.id}`} className="project-menu__number-wrapper">
+              <ProjectNumberItem
+                {...createProjectProps({index, hoveredRow, onMouseEnter, onMouseLeave})}
+              />
+              {hoveredRow === index && (
+                <div className='project-menu__preview' aria-hidden="true">
+                  <Image
+                    src={item.image}
+                    alt={item.subtitle}
+                    loading="lazy"
+                    width={150}
+                    height={173}
+                  />
+                </div>
+              )}
+            </div>
           ))}
         </div>
 
@@ -71,11 +85,17 @@ export const ProjectMenu = () => {
 
         <div className="project-menu__services">
           {PROJECT_MENU_DATA.map((item, index) => (
-            <ProjectServiceItem
-              key={`service-${item.id}`}
-              item={item}
-              {...createProjectProps({index, hoveredRow, onMouseEnter, onMouseLeave})}
-            />
+            <div key={`service-${item.id}`} className="project-menu__service-wrapper">
+              <ProjectServiceItem
+                item={item}
+                {...createProjectProps({index, hoveredRow, onMouseEnter, onMouseLeave})}
+              />
+              {hoveredRow === index && (
+                <div className="project-menu__arrow-decoration" aria-hidden="true">
+                  <Arrow width={30} height={24} />
+                </div>
+              )}
+            </div>
           ))}
         </div>
         <button 

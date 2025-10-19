@@ -12,6 +12,9 @@
     .project-menu__title {
       position: relative;
       margin-bottom: 10px;
+      &::after {
+        left: 0;
+      }
     }
 
     .project-menu__subtitle {
@@ -47,7 +50,7 @@
 @include respond-min(1024px) {
   .project-menu {
     .project-menu__container {
-      grid-template-columns: 0.5fr 2fr 1fr;
+      grid-template-columns: 0.5fr 1.8fr 0.8fr;
       grid-template-areas:
         'project client service'
         'title subtitle .'
@@ -69,7 +72,7 @@
       .project-menu__headers {
         grid-area: headers;
         display: grid;
-        grid-template-columns: 0.5fr 2fr 1fr;
+        grid-template-columns: 0.5fr 1.8fr 0.7fr;
         column-gap: 10px;
         margin-bottom: 20px;
 
@@ -93,6 +96,29 @@
         display: flex;
         flex-direction: column;
         gap: 0;
+
+        .project-menu__number-wrapper {
+          position: relative;
+          
+          .project-menu__preview {
+            position: absolute;
+            top: -50%;
+            left: 40%;
+            margin-left: 16px;
+            width: 150px;
+            height: 173px;
+            background: var(--text-white);
+            border: 1px solid var(--vector-light-gray);
+            z-index: 10;
+            box-shadow: 0 4px 16px rgba(0,0,0,.08);
+
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+            }
+          }
+        }
       }
 
       .project-menu__list {
@@ -107,7 +133,24 @@
         grid-area: type;
         display: flex;
         flex-direction: column;
+        justify-content: center;
         gap: 0;
+
+        .project-menu__service-wrapper {
+          position: relative;
+
+          .project-menu__arrow-decoration {
+            position: absolute;
+            top: 50%;
+            right: 1%;
+            transform: translateY(-50%);
+            z-index: 10;
+            
+            svg {
+              transform: rotate(90deg);
+            }
+          }
+        }
       }
 
       .project-menu__button {
