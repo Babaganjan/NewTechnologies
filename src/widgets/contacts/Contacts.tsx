@@ -17,7 +17,7 @@ export const Contacts = () => {
         <ul className="contacts__list">
           {CONTACTS_ITEMS.map((item) => (
             <li className={`contacts__item ${item.className}`} key={item.title}>
-              <H level={'2'}>{item.title}</H>
+              <p className="contacts-title-text">{item.title}</p>
               <p>
                 {item.href ? (
                   <Link href={item.href}>

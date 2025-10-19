@@ -29,15 +29,13 @@ $large-screen-bottom-padding: 190px;
 
     .contacts__title {
       grid-area: title;
-      font-family: var(--second-family);
-      // @include typography(var(--text-white), 400, fluid(84px, 282px), 0.81, uppercase, -0.1em);
       text-align: center;
     }
 
     .contacts__item {
       background-color: var(--bg-deep-gray);
       padding: 15px;
-      min-height: 120px;
+      min-height: fluid(120px, 210px);
       display: flex;
       flex-direction: column;
       border-radius: 8px;
@@ -45,16 +43,15 @@ $large-screen-bottom-padding: 190px;
 
       @include item-decor(var(--vector-deep-gray));
 
-      h2 {
+      .contacts-title-text {
         font-family: var(--second-family);
-        // @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none, -0.06em);
-        margin-bottom: 10px;
+        margin: 0;
+        @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none, -0.06em);
       }
 
       p {
         margin-top: auto;
         @include typography(var(--text-white), 600, fluid(18px, 24px), 1.2, uppercase, -0.06em);
-
         span {
           display: block;
         }

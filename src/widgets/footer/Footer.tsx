@@ -31,9 +31,9 @@ export const Footer = () => {
   return (
     <footer className="footer">
       <div className="footer__container container">
-        <a href="#" className="footer__logo" aria-label="На главную страницу">
+        <Link href="/" className="footer__logo" aria-label="На главную страницу">
           NT
-        </a>
+        </Link>
         <button
           type="button"
           className="arrow-button"
@@ -44,7 +44,7 @@ export const Footer = () => {
           <Arrow width={16} height={20} />
         </button>
         <nav className="footer__pages" aria-label="Основная навигация">
-          <span className="footer__title">Страницы</span>
+          <p className="footer__title">Страницы</p>
           <ul className="footer__list">
             {FOOTER_NAV_ITEMS.map((item) => (
               <li key={item.href}>
@@ -55,7 +55,7 @@ export const Footer = () => {
         </nav>
 
         <address className="footer__about">
-          <span className="footer__title">Связь с нами</span>
+          <p className="footer__title">Связь с нами</p>
           <p>Астана, 14/1 умай ана</p>
           <ul>
             {FOOTER_ABOUT_ITEMS.map((item) => (
@@ -70,7 +70,7 @@ export const Footer = () => {
         </address>
 
         <div className="footer__activity">
-          <span className="footer__title">Деятельность</span>
+          <p className="footer__title">Деятельность</p>
           <ul>
             {FOOTER_ACTIVITY_ITEMS.map((item) => (
               <li key={item.href}>
@@ -81,7 +81,7 @@ export const Footer = () => {
         </div>
 
         <div className="footer__about-company">
-          <span className="footer__title">О компании</span>
+          <p className="footer__title">О компании</p>
           <ul>
             {FOOTER_COMPANY_ITEMS.map((item) => (
               <li key={item.href}>
@@ -91,11 +91,10 @@ export const Footer = () => {
           </ul>
         </div>
         <div className="footer__copyright">
-          <p className="footer__copyright-text">
-            Тоо «Новые технологии»
-            <span>© {new Date().getFullYear()} все права защищены</span>
+          <p>
+            Тоо «новые технологии» <br />© {new Date().getFullYear()} все права защищены
           </p>
-          <Link href="#">Политика конфиденциальности</Link>
+          <Link href="/privacy-policy">Политика конфиденциальности</Link>
         </div>
       </div>
     </footer>

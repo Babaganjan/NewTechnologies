@@ -1,6 +1,12 @@
 @use '../../shared/styles/functions' as *;
 @use '../../shared/styles/mixins' as *;
 
+body:not(:has(.questions)) {
+  .feedback-menu {
+  background-color: var(--bg-black);
+  }
+}
+
 .feedback-menu {
   position: relative;
   z-index: 2;
@@ -13,7 +19,7 @@
   justify-content: center;
   flex-direction: column;
   margin-bottom: -0.75rem;
-  background-color: var(--bg-black);
+
 
   &__wrapper {
     padding: 0 0.75rem;
@@ -38,7 +44,7 @@
   }
 
   &__title {
-    // @include typography(var(--text-black), 500, fluid(31px, 68px), 1);
+    color: var(--text-black);
     min-width: 340px;
     margin-bottom: 18px;
     text-align: center;

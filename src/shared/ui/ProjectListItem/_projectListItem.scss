@@ -1,0 +1,93 @@
+@use '../../styles/functions' as *;
+@use '../../styles/mixins' as *;
+
+.project-menu-item {
+  margin-top: 4px;
+  border-bottom: 1px solid var(--vector-light-gray);
+  cursor: pointer;
+  padding: 15px 0;
+
+  &:first-child {
+    border-top: 1px solid var(--vector-light-gray);
+  }
+
+  .project-menu-item__content {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .project-menu-item__client {
+    font-family: var(--second-family);
+    @include typography(var(--text-deep-black), 500, fluid(14px, 22px), 1.1, none);
+  }
+
+  .project-menu-item__subtitle {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    @include typography(var(--text-black), 500, 18px, 1.15);
+
+    p {
+      @include typography(var(--text-black), 500, fluid(18px, 28px), 1.15);
+    }
+  }
+
+  .project-menu-item__service-label {
+    font-family: var(--second-family);
+    @include typography(var(--text-deep-black), 500, fluid(14px, 22px), 1.1, none);
+  }
+}
+
+.project-menu-item__arrow {
+  transform: rotate(90deg);
+  flex-shrink: 0;
+  width: 12px;
+  height: 15px;
+}
+
+@include respond-min(1024px) {
+  .project-menu-item {
+    margin: 0;
+    padding: 0;
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &.hovered {
+      background-color: var(--text-black);
+      color: var(--text-white);
+
+      .project-menu-item__subtitle {
+        .project-menu-item__subtitle-title {
+          color: var(--text-white);
+        }
+      }
+
+      .project-menu-item__arrow {
+        color: var(--text-white);
+      }
+    }
+
+    .project-menu-item__subtitle {
+      .project-menu-item__subtitle-title {
+        color: var(--text-gray);
+        padding-left: 5px;
+      }
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    .service-label--services {
+      display: none;
+    }
+  }
+
+  .project-menu-item__arrow {
+    display: none;
+  }
+}

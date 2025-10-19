@@ -1,11 +1,6 @@
 @use '../../shared/styles/functions' as *;
 @use '../../shared/styles/mixins' as *;
 
-$item-min-height: 40px;
-$border-color: #dfdfdf;
-$border-color-light: var(--vector-light-gray);
-$column-gap: 10px;
-
 .project-menu {
   .project-menu__container {
     display: grid;
@@ -17,13 +12,6 @@ $column-gap: 10px;
     .project-menu__title {
       position: relative;
       margin-bottom: 10px;
-      // @include bracket-decor(
-      //   #4d4d4d,
-      //   (
-      //     top: -1px,
-      //     left: 0,
-      //   )
-      // );
     }
 
     .project-menu__subtitle {
@@ -41,58 +29,6 @@ $column-gap: 10px;
       display: none;
     }
 
-    .project-menu__list {
-      .project-menu-item {
-        margin-top: 4px;
-        border-bottom: 1px solid $border-color;
-        cursor: pointer;
-        padding: 15px 0;
-
-        &:first-child {
-          border-top: 1px solid $border-color;
-        }
-
-        .project-menu-item__content {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-        }
-
-        .project-menu-item__client {
-          font-family: var(--second-family);
-          @include typography(var(--text-deep-black), 500, fluid(14px, 22px), 1.1, none);
-        }
-
-        .project-menu-item__subtitle {
-          position: relative;
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          @include typography(var(--text-black), 500, 18px, 1.15);
-
-          p {
-            @include typography(var(--text-black), 500, fluid(18px, 28px), 1.15);
-          }
-        }
-
-        .project-menu-item__service-label {
-          font-family: var(--second-family);
-          @include typography(var(--text-deep-black), 500, fluid(14px, 22px), 1.1, none);
-        }
-
-        .project-menu-item__service {
-          @include typography(var(--text-light-gray), 500, fluid(18px, 28px), 1.15);
-        }
-      }
-    }
-
-    .project-menu-item__arrow {
-      transform: rotate(90deg);
-      flex-shrink: 0;
-      width: 12px;
-      height: 15px;
-    }
-
     .project-menu__button {
       display: inline-flex;
       align-items: center;
@@ -107,8 +43,6 @@ $column-gap: 10px;
     }
   }
 }
-@include respond-min(768px) {
-}
 
 @include respond-min(1024px) {
   .project-menu {
@@ -120,7 +54,7 @@ $column-gap: 10px;
         'headers headers headers'
         'number list type'
         '. button .';
-      column-gap: $column-gap;
+      column-gap: 10px;
 
       .project-menu__title {
         grid-area: title;
@@ -136,7 +70,7 @@ $column-gap: 10px;
         grid-area: headers;
         display: grid;
         grid-template-columns: 0.5fr 2fr 1fr;
-        column-gap: $column-gap;
+        column-gap: 10px;
         margin-bottom: 20px;
 
         .project-menu__header {
@@ -153,31 +87,12 @@ $column-gap: 10px;
         }
       }
 
-      .project-menu-item__arrow {
-        display: none;
-      }
 
       .project-menu__numbers {
         grid-area: number;
         display: flex;
         flex-direction: column;
         gap: 0;
-
-        .project-menu-item__number {
-          font-family: var(--second-family);
-          border-bottom: 1px solid $border-color-light;
-          @include typography(var(--text-light-gray), 500, 28px, 1);
-          min-height: $item-min-height;
-          display: flex;
-          align-items: center;
-          cursor: pointer;
-          padding-left: 5px;
-
-          &.hovered {
-            background-color: var(--text-black);
-            color: white;
-          }
-        }
       }
 
       .project-menu__list {
@@ -186,45 +101,6 @@ $column-gap: 10px;
         display: flex;
         flex-direction: column;
         gap: 0;
-
-        .project-menu-item {
-          margin: 0;
-          padding: 0;
-          min-height: $item-min-height;
-          display: flex;
-          align-items: center;
-          cursor: pointer;
-
-          &.hovered {
-            background-color: var(--text-black);
-            color: white;
-
-            .project-menu-item__subtitle {
-              .project-menu-item__subtitle-title {
-                color: white;
-              }
-            }
-
-            .project-menu-item__arrow {
-              color: white;
-            }
-          }
-
-          .project-menu-item__subtitle {
-            .project-menu-item__subtitle-title {
-              color: var(--text-gray);
-              padding-left: 5px;
-            }
-          }
-
-          &:first-child {
-            border-top: none;
-          }
-
-          .service-label--services {
-            display: none;
-          }
-        }
       }
 
       .project-menu__services {
@@ -232,37 +108,6 @@ $column-gap: 10px;
         display: flex;
         flex-direction: column;
         gap: 0;
-
-        .project-menu-item__service {
-          display: flex;
-          flex-direction: column;
-          gap: 8px;
-          min-height: $item-min-height;
-          justify-content: center;
-          border-bottom: 1px solid $border-color-light;
-          cursor: pointer;
-
-          &.hovered {
-            background-color: var(--text-black);
-            color: var(--text-white);
-
-            .project-menu-item__service-label,
-            p {
-              color: var(--text-white);
-            }
-          }
-
-          .project-menu-item__service-label {
-            font-family: var(--second-family);
-            @include typography(var(--text-deep-black), 500, 14px, 1.1, none);
-            padding-left: 5px;
-          }
-
-          p {
-            @include typography(var(--text-light-gray), 500, fluid(18px, 28px), 1.15);
-            padding-left: 5px;
-          }
-        }
       }
 
       .project-menu__button {
@@ -270,6 +115,7 @@ $column-gap: 10px;
         margin: 0;
         margin-top: 40px;
       }
+
     }
 
     .project-menu__button {
