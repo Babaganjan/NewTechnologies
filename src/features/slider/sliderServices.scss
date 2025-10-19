@@ -1,0 +1,51 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+// Стили для слайдера
+.service-slider {
+  .slider__article-title {
+    min-height: 41px;
+    margin-bottom: 4px;
+  }
+
+  &__swiper {
+    padding: 0.5rem;
+  }
+
+  &__btn {
+    @include typography(var(--text-white), 700, fluid(16px, 26px), 1.2, uppercase, -0.96px);
+    text-align: start;
+    margin-top: auto;
+  }
+}
+
+.slider {
+  &__wrapper {
+    padding-top: 18px;
+    min-height: 309px;
+    flex-direction: column;
+  }
+
+  &__image {
+    margin-bottom: 8px;
+    object-fit: cover;
+  }
+
+  &__caption {
+    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none, -0.84px);
+    font-family: "Roboto Condensed";
+  }
+}
+
+// @keyframes slideDown {
+//   from { 
+//     opacity: 0; 
+//     transform: translateY(-10px);
+//     max-height: 0;
+//   }
+//   to { 
+//     opacity: 1; 
+//     transform: translateY(0);
+//     max-height: 500px;
+//   }
+// }
