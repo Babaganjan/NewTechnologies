@@ -37,7 +37,7 @@
 }
 
 .level5 {
-   @include typography(var(--heading-h5-color), 500, fluid(18px, 28px), 1.5);
+   @include typography(var(--heading-h5-color), 500, fluid(18px, 28px), 1.15);
 }
 
 @include respond-min(1024px) {
