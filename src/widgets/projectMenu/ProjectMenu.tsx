@@ -1,36 +1,48 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useCallback } from 'react';
 
 import { Arrow } from '@/shared/icons';
-import { H } from '@/shared/ui';
+import { H, ProjectListItem, ProjectNumberItem, ProjectServiceItem } from '@/shared/ui';
+import type { ProjectMenuItemProps } from '@/shared/ui/types/ProjectMenu.types';
 
 import './_project-menu.scss';
+
 import { PROJECT_MENU_DATA } from './projectMenu.const';
+interface ProjectItemProps extends Omit<ProjectMenuItemProps, 'item' |'isHovered'>{
+  hoveredRow: number | null;
+}
 
 export const ProjectMenu = () => {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
 
-  const handleMouseEnter = (index: number) => {
+  const onMouseEnter = useCallback((index: number) => {
     setHoveredRow(index);
-  };
+  }, []);
 
-  const handleMouseLeave = () => {
+  const onMouseLeave = useCallback(() => {
     setHoveredRow(null);
+  }, []);
+
+
+  const createProjectProps = ({index, hoveredRow, onMouseEnter, onMouseLeave}: ProjectItemProps): Omit<ProjectMenuItemProps, 'item'> => {
+    return {
+      index,
+      isHovered: hoveredRow === index,
+      onMouseEnter,
+      onMouseLeave,
+    };
   };
 
   return (
     <section className="project-menu" aria-labelledby="project-menu-title">
       <div className="project-menu__container container">
         <H level={'2'} variant="light" id="project-menu-title" className="project-menu__title">
-          Наши проекты
+        Наши проекты
         </H>
         <H level={'4'} variant="light" className="project-menu__subtitle">
-          2000+ реализованных проектов
-          <span>
-            &nbsp;&mdash; от&nbsp;уютных кафе у&nbsp;дома до&nbsp;объектов государственного
-            значения.
-          </span>
+        2000+ реализованных проектов
+       <span>&nbsp;&mdash; от&nbsp;уютных кафе у&nbsp;дома до&nbsp;объектов государственного значения.</span>
         </H>
         <div className="project-menu__headers">
           <div className="project-menu__header project-menu__header--project">проект</div>
@@ -40,61 +52,37 @@ export const ProjectMenu = () => {
 
         <div className="project-menu__numbers">
           {PROJECT_MENU_DATA.map((item, index) => (
-            <H
-              level={'5'}
+            <ProjectNumberItem
               key={`number-${item.id}`}
-              className={`project-menu-item__number ${hoveredRow === index && 'hovered'}`}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              №{(index + 1).toString().padStart(3, '0')}
-            </H>
+              {...createProjectProps({index, hoveredRow, onMouseEnter, onMouseLeave})}
+            />
           ))}
         </div>
 
-        <ul className="project-menu__list">
+        <ul className="project-menu__list" role="list">
           {PROJECT_MENU_DATA.map((item, index) => (
-            <li
+            <ProjectListItem
               key={item.id}
-              className={`project-menu-item ${hoveredRow === index && 'hovered'}`}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <div className="project-menu-item__content">
-                <span className="project-menu-item__client service-label--services">клиент</span>
-                <div className="project-menu-item__subtitle">
-                  <H level={'5'} className="project-menu-item__subtitle-title">
-                    {item.subtitle}
-                  </H>
-                  <Arrow
-                    color="var(--text-black)"
-                    width={12}
-                    height={15}
-                    className="project-menu-item__arrow"
-                  />
-                </div>
-                <span className="project-menu-item__service-label service-label--services">
-                  тип услуги
-                </span>
-                <p className="project-menu-item__service service-label--services">{item.service}</p>
-              </div>
-            </li>
+              item={item}
+              {...createProjectProps({index, hoveredRow, onMouseEnter, onMouseLeave})}
+            />
           ))}
         </ul>
 
         <div className="project-menu__services">
           {PROJECT_MENU_DATA.map((item, index) => (
-            <div
+            <ProjectServiceItem
               key={`service-${item.id}`}
-              className={`project-menu-item__service ${hoveredRow === index && 'hovered'}`}
-              onMouseEnter={() => handleMouseEnter(index)}
-              onMouseLeave={handleMouseLeave}
-            >
-              <H level={'5'}>{item.service}</H>
-            </div>
+              item={item}
+              {...createProjectProps({index, hoveredRow, onMouseEnter, onMouseLeave})}
+            />
           ))}
         </div>
-        <button className="project-menu__button">
+        <button 
+          className="project-menu__button"
+          type="button"
+          aria-label='Загрузить еще'
+        >
           Загрузить еще <Arrow width={12} height={15} />
         </button>
       </div>

@@ -1,0 +1,20 @@
+@use '../../styles/functions' as *;
+@use '../../styles/mixins' as *;
+
+@include respond-min(1024px) {
+  .project-menu-item__number {
+    font-family: var(--second-family);
+    border-bottom: 1px solid var(--vector-light-gray);
+    color: var(--text-light-gray);
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding-left: 5px;
+
+    &.hovered {
+      background-color: var(--text-black);
+      color: var(--text-white);
+    }
+  }
+}
