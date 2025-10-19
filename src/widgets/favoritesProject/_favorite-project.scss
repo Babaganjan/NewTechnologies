@@ -36,9 +36,11 @@
       @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
     }
   }
+  .item__small-title {
+    color: var(--text-black);
+  }
 }
 
-// deckstop
 
 @include respond-min(1024px) {
   .favorites-project {
