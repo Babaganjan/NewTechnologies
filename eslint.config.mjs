@@ -1,13 +1,13 @@
-import js from '@eslint/js';
 import { FlatCompat } from '@eslint/eslintrc';
+import js from '@eslint/js';
+import globals from 'globals';
 import { dirname } from 'path';
 import { fileURLToPath } from 'url';
-import globals from 'globals';
 
-import typescriptEslintParser from '@typescript-eslint/parser';
 import typescriptEslint from '@typescript-eslint/eslint-plugin';
-import reactPlugin from 'eslint-plugin-react';
+import typescriptEslintParser from '@typescript-eslint/parser';
 import importPlugin from 'eslint-plugin-import';
+import reactPlugin from 'eslint-plugin-react';
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 

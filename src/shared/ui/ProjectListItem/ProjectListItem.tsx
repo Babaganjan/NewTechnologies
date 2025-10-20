@@ -1,34 +1,57 @@
-import { Arrow } from "@/shared/icons";
+import clsx from 'clsx';
+import Image from 'next/image';
+
+import { Arrow } from '@/shared/icons';
 
 import './_projectListItem.scss';
 
-import { H } from "../Heading/H";
-import type { ProjectMenuItemProps } from "../types/ProjectMenu.types";
+import { H } from '../Heading/H';
+import type { ProjectMenuItemProps } from '../types/ProjectMenu.types';
 
-
-export const ProjectListItem = ({ item, index, isHovered, onMouseEnter, onMouseLeave }: ProjectMenuItemProps) => (
-    <li
-      className={`project-menu-item ${isHovered && 'hovered'}`}
-      onMouseEnter={() => onMouseEnter(index)}
-      onMouseLeave={onMouseLeave}
-    >
-      <div className="project-menu-item__content">
-        <span className="project-menu-item__client service-label--services">клиент</span>
-        <div className="project-menu-item__subtitle">
-          <H level={'5'} variant="light" className="project-menu-item__subtitle-title">
-            {item.subtitle}
-          </H>
-          <Arrow
-            color="var(--text-black)"
-            width={12}
-            height={15}
-            className="project-menu-item__arrow"
+export const ProjectListItem = ({
+  item,
+  index,
+  isHovered,
+  onMouseEnter,
+  onMouseLeave,
+  isActive,
+  onActiveRow,
+}: ProjectMenuItemProps) => (
+  <li
+    className={clsx('project-menu-item', isHovered && 'hovered', isActive && 'active')}
+    onMouseEnter={() => onMouseEnter(index)}
+    onMouseLeave={onMouseLeave}
+    onClick={() => onActiveRow(index)}
+  >
+    <div className="project-menu-item__content">
+      <span className="project-menu-item__client service-label--services">клиент</span>
+      <div className="project-menu-item__subtitle">
+        <H level={'5'} variant="light" className="project-menu-item__subtitle-title">
+          {item.subtitle}
+        </H>
+        <Arrow
+          color={isActive ? 'var(--text-white)' : 'var(--text-black)'}
+          width={12}
+          height={15}
+          className="project-menu-item__arrow"
+        />
+      </div>
+      {isActive && (
+        <div className="project-menu__active-wrapper">
+          <p>
+            Реализовали установку системы видеонаблюдения в резиденции акима Жамбылской области.
+          </p>
+          <Image
+            src={item.image}
+            alt={item.subtitle}
+            width={100}
+            height={100}
+            className="project-menu__image--active"
           />
         </div>
-        <span className="project-menu-item__service-label service-label--services">
-          тип услуги
-        </span>
-        <p className="project-menu-item__service service-label--services">{item.service}</p>
-      </div>
-    </li>
-  );
+      )}
+      <span className="project-menu-item__service-label service-label--services">тип услуги</span>
+      <p className="project-menu-item__service service-label--services">{item.service}</p>
+    </div>
+  </li>
+);
