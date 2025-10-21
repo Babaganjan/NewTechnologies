@@ -1,20 +1,20 @@
 import './_result.scss';
 import { H } from '@/shared/ui';
+import { ResultList } from '@/shared/ui/resultList/ResultList';
+
+import { resultData } from './result.const';
 
 export const Result = () => {
   return (
-    <section
-      className="result with-trapezoids"
-      aria-label="Достижения компании"
-    >
+    <section className="result with-trapezoids" aria-label="Достижения компании">
       <div className="container result__container flex">
         <div className="result__inner flex">
-          <H level={'2'} className="result__title title">
+          <H level={'2'} className="result__title title" aria-label="Достижения компании">
             Наши достижения
           </H>
         </div>
 
-        <ul className="result__list flex">
+        {/* <ul className="result__list flex">
           <li className="result__item result__item--fill flex">
             <article className="item__inner flex">
               <strong className="item__number">100+</strong>
@@ -69,7 +69,8 @@ export const Result = () => {
               </p>
             </article>
           </li>
-        </ul>
+        </ul> */}
+        <ResultList items={resultData} />
       </div>
     </section>
   );

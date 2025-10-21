@@ -4,8 +4,6 @@ export const HomeHeadingBig = ({ className }: Icons) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      width="1810"
-      height="179"
       viewBox="0 0 1810 179"
       fill="none"
       className={className}

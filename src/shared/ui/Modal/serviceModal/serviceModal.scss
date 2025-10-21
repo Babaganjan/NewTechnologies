@@ -1,0 +1,68 @@
+// src/shared/ui/Modal/serviceModal/ServiceModal.scss
+.service-modal-content {
+  padding: 20px;
+  
+  &[data-theme="dark"] {
+    --service-bg: #1a1a1a;
+    --service-text: #ffffff;
+    --service-border: #333;
+  }
+
+  &[data-theme="light"] {
+    --service-bg: #ffffff;
+    --service-text: #000000;
+    --service-border: #e0e0e0;
+  }
+}
+
+.service-modal-title {
+  color: var(--service-text);
+  font-size: 24px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-card {
+  background: var(--service-bg);
+  border: 1px solid var(--service-border);
+  border-radius: 8px;
+  padding: 20px;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  }
+
+  h3 {
+    color: var(--service-text);
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+
+  p {
+    color: var(--service-text);
+    opacity: 0.8;
+    margin-bottom: 15px;
+  }
+}
+
+.service-button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+
+  &:hover {
+    background: #0056b3;
+  }
+}
