@@ -6,18 +6,16 @@
   @include typography(var(--text-light-gray), 500, fluid(18px, 28px), 1.15);
 }
 
-@include respond-min(1024px) {
+@include respond-min(1300px) {
   .project-menu-item__service {
     display: flex;
-    flex-direction: column;
     gap: 8px;
     min-height: 40px;
-    justify-content: center;
     border-bottom: 1px solid var(--vector-light-gray);
     cursor: pointer;
 
-    &.hovered {
-      background-color: var(--text-black);
+    &:is(.hovered, .active) {
+      background-color: var(--bg-black);
       color: var(--text-white);
 
       h5 {
