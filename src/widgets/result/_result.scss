@@ -21,109 +21,6 @@
     flex-direction: column;
     gap: 0.625rem;
   }
-
-  &__item--fill {
-    position: relative;
-    flex-direction: column;
-    background-color: var(--bg-deep-gray);
-    gap: 2.063rem;
-    padding: 0.938rem;
-    &::before {
-      content: '';
-      @include decoration(
-        var(--vector-white),
-        fluid(38px, 64px),
-        '/img/decoration-card.svg',
-        (
-          top: 0,
-          left: 0,
-        )
-      );
-      transform: rotate(180deg);
-    }
-    &::after {
-      content: '';
-      @include decoration(
-        var(--vector-white),
-        fluid(38px, 64px),
-        '/img/decoration-card.svg',
-        (
-          bottom: 0,
-          right: 0,
-        )
-      );
-    }
-  }
-
-  &__prev {
-    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
-    width: 80%;
-    margin-top: auto;
-    font-family: var(--second-family);
-    letter-spacing: -0.84px;
-  }
-  &__list {
-    flex-direction: column;
-    gap: 8px;
-  }
-  &__item {
-    &:not(:has(.item__number)):nth-of-type(2) {
-      .item__title {
-        width: 80%;
-      }
-    }
-    &::before {
-      content: '';
-      @include decoration(var(--vector-black), 24px);
-    }
-    position: relative;
-    background-color: var(--text-white);
-    padding: 15px;
-  }
-
-  &__item:first-child {
-    min-height: 220px;
-    background-color: var(--bg-deep-gray);
-    .item__inner:first-child {
-      flex-direction: column;
-      align-items: flex-start;
-      flex-grow: 1;
-    }
-    .item__number {
-      @include typography(var(--text-white), 700, fluid(120px, 178px), 0.82);
-    }
-  }
-
-  .item {
-    &__inner {
-      @include item-decor(
-        var(--vector-black),
-        $before-position: (top: -13px, left: -12px),
-        $after-position: (bottom: -13px, right: -12px)
-      );
-      min-height: 100px;
-      position: relative;
-      flex-direction: column;
-      gap: 8px;
-      &:not(:has(.item__prev)) {
-        flex-direction: row;
-        align-items: flex-end;
-        gap: 0.938rem;
-      }
-    }
-    
-    &__prev {
-      @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
-      font-family: var(--second-family);
-      letter-spacing: -0.053rem;
-      width: 93%;
-    }
-
-    &__number {
-      @include typography(var(--text-black), 700, fluid(120px, 178px), 0.82);
-      letter-spacing: -0.525rem;
-    }
-  }
 }
 
 // deckstop
@@ -134,9 +31,10 @@
     }
     &__item {
       padding: 20px;
+      position: relative;
       &::before {
         content: '';
-        @include decoration(var(--vector-black), 40px);
+        // @include decoration(var(--vector-black), 40px);
       }
       &:nth-child(1) {
         grid-column: 2 / 3;

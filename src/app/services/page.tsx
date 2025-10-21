@@ -1,5 +1,5 @@
-import { Hero } from '@/widgets';
+import { Modal } from '@/shared/ui';
 
 export default function ServicesPage() {
-  return <Hero />;
+  return <>{/* <Modal /> */}</>;
 }
