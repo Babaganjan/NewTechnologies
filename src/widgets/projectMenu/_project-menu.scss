@@ -32,18 +32,14 @@
       display: none;
     }
 
-    .project-menu__button {
-      display: inline-flex;
-      align-items: center;
-      margin: 20px auto;
-      gap: 8px;
-      width: fit-content;
-      @include typography(var(--text-black), 700, fluid(16px, 26px), 1.2);
-    }
     .project-menu__header {
       font-family: var(--second-family);
       @include typography(var(--text-deep-gray), 500, 22px, 1.1, none);
     }
+  }
+
+  .project-menu__button {
+    margin-top: fluid(20px, 40px);
   }
 }
 
@@ -203,21 +199,7 @@
 
     .project-menu__button {
       grid-area: button;
-      margin: 0;
-      margin-top: 40px;
-    }
-  }
-
-  .project-menu__button {
-    align-self: center;
-    border-bottom: 2px solid var(--text-black);
-    padding-bottom: 5px;
-
-    svg {
-      transform: rotate(90deg);
-      flex-shrink: 0;
-      width: 12px;
-      height: 15px;
+      margin-right: auto;
     }
   }
 }
