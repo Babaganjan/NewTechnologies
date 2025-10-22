@@ -1,0 +1,140 @@
+@use '../../styles/functions' as *;
+@use '../../styles/mixins' as *;
+
+.primary {
+  display: flex;
+  align-items: center;
+  justify-self: center;
+  gap: 10px;
+  @include typography(var(--text-black), 700, fluid(16px, 26px), 1.2);
+  transition:
+    border-color 0.2s ease,
+    color 0.2s ease;
+
+  svg {
+    align-self: center;
+    flex-shrink: 0;
+    width: fluid(12px, 16px);
+    height: fluid(15px, 20px);
+  }
+
+  &:hover {
+    color: var(--text-gray);
+    border-color: var(--vector-deep-gray);
+  }
+}
+
+.secondary {
+  font-family: var(--second-family);
+  @include typography(var(--text-black), 500, fluid(20px, 28px), 0.55, none);
+
+  &:hover,
+  &:focus {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+  }
+}
+
+.feedback {
+  display: inline-flex;
+  align-items: center;
+  background-color: var(--bg-black);
+  padding: fluid(15px, 20px) fluid(50px, 100px);
+  @include typography(var(--text-white), 700, fluid(18px, 26px), 1.2);
+  gap: 10px;
+  @include item-decor(var(--text-white));
+
+  svg {
+    width: fluid(12px, 16px);
+    height: fluid(15px, 20px);
+  }
+
+  &:hover {
+    background: var(--bg-deep-gray);
+  }
+}
+
+.link {
+  @include typography(
+    var(--text-white),
+    500,
+    fluid(18px, 20px),
+    1.2,
+    uppercase,
+    fluid(-0.8px, -0.96px)
+  );
+}
+
+.social {
+  display: flex;
+  gap: 8px;
+  @include typography(var(--text-white), 500, fluid(18px, 20px), 1.2);
+
+  svg {
+    align-self: center;
+    width: 12px;
+    height: 15px;
+  }
+}
+
+.policy {
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+  @include typography(
+    var(--text-gray),
+    500,
+    fluid(18px, 20px),
+    1.2,
+    uppercase,
+    fluid(-0.8px, -0.96px)
+  );
+}
+
+.upButton {
+  @include typography(
+    var(--text-white),
+    500,
+    fluid(18px, 20px),
+    1.2,
+    uppercase,
+    fluid(-0.8px, -0.96px)
+  );
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  gap: 8px;
+
+  svg {
+    width: 16px;
+    height: 20px;
+    transform: rotate(-90deg);
+  }
+}
+
+.verticalIcon {
+  transform: rotate(0);
+}
+
+.menu {
+  display: flex;
+  gap: 4px;
+  @include typography(var(--text-white), 500, 20px, 1.2, uppercase, fluid(-0.8px, -0.96px));
+  svg {
+    align-self: center;
+  }
+}
+
+@include respond-min(1300px) {
+  .primary {
+    padding-bottom: 5px;
+    border-bottom: 2px solid var(--text-black);
+  }
+
+  .secondary {
+    line-height: 1.15;
+  }
+
+  .rotate {
+    transform: rotate(90deg);
+  }
+}

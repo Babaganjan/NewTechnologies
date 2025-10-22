@@ -3,7 +3,7 @@
 
 body:not(:has(.questions)) {
   .feedback-menu {
-  background-color: var(--bg-black);
+    background-color: var(--bg-black);
   }
 }
 
@@ -20,27 +20,12 @@ body:not(:has(.questions)) {
   flex-direction: column;
   margin-bottom: -0.75rem;
 
-
   &__wrapper {
     padding: 0 0.75rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-
-  .feedback-menu__button-container {
-    position: relative;
-    @include item-decor(var(--text-white));
-  }
-
-  &__button {
-    display: inline-flex;
-    align-items: center;
-    background-color: var(--bg-black);
-    padding: 15px 50px;
-    @include typography(var(--text-white), 700, fluid(18px, 26px), 1.2);
-    gap: 10px;
   }
 
   &__title {
@@ -59,10 +44,6 @@ body:not(:has(.questions)) {
 
     &__title {
       max-width: 633px;
-    }
-
-    &__button {
-      padding: 20px 100px;
     }
   }
 }

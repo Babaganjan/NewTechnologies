@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { useCallback, useState } from 'react';
 
 import { Arrow } from '@/shared/icons';
-import { H, ProjectListItem, ProjectNumberItem, ProjectServiceItem } from '@/shared/ui';
+import { Button, H, ProjectListItem, ProjectNumberItem, ProjectServiceItem } from '@/shared/ui';
 import type { ProjectMenuItemProps } from '@/shared/ui/types/ProjectMenu.types';
 
 import './_project-menu.scss';
@@ -99,9 +99,15 @@ export const ProjectMenu = () => {
             </div>
           ))}
         </div>
-        <button className="project-menu__button" type="button" aria-label="Загрузить еще">
-          Загрузить еще <Arrow width={12} height={15} />
-        </button>
+        <Button
+          variant="primary"
+          aria-label="Загрузить еще"
+          className="project-menu__button"
+          icon
+          rotate
+        >
+          Загрузить еще
+        </Button>
       </div>
     </section>
   );

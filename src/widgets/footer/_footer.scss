@@ -68,25 +68,21 @@
   flex-direction: column;
   margin-top: 90px;
   gap: 10px;
-  padding: clamp(10px, 2.5vw, 50px);
-  @include typography(var(--text-gray), 500, fluid(14px, 20px));
-  a {
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
+  padding: fluid(10px, 50px);
+  p {
+    @include typography(
+      var(--text-gray),
+      500,
+      fluid(18px, 20px),
+      1.2,
+      uppercase,
+      fluid(-0.8px, -0.96px)
+    );
   }
 }
 
 .arrow-button {
-  @include typography(var(--text-white), 500, fluid(14px, 20px), 1.2);
-  display: flex;
-  align-self: flex-start;
-  align-items: center;
   padding-top: 1.625rem;
-  gap: 10px;
-
-  svg {
-    transform: rotate(-90deg);
-  }
 }
 
 .footer__logo {

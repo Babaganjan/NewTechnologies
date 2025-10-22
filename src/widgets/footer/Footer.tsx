@@ -2,13 +2,14 @@
 import Link from 'next/link';
 
 import { Arrow } from '@/shared/icons';
-
+import { Button } from '@/shared/ui';
 import './_footer.scss';
+
 import {
   FOOTER_ABOUT_ITEMS,
-  FOOTER_NAV_ITEMS,
   FOOTER_ACTIVITY_ITEMS,
   FOOTER_COMPANY_ITEMS,
+  FOOTER_NAV_ITEMS,
 } from './footer.const';
 
 export const Footer = () => {
@@ -34,15 +35,16 @@ export const Footer = () => {
         <Link href="/" className="footer__logo" aria-label="На главную страницу">
           NT
         </Link>
-        <button
+        <Button
           type="button"
-          className="arrow-button"
+          variant="upButton"
+          icon
           aria-label="Прокрутить страницу к началу"
           onClick={scrollToTop}
+          className="arrow-button"
         >
           Наверх
-          <Arrow width={16} height={20} />
-        </button>
+        </Button>
         <nav className="footer__pages" aria-label="Основная навигация">
           <p className="footer__title">Страницы</p>
           <ul className="footer__list">
@@ -94,7 +96,9 @@ export const Footer = () => {
           <p>
             Тоо «новые технологии» <br />© {new Date().getFullYear()} все права защищены
           </p>
-          <Link href="/privacy-policy">Политика конфиденциальности</Link>
+          <Button href="/privacy-policy" variant="policy">
+            Политика конфиденциальности
+          </Button>
         </div>
       </div>
     </footer>
