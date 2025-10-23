@@ -1,15 +1,14 @@
 import Image from 'next/image';
 
-import { Arrow } from '@/shared/icons';
-import { H } from '@/shared/ui';
+import { Button, H } from '@/shared/ui';
 
 import './_about.scss';
 
 export const About = () => {
   return (
-    <section className="about">
+    <section className="about" aria-labelledby="Что-мы-делаем">
       <div className="container about__container flex">
-        <H level={'2'} variant="light" className="about__title title">
+        <H level={'2'} variant="light" className="about__title title" id="Что-мы-делаем">
           Что мы делаем
         </H>
         <H level={'3'} variant="light" className="about__subtitle subtitle">
@@ -20,13 +19,7 @@ export const About = () => {
           <div className="about__images--top">
             <div className="image__wrapper image__big">
               <span className="decor-bottom-right"></span>
-              <Image
-                src="/img/about-1-1920.webp"
-                alt="Картинка камеры"
-                width={340}
-                height={254}
-                quality={85}
-              />
+              <Image src="/img/about-1-1920.webp" alt="Картинка камеры" width={340} height={254} />
             </div>
           </div>
           <div className="about__images--bottom flex">
@@ -38,18 +31,11 @@ export const About = () => {
                 width={168}
                 height={134}
                 sizes="(max-width: 1023px) 168px, 447px"
-                quality={85}
               />
             </div>
             <div className="image__wrapper image__small-bottom">
               <span className="decor-bottom-right"></span>
-              <Image
-                src="/img/about-3-1920.webp"
-                alt="Картинка камеры"
-                width={168}
-                height={134}
-                quality={85}
-              />
+              <Image src="/img/about-3-1920.webp" alt="Картинка камеры" width={168} height={134} />
             </div>
           </div>
         </div>
@@ -65,9 +51,9 @@ export const About = () => {
             </p>
           </div>
           <div className="about__btn-wrapper flex">
-            <button className="about__btn">
-              О компании <Arrow width={25} height={20} />
-            </button>
+            <Button className="primary" icon>
+              О компании
+            </Button>
           </div>
         </div>
       </div>

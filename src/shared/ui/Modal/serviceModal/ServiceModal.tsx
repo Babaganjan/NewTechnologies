@@ -1,6 +1,5 @@
 // src/shared/ui/Modal/serviceModal/ServiceModal.tsx
 'use client';
-import React from 'react';
 
 import { H } from '@/shared/ui';
 
