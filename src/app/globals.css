@@ -150,7 +150,6 @@ body {
   font-family: var(--font-family), 'Oswald', sans-serif;
   font-weight: 500;
   color: var(--text-white);
-  position: relative;
 }
 
 .container {

@@ -52,7 +52,7 @@ const HomeHeading = ({
       ) : (
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 1810 173"
+          viewBox="0 0 1810 179"
           fill="none"
           className={className}
         >

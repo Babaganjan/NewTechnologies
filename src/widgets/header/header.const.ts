@@ -1,10 +1,12 @@
+import type{ NavItem } from '@/shared/ui/types/Header.types'
+
 export const CITIES = [
   { value: 'almaty', label: 'Алматы' },
   { value: 'karaganda', label: 'Караганда' },
   { value: 'shymkent', label: 'Шымкент' },
 ] as const;
 
-export const HEADER_NAV_ITEMS = [
+export const HEADER_NAV_ITEMS: NavItem[] = [
   {
     href: '/services/',
     title: 'Сервис',

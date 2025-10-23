@@ -4,44 +4,24 @@ import React from 'react';
 
 import { H } from '@/shared/ui';
 
+import { DATA_SERVICE_MODAL } from './service.const';
+
 import './serviceModal.scss';
 
-interface ServiceModalProps {
-  theme?: 'light' | 'dark';
-  onModal: () => void;
-  onMouseEnter?: () => void;
-  onMouseLeave?: () => void;
-}
-
-export const ServiceModal: React.FC<ServiceModalProps> = ({
-  theme = 'light',
-  onMouseEnter,
-  onMouseLeave,
-}) => {
+export const ServiceModal = () => {
   return (
-    <div
-      className="service-modal-content"
-      data-theme={theme}
-      onMouseEnter={onMouseEnter}
-      onMouseLeave={onMouseLeave}
-    >
+    <div className="service-modal-content">
       <div className="services-content">
         <ul className="service__modal">
-          <li className="service__modal-item">
-            <H level={'4'} variant="light">
-              Системы защиты
-            </H>
-          </li>
-          <li className="service__modal-item">
-            <H level={'4'} variant="light">
-              IT-решения
-            </H>
-          </li>
-          <li className="service__modal-item">
-            <H level={'4'} variant="light">
-              Обучение
-            </H>
-          </li>
+          {DATA_SERVICE_MODAL.map((item, id) => (
+            <li className="service__modal-item item" key={id}>
+              <button className="service-button">
+                <H level={'4'} variant="light" className="item__title">
+                  {item.title}
+                </H>
+              </button>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
