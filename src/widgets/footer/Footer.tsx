@@ -1,7 +1,6 @@
 'use client';
 import Link from 'next/link';
 
-import { Arrow } from '@/shared/icons';
 import { Button } from '@/shared/ui';
 import './_footer.scss';
 
@@ -47,51 +46,68 @@ export const Footer = () => {
         </Button>
         <nav className="footer__pages" aria-label="Основная навигация">
           <p className="footer__title">Страницы</p>
-          <ul className="footer__list">
+          <ul>
             {FOOTER_NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                <Link href={item.href}>{item.title}</Link>
+                <Button href={item.href} variant="link">
+                  {item.title}
+                </Button>
               </li>
             ))}
           </ul>
         </nav>
 
-        <address className="footer__about">
+        <div className="footer__about">
           <p className="footer__title">Связь с нами</p>
-          <p>Астана, 14/1 умай ана</p>
-          <ul>
-            {FOOTER_ABOUT_ITEMS.map((item) => (
-              <li key={item.href}>
-                <Link href={item.href} className={item.className}>
-                  {item.title}
-                  {item.className === 'social-link' && <Arrow width={12} height={15} />}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </address>
+          <address className="footer__address">Астана, 14/1 умай ана</address>
+          <nav aria-label="Контактные ссылки">
+            <ul>
+              {FOOTER_ABOUT_ITEMS.map((item) => (
+                <li key={item.href}>
+                  <Button href={item.href} variant="link">
+                    {item.title}
+                  </Button>
+                </li>
+              ))}
+            </ul>
+            <Button
+              href="https://www.instagram.com/nt-t.kz/"
+              variant="social"
+              icon
+              className="social-link"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Instagram
+            </Button>
+          </nav>
+        </div>
 
-        <div className="footer__activity">
+        <nav className="footer__activity" aria-label="Навигация по деятельности">
           <p className="footer__title">Деятельность</p>
           <ul>
             {FOOTER_ACTIVITY_ITEMS.map((item) => (
               <li key={item.href}>
-                <Link href={item.href}>{item.title}</Link>
+                <Button href={item.href} variant="link">
+                  {item.title}
+                </Button>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
 
-        <div className="footer__about-company">
+        <nav className="footer__about-company" aria-label="Информация о компании">
           <p className="footer__title">О компании</p>
           <ul>
             {FOOTER_COMPANY_ITEMS.map((item) => (
               <li key={item.href}>
-                <Link href={item.href}>{item.title}</Link>
+                <Button href={item.href} variant="link">
+                  {item.title}
+                </Button>
               </li>
             ))}
           </ul>
-        </div>
+        </nav>
         <div className="footer__copyright">
           <p>
             Тоо «новые технологии» <br />© {new Date().getFullYear()} все права защищены

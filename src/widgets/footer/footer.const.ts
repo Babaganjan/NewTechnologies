@@ -1,17 +1,10 @@
-// Типы для констант футера
-export interface FooterNavItem {
+interface FooterItem {
   href: string;
   title: string;
-}
-
-export interface FooterContactItem {
-  title: string;
-  href: string;
-  className?: string;
 }
 
 // Основная навигация
-export const FOOTER_NAV_ITEMS: FooterNavItem[] = [
+export const FOOTER_NAV_ITEMS: FooterItem[] = [
   {
     href: '/service',
     title: 'Сервис',
@@ -35,7 +28,7 @@ export const FOOTER_NAV_ITEMS: FooterNavItem[] = [
 ] as const;
 
 // Контактная информация
-export const FOOTER_ABOUT_ITEMS: FooterContactItem[] = [
+export const FOOTER_ABOUT_ITEMS: FooterItem[] = [
   {
     title: '+7 (700) 836-94-36',
     href: 'tel:+77008369436',
@@ -44,15 +37,10 @@ export const FOOTER_ABOUT_ITEMS: FooterContactItem[] = [
     title: 'info.ast@nt-t.kz',
     href: 'mailto:info.ast@nt-t.kz',
   },
-  {
-    title: 'Instagram',
-    className: 'social-link',
-    href: 'https://www.instagram.com/nt-t.kz/',
-  },
 ] as const;
 
 // Секция "Деятельность"
-export const FOOTER_ACTIVITY_ITEMS: FooterNavItem[] = [
+export const FOOTER_ACTIVITY_ITEMS: FooterItem[] = [
   {
     href: '/service',
     title: 'Сервис',
@@ -68,7 +56,7 @@ export const FOOTER_ACTIVITY_ITEMS: FooterNavItem[] = [
 ] as const;
 
 // Секция "О компании"
-export const FOOTER_COMPANY_ITEMS: FooterNavItem[] = [
+export const FOOTER_COMPANY_ITEMS: FooterItem[] = [
   {
     href: '/about',
     title: 'О нас',
