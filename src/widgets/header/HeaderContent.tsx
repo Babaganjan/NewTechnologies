@@ -4,9 +4,8 @@ import Link from 'next/link';
 
 import './_header.scss';
 
+import { Button } from '@/shared/ui';
 import type { HeaderContentProps } from '@/shared/ui/types/Header.types';
-
-import { ArrowSmall } from './../../shared/icons/ArrowSmall/ArrowSmall';
 
 export const HeaderContent = ({
   navItems,
@@ -30,10 +29,15 @@ export const HeaderContent = ({
                   }
                   onMouseLeave={item.hasModal && onItemLeave ? onItemLeave : undefined}
                 >
-                  <Link href={item.href} className="nav__link flex">
+                  <Button
+                    href={item.href}
+                    variant="menu"
+                    className="nav__link"
+                    iconSmall={item.hasIcon}
+                    // active={}
+                  >
                     {item.title}
-                    {item.hasIcon && <ArrowSmall />}
-                  </Link>
+                  </Button>
                 </li>
               ))}
             </ul>

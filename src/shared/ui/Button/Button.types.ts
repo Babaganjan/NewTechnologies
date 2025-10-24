@@ -18,6 +18,7 @@ type BaseProps = {
   rotate?: boolean;
   children?: ReactNode;
   iconSmall?: boolean;
+  active?: boolean;
 };
 
 type ButtonVariant = Extract<

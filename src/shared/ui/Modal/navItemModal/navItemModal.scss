@@ -3,27 +3,8 @@
 @use '@/shared/styles/mixins' as *;
 
 .wrapper-modal {
-  @include line-decor(1.2% 25.5% 50% 74.5% 98.8%, var(--vector-light-gray));
-		position: relative;
-		min-height: 337px;
-  	    z-index: 0;
-  padding: 20px;
-}
-
-.item {
-  &__button {
-  border: none;
-  padding: 10px 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-
-  &:hover {
-    background: var(--bg-black);
-    color: var(--text-white);
-  }
-
-  &__title:hover {
-    color: var(--text-white);
-  }
-}
+  @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--vector-light-gray));
+  position: relative;
+  min-height: 337px;
+  z-index: 0;
 }

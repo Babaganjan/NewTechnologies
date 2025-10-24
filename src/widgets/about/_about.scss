@@ -11,10 +11,15 @@
   }
 
   &__subtitle {
-    // @include typography(var(--text-light-gray), 500, fluid(31px, 68px), 1, uppercase, -0.136rem);
     span {
       color: var(--text-black);
     }
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
   &__images {
@@ -40,7 +45,8 @@
     font-family: var(--second-family);
   }
 
-  &__btn-wrapper {
+  &__btn {
+    display: flex;
     margin-top: 20px;
   }
 }
@@ -48,9 +54,8 @@
 // ===== IMAGE WRAPPERS (MOBILE) =====
 .image__wrapper {
   @include item-decor();
-  picture {
-    display: inline-flex;
-  }
+  display: flex;
+
   span {
     @include decoration(var(--text-white), 1.5rem);
   }
@@ -71,6 +76,10 @@
         'images images images images images';
       gap: 2rem;
       align-items: start;
+    }
+
+    &__btn {
+      margin-right: auto;
     }
 
     &__subtitle {
@@ -114,10 +123,6 @@
 
     &__desc {
       letter-spacing: -1.68px;
-    }
-
-    &__btn-wrapper {
-      justify-content: flex-start;
     }
   }
 

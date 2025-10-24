@@ -2,20 +2,21 @@
 @use '../../shared/styles/mixins' as *;
 
 // CSS переменные для тем
-.header[data-theme="dark"] {
+.header[data-theme='dark'] {
   --header-bg: var(--bg-black);
   --header-text: var(--text-white);
   --header-line: var(--vector-almost-black);
   --select-arrow: url('/arrow-white.svg');
 }
 
-.header[data-theme="light"] {
+.header[data-theme='light'] {
   --header-bg: var(--bg-white);
   --header-text: var(--text-black);
   --header-line: var(--vector-light-gray);
   --select-arrow: url('/arrow-black.svg');
 }
 // _header.scss
+
 .header {
   position: relative;
 }
@@ -36,7 +37,6 @@
   @include line-decor(2% 50% 98%);
   position: relative;
   justify-content: center;
-  // padding-top: 10px;
 }
 
 .header__burger {
@@ -70,11 +70,14 @@
   }
 }
 
-// deckstop
 @include respond-min(1024px) {
+  body:has(.wrapper-modal) {
+    margin-top: 119px;
+  }
+
   .header {
     &__container {
-      @include line-decor(1% 25.4% 50% 74.6% 99%, var(--header-line));
+      @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--header-line));
       align-items: center;
       justify-content: space-between;
       padding-block: 20px;
@@ -93,7 +96,7 @@
         gap: 30px;
       }
       &__link {
-        @include typography(var(--header-text), 500, 20px);
+        color: var(--header-text);
         align-items: center;
         gap: 4px;
       }
@@ -128,20 +131,12 @@
 
     .header__city {
       color: var(--header-text);
-      appearance: none;
-      width: 100%;
-      font-size: 20px;
-      cursor: pointer;
-      &::-ms-expand {
-        display: none;
-      }
     }
 
     /* Стили для выпадающего списка */
     .header__city option {
-      background-color: var(--header-bg); /* Фон option */
-      color: var(--header-text); /* Фон option */
-      // padding: 10px;
+      background-color: var(--header-bg);
+      color: var(--header-text);
     }
 
     &__phone {

@@ -1,8 +1,9 @@
 // // src/shared/ui/Modal/serviceModal/ServiceModal.tsx
 'use client';
-import { useState, useEffect } from 'react';
+import Image from 'next/image';
+import { useState } from 'react';
 
-import { H } from '@/shared/ui';
+import { Button } from '@/shared/ui';
 
 import type { NavListModalProps } from '../../types/NavListModalProps.types';
 
@@ -15,19 +16,13 @@ interface NavItemModalProps {
   onSelect?: (service: string) => void; // Callback для выбора услуги (опциональный)
 }
 
-export const NavItemModal: React.FC<NavItemModalProps> = ({
+export const NavItemModal = ({
   onSelect = (service) => console.log(`Выбрана услуга: ${service}`),
-}) => {
+}: NavItemModalProps) => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [selectedService, setSelectedService] = useState<{ name: string; image?: string } | null>(
     null
   );
-  const [isMounted, setIsMounted] = useState(false);
-
-  // Решение проблемы гидратации - рендерим только на клиенте
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   const handleSelectItem = (id: number) => {
     setSelectedId(id);
@@ -44,38 +39,15 @@ export const NavItemModal: React.FC<NavItemModalProps> = ({
     (item) => item.id === selectedId
   );
 
-  // Не рендерим на сервере, чтобы избежать mismatch
-  if (!isMounted) {
-    return (
-      <div className="wrapper-modal flex">
-        <div className="nav-modal">
-          <ul className="nav-modal__list--title">
-            {DATA_SERVICE_MODAL.map((item: NavListModalProps) => (
-              <li className="item" key={item.id}>
-                <button className="item__button">
-                  <H level={'4'} variant="light" className="item__title">
-                    {item.title}
-                  </H>
-                </button>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-    );
-  }
-
   return (
-    <div className="wrapper-modal flex">
+    <div className="wrapper-modal flex container">
       <div className="nav-modal">
         <ul className="nav-modal__list--title">
           {DATA_SERVICE_MODAL.map((item: NavListModalProps) => (
-            <li className="item" key={item.id}>
-              <button className="item__button" onClick={() => handleSelectItem(item.id)}>
-                <H level={'4'} variant="light" className="item__title">
-                  {item.title}
-                </H>
-              </button>
+            <li key={item.id}>
+              <Button variant="one" onMouseEnter={() => handleSelectItem(item.id)}>
+                {item.title}
+              </Button>
             </li>
           ))}
         </ul>
@@ -85,22 +57,22 @@ export const NavItemModal: React.FC<NavItemModalProps> = ({
         <div className="nav-modal">
           <ul className="nav-modal__list--items">
             {selectedItem?.list.map((subItem, index: number) => (
-              <li className="sub-item" key={index}>
-                <button className="sub-item__button" onClick={() => handleSelectService(subItem)}>
-                  <H level={'5'} variant="light" className="sub-item__title">
-                    {subItem.name}
-                  </H>
-                </button>
+              <li key={index}>
+                <Button href="/" variant="two" onClick={() => handleSelectService(subItem)} icon>
+                  {subItem.name}
+                </Button>
               </li>
             ))}
           </ul>
 
           {selectedService?.image && (
             <div className="service-image">
-              <img
+              <Image
                 src={selectedService.image}
                 alt={selectedService.name}
                 style={{ maxWidth: '100%', height: 'auto' }}
+                width={100}
+                height={100}
               />
             </div>
           )}

@@ -1,6 +1,12 @@
 @use '../../styles/functions' as *;
 @use '../../styles/mixins' as *;
 
+body:has(.modal) {
+  .menu {
+    color: var(--text-black);
+  }
+}
+
 .primary {
   display: flex;
   align-items: center;
@@ -113,19 +119,17 @@
 
 .menu {
   display: flex;
+  align-items: center;
   gap: 4px;
-  @include typography(var(--text-white), 500, 20px, 1.2, uppercase, fluid(-0.8px, -0.96px));
-  svg {
-    align-self: center;
-  }
+  @include typography(var(--text-white), 500, 20px, 1.2, uppercase, -0.05em);
 }
 
 .one {
-  @include typography(var(--text-gray), 500, 68px, 1, uppercase, -0.07em);
+  @include typography(var(--text-gray), 500, 42px, 1, uppercase, -0.07em);
   padding: 10px;
   &:hover {
-    color: var(--text-black);
-    background-color: var(--text-white);
+    color: var(--text-white);
+    background-color: var(--text-black);
   }
 }
 
@@ -140,8 +144,8 @@
     background-color 0.3s;
 
   &:hover {
-    color: var(--text-black);
-    background-color: var(--text-white);
+    color: var(--text-white);
+    background-color: var(--text-black);
 
     svg {
       opacity: 1;
@@ -153,7 +157,7 @@
     position: absolute;
     width: 16px;
     height: 20px;
-    color: var(--text-white);
+    color: var(--text-black);
     right: -35px;
     top: 50%;
     opacity: 0;
@@ -161,6 +165,15 @@
     transition:
       opacity 0.3s,
       transform 0.3s;
+  }
+}
+
+.active {
+  color: var(--text-white);
+  background-color: var(--text-black);
+
+  svg {
+    transform: rotate(180deg);
   }
 }
 

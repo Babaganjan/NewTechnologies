@@ -50,11 +50,9 @@ export const About = () => {
               NTouch, имеющее все необходимые сертификаты качества и соответствия.
             </p>
           </div>
-          <div className="about__btn-wrapper flex">
-            <Button className="primary" icon>
-              О компании
-            </Button>
-          </div>
+          <Button className="about__btn" icon>
+            О компании
+          </Button>
         </div>
       </div>
     </section>

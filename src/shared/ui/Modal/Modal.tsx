@@ -11,12 +11,7 @@ interface ModalProps {
   className?: string;
 }
 
-export const Modal: React.FC<ModalProps> = ({
-  children,
-  onMouseEnter,
-  onMouseLeave,
-  className = '',
-}) => {
+export const Modal = ({ children, onMouseEnter, onMouseLeave, className = '' }: ModalProps) => {
   const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
