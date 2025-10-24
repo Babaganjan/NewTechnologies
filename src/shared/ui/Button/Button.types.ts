@@ -9,7 +9,9 @@ export type VariantType =
   | 'upButton'
   | 'primary'
   | 'menu'
-  | 'secondary';
+  | 'secondary'
+  | 'one'
+  | 'two';
 
 type BaseProps = {
   icon?: boolean;
@@ -18,8 +20,11 @@ type BaseProps = {
   iconSmall?: boolean;
 };
 
-type ButtonVariant = Extract<VariantType, 'feedback' | 'upButton' | 'primary' | 'secondary'>;
-type LinkVariant = Extract<VariantType, 'link' | 'social' | 'policy' | 'menu'>;
+type ButtonVariant = Extract<
+  VariantType,
+  'feedback' | 'upButton' | 'primary' | 'secondary' | 'one'
+>;
+type LinkVariant = Extract<VariantType, 'link' | 'social' | 'policy' | 'menu' | 'two'>;
 
 export type IButtonProps =
   | (BaseProps &

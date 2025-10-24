@@ -11,4 +11,6 @@ export const tagNameByVariants: Record<VariantType, 'button' | typeof Link> = {
   upButton: 'button',
   menu: Link,
   secondary: 'button',
+  one: 'button',
+  two: Link,
 };

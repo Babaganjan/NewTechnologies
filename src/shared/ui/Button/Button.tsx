@@ -33,6 +33,8 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, IButtonP
       policy: styles.policy,
       upButton: styles.upButton,
       menu: styles.menu,
+      one: styles.one,
+      two: styles.two,
     };
 
     return (
