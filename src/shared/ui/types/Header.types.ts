@@ -13,6 +13,6 @@ export interface HeaderContentProps {
   navItems: NavItem[];
   theme: 'dark' | 'light';
   logoSrc: string;
-  onServiceEnter?: () => void; // Опциональный handler для "Сервис"
-  onServiceLeave?: () => void;
+  onItemEnter?: (title: string) => void;
+  onItemLeave?: () => void;
 }

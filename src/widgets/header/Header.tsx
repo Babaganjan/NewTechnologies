@@ -3,19 +3,19 @@
 import { useState } from 'react';
 
 import { Modal } from '@/shared/ui';
-import { ServiceModal } from '@/shared/ui/Modal/serviceModal/ServiceModal';
 import type { HeaderProps } from '@/shared/ui/types/Header.types';
 
+import { NavItemModal } from './../../shared/ui/Modal/navItemModal/NavItemModal';
 import { HeaderContent } from './HeaderContent';
 import { HEADER_NAV_ITEMS } from './header.const';
 
 export const Header = ({ theme = 'dark' }: HeaderProps) => {
   const [isModalOpen, setIsModalOpen] = useState<boolean>(false);
   const [modalTimeout, setModalTimeout] = useState<NodeJS.Timeout | null>(null);
+  const [activeNavItem, setActiveNavItem] = useState<string | null>(null);
 
-  const filteredNavItems = HEADER_NAV_ITEMS.filter((item) => item.title !== 'Производство');
-
-  const handleMouseEnter = () => {
+  const handleNavItenEnter = (title: string) => {
+    setActiveNavItem(title);
     if (modalTimeout) {
       clearTimeout(modalTimeout);
       setModalTimeout(null);
@@ -23,7 +23,8 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
     setIsModalOpen(true);
   };
 
-  const handleMouseLeave = () => {
+  const handleNavItemLeave = () => {
+    setActiveNavItem(null);
     const timeout = setTimeout(() => {
       setIsModalOpen(false);
     }, 200);
@@ -46,6 +47,13 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
     setModalTimeout(timeout);
   };
 
+  const filteredNavItems = HEADER_NAV_ITEMS.filter((item) => {
+    if (activeNavItem === 'Сервис') return item.title !== 'Производство';
+    if (activeNavItem === 'Производство') return item.title !== 'Сервис';
+
+    return true;
+  });
+
   const currentTheme = isModalOpen ? 'light' : theme;
   const logoSrc = currentTheme === 'dark' ? '/img/logo.svg' : '/img/logoDark.svg';
 
@@ -56,14 +64,14 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
           navItems={HEADER_NAV_ITEMS}
           theme={currentTheme}
           logoSrc={logoSrc}
-          onServiceEnter={handleMouseEnter}
-          onServiceLeave={handleMouseLeave}
+          onItemEnter={handleNavItenEnter}
+          onItemLeave={handleNavItemLeave}
         />
       )}
       {isModalOpen && (
         <Modal onMouseEnter={handleModalMouseEnter} onMouseLeave={handleModalMouseLeave}>
           <HeaderContent navItems={filteredNavItems} theme={currentTheme} logoSrc={logoSrc} />
-          <ServiceModal />
+          <NavItemModal />
         </Modal>
       )}
     </>

@@ -45,13 +45,6 @@
     justify-content: center;
     margin-top: 20px;
   }
-
-  &__btn {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    @include typography(var(--text-black), 700, fluid(18px, 26px), 1, uppercase, -0.96px);
-  }
 }
 
 // ===== IMAGE WRAPPERS (MOBILE) =====
@@ -127,15 +120,6 @@
 
     &__btn-wrapper {
       justify-content: flex-start;
-    }
-
-    &__btn::after {
-      @include decoration(
-        var(--vector-black),
-        20px,
-        '/img/arrow-black.svg',
-        $pos: (right: -28px, top: 4px)
-      );
     }
   }
 

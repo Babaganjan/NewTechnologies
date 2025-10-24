@@ -1,14 +1,14 @@
-'use client';
-import dynamic from 'next/dynamic';
+// 'use client';
+// import dynamic from 'next/dynamic';
 
-// import { HomeHeading } from '@/shared/icons';
+import { HomeHeading } from '@/shared/icons';
 import { H } from '@/shared/ui';
 import './_hero.scss';
 
-const HomeHeading = dynamic(() => import('@/shared/icons/HomeHeading/HomeHeading'), {
-  ssr: false, // Отключает SSR
-  loading: () => <div>Loading...</div>, // Опционально: плейсхолдер во время загрузки
-});
+// const HomeHeading = dynamic(() => import('@/shared/icons/HomeHeading/HomeHeading'), {
+//   ssr: false, // Отключает SSR
+//   loading: () => <div>Loading...</div>, // Опционально: плейсхолдер во время загрузки
+// });
 
 export const Hero = () => {
   return (
@@ -27,7 +27,7 @@ export const Hero = () => {
           </p>
         </div>
         <H level={'3'} className="hero__subtitle subtitle">
-          Безопасность нового поколения
+          Безопасность&nbsp;нового поколения
         </H>
       </div>
     </section>

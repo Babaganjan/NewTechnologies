@@ -1,7 +1,6 @@
 import Image from 'next/image';
 
-import { Arrow } from '@/shared/icons';
-import { H } from '@/shared/ui';
+import { H, Button } from '@/shared/ui';
 
 import './_about.scss';
 
@@ -65,9 +64,12 @@ export const About = () => {
             </p>
           </div>
           <div className="about__btn-wrapper flex">
-            <button className="about__btn">
-              О компании <Arrow width={25} height={20} />
-            </button>
+            <Button variant="primary" aria-label="О компании" className="about__btn" icon>
+              О компании
+            </Button>
+            {/* <button className="about__btn">
+              
+            </button> */}
           </div>
         </div>
       </div>
