@@ -17,7 +17,7 @@ export const HEADER_NAV_ITEMS: NavItem[] = [
     href: '/products/',
     title: 'Производство',
     hasIcon: true,
-    hasModal: false,
+    hasModal: true,
   },
   {
     href: '/solution/',

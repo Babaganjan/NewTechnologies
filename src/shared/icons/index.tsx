@@ -6,7 +6,6 @@ import { Arrow } from './Arrow/Arrow';
 import { ArrowSmall } from './ArrowSmall/ArrowSmall';
 import { ContactsHeading } from './ContactsHeading/ContactsHeading';
 import HomeHeading from './HomeHeading/HomeHeading';
-import { HomeHeadingBig } from './HomeHeading/HomeHeadingBig';
 import { Logo } from './Logo/Logo';
 import { ProductionHeading } from './ProductionHeading/ProductionHeading';
 import { ServicesHeading } from './ServicesHeading/ServicesHeading';
@@ -25,7 +24,6 @@ export {
   ObjectLevelIcons,
   ContactsHeading,
   HomeHeading,
-  HomeHeadingBig,
   ProductionHeading,
   ServicesHeading,
 };

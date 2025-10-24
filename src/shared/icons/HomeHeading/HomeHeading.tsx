@@ -3,21 +3,12 @@ import { useState, useEffect } from 'react';
 
 import type { Icons, Breakpoint } from '../icon.type';
 
-const HomeHeading = ({
-  className,
-  width,
-  height,
-  color,
-  breakpoint: manualBreakpoint,
-  ...rest
-}: Icons) => {
+const HomeHeading = ({ className, breakpoint: manualBreakpoint }: Icons) => {
   // Функция для определения breakpoint на основе ширины экрана
   const getBreakpoint = (width: number): Breakpoint => (width < 768 ? 'mb' : 'lg');
 
   // Состояние для динамического breakpoint
-  const [dynamicBreakpoint, setDynamicBreakpoint] = useState<Breakpoint>(
-    () => (typeof window !== 'undefined' ? getBreakpoint(window.innerWidth) : 'lg') // SSR-friendly
-  );
+  const [dynamicBreakpoint, setDynamicBreakpoint] = useState<Breakpoint>('lg');
 
   // Эффект для отслеживания resize
   useEffect(() => {

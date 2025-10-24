@@ -13,9 +13,9 @@
 .hero__container {
   @include line-decor(1% 50% 99%);
   position: relative;
-  padding-block: fluid(134px, 382px) fluid(21px, 69px);
+  padding-block: fluid(134px, 382px) fluid(21px, 67px);
   flex-direction: column;
-  gap: fluid(40px, 161px);
+  gap: fluid(40px, 158px);
   z-index: 0;
 }
 
@@ -56,7 +56,6 @@
       grid-auto-rows: 1fr;
     }
     &__content {
-      // align-self: center;
       flex-direction: column;
       gap: 34px;
       margin-bottom: unset;
@@ -64,10 +63,6 @@
     .heading {
       grid-column: 1/3;
       letter-spacing: -21.87px;
-    }
-
-    &__subtitle {
-      // align-self: center;
     }
   }
 }

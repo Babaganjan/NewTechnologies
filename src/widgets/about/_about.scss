@@ -119,15 +119,6 @@
     &__btn-wrapper {
       justify-content: flex-start;
     }
-
-    &__btn::after {
-      @include decoration(
-        var(--vector-black),
-        20px,
-        '/img/arrow-black.svg',
-        $pos: (right: -28px, top: 4px)
-      );
-    }
   }
 
   // ===== IMAGE DECORATIONS (DESKTOP) =====

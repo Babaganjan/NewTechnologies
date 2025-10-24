@@ -12,8 +12,8 @@ export const HeaderContent = ({
   navItems,
   theme,
   logoSrc,
-  onServiceEnter,
-  onServiceLeave,
+  onItemEnter,
+  onItemLeave,
 }: HeaderContentProps) => {
   return (
     <header className="header" data-theme={theme}>
@@ -26,11 +26,9 @@ export const HeaderContent = ({
                   className="nav__item"
                   key={item.href}
                   onMouseEnter={
-                    item.title === 'Сервис' && onServiceEnter ? onServiceEnter : undefined
+                    item.hasModal && onItemEnter ? () => onItemEnter(item.title) : undefined
                   }
-                  onMouseLeave={
-                    item.title === 'Сервис' && onServiceLeave ? onServiceLeave : undefined
-                  }
+                  onMouseLeave={item.hasModal && onItemLeave ? onItemLeave : undefined}
                 >
                   <Link href={item.href} className="nav__link flex">
                     {item.title}

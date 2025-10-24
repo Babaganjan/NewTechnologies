@@ -2,7 +2,7 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-.service-modal-content {
+.wrapper-modal {
   @include line-decor(1.2% 25.5% 50% 74.5% 98.8%, var(--vector-light-gray));
 		position: relative;
 		min-height: 337px;
@@ -10,7 +10,8 @@
   padding: 20px;
 }
 
-.service-button {
+.item {
+  &__button {
   border: none;
   padding: 10px 5px;
   cursor: pointer;
@@ -21,7 +22,8 @@
     color: var(--text-white);
   }
 
-  .item__title:hover {
+  &__title:hover {
     color: var(--text-white);
   }
+}
 }
