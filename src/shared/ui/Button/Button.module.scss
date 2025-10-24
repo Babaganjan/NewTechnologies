@@ -120,6 +120,50 @@
   }
 }
 
+.one {
+  @include typography(var(--text-gray), 500, 68px, 1, uppercase, -0.07em);
+  padding: 10px;
+  &:hover {
+    color: var(--text-black);
+    background-color: var(--text-white);
+  }
+}
+
+.two {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 4px;
+  position: relative;
+  @include typography(var(--text-light-gray), 500, 28px, 1.15);
+  transition:
+    color 0.3s,
+    background-color 0.3s;
+
+  &:hover {
+    color: var(--text-black);
+    background-color: var(--text-white);
+
+    svg {
+      opacity: 1;
+      transform: translateY(-50%) translateX(0);
+    }
+  }
+
+  svg {
+    position: absolute;
+    width: 16px;
+    height: 20px;
+    color: var(--text-white);
+    right: -35px;
+    top: 50%;
+    opacity: 0;
+    transform: translateY(-50%) translateX(-10px);
+    transition:
+      opacity 0.3s,
+      transform 0.3s;
+  }
+}
+
 @include respond-min(1300px) {
   .primary {
     padding-bottom: 5px;
