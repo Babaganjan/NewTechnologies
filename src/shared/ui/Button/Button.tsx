@@ -37,9 +37,9 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, IButtonP
 
     return (
       <Component
-        type={type}
+        type={Component === 'button' ? type : undefined}
         ref={ref}
-        className={clsx(styles.button, classNameMap[variant], className)}
+        className={clsx(classNameMap[variant], className)}
         {...props}
       >
         {children}
