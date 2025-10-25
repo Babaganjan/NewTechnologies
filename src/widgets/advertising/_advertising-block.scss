@@ -1,39 +1,50 @@
 @use '../../shared/styles/functions' as *;
 @use '../../shared/styles/mixins' as *;
-
 .advertising {
   position: relative;
   background-color: var(--bg-black);
   min-height: 322px;
   display: flex;
   align-items: center;
-
   &__container {
     padding-inline: 0.625rem;
   }
-
   &.with-trapezoids {
     @include trapezoid-decor(21px, 12px, var(--bg-black), both);
   }
-
   &__title {
     position: relative;
     margin-bottom: 10px;
   }
-
-  &__subtitle {
+  &__subtitle-wrapper {
     margin-bottom: 20px;
-
-    span {
+  }
+  &__subtitle {
+    &-line1 {
+      display: block;
+      color: var(--text-white);
+    }
+    &-line2 {
+      display: block;
       color: var(--text-deep-black);
     }
-  }
 
+    &-desktop-word {
+      display: none;
+    }
+
+    &-mobile-word {
+      display: inline;
+    }
+
+    &--break {
+      display: inline;
+    }
+  }
   img {
     width: fluid(100px, 150px);
     height: fluid(50px, 80px);
   }
-
   .advertising__decoration {
     @include decoration(
       var(--text-black),
@@ -46,23 +57,19 @@
     );
   }
 }
-
 .continuous-scroll-container {
   overflow: hidden;
   width: 100%;
   position: relative;
 }
-
 .continuous-scroll-wrapper {
   display: flex;
   animation: continuousScroll 20s linear infinite;
   width: fit-content;
-
   &:hover {
     animation-play-state: paused;
   }
 }
-
 .continuous-slide {
   position: relative;
   min-height: fluid(96px, 146px);
@@ -74,33 +81,26 @@
   align-items: center;
   flex-shrink: 0;
   margin-right: 10px;
-
   @include item-decor(var(--text-white));
-
   svg {
     width: 100%;
     height: auto;
     max-width: fluid(144px, 251px);
     max-height: fluid(50px, 80px);
   }
-
   &:hover {
     background-color: var(--bg-white);
-
     svg path {
       fill: var(--vector-black);
     }
-
     &::before {
       background-color: var(--vector-deep-gray);
     }
-
     &::after {
       background-color: var(--vector-deep-gray);
     }
   }
 }
-
 @keyframes continuousScroll {
   0% {
     transform: translateX(0);
@@ -109,27 +109,40 @@
     transform: translateX(-50%);
   }
 }
-
 @include respond-min(1024px) {
   .advertising {
     padding-bottom: 60px;
     padding-top: 100px;
 
-    .advertising__subtitle-container {
+    &__subtitle-wrapper {
       display: flex;
       justify-content: center;
-      align-items: flex-start;
+      margin-bottom: 60px;
     }
 
     &__subtitle {
-      margin-bottom: 60px;
+      text-align: left;
 
-      .advertising__subtitle--break {
+      &-line1 {
         display: block;
+        color: var(--text-white);
       }
 
-      span {
+      &-line2 {
+        display: block;
         color: var(--text-white);
+      }
+
+      &-desktop-word {
+        display: inline;
+      }
+
+      &-mobile-word {
+        display: none;
+      }
+
+      &--break {
+        display: inline;
       }
     }
 
