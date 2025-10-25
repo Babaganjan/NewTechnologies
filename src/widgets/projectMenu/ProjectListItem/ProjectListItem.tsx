@@ -6,7 +6,7 @@ import { Arrow } from '@/shared/icons';
 import './_projectListItem.scss';
 
 import { H } from '../../../shared/ui/Heading/H';
-import type { ProjectMenuItemProps } from '../../../shared/ui/types/ProjectMenu.types';
+import type { ProjectMenuItemProps } from '../projectMenu.types';
 
 export const ProjectListItem = ({
   item,
@@ -27,7 +27,7 @@ export const ProjectListItem = ({
       <span className="project-menu-item__client service-label--services">клиент</span>
       <div className="project-menu-item__subtitle">
         <H level={'5'} variant="light" className="project-menu-item__subtitle-title">
-          {item.subtitle}
+          {item.title}
         </H>
         <Arrow
           color={isActive ? 'var(--text-white)' : 'var(--text-black)'}
@@ -38,9 +38,7 @@ export const ProjectListItem = ({
       </div>
       {isActive && (
         <div className="project-menu__active-wrapper">
-          <p>
-            Реализовали установку системы видеонаблюдения в резиденции акима Жамбылской области.
-          </p>
+          <p>{item.subtitle}</p>
           <Image
             src={item.image}
             alt={item.subtitle}
