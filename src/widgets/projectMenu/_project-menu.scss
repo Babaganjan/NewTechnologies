@@ -1,7 +1,6 @@
 @use '../../shared/styles/functions' as *;
 @use '../../shared/styles/mixins' as *;
 
-// Анимация для загрузки новых элементов
 .project-menu__number-wrapper--animated,
 .project-menu__list-item--animated,
 .project-menu__service-wrapper--animated {
@@ -79,7 +78,6 @@
   background-color: var(--bg-black);
   margin-inline: -20px;
   padding: 20px;
-  // Используем только transform и opacity для плавности
   transform: scaleY(1);
   transform-origin: top;
   opacity: 1;
@@ -184,7 +182,6 @@
             width: 150px;
             height: 170px;
             pointer-events: auto;
-            // Только transform и opacity
             transition:
               transform 0.3s ease,
               opacity 0.3s ease;
