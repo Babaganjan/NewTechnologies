@@ -15,4 +15,5 @@ export interface HeaderContentProps {
   logoSrc: string;
   onItemEnter?: (title: string) => void;
   onItemLeave?: () => void;
+  onCloseModal?: () => void;
 }
