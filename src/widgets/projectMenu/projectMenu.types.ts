@@ -1,12 +1,13 @@
-export interface ProjectMenuItem {
-  id: string | number;
+export interface ProjectMenuData {
+  id: number;
+  title: string;
   subtitle: string;
   service: string;
   image: string;
 }
 
 export interface ProjectMenuItemProps {
-  item: ProjectMenuItem;
+  item: ProjectMenuData;
   index: number;
   isHovered: boolean;
   isActive: boolean;
