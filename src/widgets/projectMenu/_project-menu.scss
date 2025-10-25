@@ -1,6 +1,33 @@
 @use '../../shared/styles/functions' as *;
 @use '../../shared/styles/mixins' as *;
 
+.project-menu__number-wrapper--animated,
+.project-menu__list-item--animated,
+.project-menu__service-wrapper--animated {
+  animation: slideInFade 0.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+@for $i from 1 through 20 {
+  .project-menu__number-wrapper--animated:nth-child(#{$i + 8}),
+  .project-menu__list-item--animated:nth-child(#{$i + 8}),
+  .project-menu__service-wrapper--animated:nth-child(#{$i + 8}) {
+    animation-delay: #{$i * 0.05}s;
+  }
+}
+
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .project-menu {
   .project-menu__container {
     display: grid;

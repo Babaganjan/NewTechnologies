@@ -6,16 +6,16 @@ import { Arrow } from '@/shared/icons';
 import { Button, H, ProjectListItem, ProjectNumberItem, ProjectServiceItem } from '@/shared/ui';
 
 import './_project-menu.scss';
-import { INITIAL_ITEMS_COUNT, PROJECT_MENU_DATA } from './projectMenu.const';
+import { PROJECT_MENU_DATA } from './projectMenu.const';
 import type { ProjectMenuItemProps } from './projectMenu.types';
+
+const INITIAL_ITEMS_COUNT = 8;
 
 export const ProjectMenu = () => {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
   const [activeRow, setActiveRow] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
-
-  const visibleProjects = PROJECT_MENU_DATA.slice(0, visibleCount);
-  const hasMore = visibleCount < PROJECT_MENU_DATA.length;
+  const [isExpanding, setIsExpanding] = useState(false);
 
   const onMouseEnter = (index: number) => {
     setHoveredRow(index);
@@ -30,6 +30,7 @@ export const ProjectMenu = () => {
   };
 
   const handleLoadMore = () => {
+    setIsExpanding(true);
     setVisibleCount(PROJECT_MENU_DATA.length);
   };
 
@@ -41,6 +42,9 @@ export const ProjectMenu = () => {
     onMouseLeave,
     onActiveRow: handleActiveRow,
   });
+
+  const visibleProjects = PROJECT_MENU_DATA.slice(0, visibleCount);
+  const hasMore = visibleCount < PROJECT_MENU_DATA.length;
 
   return (
     <section className="project-menu" aria-labelledby="project-menu-title">
@@ -62,7 +66,10 @@ export const ProjectMenu = () => {
         </div>
         <div className="project-menu__numbers">
           {visibleProjects.map((item, index) => (
-            <div key={`number-${item.id}`} className="project-menu__number-wrapper">
+            <div
+              key={`number-${item.id}`}
+              className={`project-menu__number-wrapper ${index >= INITIAL_ITEMS_COUNT && isExpanding ? 'project-menu__number-wrapper--animated' : ''}`}
+            >
               <ProjectNumberItem {...createProjectProps(index)} />
               {(hoveredRow === index || activeRow === index) && (
                 <div
@@ -84,12 +91,24 @@ export const ProjectMenu = () => {
         </div>
         <ul className="project-menu__list">
           {visibleProjects.map((item, index) => (
-            <ProjectListItem key={item.id} item={item} {...createProjectProps(index)} />
+            <li
+              key={item.id}
+              className={
+                index >= INITIAL_ITEMS_COUNT && isExpanding
+                  ? 'project-menu__list-item--animated'
+                  : ''
+              }
+            >
+              <ProjectListItem item={item} {...createProjectProps(index)} />
+            </li>
           ))}
         </ul>
         <div className="project-menu__services">
           {visibleProjects.map((item, index) => (
-            <div key={`service-${item.id}`} className="project-menu__service-wrapper">
+            <div
+              key={`service-${item.id}`}
+              className={`project-menu__service-wrapper ${index >= INITIAL_ITEMS_COUNT && isExpanding ? 'project-menu__service-wrapper--animated' : ''}`}
+            >
               <ProjectServiceItem item={item} {...createProjectProps(index)} />
               {(hoveredRow === index || activeRow === index) && (
                 <div className="project-menu__arrow-decoration" aria-hidden="true">
