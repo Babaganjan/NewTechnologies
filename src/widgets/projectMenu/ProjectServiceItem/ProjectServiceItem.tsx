@@ -1,5 +1,5 @@
 import { H } from '../../../shared/ui/Heading/H';
-import type { ProjectMenuItemProps } from '../../../shared/ui/types/ProjectMenu.types';
+import type { ProjectMenuItemProps } from '../projectMenu.types';
 
 import './_projectServiceItem.scss';
 

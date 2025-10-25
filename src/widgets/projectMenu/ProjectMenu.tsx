@@ -18,7 +18,9 @@ export const ProjectMenu = () => {
   const [isExpanding, setIsExpanding] = useState(false);
 
   const onMouseEnter = (index: number) => {
-    setHoveredRow(index);
+    if (activeRow === null) {
+      setHoveredRow(index);
+    }
   };
 
   const onMouseLeave = () => {
