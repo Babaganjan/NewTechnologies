@@ -13,6 +13,7 @@ export const HeaderContent = ({
   logoSrc,
   onItemEnter,
   onItemLeave,
+  onCloseModal,
 }: HeaderContentProps) => {
   return (
     <header className="header" data-theme={theme}>
@@ -34,6 +35,7 @@ export const HeaderContent = ({
                     variant="menu"
                     className="nav__link"
                     iconSmall={item.hasIcon}
+                    onClick={onCloseModal}
                     // active={}
                   >
                     {item.title}
@@ -42,7 +44,7 @@ export const HeaderContent = ({
               ))}
             </ul>
           </nav>
-          <Link href="/" className="header__link">
+          <Link href="/" className="header__link" onClick={onCloseModal}>
             <Image
               src={logoSrc}
               width={145}

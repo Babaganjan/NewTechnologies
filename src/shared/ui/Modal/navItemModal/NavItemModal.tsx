@@ -45,7 +45,10 @@ export const NavItemModal = ({
         <ul className="nav-modal__list--title">
           {DATA_SERVICE_MODAL.map((item: NavListModalProps) => (
             <li key={item.id}>
-              <Button variant="one" onMouseEnter={() => handleSelectItem(item.id)}>
+              <Button
+                variant="one"
+                onMouseEnter={() => handleSelectItem(item.id)}
+              >
                 {item.title}
               </Button>
             </li>
