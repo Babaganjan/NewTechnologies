@@ -122,6 +122,9 @@ body:has(.modal) {
   align-items: center;
   gap: 4px;
   @include typography(var(--text-white), 500, 20px, 1.2, uppercase, -0.05em);
+  // &:hover {
+  //   color: var(--text-gray) !important;
+  // }
 }
 
 .one {
