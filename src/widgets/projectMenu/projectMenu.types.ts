@@ -14,4 +14,5 @@ export interface ProjectMenuItemProps {
   onMouseEnter: (index: number) => void;
   onMouseLeave: () => void;
   onActiveRow: (index: number) => void;
+  isAnimated?: boolean;
 }

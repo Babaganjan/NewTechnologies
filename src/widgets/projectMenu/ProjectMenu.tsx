@@ -91,16 +91,12 @@ export const ProjectMenu = () => {
         </div>
         <ul className="project-menu__list">
           {visibleProjects.map((item, index) => (
-            <li
+            <ProjectListItem
               key={item.id}
-              className={
-                index >= INITIAL_ITEMS_COUNT && isExpanding
-                  ? 'project-menu__list-item--animated'
-                  : ''
-              }
-            >
-              <ProjectListItem item={item} {...createProjectProps(index)} />
-            </li>
+              item={item}
+              {...createProjectProps(index)}
+              isAnimated={index >= INITIAL_ITEMS_COUNT && isExpanding}
+            />
           ))}
         </ul>
         <div className="project-menu__services">

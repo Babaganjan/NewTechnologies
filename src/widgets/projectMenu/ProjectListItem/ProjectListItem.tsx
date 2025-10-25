@@ -16,9 +16,15 @@ export const ProjectListItem = ({
   onMouseLeave,
   isActive,
   onActiveRow,
+  isAnimated = false,
 }: ProjectMenuItemProps) => (
   <li
-    className={clsx('project-menu-item', isHovered && 'hovered', isActive && 'active')}
+    className={clsx(
+      'project-menu-item',
+      isHovered && 'hovered',
+      isActive && 'active',
+      isAnimated && 'project-menu__list-item--animated'
+    )}
     onMouseEnter={() => onMouseEnter(index)}
     onMouseLeave={onMouseLeave}
     onClick={() => onActiveRow(index)}
