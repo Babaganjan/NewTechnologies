@@ -5,8 +5,8 @@ import { Arrow } from '@/shared/icons';
 
 import './_projectListItem.scss';
 
-import { H } from '../Heading/H';
-import type { ProjectMenuItemProps } from '../types/ProjectMenu.types';
+import { H } from '../../../shared/ui/Heading/H';
+import type { ProjectMenuItemProps } from '../../../shared/ui/types/ProjectMenu.types';
 
 export const ProjectListItem = ({
   item,

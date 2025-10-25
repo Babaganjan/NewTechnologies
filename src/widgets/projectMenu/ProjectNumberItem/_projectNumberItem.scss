@@ -1,5 +1,5 @@
-@use '../../styles/functions' as *;
-@use '../../styles/mixins' as *;
+@use '../../../shared/styles/functions' as *;
+@use '../../../shared/styles/mixins' as *;
 
 @include respond-min(1300px) {
   .project-menu-item__number {
