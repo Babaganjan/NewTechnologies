@@ -1,7 +1,3 @@
-import { Alhua } from './Adverting-icons/Alhua/Alhua';
-import { Bosch } from './Adverting-icons/Bosch/Bosch';
-import { Hikvision } from './Adverting-icons/Hikvision/Hikvision';
-import { Huawei } from './Adverting-icons/Huawei/Huawei';
 import { Arrow } from './Arrow/Arrow';
 import { ArrowSmall } from './ArrowSmall/ArrowSmall';
 import { ContactsHeading } from './ContactsHeading/ContactsHeading';
@@ -11,19 +7,43 @@ import { ProductionHeading } from './ProductionHeading/ProductionHeading';
 import { ServicesHeading } from './ServicesHeading/ServicesHeading';
 import type { Icons } from './icon.type';
 import * as ObjectLevelIcons from './objectLevelIcons';
+export {
+  Ajax,
+  Alhua,
+  Arsenal,
+  Axis,
+  Bolid,
+  Bosch,
+  DLink,
+  Eurolan,
+  Forteza,
+  Fortinet,
+  Hikvision,
+  Huawei,
+  Itc,
+  Macroscop,
+  Mirkrotik,
+  Oxgard,
+  Paritet,
+  Rubezh,
+  Seagete,
+  Ship,
+  Sigur,
+  Trezor,
+  Uniqscan,
+  Vers,
+  WesternDigital,
+} from './Adverting-icons';
 
-export type { Icons };
 export {
   Arrow,
   ArrowSmall,
-  Logo,
-  Alhua,
-  Bosch,
-  Hikvision,
-  Huawei,
-  ObjectLevelIcons,
   ContactsHeading,
   HomeHeading,
+  Logo,
+  ObjectLevelIcons,
   ProductionHeading,
   ServicesHeading,
 };
+
+export type { Icons };
