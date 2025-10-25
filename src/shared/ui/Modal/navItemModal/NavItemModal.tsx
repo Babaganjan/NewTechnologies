@@ -1,4 +1,4 @@
-// // src/shared/ui/Modal/serviceModal/ServiceModal.tsx
+// src/shared/ui/Modal/navItemModal/NavItemModal.tsx
 'use client';
 import Image from 'next/image';
 import { useState } from 'react';
@@ -13,7 +13,7 @@ import './navItemModal.scss';
 
 // Типизация props компонента
 interface NavItemModalProps {
-  onSelect?: (service: string) => void; // Callback для выбора услуги (опциональный)
+  onSelect?: (service: string) => void;
 }
 
 export const NavItemModal = ({
@@ -26,12 +26,12 @@ export const NavItemModal = ({
 
   const handleSelectItem = (id: number) => {
     setSelectedId(id);
-    setSelectedService(null); // Сбрасываем выбранную услугу при выборе категории
+    setSelectedService(null);
   };
 
   const handleSelectService = (service: { name: string; image?: string }) => {
-    setSelectedService(service); // Устанавливаем выбранную услугу для отображения картинки
-    onSelect(service.name); // Вызываем callback с именем услуги
+    setSelectedService(service);
+    onSelect(service.name);
   };
 
   // Если выбран item — показываем его подсписок
@@ -40,7 +40,7 @@ export const NavItemModal = ({
   );
 
   return (
-    <div className="wrapper-modal flex container">
+    <div className="wrapper-modal container">
       <div className="nav-modal">
         <ul className="nav-modal__list--title">
           {DATA_SERVICE_MODAL.map((item: NavListModalProps) => (
@@ -54,11 +54,16 @@ export const NavItemModal = ({
       </div>
 
       {selectedId && (
-        <div className="nav-modal">
+        <div className="nav-modal--items flex">
           <ul className="nav-modal__list--items">
             {selectedItem?.list.map((subItem, index: number) => (
               <li key={index}>
-                <Button href="/" variant="two" onClick={() => handleSelectService(subItem)} icon>
+                <Button
+                  href="/"
+                  variant="two"
+                  onMouseEnter={() => handleSelectService(subItem)}
+                  icon
+                >
                   {subItem.name}
                 </Button>
               </li>
@@ -67,13 +72,7 @@ export const NavItemModal = ({
 
           {selectedService?.image && (
             <div className="service-image">
-              <Image
-                src={selectedService.image}
-                alt={selectedService.name}
-                style={{ maxWidth: '100%', height: 'auto' }}
-                width={100}
-                height={100}
-              />
+              <Image src={selectedService.image} alt={selectedService.name} fill />
             </div>
           )}
         </div>
