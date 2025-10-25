@@ -57,6 +57,8 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
   const currentTheme = isModalOpen ? 'light' : theme;
   const logoSrc = currentTheme === 'dark' ? '/img/logo.svg' : '/img/logoDark.svg';
 
+  const closeModal = () => setIsModalOpen(false);
+
   return (
     <>
       {!isModalOpen && (
@@ -66,11 +68,17 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
           logoSrc={logoSrc}
           onItemEnter={handleNavItenEnter}
           onItemLeave={handleNavItemLeave}
+          onCloseModal={closeModal}
         />
       )}
       {isModalOpen && (
         <Modal onMouseEnter={handleModalMouseEnter} onMouseLeave={handleModalMouseLeave}>
-          <HeaderContent navItems={filteredNavItems} theme={currentTheme} logoSrc={logoSrc} />
+          <HeaderContent
+            navItems={filteredNavItems}
+            theme={currentTheme}
+            logoSrc={logoSrc}
+            onCloseModal={closeModal}
+          />
           <NavItemModal />
         </Modal>
       )}
