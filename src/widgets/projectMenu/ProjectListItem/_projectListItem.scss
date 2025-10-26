@@ -73,7 +73,7 @@
     align-items: center;
     cursor: pointer;
 
-    &:is(.hovered, .active) {
+    &:is(.hovered, .project-menu--active) {
       background-color: var(--bg-black);
       color: var(--text-white);
 

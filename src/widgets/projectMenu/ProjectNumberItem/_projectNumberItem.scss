@@ -12,7 +12,7 @@
     cursor: pointer;
     padding-left: 5px;
 
-    &:is(.hovered, .active) {
+    &:is(.hovered, .project-menu--active) {
       background-color: var(--bg-black);
       color: var(--text-white);
 

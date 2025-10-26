@@ -13,7 +13,7 @@ export const ProjectNumberItem = ({
 }: Omit<ProjectMenuItemProps, 'item'>) => (
   <H
     level={'5'}
-    className={`project-menu-item__number ${isHovered && 'hovered'} ${isActive && 'active'}`}
+    className={`project-menu-item__number ${isHovered && 'hovered'} ${isActive && 'project-menu--active'}`}
     onMouseEnter={() => onMouseEnter(index)}
     onMouseLeave={onMouseLeave}
     onClick={() => onActiveRow(index)}

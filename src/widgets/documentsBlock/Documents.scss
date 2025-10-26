@@ -16,22 +16,125 @@
   margin-bottom: 30px;
   margin-top: 10px;
 }
+
 .documents-list {
   display: flex;
   flex-direction: column;
+
   .documents-list__item {
     display: flex;
     justify-content: space-between;
     padding-block: 8px;
-    @include typography(var(--text-black), 500, 18px, 1.15);
     border-bottom: 1px solid var(--vector-deep-gray);
+    cursor: pointer;
+    outline: none;
+    transition:
+      background-color 0.2s ease,
+      color 0.2s ease;
 
     &:first-child {
       border-top: 1px solid var(--vector-deep-gray);
     }
 
+    span {
+      @include typography(var(--text-black), 500, 18px, 1.15);
+    }
+
     svg {
       align-self: center;
+      transition: color 0.2s ease;
+    }
+
+    .document__number {
+      display: none;
+      @include typography(var(--text-black), 500, 22px, 1, uppercase, -0.05em);
+    }
+
+    &:hover,
+    &:focus,
+    &:focus-visible {
+      --text-black: var(--text-white);
+      background-color: black;
+
+      svg {
+        color: var(--text-white);
+      }
+
+      .document__size {
+        color: var(--text-white);
+      }
+    }
+  }
+}
+
+.documents-list__item--active {
+  --text-black: var(--text-white);
+  background-color: black;
+
+  svg {
+    color: var(--text-white);
+  }
+
+  .document__size {
+    color: var(--text-white);
+  }
+}
+
+.documents-list__item--deactive {
+  --text-black: var(--text-gray);
+
+  svg {
+    color: var(--text-gray);
+  }
+}
+
+@include respond-min(1024px) {
+  .documents-list {
+    .documents-list__item {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      grid-template-areas: 'number title img size icon';
+      align-items: center;
+
+      span {
+        grid-area: title;
+        justify-self: center;
+      }
+
+      .document__number {
+        display: flex;
+        grid-area: number;
+        justify-self: start;
+        padding-left: 5px;
+      }
+
+      .document__image {
+        grid-area: img;
+        position: absolute;
+        justify-self: center;
+        border: 1px solid var(--vector-light-gray);
+        width: 192px;
+        height: 248px;
+        pointer-events: none;
+      }
+
+      .documents__icons {
+        grid-area: icon;
+        justify-self: end;
+        padding-right: 5px;
+      }
+
+      .document__size {
+        grid-area: size;
+        font-family: var(--second-family);
+        @include typography(var(--text-white), 500, 22px, 1.1, uppercase, -0.05em);
+      }
+
+      &:focus-visible {
+        outline: 3px solid var(--text-white);
+        outline-offset: -3px;
+      }
     }
   }
 }

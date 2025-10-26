@@ -22,7 +22,7 @@ export const ProjectListItem = ({
     className={clsx(
       'project-menu-item',
       isHovered && 'hovered',
-      isActive && 'active',
+      isActive && 'project-menu--active',
       isAnimated && 'project-menu__list-item--animated'
     )}
     onMouseEnter={() => onMouseEnter(index)}

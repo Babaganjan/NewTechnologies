@@ -16,6 +16,7 @@ export const DocumentsIcons = ({
       aria-hidden={decorative || undefined}
       role={decorative ? undefined : 'img'}
       xmlns="http://www.w3.org/2000/svg"
+      stroke={color}
       {...svgProps}
     >
       <g clipPath="url(#clip0_4021_5495)">
