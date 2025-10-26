@@ -3,6 +3,10 @@
 import { useState } from 'react';
 
 import { Modal } from '@/shared/ui';
+import {
+  DATA_SERVICE_MODAL,
+  DATA_PRODUCTION_MODAL,
+} from '@/shared/ui/Modal/navItemModal/nav-item.const';
 import type { HeaderProps } from '@/shared/ui/types/Header.types';
 
 import { NavItemModal } from './../../shared/ui/Modal/navItemModal/NavItemModal';
@@ -14,7 +18,15 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
   const [modalTimeout, setModalTimeout] = useState<NodeJS.Timeout | null>(null);
   const [activeNavItem, setActiveNavItem] = useState<string | null>(null);
 
-  const handleNavItenEnter = (title: string) => {
+  // Функция для динамического выбора данных модала
+  const getModalData = (activeNavItem: string | null) => {
+    if (activeNavItem === 'Сервис') return DATA_SERVICE_MODAL;
+    if (activeNavItem === 'Производство') return DATA_PRODUCTION_MODAL;
+
+    return [];
+  };
+
+  const handleNavItemEnter = (title: string) => {
     setActiveNavItem(title);
     if (modalTimeout) {
       clearTimeout(modalTimeout);
@@ -42,6 +54,7 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
   const handleModalMouseLeave = () => {
     const timeout = setTimeout(() => {
       setIsModalOpen(false);
+      setActiveNavItem(null);
     }, 200);
 
     setModalTimeout(timeout);
@@ -57,7 +70,10 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
   const currentTheme = isModalOpen ? 'light' : theme;
   const logoSrc = currentTheme === 'dark' ? '/img/logo.svg' : '/img/logoDark.svg';
 
-  const closeModal = () => setIsModalOpen(false);
+  const closeModal = () => {
+    setIsModalOpen(false);
+    setActiveNavItem(null);
+  };
 
   return (
     <>
@@ -66,9 +82,10 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
           navItems={HEADER_NAV_ITEMS}
           theme={currentTheme}
           logoSrc={logoSrc}
-          onItemEnter={handleNavItenEnter}
+          onItemEnter={handleNavItemEnter}
           onItemLeave={handleNavItemLeave}
           onCloseModal={closeModal}
+          activeNavItem={activeNavItem}
         />
       )}
       {isModalOpen && (
@@ -78,8 +95,9 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
             theme={currentTheme}
             logoSrc={logoSrc}
             onCloseModal={closeModal}
+            activeNavItem={activeNavItem}
           />
-          <NavItemModal />
+          <NavItemModal data={getModalData(activeNavItem)} />
         </Modal>
       )}
     </>
