@@ -1,4 +1,4 @@
-import type{ NavItem } from '@/shared/ui/types/Header.types'
+import type { NavItem } from '@/shared/ui/types/Header.types';
 
 export const CITIES = [
   { value: 'almaty', label: 'Алматы' },
@@ -38,5 +38,3 @@ export const HEADER_NAV_ITEMS: NavItem[] = [
     hasModal: false,
   },
 ] as const;
-
-

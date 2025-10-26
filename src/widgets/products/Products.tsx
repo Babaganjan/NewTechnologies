@@ -1,14 +1,13 @@
 'use client';
 import { usePathname } from 'next/navigation';
 
-import { ProductItem } from '@/shared/ui';
-import { H } from '@/shared/ui';
+import { H, ProductItem } from '@/shared/ui';
 
 import './_products-block.scss';
 import { PRODUCTS_DATA } from './products.const';
 
 export const Products = () => {
-  const path = usePathname();
+  const path = usePathname().split('/')[1];
 
   return (
     <section className="products" aria-labelledby="products-title">
