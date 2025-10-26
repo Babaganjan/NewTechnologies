@@ -1,48 +1,28 @@
 'use client';
-
 import { useState } from 'react';
 
-import { DocumentsIcons } from '@/shared/icons';
-import { Button, H } from '@/shared/ui';
+import { H } from '@/shared/ui';
 
-import { DOCUMENTS_ITEMS } from './documents.const';
+import { DocumentsList } from './DocumentList/DocumentList';
+import { DocumentsTabs } from './DocumentsTabs/DocumentsTabs';
+import type { ActiveTab } from './documents.const';
+import { DOCUMENTS_ITEMS, TAB_LABELS } from './documents.const';
 
 import './Documents.scss';
 
 export const DocumentsBlock = () => {
-  const [isActive, setIsActive] = useState('one');
+  const [activeTab, setActiveTab] = useState<ActiveTab>('one');
 
   return (
-    <section className="documents-section">
+    <section className="documents-section" aria-labelledby="documents-title">
       <div className="documents__container container">
         <div className="documents__title-container">
-          <H level="2" variant="light">
+          <H level="2" variant="light" id="documents-title">
             Документы
           </H>
         </div>
-        <div className="button-container">
-          <Button
-            variant="secondary"
-            onClick={() => setIsActive('one')}
-            active={isActive === 'one'}
-          >
-            Сертификаты
-          </Button>
-          <Button
-            variant="secondary"
-            onClick={() => setIsActive('two')}
-            active={isActive === 'two'}
-          >
-            Благодарственные письма
-          </Button>
-        </div>
-        <ul className="documents-list">
-          {DOCUMENTS_ITEMS.map((item, index) => (
-            <li key={item.id} className="documents-list__item">
-              {item.title} <DocumentsIcons />
-            </li>
-          ))}
-        </ul>
+        <DocumentsTabs activeTab={activeTab} onTabChange={setActiveTab} />
+        <DocumentsList documents={DOCUMENTS_ITEMS[activeTab]} label={TAB_LABELS[activeTab]} />
       </div>
     </section>
   );

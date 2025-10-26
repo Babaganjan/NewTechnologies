@@ -14,7 +14,7 @@
     border-bottom: 1px solid var(--vector-light-gray);
     cursor: pointer;
 
-    &:is(.hovered, .active) {
+    &:is(.hovered, .project-menu--active) {
       background-color: var(--bg-black);
       color: var(--text-white);
 

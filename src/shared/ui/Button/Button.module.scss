@@ -32,8 +32,9 @@ body:has(.modal) {
 
 .secondary {
   font-family: var(--second-family);
-  @include typography(var(--text-black), 500, fluid(20px, 28px), 0.55, none);
+  @include typography(var(--text-black), 500, fluid(20px, 28px), 1.15, none);
   text-align: center;
+  background-color: var(--bg-light-gray);
   padding: 10px 34px;
   width: 100%;
   &:hover,
