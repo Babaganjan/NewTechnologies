@@ -11,7 +11,6 @@ import './Documents.scss';
 
 export const DocumentsBlock = () => {
   const [isActive, setIsActive] = useState('one');
-  const [];
 
   return (
     <section className="documents-section">
