@@ -1,6 +1,7 @@
 import { About } from './about/About';
 import { Advertising } from './advertising/Advertising';
 import { Contacts } from './contacts/Contacts';
+import { DocumentsBlock } from './documentsBlock/DocumentsBlock';
 import { FavoritesProject } from './favoritesProject/FavoritesProject';
 import { FeedbackMenu } from './feedbackMenu/FeedbackMenu';
 import { Footer } from './footer/Footer';
@@ -15,19 +16,20 @@ import { Result } from './result/Result';
 import { Services } from './services/Services';
 
 export {
-  Contacts,
-  Questions,
-  FeedbackMenu,
-  ProjectMenu,
-  ObjectLevel,
-  Products,
   About,
   Advertising,
+  Contacts,
+  DocumentsBlock,
   FavoritesProject,
+  FeedbackMenu,
   Footer,
   Header,
   Hero,
+  ObjectLevel,
+  Products,
+  ProductsPage,
+  ProjectMenu,
+  Questions,
   Result,
   Services,
-  ProductsPage,
 };
