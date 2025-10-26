@@ -73,21 +73,17 @@
     margin-top: 119px;
   }
 
-  body:has(.wrapper-modal) .nav__link::after {
-        content: "";
-        position: absolute;
-        top: -4px;
-        left: -5px;
-        bottom: -4px;
-        right: -5px;
-        background-color: var(--text-black);
-        z-index: -1;
-        opacity: 0;
-        transition: opacity .2s ease-in-out;
-    }
-  body:has(.wrapper-modal) .nav__link:hover::after {
-    opacity: 1;
-  }
+// body:has(.wrapper-modal) .nav__link.hovered::after {
+//   content: "";
+//   position: absolute;
+//   top: -4px;
+//   left: -5px;
+//   bottom: -4px;
+//   right: -5px;
+//   background-color: var(--text-black);
+//   z-index: -1;
+//   transition: opacity 0.2s ease-in-out;
+// }
 
   .header {
     &__container {
@@ -115,9 +111,9 @@
         align-items: center;
         gap: 4px;
         transition: color .2s ease-in-out;
-        &:hover {
+      }
+      &__link.hovered {
           color: var(--text-white);
-        }
       }
     }
     .hidden__burger--deckstop {
