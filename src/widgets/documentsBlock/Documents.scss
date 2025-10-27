@@ -17,6 +17,10 @@
   margin-top: 10px;
 }
 
+.document__title {
+  padding-left: 5px;
+}
+
 .documents-list {
   display: flex;
   flex-direction: column;
@@ -104,7 +108,6 @@
 
       span {
         grid-area: title;
-        justify-self: center;
       }
 
       .document__number {
@@ -116,6 +119,7 @@
 
       .document__image {
         grid-area: img;
+        display: block;
         position: absolute;
         justify-self: center;
         border: 1px solid var(--vector-light-gray);
@@ -132,6 +136,7 @@
 
       .document__size {
         grid-area: size;
+        display: block;
         font-family: var(--second-family);
         @include typography(var(--text-white), 500, 22px, 1.1, uppercase, -0.05em);
       }
