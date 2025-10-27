@@ -50,6 +50,11 @@
       @include typography(var(--text-black), 500, 22px, 1, uppercase, -0.05em);
     }
 
+    .document__size,
+    .document__image {
+      display: none;
+    }
+
     &:hover,
     &:focus,
     &:focus-visible {

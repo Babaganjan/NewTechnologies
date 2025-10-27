@@ -1,3 +1,4 @@
+import { AboutUs } from './AboutUs/AboutUs';
 import { About } from './about/About';
 import { Advertising } from './advertising/Advertising';
 import { Contacts } from './contacts/Contacts';
@@ -17,6 +18,7 @@ import { Services } from './services/Services';
 
 export {
   About,
+  AboutUs,
   Advertising,
   Contacts,
   DocumentsBlock,
