@@ -73,17 +73,17 @@
     margin-top: 119px;
   }
 
-// body:has(.wrapper-modal) .nav__link.hovered::after {
-//   content: "";
-//   position: absolute;
-//   top: -4px;
-//   left: -5px;
-//   bottom: -4px;
-//   right: -5px;
-//   background-color: var(--text-black);
-//   z-index: -1;
-//   transition: opacity 0.2s ease-in-out;
-// }
+  // body:has(.wrapper-modal) .nav__link.hovered::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: -4px;
+  //   left: -5px;
+  //   bottom: -4px;
+  //   right: -5px;
+  //   background-color: var(--text-black);
+  //   z-index: -1;
+  //   transition: opacity 0.2s ease-in-out;
+  // }
 
   .header {
     &__container {
@@ -110,10 +110,10 @@
         color: var(--header-text);
         align-items: center;
         gap: 4px;
-        transition: color .2s ease-in-out;
+        transition: color 0.2s ease-in-out;
       }
       &__link.hovered {
-          color: var(--text-white);
+        color: var(--text-white);
       }
     }
     .hidden__burger--deckstop {
@@ -127,15 +127,15 @@
       display: inline-block;
       width: 76px;
       &::after {
-        @include decoration(
-          $color: var(--text-gray),
-          $size: 8px,
-          $image: '/arrow-black.svg',
-          $pos: (
-            top: 12px,
-            right: 0,
-          )
-        );
+        // @include decoration(
+        //   $color: var(--text-gray),
+        //   $size: 8px,
+        //   $image: '/arrow-black.svg',
+        //   $pos: (
+        //     top: 12px,
+        //     right: 0,
+        //   )
+        // );
         content: '';
         transform: translateY(-50%);
         pointer-events: none;
