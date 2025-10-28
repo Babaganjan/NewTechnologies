@@ -1,77 +1,19 @@
-// // src/shared/ui/Modal/Modal.tsx
-// 'use client';
-// // import React, { useEffect, useState } from 'react';
-// import { createPortal } from 'react-dom';
-// import './modal.scss';
-
-// interface ModalProps {
-//   children?: React.ReactNode;
-//   onMouseEnter?: () => void;
-//   onMouseLeave?: () => void;
-//   className?: string;
-// }
-
-// export const Modal = ({ children, onMouseEnter, onMouseLeave, className = '' }: ModalProps) => {
-//   // const [isClient, setIsClient] = useState(false);
-
-//   // useEffect(() => {
-//   //   setIsClient(true);
-//   // }, []);
-
-//   // if (!isClient) return null;
-
-//   return createPortal(
-//     <div className={`modal-overlay ${className}`}>
-//       <div className="modal" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-//         <div className="modal-body modal__container">{children}</div>
-//       </div>
-//     </div>,
-//     document.body
-//   );
-// };
-// src/shared/ui/Modal/Modal.tsx
 'use client';
-import React, { useState } from 'react';
+import type { ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import './modal.scss';
 
 interface ModalProps {
-  children?: React.ReactNode;
+  children?: ReactNode;
   onMouseEnter?: () => void;
   onMouseLeave?: () => void;
   className?: string;
 }
 
 export const Modal = ({ children, onMouseEnter, onMouseLeave, className = '' }: ModalProps) => {
-  const [isClosing, setIsClosing] = useState(false);
-
-  const handleMouseLeave = () => {
-    // Запускаем анимацию закрытия
-    setIsClosing(true);
-
-    // Вызываем переданный onMouseLeave после небольшой задержки
-    if (onMouseLeave) {
-      setTimeout(() => {
-        onMouseLeave();
-      }, 400); // Время анимации закрытия
-    }
-  };
-
-  const handleMouseEnter = () => {
-    // Если начали закрываться, но курсор вернулся - отменяем закрытие
-    if (isClosing) {
-      setIsClosing(false);
-    }
-
-    // Вызываем переданный onMouseEnter
-    if (onMouseEnter) {
-      onMouseEnter();
-    }
-  };
-
   return createPortal(
-    <div className={`modal-overlay ${isClosing ? 'closing' : ''} ${className}`}>
-      <div className="modal" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+    <div className={`modal-overlay ${className}`}>
+      <div className="modal" onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
         <div className="modal-body modal__container">{children}</div>
       </div>
     </div>,

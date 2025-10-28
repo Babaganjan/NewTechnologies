@@ -9,11 +9,11 @@
   position: relative;
   min-height: 337px;
   z-index: 0;
-  
+
   .nav-modal--items {
-    gap: 60px; 
+    gap: 60px;
   }
-  
+
   .service-image {
     position: relative;
     width: 100%;
@@ -22,7 +22,6 @@
     opacity: 1;
     transition: opacity 0.2s ease-in-out;
   }
-
 }
 
 .nav-modal__list--title .selected {
@@ -38,7 +37,7 @@
 }
 
 body:has(.wrapper-modal) .nav__link.hovered::after {
-  content: "";
+  content: '';
   position: absolute;
   top: -4px;
   left: -5px;

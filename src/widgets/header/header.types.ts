@@ -1,20 +1,14 @@
+import type { ModalVariant, NavItem } from './navItemModal/nav-Item.types';
+
 export interface HeaderProps {
   theme?: 'light' | 'dark';
 }
-
-export type NavItem = Readonly<{
-  href: string;
-  title: string;
-  hasIcon: boolean;
-  hasModal: boolean;
-}>;
 
 export interface HeaderContentProps {
   navItems: NavItem[];
   theme: 'dark' | 'light';
   logoSrc: string;
-  onItemEnter?: (title: string) => void;
+  onItemEnter?: (title: ModalVariant) => void;
   onItemLeave?: () => void;
-  onCloseModal?: () => void;
   activeNavItem?: string | null;
 }

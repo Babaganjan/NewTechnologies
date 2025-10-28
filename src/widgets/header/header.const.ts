@@ -1,10 +1,15 @@
-import type { NavItem } from '@/shared/ui/types/Header.types';
+import type { ModalVariant, NavItem } from '@/widgets/header/navItemModal/nav-Item.types';
 
 export const CITIES = [
   { value: 'almaty', label: 'Алматы' },
   { value: 'karaganda', label: 'Караганда' },
   { value: 'shymkent', label: 'Шымкент' },
 ] as const;
+
+export const EXCLUDE_MAP: Record<ModalVariant, ModalVariant> = {
+  Сервис: 'Производство',
+  Производство: 'Сервис',
+} as const;
 
 export const HEADER_NAV_ITEMS: NavItem[] = [
   {
