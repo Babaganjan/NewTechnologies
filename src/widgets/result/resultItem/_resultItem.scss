@@ -27,10 +27,6 @@
         width: 80%;
       }
     }
-    &::before {
-      content: '';
-      // @include decoration(var(--vector-black), 24px);
-    }
     position: relative;
     background-color: var(--text-white);
     padding: 15px;
@@ -38,11 +34,6 @@
 
   .item {
     &__inner {
-      @include item-decor(
-        var(--vector-black),
-        $before-position: (top: -13px, left: -12px),
-        $after-position: (bottom: -13px, right: -12px)
-      );
       width: 100%;
       min-height: 100px;
       position: relative;
@@ -66,7 +57,8 @@
     background-color: var(--bg-deep-gray);
     gap: 2.063rem;
     padding: 0.938rem;
-    &::before {
+    &::before,
+    &::after {
       content: '';
       @include decoration(
         var(--vector-white),
@@ -79,18 +71,7 @@
       );
       transform: rotate(180deg);
     }
-    &::after {
-      content: '';
-      @include decoration(
-        var(--vector-white),
-        fluid(38px, 64px),
-        '/img/decoration-card.svg',
-        (
-          bottom: 0,
-          right: 0,
-        )
-      );
-    }
+
     .item__prev {
       width: 80%;
       margin-top: auto;

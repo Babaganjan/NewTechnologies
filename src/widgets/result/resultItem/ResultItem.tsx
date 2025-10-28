@@ -1,14 +1,12 @@
-import React from 'react';
-
 import { H } from '@/shared/ui';
-import type { ResultItem as ResultItemType } from '@/shared/ui/types/Result.types';
+import type { ResultItem as ResultItemType } from '@/widgets/result/Result.types';
 import './_resultItem.scss';
 
 interface ResultItemProps {
   item: ResultItemType;
 }
 
-export const ResultItem: React.FC<ResultItemProps> = ({ item }) => {
+export const ResultItem = ({ item }: ResultItemProps) => {
   const { type, number, title, description, variant = 'dark', className = '', layout = {} } = item;
 
   return (

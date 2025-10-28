@@ -1,4 +1,4 @@
-import type { ResultListProps } from '@/shared/ui/types/Result.types';
+import type { ResultListProps } from '@/widgets/result/Result.types';
 import { ResultItem } from '@/widgets/result/resultItem/ResultItem';
 import './_resultList.scss';
 
