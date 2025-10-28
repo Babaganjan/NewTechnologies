@@ -1,5 +1,5 @@
 import { H } from '@/shared/ui';
-import { ResultList } from '@/shared/ui/resultList/ResultList';
+import { ResultList } from '@/widgets/result/resultList/ResultList';
 import './_result.scss';
 
 import { resultData } from './result.const';

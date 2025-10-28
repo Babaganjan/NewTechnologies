@@ -1,9 +1,10 @@
 'use client';
 import { usePathname } from 'next/navigation';
 
-import { H, ProductItem } from '@/shared/ui';
+import { H } from '@/shared/ui';
 
 import './_products-block.scss';
+import { ProductItem } from './ProductItem/ProductItem';
 import { PRODUCTS_DATA } from './products.const';
 
 export const Products = () => {

@@ -1,5 +1,5 @@
-@use '../../shared/styles/functions' as *;
-@use '../../shared/styles/mixins' as *;
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
 
 .result {
   &.with-trapezoids {
@@ -23,7 +23,6 @@
   }
 }
 
-// deckstop
 @include respond-min(1024px) {
   .result {
     &.with-trapezoids {
@@ -32,10 +31,6 @@
     &__item {
       padding: 20px;
       position: relative;
-      &::before {
-        content: '';
-        // @include decoration(var(--vector-black), 40px);
-      }
       &:nth-child(1) {
         grid-column: 2 / 3;
         grid-row: 1 / 2;

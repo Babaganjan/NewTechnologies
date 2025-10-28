@@ -1,5 +1,5 @@
-@use '@/shared/styles/_mixins.scss' as *;
-@use '@/shared/styles/_functions.scss' as *;
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
 
 $contact-areas: phone, address, work-time, mail, social;
 $large-screen-bottom-padding: 190px;

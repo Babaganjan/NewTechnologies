@@ -3,9 +3,12 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import { Arrow } from '@/shared/icons';
-import { Button, H, ProjectListItem, ProjectNumberItem, ProjectServiceItem } from '@/shared/ui';
-
+import { Button, H } from '@/shared/ui';
 import './_project-menu.scss';
+
+import { ProjectListItem } from './ProjectListItem/ProjectListItem';
+import { ProjectNumberItem } from './ProjectNumberItem/ProjectNumberItem';
+import { ProjectServiceItem } from './ProjectServiceItem/ProjectServiceItem';
 import { PROJECT_MENU_DATA } from './projectMenu.const';
 import type { ProjectMenuItemProps } from './projectMenu.types';
 

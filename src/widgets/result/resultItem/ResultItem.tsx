@@ -1,9 +1,8 @@
-// ResultItem.tsx
 import React from 'react';
 
-import './_resultItem.scss';
 import { H } from '@/shared/ui';
 import type { ResultItem as ResultItemType } from '@/shared/ui/types/Result.types';
+import './_resultItem.scss';
 
 interface ResultItemProps {
   item: ResultItemType;

@@ -2,10 +2,11 @@
 import { useState } from 'react';
 
 import { Arrow } from '@/shared/icons';
-import { H, QuestionsCard } from '@/shared/ui';
+import { H } from '@/shared/ui';
 
 import './_questions-block.scss';
-import { QUESTIONS_DATA, ACTIVE_CARD_DATA } from './questions.const';
+import { ACTIVE_CARD_DATA, QUESTIONS_DATA } from './questions.const';
+import { QuestionsCard } from './questionsCard/QuestionsCard';
 
 export const Questions = () => {
   const [activeCard, setActiveCard] = useState<string | null>(null);

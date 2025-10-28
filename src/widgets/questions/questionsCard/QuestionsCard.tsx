@@ -1,8 +1,8 @@
 'use client';
 import { Arrow } from '@/shared/icons';
+import { H } from '@/shared/ui';
 import type { QuestionItem } from '@/widgets/questions/questions.const';
 
-import { H } from '../Heading/H';
 import './_questionsCard.scss';
 
 interface QuestionsCardProps {

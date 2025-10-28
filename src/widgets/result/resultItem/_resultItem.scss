@@ -2,7 +2,7 @@
 @use '@/shared/styles/mixins' as *;
 
 .result {
-	&__item:first-child {
+  &__item:first-child {
     min-height: 220px;
     background-color: var(--bg-deep-gray);
     .item__inner:first-child {
@@ -15,8 +15,8 @@
     }
   }
 
-	.item__prev {
-    @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none, -.84px);
+  .item__prev {
+    @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none, -0.84px);
     font-family: var(--second-family);
     width: 93%;
   }
@@ -43,7 +43,7 @@
         $before-position: (top: -13px, left: -12px),
         $after-position: (bottom: -13px, right: -12px)
       );
-			width: 100%;
+      width: 100%;
       min-height: 100px;
       position: relative;
       flex-direction: column;
@@ -56,11 +56,11 @@
     }
 
     &__number {
-			 @include typography(var(--text-black), 700, fluid(120px, 178px), 0.82, uppercase, -8.4px);
+      @include typography(var(--text-black), 700, fluid(120px, 178px), 0.82, uppercase, -8.4px);
     }
   }
 
-	&__item--fill {
+  &__item--fill {
     position: relative;
     flex-direction: column;
     background-color: var(--bg-deep-gray);
@@ -92,9 +92,9 @@
       );
     }
     .item__prev {
-    	width: 80%;
-    	margin-top: auto;
-			color: var(--text-light-gray)
-  	}
+      width: 80%;
+      margin-top: auto;
+      color: var(--text-light-gray);
+    }
   }
 }

@@ -1,5 +1,5 @@
-import { ResultItem } from '@/shared/ui/resultItem/ResultItem';
 import type { ResultListProps } from '@/shared/ui/types/Result.types';
+import { ResultItem } from '@/widgets/result/resultItem/ResultItem';
 import './_resultList.scss';
 
 export const ResultList = ({ items }: ResultListProps) => {

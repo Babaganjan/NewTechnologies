@@ -1,5 +1,5 @@
-@use '../../styles/functions' as *;
-@use '../../styles/mixins' as *;
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
 
 .products__item {
   padding: 15px 10px 10px 10px;
@@ -41,6 +41,6 @@
   }
 
   h5 {
-     color: var(--text-black);
+    color: var(--text-black);
   }
 }

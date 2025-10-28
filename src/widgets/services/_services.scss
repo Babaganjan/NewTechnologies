@@ -1,5 +1,5 @@
-@use '../../shared/styles/functions' as *;
-@use '../../shared/styles/mixins' as *;
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
 
 .services {
   &.with-trapezoids {
@@ -69,7 +69,6 @@
   }
 }
 
-
 // _services.scss
 .services {
   &__list {
@@ -79,7 +78,7 @@
 
   &__item {
     position: relative;
-    
+
     .item {
       &__inner {
         align-items: center;
@@ -101,10 +100,9 @@
         cursor: pointer;
       }
       &__btn--active {
-          background: var(--accent-color);
-          transform: rotate(90deg) rotateY(180deg);
+        background: var(--accent-color);
+        transform: rotate(90deg) rotateY(180deg);
       }
     }
   }
 }
-

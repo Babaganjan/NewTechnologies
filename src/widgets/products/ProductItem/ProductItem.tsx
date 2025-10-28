@@ -20,7 +20,9 @@ export const ProductItem = ({ itemData }: { itemData: IProductItem }) => {
         </div>
         <div className="products__title">
           <span>[{itemData.amount}]</span>
-          <H level={'5'} variant='dark'>{itemData.title}</H>
+          <H level={'5'} variant="dark">
+            {itemData.title}
+          </H>
         </div>
       </Link>
     </li>
