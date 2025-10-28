@@ -1,9 +1,9 @@
 import type { Metadata } from 'next';
-import { Inter, Oswald, Roboto_Condensed } from 'next/font/google';
-
-import { Footer, Header } from '@/widgets';
+import { Oswald, Roboto_Condensed, Inter } from 'next/font/google';
 
 import './globals.css';
+import { siteConfig } from '@/shared/config/site.config';
+import { Footer, Header } from '@/widgets';
 
 const oswald = Oswald({
   subsets: ['latin', 'cyrillic'],
@@ -27,38 +27,8 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: 'Безопасность нового поколения — NTOUCH',
-  description:
-    'Интегрированные решения по видеонаблюдению, охранно-пожарной сигнализации, пожаротушению, контролю доступа и системам оповещения. Централизованная платформа для контроля и управления 24/7.',
-  keywords: [
-    'видеонаблюдение',
-    'охранно-пожарная сигнализация',
-    'пожаротушение',
-    'контроль доступа',
-    'системы оповещения',
-    'безопасность',
-    'NTOUCH',
-  ],
-  authors: [{ name: 'ТОО «Новые технологии – Тараз»' }],
-  openGraph: {
-    title: 'Безопасность нового поколения — NTOUCH',
-    description:
-      'Интегрированные решения для контроля и безопасности: видеонаблюдение, ОПС, СКД, пожаротушение и оповещение. Поддержка 24/7.',
-    url: 'https://example.com/',
-    siteName: 'NTOUCH',
-    type: 'website',
-    images: [
-      {
-        url: 'https://example.com/images/og/home.jpg',
-        width: 1200,
-        height: 630,
-        alt: 'Интегрированные решения безопасности',
-      },
-    ],
-  },
-  twitter: { card: 'summary_large_image', title: 'Безопасность нового поколения — NTOUCH' },
-  robots: { index: true, follow: true },
-  icons: { icon: '/favicon.ico' },
+  title: siteConfig.title,
+  description: siteConfig.description,
 };
 
 export default function RootLayout({
