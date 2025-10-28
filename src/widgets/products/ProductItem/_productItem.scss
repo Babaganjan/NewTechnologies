@@ -12,9 +12,11 @@
   align-items: flex-start;
   @include item-decor();
 
-  &:last-child:nth-child(odd) {
-    grid-column: 1 / -1;
-    justify-self: center;
+  @include respond-min(1023px, max) {
+    &:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      justify-self: center;
+    }
   }
 }
 

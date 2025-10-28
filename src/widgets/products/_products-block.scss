@@ -57,9 +57,10 @@
     &__item {
       width: auto;
       min-height: 455px;
+
       &:last-child:nth-child(odd) {
-        grid-column: unset;
-        justify-self: unset;
+        grid-column: auto;
+        justify-self: start;
       }
     }
   }
