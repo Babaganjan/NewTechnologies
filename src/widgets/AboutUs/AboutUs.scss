@@ -5,6 +5,10 @@
   padding-top: 100px;
   padding-bottom: 83px;
   background-color: var(--bg-black);
+
+  & {
+    @include trapezoid-decor(21px, 12px, var(--bg-black), bottom);
+  }
 }
 
 .aboutUs__wrapper-container {
@@ -77,6 +81,10 @@
 }
 
 @include respond-min(1024px) {
+  .aboutUs {
+    @include trapezoid-decor(56px, 33px, var(--vector-black), bottom, 1030px, -32px);
+  }
+
   .aboutUs__wrapper-container {
     max-width: 905px;
     margin: 0 auto;
