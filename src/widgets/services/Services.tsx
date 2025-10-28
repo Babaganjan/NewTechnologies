@@ -35,7 +35,7 @@ export const Services = () => {
                   {item.title}
                 </H>
                 <button
-                  className={`item__btn ${activeService === item.id ? 'active' : ''}`}
+                  className={`item__btn ${activeService === item.id ? 'item__btn--active' : ''}`}
                   onClick={() => toggleSlider(item.id)}
                   aria-label={`Показать слайдер для ${item.title}`}
                 >
