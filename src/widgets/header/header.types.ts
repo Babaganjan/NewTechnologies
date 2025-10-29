@@ -6,9 +6,10 @@ export interface HeaderProps {
 
 export interface HeaderContentProps {
   navItems: NavItem[];
-  theme: 'dark' | 'light';
-  logoSrc: string;
+  theme?: 'light' | 'dark';
+  logoSrc?: string;
   onItemEnter?: (title: ModalVariant) => void;
   onItemLeave?: () => void;
+  onMobilModal?: () => void;
   activeNavItem?: string | null;
 }

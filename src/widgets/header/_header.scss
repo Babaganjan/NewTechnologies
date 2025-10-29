@@ -2,13 +2,13 @@
 @use '@/shared/styles/mixins' as *;
 
 // CSS переменные для тем
-.header[data-theme='dark'] {
+[data-theme='dark'] {
   --header-bg: var(--bg-black);
   --header-text: var(--text-white);
   --header-line: var(--vector-almost-black);
 }
 
-.header[data-theme='light'] {
+[data-theme='light'] {
   --header-bg: var(--bg-white);
   --header-text: var(--text-black);
   --header-line: var(--vector-light-gray);
@@ -36,6 +36,21 @@
   position: relative;
   justify-content: center;
 }
+
+.nav {
+      &__list {
+        flex-direction: column;
+        gap: 30px;
+      }
+      &__link {
+        position: relative;
+        color: var(--header-text);
+        align-items: center;
+        gap: 4px;
+        transition: color 0.2s ease-in-out;
+      }
+    }
+
 
 .header__burger {
   position: absolute;
@@ -90,6 +105,7 @@
     }
     .nav {
       &__list {
+        flex-direction: unset;
         gap: 30px;
       }
       &__link {
