@@ -11,5 +11,6 @@ export interface HeaderContentProps {
   onItemEnter?: (title: ModalVariant) => void;
   onItemLeave?: () => void;
   onMobilModal?: () => void;
+  onModalClose?: () => void;
   activeNavItem?: string | null;
 }
