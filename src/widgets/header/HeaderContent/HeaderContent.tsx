@@ -15,6 +15,7 @@ export const HeaderContent = ({
   logoSrc,
   onItemEnter,
   onItemLeave,
+  onMobilModal,
   activeNavItem,
 }: HeaderContentProps) => {
   return (
@@ -53,7 +54,7 @@ export const HeaderContent = ({
           </nav>
           <Link href="/" className="header__link" onClick={onItemLeave}>
             <Image
-              src={logoSrc}
+              src={logoSrc as string}
               width={145}
               height={79}
               alt="Логотип"
@@ -75,7 +76,7 @@ export const HeaderContent = ({
           </Link>
         </div>
         <div className="header__burger flex hidden__burger--deckstop">
-          <button className="header__btn"></button>
+          <button className="header__btn" onClick={onMobilModal}></button>
         </div>
       </div>
     </header>
