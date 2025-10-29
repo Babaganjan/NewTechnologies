@@ -1,0 +1,58 @@
+// src/shared/ui/Modal/serviceModal/ServiceModal.scss
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.modal-mobil__wrapper {
+  @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--vector-light-gray));
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  position: relative;
+//   min-height: 337px;
+  z-index: 0;
+
+  .modal-mobil--items {
+    gap: 60px;
+  }
+
+  .service-image {
+    position: relative;
+    width: 100%;
+    height: 173px;
+    max-width: 200px;
+    opacity: 1;
+    transition: opacity 0.2s ease-in-out;
+  }
+}
+
+.modal-mobil__list--title .selected {
+  background-color: var(--text-black);
+  color: var(--text-white);
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-mobil__list--items .selected {
+  background-color: var(--text-black);
+  color: var(--text-white);
+  transition: all 0.2s ease-in-out;
+}
+
+.modal-mobil__btn-list {
+    @include typography(var(--header-text), 500, 18px, 1.15);
+}
+
+.modal-mobil__list--items {
+    @include typography(var(--header-text), 500, 14px);
+    font-family: var(--font-family);
+}
+
+body:has(.wrapper-modal) .modal-mobil__link.hovered::after {
+  content: '';
+  position: absolute;
+  top: -4px;
+  left: -5px;
+  bottom: -4px;
+  right: -5px;
+  background-color: var(--text-black);
+  z-index: -1;
+  transition: opacity 0.2s ease-in-out;
+}

@@ -14,14 +14,40 @@
   --header-line: var(--vector-light-gray);
 }
 // _header.scss
-
-.header {
-  position: relative;
-}
-
 .hidden,
 .hidden__contacts {
   display: none;
+}
+
+.header-mobil {
+  // padding-top: 74px;
+  position: relative;
+  
+  &__container {
+    padding-top: 74px;
+    @include line-decor(2% 50% 98%, var(--header-line));
+  }
+
+  &__btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+  }
+  .nav {
+    &__list {
+      flex-direction: column;
+      gap: 4px;
+    }
+    &__link {
+      @include typography(var(--header-text), 500, 31px);
+      position: relative;
+      color: var(--header-text);
+      align-items: center;
+      gap: 4px;
+      transition: color 0.2s ease-in-out;
+    }
+  }
 }
 
 .header {
@@ -29,60 +55,48 @@
   background-color: var(--header-bg);
   z-index: 0;
   margin-bottom: -1px;
-}
 
-.header__container {
+  &__container {
   @include line-decor(2% 50% 98%);
   position: relative;
   justify-content: center;
-}
+  }
 
-.nav {
-      &__list {
-        flex-direction: column;
-        gap: 30px;
-      }
-      &__link {
-        position: relative;
-        color: var(--header-text);
-        align-items: center;
-        gap: 4px;
-        transition: color 0.2s ease-in-out;
-      }
-    }
-
-
-.header__burger {
+  &__burger {
   position: absolute;
   top: 0.938rem;
   right: 0.75rem;
-}
+  }
 
-.header__btn {
+  &__btn {
   padding: 0.625rem;
   width: 1.75rem;
   height: 0.5rem;
   position: relative;
 
-  &::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background: var(--bg-white);
-    box-shadow: 0 8px 0 var(--bg-white);
-    transition: all 0.3s ease;
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: var(--bg-white);
+      box-shadow: 0 8px 0 var(--bg-white);
+      transition: all 0.3s ease;
+    }
+
+    &.active::before {
+      top: 8px;
+      transform: rotate(45deg);
+      box-shadow: 0 0 0 transparent;
+    }
   }
 
-  &.active::before {
-    top: 8px;
-    transform: rotate(45deg);
-    box-shadow: 0 0 0 transparent;
-  }
 }
 
+
+// dekstop
 @include respond-min(1024px) {
   body:has(.wrapper-modal) {
     margin-top: 119px;

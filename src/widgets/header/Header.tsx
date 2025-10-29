@@ -31,6 +31,14 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
     setActiveNavItem(null);
   };
 
+  const handleMobilNavItemEnter = (title: ModalVariant) => {
+    setActiveNavItem(title);
+  };
+
+  const handleMobilNavItemLeave = () => {
+    setActiveNavItem(null);
+  };
+
   const currentTheme = isModalOpen || isMobilModalOpen ? 'light' : theme;
   const logoSrc = currentTheme === 'dark' ? '/img/logo.svg' : '/img/logoDark.svg';
   const modalData = activeNavItem ? DATA_MODAL[activeNavItem] : null;
@@ -71,9 +79,10 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
             navItems={HEADER_NAV_ITEMS}
             theme={currentTheme}
             activeNavItem={activeNavItem}
-            onItemLeave={handleNavItemLeave}
+            onItemEnter={handleMobilNavItemEnter}
+            onItemLeave={handleMobilNavItemLeave}
+            onModalClose={handleNavItemLeave}
           />
-          <NavItemModal data={modalData || []} />
         </Modal>
       )}
     </>
