@@ -10,7 +10,7 @@ import { ProjectListItem } from './ProjectListItem/ProjectListItem';
 import { ProjectNumberItem } from './ProjectNumberItem/ProjectNumberItem';
 import { ProjectServiceItem } from './ProjectServiceItem/ProjectServiceItem';
 import { getProjectsByCategory } from './helpers/getProjectsByCategory';
-import { INITIAL_ITEMS_COUNT, PROJECT_MENU_DATA } from './projectMenu.const';
+import { INITIAL_ITEMS_COUNT } from './projectMenu.const';
 import type { ProjectCategory, ProjectMenuItemProps } from './projectMenu.types';
 
 export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
@@ -36,7 +36,7 @@ export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
 
   const handleLoadMore = () => {
     setIsExpanding(true);
-    setVisibleCount(PROJECT_MENU_DATA.length);
+    setVisibleCount(projectData.length);
   };
 
   const createProjectProps = (index: number): Omit<ProjectMenuItemProps, 'item'> => ({
