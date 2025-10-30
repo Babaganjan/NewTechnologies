@@ -3,11 +3,7 @@
 @use '@/shared/styles/mixins' as *;
 
 .modal-mobil__wrapper {
-  @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--vector-light-gray));
-  display: grid;
-  grid-template-columns: 1fr 3fr;
   position: relative;
-//   min-height: 337px;
   z-index: 0;
 
   .modal-mobil--items {
@@ -24,25 +20,53 @@
   }
 }
 
-.modal-mobil__list--title .selected {
+.modal-mobil__list--title .modal-mobil__btn--selected {
   background-color: var(--text-black);
   color: var(--text-white);
   transition: all 0.2s ease-in-out;
 }
 
-.modal-mobil__list--items .selected {
+.modal-mobil__list--items .modal-mobil__link--selected {
   background-color: var(--text-black);
   color: var(--text-white);
   transition: all 0.2s ease-in-out;
 }
 
 .modal-mobil__btn-list {
-    @include typography(var(--header-text), 500, 18px, 1.15);
+  @include typography(var(--header-text), 500, 18px, 1.15);
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 4px 2px;
+  svg {
+    transform: rotate(90deg);
+    transition: transform 0.3s ease;
+  }
+
+  &.modal-mobil__btn--selected svg {
+    transform: rotate(90deg) rotateY(180deg);
+  }
 }
 
 .modal-mobil__list--items {
-    @include typography(var(--header-text), 500, 14px);
-    font-family: var(--font-family);
+  @include typography(var(--header-text), 500, 14px);
+  font-family: var(--font-family);
+  flex-direction: column;
+  width: 100%;
+  gap: 4px;
+}
+
+.modal-mobil--items {
+  padding-top: 5px;
+}
+
+.modal-mobil-link-items {
+  @include typography(var(--text-gray), 500, 14px);
+  display: inline-block;
+  width: 100%;
+  font-family: var(--font-family);
+  padding: 2px 1px;
 }
 
 body:has(.wrapper-modal) .modal-mobil__link.hovered::after {
