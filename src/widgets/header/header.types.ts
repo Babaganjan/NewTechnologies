@@ -4,9 +4,8 @@ export interface HeaderProps {
   theme?: 'light' | 'dark';
 }
 
-export interface HeaderContentProps {
+export interface HeaderContentProps extends HeaderProps {
   navItems: NavItem[];
-  theme?: 'light' | 'dark';
   logoSrc?: string;
   onItemEnter?: (title: ModalVariant) => void;
   onItemLeave?: () => void;

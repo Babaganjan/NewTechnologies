@@ -26,6 +26,7 @@
   &__container {
     padding-top: 74px;
     @include line-decor(2% 50% 98%, var(--header-line));
+    height: 100vh;
   }
 
   &__btn {
