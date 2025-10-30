@@ -4,8 +4,8 @@ import { useState } from 'react';
 import { Arrow } from '@/shared/icons';
 import { H } from '@/shared/ui';
 
-import './_services.scss';
 import { SliderServices } from './../../features/slider/SliderServices';
+import './_services.scss';
 import { SERVICES_ITEMS } from './services.const';
 
 export const Services = () => {
