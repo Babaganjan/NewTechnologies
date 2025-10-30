@@ -9,16 +9,16 @@ import './_project-menu.scss';
 import { ProjectListItem } from './ProjectListItem/ProjectListItem';
 import { ProjectNumberItem } from './ProjectNumberItem/ProjectNumberItem';
 import { ProjectServiceItem } from './ProjectServiceItem/ProjectServiceItem';
-import { PROJECT_MENU_DATA } from './projectMenu.const';
-import type { ProjectMenuItemProps } from './projectMenu.types';
+import { getProjectsByCategory } from './helpers/getProjectsByCategory';
+import { INITIAL_ITEMS_COUNT, PROJECT_MENU_DATA } from './projectMenu.const';
+import type { ProjectCategory, ProjectMenuItemProps } from './projectMenu.types';
 
-const INITIAL_ITEMS_COUNT = 8;
-
-export const ProjectMenu = () => {
+export const ProjectMenu = ({ type = 'all' }: { type: ProjectCategory }) => {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
   const [activeRow, setActiveRow] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
   const [isExpanding, setIsExpanding] = useState(false);
+  const projectData = getProjectsByCategory(type);
 
   const onMouseEnter = (index: number) => {
     if (activeRow === null) {
@@ -48,8 +48,8 @@ export const ProjectMenu = () => {
     onActiveRow: handleActiveRow,
   });
 
-  const visibleProjects = PROJECT_MENU_DATA.slice(0, visibleCount);
-  const hasMore = visibleCount < PROJECT_MENU_DATA.length;
+  const visibleProjects = projectData.slice(0, visibleCount);
+  const hasMore = visibleCount < projectData.length;
 
   return (
     <section className="project-menu" aria-labelledby="project-menu-title">

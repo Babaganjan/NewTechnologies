@@ -3,6 +3,7 @@ export interface QuestionItem {
   content: string;
   description: string;
   gridIndex: number;
+  category: string;
 }
 
 export const QUESTIONS_DATA: QuestionItem[] = [
@@ -12,6 +13,7 @@ export const QUESTIONS_DATA: QuestionItem[] = [
     description:
       'Мы предоставляем решения для объектов любого масштаба: офисные центры, торговые комплексы, промышленные предприятия, склады, школы, государственные учреждения, медицинские центры и стратегические объекты.',
     gridIndex: 1,
+    category: 'default',
   },
   {
     id: 'question-2',
@@ -19,6 +21,7 @@ export const QUESTIONS_DATA: QuestionItem[] = [
     description:
       'Да. Наши решения поддерживают интеграцию всех систем безопасности: видеонаблюдение, охранно-пожарная сигнализация, системы контроля доступа, оповещение и пожаротушение. Это позволяет создать единую платформу управления безопасностью.',
     gridIndex: 2,
+    category: 'default',
   },
   {
     id: 'question-3',
@@ -26,6 +29,7 @@ export const QUESTIONS_DATA: QuestionItem[] = [
     description:
       'Да. Все наши решения оснащены резервными источниками питания, что обеспечивает бесперебойную работу даже при аварийных отключениях электроэнергии.',
     gridIndex: 3,
+    category: 'default',
   },
   {
     id: 'question-4',
@@ -33,6 +37,7 @@ export const QUESTIONS_DATA: QuestionItem[] = [
     description:
       'Мы проводим обследование объекта, разрабатываем индивидуальный проект, подбираем оборудование и выполняем монтаж. Все решения соответствуют государственным стандартам безопасности и согласовываются при необходимости с надзорными органами.',
     gridIndex: 4,
+    category: 'default',
   },
   {
     id: 'question-5',
@@ -40,6 +45,7 @@ export const QUESTIONS_DATA: QuestionItem[] = [
     description:
       'Да. Мы обеспечиваем полный цикл сервиса: регулярные профилактические проверки, обновление программного обеспечения, оперативная замена оборудования при необходимости.',
     gridIndex: 5,
+    category: 'default',
   },
   {
     id: 'question-6',
@@ -47,6 +53,7 @@ export const QUESTIONS_DATA: QuestionItem[] = [
     description:
       'У нас есть собственные склады, поэтому необходимое оборудование всегда в наличии. Это позволяет нам оперативно реализовывать проекты любого масштаба без задержек.',
     gridIndex: 6,
+    category: 'default',
   },
   {
     id: 'question-7',
@@ -54,6 +61,7 @@ export const QUESTIONS_DATA: QuestionItem[] = [
     description:
       'Да. Мы успешно реализуем проекты для госструктур, школ, больниц, административных зданий и стратегических объектов. Наше оборудование сертифицировано и соответствует всем требованиям СТ-KZ.',
     gridIndex: 7,
+    category: 'default',
   },
   {
     id: 'question-8',
@@ -61,8 +69,349 @@ export const QUESTIONS_DATA: QuestionItem[] = [
     description:
       'Сроки зависят от сложности и масштаба проекта. Для каждого объекта мы разрабатываем индивидуальный план, который обсуждается и согласуется с заказчиком заранее.',
     gridIndex: 8,
+    category: 'default',
   },
 ] as const;
+
+// Видеонаблюдение FAQ
+export const VIDEO_SURVEILLANCE_FAQ: QuestionItem[] = [
+  {
+    id: 'video-question-1',
+    content: 'Сколько камер нужно для моего объекта?',
+    description:
+      'Это зависит от площади помещения, количества зон контроля и задач. Мы бесплатно рассчитаем оптимальное количество.',
+    gridIndex: 1,
+    category: 'video-surveillance',
+  },
+  {
+    id: 'video-question-2',
+    content: 'Можно ли подключить удалённый просмотр через телефон?',
+    description:
+      'Да! Мы настраиваем приложение, и вы сможете смотреть камеры и управлять ими с любого устройства.',
+    gridIndex: 2,
+    category: 'video-surveillance',
+  },
+  {
+    id: 'video-question-3',
+    content: 'Сколько хранится видеозапись?',
+    description:
+      'В зависимости от объёма диска и настроек системы — от 30 до 90 дней. Возможна интеграция с облаком для длительного хранения.',
+    gridIndex: 3,
+    category: 'video-surveillance',
+  },
+  {
+    id: 'video-question-4',
+    content: 'Предоставляете ли вы гарантию?',
+    description: 'Да, на камеры HIKVISION- 3 года, на остальное оборудование- 12 месяцев.',
+    gridIndex: 4,
+    category: 'video-surveillance',
+  },
+  {
+    id: 'video-question-5',
+    content: 'Работает ли видеонаблюдение ночью?',
+    description:
+      'Конечно. Мы используем камеры с инфракрасной подсветкой, обеспечивающей чёткую картинку даже в темноте.',
+    gridIndex: 5,
+    category: 'video-surveillance',
+  },
+  {
+    id: 'video-question-6',
+    content: 'Нужно ли вешать табличку "Ведётся видеонаблюдение"?',
+    description: 'Да, если камеры установлены в местах общего пользования — это требование закона.',
+    gridIndex: 6,
+    category: 'video-surveillance',
+  },
+  {
+    id: 'video-question-7',
+    content: 'Защищена ли камера от дождя, снега, ветра и пыли?',
+    description:
+      'Да, наши камеры соответствуют стандарту IP65. Это означает полную защиту от пыли и защиту от струй воды низкого давления с любого направления. Такие камеры отлично подходят для уличной установки и могут работать при дожде, снеге и ветре, а также использоваться на промышленных объектах, стройплощадках и в помещениях с повышенной влажностью.',
+    gridIndex: 7,
+    category: 'video-surveillance',
+  },
+  {
+    id: 'video-question-8',
+    content: 'Что если камеру захотят повредить или сломать?',
+    description:
+      'Мы предлагаем антивандальные видеокамеры (VandalProof), оснащённые прочным корпусом из поликарбоната, выдерживающим удары до 650 кг/с, защитным металлическим кожухом с усиленным основанием и ударопрочной линзой, защищающей оптику. Такие камеры отлично подходят для улицы, парковок, торговых центров, складов и других мест, где есть риск умышленного повреждения.',
+    gridIndex: 8,
+    category: 'video-surveillance',
+  },
+];
+
+// Охранно-пожарная сигнализация FAQ
+export const FIRE_ALARM_FAQ: QuestionItem[] = [
+  {
+    id: 'fire-question-1',
+    content: 'Какие объекты вы обслуживаете — квартиры, дома, офисы, склады?',
+    description: 'none',
+    gridIndex: 1,
+    category: 'fire-alarm',
+  },
+  {
+    id: 'fire-question-2',
+    content: 'Как работает охранно-пожарная сигнализация?',
+    description:
+      'Система использует датчики дыма, температуры, движения и открытия дверей. При срабатывании датчика сигнал поступает на пульт охраны или телефон клиента.',
+    gridIndex: 2,
+    category: 'fire-alarm',
+  },
+  {
+    id: 'fire-question-3',
+    content: 'Подходит ли система для больших объектов?',
+    description:
+      'Да. Мы проектируем решения для офисов, торговых центров, школ, складов, промышленных предприятий, а также государственных организаций — больниц, образовательных учреждений, административных зданий и других объектов с повышенными требованиями к безопасности.',
+    gridIndex: 3,
+    category: 'fire-alarm',
+  },
+  {
+    id: 'fire-question-4',
+    content: 'Можно ли подключить ОПС к телефону или управлять через приложение?',
+    description:
+      'Да, мы настраиваем удалённый доступ. Вы будете получать уведомления о тревогах в режиме реального времени.',
+    gridIndex: 4,
+    category: 'fire-alarm',
+  },
+  {
+    id: 'fire-question-5',
+    content: 'Как часто нужно обслуживать систему?',
+    description:
+      'Рекомендуем профилактическое обслуживание не реже одного раза в месяц. Это гарантирует стабильную работу датчиков и панелей.',
+    gridIndex: 5,
+    category: 'fire-alarm',
+  },
+  {
+    id: 'fire-question-6',
+    content: 'Сертифицировано ли оборудование?',
+    description:
+      'Да, мы используем только сертифицированные датчики и панели, соответствующие нормам безопасности Республики Казахстан.',
+    gridIndex: 6,
+    category: 'fire-alarm',
+  },
+
+  {
+    id: 'fire-question-7',
+    content: 'Сколько времени занимает установка системы безопасности?',
+    description: 'none',
+    gridIndex: 7,
+    category: 'fire-alarm',
+  },
+  {
+    id: 'fire-question-8',
+    content: 'Что произойдет, если сработает пожарная тревога?',
+    description:
+      'Система автоматически отправит сигнал на пульт охраны, а также уведомит вас и сотрудников через мобильное приложение или SMS.',
+    gridIndex: 8,
+    category: 'fire-alarm',
+  },
+];
+
+// Системы контроля доступа FAQ
+export const ACCESS_CONTROL_FAQ: QuestionItem[] = [
+  {
+    id: 'access-question-1',
+    content: 'Какие способы идентификации можно использовать?',
+    description:
+      'Мы устанавливаем СКД с поддержкой биометрии, карт доступа, мобильных ключей, PIN-кодов и их комбинаций.',
+    gridIndex: 1,
+    category: 'access-control',
+  },
+  {
+    id: 'access-question-2',
+    content: 'Можно ли интегрировать систему с видеонаблюдением и сигнализацией?',
+    description:
+      'Да! СКД можно связать с камерами, охранно-пожарной сигнализацией и системами оповещения для повышения уровня безопасности.',
+    gridIndex: 2,
+    category: 'access-control',
+  },
+  {
+    id: 'access-question-3',
+    content: 'Сколько сотрудников можно подключить к системе?',
+    description:
+      'Количество пользователей зависит от выбранного оборудования. Для малых офисов, крупных предприятий и государственных организаций мы подбираем индивидуальные решения, которые могут поддерживать до 50 000 пользователей.',
+    gridIndex: 3,
+    category: 'access-control',
+  },
+  {
+    id: 'access-question-4',
+    content: 'Можно ли вести учёт рабочего времени через СКД?',
+    description:
+      'Да, система фиксирует все события входа и выхода, а данные можно экспортировать в отчёты для HR и бухгалтерии.',
+    gridIndex: 4,
+    category: 'access-control',
+  },
+  {
+    id: 'access-question-5',
+    content: 'Как защищены турникеты и считыватели от вандализма?',
+    description:
+      'Мы используем противоударные корпуса и надёжные замки, а также подбираем оптимальные места установки для защиты оборудования.',
+    gridIndex: 5,
+    category: 'access-control',
+  },
+  {
+    id: 'access-question-6',
+    content: 'Подходит ли система для нескольких зданий или филиалов?',
+    description:
+      'Да, мы устанавливаем сетевые СКД, которые позволяют управлять доступом для всех объектов через единый интерфейс.',
+    gridIndex: 6,
+    category: 'access-control',
+  },
+  {
+    id: 'access-question-7',
+    content: 'Сколько времени занимает установка скд?',
+    description: 'none',
+    gridIndex: 7,
+    category: 'access-control',
+  },
+  {
+    id: 'access-question-8',
+    content: 'Используете ли вы сертифицированное оборудование?',
+    description: 'none',
+    gridIndex: 8,
+    category: 'access-control',
+  },
+];
+
+// Системы оповещения FAQ
+export const NOTIFICATION_SYSTEM_FAQ: QuestionItem[] = [
+  {
+    id: 'notification-question-1',
+    content: 'В каких зданиях установка системы оповещения обязательна?',
+    description:
+      'Согласно нормам РК, система оповещения должна быть установлена на объектах с массовым пребыванием людей: офисы, школы, больницы, промышленные предприятия, ТЦ, вокзалы, аэропорты и административные учреждения.',
+    gridIndex: 1,
+    category: 'notification-system',
+  },
+  {
+    id: 'notification-question-2',
+    content:
+      'Можно ли интегрировать систему оповещения с пожарной сигнализацией и видеонаблюдением?',
+    description:
+      'Да. Мы настраиваем комплексные решения, которые автоматически передают сигнал тревоги на все подключённые системы.',
+    gridIndex: 2,
+    category: 'notification-system',
+  },
+  {
+    id: 'notification-question-3',
+    content: 'Что входит в обслуживание системы оповещения?',
+    description:
+      'Регулярная проверка исправности оборудования, чистка системных блоков, тестирование громкости, ремонт и замена элементов при необходимости.',
+    gridIndex: 3,
+    category: 'notification-system',
+  },
+  {
+    id: 'notification-question-4',
+    content: 'Как понять, что система работает корректно?',
+    description:
+      'Мы проводим тестовые запуски и демонстрируем работу системы заказчику. Дополнительно можно настроить автоматические проверки.',
+    gridIndex: 4,
+    category: 'notification-system',
+  },
+  {
+    id: 'notification-question-5',
+    content: 'Подходит ли система для многоэтажных зданий?',
+    description:
+      'Да. Мы устанавливаем решения, которые обеспечивают одинаковую громкость и чёткость звука на всех этажах.',
+    gridIndex: 5,
+    category: 'notification-system',
+  },
+  {
+    id: 'notification-question-6',
+    content: 'Что будет, если система выйдет из строя?',
+    description:
+      'Наша компания предоставляет гарантийное и постгарантийное обслуживание и оперативно выезжает для ремонта.',
+    gridIndex: 6,
+    category: 'notification-system',
+  },
+  {
+    id: 'notification-question-7',
+    content: 'Сколько времени занимает установка системы оповещения?',
+    description: 'none',
+    gridIndex: 7,
+    category: 'notification-system',
+  },
+  {
+    id: 'notification-question-8',
+    content: 'Используете ли вы сертифицированное оборудование?',
+    description: 'none',
+    gridIndex: 8,
+    category: 'notification-system',
+  },
+];
+
+// Системы пожаротушения FAQ
+export const FIRE_SUPPRESSION_FAQ: QuestionItem[] = [
+  {
+    id: 'suppression-question-1',
+    content: 'Как выбрать подходящую систему пожаротушения?',
+    description:
+      'Наши специалисты проводят аудит объекта, оценивают уровень пожарной опасности и подбирают оптимальное решение индивидуально.',
+    gridIndex: 1,
+    category: 'fire-suppression',
+  },
+  {
+    id: 'suppression-question-2',
+    content: 'Можно ли интегрировать систему пожаротушения с другими системами безопасности?',
+    description:
+      'Да. Мы настраиваем комплексные решения, объединяя пожаротушение с системами оповещения, видеонаблюдения, контроля доступа и ОПС.',
+    gridIndex: 2,
+    category: 'fire-suppression',
+  },
+  {
+    id: 'suppression-question-3',
+    content: 'Как часто нужно обслуживать систему пожаротушения?',
+    description:
+      'Профилактическое обслуживание рекомендуется не реже одного раза в год. Мы проверяем датчики, клапаны, насосы и проводим тестовые пуски.',
+    gridIndex: 3,
+    category: 'fire-suppression',
+  },
+  {
+    id: 'suppression-question-4',
+    content: 'Используете ли вы сертифицированное оборудование?',
+    description:
+      'Да, мы работаем только с ведущими производителями и используем оборудование, сертифицированное по стандартам РК.',
+    gridIndex: 4,
+    category: 'fire-suppression',
+  },
+  {
+    id: 'suppression-question-5',
+    content: 'Работает ли система без электропитания?',
+    description:
+      'Да, современные установки имеют резервные источники питания, которые обеспечивают работу системы даже при отключении электричества.',
+    gridIndex: 5,
+    category: 'fire-suppression',
+  },
+  {
+    id: 'suppression-question-6',
+    content: 'Что будет, если система выйдет из строя?',
+    description: 'none',
+    gridIndex: 6,
+    category: 'fire-suppression',
+  },
+  {
+    id: 'suppression-question-7',
+    content: 'Сколько времени занимает установка системы пожаротушения?',
+    description: 'none',
+    gridIndex: 7,
+    category: 'fire-suppression',
+  },
+  {
+    id: 'suppression-question-8',
+    content: 'Используете ли вы сертифицированное оборудование?',
+    description: 'none',
+    gridIndex: 8,
+    category: 'fire-suppression',
+  },
+];
+
+export const ALL_FAQ: QuestionItem[] = [
+  ...QUESTIONS_DATA,
+  ...VIDEO_SURVEILLANCE_FAQ,
+  ...FIRE_ALARM_FAQ,
+  ...ACCESS_CONTROL_FAQ,
+  ...NOTIFICATION_SYSTEM_FAQ,
+  ...FIRE_SUPPRESSION_FAQ,
+];
 
 export const ACTIVE_CARD_DATA = {
   id: 'active-question',

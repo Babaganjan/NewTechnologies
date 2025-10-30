@@ -1,3 +1,5 @@
+import { OpoveshcheniePage } from '@/widgets/widgetPages';
+
 export default function opoveshchenie() {
-  return <div>opoveshchenie</div>;
+  return <OpoveshcheniePage />;
 }
