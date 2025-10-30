@@ -13,7 +13,7 @@ import { getProjectsByCategory } from './helpers/getProjectsByCategory';
 import { INITIAL_ITEMS_COUNT, PROJECT_MENU_DATA } from './projectMenu.const';
 import type { ProjectCategory, ProjectMenuItemProps } from './projectMenu.types';
 
-export const ProjectMenu = ({ type = 'all' }: { type: ProjectCategory }) => {
+export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
   const [activeRow, setActiveRow] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
