@@ -1,4 +1,4 @@
-import { PROJECT_CATEGORIES } from './projectMenu.const';
+import type { PROJECT_CATEGORIES } from './projectMenu.const';
 
 export interface ProjectMenuData {
   id: number;

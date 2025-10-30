@@ -1,5 +1,5 @@
 import { ALL_PROJECTS, PROJECT_CATEGORIES, PROJECT_MENU_DATA } from '../projectMenu.const';
-import { ProjectCategory } from '../projectMenu.types';
+import type { ProjectCategory } from '../projectMenu.types';
 
 export const getProjectsByCategory = (category: ProjectCategory) => {
   if (category === PROJECT_CATEGORIES.ALL) {

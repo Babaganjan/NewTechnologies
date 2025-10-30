@@ -1,11 +1,14 @@
-import { H } from '@/shared/ui';
 import Image from 'next/image';
 import Link from 'next/link';
+
+import { H } from '@/shared/ui';
+
 import { seeAlsoTypeData } from './helper/seeAlsoTypeData';
 import './seeAlso.scss';
 
 export const SeeAlso = ({ type }: { type: string }) => {
   const data = seeAlsoTypeData(type);
+
   return (
     <section className="seeAlso">
       <div className="seeAlso__container container">
