@@ -39,6 +39,8 @@
   align-items: center;
   width: 100%;
   padding: 4px 2px;
+  color: var(--text-deep-gray);
+  border-bottom: 1px solid var(--vector-light-gray);
   svg {
     transform: rotate(90deg);
     transition: transform 0.3s ease;

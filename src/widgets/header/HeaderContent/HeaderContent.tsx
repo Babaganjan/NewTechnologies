@@ -25,7 +25,7 @@ export const HeaderContent = ({
           <nav className="header__nav nav hidden">
             <ul className="nav__list flex">
               {navItems.map((item) => {
-                const isHovered = activeNavItem === item.title;
+                const isHovered = activeNavItem?.includes(item.title) ?? false;
 
                 return (
                   <li

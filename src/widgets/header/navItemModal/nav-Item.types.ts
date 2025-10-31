@@ -8,7 +8,7 @@ export interface NavListModalProps {
   }[];
 }
 
-export interface SelectedServiceType {
+export interface SelectedCategoryType {
   name: string;
   image?: string;
   index?: number;

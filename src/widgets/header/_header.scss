@@ -19,13 +19,14 @@
   display: none;
 }
 
-.header-mobil {
-  // padding-top: 74px;
+.modal-mobil {
   position: relative;
 
   &__container {
-    padding-top: 74px;
     @include line-decor(2% 50% 98%, var(--header-line));
+    flex-direction: column;
+    gap: 90px;
+    padding-top: 74px;
     height: 100vh;
   }
 
@@ -48,6 +49,16 @@
       gap: 4px;
       transition: color 0.2s ease-in-out;
     }
+  }
+  .wrapper-phone {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    border-bottom: 1px solid var(--vector-light-gray);
+  }
+
+  &__phone, &__city {
+    color: var(--text-deep-gray);
   }
 }
 
