@@ -1,5 +1,15 @@
 import type { ProjectMenuData } from './projectMenu.types';
 
+export const PROJECT_CATEGORIES = {
+  VIDEO_SURVEILLANCE: 'video-surveillance',
+  FIRE_ALARM: 'fire-alarm',
+  ACCESS_CONTROL: 'access-control',
+  NOTIFICATION_SYSTEM: 'notification-system',
+  FIRE_SUPPRESSION: 'fire-suppression',
+  COMPLEX: 'complex',
+  ALL: 'all',
+} as const;
+
 export const PROJECT_MENU_DATA: ProjectMenuData[] = [
   {
     id: 1,
@@ -7,6 +17,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     service: 'Система видеонаблюдения',
     subtitle: 'Реализовали техническое обслуживание системы видеонаблюдения.',
     image: '/img/favorite-1.webp',
+    type: 'video-surveillance',
   },
   {
     id: 2,
@@ -15,6 +26,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
       'Реализовали установку системы видеонаблюдения в резиденции акима Жамбылской области.',
     service: 'Система видеонаблюдения',
     image: '/img/favorite-2.webp',
+    type: 'video-surveillance',
   },
   {
     id: 3,
@@ -23,6 +35,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
       'Реализовали установку охранной сигнализации, домофонов, системы контроля доступа и тревожной сигнализации.',
     service: 'Комплексная безопасность',
     image: '/img/favorite-3.webp',
+    type: 'access-control',
   },
   {
     id: 4,
@@ -30,6 +43,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали монтаж системы пожарной сигнализации.',
     service: 'Пожарная сигнализация',
     image: '/img/product-item-1.webp',
+    type: 'fire-alarm',
   },
   {
     id: 5,
@@ -37,6 +51,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали поставку оборудования системы безопасности для медицинского учреждения.',
     service: 'Система видеонаблюдения',
     image: '/img/product-item-2.webp',
+    type: 'video-surveillance',
   },
   {
     id: 6,
@@ -44,6 +59,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали техническое обслуживание системы видеонаблюдения.',
     service: 'Система видеонаблюдения',
     image: '/img/product-item-3.webp',
+    type: 'video-surveillance',
   },
   {
     id: 7,
@@ -52,6 +68,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
       'Реализовали техническое обслуживание систем охранно-пожарной сигнализации и видеонаблюдения.',
     service: 'Охранно-пожарная система',
     image: '/img/product-item-4.webp',
+    type: 'fire-alarm',
   },
   {
     id: 8,
@@ -60,6 +77,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
       'Реализовали ремонт и модернизацию пожарной и охранной сигнализации, а также систем тушения.',
     service: 'Охранно-пожарная система',
     image: '/img/product-item-5.webp',
+    type: 'fire-alarm',
   },
   {
     id: 9,
@@ -67,6 +85,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали установку системы видеонаблюдения во всех корпусах университета.',
     service: 'Система видеонаблюдения',
     image: '/img/product-item-5.webp',
+    type: 'video-surveillance',
   },
   {
     id: 10,
@@ -75,13 +94,15 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
       'Реализовали установку системы видеонаблюдения, контроля доступа и охранной сигнализации.',
     service: 'Комплексная безопасность',
     image: '/img/product-item-5.webp',
+    type: 'complex',
   },
   {
     id: 11,
     title: 'РГУ «Казахская национальная академия искусств им. Т.К. Жургенова»',
     subtitle: 'Реализовали установку системы пожарной сигнализации.',
-    service: 'Комплексная безопасность',
+    service: 'Пожарная сигнализация',
     image: '/img/product-item-5.webp',
+    type: 'fire-alarm',
   },
   {
     id: 12,
@@ -89,6 +110,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали установку адресной пожарной сигнализации.',
     service: 'Охранно-пожарная система',
     image: '/img/product-item-5.webp',
+    type: 'fire-alarm',
   },
   {
     id: 13,
@@ -96,6 +118,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали установку системы видеонаблюдения.',
     service: 'Система видеонаблюдения',
     image: '/img/product-item-5.webp',
+    type: 'video-surveillance',
   },
   {
     id: 14,
@@ -103,6 +126,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали монтаж пропускной системы-турникетов в общежитии.',
     service: 'Система контроля доступа',
     image: '/img/product-item-5.webp',
+    type: 'access-control',
   },
   {
     id: 15,
@@ -110,6 +134,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали монтаж охранной сигнализации и системы видеонаблюдения.',
     service: 'Комплексная безопасность',
     image: '/img/product-item-5.webp',
+    type: 'complex',
   },
   {
     id: 16,
@@ -118,6 +143,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
       'Реализовали монтаж охранной сигнализации, системы видеонаблюдения, пожарной сигнализации, контроля доступа и газового пожаротушения в отделении г. Тараз.',
     service: 'Комплексная безопасность',
     image: '/img/product-item-5.webp',
+    type: 'complex',
   },
   {
     id: 17,
@@ -125,6 +151,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали текущий ремонт системы пожарной сигнализации здания ДКС МИД РК.',
     service: 'Охранно-пожарная система',
     image: '/img/product-item-5.webp',
+    type: 'fire-alarm',
   },
   {
     id: 18,
@@ -133,6 +160,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
       'Реализовали замену автоматической пожарной сигнализации в учебно-административном корпусе.',
     service: 'Охранно-пожарная система',
     image: '/img/product-item-5.webp',
+    type: 'fire-alarm',
   },
   {
     id: 19,
@@ -141,6 +169,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
       'Реализовали монтаж системы пожарной сигнализации с заменой и установкой оборудования.',
     service: 'Охранно-пожарная система',
     image: '/img/product-item-5.webp',
+    type: 'fire-alarm',
   },
   {
     id: 20,
@@ -148,6 +177,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали установку системы оповещения',
     service: 'Система оповещения',
     image: '/img/product-item-5.webp',
+    type: 'notification-system',
   },
   {
     id: 21,
@@ -155,6 +185,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали монтаж комплексной системы безопасности.',
     service: 'Комплексная безопасность',
     image: '/img/product-item-5.webp',
+    type: 'complex',
   },
   {
     id: 22,
@@ -162,6 +193,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали поставку прибора речевого оповещения.',
     service: 'Система оповещения',
     image: '/img/product-item-5.webp',
+    type: 'notification-system',
   },
   {
     id: 23,
@@ -169,6 +201,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали установку охранной сигнализации и системы видеонаблюдения.',
     service: 'Комплексная безопасность',
     image: '/img/product-item-5.webp',
+    type: 'complex',
   },
   {
     id: 24,
@@ -177,6 +210,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
       'Реализовали прокладку структурированной кабельной сети в УГД и ДГД различных регионов.',
     service: 'Комплексная безопасность',
     image: '/img/product-item-5.webp',
+    type: 'complex',
   },
   {
     id: 25,
@@ -184,6 +218,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали установку системы видеонаблюдения.',
     service: 'Система видеонаблюдения',
     image: '/img/product-item-5.webp',
+    type: 'video-surveillance',
   },
   {
     id: 26,
@@ -191,6 +226,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали приобретение и установку камер видеонаблюдения для служебных помещений.',
     service: 'Система видеонаблюдения',
     image: '/img/product-item-5.webp',
+    type: 'video-surveillance',
   },
   {
     id: 27,
@@ -198,7 +234,42 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle: 'Реализовали поставку оборудования комплекса систем безопасности.',
     service: 'Комплексная безопасность',
     image: '/img/product-item-5.webp',
+    type: 'complex',
+  },
+  {
+    id: 28,
+    title: 'РГУ «Департамент по делам обороны Жамбылской области» МО РК',
+    subtitle: 'Реализовали установку охранной сигнализации.',
+    service: 'Охранно-пожарная система',
+    image: '/img/product-item-5.webp',
+    type: 'fire-alarm',
+  },
+  {
+    id: 29,
+    title: 'КГУ «Областная спортивная школа олимпийского резерва № 5»',
+    subtitle: 'Реализовали установку охранной сигнализации.',
+    service: 'Охранно-пожарная система',
+    image: '/img/product-item-5.webp',
+    type: 'fire-alarm',
+  },
+  {
+    id: 30,
+    title: 'РГУ «Департамент государственных доходов по г. Нур-Султану КГД МФ РК»',
+    subtitle: 'Реализовали установку системы контроля доступа.',
+    service: 'Система контроля доступа',
+    image: '/img/product-item-5.webp',
+    type: 'access-control',
+  },
+  {
+    id: 31,
+    title: 'РГУ «Комитет технического регулирования и метрологии МТИ РК»',
+    subtitle: 'Реализовали монтажные работы системы оповещения.',
+    service: 'Система оповещения',
+    image: '/img/product-item-5.webp',
+    type: 'notification-system',
   },
 ] as const;
+
+export const ALL_PROJECTS = [...PROJECT_MENU_DATA];
 
 export const INITIAL_ITEMS_COUNT = 8;

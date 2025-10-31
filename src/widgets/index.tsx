@@ -14,7 +14,9 @@ import { ProductsPage } from './productsPages/ProductsPage';
 import { ProjectMenu } from './projectMenu/ProjectMenu';
 import { Questions } from './questions/Questions';
 import { Result } from './result/Result';
+import { SeeAlso } from './seeAlso/SeeAlso';
 import { Services } from './services/Services';
+import { StagesWork } from './stagesWork/StagesWork';
 
 export {
   About,
@@ -33,5 +35,7 @@ export {
   ProjectMenu,
   Questions,
   Result,
+  SeeAlso,
   Services,
+  StagesWork,
 };

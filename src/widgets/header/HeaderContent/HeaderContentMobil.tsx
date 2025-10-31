@@ -1,18 +1,16 @@
 'use client';
-import { useState } from 'react';
 import clsx from 'clsx';
 import Link from 'next/link';
+import { useState } from 'react';
 
 import { H } from '@/shared/ui';
-
+import type { ModalVariant } from '@/widgets/header/navItemModal/nav-Item.types';
 import { DATA_MODAL } from '@/widgets/header/navItemModal/nav-item.const';
 
 import type { HeaderContentProps } from '../header.types';
 
 import { isModalVariant } from './../helper/isModalVariant';
 import { NavItemModalMobil } from './../navItemModal/NavItemModalMobil';
-
-import type { ModalVariant } from '@/widgets/header/navItemModal/nav-Item.types';
 
 import '../_header.scss';
 
