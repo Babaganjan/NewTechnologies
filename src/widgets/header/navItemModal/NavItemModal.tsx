@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import { Button } from '@/shared/ui';
 
-import type { NavListModalProps, SelectedServiceType } from './nav-Item.types';
+import type { NavListModalProps, SelectedCategoryType } from './nav-Item.types';
 import './navItemModal.scss';
 
 interface NavItemModalProps {
@@ -15,7 +15,7 @@ interface NavItemModalProps {
 
 export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
-  const [selectedService, setSelectedService] = useState<SelectedServiceType | null>(null);
+  const [selectedService, setSelectedService] = useState<SelectedCategoryType | null>(null);
 
   const handleTitleHover = (id: number) => {
     setSelectedId(id);
@@ -28,7 +28,7 @@ export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
   };
 
   const handleSelectService = (
-    service: Pick<SelectedServiceType, 'name' | 'image'>,
+    service: Pick<SelectedCategoryType, 'name' | 'image'>,
     index: number
   ) => {
     setSelectedService({ ...service, index });

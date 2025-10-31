@@ -11,6 +11,5 @@ export interface HeaderContentProps extends HeaderProps {
   onItemLeave?: () => void;
   onMobilModal?: () => void;
   onModalClose?: () => void;
-  activeNavItem?: string[];
+  activeNavItem?: ModalVariant | null;
 }
-
