@@ -1,9 +1,12 @@
+import type { PROJECT_CATEGORIES } from './projectMenu.const';
+
 export interface ProjectMenuData {
   id: number;
   title: string;
   subtitle: string;
   service: string;
   image: string;
+  type: string;
 }
 
 export interface ProjectMenuItemProps {
@@ -16,3 +19,5 @@ export interface ProjectMenuItemProps {
   onActiveRow: (index: number) => void;
   isAnimated?: boolean;
 }
+
+export type ProjectCategory = (typeof PROJECT_CATEGORIES)[keyof typeof PROJECT_CATEGORIES];

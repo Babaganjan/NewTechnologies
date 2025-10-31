@@ -37,6 +37,7 @@ body:has(.modal) {
   background-color: var(--bg-light-gray);
   padding: 10px 34px;
   width: 100%;
+  border: 1px solid var(--vector-light-gray);
   &:hover,
   &:focus {
     background-color: var(--bg-black);

@@ -1,4 +1,5 @@
 'use client';
+import clsx from 'clsx';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -9,12 +10,11 @@ import './_project-menu.scss';
 import { ProjectListItem } from './ProjectListItem/ProjectListItem';
 import { ProjectNumberItem } from './ProjectNumberItem/ProjectNumberItem';
 import { ProjectServiceItem } from './ProjectServiceItem/ProjectServiceItem';
-import { PROJECT_MENU_DATA } from './projectMenu.const';
-import type { ProjectMenuItemProps } from './projectMenu.types';
+import { getProjectsByCategory } from './helpers/getProjectsByCategory';
+import { INITIAL_ITEMS_COUNT } from './projectMenu.const';
+import type { ProjectCategory, ProjectMenuItemProps } from './projectMenu.types';
 
-const INITIAL_ITEMS_COUNT = 8;
-
-export const ProjectMenu = () => {
+export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
   const [activeRow, setActiveRow] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
@@ -36,7 +36,7 @@ export const ProjectMenu = () => {
 
   const handleLoadMore = () => {
     setIsExpanding(true);
-    setVisibleCount(PROJECT_MENU_DATA.length);
+    setVisibleCount(projectData.length);
   };
 
   const createProjectProps = (index: number): Omit<ProjectMenuItemProps, 'item'> => ({
@@ -48,8 +48,9 @@ export const ProjectMenu = () => {
     onActiveRow: handleActiveRow,
   });
 
-  const visibleProjects = PROJECT_MENU_DATA.slice(0, visibleCount);
-  const hasMore = visibleCount < PROJECT_MENU_DATA.length;
+  const projectData = getProjectsByCategory(type);
+  const visibleProjects = projectData.slice(0, visibleCount);
+  const hasMore = visibleCount < projectData.length;
 
   return (
     <section className="project-menu" aria-labelledby="project-menu-title">
@@ -73,7 +74,12 @@ export const ProjectMenu = () => {
           {visibleProjects.map((item, index) => (
             <div
               key={`number-${item.id}`}
-              className={`project-menu__number-wrapper ${index >= INITIAL_ITEMS_COUNT && isExpanding ? 'project-menu__number-wrapper--animated' : ''}`}
+              className={clsx(
+                'project-menu__number-wrapper',
+                index >= INITIAL_ITEMS_COUNT &&
+                  isExpanding &&
+                  'project-menu__number-wrapper--animated'
+              )}
             >
               <ProjectNumberItem {...createProjectProps(index)} />
               {(hoveredRow === index || activeRow === index) && (
@@ -108,7 +114,12 @@ export const ProjectMenu = () => {
           {visibleProjects.map((item, index) => (
             <div
               key={`service-${item.id}`}
-              className={`project-menu__service-wrapper ${index >= INITIAL_ITEMS_COUNT && isExpanding ? 'project-menu__service-wrapper--animated' : ''}`}
+              className={clsx(
+                'project-menu__service-wrapper',
+                index >= INITIAL_ITEMS_COUNT &&
+                  isExpanding &&
+                  'project-menu__service-wrapper--animated'
+              )}
             >
               <ProjectServiceItem item={item} {...createProjectProps(index)} />
               {(hoveredRow === index || activeRow === index) && (

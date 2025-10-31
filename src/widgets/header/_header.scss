@@ -22,7 +22,7 @@
 .header-mobil {
   // padding-top: 74px;
   position: relative;
-  
+
   &__container {
     padding-top: 74px;
     @include line-decor(2% 50% 98%, var(--header-line));
@@ -58,22 +58,22 @@
   margin-bottom: -1px;
 
   &__container {
-  @include line-decor(2% 50% 98%);
-  position: relative;
-  justify-content: center;
+    @include line-decor(2% 50% 98%);
+    position: relative;
+    justify-content: center;
   }
 
   &__burger {
-  position: absolute;
-  top: 0.938rem;
-  right: 0.75rem;
+    position: absolute;
+    top: 0.938rem;
+    right: 0.75rem;
   }
 
   &__btn {
-  padding: 0.625rem;
-  width: 1.75rem;
-  height: 0.5rem;
-  position: relative;
+    padding: 0.625rem;
+    width: 1.75rem;
+    height: 0.5rem;
+    position: relative;
 
     &::before {
       content: '';
@@ -93,9 +93,7 @@
       box-shadow: 0 0 0 transparent;
     }
   }
-
 }
-
 
 // dekstop
 @include respond-min(1024px) {

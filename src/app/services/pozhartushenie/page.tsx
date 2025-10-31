@@ -1,3 +1,5 @@
+import { PozhartusheniePage } from '@/widgets/widgetPages';
+
 export default function pozhartushenie() {
-  return <div>pozhartushenie</div>;
+  return <PozhartusheniePage />;
 }

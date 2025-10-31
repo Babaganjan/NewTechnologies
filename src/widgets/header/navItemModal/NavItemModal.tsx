@@ -60,7 +60,7 @@ export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
             {selectedItem?.list?.map((subItem, index) => (
               <li key={`${subItem.name}-${index}`}>
                 <Button
-                  href="/"
+                  href={subItem.href}
                   variant="two"
                   className={clsx(selectedService?.name === subItem.name && 'selected')}
                   onMouseEnter={() => handleSelectService(subItem, index)}

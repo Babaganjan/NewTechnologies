@@ -5,14 +5,31 @@ const DATA_SERVICE: NavListModalProps[] = [
     id: 1,
     title: 'Системы защиты',
     list: [
-      { name: 'Системы видеонаблюдения', image: 'img/modalHeader/video-surveillance-system.webp' },
+      {
+        name: 'Системы видеонаблюдения',
+        image: 'img/modalHeader/video-surveillance-system.webp',
+        href: '/services/videonabludenie',
+      },
       {
         name: 'Охранно-пожарная сигнализация',
         image: 'img/modalHeader/security-fire-alarm-system.webp',
+        href: '/services/ops',
       },
-      { name: 'Система контроля доступа', image: 'img/modalHeader/access-control-system.webp' },
-      { name: 'Системы оповещения', image: 'img/modalHeader/notification-system.webp' },
-      { name: 'Системы пожаротушения', image: 'img/modalHeader/fire-extinguishing-system.webp' },
+      {
+        name: 'Система контроля доступа',
+        image: 'img/modalHeader/access-control-system.webp',
+        href: '/services/skd',
+      },
+      {
+        name: 'Системы оповещения',
+        image: 'img/modalHeader/notification-system.webp',
+        href: '/services/opoveshchenie',
+      },
+      {
+        name: 'Системы пожаротушения',
+        image: 'img/modalHeader/fire-extinguishing-system.webp',
+        href: '/services/pozhartushenie',
+      },
     ],
   },
   {
@@ -22,6 +39,7 @@ const DATA_SERVICE: NavListModalProps[] = [
       {
         name: 'Для учреждений образования',
         image: 'img/modalHeader/for-educational-institutions.webp',
+        href: '/',
       },
     ],
   },
@@ -29,11 +47,31 @@ const DATA_SERVICE: NavListModalProps[] = [
     id: 3,
     title: 'Обучение',
     list: [
-      { name: 'Системы видеонаблюдения' },
-      { name: 'Охранно-пожарная сигнализация', image: 'https://example.com/training-alarm.jpg' },
-      { name: 'Система контроля доступа' },
-      { name: 'Системы оповещения' },
-      { name: 'Системы пожаротушения', image: 'https://example.com/training-fire.jpg' },
+      {
+        name: 'Системы видеонаблюдения',
+        image: 'img/modalHeader/video-surveillance-system.webp',
+        href: '/services/videonabludenie',
+      },
+      {
+        name: 'Охранно-пожарная сигнализация',
+        image: 'img/modalHeader/security-fire-alarm-system.webp',
+        href: '/services/ops',
+      },
+      {
+        name: 'Система контроля доступа',
+        image: 'img/modalHeader/access-control-system.webp',
+        href: '/services/skd',
+      },
+      {
+        name: 'Системы оповещения',
+        image: 'img/modalHeader/notification-system.webp',
+        href: '/services/opoveshchenie',
+      },
+      {
+        name: 'Системы пожаротушения',
+        image: 'img/modalHeader/fire-extinguishing-system.webp',
+        href: '/services/pozhartushenie',
+      },
     ],
   },
 ] as const;
@@ -43,14 +81,31 @@ const DATA_PRODUCTION: NavListModalProps[] = [
     id: 1,
     title: 'Системы защиты',
     list: [
-      { name: 'Системы видеонаблюдения', image: 'img/modalHeader/video-surveillance-system.webp' },
+      {
+        name: 'Системы видеонаблюдения',
+        image: 'img/modalHeader/video-surveillance-system.webp',
+        href: '/services/videonabludenie',
+      },
       {
         name: 'Охранно-пожарная сигнализация',
         image: 'img/modalHeader/security-fire-alarm-system.webp',
+        href: '/services/ops',
       },
-      { name: 'Система контроля доступа', image: 'img/modalHeader/access-control-system.webp' },
-      { name: 'Системы оповещения', image: 'img/modalHeader/notification-system.webp' },
-      { name: 'Системы пожаротушения', image: 'img/modalHeader/fire-extinguishing-system.webp' },
+      {
+        name: 'Система контроля доступа',
+        image: 'img/modalHeader/access-control-system.webp',
+        href: '/services/skd',
+      },
+      {
+        name: 'Системы оповещения',
+        image: 'img/modalHeader/notification-system.webp',
+        href: '/services/opoveshchenie',
+      },
+      {
+        name: 'Системы пожаротушения',
+        image: 'img/modalHeader/fire-extinguishing-system.webp',
+        href: '/services/pozhartushenie',
+      },
     ],
   },
   {
@@ -60,6 +115,7 @@ const DATA_PRODUCTION: NavListModalProps[] = [
       {
         name: 'Для учреждений образования',
         image: 'img/modalHeader/for-educational-institutions.webp',
+        href: '',
       },
     ],
   },
@@ -67,11 +123,31 @@ const DATA_PRODUCTION: NavListModalProps[] = [
     id: 3,
     title: 'Обучение',
     list: [
-      { name: 'Системы видеонаблюдения' },
-      { name: 'Охранно-пожарная сигнализация', image: 'https://example.com/training-alarm.jpg' },
-      { name: 'Система контроля доступа' },
-      { name: 'Системы оповещения' },
-      { name: 'Системы пожаротушения', image: 'https://example.com/training-fire.jpg' },
+      {
+        name: 'Системы видеонаблюдения',
+        image: 'img/modalHeader/video-surveillance-system.webp',
+        href: '/services/videonabludenie',
+      },
+      {
+        name: 'Охранно-пожарная сигнализация',
+        image: 'img/modalHeader/security-fire-alarm-system.webp',
+        href: '/services/ops',
+      },
+      {
+        name: 'Система контроля доступа',
+        image: 'img/modalHeader/access-control-system.webp',
+        href: '/services/skd',
+      },
+      {
+        name: 'Системы оповещения',
+        image: 'img/modalHeader/notification-system.webp',
+        href: '/services/opoveshchenie',
+      },
+      {
+        name: 'Системы пожаротушения',
+        image: 'img/modalHeader/fire-extinguishing-system.webp',
+        href: '/services/pozhartushenie',
+      },
     ],
   },
 ] as const;

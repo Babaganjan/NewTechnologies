@@ -10,7 +10,7 @@
   will-change: transform, opacity;
 }
 
-@for $i from 1 through 20 {
+@for $i from 1 through 26 {
   .project-menu__number-wrapper--animated:nth-child(#{$i + 8}),
   .project-menu__list-item--animated:nth-child(#{$i + 8}),
   .project-menu__service-wrapper--animated:nth-child(#{$i + 8}) {
@@ -236,7 +236,7 @@
         }
 
         .project-menu-item__service.project-menu--active + .project-menu__arrow-decoration {
-          transform: translateY(-160%);
+          transform: translateY(-75%);
 
           svg {
             transform: rotate(-90deg);

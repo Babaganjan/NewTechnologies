@@ -4,6 +4,7 @@ export interface NavListModalProps {
   list: {
     name: string;
     image?: string;
+    href: string;
   }[];
 }
 

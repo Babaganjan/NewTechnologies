@@ -69,15 +69,15 @@
 
     &:hover {
       background-color: var(--bg-black);
-      color: white;
+      color: var(--text-white);
 
       .questions__card-title,
       .questions__card-subtitle {
-        color: white;
+        color: var(--text-white);
       }
 
       .questions__card-arrow--active {
-        color: white;
+        color: var(--text-white);
         transform: rotate(180deg);
       }
     }
@@ -125,6 +125,14 @@
         '. h . q .';
     }
 
+    .card-wrapper--custom {
+      grid-template-columns: repeat(5, minmax(240px, 400px));
+      grid-template-areas:
+        'a . b c .'
+        'd e f . g'
+        '. h . q .';
+    }
+
     $grid-areas: (
       1: a,
       2: b,
@@ -142,6 +150,24 @@
         grid-area: #{$area};
       }
     }
+
+    .card-wrapper:not(.card-wrapper--custom) {
+      .questions__card[data-grid-index='7'] {
+        grid-area: g;
+      }
+      .questions__card--active {
+        grid-area: q;
+      }
+    }
+
+    .card-wrapper--custom {
+      .questions__card[data-grid-index='7'] {
+        grid-area: q;
+      }
+      .questions__card--active {
+        grid-area: g;
+      }
+    }
   }
 
   @include respond-min(1250px) {
@@ -151,5 +177,11 @@
         'd e f . g'
         '. h . q .';
     }
+  }
+  .card-wrapper--custom {
+    grid-template-areas:
+      'a . b c .'
+      'd e f . g'
+      '. h . q .';
   }
 }

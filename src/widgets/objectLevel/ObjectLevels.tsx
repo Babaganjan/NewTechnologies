@@ -1,5 +1,5 @@
-import './_object-levels.scss';
 import { H } from '@/shared/ui';
+import './_object-levels.scss';
 
 import { OBJECT_LEVELS_DATA } from './objectLevels.const';
 
@@ -19,7 +19,7 @@ export const ObjectLevel = () => {
           {OBJECT_LEVELS_DATA.map((item) => (
             <li className={`object-levels__item item item-layout--${item.id}`} key={item.id}>
               <article className="item__inner flex">
-                <H level={'4'} variant="light"className="item__title">
+                <H level={'4'} variant="light" className="item__title">
                   {item.title}
                 </H>
                 <p className="item__prev">{item.prev}</p>

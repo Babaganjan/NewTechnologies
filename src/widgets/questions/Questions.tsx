@@ -5,11 +5,14 @@ import { Arrow } from '@/shared/icons';
 import { H } from '@/shared/ui';
 
 import './_questions-block.scss';
-import { ACTIVE_CARD_DATA, QUESTIONS_DATA } from './questions.const';
+import { getFAQByCategory } from './helpers/getFAQByCategory';
+import { ACTIVE_CARD_DATA } from './questions.const';
 import { QuestionsCard } from './questionsCard/QuestionsCard';
 
-export const Questions = () => {
+export const Questions = ({ type = 'default' }: { type?: string }) => {
   const [activeCard, setActiveCard] = useState<string | null>(null);
+  const data = getFAQByCategory(type);
+  const isDefault = type === 'default';
 
   return (
     <section className="questions" aria-labelledby="questions-title">
@@ -17,8 +20,8 @@ export const Questions = () => {
         <H level={'2'} variant="light" id="questions-title" className="questions__title title">
           Частые вопросы
         </H>
-        <ul className="card-wrapper">
-          {QUESTIONS_DATA.map((question) => (
+        <ul className={`card-wrapper ${!isDefault ? 'card-wrapper--custom' : ''}`}>
+          {data.map((question) => (
             <QuestionsCard
               key={question.id}
               question={question}
@@ -27,7 +30,9 @@ export const Questions = () => {
             />
           ))}
           <li
-            className="questions__card--active questions__card"
+            className={`questions__card--active questions__card ${
+              !isDefault ? 'questions__card--custom-position' : ''
+            }`}
             data-grid-index={ACTIVE_CARD_DATA.gridIndex}
           >
             <div className="questions__card-content">
