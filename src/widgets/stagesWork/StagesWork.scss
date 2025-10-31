@@ -1,0 +1,124 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.stagesWork {
+  padding-block: 100px;
+  background-color: var(--bg-black);
+}
+
+.stagesWork__title {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.stagesWork__list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+
+  .stagesWork__item {
+    position: relative;
+    background: var(--bg-deep-gray);
+    display: grid;
+    gap: 10px;
+    padding: 10px;
+    align-items: center;
+    text-align: center;
+    @include item-decor(var(--vector-deep-gray));
+
+    .stagesWork__item-img {
+      display: none;
+      position: relative;
+      width: 196px;
+      height: 196px;
+
+      &::after {
+        content: '';
+        @include decoration(var(--bg-deep-gray), 20px);
+      }
+    }
+
+    .stagesWork__item-decoration {
+      position: relative;
+      @include decoration(var(--text-black), 24px);
+    }
+
+    .stagesWork__item-subTitle {
+      font-family: var(--second-family);
+      @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none);
+    }
+
+    .stagesWork__item-number {
+      display: inline-flex;
+      height: fluid(80px, 128px);
+      overflow: hidden;
+      justify-self: center;
+      border-bottom: 1px solid var(--vector-almost-black);
+      @include typography(
+        var(--vector-almost-black),
+        700,
+        fluid(120px, 200px),
+        1,
+        uppercase,
+        -0.07em
+      );
+    }
+  }
+}
+
+@include respond-min(767px, max) {
+  .stagesWork__item {
+    &:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
+      justify-self: center;
+      max-width: 50%;
+    }
+  }
+}
+
+@include respond-min(768px) {
+  .stagesWork__list {
+    grid-template-columns: 1fr;
+
+    .stagesWork__item {
+      padding: 20px;
+      .stagesWork__item-subTitle {
+        margin-top: 16px;
+      }
+
+      .stagesWork__item-number {
+        justify-self: flex-start;
+      }
+      .stagesWork__item__title-container {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        margin-bottom: 44px;
+      }
+
+      .stagesWork__item__container {
+        display: grid;
+        text-align: left;
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .stagesWork__item-img {
+        justify-self: flex-end;
+        display: block;
+      }
+    }
+  }
+}
+
+@include respond-min(1024px) {
+  .stagesWork__list {
+    grid-template-columns: repeat(2, 1fr);
+
+    .stagesWork__item {
+      .stagesWork__item__title-container {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
