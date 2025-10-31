@@ -1,4 +1,5 @@
 'use client';
+import clsx from 'clsx';
 import Image from 'next/image';
 import { useState } from 'react';
 
@@ -18,7 +19,6 @@ export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
   const [activeRow, setActiveRow] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
   const [isExpanding, setIsExpanding] = useState(false);
-  const projectData = getProjectsByCategory(type);
 
   const onMouseEnter = (index: number) => {
     if (activeRow === null) {
@@ -48,6 +48,7 @@ export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
     onActiveRow: handleActiveRow,
   });
 
+  const projectData = getProjectsByCategory(type);
   const visibleProjects = projectData.slice(0, visibleCount);
   const hasMore = visibleCount < projectData.length;
 
@@ -73,7 +74,12 @@ export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
           {visibleProjects.map((item, index) => (
             <div
               key={`number-${item.id}`}
-              className={`project-menu__number-wrapper ${index >= INITIAL_ITEMS_COUNT && isExpanding ? 'project-menu__number-wrapper--animated' : ''}`}
+              className={clsx(
+                'project-menu__number-wrapper',
+                index >= INITIAL_ITEMS_COUNT &&
+                  isExpanding &&
+                  'project-menu__number-wrapper--animated'
+              )}
             >
               <ProjectNumberItem {...createProjectProps(index)} />
               {(hoveredRow === index || activeRow === index) && (
@@ -108,7 +114,12 @@ export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
           {visibleProjects.map((item, index) => (
             <div
               key={`service-${item.id}`}
-              className={`project-menu__service-wrapper ${index >= INITIAL_ITEMS_COUNT && isExpanding ? 'project-menu__service-wrapper--animated' : ''}`}
+              className={clsx(
+                'project-menu__service-wrapper',
+                index >= INITIAL_ITEMS_COUNT &&
+                  isExpanding &&
+                  'project-menu__service-wrapper--animated'
+              )}
             >
               <ProjectServiceItem item={item} {...createProjectProps(index)} />
               {(hoveredRow === index || activeRow === index) && (
