@@ -1,5 +1,6 @@
 import { AboutUs } from './AboutUs/AboutUs';
 import { About } from './about/About';
+import { Advantage } from './advantage/Advantage';
 import { Advertising } from './advertising/Advertising';
 import { Contacts } from './contacts/Contacts';
 import { DocumentsBlock } from './documentsBlock/DocumentsBlock';
@@ -21,6 +22,7 @@ import { StagesWork } from './stagesWork/StagesWork';
 export {
   About,
   AboutUs,
+  Advantage,
   Advertising,
   Contacts,
   DocumentsBlock,
