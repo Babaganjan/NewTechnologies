@@ -220,3 +220,18 @@ export const STAGES__DATA__FIRESUPPRESSION: IStagesData[] = [
     href: '/img/stagesWork/help.webp',
   },
 ];
+
+export type StagesWorkType =
+  | 'notificationSystem'
+  | 'accessControl'
+  | 'videoSurveillance'
+  | 'fireSuppression'
+  | 'fireAlarm';
+
+export const STAGESWORKALL: Record<StagesWorkType, IStagesData[]> = {
+  notificationSystem: STAGES__DATA__NOTIFICATIONSYSTEM,
+  accessControl: STAGES__DATA__SKD,
+  videoSurveillance: STAGES__DATA__VIDEO,
+  fireSuppression: STAGES__DATA__FIRESUPPRESSION,
+  fireAlarm: STAGES__DATA__OPS,
+};

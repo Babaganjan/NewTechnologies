@@ -23,10 +23,11 @@ export const SeeAlso = ({ type }: { type: string }) => {
             <li className="seeAlso__item" key={item.id}>
               <Link href={item.href}>
                 <Image src={item.image} alt={item.title} width={110} height={110} />
+
+                <H level="5" variant="light">
+                  {item.title}
+                </H>
               </Link>
-              <H level="5" variant="light">
-                {item.title}
-              </H>
             </li>
           ))}
         </ul>

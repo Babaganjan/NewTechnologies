@@ -1,4 +1,5 @@
 'use client';
+import clsx from 'clsx';
 import { useState } from 'react';
 
 import { Arrow } from '@/shared/icons';
@@ -20,7 +21,7 @@ export const Questions = ({ type = 'default' }: { type?: string }) => {
         <H level={'2'} variant="light" id="questions-title" className="questions__title title">
           Частые вопросы
         </H>
-        <ul className={`card-wrapper ${!isDefault ? 'card-wrapper--custom' : ''}`}>
+        <ul className={clsx('card-wrapper', isDefault && 'card-wrapper--custom')}>
           {data.map((question) => (
             <QuestionsCard
               key={question.id}
@@ -30,9 +31,10 @@ export const Questions = ({ type = 'default' }: { type?: string }) => {
             />
           ))}
           <li
-            className={`questions__card--active questions__card ${
-              !isDefault ? 'questions__card--custom-position' : ''
-            }`}
+            className={clsx(
+              'questions__card--active questions__card',
+              isDefault && 'questions__card--custom-position'
+            )}
             data-grid-index={ACTIVE_CARD_DATA.gridIndex}
           >
             <div className="questions__card-content">

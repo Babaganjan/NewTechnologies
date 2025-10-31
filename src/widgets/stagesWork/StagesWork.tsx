@@ -2,10 +2,13 @@ import Image from 'next/image';
 
 import { H } from '@/shared/ui';
 
-import { STAGES__DATA__OPS } from './StagesWork.const';
+import type { StagesWorkType } from './StagesWork.const';
+import { STAGESWORKALL } from './StagesWork.const';
 import './StagesWork.scss';
 
-export const StagesWork = () => {
+export const StagesWork = ({ type }: { type: StagesWorkType }) => {
+  const StagesWorkData = STAGESWORKALL[type];
+
   return (
     <section className="stagesWork">
       <div className="stagesWork__container container">
@@ -13,7 +16,7 @@ export const StagesWork = () => {
           <H level="2">Этапы работы</H>
         </div>
         <ul className="stagesWork__list">
-          {STAGES__DATA__OPS.map((item, index) => (
+          {StagesWorkData.map((item, index) => (
             <li className="stagesWork__item" key={item.id}>
               <div className="stagesWork__item-decoration" aria-hidden="true"></div>
               <span className="stagesWork__item-number">
