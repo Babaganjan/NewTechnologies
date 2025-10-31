@@ -16,6 +16,7 @@ import { Questions } from './questions/Questions';
 import { Result } from './result/Result';
 import { SeeAlso } from './seeAlso/SeeAlso';
 import { Services } from './services/Services';
+import { StagesWork } from './stagesWork/StagesWork';
 
 export {
   About,
@@ -36,4 +37,5 @@ export {
   Result,
   SeeAlso,
   Services,
+  StagesWork,
 };
