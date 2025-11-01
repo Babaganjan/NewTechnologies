@@ -15,20 +15,20 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
   const data = DATA_ALL_TYPES[type];
 
   return (
-    <section className="typesOfBlock">
+    <section className="typesOfBlock" data-type={type}>
       <div className="typesOfBlock__container container">
-        <div className="typesOfBlock__title">
-          <H level="2" variant="dark">
-            {title}
-          </H>
-        </div>
-        <div className="typesOfBlock__subTitle">
-          <H level="4" variant="dark">
-            Мы подбираем систему индивидуально под каждый объект,
-            <span className="typesOfBlock__subTitle--desctop">
-              учитывая его специфику, риски и требования
-            </span>
-          </H>
+        <div className="typesOfBlock__wrapper">
+          <div className="typesOfBlock__title">
+            <H level="2" variant="dark">
+              {title}
+            </H>
+          </div>
+          <div className="typesOfBlock__subTitle">
+            <H level="4" variant="dark">
+              {data.mainTitle}
+              <span>{data.mainTitleHighlight}</span>
+            </H>
+          </div>
         </div>
         <Swiper
           spaceBetween={8}
@@ -40,7 +40,7 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
             dynamicBullets: true,
           }}
         >
-          {data.map((item) => (
+          {data.items.map((item) => (
             <SwiperSlide key={item.title}>
               <div className="typesOfBlock__slide-item">
                 <div className="typesOfBlock__slide-item-img">
