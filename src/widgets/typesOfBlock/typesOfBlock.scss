@@ -1,6 +1,16 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
+[data-type='SKD'] {
+  --types-white: var(--text-deep-gray);
+  --types-deep-gray: var(--text-white);
+}
+
+[data-type='OPS'] {
+  --types-white: var(--text-white);
+  --types-deep-gray: var(--text-deep-gray);
+}
+
 .typesOfBlock {
   padding-block: 100px;
   background-color: var(--bg-black);
@@ -13,10 +23,13 @@
 }
 
 .typesOfBlock__subTitle {
-  color: var(--text-white);
-  margin-bottom: 15px;
-  .typesOfBlock__subTitle--desctop {
-    color: var(--text-deep-gray);
+  h4 {
+    color: var(--types-white);
+  }
+
+  margin-bottom: fluid(15px, 40px);
+  span {
+    color: var(--types-deep-gray);
   }
 }
 
@@ -34,6 +47,16 @@
     padding: 10px;
     margin: 5px;
     bottom: 0;
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - 40px) 0%,
+      calc(100% - 40px) 20px,
+      calc(100% - 20px) 20px,
+      calc(100% - 20px) 40px,
+      100% 40px,
+      100% 100%,
+      0% 100%
+    );
 
     p {
       @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none);
@@ -71,6 +94,11 @@
 }
 
 @include respond-min(1024px) {
+  .typesOfBlock__wrapper {
+    display: grid;
+    grid-template-columns: 0.4fr 1fr;
+  }
+
   .swiper-slide {
     width: 600px !important;
   }

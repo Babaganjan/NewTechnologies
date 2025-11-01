@@ -41,8 +41,26 @@ export const DATA_TYPE_SKD: IData_type[] = [
 ];
 
 export type TDataAllTypes = 'OPS' | 'SKD';
+export interface IDataCategory {
+  mainTitle: string;
+  mainTitleHighlight: string;
+  items: IData_type[];
+}
 
-export const DATA_ALL_TYPES: Record<TDataAllTypes, IData_type[]> = {
-  OPS: DATA_TYPE_OPS,
-  SKD: DATA_TYPE_SKD,
+export interface IData_types {
+  OPS: IDataCategory;
+  SKD: IDataCategory;
+}
+
+export const DATA_ALL_TYPES: IData_types = {
+  OPS: {
+    mainTitle: 'Мы подбираем систему индивидуально под каждый объект,',
+    mainTitleHighlight: 'учитывая его специфику, риски и требования',
+    items: DATA_TYPE_OPS,
+  },
+  SKD: {
+    mainTitle: 'Системы контроля доступа позволяют использовать ',
+    mainTitleHighlight: 'различные способы идентификации',
+    items: DATA_TYPE_SKD,
+  },
 };
