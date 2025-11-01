@@ -1,8 +1,17 @@
-import { Advantage, ProjectMenu, Questions, SeeAlso, StagesWork, TypesOfBlock } from '@/widgets';
+import {
+  Advantage,
+  IncludedService,
+  ProjectMenu,
+  Questions,
+  SeeAlso,
+  StagesWork,
+  TypesOfBlock,
+} from '@/widgets';
 
 export const SkdPage = () => {
   return (
     <>
+      <IncludedService type="accessControl" />
       <Advantage type="accessControl" />
       <TypesOfBlock type="SKD" title="Варианты идентификации" />
       <StagesWork type="accessControl" />
