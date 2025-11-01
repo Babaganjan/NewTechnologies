@@ -1,0 +1,49 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.includedService {
+  background-color: var(--bg-black);
+  padding-block: 100px;
+}
+
+.includedService__title {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.includedService__subtitle {
+  margin-bottom: 10px;
+}
+
+.includedService__img {
+  @include item-decor();
+  width: 100%;
+  min-height: 480px;
+  max-width: 728px;
+  margin-bottom: 20px;
+  .includedService__img-decoration {
+    @include decoration(var(--text-black), 24px);
+    z-index: 4;
+  }
+}
+
+.includedService__list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  .includedService__item {
+    border-bottom: 1px solid var(--vector-almost-black);
+    padding-bottom: 8px;
+    @include typography(var(--text-white), 500, fluid(18px, 28px), 1.15);
+  }
+}
+
+@include respond-min(767px) {
+  .includedService__list {
+    .includedService__item {
+      display: inline-flex;
+      justify-content: center;
+    }
+  }
+}
