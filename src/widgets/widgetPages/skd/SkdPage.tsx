@@ -1,9 +1,10 @@
-import { Advantage, ProjectMenu, Questions, SeeAlso, StagesWork } from '@/widgets';
+import { Advantage, ProjectMenu, Questions, SeeAlso, StagesWork, TypesOfBlock } from '@/widgets';
 
 export const SkdPage = () => {
   return (
     <>
       <Advantage type="accessControl" />
+      <TypesOfBlock type="SKD" title="Варианты идентификации" />
       <StagesWork type="accessControl" />
       <ProjectMenu type="access-control" />
       <Questions type="access-control" />
