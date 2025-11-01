@@ -18,6 +18,7 @@ import { Result } from './result/Result';
 import { SeeAlso } from './seeAlso/SeeAlso';
 import { Services } from './services/Services';
 import { StagesWork } from './stagesWork/StagesWork';
+import { TypesOfBlock } from './typesOfBlock/TypesOfBlock';
 
 export {
   About,
@@ -40,4 +41,5 @@ export {
   SeeAlso,
   Services,
   StagesWork,
+  TypesOfBlock,
 };

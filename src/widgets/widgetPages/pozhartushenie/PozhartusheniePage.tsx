@@ -1,9 +1,10 @@
-import { Advantage, ProjectMenu, Questions, SeeAlso, StagesWork } from '@/widgets';
+import { Advantage, ProjectMenu, Questions, SeeAlso, StagesWork, TypesOfBlock } from '@/widgets';
 
 export const PozhartusheniePage = () => {
   return (
     <>
       <Advantage type="fireSuppression" />
+      <TypesOfBlock type="OPS" title="Виды пожаротушения" />
       <StagesWork type="fireSuppression" />
       <ProjectMenu type="fire-suppression" />
       <Questions type="fire-suppression" />
