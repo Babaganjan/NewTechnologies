@@ -18,9 +18,9 @@ export type ModalVariant = 'Производство' | 'Сервис';
 
 export type titleNav = 'Сервис' | 'Производство' | 'IT-Решения' | 'О нас' | 'Контакты';
 
-export type NavItem = Readonly<{
+export type NavItem = {
   href: string;
   title: titleNav;
   hasIcon: boolean;
   hasModal: boolean;
-}>;
+};

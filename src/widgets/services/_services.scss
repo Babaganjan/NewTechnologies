@@ -29,9 +29,27 @@
     padding-bottom: 0.75rem;
     border-bottom: 1px solid var(--vector-almost-black);
     &__btn {
-      width: 25px;
-      height: 20px;
-      transform: rotate(90deg);
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      span {
+        @include typography(var(--text-white), 500, fluid(31px, 68px),  1, uppercase, -2.17px);
+        padding: 8px;
+      }
+      &--active span {
+        background-color: var(--bg-white);
+        color: var(--text-black);
+      }
+      .service-icon {
+        transform: rotate(90deg);
+      }
+      &--active .service-icon {
+        transform: rotate(90deg) rotateY(180deg);
+      }
+      
     }
 
     &__inner {
@@ -39,12 +57,12 @@
       justify-content: space-between;
       padding: 12px;
       &::before {
-        @include typography(var(--text-gray), 500, fluid(10px, 22px), 0.4);
+        @include typography(var(--text-white), 500, fluid(10px, 22px), 0.4);
         counter-increment: card;
         content: '[' counter(card) ']';
         position: absolute;
-        top: 1.5rem;
-        left: 0;
+        top: 24px;
+        left: 0px;
         letter-spacing: -0.031rem;
       }
     }
@@ -66,43 +84,30 @@
     &.with-trapezoids {
       @include trapezoid-decor(56px, 33px, black, both, 1030px, -32px);
     }
-  }
-}
-
-// _services.scss
-.services {
-  &__list {
+    &__list {
     display: flex;
     flex-direction: column;
   }
 
-  &__item {
-    position: relative;
-
     .item {
+      position: relative;
+      &__btn {
+        border: none;
+        background: var(--primary-color);
+        border-radius: 50%;
+
+        &--hovered span{
+          background-color: var(--bg-white);
+          color: var(--text-black);
+        }
+      }
       &__inner {
         align-items: center;
         justify-content: space-between;
         background: var(--bg-secondary);
         border-radius: 12px;
-      }
-
-      &__btn {
-        transition: all 0.3s ease;
-        border: none;
-        background: var(--primary-color);
-        border-radius: 50%;
-        width: 50px;
-        height: 50px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-      }
-      &__btn--active {
-        background: var(--accent-color);
-        transform: rotate(90deg) rotateY(180deg);
-      }
+      } 
     }
   }
 }
+
