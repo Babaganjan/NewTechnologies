@@ -71,6 +71,12 @@
       background-color: var(--bg-black);
       color: var(--text-white);
 
+      &::after,
+      &::before {
+        transition: margin 0.2s ease-in-out;
+        margin: 6px;
+      }
+
       .questions__card-title,
       .questions__card-subtitle {
         color: var(--text-white);
@@ -78,6 +84,7 @@
 
       .questions__card-arrow--active {
         color: var(--text-white);
+        margin: 16px;
         transform: rotate(180deg);
       }
     }

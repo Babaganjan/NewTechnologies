@@ -4,18 +4,20 @@
 .products__item {
   padding: 15px 10px 10px 10px;
   border: 1px solid var(--text-light-gray);
+  background-color: var(--bg-light-gray);
   display: flex;
-  // width: fluid(170px, 455px);
   flex-direction: column;
   position: relative;
   justify-content: space-between;
   align-items: flex-start;
-  @include item-decor();
+  @include item-decor(var(--vector-deep-gray), fluid(12px, 20px));
 
   @include respond-min(1023px, max) {
     &:last-child:nth-child(odd) {
       grid-column: 1 / -1;
       justify-self: center;
+      max-width: 50%;
+      margin: 0 auto;
     }
   }
 }
@@ -38,7 +40,7 @@
     display: inline-block;
     width: 0;
     height: 0;
-    top: 5px;
+    top: 0px;
     right: -3px;
   }
 

@@ -14,23 +14,21 @@
     grid-column: 1/-1;
     grid-row: 1/2;
   }
-
   &__item {
     padding-bottom: 8px;
-    border-bottom: #dfdfdf solid 1px;
-
+    border-bottom: var(--vector-light-gray) solid 1px;
     .favorites-project__img-item:first-of-type {
       filter: grayscale(1);
     }
-
     .favorites-project__img {
-      @include item-decor();
+      // Mobile: черный цвет
+      @include item-decor(var(--text-black), fluid(12px, 20px));
       display: inline-flex;
       .favorites-project__decoration {
-        @include decoration(var(--text-white), 25px);
+        // Mobile: белый цвет
+        @include decoration(var(--text-white), fluid(24px, 40px));
       }
     }
-
     .item__prev {
       font-family: var(--second-family);
       @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
@@ -41,13 +39,27 @@
   }
 }
 
+// Планшетка: белые декорации
+@include respond-min(768px) {
+  .favorites-project {
+    &__item {
+      .favorites-project__img {
+        // Переопределяем цвет на белый для планшетов
+        &::before,
+        &::after {
+          background-color: var(--text-white);
+        }
+      }
+    }
+  }
+}
+
 @include respond-min(1024px) {
   .favorites-project {
     &__container {
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
     }
-
     &__title {
       grid-column: 1/-1;
       grid-row: 1/2;
@@ -56,17 +68,39 @@
       border-bottom: unset;
       padding-bottom: 20px;
       position: relative;
+
+      .favorites-project__img {
+        max-height: 733px;
+        width: 100%;
+        &::after,
+        &::before {
+          margin: 7px;
+          background-color: var(--vector-deep-gray);
+        }
+      }
+
       &:first-of-type {
         grid-column: 1/-1;
         grid-row: 2/3;
+        color: var(--text-white);
+
         .favorites-project__img-item {
           filter: none;
         }
+
+        .favorites-project__img {
+          &::after,
+          &::before {
+            background-color: var(--text-white);
+          }
+        }
       }
+
       &:nth-of-type(2) {
         grid-column: 1/2;
         grid-row: 3/4;
       }
+
       &:last-of-type {
         grid-column: 2/-1;
         grid-row: 3/4;
@@ -90,7 +124,6 @@
       padding: 15px;
       background-color: var(--bg-white);
     }
-
     .item__prev {
       @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
       font-family: var(--second-family);

@@ -2,6 +2,7 @@ export interface QuestionItem {
   id: string;
   content: string;
   description: string;
+  descriptionList?: string[];
   gridIndex: number;
   category: string;
 }
@@ -42,8 +43,12 @@ export const QUESTIONS_DATA: QuestionItem[] = [
   {
     id: 'question-5',
     content: 'Предоставляете ли вы техническое обслуживание?',
-    description:
-      'Да. Мы обеспечиваем полный цикл сервиса: регулярные профилактические проверки, обновление программного обеспечения, оперативная замена оборудования при необходимости.',
+    description: 'Да. Мы обеспечиваем полный цикл сервиса:',
+    descriptionList: [
+      'регулярные профилактические проверки;',
+      'обновление программного обеспечения;',
+      'оперативная замена оборудования при необходимости.',
+    ],
     gridIndex: 5,
     category: 'default',
   },
