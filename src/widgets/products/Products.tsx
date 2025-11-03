@@ -20,8 +20,13 @@ export const Products = () => {
           <H level={'3'} variant="light" className="products-subtitle">
             {path !== 'products' ? (
               <>
-                Надежное оборудование,<span>соответствующее строгим</span>отраслевым{' '}
-                <span>стандартам</span>
+                <div className="products-subtitle--mobile">
+                  Надежное оборудование, <span>соответствующее строгим</span> отраслевым{' '}
+                  <span>стандартам</span>
+                </div>
+                <span className="products-subtitle--descktop">
+                  Оборудование, соответствующее строгим отраслевым стандартам
+                </span>
               </>
             ) : (
               'Производим собственное оборудование с 2022 года для частных лиц и бизнеса.'

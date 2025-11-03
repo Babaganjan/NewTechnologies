@@ -24,9 +24,16 @@ export const QuestionsCard = ({ question, setActiveCard, activeCard }: Questions
         {question.content}
       </H>
       {activeCard === question.id && (
-        <H level={'5'} className="questions__description">
-          {question.description}
-        </H>
+        <div className="questions__description">
+          <p>{question.description}</p>
+          {question.descriptionList && (
+            <ul className="questions__list">
+              {question.descriptionList.map((item, index) => (
+                <li key={index}>{item}</li>
+              ))}
+            </ul>
+          )}
+        </div>
       )}
       <Arrow width={20} height={25} className="questions__card-arrow" />
     </li>

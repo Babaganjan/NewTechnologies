@@ -51,6 +51,7 @@
     &__inner {
       @include item-decor(
         var(--vector-deep-gray),
+        20px,
         $before-position: (top: -7px, left: -18px),
         $after-position: (bottom: -7px, right: -7px)
       );
@@ -114,9 +115,9 @@
       &__inner {
         @include item-decor(
           var(--vector-deep-gray),
+          20px,
           $before-position: (top: -14px, left: -25px),
-          $after-position: (bottom: -5px, right: -25px),
-          $size: (width: 20px, height: 20px)
+          $after-position: (bottom: -5px, right: -25px)
         );
         min-height: 312px;
         justify-content: flex-end;

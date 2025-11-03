@@ -131,9 +131,9 @@
   %desktop-image-decoration {
     @include item-decor(
       var(--vector-almost-black),
+      20px,
       $before-position: (top: 5px, left: 5px),
-      $after-position: (bottom: 5px, right: 5px),
-      $size: (width: 20px, height: 20px)
+      $after-position: (bottom: 5px, right: 5px)
     );
 
     span {
