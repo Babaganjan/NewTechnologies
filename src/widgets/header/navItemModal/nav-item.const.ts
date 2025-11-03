@@ -37,7 +37,7 @@ const DATA_SERVICE: NavListModalProps[] = [
     title: 'IT-решения',
     list: [
       {
-        name: 'Для учреждений образования',
+        name: 'Для образовательных учреждений',
         image: 'img/modalHeader/for-educational-institutions.webp',
         href: '/',
       },
@@ -48,29 +48,19 @@ const DATA_SERVICE: NavListModalProps[] = [
     title: 'Обучение',
     list: [
       {
-        name: 'Системы видеонаблюдения',
+        name: 'Внедрение  It-инфраструктуры',
         image: 'img/modalHeader/video-surveillance-system.webp',
         href: '/services/videonabludenie',
       },
       {
-        name: 'Охранно-пожарная сигнализация',
+        name: 'Проектирование серверов',
         image: 'img/modalHeader/security-fire-alarm-system.webp',
         href: '/services/ops',
       },
       {
-        name: 'Система контроля доступа',
+        name: 'Проектирование сетей',
         image: 'img/modalHeader/access-control-system.webp',
         href: '/services/skd',
-      },
-      {
-        name: 'Системы оповещения',
-        image: 'img/modalHeader/notification-system.webp',
-        href: '/services/opoveshchenie',
-      },
-      {
-        name: 'Системы пожаротушения',
-        image: 'img/modalHeader/fire-extinguishing-system.webp',
-        href: '/services/pozhartushenie',
       },
     ],
   },
