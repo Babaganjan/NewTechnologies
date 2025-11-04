@@ -13,7 +13,6 @@
 
   &__subtitle {
     span {
-      display: block;
       color: var(--text-deep-gray);
     }
   }
@@ -69,7 +68,6 @@
 
     &-button-container {
       justify-content: flex-start;
-      grid-area: button;
     }
   }
 }

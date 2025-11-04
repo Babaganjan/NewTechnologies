@@ -11,7 +11,7 @@ import {
 export const OpsPage = () => {
   return (
     <>
-      <Description />
+      <Description type="FIRE_ALARM" />
       <IncludedService type="fireAlarm" />
       <Advantage type="fireAlarm" />
       <StagesWork type="fireAlarm" />

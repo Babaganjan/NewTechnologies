@@ -12,7 +12,7 @@ import {
 export const SkdPage = () => {
   return (
     <>
-      <Description />
+      <Description type="ACCESS_CONTROL" />
       <IncludedService type="accessControl" />
       <Advantage type="accessControl" />
       <TypesOfBlock type="SKD" title="Варианты идентификации" />

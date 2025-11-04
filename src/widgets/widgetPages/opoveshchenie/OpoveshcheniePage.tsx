@@ -11,7 +11,7 @@ import {
 export const OpoveshcheniePage = () => {
   return (
     <>
-      <Description />
+      <Description type="NOTIFICATION_SYSTEM" />
       <IncludedService type="notificationSystem" />
       <Advantage type="notificationSystem" />
       <StagesWork type="notificationSystem" />
