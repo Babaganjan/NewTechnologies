@@ -1,21 +1,28 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
+// Мобильная версия
 .project-menu-item__service {
   color: var(--text-light-gray);
   @include typography(var(--text-light-gray), 500, fluid(18px, 28px), 1.15);
 }
 
+// Desktop версия
 @include respond-min(1300px) {
   .project-menu-item__service {
-    display: flex;
-    gap: 8px;
+    display: block;
     min-height: 40px;
     border-bottom: 1px solid var(--vector-light-gray);
     cursor: pointer;
+    padding: 10px 5px;
+    transition:
+      background-color 0.3s,
+      color 0.3s;
 
+    // Hover и активное состояние
     &:is(.hovered, .project-menu--active) {
       background-color: var(--bg-black);
+
       color: var(--text-white);
 
       h5 {
@@ -23,15 +30,17 @@
       }
     }
 
-    .project-menu-item__service-label {
-      font-family: var(--second-family);
-      @include typography(var(--text-deep-black), 500, 14px, 1.1, none);
-      padding-left: 5px;
+    &:is(.project-menu--active) {
+      padding-bottom: 69px;
     }
 
     h5 {
       color: var(--text-light-gray);
-      padding-left: 5px;
+      padding-left: 0;
+    }
+
+    .project-menu-item__service-label {
+      display: none;
     }
   }
 }
