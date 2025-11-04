@@ -63,21 +63,24 @@
 }
 
 .header {
-  position: relative;
+  // position: relative;
   background-color: var(--header-bg);
-  z-index: 0;
+  z-index: 1;
   margin-bottom: -1px;
 
   &__container {
-    @include line-decor(2% 50% 98%);
+    min-height: 59px;
+    // @include line-decor(2% 50% 98%);
     position: relative;
     justify-content: center;
+    align-items: center;
+    z-index: 1;
   }
 
   &__burger {
     position: absolute;
-    top: 0.938rem;
-    right: 0.75rem;
+    top: 15px;
+    right: 12px;
   }
 
   &__btn {
@@ -104,6 +107,32 @@
       box-shadow: 0 0 0 transparent;
     }
   }
+
+  &__logo {
+    width: auto;
+    height: auto;
+    max-width: 90px;
+    max-height: 48px;
+  }
+}
+
+// tablet 
+@include respond-min(768px) {
+  .header {
+    &__container {
+      min-height: 96px;
+    }
+    
+    &__logo {
+      width: 137px;
+      height: 75px;
+    }
+
+    &__burger {
+    top: 30px;
+    right: 25px;
+  }
+  }
 }
 
 // dekstop
@@ -112,8 +141,9 @@
     margin-top: 119px;
   }
   .header {
+    min-height: 119px;
     &__container {
-      @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--header-line));
+      // @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--header-line));
       align-items: center;
       justify-content: space-between;
       padding-block: 20px;
@@ -142,6 +172,10 @@
       &__link.hovered {
         color: var(--text-white);
       }
+    }
+    &__logo {
+      max-width: 145px;
+      max-height: 79px;
     }
     .hidden__burger--deckstop {
       display: none;
