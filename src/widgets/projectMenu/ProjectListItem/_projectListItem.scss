@@ -12,6 +12,10 @@
     border-top: 1px solid var(--vector-light-gray);
   }
 
+  .project-menu__image-wrapper {
+    width: 50%;
+  }
+
   .project-menu-item__content {
     display: flex;
     flex-direction: column;
@@ -24,7 +28,6 @@
   }
 
   .project-menu-item__subtitle {
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -59,6 +62,8 @@
   margin-right: 4px;
   width: 12px;
   height: 15px;
+  position: absolute;
+  right: 3%;
 }
 
 .project-menu--active .project-menu-item__arrow {
