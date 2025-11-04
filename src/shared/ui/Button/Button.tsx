@@ -36,6 +36,7 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, IButtonP
       menu: styles.menu,
       one: styles.one,
       two: styles.two,
+      description: styles.description,
     };
 
     return (

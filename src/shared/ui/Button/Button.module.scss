@@ -50,8 +50,9 @@ body:has(.modal) {
   align-items: center;
   background-color: var(--bg-black);
   padding: fluid(15px, 20px) fluid(50px, 100px);
-  @include typography(var(--text-white), 700, fluid(18px, 26px), 1.2);
   gap: 10px;
+  @include typography(var(--text-white), 700, fluid(18px, 26px), 1.2);
+
   @include item-decor(var(--text-white));
 
   svg {
@@ -178,6 +179,24 @@ body:has(.modal) {
 
   svg {
     transform: rotate(180deg);
+  }
+}
+
+.description {
+  display: inline-flex;
+  @include typography(var(--text-white), 700, fluid(18px, 26px), 1.2);
+  @include item-decor(var(--vector-almost-black));
+  padding: fluid(15px, 20px) fluid(50px, 130px);
+  gap: 10px;
+  align-items: center;
+  align-self: center;
+  justify-content: center;
+  background-color: var(--bg-white);
+  color: var(--text-black);
+  svg {
+    width: fluid(12px, 16px);
+    height: fluid(15px, 20px);
+    color: var(--text-black);
   }
 }
 

@@ -3,6 +3,7 @@ import { About } from './about/About';
 import { Advantage } from './advantage/Advantage';
 import { Advertising } from './advertising/Advertising';
 import { Contacts } from './contacts/Contacts';
+import { Description } from './descriptionBlock/Description';
 import { DocumentsBlock } from './documentsBlock/DocumentsBlock';
 import { FavoritesProject } from './favoritesProject/FavoritesProject';
 import { FeedbackMenu } from './feedbackMenu/FeedbackMenu';
@@ -27,6 +28,7 @@ export {
   Advantage,
   Advertising,
   Contacts,
+  Description,
   DocumentsBlock,
   FavoritesProject,
   FeedbackMenu,
