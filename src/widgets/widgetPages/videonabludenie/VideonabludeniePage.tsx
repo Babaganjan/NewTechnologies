@@ -11,7 +11,7 @@ import {
 export const VideonabludeniePage = () => {
   return (
     <>
-      <Description />
+      <Description type="VIDEO_SURVEILLANCE" />
       <IncludedService type="videoSurveillance" />
       <Advantage type="videoSurveillance" />
       <StagesWork type="videoSurveillance" />

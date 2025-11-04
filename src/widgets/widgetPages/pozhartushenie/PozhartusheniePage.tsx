@@ -12,7 +12,7 @@ import {
 export const PozhartusheniePage = () => {
   return (
     <>
-      <Description />
+      <Description type="FIRE_SUPPRESSION" />
       <IncludedService type="fireSuppression" />
       <Advantage type="fireSuppression" />
       <TypesOfBlock type="OPS" title="Виды пожаротушения" />
