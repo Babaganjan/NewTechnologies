@@ -1,6 +1,27 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
 .result {
   &__list {
     flex-direction: column;
     gap: 8px;
+  }
+}
+
+// table
+@include respond-min(768px) {
+  .result {
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    &__item {
+      min-height: 324px;
+      &:last-child {
+        grid-column: 1/-1;
+      }
+    }
   }
 }

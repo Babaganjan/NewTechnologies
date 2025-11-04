@@ -23,6 +23,16 @@
   }
 }
 
+//tablet 90 124
+@include respond-min (768px) {
+  .result {
+    &__container {
+      @include line-decor(1% 50% 99%);
+      padding-block: 90px 124px
+    }
+  }
+}
+
 @include respond-min(1024px) {
   .result {
     &.with-trapezoids {

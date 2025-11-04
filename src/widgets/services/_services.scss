@@ -61,7 +61,7 @@
         counter-increment: card;
         content: '[' counter(card) ']';
         position: absolute;
-        top: 24px;
+        top: fluid(24px, 53px);
         left: 0px;
         letter-spacing: -0.031rem;
       }
@@ -73,9 +73,10 @@
     }
   }
 
-  .hidden {
+  .hidden, .desktop-only {
     display: none;
   }
+
 }
 
 // deckstop
@@ -85,29 +86,70 @@
       @include trapezoid-decor(56px, 33px, black, both, 1030px, -32px);
     }
     &__list {
-    display: flex;
-    flex-direction: column;
-  }
+      display: flex;
+      flex-direction: column;
+    }
 
     .item {
-      position: relative;
+      display: flex;
+      justify-content: space-between;
       &__btn {
         border: none;
         background: var(--primary-color);
         border-radius: 50%;
+        span {
+          padding: 10px;
+        }
 
-        &--hovered span{
+        &--hovered span {
           background-color: var(--bg-white);
           color: var(--text-black);
         }
+
+        &--other span {
+          background-color: transparent;
+          color: var(--text-gray);
+        }
       }
       &__inner {
+        padding: 20px;
+        width: max-content;
         align-items: center;
         justify-content: space-between;
         background: var(--bg-secondary);
-        border-radius: 12px;
       } 
     }
+
+    .selected svg {
+      color: var(--text-white);
+    }
+
+    .services__sub-items {
+      position: relative;
+      width: 50%;
+      padding-top: 25px;
+    }
+
+    .services__sub-item-image {
+      position: absolute;
+      top: 45px;
+      left: -245px;
+      width: 210px;
+      height: 173px;
+    }
+
+    .desktop-only{display: block;}
+    .mobile-only{display: none;}
   }
 }
+
+
+
+
+
+
+
+
+
+
 

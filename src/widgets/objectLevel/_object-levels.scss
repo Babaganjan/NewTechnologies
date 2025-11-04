@@ -33,7 +33,7 @@
   &__list {
     counter-reset: card;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 8px;
   }
 
   &__item {
@@ -64,6 +64,7 @@
       background-position: top right;
     }
     &__title {
+      @include typography(var(--text-black), 600, fluid(22px, 42px), 1);
       letter-spacing: -0.083rem;
       width: 70%;
       &::before {
@@ -81,6 +82,33 @@
       @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
       font-family: var(--second-family);
       letter-spacing: -0.053rem;
+    }
+  }
+}
+
+// tablet
+@include respond-min(768px) {
+  .object-levels {
+    &__container {
+      @include line-decor(1% 50% 99%, var(--vector-light-gray));
+    }
+
+    &__list {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    &__item {
+      &::after {
+      content: '';
+      @include decoration(var(--text-white), 40px);
+    }
+      display: flex;
+      align-items: flex-end;
+      padding: 15px 17px 39px 25px;
+      min-height: 342px;
+      
     }
   }
 }
