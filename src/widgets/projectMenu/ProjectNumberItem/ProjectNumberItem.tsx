@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { H } from '../../../shared/ui/Heading/H';
 import type { ProjectMenuItemProps } from '../projectMenu.types';
 
@@ -13,7 +15,11 @@ export const ProjectNumberItem = ({
 }: Omit<ProjectMenuItemProps, 'item'>) => (
   <H
     level={'5'}
-    className={`project-menu-item__number ${isHovered && 'hovered'} ${isActive && 'project-menu--active'}`}
+    className={clsx(
+      'project-menu-item__number',
+      isHovered && 'hovered',
+      isActive && 'project-menu--active'
+    )}
     onMouseEnter={() => onMouseEnter(index)}
     onMouseLeave={onMouseLeave}
     onClick={() => onActiveRow(index)}

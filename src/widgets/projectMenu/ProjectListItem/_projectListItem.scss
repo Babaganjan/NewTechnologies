@@ -1,6 +1,7 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
+// Мобильная версия
 .project-menu-item {
   margin-top: 4px;
   border-bottom: 1px solid var(--vector-light-gray);
@@ -42,7 +43,6 @@
   .project-menu__active-wrapper {
     display: flex;
     flex-direction: column;
-    padding: 5px;
     gap: 5px;
 
     p {
@@ -64,18 +64,40 @@
   transform: rotate(-90deg);
 }
 
+// Desktop версия
 @include respond-min(1300px) {
   .project-menu-item {
     margin: 0;
     padding: 0;
-    min-height: 40px;
-    display: flex;
-    align-items: center;
+    display: block;
     cursor: pointer;
+    border-bottom: 1px solid var(--vector-light-gray);
+    border-top: none;
 
+    .project-menu__active-wrapper {
+      padding: 5px;
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    .project-menu-item__content {
+      display: block;
+      min-height: 40px;
+      padding: 10px 5px;
+      transition:
+        background-color 0.3s,
+        color 0.3s;
+    }
+
+    // Hover и активное состояние
     &:is(.hovered, .project-menu--active) {
-      background-color: var(--bg-black);
-      color: var(--text-white);
+      padding-top: 0;
+      .project-menu-item__content {
+        background-color: var(--bg-black);
+        color: var(--text-white);
+      }
 
       .project-menu-item__subtitle {
         .project-menu-item__subtitle-title {
@@ -87,24 +109,23 @@
     .project-menu-item__subtitle {
       .project-menu-item__subtitle-title {
         color: var(--text-gray);
-        padding-left: 5px;
+        padding-left: 0;
       }
     }
 
-    &:first-child {
-      border-top: none;
-    }
-
+    // Скрываем лейблы на desktop
     .service-label--services {
       display: none;
     }
-  }
 
-  .project-menu-item__arrow {
-    display: none;
-  }
+    // Скрываем стрелку на desktop
+    .project-menu-item__arrow {
+      display: none;
+    }
 
-  .project-menu__image--active {
-    display: none;
+    // Скрываем картинку на desktop (она показывается в колонке с номерами)
+    .project-menu__image--active {
+      display: none;
+    }
   }
 }

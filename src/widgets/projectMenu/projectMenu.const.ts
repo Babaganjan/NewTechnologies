@@ -16,7 +16,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'Филиал «Назарбаев Интеллектуальная школа» г. Тараз, АОО «НИШ»',
     service: 'Система видеонаблюдения',
     subtitle: 'Реализовали техническое обслуживание системы видеонаблюдения.',
-    image: '/img/favorite-1.webp',
+    image: '/img/projectMenu/Project-1.webp',
     type: 'video-surveillance',
   },
   {
@@ -25,7 +25,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle:
       'Реализовали установку системы видеонаблюдения в резиденции акима Жамбылской области.',
     service: 'Система видеонаблюдения',
-    image: '/img/favorite-2.webp',
+    image: '/img/projectMenu/Project-2.webp',
     type: 'video-surveillance',
   },
   {
@@ -34,7 +34,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle:
       'Реализовали установку охранной сигнализации, домофонов, системы контроля доступа и тревожной сигнализации.',
     service: 'Комплексная безопасность',
-    image: '/img/favorite-3.webp',
+    image: '/img/projectMenu/Project-3.webp',
     type: 'access-control',
   },
   {
@@ -42,7 +42,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'ТОО «Фиркан»',
     subtitle: 'Реализовали монтаж системы пожарной сигнализации.',
     service: 'Пожарная сигнализация',
-    image: '/img/product-item-1.webp',
+    image: '/img/projectMenu/Project-4.webp',
     type: 'fire-alarm',
   },
   {
@@ -50,7 +50,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'ТОО «Научно-клинический центр кардиохирургии и трансплантации»',
     subtitle: 'Реализовали поставку оборудования системы безопасности для медицинского учреждения.',
     service: 'Система видеонаблюдения',
-    image: '/img/product-item-2.webp',
+    image: '/img/projectMenu/Project-5.webp',
     type: 'video-surveillance',
   },
   {
@@ -58,7 +58,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'КГП «Тараз-Арена»',
     subtitle: 'Реализовали техническое обслуживание системы видеонаблюдения.',
     service: 'Система видеонаблюдения',
-    image: '/img/product-item-3.webp',
+    image: '/img/projectMenu/Project-6.webp',
     type: 'video-surveillance',
   },
   {
@@ -67,7 +67,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle:
       'Реализовали техническое обслуживание систем охранно-пожарной сигнализации и видеонаблюдения.',
     service: 'Охранно-пожарная система',
-    image: '/img/product-item-4.webp',
+    image: '/img/projectMenu/Project-7.webp',
     type: 'fire-alarm',
   },
   {
@@ -76,7 +76,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle:
       'Реализовали ремонт и модернизацию пожарной и охранной сигнализации, а также систем тушения.',
     service: 'Охранно-пожарная система',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-8.webp',
     type: 'fire-alarm',
   },
   {
@@ -84,7 +84,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'АО «Казахский агротехнический университет им. С. Сейфуллина»',
     subtitle: 'Реализовали установку системы видеонаблюдения во всех корпусах университета.',
     service: 'Система видеонаблюдения',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-9.webp',
     type: 'video-surveillance',
   },
   {
@@ -93,7 +93,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle:
       'Реализовали установку системы видеонаблюдения, контроля доступа и охранной сигнализации.',
     service: 'Комплексная безопасность',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-10.webp',
     type: 'complex',
   },
   {
@@ -101,7 +101,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'РГУ «Казахская национальная академия искусств им. Т.К. Жургенова»',
     subtitle: 'Реализовали установку системы пожарной сигнализации.',
     service: 'Пожарная сигнализация',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-11.webp',
     type: 'fire-alarm',
   },
   {
@@ -109,7 +109,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'РГУ «Национальный архив Республики Казахстан»',
     subtitle: 'Реализовали установку адресной пожарной сигнализации.',
     service: 'Охранно-пожарная система',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-12.webp',
     type: 'fire-alarm',
   },
   {
@@ -117,7 +117,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'ГУ «Служба пожаротушения и аварийно-спасательных работ» ДЧС г. Алматы',
     subtitle: 'Реализовали установку системы видеонаблюдения.',
     service: 'Система видеонаблюдения',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-13.webp',
     type: 'video-surveillance',
   },
   {
@@ -125,7 +125,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'РГУ «Казахская национальная консерватория им. Курмангазы»',
     subtitle: 'Реализовали монтаж пропускной системы-турникетов в общежитии.',
     service: 'Система контроля доступа',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-14.webp',
     type: 'access-control',
   },
   {
@@ -133,7 +133,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'КГУ «Управление культуры города Алматы»',
     subtitle: 'Реализовали монтаж охранной сигнализации и системы видеонаблюдения.',
     service: 'Комплексная безопасность',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-15.webp',
     type: 'complex',
   },
   {
@@ -142,7 +142,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle:
       'Реализовали монтаж охранной сигнализации, системы видеонаблюдения, пожарной сигнализации, контроля доступа и газового пожаротушения в отделении г. Тараз.',
     service: 'Комплексная безопасность',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-16.webp',
     type: 'complex',
   },
   {
@@ -150,7 +150,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'ГУ «Министерство иностранных дел Республики Казахстан»',
     subtitle: 'Реализовали текущий ремонт системы пожарной сигнализации здания ДКС МИД РК.',
     service: 'Охранно-пожарная система',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-17.webp',
     type: 'fire-alarm',
   },
   {
@@ -159,7 +159,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle:
       'Реализовали замену автоматической пожарной сигнализации в учебно-административном корпусе.',
     service: 'Охранно-пожарная система',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-18.webp',
     type: 'fire-alarm',
   },
   {
@@ -168,7 +168,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle:
       'Реализовали монтаж системы пожарной сигнализации с заменой и установкой оборудования.',
     service: 'Охранно-пожарная система',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-19.webp',
     type: 'fire-alarm',
   },
   {
@@ -176,7 +176,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'НАО «КазНУ им. Аль-Фараби»',
     subtitle: 'Реализовали установку системы оповещения',
     service: 'Система оповещения',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-20.webp',
     type: 'notification-system',
   },
   {
@@ -184,7 +184,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'ГУ «Министерство энергетики Республики Казахстан»',
     subtitle: 'Реализовали монтаж комплексной системы безопасности.',
     service: 'Комплексная безопасность',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-21.webp',
     type: 'complex',
   },
   {
@@ -192,7 +192,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'АО «Отбасы Банк»',
     subtitle: 'Реализовали поставку прибора речевого оповещения.',
     service: 'Система оповещения',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-22.webp',
     type: 'notification-system',
   },
   {
@@ -200,7 +200,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'НАО «Таразский региональный университет им. М.Х. Дулати»',
     subtitle: 'Реализовали установку охранной сигнализации и системы видеонаблюдения.',
     service: 'Комплексная безопасность',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-23.webp',
     type: 'complex',
   },
   {
@@ -209,7 +209,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     subtitle:
       'Реализовали прокладку структурированной кабельной сети в УГД и ДГД различных регионов.',
     service: 'Комплексная безопасность',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-24.webp',
     type: 'complex',
   },
   {
@@ -217,7 +217,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'НАО «Актюбинский региональный университет им. К. Жубанова»',
     subtitle: 'Реализовали установку системы видеонаблюдения.',
     service: 'Система видеонаблюдения',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-25.webp',
     type: 'video-surveillance',
   },
   {
@@ -225,7 +225,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'ГУ «Департамент полиции Кызылординской области» МВД РК',
     subtitle: 'Реализовали приобретение и установку камер видеонаблюдения для служебных помещений.',
     service: 'Система видеонаблюдения',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-26.webp',
     type: 'video-surveillance',
   },
   {
@@ -233,7 +233,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'ТОО «Qazaq Stroy Almaty»',
     subtitle: 'Реализовали поставку оборудования комплекса систем безопасности.',
     service: 'Комплексная безопасность',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-27.webp',
     type: 'complex',
   },
   {
@@ -241,7 +241,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'РГУ «Департамент по делам обороны Жамбылской области» МО РК',
     subtitle: 'Реализовали установку охранной сигнализации.',
     service: 'Охранно-пожарная система',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/product-item-5.webp',
     type: 'fire-alarm',
   },
   {
@@ -249,7 +249,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'КГУ «Областная спортивная школа олимпийского резерва № 5»',
     subtitle: 'Реализовали установку охранной сигнализации.',
     service: 'Охранно-пожарная система',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/product-item-5.webp',
     type: 'fire-alarm',
   },
   {
@@ -257,7 +257,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'РГУ «Департамент государственных доходов по г. Нур-Султану КГД МФ РК»',
     subtitle: 'Реализовали установку системы контроля доступа.',
     service: 'Система контроля доступа',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-30.webp',
     type: 'access-control',
   },
   {
@@ -265,7 +265,7 @@ export const PROJECT_MENU_DATA: ProjectMenuData[] = [
     title: 'РГУ «Комитет технического регулирования и метрологии МТИ РК»',
     subtitle: 'Реализовали монтажные работы системы оповещения.',
     service: 'Система оповещения',
-    image: '/img/product-item-5.webp',
+    image: '/img/projectMenu/Project-31.webp',
     type: 'notification-system',
   },
 ] as const;

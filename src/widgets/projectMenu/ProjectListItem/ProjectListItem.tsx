@@ -42,17 +42,22 @@ export const ProjectListItem = ({
           className="project-menu-item__arrow"
         />
       </div>
+
       {isActive && (
-        <div className="project-menu__active-wrapper">
-          <p>{item.subtitle}</p>
-          <Image
-            src={item.image}
-            alt={item.subtitle}
-            width={100}
-            height={100}
-            className="project-menu__image--active"
-          />
-        </div>
+        <>
+          <div className="project-menu__active-wrapper">
+            <p>{item.subtitle}</p>
+            <div className="project-menu__image-wrapper">
+              <Image
+                src={item.image}
+                alt={item.subtitle}
+                width={260}
+                height={130}
+                className="project-menu__image--active"
+              />
+            </div>
+          </div>
+        </>
       )}
       <span className="project-menu-item__service-label service-label--services">тип услуги</span>
       <p className="project-menu-item__service service-label--services">{item.service}</p>

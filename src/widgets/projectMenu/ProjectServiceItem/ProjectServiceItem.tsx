@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import { H } from '../../../shared/ui/Heading/H';
 import type { ProjectMenuItemProps } from '../projectMenu.types';
 
@@ -13,7 +15,11 @@ export const ProjectServiceItem = ({
   isActive,
 }: ProjectMenuItemProps) => (
   <div
-    className={`project-menu-item__service ${isHovered && 'hovered'} ${isActive && 'project-menu--active'}`}
+    className={clsx(
+      'project-menu-item__service',
+      isHovered && 'hovered',
+      isActive && 'project-menu--active'
+    )}
     onMouseEnter={() => onMouseEnter(index)}
     onMouseLeave={onMouseLeave}
     onClick={() => onActiveRow(index)}
