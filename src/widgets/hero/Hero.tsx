@@ -16,15 +16,12 @@ export const Hero = () => {
       <div className="container hero__container flex">
         <video autoPlay muted loop playsInline className="hero__video hero__video--mobile">
           <source src="/video/hero-video-360.mp4" type="video/mp4" />
-          Ваш браузер не поддерживает видео.
         </video>
         <video autoPlay muted loop playsInline className="hero__video hero__video--tablet">
           <source src="/video/hero-video-768.mp4" type="video/mp4" />
-          Ваш браузер не поддерживает видео.
         </video>
         <video autoPlay muted loop playsInline className="hero__video--desktop">
           <source src="/video/hero-video-1920.mp4" type="video/mp4" />
-          Ваш браузер не поддерживает видео.
         </video>
         <H level={'1'} className="heading">
           <HomeHeading />

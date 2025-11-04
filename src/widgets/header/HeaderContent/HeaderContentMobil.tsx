@@ -1,6 +1,5 @@
 'use client';
 import clsx from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -18,7 +17,6 @@ import '../_header.scss';
 export const HeaderContentMobil = ({
   navItems,
   theme,
-  logoSrc,
   onItemEnter,
   onItemLeave,
   onModalClose,
@@ -81,16 +79,7 @@ export const HeaderContentMobil = ({
             })}
           </ul>
         </nav>
-        <Link href="/" className="header__link" onClick={onItemLeave}>
-          <Image
-            src={logoSrc as string}
-            width={90}
-            height={48}
-            alt="Логотип"
-            className="header__logo"
-            priority
-          />
-        </Link>
+
         <div className="modal-mobil__contacts">
           <div className="wrapper-phone flex">
             <H level={'5'} className="modal-mobil__city">

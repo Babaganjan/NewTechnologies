@@ -101,14 +101,13 @@
 
     &__item {
       &::after {
-      content: '';
-      @include decoration(var(--text-white), 40px);
-    }
+        content: '';
+        @include decoration(var(--text-white), 40px);
+      }
       display: flex;
       align-items: flex-end;
       padding: 15px 17px 39px 25px;
       min-height: 342px;
-      
     }
   }
 }

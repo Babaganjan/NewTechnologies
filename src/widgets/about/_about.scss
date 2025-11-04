@@ -41,8 +41,8 @@
   }
 
   &__desc {
-    @include typography(var(--text-deep-gray), 500, fluid(20px, 28px), 1.15, none, -0.12rem);
     font-family: var(--second-family);
+    @include typography(var(--text-deep-gray), 500, fluid(20px, 28px), 1.15, none, -0.12rem);
   }
 
   &__btn {
@@ -173,7 +173,7 @@
     // }
 
     // &__images {
-      
+
     //   grid-area: images;
     //   display: grid;
     //   grid-template-columns: repeat(2, 1fr);

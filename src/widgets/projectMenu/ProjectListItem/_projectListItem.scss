@@ -54,13 +54,14 @@
 
 .project-menu-item__arrow {
   transform: rotate(90deg);
+  transition: transform 0.2s ease-in-out;
   flex-shrink: 0;
   margin-right: 4px;
   width: 12px;
   height: 15px;
 }
 
-.active .project-menu-item__arrow {
+.project-menu--active .project-menu-item__arrow {
   transform: rotate(-90deg);
 }
 

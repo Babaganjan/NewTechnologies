@@ -60,7 +60,6 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
           <HeaderContentMobil
             navItems={HEADER_NAV_ITEMS}
             theme={currentTheme}
-            logoSrc={logoSrc}
             activeNavItem={activeNavItem}
             onItemEnter={handleMobilNavItemEnter}
             onItemLeave={handleMobilNavItemLeave}
