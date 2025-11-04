@@ -9,6 +9,8 @@ import { Button } from '@/shared/ui';
 import type { HeaderContentProps } from '../header.types';
 import { isModalVariant } from '../helper/isModalVariant';
 
+import { CustomSelect } from './../../../shared/ui/CustomSelect/CustomSelect';
+
 export const HeaderContent = ({
   navItems,
   theme,
@@ -63,14 +65,24 @@ export const HeaderContent = ({
             />
           </Link>
         </div>
-        <div className="header__wrapper-contacts hidden__contacts flex">
-          <div className="custom-select">
+        <div className="header__wrapper-contacts visible__contacts flex">
+          {/* <div className="custom-select">
             <select name="city" className="header__city">
               <option value="almaty">Алматы</option>
               <option value="karaganda">Караганда</option>
               <option value="shymkent">Шымкент</option>
             </select>
-          </div>
+          </div> */}
+          <CustomSelect
+            options={[
+              { value: 'almaty', label: 'Алматы' },
+              { value: 'karaganda', label: 'Караганда' },
+              { value: 'shymkent', label: 'Шымкент' },
+            ]}
+            value="almaty"
+            onChange={(value) => console.log('Выбран город:', value)}
+            className="header__city-select"
+          />
           <Link className="header__phone" href="tel:+74951234567">
             +7 (700) 346 43 71
           </Link>
