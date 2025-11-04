@@ -1,5 +1,6 @@
 import {
   Advantage,
+  Description,
   IncludedService,
   ProjectMenu,
   Questions,
@@ -11,11 +12,12 @@ import {
 export const SkdPage = () => {
   return (
     <>
+      <Description />
       <IncludedService type="accessControl" />
       <Advantage type="accessControl" />
       <TypesOfBlock type="SKD" title="Варианты идентификации" />
       <StagesWork type="accessControl" />
-      <ProjectMenu type="access-control" />
+      <ProjectMenu type="ACCESS_CONTROL" />
       <Questions type="access-control" />
       <SeeAlso type="Системы контроля доступом" />
     </>

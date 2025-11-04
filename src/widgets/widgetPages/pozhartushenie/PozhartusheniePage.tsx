@@ -1,5 +1,6 @@
 import {
   Advantage,
+  Description,
   IncludedService,
   ProjectMenu,
   Questions,
@@ -11,11 +12,12 @@ import {
 export const PozhartusheniePage = () => {
   return (
     <>
+      <Description />
       <IncludedService type="fireSuppression" />
       <Advantage type="fireSuppression" />
       <TypesOfBlock type="OPS" title="Виды пожаротушения" />
       <StagesWork type="fireSuppression" />
-      <ProjectMenu type="fire-suppression" />
+      <ProjectMenu type="FIRE_SUPPRESSION" />
       <Questions type="fire-suppression" />
       <SeeAlso type="Системы пожаротушения" />
     </>

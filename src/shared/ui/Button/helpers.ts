@@ -13,4 +13,5 @@ export const tagNameByVariants: Record<VariantType, 'button' | typeof Link> = {
   secondary: 'button',
   one: 'button',
   two: Link,
+  description: 'button',
 };

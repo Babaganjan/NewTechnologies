@@ -1,0 +1,75 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.description {
+  padding-block: 100px;
+  background-color: var(--bg-black);
+
+  &__title {
+    margin-left: 10px;
+    margin-bottom: 10px;
+    position: relative;
+  }
+
+  &__subtitle {
+    span {
+      display: block;
+      color: var(--text-deep-gray);
+    }
+  }
+
+  &__title-description {
+    margin-bottom: 40px;
+    p {
+      margin-top: 20px;
+    }
+    font-family: var(--second-family);
+    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
+  }
+
+  &-button-container {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@include respond-min(767px) {
+  .description {
+    &__title-description {
+      display: flex;
+      gap: 10px;
+      .description__title-one {
+        width: 50%;
+      }
+      .description__title-two {
+        width: 50%;
+      }
+    }
+  }
+}
+
+@include respond-min(1024px) {
+  .description {
+    &__wrapper {
+      margin: 0 auto;
+      width: 54%;
+    }
+    &__title-wrapper {
+      display: grid;
+      grid-template-columns: 0.3fr 1fr;
+    }
+
+    &__title-description {
+      margin-bottom: 40px;
+    }
+
+    &__subtitle {
+      width: 90%;
+    }
+
+    &-button-container {
+      justify-content: flex-start;
+      grid-area: button;
+    }
+  }
+}

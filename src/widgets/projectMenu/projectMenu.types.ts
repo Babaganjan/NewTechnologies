@@ -21,3 +21,12 @@ export interface ProjectMenuItemProps {
 }
 
 export type ProjectCategory = (typeof PROJECT_CATEGORIES)[keyof typeof PROJECT_CATEGORIES];
+
+export interface ProjectMenuTitle {
+  title: string;
+  highlightTitle?: string;
+}
+
+export type ProjectMenuDataTitle = {
+  [K in keyof typeof PROJECT_CATEGORIES]: ProjectMenuTitle;
+};

@@ -11,10 +11,10 @@ import { ProjectListItem } from './ProjectListItem/ProjectListItem';
 import { ProjectNumberItem } from './ProjectNumberItem/ProjectNumberItem';
 import { ProjectServiceItem } from './ProjectServiceItem/ProjectServiceItem';
 import { getProjectsByCategory } from './helpers/getProjectsByCategory';
-import { INITIAL_ITEMS_COUNT } from './projectMenu.const';
+import { INITIAL_ITEMS_COUNT, PROJECT_MENU_DATA_TITLE } from './projectMenu.const';
 import type { ProjectCategory, ProjectMenuItemProps } from './projectMenu.types';
 
-export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
+export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
   const [activeRow, setActiveRow] = useState<number | null>(null);
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
@@ -49,6 +49,7 @@ export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
   });
 
   const projectData = getProjectsByCategory(type);
+  const titleData = PROJECT_MENU_DATA_TITLE[type];
   const visibleProjects = projectData.slice(0, visibleCount);
   const hasMore = visibleCount < projectData.length;
 
@@ -59,11 +60,8 @@ export const ProjectMenu = ({ type = 'all' }: { type?: ProjectCategory }) => {
           Наши проекты
         </H>
         <H level={'4'} variant="light" className="project-menu__subtitle">
-          2000+ реализованных проектов
-          <span>
-            &nbsp;&mdash; от&nbsp;уютных кафе у&nbsp;дома до&nbsp;объектов государственного
-            значения.
-          </span>
+          {titleData.title}
+          {titleData.highlightTitle && <span> {titleData.highlightTitle}</span>}
         </H>
         <div className="project-menu__headers">
           <div className="project-menu__header project-menu__header--project">проект</div>

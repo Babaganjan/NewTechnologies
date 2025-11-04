@@ -1,13 +1,39 @@
-import type { ProjectMenuData } from './projectMenu.types';
+import type { ProjectMenuData, ProjectMenuDataTitle } from './projectMenu.types';
 
 export const PROJECT_CATEGORIES = {
-  VIDEO_SURVEILLANCE: 'video-surveillance',
-  FIRE_ALARM: 'fire-alarm',
-  ACCESS_CONTROL: 'access-control',
-  NOTIFICATION_SYSTEM: 'notification-system',
-  FIRE_SUPPRESSION: 'fire-suppression',
-  COMPLEX: 'complex',
-  ALL: 'all',
+  VIDEO_SURVEILLANCE: 'VIDEO_SURVEILLANCE',
+  FIRE_ALARM: 'FIRE_ALARM',
+  ACCESS_CONTROL: 'ACCESS_CONTROL',
+  NOTIFICATION_SYSTEM: 'NOTIFICATION_SYSTEM',
+  FIRE_SUPPRESSION: 'FIRE_SUPPRESSION',
+  COMPLEX: 'COMPLEX',
+  ALL: 'ALL',
+} as const;
+
+export const PROJECT_MENU_DATA_TITLE: ProjectMenuDataTitle = {
+  VIDEO_SURVEILLANCE: {
+    title: 'мы Обеспечили системой видеонаблюдения инфраструктуры из разных отраслей',
+  },
+  FIRE_ALARM: {
+    title: 'мы Обеспечили пожарной безопасностью инфраструктуры из разных отраслей',
+  },
+  ACCESS_CONTROL: {
+    title: 'мы Обеспечили пожарной безопасностью инфраструктуры из разных отраслей',
+  },
+  NOTIFICATION_SYSTEM: {
+    title: 'мы Обеспечили пожарной безопасностью инфраструктуры из разных отраслей',
+  },
+  FIRE_SUPPRESSION: {
+    title: 'мы Обеспечили пожарной безопасностью инфраструктуры из разных отраслей',
+  },
+  COMPLEX: {
+    title: '2000+ реализованных проектов',
+    highlightTitle: '— от уютных кафе у дома до объектов государственного значения.',
+  },
+  ALL: {
+    title: '2000+ реализованных проектов',
+    highlightTitle: '— от уютных кафе у дома до объектов государственного значения.',
+  },
 } as const;
 
 export const PROJECT_MENU_DATA: ProjectMenuData[] = [
