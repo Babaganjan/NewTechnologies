@@ -1,5 +1,6 @@
 import {
   Advantage,
+  ConsultationService,
   Description,
   IncludedService,
   ProjectMenu,
@@ -12,6 +13,7 @@ export const OpsPage = () => {
   return (
     <>
       <Description type="FIRE_ALARM" />
+      <ConsultationService type="FIRE_ALARM" />
       <IncludedService type="fireAlarm" />
       <Advantage type="fireAlarm" />
       <StagesWork type="fireAlarm" />
