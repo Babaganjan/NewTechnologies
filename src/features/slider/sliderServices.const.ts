@@ -3,22 +3,22 @@ export const SLIDER_DATA = {
     title: 'Системы защиты',
     slides: [
       {
-        src: '/img/slider-services-1m.webp',
+        src: '/img/modalHeader/video-surveillance-system.webp',
         heading: 'Система видеонаблюдения',
         alt: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления',
       },
       {
-        src: '/img/slider-services-1m.webp',
+        src: '/img/modalHeader/access-control-system.webp',
         heading: 'Контроль доступа',
         alt: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления',
       },
       {
-        src: '/img/slider-services-1m.webp',
+        src: '/img/modalHeader/security-fire-alarm-system.webp',
         heading: 'Пожарная сигнализация',
         alt: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления',
       },
       {
-        src: '/img/slider-services-1m.webp',
+        src: '/img/modalHeader/security-fire-alarm-system.webp',
         heading: 'Охранная сигнализация',
         alt: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления',
       },

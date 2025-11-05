@@ -22,7 +22,7 @@ export const About = () => {
               <Image src="/img/about-1-1920.webp" alt="Картинка камеры" width={340} height={254} />
             </div>
           </div>
-          <div className="about__images--bottom flex">
+          <div className="about__images--bottom">
             <div className="image__wrapper image__small-top">
               <span className="decor-bottom-right"></span>
               <Image
@@ -30,7 +30,7 @@ export const About = () => {
                 alt="Картинка камеры"
                 width={168}
                 height={134}
-                sizes="(max-width: 1023px) 168px, 447px"
+                // sizes="(max-width: 1023px) 168px, 447px"
               />
             </div>
             <div className="image__wrapper image__small-bottom">
@@ -40,7 +40,7 @@ export const About = () => {
           </div>
         </div>
         <div className="about__text-wrapper">
-          <div className="about__prevs-wrapper flex">
+          <div className="about__prevs-wrapper">
             <p className="about__desc">
               Мы фокусируемся на государственных, промышленных и стратегически важных объектах. А
               также обеспечиваем защиту частных школ, жилых комплексов и частных домов.

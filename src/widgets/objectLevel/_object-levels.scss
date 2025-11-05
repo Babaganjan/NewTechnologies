@@ -46,23 +46,50 @@
     background-color: var(--bg-light-gray);
     padding: 0.625rem 0.625rem 0.625rem 1.313rem;
   }
-
   .item {
     &__inner {
       @include item-decor(
-        var(--vector-deep-gray),
-        20px,
-        $before-position: (top: -7px, left: -18px),
-        $after-position: (bottom: -7px, right: -7px)
+      var(--vector-deep-gray),
+      20px,
+      $before-position: (top: -7px, left: -18px),
+      $after-position: (bottom: -7px, right: -7px)
       );
-      min-height: 80px;
+
+      height: 100%;
       position: relative;
       flex-direction: column;
       gap: 6px;
-      background-image: url(/img/zavod.svg);
+      background-size: 56px 50px;
       background-repeat: no-repeat;
       background-position: top right;
     }
+  }
+
+.item-layout--1 .item__inner {
+  background-image: url(/img/objLevels/zavod.webp);
+}
+
+.item-layout--2 .item__inner {
+  background-image: url(/img/objLevels/gos-obj.webp);
+}
+
+.item-layout--3 .item__inner {
+  background-image: url(/img/objLevels/soc-obj.webp);
+}
+
+.item-layout--4 .item__inner {
+  background-image: url(/img/objLevels/stroteg-obj.webp);
+}
+
+.item-layout--5 .item__inner {
+  background-image: url(/img/objLevels/home-obj.webp);
+}
+
+.item-layout--6 .item__inner {
+  background-image: url(/img/objLevels/admin-obj.webp);
+}
+
+  .item {
     &__title {
       @include typography(var(--text-black), 600, fluid(22px, 42px), 1);
       letter-spacing: -0.083rem;
@@ -82,6 +109,7 @@
       @include typography(var(--text-deep-gray), 500, fluid(14px, 22px), 1.1, none);
       font-family: var(--second-family);
       letter-spacing: -0.053rem;
+      max-width: 70%;
     }
   }
 }
@@ -109,11 +137,38 @@
       padding: 15px 17px 39px 25px;
       min-height: 342px;
     }
+    .item {
+      &__inner {
+        @include item-decor(
+        var(--vector-deep-gray),
+        20px,
+        $before-position: (top: -7px, left: -18px),
+        $after-position: (bottom: -30px, right: -7px)
+        );
+        padding-top: 45%;
+        background-size: 122px 109px;
+        background-position: top left;
+      }
+
+      &__title {
+        &::before {
+        top: 135px;
+        left: -15px;
+        // letter-spacing: -0.031rem;
+      }
+        width: 100%;
+        font-size: 36px;
+      }
+
+      &__prev {
+        font-size: 22px;
+      }
+    }
   }
 }
 
 // deckstop
-@include respond-min(1024px) {
+@include respond-min(1520px) {
   .object-levels {
     &__container {
       @include line-decor(1% 25.4% 50% 74.6% 99%, var(--vector-light-gray));
@@ -148,8 +203,8 @@
         );
         min-height: 312px;
         justify-content: flex-end;
-        background-size: 50%;
-        background-position: top left -56px;
+        background-size: 136px 132px;
+        background-position: top left;
       }
       &__title {
         position: relative;

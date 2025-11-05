@@ -22,17 +22,25 @@ export const SliderServices = ({ serviceId }: SliderServicesProps) => {
 
   return (
     <div className="service-slider">
-      <Swiper spaceBetween={8} slidesPerView={2.3} loop={true} className="service-slider__swiper">
+      <Swiper
+        spaceBetween={10}
+        slidesPerView="auto"
+        loop={true}
+        
+        className="service-slider__swiper"
+      >
         {serviceData.slides.map((slide, index) => (
           <SwiperSlide key={index}>
             <div className="slider__wrapper flex">
-              <Image
-                src={slide.src}
-                alt={slide.alt}
-                width={156}
-                height={156}
-                className="slider__image"
-              />
+              <div className="wrapper-image">
+                <Image
+                  src={slide.src}
+                  alt={slide.alt}
+                  width={156}
+                  height={156}
+                  className="slider__image"
+                />
+              </div>
               <H level={'5'} className="slider__article-title">
                 {slide.heading}
               </H>

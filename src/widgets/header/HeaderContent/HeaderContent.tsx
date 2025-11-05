@@ -57,15 +57,15 @@ export const HeaderContent = ({
           <Link href="/" className="header__link" onClick={onItemLeave}>
             <Image
               src={logoSrc as string}
-              width={145}
-              height={79}
+              width={144}
+              height={78}
               alt="Логотип"
               className="header__logo"
               priority
             />
           </Link>
         </div>
-        <div className="header__wrapper-contacts visible__contacts flex">
+        <div className="header__wrapper-contacts hidden__contacts flex">
           {/* <div className="custom-select">
             <select name="city" className="header__city">
               <option value="almaty">Алматы</option>
