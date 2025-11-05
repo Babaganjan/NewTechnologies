@@ -1,5 +1,6 @@
 import {
   Advantage,
+  ConsultationService,
   Description,
   IncludedService,
   ProjectMenu,
@@ -12,6 +13,7 @@ export const VideonabludeniePage = () => {
   return (
     <>
       <Description type="VIDEO_SURVEILLANCE" />
+      <ConsultationService type="VIDEO_SURVEILLANCE" />
       <IncludedService type="videoSurveillance" />
       <Advantage type="videoSurveillance" />
       <StagesWork type="videoSurveillance" />
