@@ -36,7 +36,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       span {
-        @include typography(var(--text-white), 500, fluid(31px, 68px),  1, uppercase, -2.17px);
+        @include typography(var(--text-white), 500, fluid(31px, 68px),  1, uppercase, -5px);
         padding: 8px;
       }
       &--active span {
@@ -81,6 +81,47 @@
 
 // deckstop
 @include respond-min(1024px) {
+.services {
+  // Стили для красных кнопок
+  .item__btn {
+    &--red {
+      span {
+        color: var(--text-gray) !important;
+      }
+    }
+  }
+
+  // Стили для красных подкнопок
+  .Button-module-scss-module__EEeB0a__two {
+    &.other-red {
+      color: var(--text-deep-gray) !important;
+      
+      // Если нужно изменить только текст, а не всю кнопку
+      // span {
+      //   color: red !important;
+      //   opacity: 0.6;
+      // }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   .services {
     &.with-trapezoids {
       @include trapezoid-decor(56px, 33px, black, both, 1030px, -32px);
@@ -96,7 +137,6 @@
       &__btn {
         border: none;
         background: var(--primary-color);
-        border-radius: 50%;
         span {
           padding: 10px;
         }
@@ -112,7 +152,7 @@
         }
       }
       &__inner {
-        padding: 20px;
+        padding-left: 25px;
         width: max-content;
         align-items: center;
         justify-content: space-between;
@@ -126,7 +166,7 @@
 
     .services__sub-items {
       position: relative;
-      width: 45%;
+      width: 51%;
       padding-top: 25px;
     }
 
@@ -136,6 +176,28 @@
       left: -245px;
       width: 210px;
       height: 173px;
+    }
+
+    .services__sub-item-content {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .selected:hover {
+      color: var(--text-black);
+      background-color: var(--bg-white);
+    }
+
+    .services__sub-item-info {
+      width: 39%;
+    }
+
+    .services__desc-text {
+      font-size: fluid(13px, 22px);
+      color: var(--second-family);
+      letter-spacing: -0.05em;
+      font-weight: 500;
+      line-height: 110%;
     }
 
     .desktop-only{display: block;}
