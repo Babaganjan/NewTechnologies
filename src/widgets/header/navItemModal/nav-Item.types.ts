@@ -12,6 +12,7 @@ export interface SelectedCategoryType {
   name: string;
   image?: string;
   index?: number;
+  desc?: string;
 }
 
 export type ModalVariant = 'Производство' | 'Сервис';
