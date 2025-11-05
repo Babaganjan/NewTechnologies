@@ -1,5 +1,6 @@
 import {
   Advantage,
+  ConsultationService,
   Description,
   IncludedService,
   ProjectMenu,
@@ -12,6 +13,7 @@ export const OpoveshcheniePage = () => {
   return (
     <>
       <Description type="NOTIFICATION_SYSTEM" />
+      <ConsultationService type="NOTIFICATION_SYSTEM" />
       <IncludedService type="notificationSystem" />
       <Advantage type="notificationSystem" />
       <StagesWork type="notificationSystem" />

@@ -2,6 +2,7 @@ import { AboutUs } from './AboutUs/AboutUs';
 import { About } from './about/About';
 import { Advantage } from './advantage/Advantage';
 import { Advertising } from './advertising/Advertising';
+import { ConsultationService } from './consultationService/ConsultationService';
 import { Contacts } from './contacts/Contacts';
 import { Description } from './descriptionBlock/Description';
 import { DocumentsBlock } from './documentsBlock/DocumentsBlock';
@@ -27,6 +28,7 @@ export {
   AboutUs,
   Advantage,
   Advertising,
+  ConsultationService,
   Contacts,
   Description,
   DocumentsBlock,
