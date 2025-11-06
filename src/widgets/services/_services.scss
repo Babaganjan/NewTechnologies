@@ -82,7 +82,6 @@
 // deckstop
 @include respond-min(1024px) {
 .services {
-  // Стили для красных кнопок
   .item__btn {
     &--red {
       span {
@@ -91,16 +90,9 @@
     }
   }
 
-  // Стили для красных подкнопок
   .Button-module-scss-module__EEeB0a__two {
     &.other-red {
       color: var(--text-deep-gray) !important;
-      
-      // Если нужно изменить только текст, а не всю кнопку
-      // span {
-      //   color: red !important;
-      //   opacity: 0.6;
-      // }
     }
   }
 }

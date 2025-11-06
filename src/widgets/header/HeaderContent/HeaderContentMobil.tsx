@@ -71,9 +71,13 @@ export const HeaderContentMobil = ({
 
               return (
                 <li className="nav__item" key={item.href}>
-                  <button className={clsx('nav__link')} onClick={() => handleItemClick(item)}>
+                  <Link
+                    href={item.href}
+                    className={clsx('nav__link')}
+                    onClick={() => handleItemClick(item)}
+                  >
                     {item.title}
-                  </button>
+                  </Link>
                 </li>
               );
             })}

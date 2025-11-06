@@ -44,7 +44,12 @@ export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
             <li key={item.id}>
               <Button
                 variant="one"
-                className={clsx(selectedId === item.id && 'selected')}
+                className={clsx('nav-modal__btn', 
+                  {
+                    selected: selectedId === item.id, 
+                    unselected: selectedId !== null && selectedId !== item.id
+                  }
+                  )}
                 onMouseEnter={() => handleTitleHover(item.id)}
               >
                 {item.title}
