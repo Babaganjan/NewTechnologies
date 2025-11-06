@@ -51,6 +51,7 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
             theme={currentTheme}
             logoSrc={logoSrc}
             activeNavItem={activeNavItem}
+            onModalClose={handleNavItemLeave}
           />
           <NavItemModal data={modalData || []} />
         </Modal>

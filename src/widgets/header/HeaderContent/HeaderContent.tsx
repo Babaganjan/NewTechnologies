@@ -19,6 +19,7 @@ export const HeaderContent = ({
   onItemLeave,
   onMobilModal,
   activeNavItem,
+  onModalClose,
 }: HeaderContentProps) => {
   return (
     <header className="header" data-theme={theme}>
@@ -45,7 +46,7 @@ export const HeaderContent = ({
                       variant="menu"
                       className={clsx('nav__link', isHovered && 'hovered')}
                       iconSmall={item.hasIcon}
-                      onClick={onItemLeave}
+                      onClick={onModalClose}
                     >
                       {item.title}
                     </Button>
@@ -54,7 +55,7 @@ export const HeaderContent = ({
               })}
             </ul>
           </nav>
-          <Link href="/" className="header__link" onClick={onItemLeave}>
+          <Link href="/" className="header__link" onClick={onModalClose}>
             <Image
               src={logoSrc as string}
               width={144}
@@ -66,13 +67,6 @@ export const HeaderContent = ({
           </Link>
         </div>
         <div className="header__wrapper-contacts hidden__contacts flex">
-          {/* <div className="custom-select">
-            <select name="city" className="header__city">
-              <option value="almaty">Алматы</option>
-              <option value="karaganda">Караганда</option>
-              <option value="shymkent">Шымкент</option>
-            </select>
-          </div> */}
           <CustomSelect
             options={[
               { value: 'almaty', label: 'Алматы' },
