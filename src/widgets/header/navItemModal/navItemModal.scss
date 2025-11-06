@@ -24,16 +24,25 @@
   }
 }
 
-.nav-modal__list--title .selected {
-  background-color: var(--text-black);
-  color: var(--text-white);
-  transition: all 0.2s ease-in-out;
-}
+.nav-modal {
+  &__btn {
+    color: var(--text-black);
+    transition: all 0.2s ease-in-out;
+    &.selected {
+      background-color: var(--bg-black);
+      color: var(--text-white);
+    }
+    
+    &.unselected {
+      color: var(--text-gray);
+      opacity: 0.6;
+    }
+  }
 
-.nav-modal__list--items .selected {
-  background-color: var(--text-black);
-  color: var(--text-white);
-  transition: all 0.2s ease-in-out;
+  &__list--items .selected {
+    background-color: var(--bg-black);
+    color: var(--text-white);
+  }
 }
 
 body:has(.wrapper-modal) .nav__link.hovered::after {
