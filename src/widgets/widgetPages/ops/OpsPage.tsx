@@ -2,6 +2,7 @@ import {
   Advantage,
   ConsultationService,
   Description,
+  HeroService,
   IncludedService,
   ProjectMenu,
   Questions,
@@ -12,6 +13,7 @@ import {
 export const OpsPage = () => {
   return (
     <>
+      <HeroService title="Охранно-пожарная сигнализация" type="fireAlarm" />
       <Description type="FIRE_ALARM" />
       <ConsultationService type="FIRE_ALARM" />
       <IncludedService type="fireAlarm" />

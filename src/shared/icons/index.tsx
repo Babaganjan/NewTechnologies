@@ -5,6 +5,7 @@ import HomeHeading from './HomeHeading/HomeHeading';
 import { Logo } from './Logo/Logo';
 import { ProductionHeading } from './ProductionHeading/ProductionHeading';
 import { ServicesHeading } from './ServicesHeading/ServicesHeading';
+import { ArrowBreadcrumbs } from './arrow-breadcrumbs/ArrowBreadcrumbs';
 import { DocumentsIcons } from './documents-icons/documents-icons';
 import type { Icons } from './icon.type';
 import * as ObjectLevelIcons from './objectLevelIcons';
@@ -38,6 +39,7 @@ export {
 
 export {
   Arrow,
+  ArrowBreadcrumbs,
   ArrowSmall,
   ContactsHeading,
   DocumentsIcons,

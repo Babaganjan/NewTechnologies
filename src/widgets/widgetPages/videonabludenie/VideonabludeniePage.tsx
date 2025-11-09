@@ -2,6 +2,7 @@ import {
   Advantage,
   ConsultationService,
   Description,
+  HeroService,
   IncludedService,
   ProjectMenu,
   Questions,
@@ -12,6 +13,7 @@ import {
 export const VideonabludeniePage = () => {
   return (
     <>
+      <HeroService title="Системы видеонаблюдения" type="videoSurveillance" />
       <Description type="VIDEO_SURVEILLANCE" />
       <ConsultationService type="VIDEO_SURVEILLANCE" />
       <IncludedService type="videoSurveillance" />
