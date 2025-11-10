@@ -100,7 +100,7 @@ export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
         <ul className="project-menu__list">
           {visibleProjects.map((item, index) => (
             <ProjectListItem
-              key={item.id}
+              key={`list-${item.id}`}
               item={item}
               {...createProjectProps(index)}
               isAnimated={index >= INITIAL_ITEMS_COUNT && isExpanding}
