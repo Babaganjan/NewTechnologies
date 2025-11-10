@@ -15,7 +15,6 @@
   width: 100%;
   aspect-ratio: 16 / 9;
   margin-top: fluid(10px, 20px);
-  // Mobile - более квадратный
   @include respond-min(768px, max) {
     aspect-ratio: 4 / 3;
   }

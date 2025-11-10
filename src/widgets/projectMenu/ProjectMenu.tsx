@@ -10,8 +10,7 @@ import './_project-menu.scss';
 import { ProjectListItem } from './ProjectListItem/ProjectListItem';
 import { ProjectNumberItem } from './ProjectNumberItem/ProjectNumberItem';
 import { ProjectServiceItem } from './ProjectServiceItem/ProjectServiceItem';
-import { getProjectsByCategory } from './helpers/getProjectsByCategory';
-import { INITIAL_ITEMS_COUNT, PROJECT_MENU_DATA_TITLE } from './projectMenu.const';
+import { INITIAL_ITEMS_COUNT, PROJECT_MENU_DATA_TITLE, TYPEPROJECT } from './projectMenu.const';
 import type { ProjectCategory, ProjectMenuItemProps } from './projectMenu.types';
 
 export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
@@ -48,7 +47,7 @@ export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
     onActiveRow: handleActiveRow,
   });
 
-  const projectData = getProjectsByCategory(type);
+  const projectData = TYPEPROJECT[type];
   const titleData = PROJECT_MENU_DATA_TITLE[type];
   const visibleProjects = projectData.slice(0, visibleCount);
   const hasMore = visibleCount < projectData.length;
