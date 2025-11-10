@@ -1,0 +1,21 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.heroService {
+  background-color: var(--bg-black);
+}
+
+.heroService__title {
+  margin-top: 120px;
+  width: 40%;
+}
+
+.heroService__img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  margin-top: fluid(10px, 20px);
+  @include respond-min(768px, max) {
+    aspect-ratio: 4 / 3;
+  }
+}

@@ -35,8 +35,10 @@
 
 .typesOfBlock__slide-item {
   position: relative;
-  width: 300px;
-  height: 510px;
+  min-width: 300px;
+  min-height: 510px;
+  --clip-size: 20px;
+  --clip-half: 10px;
 
   .typesOfBlock__slide-item-title {
     position: absolute;
@@ -47,13 +49,15 @@
     padding: 10px;
     margin: 5px;
     bottom: 0;
+    right: 0;
+    left: 0;
     clip-path: polygon(
       0% 0%,
-      calc(100% - 40px) 0%,
-      calc(100% - 40px) 20px,
-      calc(100% - 20px) 20px,
-      calc(100% - 20px) 40px,
-      100% 40px,
+      calc(100% - var(--clip-size)) 0%,
+      calc(100% - var(--clip-size)) var(--clip-half),
+      calc(100% - var(--clip-half)) var(--clip-half),
+      calc(100% - var(--clip-half)) var(--clip-size),
+      100% var(--clip-size),
       100% 100%,
       0% 100%
     );
@@ -67,7 +71,10 @@
 }
 
 .swiper-slide {
-  width: 300px !important;
+  max-width: 300px;
+  img {
+    filter: grayscale(1);
+  }
 }
 
 .swiper-pagination {
@@ -84,12 +91,17 @@
 }
 
 .typesOfBlock__slide-item-img {
-  width: 300px;
-  height: 510px;
+  min-width: 300px;
+  min-height: 510px;
   flex: 1;
   &::after {
     content: '';
     @include decoration(var(--text-black), 20px);
+  }
+}
+.swiper-slide-active {
+  img {
+    filter: grayscale(0);
   }
 }
 
@@ -100,7 +112,8 @@
   }
 
   .swiper-slide {
-    width: 600px !important;
+    min-height: 115px;
+    min-width: 600px;
   }
 
   .typesOfBlock__subTitle {
@@ -110,8 +123,11 @@
     align-self: center;
   }
   .typesOfBlock__slide-item {
-    width: 600px;
-    height: 900px;
+    min-width: 600px;
+    min-height: 900px;
+    --clip-size: 30px;
+    --clip-half: 15px;
+
     img {
       object-fit: cover;
     }
