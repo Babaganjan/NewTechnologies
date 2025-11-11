@@ -64,7 +64,7 @@
 
 .header {
   // position: relative;
-  background-color: var(--header-bg);
+  // background-color: var(--header-bg);
   z-index: 1;
   margin-bottom: -1px;
 
@@ -173,8 +173,8 @@
 
 // dekstop
 @include respond-min(1380px) {
-  body:has(.wrapper-modal) {
-    margin-top: 119px;
+  body {
+    // margin-top: 119px;
   }
 
   body:has(.wrapper-modal) .header__container {
@@ -224,6 +224,29 @@
 
     &__phone {
       @include typography(var(--header-text), 500, 20px);
+    }
+  }
+}
+
+
+
+
+
+
+
+
+// ---------------
+// _header.scss
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+  
+  &.header-scrolled {
+    [data-theme='light'] & {
+      // background-color: rgba(0, 0, 0, 1);
     }
   }
 }

@@ -5,6 +5,7 @@ $contact-areas: phone, address, work-time, mail, social;
 $large-screen-bottom-padding: 190px;
 
 .contacts {
+  padding-top: 119px;
   background-color: var(--bg-black);
   &__container {
     display: grid;

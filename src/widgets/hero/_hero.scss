@@ -2,6 +2,7 @@
 @use '@/shared/styles/mixins' as *;
 
 .hero {
+  padding-top: 119px;
   &.with-trapezoids {
     @include trapezoid-decor(21px, 12px, black, bottom);
   }
