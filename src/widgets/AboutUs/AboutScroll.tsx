@@ -20,7 +20,7 @@ export const AboutScroll = () => {
   const bottomBlockY = useTransform(scrollYProgress, [0, 0.5], [0, 700]);
 
   return (
-    <section className="hero-scroll-section" ref={containerRef}>
+    <section className="hero-scroll-section" ref={containerRef} data-theme={'dark'}>
       <div className="sticky-container">
         <motion.div
           className="block top-block"
@@ -31,7 +31,7 @@ export const AboutScroll = () => {
           <AboutUsHeadingTop />
         </motion.div>
 
-        <motion.div className="aboutUs__img-wrapperScroll" style={{}}>
+        <motion.div className="aboutUs__img-wrapperScroll">
           <Image
             className="aboutUs__img"
             src="/img/AboutUs/aboutScroll.webp"
@@ -49,6 +49,9 @@ export const AboutScroll = () => {
           }}
         >
           <AboutUsHeadingBottom />
+          <p className="bottom-block__desc">
+            Лидер в сфере систем безопасности и автоматизации бизнеса
+          </p>
         </motion.div>
       </div>
     </section>
