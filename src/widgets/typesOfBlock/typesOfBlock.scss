@@ -37,8 +37,6 @@
   position: relative;
   min-width: 300px;
   min-height: 510px;
-  --clip-size: 20px;
-  --clip-half: 10px;
 
   .typesOfBlock__slide-item-title {
     position: absolute;
@@ -51,16 +49,7 @@
     bottom: 0;
     right: 0;
     left: 0;
-    clip-path: polygon(
-      0% 0%,
-      calc(100% - var(--clip-size)) 0%,
-      calc(100% - var(--clip-size)) var(--clip-half),
-      calc(100% - var(--clip-half)) var(--clip-half),
-      calc(100% - var(--clip-half)) var(--clip-size),
-      100% var(--clip-size),
-      100% 100%,
-      0% 100%
-    );
+    @include clip-shape();
 
     p {
       @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none);
@@ -125,8 +114,6 @@
   .typesOfBlock__slide-item {
     min-width: 600px;
     min-height: 900px;
-    --clip-size: 30px;
-    --clip-half: 15px;
 
     img {
       object-fit: cover;

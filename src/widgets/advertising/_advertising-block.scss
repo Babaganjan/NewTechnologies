@@ -46,17 +46,6 @@
     width: fluid(100px, 150px);
     height: fluid(50px, 80px);
   }
-  .advertising__decoration {
-    @include decoration(
-      var(--text-black),
-      1.5rem,
-      '/img/kvadrat.svg',
-      (
-        top: -1px,
-        right: -1px,
-      )
-    );
-  }
 }
 .continuous-scroll-container {
   overflow: hidden;
@@ -82,7 +71,9 @@
   align-items: center;
   flex-shrink: 0;
   margin-right: 10px;
-  @include item-decor(var(--text-white));
+  @include clip-shape();
+
+  @include item-decor(var(--text-white), fluid(12px, 20px));
   svg {
     width: 100%;
     height: auto;

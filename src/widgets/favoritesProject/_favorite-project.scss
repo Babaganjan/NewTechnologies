@@ -17,16 +17,20 @@
   &__item {
     padding-bottom: 8px;
     border-bottom: var(--vector-light-gray) solid 1px;
-    .favorites-project__img-item:first-of-type {
-      filter: grayscale(1);
-    }
+
     .favorites-project__img {
-      // Mobile: черный цвет
       @include item-decor(var(--text-black), fluid(12px, 20px));
       display: inline-flex;
-      .favorites-project__decoration {
-        // Mobile: белый цвет
-        @include decoration(var(--text-white), fluid(24px, 40px));
+      @include clip-shape();
+      filter: grayscale(1);
+      &:hover {
+        &::before,
+        &::after {
+          transition: background-color 0.2s ease;
+          background-color: var(--text-white);
+        }
+        transition: filter 0.2s ease;
+        filter: grayscale(0);
       }
     }
     .item__prev {
@@ -36,21 +40,6 @@
   }
   .item__small-title {
     color: var(--text-black);
-  }
-}
-
-// Планшетка: белые декорации
-@include respond-min(768px) {
-  .favorites-project {
-    &__item {
-      .favorites-project__img {
-        // Переопределяем цвет на белый для планшетов
-        &::before,
-        &::after {
-          background-color: var(--text-white);
-        }
-      }
-    }
   }
 }
 
@@ -82,18 +71,6 @@
       &:first-of-type {
         grid-column: 1/-1;
         grid-row: 2/3;
-        color: var(--text-white);
-
-        .favorites-project__img-item {
-          filter: none;
-        }
-
-        .favorites-project__img {
-          &::after,
-          &::before {
-            background-color: var(--text-white);
-          }
-        }
       }
 
       &:nth-of-type(2) {
@@ -108,16 +85,7 @@
     }
     &__wrapper {
       position: absolute;
-      clip-path: polygon(
-        0% 0%,
-        calc(100% - 40px) 0%,
-        calc(100% - 40px) 20px,
-        calc(100% - 20px) 20px,
-        calc(100% - 20px) 40px,
-        100% 40px,
-        100% 100%,
-        0% 100%
-      );
+      @include clip-shape();
       width: 480px;
       min-height: 118px;
       transform: translate(10px, -132px);

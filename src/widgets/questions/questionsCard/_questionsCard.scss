@@ -1,49 +1,20 @@
 @use '@/shared/styles/_mixins.scss' as *;
 @use '@/shared/styles/_functions.scss' as *;
 
-.questions__card-decorative {
-  @include decoration(
-    var(--text-white),
-    fluid(20px, 28px),
-    '/img/kvadrat.svg',
-    (
-      top: 0,
-      right: -1px,
-    )
-  );
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
-  transition:
-    opacity 0.22s ease,
-    visibility 0.22s ease;
-}
-
 .questions__card {
   position: relative;
   display: flex;
   flex-direction: column;
   min-height: fluid(180px, 400px);
+  @include clip-shape();
+  &.questions__card--active {
+    clip-path: none;
+  }
 
   padding: fluid(10px, 20px);
 
   background-color: var(--bg-light-gray);
   color: var(--text-black);
-
-  &:not(.questions__card--active)::after {
-    content: '';
-    margin: 5px;
-    background-color: var(--vector-deep-gray);
-    @include decoration(
-      var(--text-black),
-      fluid(14px, 20px),
-      '/img/decoration.svg',
-      (
-        top: 0,
-        left: 0,
-      )
-    );
-  }
 
   transition:
     background-color 0.2s ease,
@@ -52,11 +23,6 @@
   &:hover {
     background-color: var(--bg-black);
     color: var(--text-white);
-
-    .questions__card-decorative {
-      opacity: 1;
-      visibility: visible;
-    }
 
     &::after {
       background-color: var(--text-white);
@@ -93,4 +59,10 @@
   list-style: disc;
   margin-left: 20px;
   margin-top: 20px;
+}
+
+@include respond-min(1024px) {
+  .questions__card {
+    @include clip-shape(bottom-left);
+  }
 }

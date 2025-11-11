@@ -32,6 +32,7 @@
     text-align: center;
     color: var(--text-black);
     background-color: var(--bg-light-gray);
+    @include clip-shape();
   }
 }
 
@@ -54,10 +55,6 @@
 
 .consultationService__decorationFour {
   display: none;
-}
-
-.consultationService__item-decoration {
-  @include decoration(var(--text-white), fluid(24px, 30px));
 }
 
 .consultationService__decorationOne {
