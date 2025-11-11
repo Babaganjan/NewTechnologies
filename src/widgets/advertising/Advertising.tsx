@@ -29,7 +29,6 @@ export const Advertising = () => {
               return (
                 <div key={slide.id} className="continuous-slide">
                   <PartnerComponent />
-                  <div className="advertising__decoration" aria-hidden="true"></div>
                 </div>
               );
             })}
@@ -39,7 +38,6 @@ export const Advertising = () => {
               return (
                 <div key={`duplicate-${slide.id}`} className="continuous-slide">
                   <PartnerComponent />
-                  <div className="advertising__decoration" aria-hidden="true"></div>
                 </div>
               );
             })}

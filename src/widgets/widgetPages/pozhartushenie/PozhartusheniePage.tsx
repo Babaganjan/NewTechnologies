@@ -2,6 +2,7 @@ import {
   Advantage,
   ConsultationService,
   Description,
+  HeroService,
   IncludedService,
   ProjectMenu,
   Questions,
@@ -13,6 +14,7 @@ import {
 export const PozhartusheniePage = () => {
   return (
     <>
+      <HeroService title="Системы пожаротушения" type="fireSuppression" />
       <Description type="FIRE_SUPPRESSION" />
       <ConsultationService type="FIRE_SUPPRESSION" />
       <IncludedService type="fireSuppression" />

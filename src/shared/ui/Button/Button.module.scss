@@ -1,5 +1,5 @@
-@use '../../styles/functions' as *;
-@use '../../styles/mixins' as *;
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
 
 body:has(.modal) {
   .menu {
@@ -143,7 +143,7 @@ body:has(.modal) {
   align-items: center;
   padding: 5px 4px;
   position: relative;
-  @include typography(var(--text-light-gray), 500, fluid(18px,28px), 1.15);
+  @include typography(var(--text-light-gray), 500, fluid(18px, 28px), 1.15);
   transition:
     color 0.3s,
     background-color 0.3s;

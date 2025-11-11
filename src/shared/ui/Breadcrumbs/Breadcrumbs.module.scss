@@ -1,0 +1,32 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.breadcrumbs {
+  display: flex;
+  list-style: none;
+}
+
+.breadcrumbsItem {
+  position: relative;
+  font-family: var(--second-family);
+  @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+
+  a {
+    position: relative;
+    padding-left: fluid(10px, 22px);
+    &::before {
+      content: '[';
+      position: absolute;
+      left: 0;
+    }
+  }
+
+  span {
+    display: block;
+    margin-inline: 9px;
+  }
+}

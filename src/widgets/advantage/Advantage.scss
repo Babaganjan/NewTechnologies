@@ -22,10 +22,7 @@
     padding: 15px;
     background-color: var(--bg-light-gray);
     @include item-decor(var(--vector-deep-gray));
-
-    .advantage__item-decoration {
-      @include decoration(var(--text-white), 24px);
-    }
+    @include clip-shape();
 
     .advantage__item-number {
       position: absolute;

@@ -12,6 +12,7 @@ import { FeedbackMenu } from './feedbackMenu/FeedbackMenu';
 import { Footer } from './footer/Footer';
 import { Header } from './header/Header';
 import { Hero } from './hero/Hero';
+import { HeroService } from './heroService/HeroService';
 import { IncludedService } from './includedService/IncludedService';
 import { ObjectLevel } from './objectLevel/ObjectLevels';
 import { Products } from './products/Products';
@@ -39,6 +40,7 @@ export {
   Footer,
   Header,
   Hero,
+  HeroService,
   IncludedService,
   ObjectLevel,
   Products,
