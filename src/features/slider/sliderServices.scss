@@ -24,11 +24,7 @@
   }
 
   .wrapper-image {
-    &::after {
-    content: '';
-    @include decoration(var(--text-black), 24px);
-    top: 17px;
-  }
+    @include clip-shape();
   }
 
   .slider {

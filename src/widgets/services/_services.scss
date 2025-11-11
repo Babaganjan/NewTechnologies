@@ -36,7 +36,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       span {
-        @include typography(var(--text-white), 500, fluid(31px, 68px),  1, uppercase, -5px);
+        @include typography(var(--text-white), 500, fluid(31px, 68px),  1, uppercase, -0.07em);
         padding: 8px;
       }
       &--active span {
@@ -163,6 +163,7 @@
     }
 
     .services__sub-item-image {
+      @include clip-shape();
       position: absolute;
       top: 45px;
       left: -245px;
