@@ -27,7 +27,6 @@ export const FavoritesProject = () => {
                 height={242}
                 className="favorites-project__img-item"
               />
-              <div className="favorites-project__decoration" aria-hidden="true"></div>
             </div>
             <div className="favorites-project__wrapper">
               <H level={'5'} className="item__small-title">

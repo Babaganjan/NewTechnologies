@@ -18,7 +18,6 @@ export const StagesWork = ({ type }: { type: StagesWorkType }) => {
         <ul className="stagesWork__list">
           {StagesWorkData.map((item, index) => (
             <li className="stagesWork__item" key={item.id}>
-              <div className="stagesWork__item-decoration" aria-hidden="true"></div>
               <span className="stagesWork__item-number">
                 {(index + 1).toString().padStart(2, '0')}
               </span>

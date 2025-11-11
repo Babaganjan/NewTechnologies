@@ -2,6 +2,35 @@
 @use 'sass:list';
 @use 'functions' as *;
 
+@mixin clip-shape($position: top-right) {
+  --clip-size: #{fluid(20px, 30px)};
+  --clip-half: calc(var(--clip-size) / 2);
+
+  @if $position == top-right {
+    clip-path: polygon(
+      0% 0%,
+      calc(100% - var(--clip-size)) 0%,
+      calc(100% - var(--clip-size)) var(--clip-half),
+      calc(100% - var(--clip-half)) var(--clip-half),
+      calc(100% - var(--clip-half)) var(--clip-size),
+      100% var(--clip-size),
+      100% 100%,
+      0% 100%
+    );
+  } @else if $position == bottom-left {
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 100%,
+      var(--clip-size) 100%,
+      var(--clip-size) calc(100% - var(--clip-half)),
+      var(--clip-half) calc(100% - var(--clip-half)),
+      var(--clip-half) calc(100% - var(--clip-size)),
+      0% calc(100% - var(--clip-size))
+    );
+  }
+}
+
 @mixin typography(
   $color: var(--text-white),
   $weight: 500,
@@ -180,4 +209,3 @@
     transform: rotate(180deg);
   }
 }
-

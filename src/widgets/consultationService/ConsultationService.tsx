@@ -44,7 +44,6 @@ export const ConsultationService = ({ type }: { type: ConsultationServiceKey }) 
         <ul className="consultationService__list">
           {data.item.map((item, index) => (
             <li className="consultationService__item" key={`${index}-${item}`}>
-              <div className="consultationService__item-decoration"></div>
               {item}
             </li>
           ))}

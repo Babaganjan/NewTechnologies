@@ -18,23 +18,14 @@ export const About = () => {
         <div className="about__images flex">
           <div className="about__images--top">
             <div className="image__wrapper image__big">
-              <span className="decor-bottom-right"></span>
               <Image src="/img/about-1-1920.webp" alt="Картинка камеры" width={340} height={254} />
             </div>
           </div>
           <div className="about__images--bottom">
             <div className="image__wrapper image__small-top">
-              <span className="decor-bottom-right"></span>
-              <Image
-                src="/img/about-2-1920.webp"
-                alt="Картинка камеры"
-                width={168}
-                height={134}
-                // sizes="(max-width: 1023px) 168px, 447px"
-              />
+              <Image src="/img/about-2-1920.webp" alt="Картинка камеры" width={168} height={134} />
             </div>
             <div className="image__wrapper image__small-bottom">
-              <span className="decor-bottom-right"></span>
               <Image src="/img/about-3-1920.webp" alt="Картинка камеры" width={168} height={134} />
             </div>
           </div>

@@ -19,7 +19,6 @@ export const Advantage = ({ type }: { type: AdvantageWorkType }) => {
         <ul className="advantage__list">
           {AdvantageData.map((item, index) => (
             <li className={`advantage__item advantage__item--pos-${index + 1}`} key={item.title}>
-              <div className="advantage__item-decoration"></div>
               <H level="5" variant="light">
                 {item.title}
               </H>
