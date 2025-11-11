@@ -176,10 +176,20 @@
   body:has(.wrapper-modal) {
     margin-top: 119px;
   }
+
+  body:has(.wrapper-modal) .header__container {
+    @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--header-line));
+  }
+
+  body:has(.bottom-block) .header {
+    position: fixed;
+    background-color: transparent;
+    width: 100%;
+    z-index: 20;
+  }
   .header {
     min-height: 119px;
     &__container {
-      // @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--header-line));
       padding-block: 20px;
     }
     &__wrapper {
@@ -207,17 +217,6 @@
       max-height: 78px;
     }
     
-    // &__wrapper-contacts {
-    //   gap: 30px;
-    // }
-    // .custom-select {
-    //   position: relative;
-    //   display: inline-block;
-    //   width: 76px;
-    // }
-
-    
-
     .header__city option {
       background-color: var(--header-bg);
       color: var(--header-text);

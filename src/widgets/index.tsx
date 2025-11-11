@@ -1,3 +1,4 @@
+import { AboutScroll } from './AboutUs/AboutScroll';
 import { AboutUs } from './AboutUs/AboutUs';
 import { About } from './about/About';
 import { Advantage } from './advantage/Advantage';
@@ -26,6 +27,7 @@ import { TypesOfBlock } from './typesOfBlock/TypesOfBlock';
 
 export {
   About,
+  AboutScroll,
   AboutUs,
   Advantage,
   Advertising,

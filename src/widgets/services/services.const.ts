@@ -43,7 +43,7 @@ export const SERVICES_ITEMS: ServicesProps[] = [
     title: 'IT-решения',
     list: [
       {
-        name: 'Для образовательных учреждений',
+        name: 'Для государственных и частных организаций',
         image: 'img/modalHeader/for-educational-institutions.webp',
         href: '/',
         desc: ''

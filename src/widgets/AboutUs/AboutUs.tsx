@@ -1,6 +1,7 @@
 import Image from 'next/image';
 
 import { H } from '@/shared/ui';
+
 import './AboutUs.scss';
 
 export const AboutUs = () => {
