@@ -85,14 +85,71 @@
     }
   }
 }
+
+$trapezoid-configs: (
+  'small': (
+    width: 21px,
+    height: 13px,
+    color: var(--vector-black),
+    size: fluid(198px, 300px),
+    shift: -11px
+  ),
+  'medium': (
+    width: 31px,
+    height: 19px,
+    color: var(--vector-black),
+    size: fluid(300px, 500px),
+    shift: -17px
+  ),
+  'large': (
+    width: 42px,
+    height: 25px,
+    color: var(--vector-black),
+    size: fluid(500px, 800px),
+    shift: -24px
+  ),
+  'xlarge': (
+    width: 56px,
+    height: 33px,
+    color: var(--vector-black),
+    size: fluid(800px, 1030px),
+    shift: -32px
+  )
+);
+
 @mixin trapezoid-decor(
-  $width: 21px,
-  $height: 13px,
-  $color: #000,
+  $config: null,
+  $width: null,
+  $height: null,
+  $color: null,
   $position: both,
-  $size: 198px,
-  $shift: -11px
+  $size: null,
+  $shift: null
 ) {
+  // Базовые значения по умолчанию
+  $default-width: 21px;
+  $default-height: 13px;
+  $default-color: var(--vector-black);
+  $default-size: 198px;
+  $default-shift: -11px;
+
+  // Если передан конфиг, используем как базовые значения
+  @if $config != null and type-of($config) == 'string' and map-has-key($trapezoid-configs, $config) {
+    $config-map: map-get($trapezoid-configs, $config);
+    $default-width: map-get($config-map, 'width');
+    $default-height: map-get($config-map, 'height');
+    $default-color: map-get($config-map, 'color');
+    $default-size: map-get($config-map, 'size');
+    $default-shift: map-get($config-map, 'shift');
+  }
+
+  // Используем переданные значения или значения по умолчанию
+  $width: if($width != null, $width, $default-width);
+  $height: if($height != null, $height, $default-height);
+  $color: if($color != null, $color, $default-color);
+  $size: if($size != null, $size, $default-size);
+  $shift: if($shift != null, $shift, $default-shift);
+
   position: relative;
 
   @if $position == top or $position == both {

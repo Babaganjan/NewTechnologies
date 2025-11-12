@@ -3,7 +3,7 @@
 
 .result {
   &.with-trapezoids {
-    @include trapezoid-decor(21px, 12px, var(--vector-black), both, fluid(198px, 300px), -11px);
+    @include trapezoid-decor($config: 'small');
   }
   position: relative;
   background-color: var(--bg-black);
@@ -24,10 +24,19 @@
 }
 
 //tablet
+@include respond-min (768px) {
+  .result {
+    &.with-trapezoids {
+      @include trapezoid-decor($config: 'medium');
+    }
+  }
+}
+
+// mini-desktop
 @include respond-min (1280px) {
   .result {
     &.with-trapezoids {
-      @include trapezoid-decor(56px, 33px, black, both, fluid(300px, 500px), -22px);
+      @include trapezoid-decor($config: 'large');
     }
 
     &__container {
@@ -109,7 +118,7 @@
 @include respond-min(1380px) {
   .result {
     &.with-trapezoids {
-      @include trapezoid-decor(56px, 33px, black, both, fluid(500px, 1030px), -32px);
+      @include trapezoid-decor($config: 'xlarge');
     }
 
     &__container {

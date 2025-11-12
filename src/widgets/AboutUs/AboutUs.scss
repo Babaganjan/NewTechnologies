@@ -7,7 +7,7 @@
   background-color: var(--bg-black);
 
   & {
-    @include trapezoid-decor(21px, 12px, var(--bg-black), bottom);
+    @include trapezoid-decor($config: 'small', $position: bottom);
   }
 }
 
@@ -95,3 +95,16 @@
     justify-self: center;
   }
 }
+
+@include respond-min(1280px) {
+  .aboutUs {
+    @include trapezoid-decor($config: 'large', $position: bottom);
+  }
+}
+
+@include respond-min(1380px) {
+  .aboutUs {
+    @include trapezoid-decor($config: 'xlarge', $position: bottom);
+  }
+}
+

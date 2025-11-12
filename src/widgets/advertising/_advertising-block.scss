@@ -11,7 +11,7 @@
     padding-inline: 0.625rem;
   }
   &.with-trapezoids {
-    @include trapezoid-decor(21px, 12px, var(--bg-black), both);
+    @include trapezoid-decor($config: 'small');
   }
   &__title {
     position: relative;
@@ -101,6 +101,15 @@
     transform: translateX(-50%);
   }
 }
+
+@include respond-min(768px) {
+  .advertising {
+    &.with-trapezoids {
+      @include trapezoid-decor($config: 'medium');
+    }
+  }
+}
+
 @include respond-min(1024px) {
   .advertising {
     padding-bottom: 60px;
@@ -137,9 +146,21 @@
         display: inline;
       }
     }
+  }
+}
 
+@include respond-min(1280px) {
+  .advertising {
     &.with-trapezoids {
-      @include trapezoid-decor(56px, 33px, var(--vector-black), both, 1030px, -32px);
+      @include trapezoid-decor($config: 'large');
+    }
+  }
+}
+
+@include respond-min(1380px) {
+  .advertising {
+    &.with-trapezoids {
+      @include trapezoid-decor($config: 'xlarge');
     }
   }
 }

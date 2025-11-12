@@ -3,8 +3,6 @@ import type { Icons } from '../icon.type';
 export const AboutUsHeadingBottom = ({ className }: Icons) => {
   return (
     <svg
-      width="1316"
-      height="101"
       viewBox="0 0 1316 101"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

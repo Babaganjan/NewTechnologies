@@ -23,7 +23,7 @@ export const AboutScroll = () => {
     <section className="hero-scroll-section" ref={containerRef} data-theme={'dark'}>
       <div className="sticky-container">
         <motion.div
-          className="block top-block"
+          className="block top-block container"
           style={{
             y: topBlockY,
           }}
@@ -43,7 +43,7 @@ export const AboutScroll = () => {
         </motion.div>
 
         <motion.div
-          className="block bottom-block"
+          className="block bottom-block container"
           style={{
             y: bottomBlockY,
           }}

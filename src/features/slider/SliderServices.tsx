@@ -26,7 +26,6 @@ export const SliderServices = ({ serviceId }: SliderServicesProps) => {
         spaceBetween={10}
         slidesPerView="auto"
         loop={true}
-        
         className="service-slider__swiper"
       >
         {serviceData.slides.map((slide, index) => (

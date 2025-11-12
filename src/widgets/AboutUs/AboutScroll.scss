@@ -1,4 +1,7 @@
 // AboutScroll.scss
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
 .hero-scroll-section {
   position: relative;
   width: 100%;
@@ -38,10 +41,8 @@
   justify-content: flex-start;
   gap: 17px;
   &__desc {
-    font-size: 28px;
-    line-height: 115%;
-    letter-spacing: -0.06em;
-    text-transform: uppercase;
+    @include typography(var(--text-white), 500, fluid(18px, 28px), 1.15);
+    text-align: center;
   }
 }
 
