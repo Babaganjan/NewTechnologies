@@ -3,7 +3,7 @@
 
 .services {
   &.with-trapezoids {
-    @include trapezoid-decor(21px, 12px, black, both);
+    @include trapezoid-decor($config: 'small');
   }
   position: relative;
   background-color: var(--bg-black);
@@ -79,9 +79,21 @@
 
 }
 
-// deckstop
-@include respond-min(1024px) {
+// table 
+@include respond-min(768px) {
+  .services {
+    &.with-trapezoids {
+      @include trapezoid-decor($config: 'medium');
+    }
+  }
+}
+
+// mini-dekstop
+@include respond-min(1280px) {
 .services {
+  &.with-trapezoids {
+    @include trapezoid-decor($config: 'xlarge');
+  }
   .item__btn {
     &--red {
       span {
@@ -93,6 +105,15 @@
   .Button-module-scss-module__EEeB0a__two {
     &.other-red {
       color: var(--text-deep-gray) !important;
+    }
+  }
+}
+
+// dekstop
+@include respond-min(1380px) {
+  .services {
+    &.with-trapezoids {
+      @include trapezoid-decor($config: 'xlarge');
     }
   }
 }
@@ -115,9 +136,6 @@
 
 
   .services {
-    &.with-trapezoids {
-      @include trapezoid-decor(56px, 33px, black, both, 1030px, -32px);
-    }
     &__list {
       display: flex;
       flex-direction: column;
