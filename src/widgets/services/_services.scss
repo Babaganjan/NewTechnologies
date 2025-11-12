@@ -163,6 +163,7 @@
     }
 
     .services__sub-item-image {
+      @include clip-shape();
       position: absolute;
       top: 45px;
       left: -245px;

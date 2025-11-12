@@ -54,8 +54,8 @@
 
 .image__wrapper {
   @include item-decor();
-  display: flex;
   @include clip-shape();
+  display: flex;
 }
 
 @include respond-min(768px) {

@@ -16,6 +16,7 @@
   }
 
   .service-image {
+    @include clip-shape();
     position: relative;
     width: 100%;
     height: 173px;
