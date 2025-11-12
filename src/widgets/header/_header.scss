@@ -133,7 +133,7 @@
 }
 
 // min-desktop
-@include respond-min(1024px) {
+@include respond-min(1280px) {
   .header{
     .hidden,
     .hidden__contacts {
