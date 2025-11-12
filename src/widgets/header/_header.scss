@@ -63,14 +63,11 @@
 }
 
 .header {
-  // position: relative;
-  // background-color: var(--header-bg);
   z-index: 1;
   margin-bottom: -1px;
 
   &__container {
     min-height: 59px;
-    // @include line-decor(2% 50% 98%);
     position: relative;
     justify-content: center;
     align-items: center;

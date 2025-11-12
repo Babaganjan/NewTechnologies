@@ -2,7 +2,7 @@
 @use '@/shared/styles/mixins' as *;
 
 .hero {
-  padding-top: 119px;
+  padding-top: 59px;
   &.with-trapezoids {
     @include trapezoid-decor(21px, 12px, black, bottom);
   }
@@ -31,7 +31,6 @@
 }
 
 .hero__container {
-  // @include line-decor(1% 50% 99%);
   position: relative;
   padding-block: 134px 21px;
   flex-direction: column;
@@ -67,6 +66,7 @@
 
 @include respond-min(768px) {
   .hero {
+    padding-top: 96px;
     &__container {
       padding-block: 279px 20px;
     }
@@ -97,6 +97,7 @@
 
 @include respond-min(1024px) {
   .hero {
+    padding-top: 119px;
     &.with-trapezoids {
       @include trapezoid-decor(56px, 33px, black, bottom, 1030px, -32px);
     }
@@ -113,7 +114,6 @@
     }
 
     &__container {
-      // @include line-decor(0.5% 25.4% 50% 74.6% 99%);
       display: grid;
       padding-block: 382px 67px;
       grid-template-columns: repeat(2, 1fr);
