@@ -133,6 +133,12 @@
     &__btn {
       width: 57px;
       height: 16px;
+       
+      &::before {
+        content: '';
+        height: 3px;
+        box-shadow: 0 14px 0 var(--bg-white);
+      }
     }
   }
 }
