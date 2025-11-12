@@ -24,7 +24,7 @@
 }
 
 //tablet
-@include respond-min (768px) {
+@include respond-min (1280px) {
   .result {
     &.with-trapezoids {
       @include trapezoid-decor(56px, 33px, black, both, fluid(300px, 500px), -22px);
