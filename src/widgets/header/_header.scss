@@ -82,8 +82,8 @@
 
   &__btn {
     padding: 0.625rem;
-    width: 1.75rem;
-    height: 0.5rem;
+    width: 28px;
+    height: 8px;
     position: relative;
 
     &::before {
@@ -128,7 +128,12 @@
     &__burger {
     top: 30px;
     right: 25px;
-  }
+    }
+
+    &__btn {
+      width: 57px;
+      height: 16px;
+    }
   }
 }
 
