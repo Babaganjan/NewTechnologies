@@ -1,17 +1,16 @@
 'use client';
 import Link from 'next/link';
 
+import { useScrollContext } from '@/context/ScrollProvider';
+import { ADDRESS_CONTACTS } from '@/shared/const/data';
 import { Button } from '@/shared/ui';
 import './_footer.scss';
 
-import {
-  FOOTER_ABOUT_ITEMS,
-  FOOTER_ACTIVITY_ITEMS,
-  FOOTER_COMPANY_ITEMS,
-  FOOTER_NAV_ITEMS,
-} from './footer.const';
+import { FOOTER_ACTIVITY_ITEMS, FOOTER_COMPANY_ITEMS, FOOTER_NAV_ITEMS } from './footer.const';
 
 export const Footer = () => {
+  const { selectedCity } = useScrollContext();
+  const selectedContact = ADDRESS_CONTACTS.find((contact) => contact.city === selectedCity);
   const scrollToTop = () => {
     let startTime: number | null = null;
     const start = window.pageYOffset;
@@ -59,17 +58,15 @@ export const Footer = () => {
 
         <div className="footer__about">
           <p className="footer__title">Связь с нами</p>
-          <address className="footer__address">Астана, 14/1 умай ана</address>
+          <address className="footer__address">
+            {selectedContact?.address || 'Астана, 14/1 умай ана'}
+          </address>
           <nav aria-label="Контактные ссылки">
-            <ul>
-              {FOOTER_ABOUT_ITEMS.map((item) => (
-                <li key={item.href}>
-                  <Button href={item.href} variant="link">
-                    {item.title}
-                  </Button>
-                </li>
-              ))}
-            </ul>
+            {selectedContact && (
+              <Button href={`tel:${selectedContact.phone}`} variant="link">
+                {selectedContact.phone}
+              </Button>
+            )}
             <Button
               href="https://www.instagram.com/nt-t.kz/"
               variant="social"

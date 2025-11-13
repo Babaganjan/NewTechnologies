@@ -1,33 +1,38 @@
 'use client';
 import clsx from 'clsx';
 import { useState, useRef, useEffect } from 'react';
+
+import type { AddressContact } from '@/shared/const/data';
+import { ArrowSmall } from '@/shared/icons/ArrowSmall/ArrowSmall';
+import type { ThemeType } from '@/widgets/header/header.types';
+
 import './customSelect.scss';
+import { useLocalStorageSSR } from './../../../hooks/useLocalStorage';
 
-interface SelectOption {
-  value: string;
-  label: string;
-}
-
-interface CustomSelectProps {
-  options: SelectOption[];
+interface CustomSelectProps extends ThemeType {
+  options: readonly AddressContact[];
   value?: string;
   onChange?: (value: string) => void;
-  placeholder?: string;
   className?: string;
+  isModalOpen?: boolean;
 }
 
 export const CustomSelect = ({
   options,
   value,
   onChange,
-  placeholder = 'Выберите город',
   className,
+  isModalOpen = false,
 }: CustomSelectProps) => {
   const [isOpen, setIsOpen] = useState(false);
-  const [selectedValue, setSelectedValue] = useState(value || '');
+
+  const initialCity = value || options[0]?.city || 'Алматы';
+  const [selectedValue, setSelectedValue] = useLocalStorageSSR('city', initialCity);
+  
   const selectRef = useRef<HTMLDivElement>(null);
 
-  const selectedOption = options.find((opt) => opt.value === selectedValue);
+  const selectedOption = options.find((opt) => opt.city === selectedValue);
+  const filterOption = options.filter((opt) => opt.city !== selectedValue);
 
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
@@ -41,9 +46,9 @@ export const CustomSelect = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSelect = (option: SelectOption) => {
-    setSelectedValue(option.value);
-    onChange?.(option.value);
+  const handleSelect = (option: AddressContact) => {
+    setSelectedValue(option.city);
+    onChange?.(option.city);
     setIsOpen(false);
   };
 
@@ -51,56 +56,58 @@ export const CustomSelect = ({
     <div
       ref={selectRef}
       className={clsx('custom-select', className, { 'custom-select--open': isOpen })}
+      onMouseLeave={() => isOpen && setIsOpen(false)}
     >
-      <button type="button" className="custom-select__trigger" onClick={() => setIsOpen(!isOpen)}>
-        <span className="custom-select__value">
-          {selectedOption ? selectedOption.label : placeholder}
+      <button
+        type="button"
+        className="custom-select__trigger"
+        onMouseEnter={() => !isOpen && setIsOpen(true)}
+      >
+        <span
+          className={clsx('custom-select__value', isModalOpen && 'custom-select__value--modal')}
+        >
+          {selectedOption?.city}
         </span>
-        <span className="custom-select__arrow">
-          <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
-            <path
-              d="M1 1.5L6 6.5L11 1.5"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-        </span>
+        <ArrowSmall className={clsx(isOpen && 'btn-icon--active')} />
       </button>
 
       {isOpen && (
         <div className="custom-select__dropdown">
           <div className="custom-select__options">
-            {options.map((option) => (
+            {filterOption.map((option) => (
               <button
-                key={option.value}
+                key={option.city}
                 type="button"
-                className={clsx('custom-select__option', {
-                  'custom-select__option--selected': option.value === selectedValue,
-                })}
+                className={clsx(
+                  {
+                    'custom-select__option--selected': option.city === selectedValue,
+                  },
+                  isModalOpen ? 'custom-select__option--modal' : 'custom-select__option'
+                )}
                 onClick={() => handleSelect(option)}
               >
-                {option.label}
+                {option.city}
               </button>
             ))}
           </div>
         </div>
       )}
 
-      {/* Скрытый нативный select для формы */}
       <select
         name="city"
         value={selectedValue}
-        onChange={(e) =>
-          handleSelect({ value: e.target.value, label: e.target.selectedOptions[0].text })
-        }
+        onChange={(e) => {
+          const selectedOption = options.find((opt) => opt.city === e.target.value);
+
+          if (selectedOption) {
+            handleSelect(selectedOption);
+          }
+        }}
         className="custom-select__native"
       >
-        <option value="">{placeholder}</option>
         {options.map((option) => (
-          <option key={option.value} value={option.value}>
-            {option.label}
+          <option key={option.city} value={option.city}>
+            {option.city}
           </option>
         ))}
       </select>

@@ -6,10 +6,10 @@ import { DATA_MODAL } from '@/widgets/header/navItemModal/nav-item.const';
 import { HeaderContent } from './HeaderContent/HeaderContent';
 import { HeaderContentMobil } from './HeaderContent/HeaderContentMobil';
 import { EXCLUDE_MAP, HEADER_NAV_ITEMS } from './header.const';
-import type { HeaderProps } from './header.types';
+import type { ThemeType } from './header.types';
 import { NavItemModal } from './navItemModal/NavItemModal';
 
-export const Header = ({ theme = 'dark' }: HeaderProps) => {
+export const Header = ({ theme = 'dark' }: ThemeType) => {
   const {
     isModalOpen,
     isMobilModalOpen,
@@ -42,6 +42,7 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
           onItemLeave={handleNavItemLeave}
           activeNavItem={activeNavItem}
           onMobilModal={handleOnMobilModal}
+          isModalOpen={false}
         />
       )}
       {isModalOpen && (
@@ -52,6 +53,7 @@ export const Header = ({ theme = 'dark' }: HeaderProps) => {
             logoSrc={logoSrc}
             activeNavItem={activeNavItem}
             onModalClose={handleNavItemLeave}
+            isModalOpen={true}
           />
           <NavItemModal data={modalData || []} />
         </Modal>
