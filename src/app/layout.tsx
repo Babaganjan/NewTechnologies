@@ -48,6 +48,12 @@ export default function RootLayout({
 
   return (
     <html lang="ru">
+      <head>
+        <meta
+          name="google-site-verification"
+          content="y11Rzza__AgpvMoVyS7OCabYk6qSx0aiYexF38oozA4"
+        />
+      </head>
       <body className={`${oswald.variable} ${robotoCondensed.variable} ${inter.variable}`}>
         <StructuredData data={organizationSchema} />
         <ScrollProvider>
