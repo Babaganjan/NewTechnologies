@@ -1,0 +1,164 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.productsMenu {
+  background-color: var(--bg-black);
+  padding-block: 100px;
+
+  &__title {
+    @include typography(
+      var(--text-white),
+      500,
+      fluid(31px, 58px, 360px, 768px),
+      1,
+      uppercase,
+      -0.07em
+    );
+    margin-bottom: 12px;
+  }
+
+  &__subtitle {
+    font-family: var(--second-family);
+    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
+  }
+}
+
+.productsMenu__list {
+  margin-top: fluid(30px, 100px);
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  .productsMenu__item {
+    position: relative;
+    display: flex;
+
+    &-model {
+      display: none;
+      @include typography(var(--text-white), 500, 28px, 1.15);
+    }
+
+    .productsMenu__item-arrow {
+      svg {
+        position: absolute;
+        width: fluid(12px, 20px);
+        top: 0;
+        right: 0;
+      }
+    }
+
+    &-title-wrapper {
+      display: flex;
+      flex-direction: column;
+      margin-right: auto;
+      border-top: 1px solid var(--text-white);
+
+      .productsMenu__item-header {
+        margin-top: auto;
+
+        .productsMenu__item--subtitle--one,
+        .productsMenu__item--subtitle--two {
+          display: none;
+        }
+      }
+
+      .productsMenu__item-title {
+        margin-top: 5px;
+        @include typography(var(--text-white), 500, fluid(14px, 28px, 360px, 768px), 1.2);
+      }
+
+      .productsMenu__item-subtitle {
+        font-family: var(--second-family);
+        @include typography(var(--text-deep-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
+      }
+
+      .productsMenu__item-feature {
+        @include typography(var(--text-light-gray), 500, fluid(14px, 28px, 360px, 768px), 1.2);
+      }
+    }
+
+    &-img {
+      background-color: var(--bg-white);
+      position: relative;
+      width: 47%;
+      min-height: fluid(140px, 212px, 360px, 768px);
+      margin-left: 8px;
+      @include item-decor();
+      @include clip-shape();
+      margin-right: 15px;
+
+      img {
+        padding: 20px;
+        object-fit: contain;
+      }
+    }
+  }
+}
+
+@include respond-min(1300px) {
+  .productsMenu {
+    &__title {
+      font-size: fluid(58px, 68px);
+    }
+
+    .productsMenu__list {
+      .productsMenu__item {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+          'header header header'
+          'number model sposobnost';
+        gap: 10px 20px;
+        border-top: 1px solid var(--text-white);
+        padding-top: 10px;
+
+        // Заголовки
+        &-header {
+          display: grid;
+          grid-area: header;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 0 20px;
+          padding-bottom: 5px;
+
+          .productsMenu__item-subtitle {
+            font-family: var(--second-family);
+            text-transform: uppercase;
+            @include typography(var(--text-deep-gray), 500, 14px, 1.1, none);
+          }
+        }
+
+        // Контентная обертка теперь не нужна как grid-контейнер
+        &-title-wrapper {
+          display: contents; // Убираем обертку из потока
+          border: none;
+        }
+
+        // Номер модели
+        &-model {
+          display: block;
+          grid-area: number;
+          align-self: start;
+        }
+
+        // Название
+        &-title {
+          grid-area: model;
+          margin-top: 0;
+        }
+
+        // Характеристика
+        &-feature {
+          grid-area: sposobnost;
+        }
+
+        // Скрываем на десктопе
+        &-arrow {
+          display: none;
+        }
+
+        &-img {
+          display: none;
+        }
+      }
+    }
+  }
+}

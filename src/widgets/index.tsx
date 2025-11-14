@@ -1,5 +1,6 @@
 import { AboutScroll } from './AboutUs/AboutScroll';
 import { AboutUs } from './AboutUs/AboutUs';
+import { ProductsMenu } from './ProductsMenu';
 import { About } from './about/About';
 import { Advantage } from './advantage/Advantage';
 import { Advertising } from './advertising/Advertising';
@@ -44,6 +45,7 @@ export {
   IncludedService,
   ObjectLevel,
   Products,
+  ProductsMenu,
   ProductsPage,
   ProjectMenu,
   Questions,

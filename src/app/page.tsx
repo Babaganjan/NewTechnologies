@@ -12,6 +12,20 @@ import {
   Services,
 } from '@/widgets';
 
+// export const metadata: Metadata = {
+//   title: {
+//     default: seoConfig.home.title,
+//     template: `%s | ${seoConfig.siteName}`,
+//   },
+//   description: seoConfig.home.description,
+//   keywords: seoConfig.home.keywords,
+//   openGraph: {
+//     description: seoConfig.home.openGraph.description,
+//     type: seoConfig.home.openGraph.type,
+//     title: seoConfig.home.openGraph.title,
+//   },
+// };
+
 export default function Home() {
   return (
     <>
