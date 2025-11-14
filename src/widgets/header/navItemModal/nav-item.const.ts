@@ -37,7 +37,7 @@ const DATA_SERVICE: NavListModalProps[] = [
     title: 'IT-решения',
     list: [
       {
-        name: 'Для образовательных учреждений',
+        name: 'Для государственных и частных организаций',
         image: '/img/modalHeader/for-educational-institutions.webp',
         href: '/',
       },
@@ -48,19 +48,14 @@ const DATA_SERVICE: NavListModalProps[] = [
     title: 'Обучение',
     list: [
       {
-        name: 'Внедрение  It-инфраструктуры',
+        name: 'Для официальных партнёров',
         image: '/img/modalHeader/video-surveillance-system.webp',
-        href: '/services/videonabludenie',
+        href: '/',
       },
       {
-        name: 'Проектирование серверов',
+        name: 'Для специалистов и всех желающих',
         image: '/img/modalHeader/security-fire-alarm-system.webp',
-        href: '/services/ops',
-      },
-      {
-        name: 'Проектирование сетей',
-        image: '/img/modalHeader/access-control-system.webp',
-        href: '/services/skd',
+        href: '/',
       },
     ],
   },

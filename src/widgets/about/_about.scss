@@ -143,8 +143,7 @@
     @include respond-min(1380px) {
       .about {
         &__text-wrapper {
-          // min-width: 863px;
-          width: 100%;
+          width: 66%;
         }
       }
     }
