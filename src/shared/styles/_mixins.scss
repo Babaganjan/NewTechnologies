@@ -1,5 +1,6 @@
 @use 'sass:math';
 @use 'sass:list';
+@use 'sass:map';
 @use 'functions' as *;
 
 @mixin clip-shape($position: top-right) {
@@ -92,29 +93,29 @@ $trapezoid-configs: (
     height: 13px,
     color: var(--vector-black),
     size: fluid(198px, 300px),
-    shift: -11px
+    shift: -11px,
   ),
   'medium': (
     width: 31px,
     height: 19px,
     color: var(--vector-black),
     size: fluid(300px, 500px),
-    shift: -17px
+    shift: -17px,
   ),
   'large': (
     width: 42px,
     height: 25px,
     color: var(--vector-black),
     size: fluid(500px, 800px),
-    shift: -24px
+    shift: -24px,
   ),
   'xlarge': (
     width: 56px,
     height: 33px,
     color: var(--vector-black),
     size: fluid(800px, 1030px),
-    shift: -32px
-  )
+    shift: -32px,
+  ),
 );
 
 @mixin trapezoid-decor(
@@ -134,13 +135,14 @@ $trapezoid-configs: (
   $default-shift: -11px;
 
   // Если передан конфиг, используем как базовые значения
-  @if $config != null and type-of($config) == 'string' and map-has-key($trapezoid-configs, $config) {
-    $config-map: map-get($trapezoid-configs, $config);
-    $default-width: map-get($config-map, 'width');
-    $default-height: map-get($config-map, 'height');
-    $default-color: map-get($config-map, 'color');
-    $default-size: map-get($config-map, 'size');
-    $default-shift: map-get($config-map, 'shift');
+  @if $config != null and type-of($config) == 'string' and map-has-key($trapezoid-configs, $config)
+  {
+    $config-map: map.get($trapezoid-configs, $config);
+    $default-width: map.get($config-map, 'width');
+    $default-height: map.get($config-map, 'height');
+    $default-color: map.get($config-map, 'color');
+    $default-size: map.get($config-map, 'size');
+    $default-shift: map.get($config-map, 'shift');
   }
 
   // Используем переданные значения или значения по умолчанию

@@ -41,12 +41,12 @@ export const HeaderContentMobil = ({
 
   return (
     <header className="modal-mobil" data-theme={theme}>
-      <div className="modal-mobil__container container flex">
+      <div className="modal-mobil__container container">
         <button className="modal-mobil__btn" onClick={onModalClose}>
           ✕
         </button>
         <nav className="modal-mobil__nav nav">
-          <ul className="nav__list flex">
+          <ul className="nav__list">
             {navItems.map((item) => {
               if (item.hasModal && isModalVariant(item.title)) {
                 const modalTitle = item.title;
@@ -85,7 +85,7 @@ export const HeaderContentMobil = ({
         </nav>
 
         <div className="modal-mobil__contacts">
-          <div className="wrapper-phone flex">
+          <div className="wrapper-phone">
             <H level={'5'} className="modal-mobil__city">
               Алматы
             </H>
@@ -101,7 +101,7 @@ export const HeaderContentMobil = ({
               +7 (700) 836 94 36
             </Link>
           </div>
-          <div className="wrapper-phone flex">
+          <div className="wrapper-phone">
             <H level={'5'} className="modal-mobil__city">
               Тараз
             </H>

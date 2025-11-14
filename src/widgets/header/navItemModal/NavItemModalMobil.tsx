@@ -54,8 +54,8 @@ export const NavItemModalMobil = ({ data = [] }: NavItemModalProps) => {
                   <Arrow width={15} height={12} />
                 </button>
                 {isActive && (
-                  <div className="modal-mobil--items flex">
-                    <ul className="modal-mobil__list--items flex">
+                  <div className="modal-mobil--items">
+                    <ul className="modal-mobil__list--items">
                       {selectedItem?.list?.map((subItem, index) => (
                         <li key={`${subItem.name}-${index}`}>
                           <Link

@@ -10,8 +10,8 @@ export const ResultItem = ({ item }: ResultItemProps) => {
   const { type, number, title, description, variant = 'dark', className = '', layout = {} } = item;
 
   return (
-    <li className={`result__item flex ${className} ${layout.item || ''}`}>
-      <article className={`item__inner flex ${layout.inner || ''}`}>
+    <li className={`result__item ${className} ${layout.item || ''}`}>
+      <article className={`item__inner ${layout.inner || ''}`}>
         {type !== 'text' && number && (
           <strong className={`item__number ${layout.number || ''}`}>{number}</strong>
         )}

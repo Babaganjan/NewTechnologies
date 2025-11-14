@@ -43,10 +43,10 @@ export const HeaderContent = ({
         stiffness: 300,
       }}
     >
-      <div className="container header__container flex">
-        <div className="header__wrapper flex">
+      <div className="container header__container">
+        <div className="header__wrapper">
           <nav className="header__nav nav hidden">
-            <ul className="nav__list flex">
+            <ul className="nav__list">
               {navItems.map((item) => {
                 const isHovered = activeNavItem?.includes(item.title) ?? false;
 
@@ -90,7 +90,7 @@ export const HeaderContent = ({
           </motion.div>
         </div>
 
-        <div className="header__wrapper-contacts hidden__contacts flex">
+        <div className="header__wrapper-contacts hidden__contacts">
           <CustomSelect
             options={ADDRESS_CONTACTS}
             value={selectedCity}
@@ -108,7 +108,7 @@ export const HeaderContent = ({
           </motion.div>
         </div>
 
-        <div className="header__burger flex hidden__burger--deckstop">
+        <div className="header__burger hidden__burger--deckstop">
           <motion.button
             className="header__btn"
             onClick={onMobilModal}

@@ -4,7 +4,7 @@ import './_resultList.scss';
 
 export const ResultList = ({ items }: ResultListProps) => {
   return (
-    <ul className="result__list flex">
+    <ul className="result__list">
       {items.map((item) => (
         <ResultItem key={item.id} item={item} />
       ))}

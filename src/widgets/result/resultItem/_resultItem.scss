@@ -22,6 +22,7 @@
   }
 
   &__item {
+    display: flex;
     @include clip-shape();
     &:not(:has(.item__number)):nth-of-type(2) {
       .item__title {
@@ -35,6 +36,7 @@
 
   .item {
     &__inner {
+      display: flex;
       @include item-decor(
         var(--vector-black),
         $before-position: (top: -13px, left: -12px),

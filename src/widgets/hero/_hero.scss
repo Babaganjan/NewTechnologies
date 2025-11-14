@@ -31,6 +31,7 @@
 }
 
 .hero__container {
+  display: flex;
   position: relative;
   padding-block: 134px 21px;
   flex-direction: column;
@@ -51,10 +52,10 @@
 }
 
 .hero__content {
+  display: flex;
   order: 2;
   margin-bottom: 80px;
   justify-content: space-between;
-  // gap: 51px;
 }
 
 .hero__prev {
@@ -99,7 +100,6 @@
     }
   }
 }
-
 
 @include respond-min(1024px) {
   .hero {

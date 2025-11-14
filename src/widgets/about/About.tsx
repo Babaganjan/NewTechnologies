@@ -7,7 +7,7 @@ import './_about.scss';
 export const About = () => {
   return (
     <section className="about" aria-labelledby="Что-мы-делаем">
-      <div className="container about__container flex">
+      <div className="container about__container">
         <H level={'2'} variant="light" className="about__title title" id="Что-мы-делаем">
           Что мы делаем
         </H>
@@ -15,7 +15,7 @@ export const About = () => {
           <span>реализуем комплексные системы</span> безопасности и оптимизируем бизнес в казахстане
           <span> С 2013 года</span>
         </H>
-        <div className="about__images flex">
+        <div className="about__images">
           <div className="about__images--top">
             <div className="image__wrapper image__big">
               <Image src="/img/about-1-1920.webp" alt="Картинка камеры" width={340} height={254} />

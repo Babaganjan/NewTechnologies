@@ -7,6 +7,7 @@
   z-index: 0;
 
   .modal-mobil--items {
+    display: flex;
     gap: 60px;
   }
 
@@ -52,6 +53,7 @@
 }
 
 .modal-mobil__list--items {
+  display: flex;
   @include typography(var(--header-text), 500, 14px);
   font-family: var(--font-family);
   flex-direction: column;
