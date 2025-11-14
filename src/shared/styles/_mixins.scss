@@ -135,7 +135,7 @@ $trapezoid-configs: (
   $default-shift: -11px;
 
   // Если передан конфиг, используем как базовые значения
-  @if $config != null and type-of($config) == 'string' and map-has-key($trapezoid-configs, $config)
+  @if $config != null and type-of($config) == 'string' and map.has-key($trapezoid-configs, $config)
   {
     $config-map: map.get($trapezoid-configs, $config);
     $default-width: map.get($config-map, 'width');
