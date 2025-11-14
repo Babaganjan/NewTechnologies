@@ -12,6 +12,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Ops() {
+export default function ops() {
   return <OpsPage />;
 }

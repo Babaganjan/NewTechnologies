@@ -11,6 +11,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function ServerCabinets() {
+export default function serverCabinets() {
   return <div>serverCabinets</div>;
 }

@@ -2,6 +2,8 @@ import type { MetadataRoute } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
 
+export const dynamic = 'force-static';
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = seoConfig.siteUrl;
 

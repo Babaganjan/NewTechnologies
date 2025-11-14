@@ -11,6 +11,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Nvr() {
+export default function nvr() {
   return <div>Nvr</div>;
 }

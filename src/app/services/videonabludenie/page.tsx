@@ -12,6 +12,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Videonabludenie() {
+export default function videonabludenie() {
   return <VideonabludeniePage />;
 }

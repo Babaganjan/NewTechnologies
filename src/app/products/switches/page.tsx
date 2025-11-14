@@ -11,6 +11,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Switches() {
+export default function switches() {
   return <div>switches</div>;
 }

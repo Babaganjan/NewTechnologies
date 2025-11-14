@@ -11,6 +11,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Turnstiles() {
+export default function turnstiles() {
   return <div>Turnstiles</div>;
 }

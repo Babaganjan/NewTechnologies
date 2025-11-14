@@ -11,6 +11,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function InteractivePanels() {
+export default function interactivePanels() {
   return <div>InteractivePanels</div>;
 }

@@ -11,6 +11,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Cameras() {
+export default function cameras() {
   return <div>cameras</div>;
 }

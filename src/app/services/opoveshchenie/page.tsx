@@ -12,6 +12,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Opoveshchenie() {
+export default function opoveshchenie() {
   return <OpoveshcheniePage />;
 }

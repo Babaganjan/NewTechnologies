@@ -12,6 +12,6 @@ export const metadata: Metadata = {
   },
 };
 
-export default function Skd() {
+export default function skd() {
   return <SkdPage />;
 }
