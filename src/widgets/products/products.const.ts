@@ -30,7 +30,7 @@ export const PRODUCTS_DATA: IProductItem[] = [
   {
     id: 3,
     title: 'Серверные шкафы',
-    alias: 'server-cabinets',
+    alias: 'serverCabinets',
 
     image: '/img/product-item-3.webp',
     width: 110,
@@ -40,7 +40,7 @@ export const PRODUCTS_DATA: IProductItem[] = [
   {
     id: 4,
     title: 'Видеорегистраторы',
-    alias: 'video-recorders',
+    alias: 'nvr',
     image: '/img/product-item-4.webp',
     width: 110,
     height: 100,
@@ -49,7 +49,7 @@ export const PRODUCTS_DATA: IProductItem[] = [
   {
     id: 5,
     title: 'Видеокамеры',
-    alias: 'video-cameras',
+    alias: 'cameras',
     image: '/img/product-item-5.webp',
     width: 130,
     height: 48,

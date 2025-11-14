@@ -1,0 +1,16 @@
+import type { Metadata } from 'next';
+
+import { seoConfig } from '@/shared/config/seo.config';
+
+export const metadata: Metadata = {
+  title: seoConfig.products.nvr.title,
+  description: seoConfig.products.nvr.description,
+  keywords: seoConfig.products.nvr.keywords,
+  alternates: {
+    canonical: `${seoConfig.siteUrl}/products/nvr`,
+  },
+};
+
+export default function nvr() {
+  return <div>Nvr</div>;
+}
