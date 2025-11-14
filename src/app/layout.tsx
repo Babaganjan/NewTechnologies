@@ -1,7 +1,11 @@
+import type { Metadata } from 'next';
 import { Inter, Oswald, Roboto_Condensed } from 'next/font/google';
 import type { ReactNode } from 'react';
 
 import { ScrollProvider } from '@/context/ScrollProvider';
+import { StructuredData } from '@/shared/components/StructuredData';
+import { seoConfig } from '@/shared/config/seo.config';
+import { generateOrganizationSchema } from '@/shared/utils/seo.utils';
 import { Footer, Header } from '@/widgets';
 
 import './globals.css';
@@ -27,25 +31,25 @@ const inter = Inter({
   display: 'swap',
 });
 
-// export const metadata: Metadata = {
-//   metadataBase: new URL(seoConfig.siteUrl),
-//   robots: {
-//     index: true,
-//     follow: true,
-//   },
-// };
+export const metadata: Metadata = {
+  metadataBase: new URL(seoConfig.siteUrl),
+  robots: {
+    index: true,
+    follow: true,
+  },
+};
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: ReactNode;
 }>) {
-  // const organizationSchema = generateOrganizationSchema();
+  const organizationSchema = generateOrganizationSchema();
 
   return (
     <html lang="ru">
       <body className={`${oswald.variable} ${robotoCondensed.variable} ${inter.variable}`}>
-        {/* <StructuredData data={organizationSchema} /> */}
+        <StructuredData data={organizationSchema} />
         <ScrollProvider>
           <Header />
           <main>{children}</main>
