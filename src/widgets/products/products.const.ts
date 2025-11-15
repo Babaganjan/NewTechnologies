@@ -31,7 +31,6 @@ export const PRODUCTS_DATA: IProductItem[] = [
     id: 3,
     title: 'Серверные шкафы',
     alias: 'serverCabinets',
-
     image: '/img/product-item-3.webp',
     width: 110,
     height: 100,

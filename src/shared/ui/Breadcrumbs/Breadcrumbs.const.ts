@@ -7,4 +7,10 @@ export const BREADCRUMBSWORDS: Record<BreadcrumbWord, string> = {
   skd: 'Системы контроля доступа',
   opoveshchenie: 'Системы оповещения',
   pozhartushenie: 'Системы пожаротушения',
+  turnstiles: 'Турники',
+  products: 'Продукция',
+  switches: 'Коммутаторы',
+  serverCabinets: 'Серверные шкафы',
+  nvr: 'Видеорегистраторы',
+  cameras: 'Видеокамеры',
 };

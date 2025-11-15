@@ -8,10 +8,12 @@ body:has(.modal) {
 }
 
 .primary {
+  position: relative;
   display: flex;
   align-items: center;
   justify-self: center;
   gap: 10px;
+  padding-bottom: 5px;
   @include typography(var(--text-black), 700, fluid(16px, 26px), 1.2);
   transition:
     border-color 0.2s ease,
@@ -26,7 +28,21 @@ body:has(.modal) {
 
   &:hover {
     color: var(--text-gray);
-    border-color: var(--vector-deep-gray);
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-black);
+    transition: width 0.3s ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
   }
 }
 
@@ -37,7 +53,6 @@ body:has(.modal) {
   background-color: var(--bg-light-gray);
   padding: 10px 34px;
   width: 100%;
-  border: 1px solid var(--vector-light-gray);
   &:hover,
   &:focus {
     background-color: var(--bg-black);
@@ -89,8 +104,9 @@ body:has(.modal) {
 }
 
 .policy {
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
+  position: relative;
+  width: max-content;
+  padding-bottom: 5px;
   @include typography(
     var(--text-gray),
     500,
@@ -99,6 +115,21 @@ body:has(.modal) {
     uppercase,
     fluid(-0.8px, -0.96px)
   );
+
+  &::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--text-gray);
+    transition: width 0.3s ease-out;
+  }
+
+  &:hover::after {
+    width: 100%;
+  }
 }
 
 .upButton {
@@ -201,11 +232,6 @@ body:has(.modal) {
 }
 
 @include respond-min(1300px) {
-  .primary {
-    padding-bottom: 5px;
-    border-bottom: 2px solid var(--text-black);
-  }
-
   .secondary {
     line-height: 1.15;
   }
