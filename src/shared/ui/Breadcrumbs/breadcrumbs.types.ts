@@ -4,4 +4,10 @@ export type BreadcrumbWord =
   | 'ops'
   | 'skd'
   | 'opoveshchenie'
-  | 'pozhartushenie';
+  | 'pozhartushenie'
+  | 'turnstiles'
+  | 'switches'
+  | 'serverCabinets'
+  | 'nvr'
+  | 'cameras'
+  | 'products';

@@ -6,6 +6,7 @@
   padding-block: 100px;
 
   &__title {
+    margin-top: fluid(80px, 110px);
     @include typography(
       var(--text-white),
       500,
@@ -56,6 +57,7 @@
       flex-direction: column;
       margin-right: auto;
       border-top: 1px solid var(--text-white);
+      width: 50%;
 
       .productsMenu__item-title {
         margin-top: 5px;
@@ -150,7 +152,8 @@
         gap: 0 10px;
         padding-bottom: 10px;
 
-        &:hover {
+        &:hover,
+        &:focus {
           .productsMenu__item-model,
           .productsMenu__item-title,
           .productsMenu__item-feature {
@@ -172,7 +175,7 @@
             display: block;
             svg {
               right: 5px;
-              top: 50%;
+              top: 40%;
               transform: translateY(-50%);
             }
 
