@@ -1,9 +1,10 @@
 import Link from 'next/link';
 
+import { CONTACTS_ITEMS, isSocialNetworks } from '@/shared/const/data';
 import { Arrow, ContactsHeading } from '@/shared/icons';
 import { H } from '@/shared/ui';
 
-import { CONTACTS_ITEMS, MAPS_EMBED_URL } from './contacts.const';
+import { MAPS_EMBED_URL } from './contacts.const';
 
 import './_contacts.scss';
 
@@ -19,9 +20,25 @@ export const Contacts = () => {
             <li className={`contacts__item ${item.className}`} key={item.title}>
               <p className="contacts-title-text">{item.title}</p>
               <p>
-                {item.href ? (
+                {isSocialNetworks(item.value) ? (
+                  <span className="social-links-wrapper">
+                    {item.value.map((social) => (
+                      <Link
+                        key={social.id}
+                        href={social.href}
+                        className="social-link"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        {social.title}
+                        <Arrow width={16} height={20} />
+                      </Link>
+                    ))}
+                  </span>
+                ) : item.href ? (
                   <Link href={item.href}>
-                    {item.value} {item.className === 'social' && <Arrow width={16} height={20} />}
+                    {item.value}
+                    {item.className === 'social' && <Arrow width={16} height={20} />}
                   </Link>
                 ) : (
                   item.value
