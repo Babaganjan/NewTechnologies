@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
+import { ProductsMenu } from '@/widgets';
 
 export const metadata: Metadata = {
   title: seoConfig.products.turnstiles.title,
@@ -12,5 +13,5 @@ export const metadata: Metadata = {
 };
 
 export default function turnstiles() {
-  return <div>Turnstiles</div>;
+  return <ProductsMenu />;
 }
