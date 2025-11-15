@@ -2,7 +2,7 @@
 import clsx from 'clsx';
 import { useState, useRef, useEffect } from 'react';
 
-import type { AddressContact } from '@/shared/const/data';
+import type { AddressContactType } from '@/shared/const/data';
 import { ArrowSmall } from '@/shared/icons/ArrowSmall/ArrowSmall';
 import type { ThemeType } from '@/widgets/header/header.types';
 
@@ -10,7 +10,7 @@ import './customSelect.scss';
 import { useLocalStorageSSR } from './../../../hooks/useLocalStorage';
 
 interface CustomSelectProps extends ThemeType {
-  options: readonly AddressContact[];
+  options: readonly AddressContactType[];
   value?: string;
   onChange?: (value: string) => void;
   className?: string;
@@ -28,7 +28,7 @@ export const CustomSelect = ({
 
   const initialCity = value || options[0]?.city || 'Алматы';
   const [selectedValue, setSelectedValue] = useLocalStorageSSR('city', initialCity);
-  
+
   const selectRef = useRef<HTMLDivElement>(null);
 
   const selectedOption = options.find((opt) => opt.city === selectedValue);
@@ -46,7 +46,7 @@ export const CustomSelect = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSelect = (option: AddressContact) => {
+  const handleSelect = (option: AddressContactType) => {
     setSelectedValue(option.city);
     onChange?.(option.city);
     setIsOpen(false);
