@@ -1,6 +1,6 @@
 import type { Icons } from '../../icon.type';
 
-export const Mirkrotik = ({
+export const Mikrotik = ({
   color = 'currentColor',
   width = 2500,
   height = 431,

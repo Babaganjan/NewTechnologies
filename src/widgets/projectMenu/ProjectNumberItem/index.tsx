@@ -23,6 +23,14 @@ export const ProjectNumberItem = ({
     onMouseEnter={() => onMouseEnter(index)}
     onMouseLeave={onMouseLeave}
     onClick={() => onActiveRow(index)}
+    role="button"
+    tabIndex={0}
+    onKeyDown={(e: React.KeyboardEvent) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onActiveRow(index);
+      }
+    }}
   >
     №{(index + 1).toString().padStart(3, '0')}
   </H>

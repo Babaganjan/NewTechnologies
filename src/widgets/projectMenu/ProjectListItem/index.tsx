@@ -28,9 +28,18 @@ export const ProjectListItem = ({
     onMouseEnter={() => onMouseEnter(index)}
     onMouseLeave={onMouseLeave}
     onClick={() => onActiveRow(index)}
+    role="button"
+    aria-expanded={isActive}
+    tabIndex={0}
+    onKeyDown={(e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        onActiveRow(index);
+      }
+    }}
   >
     <div className="project-menu-item__content">
-      <span className="project-menu-item__client service-label--services">клиент</span>
+      <span className="project-menu-item__client service-label--services" aria-label="Клиент">клиент</span>
       <div className="project-menu-item__subtitle">
         <H level={'5'} variant="light" className="project-menu-item__subtitle-title">
           {item.title}
@@ -40,26 +49,25 @@ export const ProjectListItem = ({
           width={12}
           height={15}
           className="project-menu-item__arrow"
+          aria-hidden="true"
         />
       </div>
 
       {isActive && (
-        <>
-          <div className="project-menu__active-wrapper">
-            <p>{item.subtitle}</p>
-            <div className="project-menu__image-wrapper">
-              <Image
-                src={item.image}
-                alt={item.subtitle}
-                width={260}
-                height={130}
-                className="project-menu__image--active"
-              />
-            </div>
+        <div className="project-menu__active-wrapper" role="region" aria-label="Детали проекта">
+          <p>{item.subtitle}</p>
+          <div className="project-menu__image-wrapper">
+            <Image
+              src={item.image}
+              alt={item.subtitle}
+              width={260}
+              height={130}
+              className="project-menu__image--active"
+            />
           </div>
-        </>
+        </div>
       )}
-      <span className="project-menu-item__service-label service-label--services">тип услуги</span>
+      <span className="project-menu-item__service-label service-label--services" aria-label="Тип услуги">тип услуги</span>
       <p className="project-menu-item__service service-label--services">{item.service}</p>
     </div>
   </li>

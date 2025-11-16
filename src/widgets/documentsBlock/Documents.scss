@@ -59,9 +59,31 @@
       display: none;
     }
 
-    &:hover,
-    &:focus,
+    &:hover {
+      --text-black: var(--text-white);
+      background-color: black;
+
+      svg {
+        color: var(--text-white);
+      }
+
+      .document__size {
+        color: var(--text-white);
+      }
+    }
+
+    &:focus {
+      outline: 2px solid var(--text-deep-gray);
+      outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
     &:focus-visible {
+      outline: 2px solid var(--text-deep-gray);
+      outline-offset: 2px;
       --text-black: var(--text-white);
       background-color: black;
 
@@ -141,10 +163,6 @@
         @include typography(var(--text-white), 500, 22px, 1.1, uppercase, -0.05em);
       }
 
-      &:focus-visible {
-        outline: 3px solid var(--text-white);
-        outline-offset: -3px;
-      }
     }
   }
 }

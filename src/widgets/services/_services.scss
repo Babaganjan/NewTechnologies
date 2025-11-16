@@ -36,7 +36,7 @@
       cursor: pointer;
       transition: all 0.3s ease;
       span {
-        @include typography(var(--text-white), 500, fluid(31px, 68px),  1, uppercase, -0.07em);
+        @include typography(var(--text-white), 500, fluid(31px, 68px), 1, uppercase, -0.07em);
         padding: 8px;
       }
       &--active span {
@@ -49,7 +49,20 @@
       &--active .service-icon {
         transform: rotate(90deg) rotateY(180deg);
       }
-      
+
+      &:focus {
+        outline: 2px solid var(--text-white);
+        outline-offset: 2px;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: 2px solid var(--text-white);
+        outline-offset: 2px;
+      }
     }
 
     &__inner {
@@ -73,13 +86,13 @@
     }
   }
 
-  .hidden, .desktop-only {
+  .hidden,
+  .desktop-only {
     display: none;
   }
-
 }
 
-// table 
+// table
 @include respond-min(768px) {
   .services {
     &.with-trapezoids {
@@ -90,50 +103,33 @@
 
 // mini-dekstop
 @include respond-min(1280px) {
-.services {
-  &.with-trapezoids {
-    @include trapezoid-decor($config: 'xlarge');
-  }
-  .item__btn {
-    &--red {
-      span {
-        color: var(--text-gray) !important;
-      }
-    }
-  }
-
-  .Button-module-scss-module__EEeB0a__two {
-    &.other-red {
-      color: var(--text-deep-gray) !important;
-    }
-  }
-}
-
-// dekstop
-@include respond-min(1380px) {
   .services {
     &.with-trapezoids {
       @include trapezoid-decor($config: 'xlarge');
     }
+    .item__btn {
+      &--red {
+        span {
+          color: var(--text-gray) !important;
+        }
+      }
+    }
+
+    .Button-module-scss-module__EEeB0a__two {
+      &.other-red {
+        color: var(--text-deep-gray) !important;
+      }
+    }
   }
-}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+  // dekstop
+  @include respond-min(1380px) {
+    .services {
+      &.with-trapezoids {
+        @include trapezoid-decor($config: 'xlarge');
+      }
+    }
+  }
 
   .services {
     &__list {
@@ -144,6 +140,7 @@
     .item {
       display: flex;
       justify-content: space-between;
+      min-height: 295px;
       &__btn {
         border: none;
         background: var(--primary-color);
@@ -167,7 +164,7 @@
         align-items: center;
         justify-content: space-between;
         background: var(--bg-secondary);
-      } 
+      }
     }
 
     .selected svg {
@@ -211,18 +208,11 @@
       line-height: 110%;
     }
 
-    .desktop-only{display: block;}
-    .mobile-only{display: none;}
+    .desktop-only {
+      display: block;
+    }
+    .mobile-only {
+      display: none;
+    }
   }
 }
-
-
-
-
-
-
-
-
-
-
-

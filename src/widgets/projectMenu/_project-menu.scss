@@ -109,6 +109,25 @@
   }
 }
 
+// Focus стили для всех интерактивных элементов
+.project-menu-item__number,
+.project-menu-item,
+.project-menu-item__service {
+  &:focus {
+    outline: 2px solid var(--text-white);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--text-white);
+    outline-offset: 2px;
+  }
+}
+
 .project-menu__active-wrapper {
   > * {
     opacity: 1;

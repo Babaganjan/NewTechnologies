@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
+
 import { OpoveshcheniePage } from '@/widgets/widgetPages';
 
 export const metadata: Metadata = {

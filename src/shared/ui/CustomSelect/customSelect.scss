@@ -10,7 +10,21 @@
     background-color: transparent;
     color: var(--header-text);
     cursor: pointer;
-    transition: all 0.3s ease; 
+    transition: all 0.3s ease;
+
+    &:focus {
+      outline: 2px solid var(--text-deep-gray);
+      outline-offset: 2px;
+    }
+
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--text-deep-gray);
+      outline-offset: 2px;
+    }
   }
 
   &__value {

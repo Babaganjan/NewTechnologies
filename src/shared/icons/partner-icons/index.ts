@@ -12,7 +12,7 @@ import { Hikvision } from './Hikvision/Hikvision';
 import { Huawei } from './Huawei/Huawei';
 import { Itc } from './Itc/Itc';
 import { Macroscop } from './Macroscop/Macroscop';
-import { Mirkrotik } from './Mikrotik/Mirkrotik';
+import { Mikrotik } from './Mikrotik/Mikrotik';
 import { Oxgard } from './Oxgard/Oxgard';
 import { Paritet } from './Paritet/Paritet';
 import { Rubezh } from './Rubezh/Rubezh';
@@ -39,7 +39,7 @@ export {
   Huawei,
   Itc,
   Macroscop,
-  Mirkrotik,
+  Mikrotik,
   Oxgard,
   Paritet,
   Rubezh,

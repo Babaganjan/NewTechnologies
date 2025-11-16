@@ -28,9 +28,9 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="footer">
+    <footer className="footer" role="contentinfo">
       <div className="footer__container container">
-        <Link href="/" className="footer__logo" aria-label="На главную страницу">
+        <Link href="/" className="footer__logo" aria-label="Вернуться на главную страницу">
           NT
         </Link>
         <Button
@@ -62,7 +62,7 @@ export const Footer = () => {
             {selectedContact?.address || 'Астана, 14/1 умай ана'}
           </address>
           {selectedContact && (
-            <Button href={`tel:${selectedContact.phone}`} variant="link">
+            <Button href={`tel:${selectedContact.phone}`} variant="link" aria-label={`Позвонить по номеру ${selectedContact.phone}`}>
               {selectedContact.phone}
             </Button>
           )}
@@ -71,10 +71,11 @@ export const Footer = () => {
             variant="social"
             className="social-link"
             rel="noopener noreferrer"
+            aria-label={`Написать на email ${COMMON_CONTACT_INFO.email}`}
           >
             {COMMON_CONTACT_INFO.email}
           </Button>
-          <nav aria-label="Контактные ссылки">
+          <nav aria-label="Социальные сети">
             {COMMON_CONTACT_INFO.socialNetworks.map((item) => (
               <Button
                 key={item.id}
@@ -83,6 +84,7 @@ export const Footer = () => {
                 icon
                 className="social-link"
                 rel="noopener noreferrer"
+                aria-label={`Наш ${item.title}`}
               >
                 {item.title}
               </Button>

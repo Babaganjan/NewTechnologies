@@ -32,6 +32,20 @@
       transform: rotate(180deg);
     }
   }
+
+  &:focus {
+    outline: 2px solid var(--text-deep-gray);
+    outline-offset: 2px;
+  }
+
+  &:focus:not(:focus-visible) {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--text-deep-gray);
+    outline-offset: 2px;
+  }
 }
 
 .questions__card-arrow {

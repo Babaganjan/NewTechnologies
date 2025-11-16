@@ -62,6 +62,9 @@ export const CustomSelect = ({
         type="button"
         className="custom-select__trigger"
         onMouseEnter={() => !isOpen && setIsOpen(true)}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-label={`Выбор города: ${selectedOption?.city}`}
       >
         <span
           className={clsx('custom-select__value', isModalOpen && 'custom-select__value--modal')}
@@ -72,16 +75,18 @@ export const CustomSelect = ({
       </button>
 
       {isOpen && (
-        <div className="custom-select__dropdown">
+        <div className="custom-select__dropdown" role="listbox">
           <div className="custom-select__options">
             {filterOption.map((option) => (
               <button
                 key={option.city}
                 type="button"
+                role="option"
                 className={clsx(
                   isModalOpen ? 'custom-select__option--modal' : 'custom-select__option'
                 )}
                 onClick={() => handleSelect(option)}
+                aria-selected={selectedValue === option.city}
               >
                 {option.city}
               </button>

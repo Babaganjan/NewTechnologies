@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
-import { VideonabludeniePage } from '@/widgets/widgetPages/videonabludenie';
+import { VideonabludeniePage } from '@/widgets/servicePages/videonabludenie';
 
 export const metadata: Metadata = {
   title: seoConfig.services.videoSurveillance.title,

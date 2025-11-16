@@ -41,10 +41,14 @@ export const HeaderContentMobil = ({
   return (
     <header className="modal-mobil" data-theme={theme}>
       <div className="modal-mobil__container container">
-        <button className="modal-mobil__btn" onClick={onModalClose}>
+        <button 
+          className="modal-mobil__btn" 
+          onClick={onModalClose}
+          aria-label="Закрыть меню"
+        >
           ✕
         </button>
-        <nav className="modal-mobil__nav nav">
+        <nav className="modal-mobil__nav nav" aria-label="Мобильная навигация">
           <ul className="nav__list">
             {navItems.map((item) => {
               if (item.hasModal && isModalVariant(item.title)) {
@@ -56,11 +60,18 @@ export const HeaderContentMobil = ({
                     <button
                       className={clsx('nav__link', isSelected && 'nav__link--active')}
                       onClick={() => handleItemClick(item)}
+                      aria-expanded={isSelected}
+                      aria-controls={`submenu-${item.title}`}
                     >
                       {item.title}
                     </button>
                     {isSelected && (
-                      <div className="nav__sub-menu">
+                      <div 
+                        className="nav__sub-menu"
+                        id={`submenu-${item.title}`}
+                        role="region"
+                        aria-label={`Подменю ${item.title}`}
+                      >
                         <NavItemModalMobil data={DATA_MODAL[modalTitle] || []} />
                       </div>
                     )}

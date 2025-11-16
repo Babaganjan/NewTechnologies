@@ -38,7 +38,7 @@ export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
 
   return (
     <div className="wrapper-modal container" onMouseLeave={handleModalLeave}>
-      <div className="nav-modal">
+      <nav className="nav-modal" aria-label="Подменю навигации">
         <ul className="nav-modal__list--title">
           {data.map((item) => (
             <li key={item.id}>
@@ -49,16 +49,17 @@ export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
                   unselected: selectedId !== null && selectedId !== item.id,
                 })}
                 onMouseEnter={() => handleTitleHover(item.id)}
+                aria-current={selectedId === item.id && 'true'}
               >
                 {item.title}
               </Button>
             </li>
           ))}
         </ul>
-      </div>
+      </nav>
 
       {selectedId && (
-        <div className="nav-modal--items">
+        <div className="nav-modal--items" aria-label="Список услуг">
           <ul className="nav-modal__list--items">
             {selectedItem?.list?.map((subItem, index) => (
               <li key={`${subItem.name}-${index}`}>
@@ -75,7 +76,12 @@ export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
             ))}
           </ul>
           {selectedService?.image && (
-            <div className="service-image" onMouseEnter={() => setSelectedService(selectedService)}>
+            <div
+              className="service-image"
+              onMouseEnter={() => setSelectedService(selectedService)}
+              role="img"
+              aria-label={`Изображение услуги: ${selectedService.name}`}
+            >
               <Image src={selectedService.image} alt={selectedService.name} fill />
             </div>
           )}

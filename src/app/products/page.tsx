@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
-import { FeedbackMenu, Products, ProductsPage } from '@/widgets';
+import { FeedbackMenu, ProductHero, Products } from '@/widgets';
 
 export const metadata: Metadata = {
   title: seoConfig.products.main.title,
@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function ProductPage() {
   return (
     <>
-      <ProductsPage />
+      <ProductHero />
       <Products />
       <FeedbackMenu />
     </>

@@ -1,8 +1,8 @@
 import { ProductionHeading } from '@/shared/icons';
 import { H } from '@/shared/ui';
-import './products-page.scss';
+import './product-hero.scss';
 
-export const ProductsPage = () => {
+export const ProductHero = () => {
   return (
     <>
       <section className="products-page-section" aria-labelledby="products-page-title">

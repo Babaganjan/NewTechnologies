@@ -123,6 +123,8 @@ export const Services = () => {
                         'item__btn--active': activeService === item.id,
                       })}
                       onClick={() => handleServiceToggle(item.id)}
+                      aria-expanded={activeService === item.id}
+                      aria-controls={`service-content-${item.id}`}
                     >
                       <span>{item.title}</span>
                       <Arrow
@@ -130,6 +132,7 @@ export const Services = () => {
                         width={25}
                         height={20}
                         className="service-icon"
+                        aria-hidden="true"
                       />
                     </button>
                   </div>
@@ -143,6 +146,7 @@ export const Services = () => {
                         'item__btn--red': hoveredService !== null && hoveredService !== item.id // Красный цвет для других кнопок
                       })}
                       onMouseEnter={() => handleMouseEnter(item.id)}
+                      aria-label={item.title}
                     >
                       <span>{item.title}</span>
                     </button>
@@ -152,7 +156,12 @@ export const Services = () => {
                 {renderSubItems(item)}
 
                 {/* Мобильный слайдер */}
-                <div className="services__slider-wrapper mobile-only">
+                <div 
+                  className="services__slider-wrapper mobile-only"
+                  id={`service-content-${item.id}`}
+                  role="region"
+                  aria-label={`Услуги категории ${item.title}`}
+                >
                   {activeService === item.id && <SliderServices serviceId={item.id} />}
                 </div>
               </li>

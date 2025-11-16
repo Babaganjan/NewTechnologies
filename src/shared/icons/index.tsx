@@ -26,7 +26,7 @@ export {
   Huawei,
   Itc,
   Macroscop,
-  Mirkrotik,
+  Mikrotik,
   Oxgard,
   Paritet,
   Rubezh,
@@ -37,7 +37,7 @@ export {
   Uniqscan,
   Vers,
   WesternDigital,
-} from './Adverting-icons';
+} from './partner-icons';
 
 export {
   AboutUsHeadingBottom,

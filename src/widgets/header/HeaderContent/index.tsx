@@ -45,7 +45,7 @@ export const HeaderContent = ({
     >
       <div className="container header__container">
         <div className="header__wrapper">
-          <nav className="header__nav nav hidden">
+          <nav className="header__nav nav hidden" aria-label="Основная навигация">
             <ul className="nav__list">
               {navItems.map((item) => {
                 const isHovered = activeNavItem?.includes(item.title) ?? false;
@@ -67,6 +67,7 @@ export const HeaderContent = ({
                       className={clsx('nav__link', isHovered && 'hovered')}
                       iconSmall={item.hasIcon}
                       onClick={onModalClose}
+                      aria-current={isHovered ? 'page' : undefined}
                     >
                       {item.title}
                     </Button>
@@ -112,6 +113,8 @@ export const HeaderContent = ({
           <motion.button
             className="header__btn"
             onClick={onMobilModal}
+            aria-label="Открыть меню навигации"
+            aria-expanded="false"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
           ></motion.button>

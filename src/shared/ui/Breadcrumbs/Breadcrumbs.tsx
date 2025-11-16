@@ -15,24 +15,29 @@ export const Breadcrumbs = () => {
   const validPath = path.filter((item): item is BreadcrumbWord => item in BREADCRUMBSWORDS);
 
   return (
-    <ol className={`container ${styles.breadcrumbs}`}>
-      {validPath.map((item, index) => {
-        const lastIndex = index !== validPath.length - 1;
-        const itemColor = lastIndex ? 'var(--text-deep-gray)' : undefined;
+    <nav aria-label="Хлебные крошки">
+      <ol className={`container ${styles.breadcrumbs}`}>
+        {validPath.map((item, index) => {
+          const lastIndex = index !== validPath.length - 1;
+          const itemColor = lastIndex ? 'var(--text-deep-gray)' : undefined;
 
-        return (
-          <li key={item} className={styles.breadcrumbsItem} style={{ color: itemColor }}>
-            <Link href={`/${path.slice(0, path.indexOf(item) + 1).join('/')}`}>
-              {BREADCRUMBSWORDS[item]}
-            </Link>
-            {lastIndex && (
-              <span>
-                <ArrowBreadcrumbs />
-              </span>
-            )}
-          </li>
-        );
-      })}
-    </ol>
+          return (
+            <li key={item} className={styles.breadcrumbsItem} style={{ color: itemColor }}>
+              <Link 
+                href={`/${path.slice(0, path.indexOf(item) + 1).join('/')}`}
+                aria-current={!lastIndex ? 'page' : undefined}
+              >
+                {BREADCRUMBSWORDS[item]}
+              </Link>
+              {lastIndex && (
+                <span aria-hidden="true">
+                  <ArrowBreadcrumbs />
+                </span>
+              )}
+            </li>
+          );
+        })}
+      </ol>
+    </nav>
   );
 };

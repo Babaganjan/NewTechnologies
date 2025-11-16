@@ -10,7 +10,7 @@ interface ModalProps {
 
 export const Modal = ({ children, onMouseLeave }: ModalProps) => {
   return createPortal(
-    <div className={`modal-overlay`}>
+    <div className={`modal-overlay`} role="dialog" aria-modal="true">
       <div className="modal" onMouseLeave={onMouseLeave}>
         <div className="modal-body modal__container">{children}</div>
       </div>
