@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function serverCabinets() {
   return (
     <>
-      <ProductsMenu />
+      <ProductsMenu type="SERVERCABINETS" />
       <FeedbackMenu />
     </>
   );

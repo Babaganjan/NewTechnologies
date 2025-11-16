@@ -4,23 +4,23 @@ import Link from 'next/link';
 import { Arrow } from '@/shared/icons';
 import { Breadcrumbs } from '@/shared/ui';
 
-import { PRODUCTMENUDATA } from './productMenus.const';
+import type { ProductMenuTypes } from './productMenus.const';
+import { PRODUCTMENUDATA__ALL, PRODUCTMENUDATA__TITLE } from './productMenus.const';
 import './productsMenu.scss';
 
-export const ProductsMenu = () => {
+export const ProductsMenu = ({ type }: { type: ProductMenuTypes }) => {
+  const data = PRODUCTMENUDATA__ALL[type];
+  const dataTitle = PRODUCTMENUDATA__TITLE[type];
+
   return (
     <section className="productsMenu" aria-labelledby="products-menu-title">
       <Breadcrumbs />
 
       <div className="productsMenu__container container">
         <h1 id="products-menu-title" className="productsMenu__title">
-          Видеорегистраторы
+          {dataTitle.title}
         </h1>
-
-        <p className="productsMenu__subtitle">
-          Надежные устройства для записи и хранения видеоматериалов, обеспечивающие контроль и
-          защиту.
-        </p>
+        <p className="productsMenu__subtitle">{dataTitle.subtitle}</p>
 
         <div className="productsMenu__item-header" aria-hidden="true">
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--one">
@@ -35,7 +35,7 @@ export const ProductsMenu = () => {
         </div>
 
         <ul className="productsMenu__list">
-          {PRODUCTMENUDATA.map((item, index) => (
+          {data.map((item, index) => (
             <li key={item.id}>
               <Link
                 href={`/products/${item.id}`}

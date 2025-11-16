@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function cameras() {
   return (
     <>
-      <ProductsMenu />
+      <ProductsMenu type="CAMERAS" />
       <FeedbackMenu />
     </>
   );

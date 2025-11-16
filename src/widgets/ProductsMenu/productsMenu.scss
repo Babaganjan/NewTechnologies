@@ -107,6 +107,10 @@
       font-size: fluid(58px, 68px);
     }
 
+    &__subtitle {
+      width: 40%;
+    }
+
     &__item-header {
       display: grid;
       grid-template-columns: 0.6fr 1.3fr 0.7fr;

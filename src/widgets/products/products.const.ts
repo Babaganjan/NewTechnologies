@@ -3,8 +3,6 @@ export interface IProductItem {
   title: string;
   alias: string;
   image: string;
-  width: number;
-  height: number;
   amount: number;
 }
 
@@ -14,8 +12,6 @@ export const PRODUCTS_DATA: IProductItem[] = [
     title: 'Турникеты',
     alias: 'turnstiles',
     image: '/img/product-item-1.webp',
-    width: 96,
-    height: 110,
     amount: 5,
   },
   {
@@ -23,8 +19,6 @@ export const PRODUCTS_DATA: IProductItem[] = [
     title: 'Коммутаторы',
     alias: 'switches',
     image: '/img/product-item-2.webp',
-    width: 110,
-    height: 100,
     amount: 12,
   },
   {
@@ -32,8 +26,6 @@ export const PRODUCTS_DATA: IProductItem[] = [
     title: 'Серверные шкафы',
     alias: 'serverCabinets',
     image: '/img/product-item-3.webp',
-    width: 110,
-    height: 100,
     amount: 9,
   },
   {
@@ -41,8 +33,6 @@ export const PRODUCTS_DATA: IProductItem[] = [
     title: 'Видеорегистраторы',
     alias: 'nvr',
     image: '/img/product-item-4.webp',
-    width: 110,
-    height: 100,
     amount: 2,
   },
   {
@@ -50,8 +40,6 @@ export const PRODUCTS_DATA: IProductItem[] = [
     title: 'Видеокамеры',
     alias: 'cameras',
     image: '/img/product-item-5.webp',
-    width: 130,
-    height: 48,
     amount: 7,
   },
 ] as const;

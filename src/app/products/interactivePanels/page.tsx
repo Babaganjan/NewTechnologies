@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function interactivePanels() {
   return (
     <>
-      <ProductsMenu />
+      <ProductsMenu type="CAMERAS" />
       <FeedbackMenu />
     </>
   );

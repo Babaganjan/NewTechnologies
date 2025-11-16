@@ -9,14 +9,12 @@ import './_productItem.scss';
 export const ProductItem = ({ itemData }: { itemData: IProductItem }) => {
   return (
     <li className="products__item">
-      <Link href={`/products/${itemData.alias}`} aria-label={`${itemData.title} - ${itemData.amount} моделей`}>
+      <Link
+        href={`/products/${itemData.alias}`}
+        aria-label={`${itemData.title} - ${itemData.amount} моделей`}
+      >
         <div className="products__img">
-          <Image
-            src={itemData.image}
-            alt={itemData.title}
-            width={itemData.width}
-            height={itemData.height}
-          />
+          <Image src={itemData.image} alt={itemData.title} fill />
         </div>
         <div className="products__title">
           <span aria-label={`${itemData.amount} моделей`}>[{itemData.amount}]</span>

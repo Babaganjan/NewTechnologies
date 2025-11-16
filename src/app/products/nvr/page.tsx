@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function nvr() {
   return (
     <>
-      <ProductsMenu />
+      <ProductsMenu type="NVR" />
       <FeedbackMenu />
     </>
   );

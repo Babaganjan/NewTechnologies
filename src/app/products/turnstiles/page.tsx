@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function turnstiles() {
   return (
     <>
-      <ProductsMenu />
+      <ProductsMenu type="TURNSTILES" />
       <FeedbackMenu />
     </>
   );

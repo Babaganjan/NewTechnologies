@@ -2,15 +2,25 @@
 @use '@/shared/styles/mixins' as *;
 
 .products__item {
-  padding: 15px 10px 10px 10px;
+  padding: 15px 10px 10px;
   border: 1px solid var(--text-light-gray);
   background-color: var(--bg-light-gray);
   display: flex;
   flex-direction: column;
   position: relative;
-  justify-content: space-between;
-  align-items: flex-start;
   @include item-decor(var(--vector-deep-gray), fluid(12px, 20px));
+  min-width: 170px;
+  min-height: 170px;
+
+  @include respond-min(768px) {
+    min-width: 364px;
+    min-height: 364px;
+  }
+
+  @include respond-min(1024px) {
+    min-width: 455px;
+    min-height: 455px;
+  }
 
   @include respond-min(1023px, max) {
     &:last-child:nth-child(odd) {
@@ -20,31 +30,54 @@
       margin: 0 auto;
     }
   }
+
+  a {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+  }
 }
 
 .products__img {
+  width: 100%;
+  flex: 1;
   display: flex;
   align-items: center;
-  flex-grow: 1;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 10px;
+
+  img {
+    object-fit: contain;
+    object-position: center;
+    width: 100% !important;
+    height: auto !important;
+    position: relative !important;
+    max-height: 100%;
+  }
 }
 
 .products__title {
   position: relative;
   display: flex;
   flex-direction: column;
-  width: fit-content;
-  margin-top: auto;
+  width: 100%;
+
   span {
     @include typography(var(--text-gray), 500, fluid(10px, 22px), 0.4, uppercase, -0.05em);
     position: absolute;
-    display: inline-block;
-    width: 0;
-    height: 0;
-    top: 0px;
+    top: 0;
     right: -3px;
+    clip: rect(0, 0, 0, 0);
+    overflow: hidden;
+    white-space: nowrap;
   }
 
   h5 {
     color: var(--text-black);
+    transition: color 0.2s ease;
   }
 }

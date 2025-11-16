@@ -15,7 +15,7 @@ export const metadata: Metadata = {
 export default function switches() {
   return (
     <>
-      <ProductsMenu />
+      <ProductsMenu type="SWITCHES" />
       <FeedbackMenu />
     </>
   );
