@@ -5,7 +5,7 @@ import { Arrow } from '@/shared/icons';
 
 import './_projectListItem.scss';
 
-import { H } from '../../../shared/ui/Heading/H';
+import { H } from '../../../shared/ui/H';
 import type { ProjectMenuItemProps } from '../projectMenu.types';
 
 export const ProjectListItem = ({
@@ -39,7 +39,9 @@ export const ProjectListItem = ({
     }}
   >
     <div className="project-menu-item__content">
-      <span className="project-menu-item__client service-label--services" aria-label="Клиент">клиент</span>
+      <span className="project-menu-item__client service-label--services" aria-label="Клиент">
+        клиент
+      </span>
       <div className="project-menu-item__subtitle">
         <H level={'5'} variant="light" className="project-menu-item__subtitle-title">
           {item.title}
@@ -67,7 +69,12 @@ export const ProjectListItem = ({
           </div>
         </div>
       )}
-      <span className="project-menu-item__service-label service-label--services" aria-label="Тип услуги">тип услуги</span>
+      <span
+        className="project-menu-item__service-label service-label--services"
+        aria-label="Тип услуги"
+      >
+        тип услуги
+      </span>
       <p className="project-menu-item__service service-label--services">{item.service}</p>
     </div>
   </li>

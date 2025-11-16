@@ -1,6 +1,6 @@
 import clsx from 'clsx';
 
-import { H } from '../../../shared/ui/Heading/H';
+import { H } from '../../../shared/ui/H';
 import type { ProjectMenuItemProps } from '../projectMenu.types';
 
 import './_projectNumberItem.scss';

@@ -7,8 +7,7 @@ import Link from 'next/link';
 
 import { useScrollContext } from '@/context/ScrollProvider';
 import { CITIES_CONTACTS } from '@/shared/const/cities.data';
-import { Button } from '@/shared/ui';
-import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
+import { Button, CustomSelect } from '@/shared/ui';
 
 import type { HeaderContentProps } from '../header.types';
 import { isModalVariant } from '../helper/isModalVariant';

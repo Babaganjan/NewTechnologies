@@ -6,13 +6,37 @@ export const Hero = () => {
   return (
     <section className="hero with-trapezoids" aria-label="Главный баннер">
       <div className="container hero__container">
-        <video autoPlay muted loop playsInline className="hero__video hero__video--mobile" aria-hidden="true">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="hero__video hero__video--mobile"
+          aria-hidden="true"
+        >
           <source src="/video/hero-video-360.mp4" type="video/mp4" />
         </video>
-        <video autoPlay muted loop playsInline className="hero__video hero__video--tablet" aria-hidden="true">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="hero__video hero__video--tablet"
+          aria-hidden="true"
+        >
           <source src="/video/hero-video-768.mp4" type="video/mp4" />
         </video>
-        <video autoPlay muted loop playsInline className="hero__video--desktop" aria-hidden="true">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="metadata"
+          className="hero__video--desktop"
+          aria-hidden="true"
+        >
           <source src="/video/hero-video-1920.mp4" type="video/mp4" />
         </video>
         <H level={'1'} className="heading">
