@@ -1,10 +1,11 @@
+import type { ServiceTypeKey } from '@/shared/types/service.types';
 import { Button, H } from '@/shared/ui';
 
-import type { DescriptionKey } from './description.const';
 import { DESCRIPTION__DATA } from './description.const';
+
 import './description.scss';
 
-export const Description = ({ type }: { type: DescriptionKey }) => {
+export const Description = ({ type }: { type: ServiceTypeKey }) => {
   const data = DESCRIPTION__DATA[type];
 
   return (

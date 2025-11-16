@@ -1,11 +1,13 @@
 import Image from 'next/image';
 
+import type { ServiceTypeKey } from '@/shared/types/service.types';
 import { H } from '@/shared/ui';
 
-import { CONSULTATIONSERVICE_DATA, type ConsultationServiceKey } from './consultationService.const';
+import { CONSULTATIONSERVICE_DATA } from './consultationService.const';
+
 import './consultationService.scss';
 
-export const ConsultationService = ({ type }: { type: ConsultationServiceKey }) => {
+export const ConsultationService = ({ type }: { type: ServiceTypeKey }) => {
   const data = CONSULTATIONSERVICE_DATA[type];
 
   return (

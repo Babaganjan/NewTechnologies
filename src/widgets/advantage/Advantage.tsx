@@ -1,11 +1,11 @@
+import type { ServiceTypeKey } from '@/shared/types/service.types';
 import { H } from '@/shared/ui';
 
-import type { AdvantageWorkType } from './advantage.const';
 import { ADVANTAGEALL } from './advantage.const';
 
 import './Advantage.scss';
 
-export const Advantage = ({ type }: { type: AdvantageWorkType }) => {
+export const Advantage = ({ type }: { type: ServiceTypeKey }) => {
   const AdvantageData = ADVANTAGEALL[type];
 
   return (

@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { useScrollContext } from '@/context/ScrollProvider';
-import { CITIES_CONTACTS } from '@/shared/const/data';
+import { CITIES_CONTACTS } from '@/shared/const/cities.data';
 import { Button } from '@/shared/ui';
 import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
 

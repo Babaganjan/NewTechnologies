@@ -1,9 +1,9 @@
 'use client';
 
 import { useScrollContext } from '@/context/ScrollProvider';
-import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/data';
+import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/cities.data';
 import { ContactsHeading } from '@/shared/icons';
-import { H, Button } from '@/shared/ui';
+import { Button, H } from '@/shared/ui';
 
 import { MAPS_EMBED_URL } from './contacts.const';
 

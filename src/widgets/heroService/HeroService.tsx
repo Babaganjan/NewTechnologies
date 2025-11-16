@@ -1,17 +1,11 @@
 import Image from 'next/image';
 
+import type { ServiceTypeKey } from '@/shared/types/service.types';
 import { Breadcrumbs, H } from '@/shared/ui';
 
 import './heroService.scss';
 
-export type HeroServiceType =
-  | 'notificationSystem'
-  | 'accessControl'
-  | 'videoSurveillance'
-  | 'fireSuppression'
-  | 'fireAlarm';
-
-export const HeroService = ({ title, type }: { title: string; type: HeroServiceType }) => {
+export const HeroService = ({ title, type }: { title: string; type: ServiceTypeKey }) => {
   return (
     <section className="heroService">
       <Breadcrumbs />

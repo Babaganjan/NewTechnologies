@@ -1,12 +1,13 @@
 import Image from 'next/image';
 
+import type { ServiceTypeKey } from '@/shared/types/service.types';
 import { H } from '@/shared/ui';
 
-import type { StagesWorkType } from './StagesWork.const';
 import { STAGESWORKALL } from './StagesWork.const';
+
 import './StagesWork.scss';
 
-export const StagesWork = ({ type }: { type: StagesWorkType }) => {
+export const StagesWork = ({ type }: { type: ServiceTypeKey }) => {
   const StagesWorkData = STAGESWORKALL[type];
 
   return (

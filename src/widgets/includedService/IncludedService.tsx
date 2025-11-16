@@ -1,12 +1,13 @@
 import Image from 'next/image';
 
+import type { ServiceTypeKey } from '@/shared/types/service.types';
 import { H } from '@/shared/ui';
 
-import { INCLUDEDSERVICE__ALL, type IncludesType } from './includedService.const';
+import { INCLUDEDSERVICE__ALL } from './includedService.const';
 
 import './includedService.scss';
 
-export const IncludedService = ({ type }: { type: IncludesType }) => {
+export const IncludedService = ({ type }: { type: ServiceTypeKey }) => {
   const data = INCLUDEDSERVICE__ALL[type];
 
   return (

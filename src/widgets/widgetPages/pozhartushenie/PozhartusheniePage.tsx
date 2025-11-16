@@ -14,15 +14,15 @@ import {
 export const PozhartusheniePage = () => {
   return (
     <>
-      <HeroService title="Системы пожаротушения" type="fireSuppression" />
+      <HeroService title="Системы пожаротушения" type="FIRE_SUPPRESSION" />
       <Description type="FIRE_SUPPRESSION" />
       <ConsultationService type="FIRE_SUPPRESSION" />
-      <IncludedService type="fireSuppression" />
-      <Advantage type="fireSuppression" />
+      <IncludedService type="FIRE_SUPPRESSION" />
+      <Advantage type="FIRE_SUPPRESSION" />
       <TypesOfBlock type="OPS" title="Виды пожаротушения" />
-      <StagesWork type="fireSuppression" />
+      <StagesWork type="FIRE_SUPPRESSION" />
       <ProjectMenu type="FIRE_SUPPRESSION" />
-      <Questions type="fire-suppression" />
+      <Questions type="FIRE_SUPPRESSION" />
       <SeeAlso type="Системы пожаротушения" />
     </>
   );

@@ -1,16 +1,16 @@
 'use client';
 import clsx from 'clsx';
-import { useState, useRef, useEffect } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import { useLocalStorageSSR } from '@/hooks/useLocalStorage';
-import type { CityContactType } from '@/shared/const/data';
 import { ArrowSmall } from '@/shared/icons/ArrowSmall/ArrowSmall';
+import type { CityContactType } from '@/shared/types/cities.types';
 import type { ThemeType } from '@/widgets/header/header.types';
 
 import './customSelect.scss';
 
 interface CustomSelectProps extends ThemeType {
-  options: readonly CityContactType[];
+  options: CityContactType[];
   value?: string;
   onChange?: (value: string) => void;
   className?: string;

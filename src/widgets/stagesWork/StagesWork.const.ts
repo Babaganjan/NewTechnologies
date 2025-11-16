@@ -1,3 +1,5 @@
+import type { ServiceTypeKey } from '@/shared/types/service.types';
+
 interface IStagesData {
   id: number;
   title: string;
@@ -221,17 +223,10 @@ export const STAGES__DATA__FIRESUPPRESSION: IStagesData[] = [
   },
 ];
 
-export type StagesWorkType =
-  | 'notificationSystem'
-  | 'accessControl'
-  | 'videoSurveillance'
-  | 'fireSuppression'
-  | 'fireAlarm';
-
-export const STAGESWORKALL: Record<StagesWorkType, IStagesData[]> = {
-  notificationSystem: STAGES__DATA__NOTIFICATIONSYSTEM,
-  accessControl: STAGES__DATA__SKD,
-  videoSurveillance: STAGES__DATA__VIDEO,
-  fireSuppression: STAGES__DATA__FIRESUPPRESSION,
-  fireAlarm: STAGES__DATA__OPS,
+export const STAGESWORKALL: Record<ServiceTypeKey, IStagesData[]> = {
+  NOTIFICATION_SYSTEM: STAGES__DATA__NOTIFICATIONSYSTEM,
+  ACCESS_CONTROL: STAGES__DATA__SKD,
+  VIDEO_SURVEILLANCE: STAGES__DATA__VIDEO,
+  FIRE_SUPPRESSION: STAGES__DATA__FIRESUPPRESSION,
+  FIRE_ALARM: STAGES__DATA__OPS,
 };

@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 import { useScrollContext } from '@/context/ScrollProvider';
-import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/data';
+import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/cities.data';
 import { Button } from '@/shared/ui';
 import './_footer.scss';
 

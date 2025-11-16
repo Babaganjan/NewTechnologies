@@ -1,12 +1,4 @@
-export const DESCRIPTION_KEYS = [
-  'VIDEO_SURVEILLANCE',
-  'FIRE_ALARM',
-  'ACCESS_CONTROL',
-  'NOTIFICATION_SYSTEM',
-  'FIRE_SUPPRESSION',
-] as const;
-
-export type DescriptionKey = (typeof DESCRIPTION_KEYS)[number];
+import type { ServiceTypeKey } from '@/shared/types/service.types';
 
 export type DescriptionItem = {
   title: string;
@@ -15,7 +7,7 @@ export type DescriptionItem = {
   subtitleTwo: string;
 };
 
-export const DESCRIPTION__DATA: Record<DescriptionKey, DescriptionItem> = {
+export const DESCRIPTION__DATA: Record<ServiceTypeKey, DescriptionItem> = {
   VIDEO_SURVEILLANCE: {
     title: 'помогает защитить людей, имущество и бизнес',
     highlightTitle:

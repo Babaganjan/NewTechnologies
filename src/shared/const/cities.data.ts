@@ -1,29 +1,5 @@
-// Типы для социальных сетей
-export type SocialNetworkType = {
-  readonly id: number;
-  readonly title: string;
-  readonly href: string;
-};
+import type { CityContactType, CommonContactInfoType } from '../types/cities.types';
 
-// Тип для общих контактных данных
-export type CommonContactInfoType = {
-  readonly email: string;
-  readonly workingHours: string;
-  readonly socialNetworks: readonly SocialNetworkType[];
-};
-
-// Тип для контактов по городам
-export type CityContactType = {
-  readonly id: number;
-  readonly city: string;
-  readonly phone: string;
-  readonly address: string;
-} & CommonContactInfoType;
-
-// Тип для массива контактов
-export type CitiesContactsType = readonly CityContactType[];
-
-// Общие контактные данные с явной типизацией
 export const COMMON_CONTACT_INFO: CommonContactInfoType = {
   email: 'info@nt-t.kz',
   workingHours: 'Пн-Пт: 9:00 - 18:00 \n Сб-Вс: Выходной',
@@ -48,11 +24,10 @@ export const COMMON_CONTACT_INFO: CommonContactInfoType = {
       title: 'Instagram',
       href: 'https://www.instagram.com/nt-t.kz',
     },
-  ] as const,
+  ],
 } as const;
 
-// Данные по городам с явной типизацией
-export const CITIES_CONTACTS: CitiesContactsType = [
+export const CITIES_CONTACTS: CityContactType[] = [
   {
     id: 1,
     city: 'Алматы',

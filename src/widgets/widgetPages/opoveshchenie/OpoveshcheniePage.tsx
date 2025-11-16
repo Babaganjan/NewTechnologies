@@ -13,14 +13,14 @@ import {
 export const OpoveshcheniePage = () => {
   return (
     <>
-      <HeroService title="Системы оповещения" type="notificationSystem" />
+      <HeroService title="Системы оповещения" type="NOTIFICATION_SYSTEM" />
       <Description type="NOTIFICATION_SYSTEM" />
       <ConsultationService type="NOTIFICATION_SYSTEM" />
-      <IncludedService type="notificationSystem" />
-      <Advantage type="notificationSystem" />
-      <StagesWork type="notificationSystem" />
+      <IncludedService type="NOTIFICATION_SYSTEM" />
+      <Advantage type="NOTIFICATION_SYSTEM" />
+      <StagesWork type="NOTIFICATION_SYSTEM" />
       <ProjectMenu type="NOTIFICATION_SYSTEM" />
-      <Questions type="notification-system" />
+      <Questions type="NOTIFICATION_SYSTEM" />
       <SeeAlso type="Системы оповещения" />
     </>
   );
