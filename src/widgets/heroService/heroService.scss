@@ -8,7 +8,7 @@
 
 .heroService__title {
   width: 40%;
-  margin-top: 100px;
+  margin-top: fluid(80px, 100px, 360px, 768px);
 }
 
 .heroService__img {
