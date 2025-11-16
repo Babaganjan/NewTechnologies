@@ -1,12 +1,11 @@
 // AboutScroll.tsx
 'use client';
-import { useScroll, useTransform, motion } from 'framer-motion';
+import { motion, useScroll, useTransform } from 'framer-motion';
 import Image from 'next/image';
 import { useRef } from 'react';
 
+import { AboutUsHeadingBottom, AboutUsHeadingTop } from '@/shared/icons';
 import './AboutScroll.scss';
-import { AboutUsHeadingBottom } from './../../shared/icons/AboutUs/AboutUsHeadingBottom';
-import { AboutUsHeadingTop } from './../../shared/icons/AboutUs/AboutUsHeadingTop';
 
 export const AboutScroll = () => {
   const containerRef = useRef(null);

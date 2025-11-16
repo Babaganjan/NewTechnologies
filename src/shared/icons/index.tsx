@@ -1,3 +1,5 @@
+import { AboutUsHeadingBottom } from './AboutUs/AboutUsHeadingBottom';
+import { AboutUsHeadingTop } from './AboutUs/AboutUsHeadingTop';
 import { Arrow } from './Arrow/Arrow';
 import { ArrowSmall } from './ArrowSmall/ArrowSmall';
 import { ContactsHeading } from './ContactsHeading/ContactsHeading';
@@ -38,6 +40,8 @@ export {
 } from './Adverting-icons';
 
 export {
+  AboutUsHeadingBottom,
+  AboutUsHeadingTop,
   Arrow,
   ArrowBreadcrumbs,
   ArrowSmall,

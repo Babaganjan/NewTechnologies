@@ -4,7 +4,7 @@ import { usePathname } from 'next/navigation';
 import { H } from '@/shared/ui';
 
 import './_products-block.scss';
-import { ProductItem } from './ProductItem/ProductItem';
+import { ProductItem } from './ProductItem';
 import { PRODUCTS_DATA } from './products.const';
 
 export const Products = () => {

@@ -1,5 +1,5 @@
 import type { ResultListProps } from '@/widgets/result/Result.types';
-import { ResultItem } from '@/widgets/result/resultItem/ResultItem';
+import { ResultItem } from '@/widgets/result/resultItem';
 import './_resultList.scss';
 
 export const ResultList = ({ items }: ResultListProps) => {

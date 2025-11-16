@@ -8,9 +8,9 @@ import { H } from '@/shared/ui';
 import './_questions-block.scss';
 import type { QuestionFAQ } from './questions.const';
 import { ACTIVE_CARD_DATA, ALL_FAQ } from './questions.const';
-import { QuestionsCard } from './questionsCard/QuestionsCard';
+import { QuestionsCard } from './questionsCard';
 
-export const Questions = ({ type = 'DEFAULT' }: { type: QuestionFAQ }) => {
+export const Questions = ({ type = 'DEFAULT' }: { type?: QuestionFAQ }) => {
   const [activeCard, setActiveCard] = useState<string | null>(null);
   const data = ALL_FAQ[type];
   const isDefault = type === 'DEFAULT';

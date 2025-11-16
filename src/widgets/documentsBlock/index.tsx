@@ -3,8 +3,8 @@ import { useState } from 'react';
 
 import { H } from '@/shared/ui';
 
-import { DocumentsList } from './DocumentList/DocumentList';
-import { DocumentsTabs } from './DocumentsTabs/DocumentsTabs';
+import { DocumentsList } from './DocumentList';
+import { DocumentsTabs } from './DocumentsTabs';
 import type { ActiveTab } from './documents.const';
 import { DOCUMENTS_ITEMS, TAB_LABELS } from './documents.const';
 

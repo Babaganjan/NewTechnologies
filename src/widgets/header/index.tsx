@@ -3,11 +3,11 @@ import useModal from '@/hooks/useModal';
 import { Modal } from '@/shared/ui';
 import { DATA_MODAL } from '@/widgets/header/navItemModal/nav-item.const';
 
-import { HeaderContent } from './HeaderContent/HeaderContent';
+import { HeaderContent } from './HeaderContent';
 import { HeaderContentMobil } from './HeaderContent/HeaderContentMobil';
 import { EXCLUDE_MAP, HEADER_NAV_ITEMS } from './header.const';
 import type { ThemeType } from './header.types';
-import { NavItemModal } from './navItemModal/NavItemModal';
+import { NavItemModal } from './navItemModal';
 
 export const Header = ({ theme = 'dark' }: ThemeType) => {
   const {

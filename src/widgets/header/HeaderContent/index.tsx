@@ -13,7 +13,7 @@ import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
 import type { HeaderContentProps } from '../header.types';
 import { isModalVariant } from '../helper/isModalVariant';
 
-import '../_header.scss';
+import './../_header.scss';
 
 export const HeaderContent = ({
   navItems,

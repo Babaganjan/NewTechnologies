@@ -7,12 +7,11 @@ import { H } from '@/shared/ui';
 import type { ModalVariant } from '@/widgets/header/navItemModal/nav-Item.types';
 import { DATA_MODAL } from '@/widgets/header/navItemModal/nav-item.const';
 
-import type { HeaderContentProps } from '../header.types';
+import type { HeaderContentProps } from '../../header.types';
+import { isModalVariant } from '../../helper/isModalVariant';
+import { NavItemModalMobil } from '../../navItemModal/NavItemModalMobil';
 
-import { isModalVariant } from './../helper/isModalVariant';
-import { NavItemModalMobil } from './../navItemModal/NavItemModalMobil';
-
-import '../_header.scss';
+import '../../_header.scss';
 
 export const HeaderContentMobil = ({
   navItems,

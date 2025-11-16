@@ -7,9 +7,9 @@ import { Arrow } from '@/shared/icons';
 import { Button, H } from '@/shared/ui';
 import './_project-menu.scss';
 
-import { ProjectListItem } from './ProjectListItem/ProjectListItem';
-import { ProjectNumberItem } from './ProjectNumberItem/ProjectNumberItem';
-import { ProjectServiceItem } from './ProjectServiceItem/ProjectServiceItem';
+import { ProjectListItem } from './ProjectListItem';
+import { ProjectNumberItem } from './ProjectNumberItem';
+import { ProjectServiceItem } from './ProjectServiceItem';
 import { INITIAL_ITEMS_COUNT, PROJECT_MENU_DATA_TITLE, TYPEPROJECT } from './projectMenu.const';
 import type { ProjectCategory, ProjectMenuItemProps } from './projectMenu.types';
 

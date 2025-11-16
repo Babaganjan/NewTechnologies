@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 import { Arrow } from '@/shared/icons';
 
-import type { NavListModalProps, SelectedCategoryType } from './nav-Item.types';
+import type { NavListModalProps, SelectedCategoryType } from '../nav-Item.types';
 
 import './navItemModalMobil.scss';
 

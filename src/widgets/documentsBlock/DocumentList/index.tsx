@@ -2,7 +2,7 @@
 import type { KeyboardEvent, MouseEvent } from 'react';
 import { useState } from 'react';
 
-import { DocumentItem } from '../DocumentItem/DocumentItem';
+import { DocumentItem } from '../DocumentItem';
 import type { IDocumentsItems } from '../documents.const';
 
 interface DocumentsListProps {
