@@ -2,7 +2,7 @@
 import Link from 'next/link';
 
 import { useScrollContext } from '@/context/ScrollProvider';
-import { ADDRESS_CONTACTS } from '@/shared/const/data';
+import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/data';
 import { Button } from '@/shared/ui';
 import './_footer.scss';
 
@@ -10,7 +10,7 @@ import { FOOTER_ACTIVITY_ITEMS, FOOTER_COMPANY_ITEMS, FOOTER_NAV_ITEMS } from '.
 
 export const Footer = () => {
   const { selectedCity } = useScrollContext();
-  const selectedContact = ADDRESS_CONTACTS.find((contact) => contact.city === selectedCity);
+  const selectedContact = CITIES_CONTACTS.find((contact) => contact.city === selectedCity);
   const scrollToTop = () => {
     let startTime: number | null = null;
     const start = window.pageYOffset;
@@ -61,22 +61,32 @@ export const Footer = () => {
           <address className="footer__address">
             {selectedContact?.address || 'Астана, 14/1 умай ана'}
           </address>
-          <nav aria-label="Контактные ссылки">
-            {selectedContact && (
-              <Button href={`tel:${selectedContact.phone}`} variant="link">
-                {selectedContact.phone}
-              </Button>
-            )}
-            <Button
-              href="https://www.instagram.com/nt-t.kz/"
-              variant="social"
-              icon
-              className="social-link"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Instagram
+          {selectedContact && (
+            <Button href={`tel:${selectedContact.phone}`} variant="link">
+              {selectedContact.phone}
             </Button>
+          )}
+          <Button
+            href={`mailto:${COMMON_CONTACT_INFO.email}`}
+            variant="social"
+            className="social-link"
+            rel="noopener noreferrer"
+          >
+            {COMMON_CONTACT_INFO.email}
+          </Button>
+          <nav aria-label="Контактные ссылки">
+            {COMMON_CONTACT_INFO.socialNetworks.map((item) => (
+              <Button
+                key={item.id}
+                href={item.href}
+                variant="social"
+                icon
+                className="social-link"
+                rel="noopener noreferrer"
+              >
+                {item.title}
+              </Button>
+            ))}
           </nav>
         </div>
 

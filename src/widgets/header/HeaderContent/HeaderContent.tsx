@@ -6,7 +6,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { useScrollContext } from '@/context/ScrollProvider';
-import { ADDRESS_CONTACTS } from '@/shared/const/data';
+import { CITIES_CONTACTS } from '@/shared/const/data';
 import { Button } from '@/shared/ui';
 import { CustomSelect } from '@/shared/ui/CustomSelect/CustomSelect';
 
@@ -27,7 +27,7 @@ export const HeaderContent = ({
   isModalOpen = false,
 }: HeaderContentProps) => {
   const { isHeaderVisible, isHeaderScrolled, selectedCity, setSelectedCity } = useScrollContext();
-  const selectedContact = ADDRESS_CONTACTS.find((contact) => contact.city === selectedCity);
+  const selectedContact = CITIES_CONTACTS.find((contact) => contact.city === selectedCity);
 
   return (
     <motion.header
@@ -92,7 +92,7 @@ export const HeaderContent = ({
 
         <div className="header__wrapper-contacts hidden__contacts">
           <CustomSelect
-            options={ADDRESS_CONTACTS}
+            options={CITIES_CONTACTS}
             value={selectedCity}
             onChange={setSelectedCity}
             className="header__city-select"
