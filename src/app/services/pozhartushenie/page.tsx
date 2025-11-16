@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
-
-import { PozhartusheniePage } from '@/widgets/widgetPages';
+import { PozhartusheniePage } from '@/widgets/servicePages';
 
 export const metadata: Metadata = {
   title: seoConfig.services.fireSuppression.title,

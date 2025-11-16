@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
-
-import { OpsPage } from '@/widgets/widgetPages';
+import { OpsPage } from '@/widgets/servicePages';
 
 export const metadata: Metadata = {
   title: seoConfig.services.fireAlarm.title,

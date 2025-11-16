@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
-
-import { OpoveshcheniePage } from '@/widgets/widgetPages';
+import { OpoveshcheniePage } from '@/widgets/servicePages';
 
 export const metadata: Metadata = {
   title: seoConfig.services.notificationSystem.title,

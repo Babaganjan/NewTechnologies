@@ -1,8 +1,7 @@
 import type { Metadata } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
-
-import { SkdPage } from '@/widgets/widgetPages';
+import { SkdPage } from '@/widgets/servicePages';
 
 export const metadata: Metadata = {
   title: seoConfig.services.accessControl.title,
