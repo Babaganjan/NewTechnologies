@@ -2,15 +2,15 @@
 import clsx from 'clsx';
 import { useState, useRef, useEffect } from 'react';
 
-import type { AddressContactType } from '@/shared/const/data';
+import { useLocalStorageSSR } from '@/hooks/useLocalStorage';
+import type { CityContactType } from '@/shared/const/data';
 import { ArrowSmall } from '@/shared/icons/ArrowSmall/ArrowSmall';
 import type { ThemeType } from '@/widgets/header/header.types';
 
 import './customSelect.scss';
-import { useLocalStorageSSR } from './../../../hooks/useLocalStorage';
 
 interface CustomSelectProps extends ThemeType {
-  options: readonly AddressContactType[];
+  options: readonly CityContactType[];
   value?: string;
   onChange?: (value: string) => void;
   className?: string;
@@ -46,7 +46,7 @@ export const CustomSelect = ({
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
-  const handleSelect = (option: AddressContactType) => {
+  const handleSelect = (option: CityContactType) => {
     setSelectedValue(option.city);
     onChange?.(option.city);
     setIsOpen(false);
@@ -79,9 +79,6 @@ export const CustomSelect = ({
                 key={option.city}
                 type="button"
                 className={clsx(
-                  {
-                    'custom-select__option--selected': option.city === selectedValue,
-                  },
                   isModalOpen ? 'custom-select__option--modal' : 'custom-select__option'
                 )}
                 onClick={() => handleSelect(option)}

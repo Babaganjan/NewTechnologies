@@ -1,6 +1,15 @@
 // contexts/ScrollProvider.tsx
 'use client';
-import { createContext, useContext, useState, useRef, useCallback, useEffect, type Dispatch, type SetStateAction } from 'react';
+import {
+  createContext,
+  useContext,
+  useState,
+  useRef,
+  useCallback,
+  useEffect,
+  type Dispatch,
+  type SetStateAction,
+} from 'react';
 
 interface ScrollContextType {
   isHeaderVisible: boolean;
@@ -13,7 +22,7 @@ const ScrollContext = createContext<ScrollContextType>({
   isHeaderVisible: true,
   isHeaderScrolled: false,
   selectedCity: 'Алматы',
-  setSelectedCity: () => {}
+  setSelectedCity: () => {},
 });
 
 export const useScrollContext = () => useContext(ScrollContext);
@@ -58,7 +67,9 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
   }, [handleScroll]);
 
   return (
-    <ScrollContext.Provider value={{ isHeaderVisible, isHeaderScrolled, selectedCity, setSelectedCity }}>
+    <ScrollContext.Provider
+      value={{ isHeaderVisible, isHeaderScrolled, selectedCity, setSelectedCity }}
+    >
       {children}
     </ScrollContext.Provider>
   );

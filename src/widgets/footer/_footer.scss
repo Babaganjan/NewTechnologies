@@ -48,7 +48,12 @@
     padding: 0.625rem;
     gap: 5px;
     margin-top: 60px;
-
+  nav {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+  }
     .footer__address {
       @include typography(
         var(--text-white),
@@ -58,10 +63,6 @@
         uppercase,
         fluid(-0.8px, -0.96px)
       );
-    }
-
-    .social-link {
-      margin-top: 1.25rem;
     }
   }
 }

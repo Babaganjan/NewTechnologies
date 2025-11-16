@@ -50,11 +50,13 @@ $large-screen-bottom-padding: 190px;
         @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none, -0.06em);
       }
 
-      p {
+      address, p {
         margin-top: auto;
         @include typography(var(--text-white), 600, fluid(18px, 24px), 1.2, uppercase, -0.06em);
         span {
-          display: block;
+          display: flex;
+          flex-direction: column;
+          gap: 5px;
         }
       }
 
