@@ -1,6 +1,5 @@
 import type { ServicesProps } from './services.type';
 
-
 export const SERVICES_ITEMS: ServicesProps[] = [
   {
     id: 1,
@@ -10,7 +9,7 @@ export const SERVICES_ITEMS: ServicesProps[] = [
         name: 'Системы видеонаблюдения',
         image: 'img/modalHeader/video-surveillance-system.webp',
         href: '/services/videonabludenie',
-        desc: ''
+        desc: '',
       },
       {
         name: 'Охранно-пожарная сигнализация',
@@ -22,19 +21,19 @@ export const SERVICES_ITEMS: ServicesProps[] = [
         name: 'Система контроля доступа',
         image: 'img/modalHeader/access-control-system.webp',
         href: '/services/skd',
-        desc: ''
+        desc: '',
       },
       {
         name: 'Системы оповещения',
         image: 'img/modalHeader/notification-system.webp',
         href: '/services/opoveshchenie',
-        desc: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления'
+        desc: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления',
       },
       {
         name: 'Системы пожаротушения',
         image: 'img/modalHeader/fire-extinguishing-system.webp',
         href: '/services/pozhartushenie',
-        desc: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления'
+        desc: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления',
       },
     ],
   },
@@ -45,8 +44,8 @@ export const SERVICES_ITEMS: ServicesProps[] = [
       {
         name: 'Для государственных и частных организаций',
         image: 'img/modalHeader/for-educational-institutions.webp',
-        href: '/',
-        desc: ''
+        href: '/itsolutions/itsolutionspublicprivate',
+        desc: '',
       },
     ],
   },
@@ -55,22 +54,14 @@ export const SERVICES_ITEMS: ServicesProps[] = [
     title: 'Обучение',
     list: [
       {
-        name: 'Внедрение  It-инфраструктуры',
-        image: 'img/modalHeader/video-surveillance-system.webp',
-        href: '/services/videonabludenie',
-        desc: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления'
+        name: 'Для официальных партнёров',
+        image: '/img/modalHeader/video-surveillance-system.webp',
+        href: '/services/workingwithntouchequipment',
       },
       {
-        name: 'Проектирование серверов',
-        image: 'img/modalHeader/security-fire-alarm-system.webp',
-        href: '/services/ops',
-        desc: ''
-      },
-      {
-        name: 'Проектирование сетей',
-        image: 'img/modalHeader/access-control-system.webp',
-        href: '/services/skd',
-        desc: 'Датчики дыма, движения, звуковая и световая сигнализация, панели управления'
+        name: 'Для специалистов и всех желающих',
+        image: '/img/modalHeader/security-fire-alarm-system.webp',
+        href: '/services/workingwithntouchequipment',
       },
     ],
   },

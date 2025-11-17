@@ -11,16 +11,19 @@ export const FavoritesProject = () => {
   const glitch1 = useGlitch({
     playMode: 'hover',
     hideOverflow: true,
+    shake: false,
   });
 
   const glitch2 = useGlitch({
     playMode: 'hover',
     hideOverflow: true,
+    shake: false,
   });
 
   const glitch3 = useGlitch({
     playMode: 'hover',
     hideOverflow: true,
+    shake: false,
   });
 
   const glitches = [glitch1, glitch2, glitch3];

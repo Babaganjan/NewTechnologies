@@ -13,4 +13,7 @@ export const BREADCRUMBSWORDS: Record<BreadcrumbWord, string> = {
   serverCabinets: 'Серверные шкафы',
   nvr: 'Видеорегистраторы',
   cameras: 'Видеокамеры',
+  itsolutionspublicprivate: 'Для государственных и частных организаций',
+  itsolutions: 'IT-решения',
+  workingwithntouchequipment: 'Работа с оборудованием NTOUCH',
 };
