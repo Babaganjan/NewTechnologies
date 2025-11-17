@@ -62,7 +62,11 @@ export const Footer = () => {
             {selectedContact?.address || 'Астана, 14/1 умай ана'}
           </address>
           {selectedContact && (
-            <Button href={`tel:${selectedContact.phone}`} variant="link" aria-label={`Позвонить по номеру ${selectedContact.phone}`}>
+            <Button
+              href={`tel:${selectedContact.phone}`}
+              variant="link"
+              aria-label={`Позвонить по номеру ${selectedContact.phone}`}
+            >
               {selectedContact.phone}
             </Button>
           )}
@@ -121,7 +125,7 @@ export const Footer = () => {
           <p>
             Тоо «новые технологии» <br />© {new Date().getFullYear()} все права защищены
           </p>
-          <Button href="/privacy-policy" variant="policy">
+          <Button href="/privacy" variant="policy">
             Политика конфиденциальности
           </Button>
         </div>

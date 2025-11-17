@@ -1,0 +1,116 @@
+.privacy {
+  background-color: var(--bg-black);
+  padding-block: 100px;
+}
+
+// ─────────────────────────────────────────────
+// Переменные — под стиль Word
+// ─────────────────────────────────────────────
+$font-main: Calibri, Arial, sans-serif;
+$color-text: #000;
+$color-link: #0563c1;
+
+$color-accent: #0a66c2;
+$color-border: #ddd;
+$color-bg-light: #f7f7f7;
+
+// ─────────────────────────────────────────────
+// Основной контейнер
+// ─────────────────────────────────────────────
+#privacy-policy {
+  // ──────────────────
+  // Главный заголовок
+  // ──────────────────
+  // Заголовок документа
+  h1 {
+    font-size: 28px;
+    text-align: center;
+    margin-bottom: 25px;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
+  // Заголовки разделов
+  h2 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-top: 35px;
+    margin-bottom: 15px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid $color-border;
+  }
+
+  // Основной текст
+  p {
+    margin: 10px 0 15px;
+    text-align: justify;
+
+    &.lead {
+      font-weight: 500;
+      margin-bottom: 20px;
+    }
+  }
+
+  // Списки
+  ul,
+  ol {
+    margin: 10px 0 20px 25px;
+
+    li {
+      margin: 6px 0;
+    }
+  }
+
+  // Термины и определения
+  dl {
+    margin: 10px 0 20px;
+
+    dt {
+      font-weight: 600;
+      margin-top: 12px;
+    }
+
+    dd {
+      margin-left: 20px;
+      margin-bottom: 8px;
+    }
+  }
+
+  // Контакты
+  address {
+    font-style: normal;
+    padding: 15px;
+    border-left: 4px solid $color-border;
+    border-radius: 4px;
+    line-height: 1.6;
+  }
+
+  // Ссылки
+  a {
+    color: $color-accent;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  // Время
+  time {
+    white-space: nowrap;
+  }
+
+  // Адаптивность
+  @media (max-width: 600px) {
+    font-size: 15px;
+    padding: 10px;
+
+    h1 {
+      font-size: 22px;
+    }
+
+    h2 {
+      font-size: 18px;
+    }
+  }
+}

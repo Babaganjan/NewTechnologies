@@ -15,6 +15,7 @@ import { Hero } from './hero';
 import { HeroService } from './heroService';
 import { IncludedService } from './includedService';
 import { ObjectLevel } from './objectLevel';
+import { Privacy } from './privacyPage';
 import { ProductHero } from './productHero';
 import { Products } from './products';
 import { ProjectMenu } from './projectMenu';
@@ -44,6 +45,7 @@ export {
   HeroService,
   IncludedService,
   ObjectLevel,
+  Privacy,
   ProductHero,
   Products,
   ProductsMenu,
