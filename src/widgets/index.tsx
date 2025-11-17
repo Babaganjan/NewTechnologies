@@ -1,5 +1,6 @@
 import { AboutUs } from './AboutUs';
 import { AboutScroll } from './AboutUs/AboutScroll';
+import { Ntouch } from './Ntouch';
 import { ProductsMenu } from './ProductsMenu';
 import { About } from './about';
 import { Advantage } from './advantage';
@@ -44,6 +45,7 @@ export {
   Hero,
   HeroService,
   IncludedService,
+  Ntouch,
   ObjectLevel,
   Privacy,
   ProductHero,

@@ -1,3 +1,5 @@
+import { Ntouch } from '@/widgets';
+
 export default function WorkingWithNtoucheQuipment() {
-  return <div>WorkingWithNtoucheQuipment</div>;
+  return <Ntouch />;
 }
