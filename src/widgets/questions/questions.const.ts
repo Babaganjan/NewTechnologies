@@ -134,7 +134,8 @@ export const FIRE_ALARM_FAQ: QuestionItem[] = [
   {
     id: 'fire-question-1',
     content: 'Какие объекты вы обслуживаете — квартиры, дома, офисы, склады?',
-    description: 'none',
+    description:
+      'Мы предоставляем решения для объектов любого масштаба: офисные центры, торговые комплексы, промышленные предприятия, склады, школы, государственные учреждения, медицинские центры и стратегические объекты.',
     gridIndex: 1,
   },
   {
@@ -243,7 +244,7 @@ export const ACCESS_CONTROL_FAQ: QuestionItem[] = [
   {
     id: 'access-question-8',
     content: 'Используете ли вы сертифицированное оборудование?',
-    description: 'none',
+    description: 'Да, все наше оборудование имеет сертификаты качества',
     gridIndex: 8,
   },
 ];
@@ -302,7 +303,8 @@ export const NOTIFICATION_SYSTEM_FAQ: QuestionItem[] = [
   {
     id: 'notification-question-8',
     content: 'Используете ли вы сертифицированное оборудование?',
-    description: 'none',
+    description:
+      'Да, мы работаем только с ведущими производителями и используем оборудование, сертифицированное по стандартам РК.',
     gridIndex: 8,
   },
 ];
@@ -360,7 +362,8 @@ export const FIRE_SUPPRESSION_FAQ: QuestionItem[] = [
   {
     id: 'suppression-question-8',
     content: 'Используете ли вы сертифицированное оборудование?',
-    description: 'none',
+    description:
+      'Да, мы работаем только с ведущими производителями и используем оборудование, сертифицированное по стандартам РК.',
     gridIndex: 8,
   },
 ];
