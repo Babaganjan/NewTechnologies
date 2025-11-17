@@ -97,3 +97,16 @@
     }
   }
 }
+
+@include respond-min(1280px) {
+  .result__item {
+    &--fill {
+      .item__inner {
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
+    }
+  }
+}
