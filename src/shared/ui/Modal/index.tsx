@@ -5,6 +5,7 @@ import './modal.scss';
 
 interface ModalProps {
   children?: ReactNode;
+  onMouseEnter?: () => void;
   onMouseLeave?: () => void;
 }
 

@@ -16,7 +16,7 @@ export const Header = ({ theme = 'dark' }: ThemeType) => {
     activeNavItem,
     handleNavItemEnter,
     handleOnMobilModal,
-    handleNavItemLeave,
+    handleCloseAllModals,
     handleMobilNavItemEnter,
     handleMobilNavItemLeave,
   } = useModal({ initialValue: false });
@@ -39,20 +39,20 @@ export const Header = ({ theme = 'dark' }: ThemeType) => {
           theme={currentTheme}
           logoSrc={logoSrc}
           onItemEnter={handleNavItemEnter}
-          onItemLeave={handleNavItemLeave}
+          onItemLeave={handleCloseAllModals}
           activeNavItem={activeNavItem}
           onMobilModal={handleOnMobilModal}
           isModalOpen={false}
         />
       )}
       {isModalOpen && (
-        <Modal onMouseLeave={handleNavItemLeave}>
+        <Modal onMouseLeave={handleCloseAllModals}>
           <HeaderContent
             navItems={filteredNavItems()}
             theme={currentTheme}
             logoSrc={logoSrc}
             activeNavItem={activeNavItem}
-            onModalClose={handleNavItemLeave}
+            onModalClose={handleCloseAllModals}
             isModalOpen={true}
           />
           <NavItemModal data={modalData || []} />
@@ -66,7 +66,7 @@ export const Header = ({ theme = 'dark' }: ThemeType) => {
             activeNavItem={activeNavItem}
             onItemEnter={handleMobilNavItemEnter}
             onItemLeave={handleMobilNavItemLeave}
-            onModalClose={handleNavItemLeave}
+            onModalClose={handleCloseAllModals}
           />
         </Modal>
       )}
