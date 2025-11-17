@@ -39,7 +39,7 @@ const DATA_SERVICE: NavListModalProps[] = [
       {
         name: 'Для государственных и частных организаций',
         image: '/img/modalHeader/for-educational-institutions.webp',
-        href: '/',
+        href: '/itsolutions/itsolutionspublicprivate',
       },
     ],
   },
@@ -50,12 +50,12 @@ const DATA_SERVICE: NavListModalProps[] = [
       {
         name: 'Для официальных партнёров',
         image: '/img/modalHeader/video-surveillance-system.webp',
-        href: '/',
+        href: '/services/workingwithntouchequipment',
       },
       {
         name: 'Для специалистов и всех желающих',
         image: '/img/modalHeader/security-fire-alarm-system.webp',
-        href: '/',
+        href: '/services/workingwithntouchequipment',
       },
     ],
   },

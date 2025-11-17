@@ -10,4 +10,7 @@ export type BreadcrumbWord =
   | 'serverCabinets'
   | 'nvr'
   | 'cameras'
-  | 'products';
+  | 'products'
+  | 'itsolutionspublicprivate'
+  | 'itsolutions'
+  | 'workingwithntouchequipment';
