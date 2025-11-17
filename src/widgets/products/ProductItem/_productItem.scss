@@ -8,20 +8,7 @@
   display: flex;
   flex-direction: column;
   position: relative;
-  @include item-decor(var(--vector-deep-gray), fluid(12px, 20px));
-  min-width: 170px;
-  min-height: 170px;
-
-  @include respond-min(768px) {
-    min-width: 364px;
-    min-height: 364px;
-  }
-
-  @include respond-min(1024px) {
-    min-width: 455px;
-    min-height: 455px;
-  }
-
+  @include item-decor(var(--vector-deep-gray));
   @include respond-min(1023px, max) {
     &:last-child:nth-child(odd) {
       grid-column: 1 / -1;
