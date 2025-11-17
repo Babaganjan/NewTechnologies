@@ -11,6 +11,7 @@ import { DocumentsBlock } from './documentsBlock';
 import { FavoritesProject } from './featuredProjects';
 import { FeedbackMenu } from './feedbackMenu';
 import { Footer } from './footer';
+import { FormaConsultation } from './forma/index';
 import { Header } from './header';
 import { Hero } from './hero';
 import { HeroService } from './heroService';
@@ -42,6 +43,7 @@ export {
   FavoritesProject,
   FeedbackMenu,
   Footer,
+  FormaConsultation,
   Header,
   Hero,
   HeroService,
