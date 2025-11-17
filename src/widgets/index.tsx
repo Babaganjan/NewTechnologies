@@ -15,6 +15,7 @@ import { Header } from './header';
 import { Hero } from './hero';
 import { HeroService } from './heroService';
 import { IncludedService } from './includedService';
+import { LearningFormats } from './learningFormats';
 import { ObjectLevel } from './objectLevel';
 import { Privacy } from './privacyPage';
 import { ProductHero } from './productHero';
@@ -45,6 +46,7 @@ export {
   Hero,
   HeroService,
   IncludedService,
+  LearningFormats,
   Ntouch,
   ObjectLevel,
   Privacy,

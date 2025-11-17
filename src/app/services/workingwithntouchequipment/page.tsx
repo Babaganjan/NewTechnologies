@@ -1,5 +1,11 @@
-import { Ntouch } from '@/widgets';
+import { FeedbackMenu, LearningFormats, Ntouch } from '@/widgets';
 
 export default function WorkingWithNtoucheQuipment() {
-  return <Ntouch />;
+  return (
+    <>
+      <Ntouch />
+      <LearningFormats />
+      <FeedbackMenu />
+    </>
+  );
 }
