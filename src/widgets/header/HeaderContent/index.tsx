@@ -4,6 +4,8 @@ import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
+import { useState, useEffect } from 'react';
 
 import { useScrollContext } from '@/context/ScrollProvider';
 import { CITIES_CONTACTS } from '@/shared/const/cities.data';
@@ -28,6 +30,13 @@ export const HeaderContent = ({
   const { isHeaderVisible, isHeaderScrolled, selectedCity, setSelectedCity } = useScrollContext();
   const selectedContact = CITIES_CONTACTS.find((contact) => contact.city === selectedCity);
 
+  const pathname = usePathname();
+  const [isClient, setIsClient] = useState(false);
+
+  useEffect(() => {
+    setIsClient(true);
+  }, []);
+
   return (
     <motion.header
       className={clsx('header', isHeaderScrolled && 'header-scrolled')}
@@ -48,6 +57,7 @@ export const HeaderContent = ({
             <ul className="nav__list">
               {navItems.map((item) => {
                 const isHovered = activeNavItem?.includes(item.title) ?? false;
+                const isActive = isClient && item.href === pathname;
 
                 return (
                   <motion.li
@@ -63,10 +73,14 @@ export const HeaderContent = ({
                     <Button
                       href={item.href}
                       variant="menu"
-                      className={clsx('nav__link', isHovered && 'hovered')}
+                      className={clsx(
+                        'nav__link',
+                        isHovered && 'hovered',
+                        isActive && 'active-nav-link'
+                      )}
                       iconSmall={item.hasIcon}
                       onClick={onModalClose}
-                      aria-current={isHovered ? 'page' : undefined}
+                      aria-current={isActive ? 'page' : undefined}
                     >
                       {item.title}
                     </Button>
