@@ -60,9 +60,7 @@
   span {
     @include typography(var(--text-gray), 500, fluid(10px, 22px), 0.4, uppercase, -0.05em);
     position: absolute;
-    display: inline-block;
     width: 0;
-    height: 0;
     top: 0;
     right: -3px;
   }
