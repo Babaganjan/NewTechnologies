@@ -41,7 +41,7 @@ export const About = () => {
               NTOUCH, имеющее все необходимые сертификаты качества и соответствия.
             </p>
           </div>
-          <Button className="about__btn" icon>
+          <Button variant="primaryLink" className="about__btn" icon href="/about">
             О компании
           </Button>
         </div>
