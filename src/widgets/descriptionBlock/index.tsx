@@ -1,11 +1,11 @@
-import type { ServiceTypeKey } from '@/shared/types/service.types';
 import { Button, H } from '@/shared/ui';
 
+import type { DescriptionTypeKey } from './description.const';
 import { DESCRIPTION__DATA } from './description.const';
 
 import './description.scss';
 
-export const Description = ({ type }: { type: ServiceTypeKey }) => {
+export const Description = ({ type }: { type: DescriptionTypeKey }) => {
   const data = DESCRIPTION__DATA[type];
 
   return (
@@ -16,7 +16,7 @@ export const Description = ({ type }: { type: ServiceTypeKey }) => {
             <H level="2">Описание</H>
           </div>
           <H level="4" className="description__subtitle">
-            <span>{data.highlightTitle}</span>
+            {data.highlightTitle && <span>{data.highlightTitle}</span>}
             {data.title}
           </H>
         </div>
