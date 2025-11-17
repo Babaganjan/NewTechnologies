@@ -23,12 +23,7 @@ export const QuestionsCard = ({ question, setActiveCard, activeCard }: Questions
       role="button"
       aria-expanded={isExpanded}
       tabIndex={0}
-      onKeyDown={(e) => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          setActiveCard(isExpanded ? null : question.id);
-        }
-      }}
+      onFocus={() => setActiveCard(isExpanded ? null : question.id)}
     >
       <div className="questions__card-decorative" aria-hidden="true"></div>
       <H level={'5'} className="questions__content">

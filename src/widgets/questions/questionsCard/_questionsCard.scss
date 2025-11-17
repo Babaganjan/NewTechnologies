@@ -20,7 +20,10 @@
     background-color 0.2s ease,
     color 0.2s ease;
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:focus:not(:focus-visible),
+  &:focus-visible {
     background-color: var(--bg-black);
     color: var(--text-white);
 
@@ -31,20 +34,6 @@
     .questions__card-arrow {
       transform: rotate(180deg);
     }
-  }
-
-  &:focus {
-    outline: 2px solid var(--text-deep-gray);
-    outline-offset: 2px;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--text-deep-gray);
-    outline-offset: 2px;
   }
 }
 
