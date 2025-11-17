@@ -1,4 +1,6 @@
+'use client';
 import Image from 'next/image';
+import { useGlitch } from 'react-powerglitch';
 
 import { H } from '@/shared/ui';
 
@@ -6,6 +8,23 @@ import './_favorite-project.scss';
 import { FAVORITES_PROJECT_DATA } from './favorite-project.const';
 
 export const FavoritesProject = () => {
+  const glitch1 = useGlitch({
+    playMode: 'hover',
+    hideOverflow: true,
+  });
+
+  const glitch2 = useGlitch({
+    playMode: 'hover',
+    hideOverflow: true,
+  });
+
+  const glitch3 = useGlitch({
+    playMode: 'hover',
+    hideOverflow: true,
+  });
+
+  const glitches = [glitch1, glitch2, glitch3];
+
   return (
     <section className="favorites-project" aria-labelledby="favorites-project-title">
       <div className="favorites-project__container container">
@@ -17,25 +36,34 @@ export const FavoritesProject = () => {
         >
           Избранные проекты
         </H>
-        {FAVORITES_PROJECT_DATA.map((item) => (
-          <article className="favorites-project__item" key={item.id}>
-            <div className="favorites-project__img">
-              <Image
-                src={item.image}
-                alt={item.description}
-                width={340}
-                height={242}
-                className="favorites-project__img-item"
-              />
-            </div>
-            <div className="favorites-project__wrapper">
-              <H level={'5'} className="item__small-title">
-                {item.title}
-              </H>
-              <p className="item__prev">{item.description}</p>
-            </div>
-          </article>
-        ))}
+        {FAVORITES_PROJECT_DATA.map((item, index) => {
+          const glitch = glitches[index];
+
+          return (
+            <article className="favorites-project__item" key={item.id}>
+              <div
+                className="favorites-project__img"
+                ref={glitch.ref}
+                onMouseEnter={glitch.startGlitch}
+                onMouseLeave={glitch.stopGlitch}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.description}
+                  width={340}
+                  height={242}
+                  className="favorites-project__img-item"
+                />
+              </div>
+              <div className="favorites-project__wrapper">
+                <H level={'5'} className="item__small-title">
+                  {item.title}
+                </H>
+                <p className="item__prev">{item.description}</p>
+              </div>
+            </article>
+          );
+        })}
       </div>
     </section>
   );

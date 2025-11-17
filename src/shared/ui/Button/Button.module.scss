@@ -68,7 +68,7 @@ body:has(.modal) {
   gap: 10px;
   @include typography(var(--text-white), 700, fluid(18px, 26px), 1.2);
 
-  @include item-decor(var(--text-white));
+  @include item-decor(var(--text-white), fluid(12px, 20px));
 
   svg {
     width: fluid(12px, 16px);
