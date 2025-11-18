@@ -35,6 +35,7 @@
 
   .item {
     &__inner {
+      display: flex;
       @include item-decor(
         var(--vector-black),
         $before-position: (top: -13px, left: -12px),
@@ -92,6 +93,19 @@
       width: 80%;
       margin-top: auto;
       color: var(--text-light-gray);
+    }
+  }
+}
+
+@include respond-min(1280px) {
+  .result__item {
+    &--fill {
+      .item__inner {
+        &::after,
+        &::before {
+          display: none;
+        }
+      }
     }
   }
 }

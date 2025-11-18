@@ -26,11 +26,12 @@ export const SliderServices = ({ serviceId }: SliderServicesProps) => {
         spaceBetween={10}
         slidesPerView="auto"
         loop={true}
-        
         className="service-slider__swiper"
+        role="region"
+        aria-label="Слайдер услуг"
       >
         {serviceData.slides.map((slide, index) => (
-          <SwiperSlide key={index}>
+          <SwiperSlide key={index} role="group" aria-label={`Слайд ${index + 1} из ${serviceData.slides.length}`}>
             <div className="slider__wrapper flex">
               <div className="wrapper-image">
                 <Image
@@ -45,9 +46,9 @@ export const SliderServices = ({ serviceId }: SliderServicesProps) => {
                 {slide.heading}
               </H>
               <p className="slider__caption">{slide.alt}</p>
-              <button className="service-slider__btn flex">
+              <button className="service-slider__btn flex" aria-label={`Подробнее о ${slide.heading}`}>
                 <span>Подробнее</span>
-                <Arrow color="var(--text-white)" width={15} height={12} />
+                <Arrow color="var(--text-white)" width={15} height={12} aria-hidden="true" />
               </button>
             </div>
           </SwiperSlide>

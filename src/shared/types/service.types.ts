@@ -1,0 +1,6 @@
+export type ServiceTypeKey =
+  | 'VIDEO_SURVEILLANCE'
+  | 'FIRE_ALARM'
+  | 'ACCESS_CONTROL'
+  | 'NOTIFICATION_SYSTEM'
+  | 'FIRE_SUPPRESSION';

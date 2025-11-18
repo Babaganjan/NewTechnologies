@@ -1,10 +1,10 @@
 import type { ModalVariant, NavItem } from './navItemModal/nav-Item.types';
 
-export interface HeaderProps {
+export interface ThemeType {
   theme?: 'light' | 'dark';
 }
 
-export interface HeaderContentProps extends HeaderProps {
+export interface HeaderContentProps extends ThemeType {
   navItems: NavItem[];
   logoSrc?: string;
   onItemEnter?: (title: ModalVariant) => void;
@@ -12,4 +12,5 @@ export interface HeaderContentProps extends HeaderProps {
   onMobilModal?: () => void;
   onModalClose?: () => void;
   activeNavItem?: ModalVariant | null;
+  isModalOpen?: boolean;
 }

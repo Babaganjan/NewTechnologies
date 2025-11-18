@@ -1,21 +1,14 @@
-export const DESCRIPTION_KEYS = [
-  'VIDEO_SURVEILLANCE',
-  'FIRE_ALARM',
-  'ACCESS_CONTROL',
-  'NOTIFICATION_SYSTEM',
-  'FIRE_SUPPRESSION',
-] as const;
-
-export type DescriptionKey = (typeof DESCRIPTION_KEYS)[number];
+import type { ServiceTypeKey } from '@/shared/types/service.types';
 
 export type DescriptionItem = {
   title: string;
-  highlightTitle: string;
+  highlightTitle?: string;
   subtitleOne: string;
   subtitleTwo: string;
 };
+export type DescriptionTypeKey = ServiceTypeKey | 'ITSOLUTIONS';
 
-export const DESCRIPTION__DATA: Record<DescriptionKey, DescriptionItem> = {
+export const DESCRIPTION__DATA: Record<DescriptionTypeKey, DescriptionItem> = {
   VIDEO_SURVEILLANCE: {
     title: 'помогает защитить людей, имущество и бизнес',
     highlightTitle:
@@ -58,5 +51,12 @@ export const DESCRIPTION__DATA: Record<DescriptionKey, DescriptionItem> = {
       'Мы занимаемся проектированием, установкой, настройкой и обслуживанием систем пожаротушения на объектах любой сложности: от офисов и торговых центров до складов, производств и промышленных предприятий.Наши решения соответствуют нормативам пожарной безопасности РК и основаны на применении современного сертифицированного оборудования.',
     subtitleTwo:
       'Все решения разрабатываются индивидуально под объект — от квартир и офисов до торговых центров, школ и производственных помещений.',
+  },
+  ITSOLUTIONS: {
+    title: 'ТОО «Новые Технологии – Тараз» разрабатывает комплексные системы для:',
+    subtitleOne:
+      'образовательных учреждений, объектов обороны и безопасности, правоохранительных структур, служб охраны границ, критически важных инфраструктур.',
+    subtitleTwo:
+      'Мы создаём интегрированные решения: видеонаблюдение, контроль доступа, аналитика, программное обеспечение и инфраструктура данных — адаптированные под требования каждого заказчика.',
   },
 } as const;

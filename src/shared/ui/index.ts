@@ -1,6 +1,7 @@
-import { Breadcrumbs } from './Breadcrumbs/Breadcrumbs';
-import { Button } from './Button/Button';
-import { H } from './Heading/H';
-import { Modal } from './Modal/Modal';
+import { Breadcrumbs } from './Breadcrumbs';
+import { Button } from './Button';
+import { CustomSelect } from './CustomSelect';
+import { H } from './H';
+import { Modal } from './Modal';
 
-export { Breadcrumbs, Button, H, Modal };
+export { Breadcrumbs, Button, CustomSelect, H, Modal };

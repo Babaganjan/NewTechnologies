@@ -1,0 +1,184 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.learning {
+  margin-block: 100px;
+}
+
+.learning-title {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: fluid(10px, 20px);
+}
+
+.learning-card-wrapper {
+  .learning-card {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-light-gray);
+    @include item-decor();
+    @include clip-shape();
+    min-height: 257px;
+
+    .learning-card__subtitle--desctop {
+      display: none;
+    }
+
+    .learning-card__title-container {
+      padding: fluid(15px, 20px, 360px, 768px);
+      width: 80%;
+    }
+
+    .learning-card__title {
+      @include typography(
+        var(--text-black),
+        500,
+        fluid(31px, 58px, 360px, 768px),
+        1,
+        uppercase,
+        -0.07em
+      );
+      margin-bottom: 8px;
+    }
+
+    .learning-card__subtitle {
+      font-family: var(--second-family);
+      @include typography(var(--text-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
+      span {
+        color: var(--text-deep-gray);
+      }
+    }
+
+    .learning__button {
+      display: block;
+      margin-top: auto;
+
+      button {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@include respond-min(768px) {
+  .learning-card-wrapper {
+    .learning-card {
+      min-height: 351px;
+      .learning-card__title-container {
+        padding: 20px;
+        width: 60%;
+      }
+
+      .learning__button {
+        padding-left: 20px;
+        margin-bottom: 44px;
+        button {
+          width: 50%;
+        }
+      }
+    }
+  }
+}
+
+// @include respond-min(1024px) {
+//   .learning-card-wrapper {
+//     display: grid;
+//     grid-template-columns: repeat(2, 1fr);
+//     gap: 10px;
+
+//     .learning-card {
+//       display: flex;
+//       flex-direction: column;
+//       min-height: 351px;
+//       padding: 20px;
+
+//       .learning-card__subtitle--mobile {
+//         display: none;
+//       }
+
+//       .learning-card__subtitle--desctop {
+//         display: flex;
+//         flex-direction: column;
+//         margin-top: auto;
+//       }
+
+//       .learning-card__title-container {
+//         width: 100%;
+//         padding: 0;
+//         display: flex;
+//         flex-direction: column;
+//         flex-grow: 1;
+//       }
+
+//       .learning-card__title {
+//         font-size: 42px;
+//         width: 70%;
+//       }
+
+//       .learning-card__subtitle {
+//         margin-bottom: 20px;
+//         width: 50%;
+//       }
+
+//       .learning__button {
+//         margin-top: 0;
+//         align-self: flex-end;
+//         margin-bottom: 20px;
+
+//         button {
+//           width: auto;
+//           min-width: 200px;
+//         }
+//       }
+//     }
+//   }
+// }
+
+@include respond-min(1024px) {
+  .learning-card-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+
+    .learning-card {
+      display: grid;
+      grid-template-rows: auto 1fr auto;
+      grid-template-columns: 1fr auto;
+      min-height: 351px;
+      padding: 20px;
+
+      .learning-card__title-container {
+        grid-row: 1;
+        grid-column: 1 / -1;
+        width: 80%;
+        padding: 0;
+        display: block;
+        flex-grow: 0;
+
+        .learning-card__subtitle--mobile {
+          display: none;
+        }
+      }
+
+      .learning-card__subtitle--desctop {
+        display: block;
+        grid-row: 3;
+        grid-column: 1;
+        align-self: end;
+        width: 80%;
+      }
+
+      .learning__button {
+        grid-row: 3;
+        grid-column: 2;
+        justify-self: end;
+        margin: 0;
+        button {
+          align-self: end;
+          width: auto;
+        }
+      }
+    }
+  }
+}

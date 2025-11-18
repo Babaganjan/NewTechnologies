@@ -1,0 +1,118 @@
+'use client';
+import clsx from 'clsx';
+import { useEffect, useRef, useState } from 'react';
+
+import { useLocalStorageSSR } from '@/hooks/useLocalStorage';
+import { ArrowSmall } from '@/shared/icons/ArrowSmall/ArrowSmall';
+import type { CityContactType } from '@/shared/types/cities.types';
+import type { ThemeType } from '@/widgets/header/header.types';
+
+import './customSelect.scss';
+
+interface CustomSelectProps extends ThemeType {
+  options: CityContactType[];
+  value?: string;
+  onChange?: (value: string) => void;
+  className?: string;
+  isModalOpen?: boolean;
+}
+
+export const CustomSelect = ({
+  options,
+  value,
+  onChange,
+  className,
+  isModalOpen = false,
+}: CustomSelectProps) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const initialCity = value || options[0]?.city || 'Алматы';
+  const [selectedValue, setSelectedValue] = useLocalStorageSSR('city', initialCity);
+
+  const selectRef = useRef<HTMLDivElement>(null);
+
+  const selectedOption = options.find((opt) => opt.city === selectedValue);
+  const filterOption = options.filter((opt) => opt.city !== selectedValue);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (selectRef.current && !selectRef.current.contains(event.target as Node)) {
+        setIsOpen(false);
+      }
+    };
+
+    document.addEventListener('mousedown', handleClickOutside);
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  const handleSelect = (option: CityContactType) => {
+    setSelectedValue(option.city);
+    onChange?.(option.city);
+    setIsOpen(false);
+  };
+
+  return (
+    <div
+      ref={selectRef}
+      className={clsx('custom-select', className, { 'custom-select--open': isOpen })}
+      onMouseLeave={() => isOpen && setIsOpen(false)}
+    >
+      <button
+        type="button"
+        className="custom-select__trigger"
+        onMouseEnter={() => !isOpen && setIsOpen(true)}
+        aria-haspopup="listbox"
+        aria-expanded={isOpen}
+        aria-label={`Выбор города: ${selectedOption?.city}`}
+      >
+        <span
+          className={clsx('custom-select__value', isModalOpen && 'custom-select__value--modal')}
+        >
+          {selectedOption?.city}
+        </span>
+        <ArrowSmall className={clsx(isOpen && 'btn-icon--active')} />
+      </button>
+
+      {isOpen && (
+        <div className="custom-select__dropdown" role="listbox">
+          <div className="custom-select__options">
+            {filterOption.map((option) => (
+              <button
+                key={option.city}
+                type="button"
+                role="option"
+                className={clsx(
+                  isModalOpen ? 'custom-select__option--modal' : 'custom-select__option'
+                )}
+                onClick={() => handleSelect(option)}
+                aria-selected={selectedValue === option.city}
+              >
+                {option.city}
+              </button>
+            ))}
+          </div>
+        </div>
+      )}
+
+      <select
+        name="city"
+        value={selectedValue}
+        onChange={(e) => {
+          const selectedOption = options.find((opt) => opt.city === e.target.value);
+
+          if (selectedOption) {
+            handleSelect(selectedOption);
+          }
+        }}
+        className="custom-select__native"
+      >
+        {options.map((option) => (
+          <option key={option.city} value={option.city}>
+            {option.city}
+          </option>
+        ))}
+      </select>
+    </div>
+  );
+};

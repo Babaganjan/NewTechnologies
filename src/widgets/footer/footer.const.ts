@@ -27,18 +27,6 @@ export const FOOTER_NAV_ITEMS: FooterItem[] = [
   },
 ] as const;
 
-// Контактная информация
-export const FOOTER_ABOUT_ITEMS: FooterItem[] = [
-  {
-    title: '+7 (700) 836-94-36',
-    href: 'tel:+77008369436',
-  },
-  {
-    title: 'info.ast@nt-t.kz',
-    href: 'mailto:info.ast@nt-t.kz',
-  },
-] as const;
-
 // Секция "Деятельность"
 export const FOOTER_ACTIVITY_ITEMS: FooterItem[] = [
   {

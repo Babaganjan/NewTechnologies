@@ -1,3 +1,11 @@
+import { FeedbackMenu, Questions, Services } from '@/widgets';
+
 export default function ServicesPage() {
-  return <div>Service</div>;
+  return (
+    <>
+      <Services />
+      <Questions />
+      <FeedbackMenu />
+    </>
+  );
 }

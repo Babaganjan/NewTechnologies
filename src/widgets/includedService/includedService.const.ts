@@ -1,3 +1,5 @@
+import type { ServiceTypeKey } from '@/shared/types/service.types';
+
 interface includedServiceType {
   title: string;
 }
@@ -47,17 +49,10 @@ export const INCLUDEDSERVICE__FIREALARM: includedServiceType[] = [
   { title: 'Подробная документация и обучение персонала' },
 ];
 
-export type IncludesType =
-  | 'notificationSystem'
-  | 'accessControl'
-  | 'videoSurveillance'
-  | 'fireSuppression'
-  | 'fireAlarm';
-
-export const INCLUDEDSERVICE__ALL: Record<IncludesType, includedServiceType[]> = {
-  fireSuppression: INCLUDEDSERVICE__OPS,
-  videoSurveillance: INCLUDEDSERVICE__VIDEO,
-  notificationSystem: INCLUDEDSERVICE__NOTIFICATION,
-  accessControl: INCLUDEDSERVICE__SKD,
-  fireAlarm: INCLUDEDSERVICE__FIREALARM,
+export const INCLUDEDSERVICE__ALL: Record<ServiceTypeKey, includedServiceType[]> = {
+  FIRE_SUPPRESSION: INCLUDEDSERVICE__OPS,
+  VIDEO_SURVEILLANCE: INCLUDEDSERVICE__VIDEO,
+  NOTIFICATION_SYSTEM: INCLUDEDSERVICE__NOTIFICATION,
+  ACCESS_CONTROL: INCLUDEDSERVICE__SKD,
+  FIRE_ALARM: INCLUDEDSERVICE__FIREALARM,
 };

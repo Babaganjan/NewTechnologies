@@ -3,11 +3,12 @@
 
 .heroService {
   background-color: var(--bg-black);
+  padding-top: 120px;
 }
 
 .heroService__title {
-  margin-top: 120px;
   width: 40%;
+  margin-top: fluid(80px, 100px, 360px, 768px);
 }
 
 .heroService__img {

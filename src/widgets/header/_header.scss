@@ -23,6 +23,7 @@
   position: relative;
 
   &__container {
+    display: flex;
     @include line-decor(2% 50% 98%, var(--header-line));
     flex-direction: column;
     gap: 90px;
@@ -38,6 +39,7 @@
   }
   .nav {
     &__list {
+      display: flex;
       flex-direction: column;
       gap: 4px;
     }
@@ -57,20 +59,19 @@
     border-bottom: 1px solid var(--vector-light-gray);
   }
 
-  &__phone, &__city {
+  &__phone,
+  &__city {
     color: var(--text-deep-gray);
   }
 }
 
 .header {
-  // position: relative;
-  // background-color: var(--header-bg);
   z-index: 1;
   margin-bottom: -1px;
 
   &__container {
+    display: flex;
     min-height: 59px;
-    // @include line-decor(2% 50% 98%);
     position: relative;
     justify-content: center;
     align-items: center;
@@ -78,6 +79,7 @@
   }
 
   &__burger {
+    display: flex;
     position: absolute;
     top: 15px;
     right: 12px;
@@ -85,8 +87,8 @@
 
   &__btn {
     padding: 0.625rem;
-    width: 1.75rem;
-    height: 0.5rem;
+    width: 28px;
+    height: 8px;
     position: relative;
 
     &::before {
@@ -116,28 +118,39 @@
   }
 }
 
-// tablet 
+// tablet
 @include respond-min(768px) {
   .header {
     &__container {
       min-height: 96px;
     }
-    
+
     &__logo {
       max-width: 137px;
       max-height: 75px;
     }
 
     &__burger {
-    top: 30px;
-    right: 25px;
-  }
+      top: 30px;
+      right: 25px;
+    }
+
+    &__btn {
+      width: 57px;
+      height: 16px;
+
+      &::before {
+        content: '';
+        height: 3px;
+        box-shadow: 0 14px 0 var(--bg-white);
+      }
+    }
   }
 }
 
 // min-desktop
-@include respond-min(1024px) {
-  .header{
+@include respond-min(1280px) {
+  .header {
     .hidden,
     .hidden__contacts {
       display: flex;
@@ -153,6 +166,7 @@
     }
 
     &__wrapper {
+      display: flex;
       width: 70%;
       align-items: center;
       justify-content: space-between;
@@ -160,11 +174,17 @@
 
     .nav {
       &__list {
+        display: flex;
         gap: 20px;
       }
     }
 
+    .nav__item .active-nav-link {
+      color: var(--text-gray);
+    }
+
     &__wrapper-contacts {
+      display: flex;
       align-items: center;
       gap: 30px;
     }
@@ -173,10 +193,6 @@
 
 // dekstop
 @include respond-min(1380px) {
-  body {
-    // margin-top: 119px;
-  }
-
   body:has(.wrapper-modal) .header__container {
     @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--header-line));
   }
@@ -195,9 +211,10 @@
     &__wrapper {
       width: 54%;
     }
-    
+
     .nav {
       &__list {
+        display: flex;
         flex-direction: unset;
         gap: 30px;
       }
@@ -216,7 +233,7 @@
       max-width: 144px;
       max-height: 78px;
     }
-    
+
     .header__city option {
       background-color: var(--header-bg);
       color: var(--header-text);
@@ -228,13 +245,6 @@
   }
 }
 
-
-
-
-
-
-
-
 // ---------------
 // _header.scss
 .header {
@@ -243,7 +253,7 @@
   width: 100%;
   z-index: 1000;
   transition: background-color 0.3s ease;
-  
+
   &.header-scrolled {
     [data-theme='light'] & {
       // background-color: rgba(0, 0, 0, 1);

@@ -1,3 +1,5 @@
+import type { ServiceTypeKey } from '@/shared/types/service.types';
+
 export interface IAdvantage {
   title: string;
 }
@@ -46,17 +48,10 @@ export const ADVANTAGE__FIRESUPPRESSION: IAdvantage[] = [
   { title: 'Использование сертифицированного оборудования ведущих производителей' },
 ];
 
-export type AdvantageWorkType =
-  | 'notificationSystem'
-  | 'accessControl'
-  | 'videoSurveillance'
-  | 'fireSuppression'
-  | 'fireAlarm';
-
-export const ADVANTAGEALL: Record<AdvantageWorkType, IAdvantage[]> = {
-  notificationSystem: ADVANTAGE__NOTIFICATIONSYSTEM,
-  accessControl: ADVANTAGE__SKD,
-  videoSurveillance: ADVANTAGE__VIDEO,
-  fireSuppression: ADVANTAGE__FIRESUPPRESSION,
-  fireAlarm: ADVANTAGE__OPS,
+export const ADVANTAGEALL: Record<ServiceTypeKey, IAdvantage[]> = {
+  NOTIFICATION_SYSTEM: ADVANTAGE__NOTIFICATIONSYSTEM,
+  ACCESS_CONTROL: ADVANTAGE__SKD,
+  VIDEO_SURVEILLANCE: ADVANTAGE__VIDEO,
+  FIRE_SUPPRESSION: ADVANTAGE__FIRESUPPRESSION,
+  FIRE_ALARM: ADVANTAGE__OPS,
 };

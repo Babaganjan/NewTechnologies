@@ -1,3 +1,5 @@
+import { AboutUsHeadingBottom } from './AboutUs/AboutUsHeadingBottom';
+import { AboutUsHeadingTop } from './AboutUs/AboutUsHeadingTop';
 import { Arrow } from './Arrow/Arrow';
 import { ArrowSmall } from './ArrowSmall/ArrowSmall';
 import { ContactsHeading } from './ContactsHeading/ContactsHeading';
@@ -24,7 +26,7 @@ export {
   Huawei,
   Itc,
   Macroscop,
-  Mirkrotik,
+  Mikrotik,
   Oxgard,
   Paritet,
   Rubezh,
@@ -35,9 +37,11 @@ export {
   Uniqscan,
   Vers,
   WesternDigital,
-} from './Adverting-icons';
+} from './partner-icons';
 
 export {
+  AboutUsHeadingBottom,
+  AboutUsHeadingTop,
   Arrow,
   ArrowBreadcrumbs,
   ArrowSmall,

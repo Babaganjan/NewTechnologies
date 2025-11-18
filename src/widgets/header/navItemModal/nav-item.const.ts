@@ -37,9 +37,9 @@ const DATA_SERVICE: NavListModalProps[] = [
     title: 'IT-решения',
     list: [
       {
-        name: 'Для образовательных учреждений',
+        name: 'Для государственных и частных организаций',
         image: '/img/modalHeader/for-educational-institutions.webp',
-        href: '/',
+        href: '/itsolutions/itsolutionspublicprivate',
       },
     ],
   },
@@ -48,19 +48,14 @@ const DATA_SERVICE: NavListModalProps[] = [
     title: 'Обучение',
     list: [
       {
-        name: 'Внедрение  It-инфраструктуры',
+        name: 'Для официальных партнёров',
         image: '/img/modalHeader/video-surveillance-system.webp',
-        href: '/services/videonabludenie',
+        href: '/services/workingwithntouchequipment',
       },
       {
-        name: 'Проектирование серверов',
+        name: 'Для специалистов и всех желающих',
         image: '/img/modalHeader/security-fire-alarm-system.webp',
-        href: '/services/ops',
-      },
-      {
-        name: 'Проектирование сетей',
-        image: '/img/modalHeader/access-control-system.webp',
-        href: '/services/skd',
+        href: '/services/workingwithntouchequipment',
       },
     ],
   },
@@ -69,74 +64,32 @@ const DATA_SERVICE: NavListModalProps[] = [
 const DATA_PRODUCTION: NavListModalProps[] = [
   {
     id: 1,
-    title: 'Системы защиты',
+    title: 'Продукция',
     list: [
       {
-        name: 'Системы видеонаблюдения',
-        image: '/img/modalHeader/video-surveillance-system.webp',
-        href: '/services/videonabludenie',
+        name: 'Турникеты',
+        href: 'turnstiles',
+        image: '/img/product-item-1.webp',
       },
       {
-        name: 'Охранно-пожарная сигнализация',
-        image: '/img/modalHeader/security-fire-alarm-system.webp',
-        href: '/services/ops',
+        name: 'Коммутаторы',
+        href: 'switches',
+        image: '/img/product-item-2.webp',
       },
       {
-        name: 'Система контроля доступа',
-        image: '/img/modalHeader/access-control-system.webp',
-        href: '/services/skd',
+        name: 'Серверные шкафы',
+        href: 'serverCabinets',
+        image: '/img/product-item-3.webp',
       },
       {
-        name: 'Системы оповещения',
-        image: '/img/modalHeader/notification-system.webp',
-        href: '/services/opoveshchenie',
+        name: 'Видеорегистраторы',
+        href: 'nvr',
+        image: '/img/product-item-4.webp',
       },
       {
-        name: 'Системы пожаротушения',
-        image: '/img/modalHeader/fire-extinguishing-system.webp',
-        href: '/services/pozhartushenie',
-      },
-    ],
-  },
-  {
-    id: 2,
-    title: 'IT-решения',
-    list: [
-      {
-        name: 'Для учреждений образования',
-        image: '/img/modalHeader/for-educational-institutions.webp',
-        href: '',
-      },
-    ],
-  },
-  {
-    id: 3,
-    title: 'Обучение',
-    list: [
-      {
-        name: 'Системы видеонаблюдения',
-        image: '/img/modalHeader/video-surveillance-system.webp',
-        href: '/services/videonabludenie',
-      },
-      {
-        name: 'Охранно-пожарная сигнализация',
-        image: '/img/modalHeader/security-fire-alarm-system.webp',
-        href: '/services/ops',
-      },
-      {
-        name: 'Система контроля доступа',
-        image: '/img/modalHeader/access-control-system.webp',
-        href: '/services/skd',
-      },
-      {
-        name: 'Системы оповещения',
-        image: '/img/modalHeader/notification-system.webp',
-        href: '/services/opoveshchenie',
-      },
-      {
-        name: 'Системы пожаротушения',
-        image: '/img/modalHeader/fire-extinguishing-system.webp',
-        href: '/services/pozhartushenie',
+        name: 'Видеокамеры',
+        href: 'cameras',
+        image: '/img/product-item-5.webp',
       },
     ],
   },

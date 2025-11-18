@@ -1,0 +1,53 @@
+.consultation-modal {
+  display: flex;
+	justify-content: flex-end;
+	height: 100vh;
+	position: relative;
+}
+
+.consultation-modal__close {
+	position: absolute;
+	width: 38px;
+	height: 38px;
+	top: 30px;
+	right: 50px;
+}
+
+.consult-form {
+	max-width: 887px;
+	min-height: 577px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.wrapper-data {
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+}
+
+.consult-form__title {
+	text-align: center;
+  color: var(--text-black);
+	margin-bottom: 60px;
+}
+
+.consult-form__label {
+	display: block;
+	width: 1px;
+	height: 1px;
+}
+
+.consult-form__input, .consult-form__textarea {
+	padding: 15px;
+	width: 530px;
+	height: 54px;
+	background-color: var(--bg-light-gray);
+}
+
+.consult-form__textarea {
+	height: 102px;
+	background-color: var(--bg-light-gray);
+}
