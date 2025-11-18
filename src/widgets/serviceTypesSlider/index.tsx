@@ -36,6 +36,7 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
           loop={true}
           modules={[Pagination]}
           centeredSlides={true}
+          initialSlide={0}
           pagination={{
             clickable: true,
             dynamicBullets: true,
