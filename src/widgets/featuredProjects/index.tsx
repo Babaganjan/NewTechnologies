@@ -5,9 +5,14 @@ import { useGlitch } from 'react-powerglitch';
 import { H } from '@/shared/ui';
 
 import './_favorite-project.scss';
+import type { FavoritesProjectData } from './favorite-project.const';
 import { FAVORITES_PROJECT_DATA } from './favorite-project.const';
 
-export const FavoritesProject = () => {
+export const FavoritesProject = ({
+  data = FAVORITES_PROJECT_DATA,
+}: {
+  data?: FavoritesProjectData[];
+}) => {
   const glitch1 = useGlitch({
     playMode: 'hover',
     hideOverflow: true,
@@ -39,7 +44,7 @@ export const FavoritesProject = () => {
         >
           Избранные проекты
         </H>
-        {FAVORITES_PROJECT_DATA.map((item, index) => {
+        {data.map((item, index) => {
           const glitch = glitches[index];
 
           return (

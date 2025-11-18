@@ -1,4 +1,11 @@
-import { Advantage, Description, HeroService, Programs } from '@/widgets';
+import {
+  Advantage,
+  Description,
+  FavoritesProject,
+  FeedbackMenu,
+  HeroService,
+  Programs,
+} from '@/widgets';
 
 export default function ItSolutionsPublicPrivate() {
   return (
@@ -10,6 +17,18 @@ export default function ItSolutionsPublicPrivate() {
       <Description type="ITSOLUTIONS" />
       <Programs />
       <Advantage type="ITSOLUTION" />
+      <FavoritesProject
+        data={[
+          {
+            id: 1,
+            image: '/img/favorite-2.webp',
+            title: 'Проект «комфортная школа»',
+            description:
+              'Установили турникеты NT по всему Казахстану при поддержке фонда «Самрук-Қазына».',
+          },
+        ]}
+      />
+      <FeedbackMenu />
     </>
   );
 }
