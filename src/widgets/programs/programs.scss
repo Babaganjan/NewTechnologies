@@ -105,6 +105,10 @@
     grid-template-columns: repeat(3, 1fr);
     margin-bottom: 10px;
   }
+
+  .programs__card-title-wrapper {
+    margin-bottom: auto;
+  }
   .programs__button {
     align-self: flex-start;
     justify-self: flex-end;

@@ -1,4 +1,4 @@
-import { Description, HeroService, Programs } from '@/widgets';
+import { Advantage, Description, HeroService, Programs } from '@/widgets';
 
 export default function ItSolutionsPublicPrivate() {
   return (
@@ -9,6 +9,7 @@ export default function ItSolutionsPublicPrivate() {
       />
       <Description type="ITSOLUTIONS" />
       <Programs />
+      <Advantage type="ITSOLUTION" />
     </>
   );
 }

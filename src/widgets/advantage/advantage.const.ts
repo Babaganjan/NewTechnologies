@@ -48,10 +48,25 @@ export const ADVANTAGE__FIRESUPPRESSION: IAdvantage[] = [
   { title: 'Использование сертифицированного оборудования ведущих производителей' },
 ];
 
-export const ADVANTAGEALL: Record<ServiceTypeKey, IAdvantage[]> = {
+export const ADVANTAGE__ITSOLUTION: IAdvantage[] = [
+  { title: 'Использование сертифицированного оборудования' },
+  { title: 'Простота внедрения и использования.' },
+  { title: 'Полная интеграция с оборудованиями (СКУД, видеонаблюдение, оповещение).' },
+  { title: 'Решения, направленные на повышение безопасности детей и снижение рисков ЧС' },
+  { title: 'Поддержка и обновление программного обеспечения от наших специалистов.' },
+  {
+    title:
+      'Собственная разработка — учитываем специфику казахстанского рынка и требования проектов.',
+  },
+];
+
+export type AdvantageKeyType = ServiceTypeKey | 'ITSOLUTION';
+
+export const ADVANTAGEALL: Record<AdvantageKeyType, IAdvantage[]> = {
   NOTIFICATION_SYSTEM: ADVANTAGE__NOTIFICATIONSYSTEM,
   ACCESS_CONTROL: ADVANTAGE__SKD,
   VIDEO_SURVEILLANCE: ADVANTAGE__VIDEO,
   FIRE_SUPPRESSION: ADVANTAGE__FIRESUPPRESSION,
   FIRE_ALARM: ADVANTAGE__OPS,
+  ITSOLUTION: ADVANTAGE__ITSOLUTION,
 };
