@@ -1,0 +1,342 @@
+// --- Переменные ---
+$bg-black: #080808;
+$bg-card-dark: #111;
+$bg-white: #ffffff;
+$bg-light-gray: #f4f4f4;
+$text-white: #ffffff;
+$text-black: #111;
+$text-gray: #888;
+$accent-font: 'Oswald', sans-serif; // Подключите в index.html или через @import
+$body-font: 'Roboto', sans-serif;
+
+// --- Миксины ---
+
+// Создает декоративные уголки (crop marks)
+@mixin corner-markers($color) {
+  position: relative;
+
+  &::before,
+  &::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-color: $color;
+    border-style: solid;
+    transition: all 0.3s ease;
+  }
+
+  &::before {
+    top: 0;
+    left: 0;
+    border-width: 1px 0 0 1px; // Верхний левый угол
+  }
+
+  &::after {
+    bottom: 0;
+    right: 0;
+    border-width: 0 1px 1px 0; // Нижний правый угол
+  }
+
+  // Можно добавить hover эффект
+  &:hover::before,
+  &:hover::after {
+    width: 100%;
+    height: 100%;
+    opacity: 0.5;
+  }
+}
+
+// --- Основные стили ---
+.product-page {
+  font-family: $body-font;
+  width: 100%;
+  overflow-x: hidden;
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  .section-label {
+    font-family: $accent-font;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin-bottom: 20px;
+    letter-spacing: 1px;
+
+    &.dark {
+      color: $text-black;
+      border-left: 3px solid $text-black;
+      padding-left: 10px;
+    }
+    &:not(.dark) {
+      color: $text-white;
+      border-left: 3px solid $text-white;
+      padding-left: 10px;
+    }
+  }
+
+  // 1. HERO
+  .hero-section {
+    background-color: $bg-black;
+    color: $text-white;
+    padding: 40px 0;
+
+    .main-title {
+      font-family: $accent-font;
+      font-size: 48px;
+      line-height: 1;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+
+      .highlight {
+        font-weight: 700;
+      }
+      .model {
+        color: #444;
+        display: block;
+        font-size: 0.8em;
+      }
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+      }
+
+      .marker-box {
+        background: $bg-white;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        @include corner-markers(#000); // Черные уголки на белом фоне
+
+        img {
+          max-width: 100%;
+          height: auto;
+        }
+      }
+
+      .gallery-subgrid {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+      }
+    }
+  }
+
+  // 2. FEATURES
+  .features-section {
+    background-color: $bg-black;
+    color: $text-white;
+    padding: 60px 0;
+    border-top: 1px solid #222;
+
+    .features-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+
+      @media (max-width: 900px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+      }
+
+      .marker-box-dark {
+        background: $bg-card-dark;
+        padding: 25px;
+        min-height: 200px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        @include corner-markers(#444); // Серые уголки
+
+        h4 {
+          font-family: $accent-font;
+          text-transform: uppercase;
+          font-size: 18px;
+          margin-bottom: 15px;
+          line-height: 1.2;
+        }
+
+        p {
+          font-size: 13px;
+          color: #bbb;
+          line-height: 1.4;
+        }
+
+        .feature-big-value {
+          font-family: $accent-font;
+          font-size: 60px;
+          font-weight: 700;
+          line-height: 1;
+          margin: 10px 0;
+
+          .unit {
+            font-size: 14px;
+            font-weight: 400;
+            vertical-align: middle;
+          }
+        }
+      }
+    }
+  }
+
+  // 3. TABS & SPECS
+  .tabs-section,
+  .detailed-specs-section,
+  .dimensions-section {
+    background-color: $bg-white;
+    color: $text-black;
+    padding: 60px 0;
+  }
+
+  .tabs-header {
+    display: flex;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 30px;
+    overflow-x: auto;
+
+    .tab-btn {
+      background: none;
+      border: none;
+      padding: 15px 30px;
+      font-family: $accent-font;
+      text-transform: uppercase;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      color: #888;
+      position: relative;
+
+      &.active {
+        color: $text-black;
+        background: #000;
+        color: #fff;
+      }
+      &:hover:not(.active) {
+        color: #000;
+      }
+    }
+  }
+
+  .spec-row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    font-size: 14px;
+
+    .spec-key {
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    .spec-value {
+      color: #555;
+    }
+  }
+
+  // 4. DIMENSIONS
+  .dimensions-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+    }
+
+    .marker-box-light {
+      background: $bg-light-gray;
+      padding: 30px;
+      @include corner-markers(#999);
+      img {
+        width: 100%;
+      }
+    }
+  }
+
+  // 5. DETAILED TABLE
+  .specs-header-row {
+    display: flex;
+    background: #f4f4f4;
+    margin-bottom: 20px;
+
+    div {
+      padding: 10px 20px;
+      font-family: $accent-font;
+      text-transform: uppercase;
+      font-weight: bold;
+      cursor: pointer;
+
+      &.active {
+        background: #000;
+        color: #fff;
+      }
+    }
+  }
+
+  .detailed-table {
+    .table-row {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      padding: 15px 0;
+      border-bottom: 1px solid #eee;
+      font-size: 13px;
+
+      @media (max-width: 600px) {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .table-key {
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .table-val {
+        color: #666;
+        line-height: 1.5;
+      }
+    }
+  }
+
+  // 6. FOOTER BTN
+  .sticky-cta {
+    background: $bg-white;
+    padding: 40px 0;
+    text-align: center;
+    border-top: 1px solid #eee;
+
+    .order-btn {
+      background: $bg-black;
+      color: $text-white;
+      border: none;
+      padding: 15px 40px;
+      font-family: $accent-font;
+      font-size: 18px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      span {
+        font-size: 1.2em;
+      }
+
+      &:hover {
+        background: #333;
+      }
+    }
+  }
+}

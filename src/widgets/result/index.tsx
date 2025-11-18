@@ -6,7 +6,11 @@ import { resultData } from './result.const';
 
 export const Result = () => {
   return (
-    <section className="result with-trapezoids" aria-labelledby="Достижения-компании">
+    <section
+      className="result with-trapezoids"
+      aria-labelledby="Достижения-компании"
+      data-header-theme="dark"
+    >
       <div className="container result__container">
         <div className="result__inner">
           <H level={'2'} className="result__title title" id="Достижения-компании">

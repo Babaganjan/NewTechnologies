@@ -1,3 +1,4 @@
+// src/widgets/header/Header.tsx
 'use client';
 import useModal from '@/hooks/useModal';
 import { Modal } from '@/shared/ui';
@@ -7,9 +8,13 @@ import { HeaderContent } from './HeaderContent';
 import { HeaderContentMobil } from './HeaderContent/HeaderContentMobil';
 import { EXCLUDE_MAP, HEADER_NAV_ITEMS } from './header.const';
 import type { ThemeType } from './header.types';
+import { useHeaderThemeObserver } from './helper/useThemeObserver';
 import { NavItemModal } from './navItemModal';
 
-export const Header = ({ theme = 'dark' }: ThemeType) => {
+export const Header = ({ theme: initialTheme = 'dark' }: ThemeType) => {
+  // 1. Подключаем наблюдатель
+  const observedTheme = useHeaderThemeObserver(initialTheme);
+
   const {
     isModalOpen,
     isMobilModalOpen,
@@ -21,8 +26,12 @@ export const Header = ({ theme = 'dark' }: ThemeType) => {
     handleMobilNavItemLeave,
   } = useModal({ initialValue: false });
 
-  const currentTheme = isModalOpen || isMobilModalOpen ? 'light' : theme;
-  const logoSrc = currentTheme === 'dark' ? '/img/logo.svg' : '/img/logoDark.svg';
+  // 2. Логика приоритетов:
+  // Если открыта модалка -> всегда 'light' (как у тебя было)
+  // Если нет -> берем тему, которую определил Observer (в зависимости от скролла)
+  const computedTheme = isModalOpen || isMobilModalOpen ? 'light' : observedTheme;
+
+  const logoSrc = computedTheme === 'dark' ? '/img/logo.svg' : '/img/logoDark.svg';
   const modalData = activeNavItem ? DATA_MODAL[activeNavItem] : null;
 
   const filteredNavItems = () => {
@@ -36,7 +45,7 @@ export const Header = ({ theme = 'dark' }: ThemeType) => {
       {!isModalOpen && (
         <HeaderContent
           navItems={HEADER_NAV_ITEMS}
-          theme={currentTheme}
+          theme={computedTheme} // <-- Передаем вычисленную тему
           logoSrc={logoSrc}
           onItemEnter={handleNavItemEnter}
           onItemLeave={handleCloseAllModals}
@@ -45,11 +54,12 @@ export const Header = ({ theme = 'dark' }: ThemeType) => {
           isModalOpen={false}
         />
       )}
+      {/* Остальной код без изменений... */}
       {isModalOpen && (
         <Modal onMouseLeave={handleCloseAllModals}>
           <HeaderContent
             navItems={filteredNavItems()}
-            theme={currentTheme}
+            theme={computedTheme} // <-- И здесь тоже
             logoSrc={logoSrc}
             activeNavItem={activeNavItem}
             onModalClose={handleCloseAllModals}
@@ -62,7 +72,7 @@ export const Header = ({ theme = 'dark' }: ThemeType) => {
         <Modal>
           <HeaderContentMobil
             navItems={HEADER_NAV_ITEMS}
-            theme={currentTheme}
+            theme={computedTheme} // <-- И здесь
             activeNavItem={activeNavItem}
             onItemEnter={handleMobilNavItemEnter}
             onItemLeave={handleMobilNavItemLeave}

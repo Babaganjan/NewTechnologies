@@ -5,7 +5,11 @@ import { PARTNERS } from './advertising.const';
 
 export const Advertising = () => {
   return (
-    <section className="advertising with-trapezoids" aria-labelledby="advertising-title">
+    <section
+      className="advertising with-trapezoids"
+      aria-labelledby="advertising-title"
+      data-header-theme="dark"
+    >
       <div className="advertising__container container">
         <H level={'2'} id="advertising-title" className="advertising__title title">
           Наши партнеры

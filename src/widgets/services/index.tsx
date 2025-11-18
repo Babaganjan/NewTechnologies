@@ -4,7 +4,7 @@ import Image from 'next/image';
 import { useState } from 'react';
 
 import { Arrow } from '@/shared/icons';
-import { H, Button } from '@/shared/ui';
+import { Button, H } from '@/shared/ui';
 
 import type { SelectedCategoryType } from '../header/navItemModal/nav-Item.types';
 
@@ -48,7 +48,7 @@ export const Services = () => {
 
   // Рендер подкнопок для десктопа
   const renderSubItems = (item: (typeof SERVICES_ITEMS)[0]) => (
-    <div 
+    <div
       className="services__sub-items desktop-only"
       onMouseEnter={() => setHoveredService(item.id)}
     >
@@ -59,9 +59,9 @@ export const Services = () => {
               <Button
                 href={subItem.href}
                 variant="two"
-                className={clsx({ 
+                className={clsx({
                   selected: selectedService?.name === subItem.name,
-                  'other-red': hoveredService !== null && hoveredService !== item.id // Красный цвет для подкнопок других кнопок
+                  'other-red': hoveredService !== null && hoveredService !== item.id, // Красный цвет для подкнопок других кнопок
                 })}
                 onMouseEnter={() => handleSelectService(subItem, index, item.id)}
                 onMouseLeave={handleServiceMouseLeave}
@@ -100,7 +100,7 @@ export const Services = () => {
   );
 
   return (
-    <section className="services with-trapezoids">
+    <section className="services with-trapezoids" data-header-theme="dark">
       <div className="container services__container">
         <div className="services__wrapper-title">
           <H level={'2'} className="services__title title">
@@ -111,10 +111,7 @@ export const Services = () => {
         <div className="services__content">
           <ul className="services__list flex">
             {SERVICES_ITEMS.map((item) => (
-              <li 
-                className="services__item item" 
-                key={item.id}
-              >
+              <li className="services__item item" key={item.id}>
                 <div className="item__inner">
                   {/* Мобильная версия кнопки */}
                   <div className="mobile-only">
@@ -143,7 +140,7 @@ export const Services = () => {
                       className={clsx('item__btn', {
                         'item__btn--hovered': isHovered(hoveredService, item.id),
                         'item__btn--other': isOtherHovered(hoveredService, item.id),
-                        'item__btn--red': hoveredService !== null && hoveredService !== item.id // Красный цвет для других кнопок
+                        'item__btn--red': hoveredService !== null && hoveredService !== item.id, // Красный цвет для других кнопок
                       })}
                       onMouseEnter={() => handleMouseEnter(item.id)}
                       aria-label={item.title}
@@ -156,7 +153,7 @@ export const Services = () => {
                 {renderSubItems(item)}
 
                 {/* Мобильный слайдер */}
-                <div 
+                <div
                   className="services__slider-wrapper mobile-only"
                   id={`service-content-${item.id}`}
                   role="region"
