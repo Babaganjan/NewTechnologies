@@ -8,7 +8,7 @@ export const Privacy = () => {
       <div className="privacy__container container">
         <article id="privacy-policy" aria-labelledby="policy-title" lang="ru">
           <h1 id="policy-title">Политика конфиденциальности и обработки персональных данных</h1>
-          <section id="1-general" aria-labelledby="h1-general" className="privacy__h1">
+          <section id="1-general" aria-labelledby="h1-general">
             <h2 id="h1-general">1. Общие положения</h2>
             <p>
               1.1. Настоящая Политика обработки персональных данных разработана в соответствии с
@@ -28,7 +28,7 @@ export const Privacy = () => {
             </p>
           </section>
 
-          <section id="2-terms" aria-labelledby="h2-terms" className="privacy__h2">
+          <section id="2-terms" aria-labelledby="h2-terms">
             <h2 id="h2-terms">2. Основные понятия</h2>
             <p>
               2.1. Используются в значениях, определённых законодательством Республики Казахстан:
@@ -45,7 +45,7 @@ export const Privacy = () => {
             </ul>
           </section>
 
-          <section id="3-data-types" aria-labelledby="h3-data-types" className="privacy__h3">
+          <section id="3-data-types" aria-labelledby="h3-data-types">
             <h2 id="h3-data-types">3. Персональные данные, которые обрабатывает Оператор</h2>
             <p>3.1. Оператор может обрабатывать следующие данные пользователя:</p>
             <ul>
@@ -62,7 +62,7 @@ export const Privacy = () => {
             </ul>
           </section>
 
-          <section id="4-purposes" aria-labelledby="h4-purposes" className="privacy__h4">
+          <section id="4-purposes" aria-labelledby="h4-purposes">
             <h2 id="h4-purposes">4. Цели обработки персональных данных</h2>
             <p>4.1. Персональные данные пользователя обрабатываются для:</p>
             <ul>
@@ -78,7 +78,7 @@ export const Privacy = () => {
             </p>
           </section>
 
-          <section id="5-legal-basis" aria-labelledby="h5-legal-basis" className="privacy__h5">
+          <section id="5-legal-basis" aria-labelledby="h5-legal-basis">
             <h2 id="h5-legal-basis">5. Правовые основания обработки</h2>
             <p>5.1. Персональные данные обрабатываются только если пользователь:</p>
             <ul>
@@ -93,11 +93,7 @@ export const Privacy = () => {
             </p>
           </section>
 
-          <section
-            id="6-processing-protection"
-            aria-labelledby="h6-processing-protection"
-            className="privacy__h6"
-          >
+          <section id="6-processing-protection" aria-labelledby="h6-processing-protection">
             <h2 id="h6-processing-protection">6. Порядок обработки и защиты данных</h2>
             <p>6.1. Оператор принимает необходимые организационные и технические меры, чтобы:</p>
             <ul>
@@ -119,7 +115,7 @@ export const Privacy = () => {
             <p>6.4. Срок хранения данных — бессрочно или до момента отзыва согласия.</p>
           </section>
 
-          <section id="7-cross-border" aria-labelledby="h7-cross-border" className="privacy__h7">
+          <section id="7-cross-border" aria-labelledby="h7-cross-border">
             <h2 id="h7-cross-border">7. Трансграничная передача персональных данных</h2>
             <p>
               7.1. Передача данных в другое государство возможна при условии, что принимающая
@@ -127,7 +123,7 @@ export const Privacy = () => {
             </p>
           </section>
 
-          <section id="8-contacts" aria-labelledby="h8-contacts" className="privacy__h8">
+          <section id="8-contacts" aria-labelledby="h8-contacts">
             <h2 id="h8-contacts">8. Контактные данные Оператора</h2>
             <address>
               8.1. ТОО «Новые Технологии – Тараз»
@@ -140,7 +136,7 @@ export const Privacy = () => {
             </address>
           </section>
 
-          <section id="9-final" aria-labelledby="h9-final" className="privacy__h9">
+          <section id="9-final" aria-labelledby="h9-final">
             <h2 id="h9-final">9. Заключительные положения</h2>
             <p>
               9.1. Актуальная версия Политики всегда доступна на сайте
