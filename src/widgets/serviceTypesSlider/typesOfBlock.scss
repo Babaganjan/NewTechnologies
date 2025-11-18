@@ -55,6 +55,7 @@
       @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none);
       font-family: var(--second-family);
       text-align: center;
+      width: 70%;
     }
   }
 }

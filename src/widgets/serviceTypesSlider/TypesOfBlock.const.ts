@@ -7,7 +7,7 @@ interface IData_type {
 export const DATA_TYPE_OPS: IData_type[] = [
   {
     title: 'тонкораспыленной водой',
-    subTitle: 'Эффективно для помещений с высокой ценностью оборудования, снижает ущерб от влаги',
+    subTitle: 'Вариант для помещений с высокой ценностью оборудования, снижает ущерб от влаги',
     image: '/img/typesOfBlock/OPS1.webp',
   },
   {
@@ -20,6 +20,16 @@ export const DATA_TYPE_OPS: IData_type[] = [
     subTitle: 'Универсальный вариант, используется для складов, производств, автостоянок',
     image: '/img/typesOfBlock/OPS3.webp',
   },
+  {
+    title: 'Водяное',
+    subTitle: 'Автоматическое тушение водой, подходит для офисов, торговых залов, жилых помещений',
+    image: '/img/typesOfBlock/OPS4.webp',
+  },
+  {
+    title: 'Автономное',
+    subTitle: 'Локальные установки, которые работают без подключения к центральной системе',
+    image: '/img/typesOfBlock/OPS5.webp',
+  },
 ];
 
 export const DATA_TYPE_SKD: IData_type[] = [
@@ -31,12 +41,22 @@ export const DATA_TYPE_SKD: IData_type[] = [
   {
     title: 'Карты доступа',
     subTitle: 'HID, EMM, MIFARE, в том числе с защитой от копирования.',
-    image: '/img/typesOfBlock/SKD1.webp',
+    image: '/img/typesOfBlock/SKD2.webp',
   },
   {
     title: 'Мобильный доступ',
     subTitle: 'смартфон с NFC-модулем может использоваться как электронный ключ.',
-    image: '/img/typesOfBlock/SKD1.webp',
+    image: '/img/typesOfBlock/SKD3.webp',
+  },
+  {
+    title: 'PIN-код',
+    subTitle: 'Ввод персонального пароля на клавиатуре устройства',
+    image: '/img/typesOfBlock/SKD4.webp',
+  },
+  {
+    title: 'Комбинированные методы',
+    subTitle: 'Двойная аутентификация для объектов с повышенными требованиями безопасности',
+    image: '/img/typesOfBlock/SKD5.webp',
   },
 ];
 
