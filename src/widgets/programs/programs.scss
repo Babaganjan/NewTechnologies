@@ -1,0 +1,117 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.programs {
+  margin-block: 100px;
+}
+
+.programs__title-container {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: fluid(10px, 20px);
+}
+
+.programs__card {
+  background-color: var(--bg-light-gray);
+  padding: fluid(15px, 30px);
+}
+
+.programs__card-title {
+  @include typography(
+    var(--text-black),
+    500,
+    fluid(31px, 58px, 360px, 768px),
+    1,
+    uppercase,
+    -0.07em
+  );
+}
+
+.programs__card-subtitle {
+  font-family: var(--second-family);
+  @include typography(var(--text-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
+}
+
+.programs__card-title-wrapper {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.programs__card-wrapper {
+  span {
+    position: relative;
+    font-family: var(--second-family);
+    @include typography(var(--text-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
+    &::after {
+      content: '[';
+      position: absolute;
+      top: 2px;
+      left: -13px;
+    }
+  }
+}
+
+.programs__card-list {
+  display: flex;
+  flex-direction: column;
+  gap: fluid(8px, 20px, 360px, 768px);
+  counter-reset: card;
+  margin-top: 15px;
+  margin-bottom: 40px;
+  li {
+    position: relative;
+    @include typography(var(--text-black), 700, fluid(14px, 18px, 360px, 768px), 1.2);
+    &::after {
+      position: absolute;
+      counter-increment: card;
+      content: '[' counter(card) ']';
+      position: absolute;
+      top: 0;
+      left: -15px;
+      @include typography(
+        var(--text-gray),
+        500,
+        fluid(10px, 14px, 360px, 768px),
+        0.4,
+        uppercase,
+        -0.05em
+      );
+    }
+  }
+}
+
+.programs__button {
+  width: 100%;
+  justify-content: center;
+}
+
+@include respond-min(768px) {
+  .programs__card {
+    display: grid;
+    grid-template-columns: 0.7fr;
+    margin-bottom: 10px;
+  }
+
+  .programs__button {
+    width: 80%;
+    justify-content: center;
+  }
+}
+
+@include respond-min(1024px) {
+  .programs__card {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 10px;
+  }
+
+  .programs__card-title-wrapper {
+    margin-bottom: auto;
+  }
+
+  .programs__button {
+    align-self: flex-start;
+    justify-self: flex-end;
+  }
+}
