@@ -21,6 +21,7 @@ import { ObjectLevel } from './objectLevel';
 import { Privacy } from './privacyPage';
 import { ProductHero } from './productHero';
 import { Products } from './products';
+import { Programs } from './programs';
 import { ProjectMenu } from './projectMenu';
 import { Questions } from './questions';
 import { Result } from './result';
@@ -55,6 +56,7 @@ export {
   ProductHero,
   Products,
   ProductsMenu,
+  Programs,
   ProjectMenu,
   Questions,
   Result,
