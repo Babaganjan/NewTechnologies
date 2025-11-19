@@ -39,9 +39,6 @@
 	width: 100%;
 	height: 278px;
 	margin-bottom: 40px;
-	.responsive-img {
-		// height: 278px;
-	}
 }
 
 .consult-form {
@@ -51,7 +48,6 @@
 	flex-direction: column;
 	align-self: flex-end;
 	align-items: center;
-	// position: relative;
 	margin: 0 auto;
 
 	&__title {
@@ -66,12 +62,12 @@
 		@include typography(var(--text-gray), 500, 14px, 1.1);
 		padding: 10px;
 		width: 100%;
-		min-height: fluid(41px, 54px);
+		height: 41px;
 		background-color: var(--bg-light-gray);
 	}
 
 	&__textarea {
-		min-height: fluid(83px, 102px);
+		min-height: 83px;
 		background-color: var(--bg-light-gray);
 		resize: none;
 	}
@@ -100,11 +96,11 @@
 	}
 
 	&__checkbox:checked + .check-style {
-	  border: 1px solid var(--vector-almost-black);
+	  	border: 1px solid var(--vector-almost-black);
   	  background-color: var(--bg-black);
-	  background-image: url('/img/checked-form.svg');
+	  	background-image: url('/img/checked-form.svg');
   	  background-position: center;
-	  background-size: 8px 6px;
+	  	background-size: 8px 6px;
   	  background-repeat: no-repeat;
 	}
 
@@ -136,9 +132,9 @@
 
 	&__submit {
 		display: inline-flex;
-		padding-inline: fluid(50px, 87px);
+		padding-inline: 50px;
 		justify-content: center;
-		width: fluid(340px, 416px);
+		width: 340px;
 		margin-top: 10px;
 	}
 
@@ -148,16 +144,49 @@
 }
 
 .wrapper-data {
-	width: fluid(340px, 530px);
+	width: 340px;
 	display: flex;
 	flex-direction: column;
 	gap: 4px;
 }
 
 // tablet
-// // @include respond-min(768) {
-// // 	.consultation-modal {
-// // 		width: 768px;
-// // 		background-image: url('/img/modal-form-768.png');
-// // 	}
-// }
+@include respond-min(768) {
+	.consultation-modal {
+		// width: 768px;
+		padding-bottom: 184px;
+		.wrapper_bg {
+			height: 458px;
+			margin-bottom: 60px;
+		}
+
+		.consult-form {
+			&__input,
+			&__textarea {
+				height: 54px;
+			}
+
+			&__textarea {
+				min-height: 102px;
+			}
+
+			.check-style {
+				width: 21px;
+				height: 21px;
+			} 
+
+			&__checkbox:checked + .check-style {
+				background-size: 9px 12px;
+			}
+
+			&__submit {
+				width: 416px;
+				padding: 20px 87px;
+			}
+		}
+	}
+
+	.wrapper-data {
+		width: 530px;
+	}
+}
