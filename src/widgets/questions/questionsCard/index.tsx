@@ -2,7 +2,6 @@
 import { Arrow } from '@/shared/icons';
 import { H } from '@/shared/ui';
 import type { QuestionItem } from '@/widgets/questions/questions.const';
-
 import './_questionsCard.scss';
 
 interface QuestionsCardProps {
@@ -14,16 +13,22 @@ interface QuestionsCardProps {
 export const QuestionsCard = ({ question, setActiveCard, activeCard }: QuestionsCardProps) => {
   const isExpanded = activeCard === question.id;
 
+  const handleFocus = () => {
+    if (!isExpanded) {
+      setActiveCard(question.id);
+    }
+  };
+
   return (
     <li
       className="questions__card"
       data-grid-index={question.gridIndex}
       onMouseEnter={() => setActiveCard(question.id)}
       onMouseLeave={() => setActiveCard(null)}
+      onFocus={handleFocus}
       role="button"
       aria-expanded={isExpanded}
       tabIndex={0}
-      onFocus={() => setActiveCard(isExpanded ? null : question.id)}
     >
       <div className="questions__card-decorative" aria-hidden="true"></div>
       <H level={'5'} className="questions__content">

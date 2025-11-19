@@ -21,8 +21,6 @@
     color 0.2s ease;
 
   &:hover,
-  &:focus,
-  &:focus:not(:focus-visible),
   &:focus-visible {
     background-color: var(--bg-black);
     color: var(--text-white);

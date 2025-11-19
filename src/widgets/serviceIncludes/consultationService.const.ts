@@ -56,3 +56,46 @@ export const CONSULTATIONSERVICE_DATA: Record<ServiceTypeKey, ConsultationServic
     ],
   },
 };
+
+export const CONSULTATIONSERVICE_IMAGES: Record<ServiceTypeKey, ConsultationServiceItem> = {
+  VIDEO_SURVEILLANCE: {
+    item: [
+      '/img/consultationService/cameras-2.webp',
+      '/img/consultationService/cameras-1.webp',
+      '/img/consultationService/cameras-2.webp',
+      '/img/consultationService/cameras-2.webp',
+    ],
+  },
+  FIRE_ALARM: {
+    item: [
+      '/img/consultationService/OPS-1.webp',
+      '/img/consultationService/OPS-2.webp',
+      '/img/consultationService/OPS-1.webp',
+      '/img/consultationService/OPS-3.webp',
+    ],
+  },
+  ACCESS_CONTROL: {
+    item: [
+      '/img/consultationService/accsess-control-2.webp',
+      '/img/consultationService/accsess-control-1.webp',
+      '/img/consultationService/accsess-control-2.webp',
+      '/img/consultationService/accsess-control-2.webp',
+    ],
+  },
+  NOTIFICATION_SYSTEM: {
+    item: [
+      '/img/consultationService/Notification-2.webp',
+      '/img/consultationService/Notification-1.webp',
+      '/img/consultationService/Notification-2.webp',
+      '/img/consultationService/Notification-2.webp',
+    ],
+  },
+  FIRE_SUPPRESSION: {
+    item: [
+      '/img/consultationService/OPS-1.webp',
+      '/img/consultationService/OPS-2.webp',
+      '/img/consultationService/OPS-1.webp',
+      '/img/consultationService/OPS-3.webp',
+    ],
+  },
+};

@@ -53,20 +53,20 @@
   z-index: 1;
 }
 
-.consultationService__decorationFour {
+.consultationService__decoration4 {
   display: none;
 }
 
-.consultationService__decorationOne {
+.consultationService__decoration1 {
   left: 0;
 }
 
-.consultationService__decorationTwo {
+.consultationService__decoration2 {
   right: 50%;
   transform: translate(50%);
 }
 
-.consultationService__decorationThree {
+.consultationService__decoration3 {
   right: 0;
 }
 
@@ -233,19 +233,19 @@
     pointer-events: none;
   }
 
-  .consultationService__decorationOne {
+  .consultationService__decoration1 {
     left: 0;
     top: 165%;
     transform: translate(0, 75%);
   }
 
-  .consultationService__decorationTwo {
+  .consultationService__decoration2 {
     right: 50%;
     top: 50%;
     transform: translate(50%, -50%);
   }
 
-  .consultationService__decorationThree {
+  .consultationService__decoration3 {
     top: 165%;
     right: 0;
     transform: translate(0, 75%);
@@ -316,25 +316,25 @@
     pointer-events: none;
   }
 
-  .consultationService__decorationOne {
+  .consultationService__decoration1 {
     top: 50%;
     left: 13%;
     transform: translate(-50%, 220%);
   }
 
-  .consultationService__decorationTwo {
+  .consultationService__decoration2 {
     top: 100%;
     left: 50%;
     transform: translate(-50%);
   }
 
-  .consultationService__decorationThree {
+  .consultationService__decoration3 {
     top: 50%;
     right: 6%;
     transform: translate(-50%, 220%);
   }
 
-  .consultationService__decorationFour {
+  .consultationService__decoration4 {
     display: block;
     bottom: 0;
     left: 50%;

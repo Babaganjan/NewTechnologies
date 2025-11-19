@@ -1,14 +1,16 @@
 import Image from 'next/image';
+import { Fragment } from 'react';
 
 import type { ServiceTypeKey } from '@/shared/types/service.types';
 import { H } from '@/shared/ui';
 
-import { CONSULTATIONSERVICE_DATA } from './consultationService.const';
+import { CONSULTATIONSERVICE_DATA, CONSULTATIONSERVICE_IMAGES } from './consultationService.const';
 
 import './consultationService.scss';
 
 export const ConsultationService = ({ type }: { type: ServiceTypeKey }) => {
   const data = CONSULTATIONSERVICE_DATA[type];
+  const images = CONSULTATIONSERVICE_IMAGES[type];
 
   return (
     <section className="consultationService">
@@ -24,18 +26,13 @@ export const ConsultationService = ({ type }: { type: ServiceTypeKey }) => {
           </div>
         </div>
         <div className="consultationService__decoration-container">
-          <div className="consultationService__decorationOne">
-            <Image src="/img/consultationService/consultation-1.webp" alt="decoration" fill />
-          </div>
-          <div className="consultationService__decorationTwo">
-            <Image src="/img/consultationService/consultation-2.webp" alt="decoration" fill />
-          </div>
-          <div className="consultationService__decorationThree">
-            <Image src="/img/consultationService/consultation-1.webp" alt="decoration" fill />
-          </div>
-          <div className="consultationService__decorationFour">
-            <Image src="/img/consultationService/consultation-3.webp" alt="decoration" fill />
-          </div>
+          {images.item.map((item, index) => (
+            <Fragment key={`${item}-${index}`}>
+              <div className={`consultationService__decoration${index + 1}`}>
+                <Image src={item} alt="" fill />
+              </div>
+            </Fragment>
+          ))}
         </div>
         <div className="consultationService__lines">
           <span className="line line--vertical"></span>
