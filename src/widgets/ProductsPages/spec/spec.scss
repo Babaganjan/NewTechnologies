@@ -42,8 +42,16 @@
       flex: 0 auto;
       padding-inline: 35px;
       white-space: nowrap;
+      width: 40%;
+
       @include respond-min(768px) {
+        width: 50%;
+
         padding-inline: 100px;
+      }
+
+      @include respond-min(1024px) {
+        width: 30%;
       }
     }
   }
