@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import { Arrow } from '@/shared/icons';
 import { Breadcrumbs } from '@/shared/ui';
+import { slugify } from '@/shared/utils/slugidy';
 
 import type { ProductMenuTypes } from './productMenus.const';
 import { PRODUCTMENUDATA__ALL, PRODUCTMENUDATA__TITLE } from './productMenus.const';
@@ -35,44 +36,49 @@ export const ProductsMenu = ({ type }: { type: ProductMenuTypes }) => {
         </div>
 
         <ul className="productsMenu__list">
-          {data.map((item, index) => (
-            <li key={item.id}>
-              <Link
-                href={`/products/${item.id}`}
-                className="productsMenu__item"
-                aria-label={`${item.model} ${item.title}, ${item.feature}`}
-              >
-                <div className="productsMenu__item-title-wrapper">
-                  <span className="productsMenu__item-model">{item.model}</span>
+          {data.map((item, index) => {
+            const categorySlug = type.toLowerCase();
+            const productSlug = slugify(item.model);
 
-                  <span className="productsMenu__item-title">{item.title}</span>
+            return (
+              <li key={item.id}>
+                <Link
+                  href={`/products/${categorySlug}/${productSlug}`}
+                  className="productsMenu__item"
+                  aria-label={`${item.model} ${item.title}, ${item.feature}`}
+                >
+                  <div className="productsMenu__item-title-wrapper">
+                    <span className="productsMenu__item-model">{item.model}</span>
 
-                  <span
-                    className="productsMenu__item-subtitle productsMenu__item-subtitle--three"
-                    aria-hidden="true"
-                  >
-                    пропускная способность
+                    <span className="productsMenu__item-title">{item.title}</span>
+
+                    <span
+                      className="productsMenu__item-subtitle productsMenu__item-subtitle--three"
+                      aria-hidden="true"
+                    >
+                      пропускная способность
+                    </span>
+
+                    <span className="productsMenu__item-feature">{item.feature}</span>
+                  </div>
+
+                  <div className="productsMenu__item-img" aria-hidden="true">
+                    <Image
+                      src="/img/SN-IPR7140BZBN-Z.png"
+                      alt=""
+                      fill
+                      sizes="(max-width: 768px) 47vw, 0vw"
+                      loading={index < 3 ? 'eager' : 'lazy'}
+                    />
+                  </div>
+
+                  <span className="productsMenu__item-arrow" aria-hidden="true">
+                    <Arrow />
                   </span>
-
-                  <span className="productsMenu__item-feature">{item.feature}</span>
-                </div>
-
-                <div className="productsMenu__item-img" aria-hidden="true">
-                  <Image
-                    src="/img/SN-IPR7140BZBN-Z.png"
-                    alt=""
-                    fill
-                    sizes="(max-width: 768px) 47vw, 0vw"
-                    loading={index < 3 ? 'eager' : 'lazy'}
-                  />
-                </div>
-
-                <span className="productsMenu__item-arrow" aria-hidden="true">
-                  <Arrow />
-                </span>
-              </Link>
-            </li>
-          ))}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

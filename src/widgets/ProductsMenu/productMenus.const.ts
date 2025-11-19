@@ -8,7 +8,7 @@ interface ProductMenuInterface {
 export const PRODUCTMENUDATA__NVR: ProductMenuInterface[] = [
   {
     id: 1,
-    model: 'nt-nvr3708e1-p8',
+    model: 'NT-NVR3708E1-P8',
     feature: '40 Мбит/сек',
     title: '8-ми канальный ip-регистратор',
   },
@@ -110,7 +110,7 @@ export const PRODUCTMENUDATA__SWITCHES: ProductMenuInterface[] = [
 export const PRODUCTMENUDATA__TURNISTILES: ProductMenuInterface[] = [
   {
     id: 1,
-    model: 'NT - T01R',
+    model: 'NT-T01R',
     feature: '15-20 чел/мин',
     title: 'Турникет полноростовой',
   },

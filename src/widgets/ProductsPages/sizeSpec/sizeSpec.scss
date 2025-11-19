@@ -1,0 +1,36 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.sizeSpec {
+  padding-block: 100px;
+}
+
+.sizeSpec__title {
+  position: relative;
+  margin-left: 10px;
+  margin-bottom: fluid(10px, 20px);
+}
+
+.sizeSpec__img {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: var(--bg-light-gray);
+  margin-bottom: 8px;
+  @include clip-shape();
+  @include item-decor(var(--vector-deep-gray));
+
+  img {
+    padding: fluid(20px, 100px);
+  }
+}
+
+@include respond-min(768px) {
+  .sizeSpec__img {
+    margin-bottom: 0;
+  }
+  .sizeSpec__img-container {
+    display: flex;
+    gap: 16px;
+  }
+}
