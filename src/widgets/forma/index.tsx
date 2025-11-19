@@ -1,13 +1,14 @@
 'use client';
 import clsx from 'clsx';
+import Link from 'next/link';
 import type { FormEvent } from 'react';
 import React from 'react';
 import { useState } from 'react';
 
+import { CloseForm } from '@/shared/icons/CloseForm/CloseForm';
 import { Modal, H, Button } from '@/shared/ui';
 
 import './_formConsultation.scss';
-import { CloseForm } from './../../shared/icons/CloseForm/CloseForm';
 
 interface FormConsultData {
   firstName: string;
@@ -89,55 +90,49 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
 
         <form onSubmit={handleSubmit} className={clsx('consult-form', className)} noValidate>
           <H level={'3'} className="consult-form__title">
-            Индивидуальная консультация по вашему вопросу
+            Индивидуальная консультация&nbsp;по&nbsp;вашему вопросу
           </H>
 
           <div className="wrapper-data">
             <div className="consult-form__field">
-              <label htmlFor="firstName" className="consult-form__label">
-                Имя
+              <label>
+                <input
+                  name="firstName"
+                  type="text"
+                  value={formData.firstName}
+                  onChange={handleChange}
+                  required
+                  className="consult-form__input"
+                  placeholder="Имя"
+                />
               </label>
-              <input
-                id="firstName"
-                name="firstName"
-                type="text"
-                value={formData.firstName}
-                onChange={handleChange}
-                required
-                className="consult-form__input"
-                placeholder="Имя"
-              />
             </div>
 
             <div className="consult-form__field">
-              <label htmlFor="phone" className="consult-form__label">
-                Телефон
+              <label>
+                <input
+                  name="phone"
+                  type="tel"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="consult-form__input"
+                  placeholder="Телефон"
+                />
               </label>
-              <input
-                id="phone"
-                name="phone"
-                type="tel"
-                value={formData.phone}
-                onChange={handleChange}
-                required
-                className="consult-form__input"
-                placeholder="Телефон"
-              />
             </div>
 
             <div className="consult-form__field">
-              <label htmlFor="message" className="consult-form__label">
-                Сообщение
+              <label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  rows={4}
+                  className="consult-form__textarea"
+                  placeholder="Сообщение"
+                />
               </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows={4}
-                className="consult-form__textarea"
-                placeholder="Сообщение"
-              />
             </div>
           </div>
 
@@ -151,10 +146,17 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                 required
                 className="consult-form__checkbox"
               />
-              <span className="consult-form__checkbox-text">
-                Нажимая на кнопку Подать заявку, вы соглашаетесь на обработку персональных данных и
-                политику конфиденциальности
-              </span>
+              <span className="check-style"></span>
+              <p className="consult-form__checkbox-text">
+                Нажимая, я&nbsp;согласен с&nbsp;обработкой{' '}
+                <Link href="/" className="consult-form__link">
+                  персональных данных
+                </Link>{' '}
+                и&nbsp;положением{' '}
+                <Link href="/" className="consult-form__link">
+                  политики конфиденциальности
+                </Link>
+              </p>
             </label>
           </div>
 

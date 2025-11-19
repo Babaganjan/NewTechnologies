@@ -128,8 +128,6 @@ export const HeaderContent = ({
             onClick={onMobilModal}
             aria-label="Открыть меню навигации"
             aria-expanded="false"
-            whileHover={{ scale: 1.1 }}
-            whileTap={{ scale: 0.9 }}
           ></motion.button>
         </div>
       </div>
