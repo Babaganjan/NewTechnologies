@@ -1,3 +1,4 @@
+import { GallerySpec } from './gallerySpec';
 import { KeySpecs } from './keySpec';
 import type { SpecItem } from './keySpec/keySpec.types';
 import { SizeSpec } from './sizeSpec';
@@ -44,8 +45,11 @@ export const ProductsPages = () => {
     },
   ];
 
+  const myImages = ['/img/image3.png'];
+
   return (
     <>
+      <GallerySpec images={myImages} />
       <KeySpecs items={specsData} />
       <SizeSpec />
       <Spec />

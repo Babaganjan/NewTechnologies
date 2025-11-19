@@ -22,6 +22,7 @@
     border-bottom: var(--vector-light-gray) solid 1px;
 
     .favorites-project__img {
+      aspect-ratio: 4/3;
       @include item-decor(var(--text-black), fluid(12px, 20px));
       display: inline-flex;
       @include clip-shape();
@@ -67,6 +68,7 @@
       position: relative;
 
       .favorites-project__img {
+        aspect-ratio: auto;
         max-height: 733px;
         width: 100%;
 
