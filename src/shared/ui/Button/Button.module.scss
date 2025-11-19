@@ -51,8 +51,9 @@ body:has(.modal) {
   @include typography(var(--text-black), 500, fluid(20px, 28px), 1.15, none);
   text-align: center;
   background-color: var(--bg-light-gray);
-  padding: 10px 34px;
   width: 100%;
+  min-height: 43px;
+
   &:hover,
   &:focus {
     background-color: var(--bg-black);

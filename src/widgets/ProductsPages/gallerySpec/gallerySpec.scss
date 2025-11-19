@@ -1,0 +1,45 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.gallery {
+  display: grid;
+  padding-block: 100px;
+  gap: 10px;
+}
+
+/* ЭЛЕМЕНТ: Обертка ячейки */
+.gallery__item {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  @include clip-shape();
+  @include item-decor(var(--vector-deep-gray));
+  background-color: var(--bg-light-gray);
+  img {
+    padding: fluid(20px, 50px);
+  }
+}
+
+.gallery--three {
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 1fr 1fr;
+}
+
+.gallery--three .gallery__item:nth-child(1) {
+  grid-row: span 2;
+}
+
+/* --- МОДИФИКАТОР: 2 Картинки --- */
+.gallery--two {
+  grid-template-columns: 1fr 1fr;
+}
+
+/* --- МОДИФИКАТОР: 1 Картинка --- */
+.gallery--one {
+  grid-template-columns: 1fr;
+  justify-items: center;
+  .gallery__item {
+    width: 100%;
+    max-width: 800px;
+  }
+}
