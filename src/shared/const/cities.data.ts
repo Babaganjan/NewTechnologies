@@ -12,7 +12,7 @@ export const COMMON_CONTACT_INFO: CommonContactInfoType = {
     {
       id: 2,
       title: 'LinkedIn',
-      href: 'https://www.linkedin.com/company/newtechnologykz/?viewAsMember=true',
+      href: 'https://www.linkedin.com/company/newtechnologykz',
     },
     {
       id: 3,
