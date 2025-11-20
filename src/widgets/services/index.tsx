@@ -84,12 +84,6 @@ export const Services = () => {
                     />
                   </div>
                 )}
-
-                {subItem.desc && (
-                  <div className="services__sub-item-desc">
-                    <p className="services__desc-text">{subItem.desc}</p>
-                  </div>
-                )}
               </div>
             )}
           </div>
