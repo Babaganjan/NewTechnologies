@@ -1,12 +1,13 @@
 'use client';
 import clsx from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 import type { FormEvent } from 'react';
 import React from 'react';
 import { useState } from 'react';
 
 import { CloseForm } from '@/shared/icons/CloseForm/CloseForm';
-import { Modal, H, Button } from '@/shared/ui';
+import { Modal, Button } from '@/shared/ui';
 
 import './_formConsultation.scss';
 
@@ -87,11 +88,25 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
         >
           <CloseForm />
         </button>
-
+        <div className="wrapper_bg">
+          <picture>
+            <source
+              media="(min-width: 1024px)"
+              srcSet="/img/desktop.jpg, /img/modal-form-1920.png 2x"
+            />
+            <Image
+              src="/img/modal-form-768.png"
+              alt="Описание изображения"
+              className="responsive-img"
+              width={360}
+              height={278}
+            />
+          </picture>
+        </div>
         <form onSubmit={handleSubmit} className={clsx('consult-form', className)} noValidate>
-          <H level={'3'} className="consult-form__title">
+          <h3 className="consult-form__title">
             Индивидуальная консультация&nbsp;по&nbsp;вашему вопросу
-          </H>
+          </h3>
 
           <div className="wrapper-data">
             <div className="consult-form__field">
@@ -129,6 +144,7 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                   value={formData.message}
                   onChange={handleChange}
                   rows={4}
+                  required
                   className="consult-form__textarea"
                   placeholder="Сообщение"
                 />
@@ -149,11 +165,11 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
               <span className="check-style"></span>
               <p className="consult-form__checkbox-text">
                 Нажимая, я&nbsp;согласен с&nbsp;обработкой{' '}
-                <Link href="/" className="consult-form__link">
+                <Link href="/privacy" target="_blank" className="consult-form__link">
                   персональных данных
                 </Link>{' '}
                 и&nbsp;положением{' '}
-                <Link href="/" className="consult-form__link">
+                <Link href="/privacy" target="_blank" className="consult-form__link">
                   политики конфиденциальности
                 </Link>
               </p>
