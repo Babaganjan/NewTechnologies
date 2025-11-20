@@ -9,6 +9,25 @@
 #privacy-policy {
   @include typography(var(--text-deep-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
   font-family: var(--second-family);
+
+  a {
+    position: relative;
+    width: fit-content;
+    &::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 2px;
+      background-color: var(--text-gray);
+      transition: width 0.3s ease-out;
+    }
+
+    &:hover::after {
+      width: 100%;
+    }
+  }
   // ──────────────────
   // Главный заголовок
   // ──────────────────
