@@ -2,43 +2,40 @@
 @use '@/shared/styles/mixins' as *;
 
 .consultation-modal {
-	width: 100%;
-	height: clamp(820px, 100vh, 100vh);
-	padding-bottom: 94px;
-	margin: 0 auto;
-	&::after, &::before {
-	  position: absolute;
-	  content: '';
-	  background-image: url('/img/modal-form-decor.svg');
-	  background-size: 100%;
-	  background-repeat: no-repeat;
-	  bottom: 0;
-	  width: fluid(102px, 502px);
-	  height: fluid(12px, 32px);
-	}
-	&::after {
-	  left: 0;
-	}
-	&::before {
-	  right: 0;
-	  transform: scaleX(-1);
-	}
-}
+  width: 100%;
+  padding-bottom: 94px;
+  margin: 0 auto;
+  &::after,
+  &::before {
+    position: absolute;
+    content: '';
+    background-image: url('/img/modal-form-decor.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    bottom: 0;
+    width: fluid(102px, 502px);
+    height: fluid(12px, 32px);
+  }
+  &::after {
+    left: 0;
+  }
+  &::before {
+    right: 0;
+    transform: scaleX(-1);
+  }
 
-.consultation-modal__close {
-	position: absolute;
-	width: 20px;
-	height: 20px;
-	top: 10px;
-	right: 10px;
-	color: var(--vector-white);
-	z-index: 10;
+  &__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: var(--vector-white);
+    z-index: 10;
+  }
 }
 
 .wrapper_bg {
-	width: 100%;
-	// height: 278px;
-	margin-bottom: 40px;
+  width: 100%;
+  margin-bottom: 40px;
 }
 
 .responsive-img {
@@ -46,155 +43,212 @@
 }
 
 .consult-form {
-	max-width: 887px;
-	padding-inline: 10px;
-	display: flex;
-	flex-direction: column;
-	align-self: flex-end;
-	align-items: center;
-	margin: 0 auto;
+  max-width: 887px;
+  padding-inline: 10px;
+  display: flex;
+  flex-direction: column;
+  align-self: flex-end;
+  align-items: center;
+  margin: 0 auto;
 
-	&__title {
-		@include typography(#030608, 500, 31px, 1, uppercase, -2.17px);
-		text-align: center;
-		margin-bottom: 30px;
-	}
+  &__title {
+    @include typography(#030608, 500, 31px, 1, uppercase, -2.17px);
+    text-align: center;
+    margin-bottom: 30px;
+  }
 
-	&__input,
-	&__textarea {
-		@include clip-shape();
-		@include typography(var(--text-gray), 500, 14px, 1.1);
-		padding: 10px;
-		width: 100%;
-		height: 41px;
-		background-color: var(--bg-light-gray);
-	}
+  &__input,
+  &__textarea {
+    @include clip-shape();
+    @include typography(var(--text-gray), 500, 14px, 1.1);
+    padding: 10px;
+    width: 100%;
+    height: 41px;
+    background-color: var(--bg-light-gray);
+  }
 
-	&__textarea {
-		min-height: 83px;
-		background-color: var(--bg-light-gray);
-		resize: none;
-	}
+  &__field:last-child {
+    height: 83px;
+  }
 
-	&__checkbox-label {
-		position: relative;
-	}
+  &__textarea {
+    height: 83px;
+    background-color: var(--bg-light-gray);
+    resize: none;
+  }
 
-	&__checkbox {
-	  position: absolute;
-  	  width: 1px;
-  	  height: 1px;
-  	  overflow: hidden;
-  	  clip: rect(0 0 0 0);
-	}
+  &__checkbox-label {
+    position: relative;
+  }
 
-	.check-style {
-      position: absolute;
-      width: 16px;
-      height: 16px;
-      transform: translateY(-100%);
-	  top: 16px;
-      left: 0;
-      border: 1px solid var(--vector-almost-black);
-      cursor: pointer;
-	}
+  &__checkbox {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
 
-	&__checkbox:checked + .check-style {
-	  	border: 1px solid var(--vector-almost-black);
-  	  background-color: var(--bg-black);
-	  	background-image: url('/img/checked-form.svg');
-  	  background-position: center;
-	  	background-size: 8px 6px;
-  	  background-repeat: no-repeat;
-	}
+  .check-style {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    transform: translateY(-100%);
+    top: 16px;
+    left: 0;
+    border: 1px solid var(--vector-almost-black);
+    cursor: pointer;
+  }
 
-	.check-style:focus-visible {
-  	  outline-offset: 2px;
-  	  outline: 1 solid rgb(129, 148, 225);
-	}
+  &__checkbox:checked + .check-style {
+    border: 1px solid var(--vector-almost-black);
+    background-color: var(--bg-black);
+    background-image: url('/img/checked-form.svg');
+    background-position: center;
+    background-size: 8px 6px;
+    background-repeat: no-repeat;
+  }
 
-	&__checkbox-field {
-		margin-top: 20px;
-	}
+  .check-style:focus-visible {
+    outline-offset: 2px;
+    outline: 1 solid rgb(129, 148, 225);
+  }
 
-	&__checkbox-text {
-		@include typography(var(--text-light-gray), 500, 14px, 1.1, none);
-		width: fluid(340px, 416px);
-		font-family: var(--second-family);
-		padding-left: 24px;
-	}
+  &__checkbox-field {
+    margin-top: 20px;
+  }
 
-	&__link {
-		text-decoration: underline;
-		text-decoration-skip-ink: none;
-		color: #565656;
-	}
+  &__checkbox-text {
+    @include typography(var(--text-light-gray), 500, 14px, 1.1, none);
+    width: fluid(340px, 416px);
+    font-family: var(--second-family);
+    padding-left: 24px;
+  }
 
-	&__checkbox-label:has(:checked) &__link {
-		color: var(--text-black);
-	}
+  &__link {
+    text-decoration: underline;
+    text-decoration-skip-ink: none;
+    color: #565656;
+  }
 
-	&__submit {
-		display: inline-flex;
-		padding-inline: 50px;
-		justify-content: center;
-		width: 340px;
-		margin-top: 10px;
-	}
+  &__checkbox-label:has(:checked) &__link {
+    color: var(--text-black);
+  }
 
-	&__submit:disabled {
-		background-color: #565656;
-	}
+  &__submit {
+    display: inline-flex;
+    padding-inline: 50px;
+    justify-content: center;
+    width: 340px;
+    margin-top: 10px;
+  }
+
+  &__submit:disabled {
+    background-color: #565656;
+  }
 }
 
 .wrapper-data {
-	width: 340px;
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
 }
 
 // tablet
 @include respond-min(768) {
-	.consultation-modal {
-		// width: 768px;
-		padding-bottom: 184px;
-		.wrapper_bg {
-			height: 458px;
-			margin-bottom: 60px;
-		}
+  .consultation-modal {
+    padding-bottom: 184px;
 
-		.responsive-img {
-  		   height: 458px;
-		}
+    &__close {
+      top: 20px;
+      right: 20px;
+    }
 
-		.consult-form {
-			&__input,
-			&__textarea {
-				height: 54px;
-			}
+    &__close svg {
+      width: 38px;
+      height: 38px;
+    }
 
-			&__textarea {
-				min-height: 102px;
-			}
+    .wrapper_bg {
+      height: 458px;
+      margin-bottom: 60px;
+    }
 
-			.check-style {
-				width: 21px;
-				height: 21px;
-			} 
+    .responsive-img {
+      height: 458px;
+    }
 
-			&__checkbox:checked + .check-style {
-				background-size: 9px 12px;
-			}
+    .consult-form {
+      &__title {
+        font-size: 58px;
+        margin-bottom: 60px;
+      }
 
-			&__submit {
-				width: 416px;
-				padding: 20px 87px;
-			}
-		}
-	}
+      &__input,
+      &__textarea {
+        height: 54px;
+      }
 
-	.wrapper-data {
-		width: 530px;
-	}
+      &__textarea,
+      &__field:last-child {
+        height: 102px;
+      }
+
+      .check-style {
+        top: 26px;
+        left: -26px;
+        width: 21px;
+        height: 21px;
+      }
+
+      &__checkbox:checked + .check-style {
+        background-size: 9px 12px;
+      }
+
+      &__checkbox-field {
+        margin-top: 40px;
+      }
+
+      &__checkbox-text {
+        padding-left: 5px;
+      }
+
+      &__submit {
+        width: 416px;
+        padding: 20px 87px;
+      }
+    }
+  }
+
+  .wrapper-data {
+    width: 530px;
+    gap: 10px;
+  }
+}
+
+// desktop
+@include respond-min(1024) {
+  .consultation-modal {
+    display: flex;
+    padding: 0;
+
+    .wrapper_bg {
+      margin: 0;
+      width: 49.75%;
+      height: auto;
+      .responsive-img {
+        // aspect-ratio: 4/6;
+        height: 100%;
+      }
+    }
+    .consult-form {
+      width: 50.25%;
+      padding: 271px 50px 272px 28px;
+      margin: 0;
+      &__title {
+        font-size: fluid(58px, 68px);
+      }
+    }
+  }
 }
