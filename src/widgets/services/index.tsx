@@ -65,7 +65,6 @@ export const Services = () => {
                 })}
                 onMouseEnter={() => handleSelectService(subItem, index, item.id)}
                 onMouseLeave={handleServiceMouseLeave}
-                icon
               >
                 {subItem.name}
               </Button>
