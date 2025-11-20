@@ -37,8 +37,12 @@
 
 .wrapper_bg {
 	width: 100%;
-	height: 278px;
+	// height: 278px;
 	margin-bottom: 40px;
+}
+
+.responsive-img {
+  height: 278px;
 }
 
 .consult-form {
@@ -158,6 +162,10 @@
 		.wrapper_bg {
 			height: 458px;
 			margin-bottom: 60px;
+		}
+
+		.responsive-img {
+  		   height: 458px;
 		}
 
 		.consult-form {
