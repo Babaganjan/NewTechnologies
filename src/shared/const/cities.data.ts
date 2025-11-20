@@ -7,22 +7,22 @@ export const COMMON_CONTACT_INFO: CommonContactInfoType = {
     {
       id: 1,
       title: 'TikTok',
-      href: 'https://www.tiktok.com/@nt-t.kz',
+      href: 'https://www.tiktok.com/@newtech.kz?_r=1&_t=ZM-91Ya1zZb99I',
     },
     {
       id: 2,
       title: 'LinkedIn',
-      href: 'https://www.linkedin.com/company/nt-t-kz',
+      href: 'https://www.linkedin.com/company/newtechnologykz/?viewAsMember=true',
     },
     {
       id: 3,
       title: 'YouTube',
-      href: 'https://www.youtube.com/@nt-t.kz',
+      href: 'https://youtube.com/@newtechkz?si=5R7G1YoOVY9-mIGJ',
     },
     {
       id: 4,
       title: 'Instagram',
-      href: 'https://www.instagram.com/nt-t.kz',
+      href: 'https://www.instagram.com/newtechkz?igsh=MTk0NW55NjNlM2wzNg==',
     },
   ],
 } as const;
