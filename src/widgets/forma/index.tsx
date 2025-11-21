@@ -3,11 +3,10 @@ import clsx from 'clsx';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FormEvent } from 'react';
-import React from 'react';
-import { useState } from 'react';
+import React, { useState } from 'react';
 
 import { CloseForm } from '@/shared/icons/CloseForm/CloseForm';
-import { Modal, Button } from '@/shared/ui';
+import { Button, Modal } from '@/shared/ui';
 
 import './_formConsultation.scss';
 

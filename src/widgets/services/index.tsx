@@ -93,7 +93,7 @@ export const Services = () => {
   );
 
   return (
-    <section className="services with-trapezoids" data-header-theme="dark">
+    <section className="services with-trapezoids">
       <div className="container services__container">
         <div className="services__wrapper-title">
           <H level={'2'} className="services__title title">
