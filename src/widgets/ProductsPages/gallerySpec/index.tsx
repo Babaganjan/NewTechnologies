@@ -1,35 +1,36 @@
 import Image from 'next/image';
 
 import './gallerySpec.scss';
+import { getModifierClass } from './helpers/getModifierClass';
+import { getSizes } from './helpers/getSizes';
 
-export const GallerySpec = ({ images = [] }: { images: string[] }) => {
-  // Берем только первые 3, чтобы не сломать верстку
-  const items = images.slice(0, 3);
-  const count = items.length;
+interface GallerySpecProps {
+  images?: string[];
+}
 
-  if (count === 0) return null;
+export const GallerySpec = ({ images = [] }: GallerySpecProps) => {
+  const count = images.length;
 
-  // Определяем модификатор
-  let modifierClass = '';
-
-  if (count === 1) modifierClass = 'gallery--one';
-  else if (count === 2) modifierClass = 'gallery--two';
-  else if (count === 3) modifierClass = 'gallery--three';
+  const modifierClass = getModifierClass(count);
 
   return (
-    <div className={`gallery ${modifierClass} container`}>
-      {items.map((src, index) => (
-        <div key={index} className="gallery__item">
-          <Image
-            src={src}
-            alt={`Gallery image ${index + 1}`}
-            fill
-            className="gallery__img"
-            // Оптимизация: на мобилке грузим полную ширину, на десктопе - половину
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-      ))}
-    </div>
+    <section className="gallery-section">
+      <div className={`gallery ${modifierClass} container`}>
+        {images.map((src, index) => (
+          <div key={`gallery-${index}`} className="gallery__item">
+            <Image
+              src={src}
+              alt={`Изображение продукта ${index + 1}`}
+              fill
+              className="gallery__img"
+              sizes={getSizes(count, index)}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              priority={index === 0}
+              quality={85}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
