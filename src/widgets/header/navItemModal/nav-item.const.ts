@@ -68,27 +68,27 @@ const DATA_PRODUCTION: NavListModalProps[] = [
     list: [
       {
         name: 'Турникеты',
-        href: 'turnstiles',
+        href: '/products/turnstiles/',
         image: '/img/product-item-1.webp',
       },
       {
         name: 'Коммутаторы',
-        href: 'switches',
+        href: '/products/switches/',
         image: '/img/product-item-2.webp',
       },
       {
         name: 'Серверные шкафы',
-        href: 'serverCabinets',
+        href: '/products/serverCabinets/',
         image: '/img/product-item-3.webp',
       },
       {
         name: 'Видеорегистраторы',
-        href: 'nvr',
+        href: '/products/nvr/',
         image: '/img/product-item-4.webp',
       },
       {
         name: 'Видеокамеры',
-        href: 'cameras',
+        href: '/products/cameras/',
         image: '/img/product-item-5.webp',
       },
     ],
