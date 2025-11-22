@@ -25,12 +25,6 @@ export const HEADER_NAV_ITEMS: NavItem[] = [
     hasModal: true,
   },
   {
-    href: '/itsolutions/',
-    title: 'IT-Решения',
-    hasIcon: false,
-    hasModal: false,
-  },
-  {
     href: '/about/',
     title: 'О нас',
     hasIcon: false,
