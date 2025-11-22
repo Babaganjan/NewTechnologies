@@ -1,15 +1,15 @@
-// types.ts
+// layout1 - Камеры / ВидеоРегистраторы layout3- Коммутаторы шкафы layout2-Турникет
 export interface SpecItem {
   id: string | number;
-  title: string;
+  title?: string;
   value?: string; // Например "320", "4K"
   unit?: string; // Например "Мбит/сек", "Мас-адрес"
   description?: string;
-  // Опционально: управление сеткой для конкретного элемента
-  colSpan?: 1 | 2;
+  subtitle?: string;
+  type?: string;
 }
 
 export interface KeySpecsProps {
-  items: SpecItem[];
-  className?: string;
+  title?: string;
+  type: string;
 }

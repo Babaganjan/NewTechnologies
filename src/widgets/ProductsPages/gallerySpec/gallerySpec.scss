@@ -2,13 +2,36 @@
 @use '@/shared/styles/mixins' as *;
 
 .gallery-section {
-  margin-block: 150px;
+  padding-block: 150px;
+  background-color: var(--bg-black);
+
+  h1 {
+    width: 50%;
+    margin-top: fluid(62px, 100px);
+    @include typography(
+      var(--text-white),
+      500,
+      fluid(31px, 58px, 360px, 768px),
+      1,
+      uppercase,
+      -0.07em
+    );
+
+    @include respond-min(1024px) {
+      font-size: fluid(31px, 68px);
+    }
+
+    span {
+      color: var(--text-deep-gray);
+    }
+  }
 }
 
 .gallery {
   display: grid;
   gap: 10px;
   width: 100%;
+  margin-top: 20px;
 }
 
 .gallery__item {

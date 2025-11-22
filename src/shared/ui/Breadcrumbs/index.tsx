@@ -23,7 +23,7 @@ export const Breadcrumbs = () => {
 
           return (
             <li key={item} className={styles.breadcrumbsItem} style={{ color: itemColor }}>
-              <Link 
+              <Link
                 href={`/${path.slice(0, path.indexOf(item) + 1).join('/')}`}
                 aria-current={!lastIndex ? 'page' : undefined}
               >
