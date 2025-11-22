@@ -139,7 +139,6 @@
         &::before {
           top: 135px;
           left: -15px;
-          // letter-spacing: -0.031rem;
         }
         width: 100%;
         font-size: 36px;
@@ -181,12 +180,6 @@
     .item {
       &__inner {
         display: flex;
-        @include item-decor(
-          var(--vector-deep-gray),
-          20px,
-          $before-position: (top: -14px, left: -25px),
-          $after-position: (bottom: -5px, right: -25px)
-        );
         min-height: 312px;
         justify-content: flex-end;
         background-size: 136px 132px;

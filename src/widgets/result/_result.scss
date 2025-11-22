@@ -31,24 +31,6 @@
     &.with-trapezoids {
       @include trapezoid-decor($config: 'medium');
     }
-  }
-}
-
-// mini-desktop
-@include respond-min(1280px) {
-  .result {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'large');
-    }
-
-    &__container {
-      @include line-decor(1% 50% 99%);
-      padding-block: 90px 124px;
-    }
-
-    .result__item:first-child .item__title {
-      width: 63%;
-    }
 
     .item {
       &__inner {
@@ -92,6 +74,10 @@
       }
     }
 
+    .result__item:first-child .item__title {
+      width: 63%;
+    }
+
     &__item {
       &:nth-child(1) {
         grid-column: 1 / 2;
@@ -113,6 +99,20 @@
         grid-column: 1 / -1;
         grid-row: 4 / 5;
       }
+    }
+  }
+}
+
+// mini-desktop
+@include respond-min(1280px) {
+  .result {
+    &.with-trapezoids {
+      @include trapezoid-decor($config: 'large');
+    }
+
+    &__container {
+      @include line-decor(1% 50% 99%);
+      padding-block: 90px 124px;
     }
   }
 }
