@@ -1,30 +1,36 @@
-import clsx from 'clsx';
 import Image from 'next/image';
 
 import './gallerySpec.scss';
+import { getModifierClass } from './helpers/getModifierClass';
+import { getSizes } from './helpers/getSizes';
 
-export const GallerySpec = ({ images = [] }: { images: string[] }) => {
+interface GallerySpecProps {
+  images?: string[];
+}
+
+export const GallerySpec = ({ images = [] }: GallerySpecProps) => {
   const count = images.length;
 
-  const modifierClass = clsx({
-    'gallery--one': count === 1,
-    'gallery--two': count === 2,
-    'gallery--three': count === 3,
-  });
+  const modifierClass = getModifierClass(count);
 
   return (
-    <div className={`gallery ${modifierClass[count]} container`}>
-      {images.map((src, index) => (
-        <div key={index} className="gallery__item">
-          <Image
-            src={src}
-            alt={`Gallery image ${index + 1}`}
-            fill
-            className="gallery__img"
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-      ))}
-    </div>
+    <section className="gallery-section">
+      <div className={`gallery ${modifierClass} container`}>
+        {images.map((src, index) => (
+          <div key={`gallery-${index}`} className="gallery__item">
+            <Image
+              src={src}
+              alt={`Изображение продукта ${index + 1}`}
+              fill
+              className="gallery__img"
+              sizes={getSizes(count, index)}
+              loading={index === 0 ? 'eager' : 'lazy'}
+              priority={index === 0}
+              quality={85}
+            />
+          </div>
+        ))}
+      </div>
+    </section>
   );
 };
