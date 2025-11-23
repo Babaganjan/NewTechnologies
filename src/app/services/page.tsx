@@ -1,8 +1,9 @@
-import { FeedbackMenu, Questions, Services } from '@/widgets';
+import { FeedbackMenu, Questions, Services, ServicesHero } from '@/widgets';
 
 export default function ServicesPage() {
   return (
     <>
+      <ServicesHero />
       <Services />
       <Questions />
       <FeedbackMenu />

@@ -4,6 +4,85 @@
 @use 'sass:meta';
 @use 'functions' as *;
 
+@mixin decor-pseudo-elements(
+  $color: null,
+  // Цвет для окрашивания SVG (если задан, используется маска; иначе обычное изображение)
+  $count: 'both',
+  // Количество: 'both', 'after', 'before', 'none'
+  $image: '/img/modal-form-decor.svg',
+  // URL изображения (SVG)
+  $width: fluid(102px, 502px),
+  // Ширина
+  $height: fluid(12px, 32px),
+  // Высота
+  $z-index: 1,
+
+  // Z-index
+  // Параметры позиционирования для &::after
+  $after-top: -1px,
+  $after-bottom: auto,
+  $after-left: -1px,
+  $after-transform: rotateX(180deg),
+  // Трансформация по умолчанию
+  // Параметры позиционирования для &::before
+  $before-top: -1px,
+  $before-bottom: auto,
+  $before-right: -1px,
+  $before-transform: scaleY(-1) scaleX(-1)
+) {
+  @if $count != 'none' {
+    @if $count == 'both' or $count == 'after' {
+      &::after {
+        position: absolute;
+        content: '';
+        width: $width;
+        height: $height;
+        z-index: $z-index;
+        top: $after-top;
+        bottom: $after-bottom;
+        left: $after-left;
+        transform: $after-transform;
+
+        @if $color {
+          background-color: $color; // Цвет фона для маски
+          mask-image: url($image); // Маска по изображению
+          mask-size: 100%;
+          mask-repeat: no-repeat;
+        } @else {
+          background-image: url($image);
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+
+    @if $count == 'both' or $count == 'before' {
+      &::before {
+        position: absolute;
+        content: '';
+        width: $width;
+        height: $height;
+        z-index: $z-index;
+        top: $before-top;
+        bottom: $before-bottom;
+        right: $before-right;
+        transform: $before-transform;
+
+        @if $color {
+          background-color: $color; // Цвет фона для маски
+          mask-image: url($image); // Маска по изображению
+          mask-size: 100%;
+          mask-repeat: no-repeat;
+        } @else {
+          background-image: url($image);
+          background-size: 100%;
+          background-repeat: no-repeat;
+        }
+      }
+    }
+  }
+}
+
 @mixin clip-shape($position: top-right) {
   --clip-size: #{fluid(20px, 30px)};
   --clip-half: calc(var(--clip-size) / 2);
