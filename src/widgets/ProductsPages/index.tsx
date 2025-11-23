@@ -7,7 +7,7 @@ export const ProductsPages = () => {
   return (
     <>
       <GallerySpec />
-      <KeySpecs type="СЕРИЯ 450" />
+      <KeySpecs type="NT-NVR3808E1-J" />
       <SizeSpec />
       <Spec />
     </>
