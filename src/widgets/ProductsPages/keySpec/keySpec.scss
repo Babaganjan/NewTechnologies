@@ -14,6 +14,7 @@
   &__list {
     display: grid;
     gap: 8px;
+    margin-block: -35px;
 
     // Layout варианты для desktop
     &--layout1 {
