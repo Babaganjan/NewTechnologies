@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
 import type { AliasPagesProps } from '@/shared/types/productsPages.types';
@@ -12,7 +13,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: AliasPagesProps) {
+export async function generateMetadata({ params }: AliasPagesProps): Promise<Metadata> {
   const { alias } = await params;
   const product = findProductBySlug(alias);
 
