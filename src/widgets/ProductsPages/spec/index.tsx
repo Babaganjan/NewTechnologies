@@ -10,7 +10,7 @@ import type { TabLabel } from './spec.types';
 import { SpecList } from './specList';
 import { TabPanel } from './tabPanel';
 
-export const Spec = () => {
+export const Spec = ({ title = 'Общие характеристики' }: { title?: string }) => {
   const [activeTab, setActiveTab] = useState<TabLabel>(tabPanels[0]);
 
   return (
@@ -18,7 +18,7 @@ export const Spec = () => {
       <div className="spec__container container">
         <div className="spec__title-container">
           <H level="2" variant="light">
-            Общие характеристики
+            {title}
           </H>
         </div>
         <TabPanel activeTab={activeTab} onTabChange={setActiveTab} tabs={tabPanels} />

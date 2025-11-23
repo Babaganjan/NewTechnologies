@@ -37,11 +37,10 @@
 .gallery__item {
   position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
   @include clip-shape();
   @include item-decor(var(--vector-deep-gray));
   background-color: var(--bg-light-gray);
-
-  aspect-ratio: 16 / 9;
 
   img {
     padding: fluid(20px, 100px);
@@ -49,70 +48,68 @@
   }
 }
 
-/* --- МОДИФИКАТОР: 1 Картинка (полный контейнер, по центру) --- */
+/* --- МОДИФИКАТОР: 1 Картинка --- */
 .gallery--one {
   grid-template-columns: 1fr;
-
-  .gallery__item {
-    width: 100%;
-  }
 }
 
-/* --- МОДИФИКАТОР: 2 Картинки (равномерно) --- */
+/* --- МОДИФИКАТОР: 2 Картинки --- */
 .gallery--two {
   grid-template-columns: 1fr;
   gap: fluid(10px, 20px);
 }
 
-/* --- МОДИФИКАТОР: 3 Картинки --- */
+/* --- МОДИФИКАТОР: 3 Картинки (мобильная версия) --- */
 .gallery--three {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
 
   .gallery__item:nth-child(1) {
     grid-column: 1 / 3;
-    grid-row: 1;
   }
 
-  .gallery__item:nth-child(2) {
-    grid-column: 1 / 2;
-    grid-row: 2;
-  }
-
+  .gallery__item:nth-child(2),
   .gallery__item:nth-child(3) {
-    grid-column: 2 / 3;
-    grid-row: 2;
+    grid-column: span 1;
   }
 }
 
 /* --- DESKTOP --- */
 @include respond-min(1280px) {
-  .gallery--one {
-    .gallery__item {
-      height: 50%;
-    }
+  .gallery--one .gallery__item {
+    height: 50%;
   }
+
   .gallery--two {
     grid-template-columns: 1fr 1fr;
   }
 
   .gallery--three {
     grid-template-columns: 2fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-auto-rows: minmax(300px, 1fr);
+    gap: 10px;
+    align-items: stretch;
 
     .gallery__item:nth-child(1) {
-      grid-column: 1 / 2;
+      grid-column: 1;
       grid-row: 1 / 3;
+      aspect-ratio: 16 / 9;
     }
 
     .gallery__item:nth-child(2) {
-      grid-column: 2 / 3;
-      grid-row: 1 / 2;
+      grid-column: 2;
+      grid-row: 1;
     }
 
     .gallery__item:nth-child(3) {
-      grid-column: 2 / 3;
-      grid-row: 2 / 3;
+      grid-column: 2;
+      grid-row: 2;
+    }
+
+    // Правые блоки занимают половину высоты левого
+    .gallery__item:nth-child(2),
+    .gallery__item:nth-child(3) {
+      aspect-ratio: 16 / 9;
     }
   }
 }

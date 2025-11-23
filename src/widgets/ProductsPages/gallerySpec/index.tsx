@@ -8,19 +8,25 @@ import { myImages } from './gallery.const';
 import { getModifierClass } from './helpers/getModifierClass';
 import { getSizes } from './helpers/getSizes';
 
-export const GallerySpec = () => {
-  const count = myImages.length;
+interface GallerySpecProps {
+  productName: string;
+  productModel?: string;
+}
 
+export const GallerySpec = ({ productName, productModel }: GallerySpecProps) => {
+  const count = myImages.length;
   const modifierClass = getModifierClass(count);
 
   return (
     <section className="gallery-section">
+      {/* Breadcrumbs автоматически найдёт продукт по URL */}
       <Breadcrumbs />
+
       <div className="gallery__container container">
         <h1>
-          Сетевая цилиндрическая ИК-камера <span>NT-ipr5122-m</span>
+          {productName} {productModel && <span>{productModel}</span>}
         </h1>
-        <div className={`gallery ${modifierClass} `}>
+        <div className={`gallery ${modifierClass}`}>
           {myImages.map((src, index) => (
             <div key={`gallery-${index}`} className="gallery__item">
               <Image

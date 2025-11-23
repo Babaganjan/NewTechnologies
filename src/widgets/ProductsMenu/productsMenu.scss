@@ -5,6 +5,11 @@
   background-color: var(--bg-black);
   padding-block: 100px;
 
+  .products-menu-title {
+    position: relative;
+    margin-left: 10px;
+  }
+
   &__title {
     margin-top: fluid(80px, 110px);
     @include typography(

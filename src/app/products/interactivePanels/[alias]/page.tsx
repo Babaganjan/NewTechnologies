@@ -1,5 +1,3 @@
-import { ProductsPages } from '@/widgets';
-
 export async function generateStaticParams() {
   return [
     {
@@ -9,5 +7,5 @@ export async function generateStaticParams() {
 }
 
 export default function InteractivePages() {
-  return <ProductsPages />;
+  return <div>fwef</div>;
 }
