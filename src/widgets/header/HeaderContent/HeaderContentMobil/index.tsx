@@ -1,3 +1,4 @@
+// src/widgets/header/HeaderContent/HeaderContentMobil.tsx
 'use client';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -19,6 +20,7 @@ export const HeaderContentMobil = ({
   onItemEnter,
   onItemLeave,
   onModalClose,
+  transparentBg = false, // Добавляем пропс
 }: HeaderContentProps) => {
   const [selectedOption, setSelectedOption] = useState<ModalVariant[]>([]);
 
@@ -39,13 +41,13 @@ export const HeaderContentMobil = ({
   };
 
   return (
-    <header className="modal-mobil" data-theme={theme}>
+    <header
+      className={clsx('modal-mobil', transparentBg && 'modal-mobil--transparent')}
+      data-theme={theme}
+    >
       <div className="modal-mobil__container container">
-        <button 
-          className="modal-mobil__btn" 
-          onClick={onModalClose}
-          aria-label="Закрыть меню"
-        >
+        {/* Остальной код без изменений */}
+        <button className="modal-mobil__btn" onClick={onModalClose} aria-label="Закрыть меню">
           ✕
         </button>
         <nav className="modal-mobil__nav nav" aria-label="Мобильная навигация">
@@ -66,7 +68,7 @@ export const HeaderContentMobil = ({
                       {item.title}
                     </button>
                     {isSelected && (
-                      <div 
+                      <div
                         className="nav__sub-menu"
                         id={`submenu-${item.title}`}
                         role="region"

@@ -1,0 +1,90 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.services-hero {
+  background-color: var(--bg-black);
+  position: relative;
+  overflow: hidden;
+  padding-top: 119px;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 956px;
+    min-height: 956px;
+    position: relative;
+    z-index: 1;
+    @include decor-pseudo-elements();
+  }
+
+  &__video-in-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    overflow: hidden;
+
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      // Фиксы для производительности
+      transform: translateZ(0);
+      backface-visibility: hidden;
+    }
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('/img/services-hero-poster.jpg') center/cover no-repeat;
+      z-index: -1;
+    }
+  }
+
+  .wrapper-title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: fluid(140px, 539px);
+    background-image: url('/img/services-bg-title.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: fluid(360px, 1820px) fluid(140px, 539px);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    z-index: 2;
+    pointer-events: none;
+  }
+
+  .heading {
+    position: relative;
+    z-index: 3;
+    color: white;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+
+    svg {
+      width: fluid(320px, 1304px);
+      height: fluid(51px, 193px);
+    }
+  }
+
+  // Адаптивность
+  @media (max-width: 768px) {
+    padding-top: 80px;
+
+    &__container {
+      height: 600px;
+      min-height: 600px;
+    }
+  }
+}

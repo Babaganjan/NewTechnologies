@@ -30,6 +30,7 @@ import { SeeAlso } from './seeAlso';
 import { ConsultationService } from './serviceIncludes';
 import { TypesOfBlock } from './serviceTypesSlider';
 import { Services } from './services';
+import { ServicesHero } from './servicesHero';
 import { StagesWork } from './workStages';
 
 export {
@@ -64,6 +65,7 @@ export {
   Result,
   SeeAlso,
   Services,
+  ServicesHero,
   StagesWork,
   TypesOfBlock,
 };

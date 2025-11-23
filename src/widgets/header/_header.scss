@@ -1,18 +1,64 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
+// // CSS переменные для тем
+// [data-theme='dark'] {
+//   --header-bg: var(--bg-black);
+//   --header-bg-transparent: transparent;
+//   --header-text: var(--text-white);
+//   --header-line: var(--vector-almost-black);
+// }
+
+// [data-theme='light'] {
+//   --header-bg: var(--bg-white);
+//   --header-bg-transparent: transparent;
+//   --header-text: var(--text-black);
+//   --header-line: var(--vector-light-gray);
+// }
 // CSS переменные для тем
 [data-theme='dark'] {
-  --header-bg: var(--bg-black);
+  --header-bg: var(--bg-black); // Черный фон для скролла
+  --header-bg-transparent: transparent; // Прозрачный для верха
   --header-text: var(--text-white);
   --header-line: var(--vector-almost-black);
 }
 
 [data-theme='light'] {
-  --header-bg: transparent;
+  --header-bg: var(--bg-white); // Белый фон для скролла
+  --header-bg-transparent: transparent; // Прозрачный для верха
   --header-text: var(--text-black);
   --header-line: var(--vector-light-gray);
 }
+
+// Основные стили хедера
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+  background-color: var(--header-bg); // По умолчанию черный/белый фон
+  // backdrop-filter: blur(10px);
+
+  // Класс для прозрачного фона
+  &--transparent {
+    background-color: var(--header-bg-transparent) !important;
+    // backdrop-filter: none !important;
+  }
+
+  // Остальные ваши стили...
+  &__container {
+    display: flex;
+    min-height: 59px;
+    position: relative;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+}
+
 // _header.scss
 .hidden,
 .hidden__contacts {
@@ -253,10 +299,4 @@
   width: 100%;
   z-index: 1000;
   transition: background-color 0.3s ease;
-
-  &.header-scrolled {
-    [data-theme='light'] & {
-      // background-color: rgba(0, 0, 0, 1);
-    }
-  }
 }

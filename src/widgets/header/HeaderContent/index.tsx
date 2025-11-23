@@ -1,11 +1,11 @@
-// components/Header/HeaderContent.tsx
+// src / widgets / header / HeaderContent.tsx;
 'use client';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import { useScrollContext } from '@/context/ScrollProvider';
 import { CITIES_CONTACTS } from '@/shared/const/cities.data';
@@ -14,7 +14,7 @@ import { Button, CustomSelect } from '@/shared/ui';
 import type { HeaderContentProps } from '../header.types';
 import { isModalVariant } from '../helper/isModalVariant';
 
-import './../_header.scss';
+import '../_header.scss';
 
 export const HeaderContent = ({
   navItems,
@@ -26,6 +26,7 @@ export const HeaderContent = ({
   activeNavItem,
   onModalClose,
   isModalOpen = false,
+  transparentBg = false, // Добавляем пропс
 }: HeaderContentProps) => {
   const { isHeaderVisible, isHeaderScrolled, selectedCity, setSelectedCity } = useScrollContext();
   const selectedContact = CITIES_CONTACTS.find((contact) => contact.city === selectedCity);
@@ -39,19 +40,24 @@ export const HeaderContent = ({
 
   return (
     <motion.header
-      className={clsx('header', isHeaderScrolled && 'header-scrolled')}
+      className={clsx(
+        'header',
+        isHeaderScrolled && 'header-scrolled',
+        transparentBg && 'header--transparent' // Добавляем класс
+      )}
       data-theme={theme}
       initial={{ y: 0 }}
       animate={{
-        y: isHeaderVisible ? 0 : -100,
+        y: isHeaderVisible ? 0 : -120,
       }}
       transition={{
         type: 'spring',
         damping: 20,
-        stiffness: 300,
+        stiffness: 100,
       }}
     >
       <div className="container header__container">
+        {/* Остальной код без изменений */}
         <div className="header__wrapper">
           <nav className="header__nav nav hidden" aria-label="Основная навигация">
             <ul className="nav__list">
@@ -90,7 +96,7 @@ export const HeaderContent = ({
             </ul>
           </nav>
 
-          <motion.div whileHover={{ scale: 1.05 }}>
+          <motion.div>
             <Link href="/" className="header__link" onClick={onModalClose}>
               <Image
                 src={logoSrc as string}
@@ -113,7 +119,7 @@ export const HeaderContent = ({
             isModalOpen={isModalOpen}
           />
 
-          <motion.div whileHover={{ scale: 1.05 }}>
+          <motion.div>
             {selectedContact && (
               <Link className="header__phone" href={`tel:${selectedContact.phone}`}>
                 {selectedContact.phone}

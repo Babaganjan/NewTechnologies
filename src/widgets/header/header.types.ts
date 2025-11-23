@@ -13,4 +13,5 @@ export interface HeaderContentProps extends ThemeType {
   onModalClose?: () => void;
   activeNavItem?: ModalVariant | null;
   isModalOpen?: boolean;
+  transparentBg?: boolean;
 }
