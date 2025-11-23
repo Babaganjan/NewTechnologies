@@ -2,26 +2,47 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import { Arrow } from '@/shared/icons';
-import { Breadcrumbs } from '@/shared/ui';
+import { Breadcrumbs, H } from '@/shared/ui';
 import { slugify } from '@/shared/utils/slugidy';
 
 import type { ProductMenuTypes } from './productMenus.const';
 import { PRODUCTMENUDATA__ALL, PRODUCTMENUDATA__TITLE } from './productMenus.const';
 import './productsMenu.scss';
 
-export const ProductsMenu = ({ type }: { type: ProductMenuTypes }) => {
-  const data = PRODUCTMENUDATA__ALL[type];
+interface ProductsMenuProps {
+  type: ProductMenuTypes;
+  excludeProductId?: number; // ID продукта, который нужно исключить
+  isRelatedProducts?: boolean; // Флаг что это "Другие модели"
+}
+
+export const ProductsMenu = ({
+  type,
+  excludeProductId,
+  isRelatedProducts = false,
+}: ProductsMenuProps) => {
+  const allData = PRODUCTMENUDATA__ALL[type];
   const dataTitle = PRODUCTMENUDATA__TITLE[type];
+
+  const data = excludeProductId ? allData.filter((item) => item.id !== excludeProductId) : allData;
+  const title = isRelatedProducts && 'Другие модели';
 
   return (
     <section className="productsMenu" aria-labelledby="products-menu-title">
-      <Breadcrumbs />
+      {!isRelatedProducts && <Breadcrumbs />}
 
       <div className="productsMenu__container container">
-        <h1 id="products-menu-title" className="productsMenu__title">
-          {dataTitle.title}
-        </h1>
-        <p className="productsMenu__subtitle">{dataTitle.subtitle}</p>
+        {!isRelatedProducts ? (
+          <h1 id="products-menu-title" className="productsMenu__title">
+            {dataTitle.title}
+          </h1>
+        ) : (
+          <div className="products-menu-title">
+            <H level="2" variant="dark">
+              {title}
+            </H>
+          </div>
+        )}
+        {!isRelatedProducts && <p className="productsMenu__subtitle">{dataTitle.subtitle}</p>}
 
         <div className="productsMenu__item-header" aria-hidden="true">
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--one">
