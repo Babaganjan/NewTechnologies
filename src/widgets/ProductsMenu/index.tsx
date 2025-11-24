@@ -8,11 +8,12 @@ import { slugify } from '@/shared/utils/slugidy';
 import type { ProductMenuTypes } from './productMenus.const';
 import { PRODUCTMENUDATA__ALL, PRODUCTMENUDATA__TITLE } from './productMenus.const';
 import './productsMenu.scss';
+import { getTitleHeader } from './utils/titleHeader';
 
 interface ProductsMenuProps {
   type: ProductMenuTypes;
-  excludeProductId?: number; // ID продукта, который нужно исключить
-  isRelatedProducts?: boolean; // Флаг что это "Другие модели"
+  excludeProductId?: number;
+  isRelatedProducts?: boolean;
 }
 
 export const ProductsMenu = ({
@@ -25,6 +26,7 @@ export const ProductsMenu = ({
 
   const data = excludeProductId ? allData.filter((item) => item.id !== excludeProductId) : allData;
   const title = isRelatedProducts && 'Другие модели';
+  const titleHeader = getTitleHeader(type);
 
   return (
     <section className="productsMenu" aria-labelledby="products-menu-title">
@@ -52,7 +54,7 @@ export const ProductsMenu = ({
             модель
           </span>
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--three">
-            пропускная способность
+            {titleHeader}
           </span>
         </div>
 
