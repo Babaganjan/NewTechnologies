@@ -16,7 +16,7 @@
   }
 
   .specList-list {
-    li {
+    > div {
       display: grid;
       gap: 11px;
       .spec-item {
@@ -65,7 +65,7 @@
 
 @include respond-min(768px) {
   .specList-list {
-    li {
+    > div {
       .spec-item {
         display: grid;
         grid-template-columns: repeat(2, 1fr);

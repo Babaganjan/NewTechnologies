@@ -23,7 +23,8 @@ export const TabPanel = <T extends string>({
           role="tab"
           active={activeTab === tab}
           aria-selected={activeTab === tab}
-          aria-controls={`${tab}-panel`}
+          aria-controls={`panel-${tab}`}
+          tabIndex={activeTab === tab ? 0 : -1}
         >
           {tab}
         </Button>
