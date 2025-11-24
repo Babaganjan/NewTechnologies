@@ -9,6 +9,12 @@
     margin-left: 10px;
   }
 
+  .spec__button {
+    margin-top: fluid(40px, 100px);
+    display: flex;
+    justify-content: center;
+  }
+
   .specList-list {
     li {
       display: grid;
