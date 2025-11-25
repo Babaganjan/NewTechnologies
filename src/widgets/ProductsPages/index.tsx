@@ -14,12 +14,13 @@ export const ProductsPages = ({ product }: ProductsPagesProps) => {
     <>
       <GallerySpec productName={product.title} productModel={product.model} />
       <KeySpecs type="NT-NVR3808E1-J" />
-      <Spec model={product.model} />
+      <Spec model={product.model} variant="product" />
       <SizeSpec />
 
       {product.category === 'CAMERAS' || product.category === 'SWITCHES' ? (
         <Spec title="Спецификация" model={product.model} button />
       ) : null}
+
       <ProductsMenu
         type={product.category}
         excludeProductId={product.id}
