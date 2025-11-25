@@ -6,7 +6,6 @@ import {
   Advertising,
   FavoritesProject,
   FeedbackMenu,
-  Hero,
   ObjectLevel,
   Products,
   ProjectMenu,
@@ -32,7 +31,6 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
-      <Hero />
       <About />
       <Result />
       <ObjectLevel />
