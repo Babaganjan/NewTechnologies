@@ -21,10 +21,6 @@ $large-screen-bottom-padding: 190px;
     padding: 20px 10px;
     gap: 20px;
 
-    .social-link {
-      margin-top: auto;
-    }
-
     .contacts__list {
       display: grid;
       grid-template-columns: 1fr;
@@ -55,15 +51,37 @@ $large-screen-bottom-padding: 190px;
         @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none, -0.06em);
       }
 
+      .social-link {
+        margin-top: auto;
+        @include typography(
+          var(--text-white),
+          600,
+          fluid(18px, 28px, 360px, 768px),
+          1.2,
+          uppercase,
+          -0.06em
+        );
+      }
+
       address,
       p {
         margin-top: auto;
-        @include typography(var(--text-white), 600, fluid(18px, 24px), 1.2, uppercase, -0.06em);
+        @include typography(
+          var(--text-white),
+          600,
+          fluid(18px, 28px, 360px, 768px),
+          1.2,
+          uppercase,
+          -0.06em
+        );
         span {
           display: flex;
           flex-direction: column;
           gap: 5px;
         }
+      }
+      .contacts-title-mobile {
+        @include typography(var(--text-white), 600, fluid(22px, 36px, 360px, 768px), 1);
       }
     }
 
@@ -155,6 +173,9 @@ $large-screen-bottom-padding: 190px;
       }
 
       .contacts__item {
+        .contacts-title-mobile {
+          font-size: fluid(22px, 42px);
+        }
         @each $area in $contact-areas {
           &.#{$area} {
             grid-area: #{$area};

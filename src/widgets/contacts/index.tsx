@@ -24,7 +24,11 @@ export const Contacts = () => {
           <li className="contacts__item phone" key={1}>
             <p className="contacts-title-text">телефон</p>
             <p>
-              <Button href={`tel:${selectedContact?.phone}`} variant="link">
+              <Button
+                href={`tel:${selectedContact?.phone}`}
+                className="contacts-title-mobile"
+                variant="link"
+              >
                 {selectedContact?.phone}
               </Button>
             </p>
@@ -38,7 +42,7 @@ export const Contacts = () => {
 
           {/* Рабочие часы */}
           <li className="contacts__item work-time" key={3}>
-            <p className="contacts-title-text">рабочие часы</p>
+            <p className="contacts-title-text">часы работы</p>
             <p>{COMMON_CONTACT_INFO.workingHours}</p>
           </li>
 
