@@ -91,9 +91,10 @@
     }
 
     &__btn {
-      grid-column: 2/-1;
-      width: 100%;
-      padding-left: 10px;
+      grid-column: 2 / -1;
+      width: max-content;
+      padding-left: 0.625rem;
+      margin-right: auto;
     }
   }
 }

@@ -121,6 +121,11 @@ h6 {
   text-wrap: balance;
 }
 
+abbr {
+  text-decoration: none;
+  border-bottom: none;
+}
+
 /* 13. Создание корневого контекста stacking context */
 #root,
 #__next {
