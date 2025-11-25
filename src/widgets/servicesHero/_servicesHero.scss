@@ -5,20 +5,21 @@
   background-color: var(--bg-black);
   position: relative;
   overflow: hidden;
-  padding-top: 119px;
+  padding-top: 79px;
 
   &__container {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    height: 956px;
-    min-height: 956px;
+    height: 611px;
+    min-height: 611px;
     position: relative;
     z-index: 1;
     @include decor-pseudo-elements();
   }
 
   &__video-in-container {
+    padding-inline: fluid(10px, 50px);
     position: absolute;
     top: 0;
     left: 0;
@@ -26,16 +27,6 @@
     height: 100%;
     z-index: -1;
     overflow: hidden;
-
-    video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-
-      // Фиксы для производительности
-      transform: translateZ(0);
-      backface-visibility: hidden;
-    }
 
     &::after {
       content: '';
@@ -46,6 +37,27 @@
       height: 100%;
       background: url('/img/services-hero-poster.jpg') center/cover no-repeat;
       z-index: -1;
+    }
+  }
+
+  &__video {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    // Фиксы для производительности
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    &--mobile {
+      top: -59px;
+    }
+    &--tablet {
+      display: none;
+    }
+
+    &--desktop {
+      display: none;
     }
   }
 
@@ -77,14 +89,52 @@
       height: fluid(51px, 193px);
     }
   }
+}
 
-  // Адаптивность
-  @media (max-width: 768px) {
-    padding-top: 80px;
-
+// Адаптивность
+@include respond-min(768px) {
+  .services-hero {
+    padding-top: 116px;
+    padding-bottom: 150px;
     &__container {
-      height: 600px;
-      min-height: 600px;
+      height: 800px;
+      min-height: 800px;
+    }
+    &__video {
+      &--mobile {
+        display: none;
+      }
+      &--tablet {
+        display: block;
+        top: -96px;
+      }
+
+      &--desktop {
+        display: none;
+      }
+    }
+  }
+}
+
+@include respond-min(1280px) {
+  .services-hero {
+    padding-bottom: 190px;
+    &__container {
+      height: 956px;
+      min-height: 956px;
+    }
+    &__video {
+      &--mobile {
+        display: none;
+      }
+      &--tablet {
+        display: none;
+      }
+
+      &--desktop {
+        display: block;
+        top: -119px;
+      }
     }
   }
 }
