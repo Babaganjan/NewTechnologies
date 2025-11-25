@@ -7,24 +7,30 @@
   min-height: 322px;
   display: flex;
   align-items: center;
+
   &__container {
     padding-inline: 0.625rem;
   }
+
   &.with-trapezoids {
     @include trapezoid-decor($config: 'small');
   }
+
   &__title {
     position: relative;
     margin-bottom: 10px;
   }
+
   &__subtitle-wrapper {
     margin-bottom: 20px;
   }
+
   &__subtitle {
     &-line1 {
       display: block;
       color: var(--text-white);
     }
+
     &-line2 {
       display: block;
       color: var(--text-deep-gray);
@@ -42,24 +48,30 @@
       display: inline;
     }
   }
+
   img {
     width: fluid(100px, 150px);
     height: fluid(50px, 80px);
   }
 }
+
 .continuous-scroll-container {
   overflow: hidden;
   width: 100%;
   position: relative;
 }
+
 .continuous-scroll-wrapper {
   display: flex;
   animation: continuousScroll 20s linear infinite;
   width: fit-content;
+  will-change: transform;
+
   &:hover {
     animation-play-state: paused;
   }
 }
+
 .continuous-slide {
   position: relative;
   min-height: fluid(96px, 146px);
@@ -72,27 +84,32 @@
   flex-shrink: 0;
   margin-right: 10px;
   @include clip-shape();
-
   @include item-decor(var(--text-white), fluid(12px, 20px));
+
   svg {
     width: 100%;
     height: auto;
     max-width: fluid(144px, 251px);
     max-height: fluid(50px, 80px);
   }
+
   &:hover {
     background-color: var(--bg-white);
+
     svg path {
       fill: var(--vector-black);
     }
+
     &::before {
       background-color: var(--vector-deep-gray);
     }
+
     &::after {
       background-color: var(--vector-deep-gray);
     }
   }
 }
+
 @keyframes continuousScroll {
   0% {
     transform: translateX(0);
@@ -102,6 +119,7 @@
   }
 }
 
+// Медиа-запросы с оптимизацией
 @include respond-min(768px) {
   .advertising {
     &.with-trapezoids {
