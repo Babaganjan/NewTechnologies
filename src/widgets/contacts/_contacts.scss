@@ -45,6 +45,7 @@ $large-screen-bottom-padding: 190px;
       flex-direction: column;
       border-radius: 8px;
       position: relative;
+      @include clip-shape();
 
       @include item-decor(var(--vector-deep-gray));
 
@@ -63,18 +64,6 @@ $large-screen-bottom-padding: 190px;
           flex-direction: column;
           gap: 5px;
         }
-      }
-
-      .contacts__decoration {
-        @include decoration(
-          var(--text-black),
-          20px,
-          '/img/kvadrat.svg',
-          (
-            right: -1px,
-            top: -1px,
-          )
-        );
       }
     }
 
