@@ -1,14 +1,14 @@
 import type { SpecItem } from '../spec.types';
 
 export const SpecList = ({ data }: { data: SpecItem[] }) => (
-  <ul className="specList-list">
-    <li>
+  <dl className="specList-list">
+    <div>
       {data.map((item) => (
         <div className="spec-item" key={item.title}>
-          <h3 className="spec-item__title">{item.title}</h3>
-          <p className="spec-item__subtitle">{item.subtitle}</p>
+          <dt className="spec-item__title">{item.title}</dt>
+          <dd className="spec-item__subtitle">{item.subtitle}</dd>
         </div>
       ))}
-    </li>
-  </ul>
+    </div>
+  </dl>
 );

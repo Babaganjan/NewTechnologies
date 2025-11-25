@@ -14,6 +14,7 @@
   &__list {
     display: grid;
     gap: 8px;
+    margin-block: -35px;
 
     // Layout варианты для desktop
     &--layout1 {
@@ -148,6 +149,7 @@
 
     &-title {
       @include typography(var(--text-white), 500, fluid(18px, 36px, 360px, 768px), 1.15);
+      width: 90%;
     }
 
     &-description {

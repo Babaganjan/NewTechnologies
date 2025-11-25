@@ -6,7 +6,7 @@ export interface SpecItem {
   unit?: string; // Например "Мбит/сек", "Мас-адрес"
   description?: string;
   subtitle?: string;
-  type?: string;
+  type?: 'big' | 'subtitle' | 'singleValue' | 'titleEmpty' | 'titleNone';
 }
 
 export interface KeySpecsProps {

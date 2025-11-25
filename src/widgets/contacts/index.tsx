@@ -24,25 +24,26 @@ export const Contacts = () => {
           <li className="contacts__item phone" key={1}>
             <p className="contacts-title-text">телефон</p>
             <p>
-              <Button href={`tel:${selectedContact?.phone}`} variant="link">
+              <Button
+                href={`tel:${selectedContact?.phone}`}
+                className="contacts-title-mobile"
+                variant="link"
+              >
                 {selectedContact?.phone}
               </Button>
             </p>
-            <div className="contacts__decoration" aria-hidden="true"></div>
           </li>
 
           {/* Адрес */}
           <li className="contacts__item address" key={2}>
             <p className="contacts-title-text">адрес</p>
             <address>{selectedContact?.address || 'Астана, 14/1 умай ана'}</address>
-            <div className="contacts__decoration" aria-hidden="true"></div>
           </li>
 
           {/* Рабочие часы */}
           <li className="contacts__item work-time" key={3}>
-            <p className="contacts-title-text">рабочие часы</p>
+            <p className="contacts-title-text">часы работы</p>
             <p>{COMMON_CONTACT_INFO.workingHours}</p>
-            <div className="contacts__decoration" aria-hidden="true"></div>
           </li>
 
           {/* Email */}
@@ -56,7 +57,6 @@ export const Contacts = () => {
             >
               {COMMON_CONTACT_INFO.email}
             </Button>
-            <div className="contacts__decoration" aria-hidden="true"></div>
           </li>
 
           {/* Соцсети */}

@@ -9,8 +9,14 @@
     margin-left: 10px;
   }
 
+  .spec__button {
+    margin-top: fluid(40px, 100px);
+    display: flex;
+    justify-content: center;
+  }
+
   .specList-list {
-    li {
+    > div {
       display: grid;
       gap: 11px;
       .spec-item {
@@ -57,9 +63,152 @@
   }
 }
 
+.specImages__list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; // Отступ между строками (элементами списка)
+  padding: 0;
+}
+
+.specImages__item {
+  display: flex; // Выстраиваем картинку и текст в ряд
+  align-items: flex-start; // Выравнивание по верхнему краю
+  gap: 20px; // Отступ между картинкой и текстом
+}
+
+.specImages__imgWrap {
+  position: relative;
+  width: 35%; // Фиксируем ширину блока картинки (подберите под макет)
+  aspect-ratio: 4/3; // Пропорции картинки
+  flex-shrink: 0; // Запрещаем картинке сжиматься
+}
+
+.specImages__text {
+  @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+  border-bottom: 1px solid #dfdfdf;
+  padding-bottom: 8px;
+  width: 100%;
+}
+
+.assemblyScheme {
+  width: 100%;
+  margin: 0 auto;
+}
+
+// --- Блок с картинкой ---
+.assemblyScheme__visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16/9;
+  background-color: #f5f5f5;
+  margin-bottom: 10px;
+  @include item-decor();
+  @include clip-shape();
+}
+
+// --- Список ---
+.assemblyScheme__list {
+  display: flex;
+  flex-direction: column;
+}
+
+.assemblyScheme__item {
+  padding: 8px 0;
+  border-bottom: 1px solid #dfdfdf;
+}
+
+.assemblyScheme__btn {
+  margin: 0 auto;
+  display: flex;
+  margin-top: 100px;
+}
+
+.assemblyScheme__title {
+  @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+}
+
+.assemblyScheme__desc {
+  font-family: var(--second-family);
+  @include typography(#919191, 500, fluid(20px, 28px, 360px, 768px), 1.15, none);
+}
+
+.assemblyScheme {
+  // Увеличиваем максимальную ширину для планшета
+  max-width: 900px;
+  padding: 0 40px; // Добавляем горизонтальные отступы
+}
+
+// --- Блок с картинкой ---
+.assemblyScheme__visual {
+  // Сохраняем как один блок во всю ширину
+  aspect-ratio: 16/7; // Немного корректируем пропорции для планшета
+  margin-bottom: 30px;
+}
+
+// --- Список (две колонки) ---
+.assemblyScheme__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr; // Две колонки одинаковой ширины
+  gap: 0 40px; // Горизонтальный отступ между колонками
+  padding: 0; // Убираем padding, переносим на родительский assemblyScheme
+  position: relative; // Нужно для позиционирования вертикального разделителя
+}
+
+.assemblyScheme__item {
+  padding: 12px 0;
+}
+
 @include respond-min(768px) {
+  .assemblyScheme {
+    max-width: 900px;
+  }
+
+  .assemblyScheme__visual {
+    margin-bottom: 30px;
+  }
+
+  .assemblyScheme__list {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .assemblyScheme__item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    border-bottom: none;
+  }
+
+  .assemblyScheme__title,
+  .assemblyScheme__desc {
+    border-bottom: 1px solid #dfdfdf;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+  }
+
+  .specImages__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    padding: 0;
+  }
+
+  .specImages__item {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .specImages__imgWrap {
+    width: 100%;
+  }
+
+  .specImages__text {
+    height: 100%;
+    padding-bottom: 5px;
+  }
+
   .specList-list {
-    li {
+    > div {
       .spec-item {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -72,5 +221,103 @@
         }
       }
     }
+  }
+}
+
+.productSpecs {
+  width: 100%;
+  border-bottom: 1px solid #dfdfdf; // Тонкая линия в самом низу
+}
+
+.productSpecs__group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px; // Отступ от Модели до нижнего ряда
+}
+
+.productSpecs__row {
+  display: flex;
+  justify-content: flex-start;
+  gap: 30%; // Большой отступ между "Размерами" и "Юнитами"
+}
+
+.productSpecs__label {
+  font-family: var(--second-family);
+  @include typography(#4d4d4d, 500, fluid(14px, 22px, 360px, 768px), 1.1, none, -0.05em);
+}
+
+.productSpecs__value {
+  @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+}
+
+@include respond-min(1024px) {
+  .productSpecs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: end;
+
+    border-bottom: none;
+    gap: 40px;
+  }
+
+  .productSpecs__row {
+    display: contents;
+  }
+
+  .productSpecs__group {
+    border-bottom: 1px solid #dfdfdf;
+    padding-bottom: 16px;
+    width: 100%;
+    &:last-child {
+      justify-self: end;
+      align-items: flex-end;
+      text-align: right;
+    }
+  }
+}
+
+@include respond-min(1280px) {
+  .assemblyScheme {
+    display: grid;
+    // Левая колонка (60%) | Правая колонка (40%) - настройте пропорции
+    grid-template-columns: 1.2fr 1fr;
+    gap: 60px; // Большой отступ между картинкой и текстом
+    align-items: center; // Центрируем вертикально (или start)
+    max-width: max-content;
+  }
+
+  // 1. Левая часть (Картинка)
+  .assemblyScheme__visual {
+    width: 100%;
+    aspect-ratio: 4/3; // На десктопе картинка чуть выше
+    background-color: #f5f5f5;
+    margin-bottom: 0; // Убираем отступ снизу, так как мы сбоку
+    position: relative;
+  }
+
+  // 2. Правая часть (Контент)
+  .assemblyScheme__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    height: 100%;
+  }
+
+  // Список наследует стили Tablet (разорванные линии),
+  // здесь можно только подправить отступы
+  .assemblyScheme__item {
+    gap: 20px; // На десктопе можно чуть уменьшить дырку, если текст длинный
+    margin-bottom: 15px;
+  }
+
+  .assemblyScheme__btn {
+    margin-top: auto;
+    width: fit-content;
+  }
+}
+
+@include respond-min(1280px) {
+  .specImages__list {
+    grid-template-columns: repeat(6, 1fr);
   }
 }
