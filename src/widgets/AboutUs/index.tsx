@@ -6,10 +6,14 @@ import './AboutUs.scss';
 
 export const AboutUs = () => {
   return (
-    <section className="aboutUs">
+    <section
+      className="aboutUs"
+      aria-labelledby="aboutus-heading"
+      aria-describedby="aboutus-description"
+    >
       <div className="aboutUs-container container">
         <div className="aboutUs__title">
-          <H level="2" variant="dark">
+          <H level="2" variant="dark" id="aboutus-heading">
             О нас
           </H>
         </div>
@@ -19,24 +23,48 @@ export const AboutUs = () => {
               мы поставляем системы безопасности и контроля бизнеса по всему казахстану с 2013 года.
             </H>
           </div>
-          <div className="aboutUs__description">
+          <div className="aboutUs__description" id="aboutus-description">
             <p>
-              С 2022 года развиваем собственное оборудование под брендом NTOUCH. Мы выпускаем камеры
-              видеонаблюдения, турникеты, серверные шкафы, сетевые коммутаторы и видеорегистраторы.
+              С 2022 года развиваем собственное оборудование под брендом{' '}
+              <abbr
+                title="NTOUCH - собственный бренд оборудования систем безопасности"
+                aria-label="Эн Тач"
+              >
+                NTOUCH
+              </abbr>
+              . Мы выпускаем камеры видеонаблюдения, турникеты, серверные шкафы, сетевые коммутаторы
+              и видеорегистраторы.
               <span>
                 Наш собственный сервисный центр обеспечивает гарантийное и постгарантийное
-                обслуживаниев течение 12 месяцев.
+                обслуживание в течение 12 месяцев.
               </span>
             </p>
             <p>
-              Производственный цех площадью 1,300 м² позволяет поддерживать стабильные складские
-              запасы для оперативных поставок. Все изделия соответствуют требованиям СТ-KZ и
-              проходят многоступенчатый контроль качества перед отгрузкой заказчикам.
+              Производственный цех площадью 1,300{' '}
+              <abbr title="квадратных метров" aria-label="квадратных метров">
+                м²
+              </abbr>{' '}
+              позволяет поддерживать стабильные складские запасы для оперативных поставок. Все
+              изделия соответствуют требованиям{' '}
+              <abbr title="Стандарт Казахстана" aria-label="Стандарт Ка-Зэ">
+                СТ-KZ
+              </abbr>{' '}
+              и проходят многоступенчатый контроль качества перед отгрузкой заказчикам.
             </p>
           </div>
-          <div className="aboutUs__img-wrapper">
-            <Image src="/img/AboutUs.webp" alt="" width={340} height={190} loading="lazy" />
-          </div>
+          <figure
+            className="aboutUs__img-wrapper"
+            role="group"
+            aria-label="Производственное помещение"
+          >
+            <Image
+              src="/img/AboutUs.webp"
+              alt="Производственный цех площадью 1300 квадратных метров с оборудованием для сборки систем безопасности NTOUCH"
+              width={340}
+              height={190}
+              loading="lazy"
+            />
+          </figure>
         </div>
       </div>
     </section>

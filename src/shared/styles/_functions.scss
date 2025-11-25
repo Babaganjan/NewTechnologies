@@ -1,12 +1,51 @@
+// @use 'sass:math';
+
+// @function fluid($size-at-min-width, $size-at-max-width, $min-width: 360px, $max-width: 1860px) {
+//   $slope: math.div($size-at-max-width - $size-at-min-width, $max-width - $min-width);
+//   $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
+//   $return-value: clamp(
+//     #{$size-at-min-width},
+//     #{$y-axis-intersection} + #{$slope} * 100vw,
+//     #{$size-at-max-width}
+//   );
+//   @return $return-value;
+// }
+
 @use 'sass:math';
+@use 'sass:map';
+// Кэш для fluid расчетов - предотвращает повторные вычисления
+$_fluid-cache: () !default;
 
 @function fluid($size-at-min-width, $size-at-max-width, $min-width: 360px, $max-width: 1860px) {
-  $slope: math.div($size-at-max-width - $size-at-min-width, $max-width - $min-width);
-  $y-axis-intersection: -1 * $min-width * $slope + $size-at-min-width;
+  // Генерируем ключ кэша
+  $cache-key: '#{$size-at-min-width}-#{$size-at-max-width}-#{$min-width}-#{$max-width}';
+
+  // Проверяем кэш
+  @if map.has-key($_fluid-cache, $cache-key) {
+    @return map.get($_fluid-cache, $cache-key);
+  }
+
+  // Оптимизация: вычисляем разницы один раз
+  $size-diff: $size-at-max-width - $size-at-min-width;
+  $width-diff: $max-width - $min-width;
+
+  // Оптимизация: используем умножение вместо повторного math.div
+  $slope: math.div($size-diff, $width-diff);
+  $y-axis-intersection: $size-at-min-width - ($min-width * $slope);
+
   $return-value: clamp(
     #{$size-at-min-width},
-    #{$y-axis-intersection} + #{$slope} * 100vw,
+    #{$y-axis-intersection} + #{$slope * 100}vw,
     #{$size-at-max-width}
   );
+
+  // Сохраняем в кэш
+  $_fluid-cache: map.merge(
+    $_fluid-cache,
+    (
+      $cache-key: $return-value,
+    )
+  ) !global;
+
   @return $return-value;
 }
