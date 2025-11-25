@@ -17,11 +17,18 @@ export const FeedbackMenu = () => {
           <H level={'3'} variant="dark" id="feedback-menu-title" className="feedback-menu__title">
             Рассчитать решение под ваш объект?
           </H>
-          <Button type="button" variant="feedback" icon onClick={handleOpenConsultation}>
+          <Button
+            type="button"
+            variant="feedback"
+            icon
+            onClick={handleOpenConsultation}
+            aria-haspopup="dialog"
+            aria-expanded={isConsultationModalOpen}
+            aria-controls="consultation-modal"
+          >
             Подобрать решение
           </Button>
         </div>
-        <div className="feedback-menu__decoration" aria-hidden="true"></div>
       </section>
 
       {/* Модалка консультации */}
