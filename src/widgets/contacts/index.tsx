@@ -7,10 +7,10 @@ import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/cities.data
 import { ContactsHeading } from '@/shared/icons';
 import { Button, H } from '@/shared/ui';
 
+import { ContactItem } from './ContactItem';
 import { MAPS_EMBED_URL } from './contacts.const';
 
 import './_contacts.scss';
-import { ContactItem } from './ContactItem';
 
 export const Contacts = memo(() => {
   const { selectedCity } = useScrollContext();
