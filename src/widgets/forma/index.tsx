@@ -10,13 +10,19 @@ import { Button, Modal } from '@/shared/ui';
 
 import './_formConsultation.scss';
 
+// Убираем lastName из интерфейса, так как он не используется
 interface FormConsultData {
   firstName: string;
-  lastName: string;
-  email: string;
   phone: string;
   message: string;
   agree: boolean;
+}
+
+interface FormErrors {
+  firstName?: string;
+  phone?: string;
+  message?: string;
+  agree?: string;
 }
 
 interface FormConsultProps {
@@ -26,17 +32,111 @@ interface FormConsultProps {
 }
 
 export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultProps) => {
+  // Инициализируем состояние с явными значениями
   const [formData, setFormData] = useState<FormConsultData>({
     firstName: '',
-    lastName: '',
-    email: '',
     phone: '',
     message: '',
-    agree: false,
+    agree: false, // Явно устанавливаем false
   });
 
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [touched, setTouched] = useState<Record<string, boolean>>({});
+
+  // Валидация имени - должно содержать фамилию и имя (минимум 2 слова)
+  const validateName = (name: string): string | undefined => {
+    if (!name.trim()) {
+      return 'Поле обязательно для заполнения';
+    }
+
+    const words = name
+      .trim()
+      .split(/\s+/)
+      .filter((word) => word.length > 0);
+
+    if (words.length < 2) {
+      return 'Введите имя и фамилию';
+    }
+
+    if (words.some((word) => word.length < 2)) {
+      return 'Каждое слово должно содержать минимум 2 буквы';
+    }
+
+    // Проверка на кириллицу и латиницу
+    const validNameRegex = /^[a-zA-Zа-яА-ЯёЁ\s\-]+$/;
+
+    if (!validNameRegex.test(name)) {
+      return 'Имя может содержать только буквы и дефисы';
+    }
+
+    return undefined;
+  };
+
+  // Валидация телефона
+  const validatePhone = (phone: string): string | undefined => {
+    if (!phone.trim()) {
+      return 'Поле обязательно для заполнения';
+    }
+
+    // Базовая проверка номера телефона
+    const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
+
+    if (!phoneRegex.test(phone)) {
+      return 'Введите корректный номер телефона';
+    }
+
+    // Проверка на минимальное количество цифр
+    const digitsOnly = phone.replace(/\D/g, '');
+
+    if (digitsOnly.length < 10) {
+      return 'Номер слишком короткий';
+    }
+
+    return undefined;
+  };
+
+  // Валидация сообщения
+  const validateMessage = (message: string): string | undefined => {
+    if (!message.trim()) {
+      return 'Поле обязательно для заполнения';
+    }
+
+    if (message.trim().length < 10) {
+      return 'Сообщение должно содержать минимум 10 символов';
+    }
+
+    if (message.trim().length > 500) {
+      return 'Сообщение слишком длинное';
+    }
+
+    return undefined;
+  };
+
+  // Валидация согласия
+  const validateAgree = (agree: boolean): string | undefined => {
+    if (!agree) {
+      return 'Необходимо согласие на обработку данных';
+    }
+
+    return undefined;
+  };
+
+  // Общая валидация формы
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {
+      firstName: validateName(formData.firstName),
+      phone: validatePhone(formData.phone),
+      message: validateMessage(formData.message),
+      agree: validateAgree(formData.agree),
+    };
+
+    setErrors(newErrors);
+
+    return !Object.values(newErrors).some((error) => error !== undefined);
+  };
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, type } = e.target;
+    const { name, type, value } = e.target;
 
     if (type === 'checkbox') {
       const target = e.target as HTMLInputElement;
@@ -48,16 +148,48 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
     } else {
       setFormData((prev) => ({
         ...prev,
-        [name]: e.target.value,
+        [name]: value,
       }));
+    }
+
+    // Сбрасываем ошибку при вводе
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({ ...prev, [name]: undefined }));
+    }
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value, type } = e.target;
+
+    setTouched((prev) => ({ ...prev, [name]: true }));
+
+    // Валидация при потере фокуса
+    if (name === 'firstName') {
+      setErrors((prev) => ({ ...prev, firstName: validateName(value) }));
+    } else if (name === 'phone') {
+      setErrors((prev) => ({ ...prev, phone: validatePhone(value) }));
+    } else if (name === 'message') {
+      setErrors((prev) => ({ ...prev, message: validateMessage(value) }));
+    } else if (name === 'agree' && type === 'checkbox') {
+      const target = e.target as HTMLInputElement;
+
+      setErrors((prev) => ({ ...prev, agree: validateAgree(target.checked) }));
     }
   };
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    if (!formData.agree) {
-      alert('Пожалуйста, согласитесь на обработку персональных данных');
 
+    // Помечаем все поля как touched
+    setTouched({
+      firstName: true,
+      phone: true,
+      message: true,
+      agree: true,
+    });
+
+    // Валидация перед отправкой
+    if (!validateForm()) {
       return;
     }
 
@@ -67,13 +199,22 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
       await onSubmit(formData);
     }
 
+    // Сброс формы
     setFormData({
       firstName: '',
-      lastName: '',
-      email: '',
       phone: '',
       message: '',
       agree: false,
+    });
+    setErrors({});
+    setTouched({});
+  };
+
+  // Функция для получения класса ошибки
+  const getFieldClassName = (fieldName: keyof FormErrors): string => {
+    return clsx(fieldName === 'message' ? 'consult-form__textarea' : 'consult-form__input', {
+      'consult-form__input--error': touched[fieldName] && errors[fieldName],
+      'consult-form__input--valid': touched[fieldName] && !errors[fieldName],
     });
   };
 
@@ -115,10 +256,14 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                   type="text"
                   value={formData.firstName}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   required
-                  className="consult-form__input"
-                  placeholder="Имя"
+                  className={getFieldClassName('firstName')}
+                  placeholder="Имя и фамилия"
                 />
+                {touched.firstName && errors.firstName && (
+                  <span className="consult-form__error">{errors.firstName}</span>
+                )}
               </label>
             </div>
 
@@ -129,10 +274,14 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                   type="tel"
                   value={formData.phone}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   required
-                  className="consult-form__input"
+                  className={getFieldClassName('phone')}
                   placeholder="Телефон"
                 />
+                {touched.phone && errors.phone && (
+                  <span className="consult-form__error">{errors.phone}</span>
+                )}
               </label>
             </div>
 
@@ -142,11 +291,15 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                   name="message"
                   value={formData.message}
                   onChange={handleChange}
+                  onBlur={handleBlur}
                   rows={4}
                   required
-                  className="consult-form__textarea"
+                  className={getFieldClassName('message')}
                   placeholder="Сообщение"
                 />
+                {touched.message && errors.message && (
+                  <span className="consult-form__error">{errors.message}</span>
+                )}
               </label>
             </div>
           </div>
@@ -156,8 +309,9 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
               <input
                 type="checkbox"
                 name="agree"
-                checked={formData.agree}
+                checked={formData.agree} // Теперь всегда будет boolean, не undefined
                 onChange={handleChange}
+                onBlur={handleBlur}
                 required
                 className="consult-form__checkbox"
               />
@@ -173,13 +327,18 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                 </Link>
               </p>
             </label>
+            {touched.agree && errors.agree && (
+              <span className="consult-form__error consult-form__error--checkbox">
+                {errors.agree}
+              </span>
+            )}
           </div>
 
           <Button
             variant="feedback"
             type="submit"
             className="consult-form__submit"
-            disabled={!formData.agree}
+            disabled={!formData.agree || Object.values(errors).some((error) => error !== undefined)}
             icon
           >
             Подобрать решение
