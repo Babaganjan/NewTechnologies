@@ -1,62 +1,17 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-// // CSS переменные для тем
-// [data-theme='dark'] {
-//   --header-bg: var(--bg-black);
-//   --header-bg-transparent: transparent;
-//   --header-text: var(--text-white);
-//   --header-line: var(--vector-almost-black);
-// }
-
-// [data-theme='light'] {
-//   --header-bg: var(--bg-white);
-//   --header-bg-transparent: transparent;
-//   --header-text: var(--text-black);
-//   --header-line: var(--vector-light-gray);
-// }
 // CSS переменные для тем
 [data-theme='dark'] {
-  --header-bg: var(--bg-black); // Черный фон для скролла
-  --header-bg-transparent: transparent; // Прозрачный для верха
+  --header-bg: var(--bg-black);
   --header-text: var(--text-white);
   --header-line: var(--vector-almost-black);
 }
 
 [data-theme='light'] {
-  --header-bg: var(--bg-white); // Белый фон для скролла
-  --header-bg-transparent: transparent; // Прозрачный для верха
+  --header-bg: var(--bg-white);
   --header-text: var(--text-black);
   --header-line: var(--vector-light-gray);
-}
-
-// Основные стили хедера
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  transition:
-    background-color 0.3s ease,
-    backdrop-filter 0.3s ease;
-  background-color: var(--header-bg); // По умолчанию черный/белый фон
-  // backdrop-filter: blur(10px);
-
-  // Класс для прозрачного фона
-  &--transparent {
-    background-color: var(--header-bg-transparent) !important;
-    // backdrop-filter: none !important;
-  }
-
-  // Остальные ваши стили...
-  &__container {
-    display: flex;
-    min-height: 59px;
-    position: relative;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
-  }
 }
 
 // _header.scss
@@ -112,9 +67,22 @@
 }
 
 .header {
-  z-index: 1;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transition:
+    background-color 0.3s ease,
+    backdrop-filter 0.3s ease;
+  backdrop-filter: blur(10px);
   margin-bottom: -1px;
-  background-color: var(--header-bg);
+
+  // Добавляем стандартные фоны по умолчанию
+  background-color: rgba(255, 255, 255, 0.1);
+
+  &[data-theme='dark'] {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
 
   &__container {
     display: flex;
@@ -162,6 +130,29 @@
     height: auto;
     max-width: 90px;
     max-height: 48px;
+  }
+
+  // Добавляем стили для прозрачного фона
+  &.header--transparent {
+    background-color: transparent;
+    backdrop-filter: none;
+  }
+
+  // Добавляем стили для черного фона приватной страницы
+  &.header--privacy {
+    background-color: #000000;
+    backdrop-filter: none;
+
+    // При скролле возвращаем обычные стили
+    &.header-scrolled {
+      &[data-theme='dark'] {
+        background-color: rgba(0, 0, 0, 0.1);
+      }
+      &[data-theme='light'] {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
+      backdrop-filter: blur(10px);
+    }
   }
 }
 
@@ -290,13 +281,4 @@
       @include typography(var(--header-text), 500, 20px);
     }
   }
-}
-
-// _header.scss
-.header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 1000;
-  transition: background-color 0.3s ease;
 }

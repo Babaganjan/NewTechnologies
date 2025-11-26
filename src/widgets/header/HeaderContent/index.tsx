@@ -1,4 +1,3 @@
-// src / widgets / header / HeaderContent.tsx;
 'use client';
 import clsx from 'clsx';
 import { motion } from 'framer-motion';
@@ -26,36 +25,35 @@ export const HeaderContent = ({
   activeNavItem,
   onModalClose,
   isModalOpen = false,
-  transparentBg = false, // Добавляем пропс
+  transparentBg = false,
 }: HeaderContentProps) => {
   const { isHeaderVisible, isHeaderScrolled, selectedCity, setSelectedCity } = useScrollContext();
   const selectedContact = CITIES_CONTACTS.find((contact) => contact.city === selectedCity);
 
   const pathname = usePathname();
   const [isClient, setIsClient] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
     setIsClient(true);
+    setIsMounted(true);
   }, []);
 
-  const isPrivate = pathname === '/privacy';
+  const isPrivate = pathname === '/privacy/';
+
+  // Все динамические классы применяем только после монтирования
+  const computedClasses = clsx(
+    'header',
+    isMounted && isHeaderScrolled && 'header-scrolled',
+    isMounted && transparentBg && 'header--transparent',
+    isMounted && isPrivate && !isHeaderScrolled && !isModalOpen && 'header--privacy',
+    isMounted && (theme === 'dark' ? 'header--dark' : 'header--light')
+  );
 
   return (
     <motion.header
-      className={clsx(
-        'header',
-        isHeaderScrolled && 'header-scrolled',
-        transparentBg ? 'header--transparent' : isPrivate && 'header--privacy'
-      )}
-      data-theme={pathname === '/privacy' ? 'dark' : theme}
-      style={{
-        backgroundColor: transparentBg
-          ? 'rgba(0,0,0,0)'
-          : theme === 'dark'
-            ? 'rgba(0,0,0,0.2)'
-            : 'rgba(255,255,255,0.2)',
-        backdropFilter: transparentBg ? 'none' : 'blur(5px)',
-      }}
+      className={computedClasses}
+      data-theme={theme}
       initial={{ y: 0 }}
       animate={{
         y: isHeaderVisible ? 0 : -120,
@@ -67,7 +65,6 @@ export const HeaderContent = ({
       }}
     >
       <div className="container header__container">
-        {/* Остальной код без изменений */}
         <div className="header__wrapper">
           <nav className="header__nav nav hidden" aria-label="Основная навигация">
             <ul className="nav__list">
