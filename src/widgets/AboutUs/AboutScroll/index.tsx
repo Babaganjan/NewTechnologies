@@ -26,7 +26,7 @@ export const AboutScroll = () => {
       role="region"
       aria-roledescription="Интерактивная секция с параллакс-эффектом"
     >
-      <div className="sticky-container">
+      <div className="sticky-container container">
         <motion.div
           className="block top-block container"
           style={{

@@ -38,14 +38,24 @@ export const HeaderContent = ({
     setIsClient(true);
   }, []);
 
+  const isPrivate = pathname === '/privacy';
+
   return (
     <motion.header
       className={clsx(
         'header',
         isHeaderScrolled && 'header-scrolled',
-        transparentBg && 'header--transparent' // Добавляем класс
+        transparentBg ? 'header--transparent' : isPrivate && 'header--privacy'
       )}
-      data-theme={theme}
+      data-theme={pathname === '/privacy' ? 'dark' : theme}
+      style={{
+        backgroundColor: transparentBg
+          ? 'rgba(0,0,0,0)'
+          : theme === 'dark'
+            ? 'rgba(0,0,0,0.2)'
+            : 'rgba(255,255,255,0.2)',
+        backdropFilter: transparentBg ? 'none' : 'blur(5px)',
+      }}
       initial={{ y: 0 }}
       animate={{
         y: isHeaderVisible ? 0 : -120,

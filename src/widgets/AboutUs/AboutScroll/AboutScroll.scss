@@ -9,8 +9,9 @@
   background-color: var(--bg-black);
 }
 
-.sticky-container {
+.hero-scroll-section .sticky-container {
   position: sticky;
+  padding: 0;
   top: 0;
   width: 100%;
   height: 100vh;
