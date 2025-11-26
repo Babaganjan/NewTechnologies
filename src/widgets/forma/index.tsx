@@ -1,6 +1,5 @@
 'use client';
 import clsx from 'clsx';
-import Image from 'next/image';
 import Link from 'next/link';
 import type { FormEvent } from 'react';
 import React, { useState } from 'react';
@@ -228,7 +227,7 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
         >
           <CloseForm />
         </button>
-        <div className="wrapper_bg">
+        {/* <div className="wrapper_bg">
           <picture>
             <source
               media="(min-width: 1024px)"
@@ -242,7 +241,7 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
               height={278}
             />
           </picture>
-        </div>
+        </div> */}
         <form onSubmit={handleSubmit} className={clsx('consult-form', className)} noValidate>
           <h3 className="consult-form__title">
             Индивидуальная консультация&nbsp;по&nbsp;вашему вопросу
