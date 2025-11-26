@@ -12,14 +12,20 @@ export interface ProductData {
   category: ProductMenuTypes;
 }
 
+function typedEntries<T extends Record<string, unknown>>(obj: T) {
+  return Object.entries(obj) as {
+    [K in keyof T]: [K, T[K]];
+  }[keyof T][];
+}
+
 export const findProductBySlug = (slug: string): ProductData | null => {
-  for (const [category, products] of Object.entries(PRODUCTMENUDATA__ALL)) {
+  for (const [category, products] of typedEntries(PRODUCTMENUDATA__ALL)) {
     const product = products.find((item) => slugify(item.model) === slug);
 
     if (product) {
       return {
         ...product,
-        category: category as ProductMenuTypes,
+        category,
       };
     }
   }

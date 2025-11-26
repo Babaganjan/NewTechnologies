@@ -22,4 +22,27 @@ export interface ProductItem {
   units: string | number;
 }
 
+export type SpecVariation = 'text' | 'images' | 'schema' | 'product';
+
 export type TabLabel = string;
+export type TabLevelObject =
+  | {
+      label: TabLabel;
+      variant: 'text';
+      item: SpecItem[];
+    }
+  | {
+      label: TabLabel;
+      variant: 'images';
+      item: SpecItemImages[];
+    }
+  | {
+      label: TabLabel;
+      variant: 'schema';
+      item: AssemblyItem[];
+    }
+  | {
+      label: TabLabel;
+      variant: 'product';
+      item: ProductItem[];
+    };
