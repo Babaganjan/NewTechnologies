@@ -1,67 +1,73 @@
 'use client';
 
+import { memo, useMemo } from 'react';
+
 import { useScrollContext } from '@/context/ScrollProvider';
 import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/cities.data';
 import { ContactsHeading } from '@/shared/icons';
 import { Button, H } from '@/shared/ui';
 
+import { ContactItem } from './ContactItem';
 import { MAPS_EMBED_URL } from './contacts.const';
 
 import './_contacts.scss';
 
-export const Contacts = () => {
+export const Contacts = memo(() => {
   const { selectedCity } = useScrollContext();
-  const selectedContact = CITIES_CONTACTS.find((contact) => contact.city === selectedCity);
+
+  // Мемоизация выбранного контакта
+  const selectedContact = useMemo(
+    () => CITIES_CONTACTS.find((contact) => contact.city === selectedCity),
+    [selectedCity]
+  );
 
   return (
     <section className="contacts" aria-labelledby="contacts-title">
       <div className="contacts__container container">
-        <H level={'1'} id="contacts-title" className="contacts__title title">
+        <H level="1" id="contacts-title" className="contacts__title title">
           <ContactsHeading />
         </H>
-        <ul className="contacts__list">
+
+        <ul className="contacts__list" role="list">
           {/* Телефон */}
-          <li className="contacts__item phone" key={1}>
-            <p className="contacts-title-text">телефон</p>
+          <ContactItem className="phone" label="телефон">
             <p>
               <Button
                 href={`tel:${selectedContact?.phone}`}
                 className="contacts-title-mobile"
                 variant="link"
+                aria-label={`Позвонить по номеру ${selectedContact?.phone}`}
               >
                 {selectedContact?.phone}
               </Button>
             </p>
-          </li>
+          </ContactItem>
 
           {/* Адрес */}
-          <li className="contacts__item address" key={2}>
-            <p className="contacts-title-text">адрес</p>
+          <ContactItem className="address" label="адрес">
             <address>{selectedContact?.address || 'Астана, 14/1 умай ана'}</address>
-          </li>
+          </ContactItem>
 
           {/* Рабочие часы */}
-          <li className="contacts__item work-time" key={3}>
-            <p className="contacts-title-text">часы работы</p>
+          <ContactItem className="work-time" label="часы работы">
             <p>{COMMON_CONTACT_INFO.workingHours}</p>
-          </li>
+          </ContactItem>
 
           {/* Email */}
-          <li className="contacts__item mail" key={4}>
-            <p className="contacts-title-text">email</p>
+          <ContactItem className="mail" label="email">
             <Button
               href={`mailto:${COMMON_CONTACT_INFO.email}`}
               variant="social"
               className="social-link"
               rel="noopener noreferrer"
+              aria-label={`Написать на email ${COMMON_CONTACT_INFO.email}`}
             >
               {COMMON_CONTACT_INFO.email}
             </Button>
-          </li>
+          </ContactItem>
 
           {/* Соцсети */}
-          <li className="contacts__item social" key={5}>
-            <p className="contacts-title-text">соцсети</p>
+          <ContactItem className="social" label="соцсети">
             <p>
               <span className="social-links-wrapper">
                 {COMMON_CONTACT_INFO.socialNetworks.map((social) => (
@@ -72,6 +78,7 @@ export const Contacts = () => {
                     icon
                     className="social-link"
                     rel="noopener noreferrer"
+                    aria-label={`Перейти в ${social.title}`}
                   >
                     {social.title}
                   </Button>
@@ -79,8 +86,9 @@ export const Contacts = () => {
               </span>
             </p>
             <div className="contacts__decoration" aria-hidden="true"></div>
-          </li>
+          </ContactItem>
         </ul>
+
         <iframe
           className="contacts__map-iframe"
           src={MAPS_EMBED_URL}
@@ -89,8 +97,11 @@ export const Contacts = () => {
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
           title="Карта с расположением офиса"
+          aria-label="Интерактивная карта Google с местоположением офиса"
         />
       </div>
     </section>
   );
-};
+});
+
+Contacts.displayName = 'Contacts';

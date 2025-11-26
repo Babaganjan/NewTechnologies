@@ -22,21 +22,19 @@ import { SpecImages } from './specImages';
 import { SpecList } from './specList';
 import { TabPanel } from './tabPanel';
 
-export const Spec = ({
-  title = 'Общие характеристики',
-  model,
-  button = false,
-  variant = 'text',
-}: {
+interface SpecProps {
   title?: string;
   model: string;
   button?: boolean;
-  variant?: 'text' | 'images' | 'schema' | 'product';
-}) => {
+}
+
+export const Spec = ({ title = 'Общие характеристики', model, button = false }: SpecProps) => {
   const tab = title === 'Спецификация';
   const tabs = tab ? tabPanelsSpecification : tabPanelsGeneral;
   const data = tab ? DATALSPECIFICATION : DATAGENERAL;
   const [activeTab, setActiveTab] = useState<TabLabel>(tabs[0]);
+
+  const activeTabData = data.find((item) => item.label === activeTab);
 
   return (
     <section className="spec">
@@ -47,10 +45,10 @@ export const Spec = ({
           </H>
         </div>
         <TabPanel activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
-        {variant === 'text' && <SpecList data={data[activeTab] ?? []} />}
-        {variant === 'images' && <SpecImages data={Images} />}
-        {variant === 'schema' && <AssemblyScheme items={Scheme} />}
-        {variant === 'product' && <ProductSpecs items={ProductSpec} />}
+        {activeTabData?.variant === 'text' && <SpecList data={activeTabData?.item ?? []} />}
+        {activeTabData?.variant === 'images' && <SpecImages data={Images} />}
+        {activeTabData?.variant === 'schema' && <AssemblyScheme items={Scheme} />}
+        {activeTabData?.variant === 'product' && <ProductSpecs items={ProductSpec} />}
         {button && (
           <div className="spec__button">
             <Button variant="feedback" icon>

@@ -11,17 +11,17 @@ interface AssemblySchemeProps {
 export const AssemblyScheme = ({ items }: AssemblySchemeProps) => {
   return (
     <div className="assemblyScheme">
-      {/* ЛЕВАЯ КОЛОНКА: Схема */}
       <div className="assemblyScheme__visual">
         <Image
           src="/img/SpecImages/serverCabin.webp"
           alt="Схема сборки"
           fill
+          loading="eager"
+          priority
           style={{ objectFit: 'contain', padding: '20px' }}
         />
       </div>
 
-      {/* ПРАВАЯ КОЛОНКА: Список + Кнопка */}
       <div className="assemblyScheme__content">
         <ul className="assemblyScheme__list">
           {items.map((item) => (
