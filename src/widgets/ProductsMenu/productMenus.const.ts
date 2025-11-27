@@ -9,54 +9,6 @@ interface ProductMenuInterface {
 
 export const PRODUCTMENUDATA__NVR: ProductMenuInterface[] = [
   {
-    id: 1,
-    model: 'NT-NVR3708E1-P8',
-    feature: '40 Мбит/сек',
-    title: '8-ми канальный ip-регистратор',
-  },
-  {
-    id: 2,
-    model: 'NT-NVR3808E1-J',
-    feature: '80 Мбит/сек',
-    title: 'Сетевой регистратор с поддержкой 8 каналов, 1 hdd и разрешением до 4к',
-  },
-  {
-    id: 3,
-    model: 'NT-NVR3808E2-P8-J',
-    feature: '80 Мбит/сек',
-    title: '8-ми канальный ip-регистратор ',
-  },
-  {
-    id: 4,
-    model: 'NT-NVR3816E2-J',
-    feature: '160 Мбит/сек',
-    title: 'Сетевой видеорегистратор с 2 hdd и разрешением до 4к',
-  },
-  {
-    id: 5,
-    model: 'NT-NVR3816E2-P16-J',
-    feature: '10/100/1000 мбит/сек',
-    title: 'видеорегистратор 16ch, 2 hdd',
-  },
-  {
-    id: 6,
-    model: 'NT-NVR3932E2-P16',
-    feature: '80/160 Мбит/сек',
-    title: 'СЕТЕВОЙ РЕГИСТРАТОР 32ch, 2 hdd с 16 poe-портами с разрешением до 4к',
-  },
-  {
-    id: 7,
-    model: 'NT-NVR3932E4-JA',
-    feature: '320 Мбит/сек',
-    title: 'сетевой регистратор 32ch, 1.5u, 4 hdd,',
-  },
-  {
-    id: 8,
-    model: 'NT-NVR5008E1',
-    feature: '320 Мбит/сек',
-    title: '8-ми канальный регистратор с 1 hdd',
-  },
-  {
     id: 9,
     model: 'NT-NVR5016E1',
     feature: '320 Мбит/сек',
