@@ -3,6 +3,62 @@ import type { ProductMenuTypes } from '@/widgets/ProductsMenu/productMenus.const
 import type { SpecItem } from './keySpec.types';
 
 export const KEYSPECCAMERA = {
+  'nt-ipr5122-m': {
+    layout: 'layout1',
+    item: [
+      {
+        id: 1,
+        title: 'максимальное разрешение',
+        value: '1920×1080',
+        unit: '/ 30 fps',
+      },
+      {
+        id: 2,
+        title: 'Поддержка интеллектуального анализа',
+        type: 'subtitle',
+        description: 'камера подаст сигнал только при обнаружении человека в охраняемой зоне.',
+      },
+      {
+        id: 4,
+        title: 'ручной вариофокальный объектив',
+        description:
+          'Позволяет чётко снять и лицо человека, и номер машины на дальней парковке без потери качества. ',
+      },
+      {
+        id: 3,
+        title: '1/2.8 CMOS-сенсор с прогрессивной разверткой',
+        description:
+          'Даёт плавную картинку без размытия и смазанных кадров, особенно при движении объектов.',
+      },
+
+      {
+        id: 5,
+        title: 'dwdr, 3d dnr, blc, функция «анти-туман»',
+        description:
+          'Они решают 5 главных проблем ночной съёмки: фары, тени, шум, туман и засветы, давая вам идеальную картинку.',
+      },
+      {
+        id: 6,
+        title: 'ик-подсветка',
+        value: '> 40',
+        unit: '/ 30 fps',
+        type: 'big',
+        description: 'Обеспечит черно-белое изображение в высоком качестве даже в полной темноте.',
+      },
+      {
+        id: 7,
+        title: 'питание 12b dc / poe',
+        description: 'Позволяет включить камеру одним кабелем от роутера или от обычной розетки.',
+      },
+      {
+        id: 8,
+        title: 'Степень защиты IP67',
+        description:
+          'Позволяет не бояться дождя, снега и пыли — камера будет работать в любую погоду на улице.',
+      },
+    ],
+  },
+
   'nt-ipr5123-b': {
     layout: 'layout1',
     item: [
@@ -59,6 +115,7 @@ export const KEYSPECCAMERA = {
       },
     ],
   },
+
   'nt-ipr5142-b': {
     layout: 'layout1',
     item: [
@@ -633,6 +690,7 @@ export const KEYSPECCAMERA = {
     ],
   },
 };
+
 export const KEYSPECNVR = {
   'nt-nvr3708e1-p8': {
     layout: 'layout1',
@@ -1127,6 +1185,7 @@ export const KEYSPECNVR = {
     ],
   },
 };
+
 export const KEYSPECPG = {
   'nt-pg-f2r10': {
     layout: 'layout3',
@@ -1284,7 +1343,6 @@ export const KEYSPECPG = {
       },
     ],
   },
-
   'nt-pg-f2r18': {
     layout: 'layout3',
     item: [
@@ -1324,7 +1382,6 @@ export const KEYSPECPG = {
       },
     ],
   },
-
   'nt-pg-f2r26': {
     layout: 'layout3',
     item: [
@@ -1364,7 +1421,6 @@ export const KEYSPECPG = {
       },
     ],
   },
-
   'nt-pm-r10': {
     layout: 'layout3',
     item: [
@@ -1405,7 +1461,6 @@ export const KEYSPECPG = {
     ],
   },
 };
-
 export const KEYSPECTURNISTILES = {
   'nt-t01r': {
     layout: 'layout2',
@@ -1436,7 +1491,6 @@ export const KEYSPECTURNISTILES = {
       },
     ],
   },
-
   'nt-t05': {
     layout: 'layout4',
     item: [
@@ -1484,7 +1538,6 @@ export const KEYSPECTURNISTILES = {
       },
     ],
   },
-
   nt01: {
     layout: 'layout4',
     item: [
@@ -1578,7 +1631,6 @@ export const KEYSPECTURNISTILES = {
       },
     ],
   },
-
   nt04: {
     layout: 'layout1',
     item: [

@@ -1,8 +1,8 @@
 import type { ProductConfig } from '@/shared/types/products.types';
 
-export const TURNSTILES_NT_NTO2: ProductConfig = {
+export const TURNSTILES_NT_NT02: ProductConfig = {
   id: 4,
-  model: 'nto2',
+  model: 'nt02',
   name: 'Тумбовый турникет',
   category: 'TURNSTILES',
   feature: '35-50 чел/мин',
