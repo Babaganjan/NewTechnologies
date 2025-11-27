@@ -1,14 +1,14 @@
 import type { ProductConfig } from '@/shared/types/products.types';
 
 export const SWITCH_NT_PM_R10: ProductConfig = {
-  id: 8,
+  id: 7,
   model: 'nt-pm-r10',
   name: '8-ми портовой коммутатор poe + 2 uplink ports',
   category: 'SWITCHES',
   feature: '2.8 гбит/сек',
 
   gallery: {
-    images: ['/img/switch-nt-pm-r10-image1.png', '/img/switch-nt-pm-r10-image2.png'],
+    images: ['/img/switches/nt-pm-r10/gallery/nt-pm-r10.webp'],
   },
 
   keySpecs: {
@@ -51,189 +51,56 @@ export const SWITCH_NT_PM_R10: ProductConfig = {
     ],
   },
 
-  dimensions: {
-    images: ['/img/switch-nt-pm-r10-dimensions.jpg'],
-  },
-
   specifications: {
     general: {
-      tabs: ['Порты', 'Производительность', 'Стандарты'],
+      tabs: ['Артикул'],
       data: [
         {
-          label: 'Порты',
+          label: 'Артикул',
           variant: 'text',
           item: [
             {
-              title: 'PoE порты',
-              subtitle: '8×10/100/1000Base-T портов PoE',
+              title: 'Порты',
+              subtitle:
+                'Коммутатор может запомнить и идентифицировать до 2000 подключенных устройств для эффективной работы сети.',
             },
             {
-              title: 'Uplink порты',
-              subtitle: '2×10/100/1000Base-T портов',
-            },
-          ],
-        },
-        {
-          label: 'Производительность',
-          variant: 'text',
-          item: [
-            {
-              title: 'Пропускная способность',
-              subtitle: '2.8 Гбит/с',
+              title: 'Производительность коммутации',
+              subtitle:
+                'Пропускная способность объединительной панели: 2.8G Таблица MAC-адресов: 2K Поддержка хранения и переадресации',
             },
             {
-              title: 'Скорость пересылки пакетов',
-              subtitle: '2 Гбит/с',
+              title: 'Cтандартный протокол',
+              subtitle:
+                'IEEE802. 3, IEEE802.3i 10Base-T, IEEE802.3u 100Base-T, IEEE802.3x Flow Control, IEEE802.1Q VLAN, IEEE802.3af PoE, IEEE802.3AT PoE+',
             },
             {
-              title: 'Таблица MAC-адресов',
-              subtitle: '2K записей',
+              title: 'Среда и расстояние передачи данных',
+              subtitle:
+                'Кабель категории 5: 100 метров; Многомодовое волокно: 550 метров; Одномодовое волокно: 20/40/80/120 километров',
             },
             {
-              title: 'Метод коммутации',
-              subtitle: 'Store-and-Forward',
-            },
-          ],
-        },
-        {
-          label: 'Стандарты',
-          variant: 'text',
-          item: [
-            {
-              title: 'Базовые стандарты',
-              subtitle: 'IEEE802.3, IEEE802.3i 10Base-T, IEEE802.3u 100Base-T',
+              title: 'РоЕ',
+              subtitle:
+                'Портов PoE: 8 Напряжение постоянного тока 48 В, максимальная мощность одного порта 30 Вт Пара источников питания: 1/2 (+), 3/6 (-)',
             },
             {
-              title: 'Управление потоком',
-              subtitle: 'IEEE802.3x Flow Control',
+              title: 'Источник питания',
+              subtitle: 'Вход 100 ~ 240 В переменного тока частотой 50/60 Гц Общая мощность 120 Вт',
             },
             {
-              title: 'VLAN',
-              subtitle: 'IEEE802.1Q VLAN',
+              title: 'Индикаторные лампы',
+              subtitle:
+                'P: Индикатор питания, S: Индикатор режима передачи на сверхдальние расстояния, V: Индикатор режима VLAN; POE: Индикатор питания порта 1~8, LINK: Индикатор подключения электрического порта 1~10',
             },
             {
-              title: 'PoE стандарты',
-              subtitle: 'IEEE802.3af PoE, IEEE802.3AT PoE+',
-            },
-          ],
-        },
-      ],
-    },
-    technical: {
-      tabs: [
-        'PoE',
-        'Питание',
-        'Передача данных',
-        'Индикаторы',
-        'Эксплуатация',
-        'Физические параметры',
-      ],
-      data: [
-        {
-          label: 'PoE',
-          variant: 'text',
-          item: [
-            {
-              title: 'PoE порты',
-              subtitle: '8 портов',
+              title: 'Условия эксплуатации',
+              subtitle:
+                'Рабочая температура: -10 ~ +55℃ Температура хранения: -40 ~ +70℃ Рабочая влажность: 10~90% без образования конденсата Влажность при хранении: 5~90% без образования конденсата',
             },
             {
-              title: 'Напряжение PoE',
-              subtitle: '48 В DC',
-            },
-            {
-              title: 'Мощность на порт',
-              subtitle: 'до 30 Вт',
-            },
-            {
-              title: 'Полярность питания',
-              subtitle: '1/2 (+), 3/6 (-)',
-            },
-          ],
-        },
-        {
-          label: 'Питание',
-          variant: 'text',
-          item: [
-            {
-              title: 'Входное напряжение',
-              subtitle: '100-240 В AC, 50/60 Гц',
-            },
-            {
-              title: 'Общая мощность',
-              subtitle: '120 Вт',
-            },
-          ],
-        },
-        {
-          label: 'Передача данных',
-          variant: 'text',
-          item: [
-            {
-              title: 'Кабель категории 5',
-              subtitle: 'Обычный режим: 100 м; Сверхдальний режим: 250 м',
-            },
-          ],
-        },
-        {
-          label: 'Индикаторы',
-          variant: 'text',
-          item: [
-            {
-              title: 'PWR',
-              subtitle: 'Индикатор питания',
-            },
-            {
-              title: 'S',
-              subtitle: 'Индикатор сверхдальнего режима передачи',
-            },
-            {
-              title: 'V',
-              subtitle: 'Индикатор режима VLAN',
-            },
-            {
-              title: 'PoE 1-8',
-              subtitle: 'Индикатор питания портов PoE',
-            },
-            {
-              title: 'LINK 1-10',
-              subtitle: 'Индикатор подключения электрических портов',
-            },
-          ],
-        },
-        {
-          label: 'Эксплуатация',
-          variant: 'text',
-          item: [
-            {
-              title: 'Рабочая температура',
-              subtitle: '-10 ~ +55°C',
-            },
-            {
-              title: 'Температура хранения',
-              subtitle: '-40 ~ +70°C',
-            },
-            {
-              title: 'Рабочая влажность',
-              subtitle: '10~90% без конденсата',
-            },
-            {
-              title: 'Влажность хранения',
-              subtitle: '5~90% без конденсата',
-            },
-          ],
-        },
-        {
-          label: 'Физические параметры',
-          variant: 'text',
-          item: [
-            {
-              title: 'Размеры (Ш×Г×В)',
-              subtitle: '200×120×44 мм',
-            },
-            {
-              title: 'Вес',
-              subtitle: '1 кг',
+              title: 'Физические свойства',
+              subtitle: 'Размеры (ШхГхВ): 200×120×44 мм Вес: 1 кг',
             },
           ],
         },

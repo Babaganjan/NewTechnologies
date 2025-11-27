@@ -18,8 +18,6 @@ export const Header = () => {
   // Используем useScroll из framer-motion - работает на всех страницах
   const { scrollY } = useScroll();
 
-  console.log(scrollY);
-
   useMotionValueEvent(scrollY, 'change', (latest) => {
     // Если скролл меньше 50px - считаем что вверху
     setIsTopInView(latest < 50);
