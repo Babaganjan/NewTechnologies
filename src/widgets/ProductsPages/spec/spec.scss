@@ -44,19 +44,17 @@
     width: auto;
     margin-right: -20px;
     padding-right: 20px;
+    gap: 2px;
+
     > button {
-      flex: 0 auto;
-      padding-inline: 35px;
       white-space: nowrap;
-      width: 40%;
-
-      @include respond-min(768px) {
-        width: 50%;
-
-        padding-inline: 100px;
-      }
+      width: 100%;
+      padding-inline: 10px;
 
       @include respond-min(1024px) {
+        &:not(:only-child) {
+          width: 100%;
+        }
         width: 30%;
       }
     }
