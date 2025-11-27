@@ -26,18 +26,14 @@ export const ProductsPages = ({ productModel }: ProductsPagesProps) => {
 
       <KeySpecs layout={product.keySpecs.layout} items={product.keySpecs.items} />
 
-      {product.dimensions && <SizeSpec images={product.dimensions.images} />}
-
       {product.specifications.general && (
         <Spec title="Общие характеристики" section={product.specifications.general} />
       )}
 
+      {product.dimensions && <SizeSpec images={product.dimensions.images} />}
+
       {product.specifications.technical && (
-        <Spec
-          title="Спецификация"
-          section={product.specifications.technical}
-          button={product.category === 'CAMERAS' || product.category === 'SWITCHES'}
-        />
+        <Spec title="Спецификация" section={product.specifications.technical} button />
       )}
 
       <ProductsMenu type={product.category} excludeProductId={product.id} isRelatedProducts />

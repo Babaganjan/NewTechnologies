@@ -2,6 +2,8 @@ import Image from 'next/image';
 
 import { H } from '@/shared/ui';
 
+import './sizeSpec.scss';
+
 interface SizeSpecProps {
   images: string[];
 }

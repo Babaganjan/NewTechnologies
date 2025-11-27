@@ -5,6 +5,8 @@ import { Breadcrumbs } from '@/shared/ui';
 import { getModifierClass } from './helpers/getModifierClass';
 import { getSizes } from './helpers/getSizes';
 
+import './gallerySpec.scss';
+
 interface GallerySpecProps {
   productName: string;
   productModel?: string;
