@@ -6,23 +6,23 @@ interface FooterItem {
 // Основная навигация
 export const FOOTER_NAV_ITEMS: FooterItem[] = [
   {
-    href: '/service',
+    href: '/services/',
     title: 'Сервис',
   },
   {
-    href: '/production',
+    href: '/products/',
     title: 'Производство',
   },
   {
-    href: '/solution',
+    href: '/solution/',
     title: 'IT-решения',
   },
   {
-    href: '/about',
+    href: '/about/',
     title: 'О нас',
   },
   {
-    href: '/contacts',
+    href: '/contacts/',
     title: 'Контакты',
   },
 ] as const;
@@ -30,15 +30,15 @@ export const FOOTER_NAV_ITEMS: FooterItem[] = [
 // Секция "Деятельность"
 export const FOOTER_ACTIVITY_ITEMS: FooterItem[] = [
   {
-    href: '/service',
+    href: '/services/',
     title: 'Сервис',
   },
   {
-    href: '/production',
+    href: '/products/',
     title: 'Производство',
   },
   {
-    href: '/solution',
+    href: '/solution/',
     title: 'IT-решения',
   },
 ] as const;
@@ -46,11 +46,11 @@ export const FOOTER_ACTIVITY_ITEMS: FooterItem[] = [
 // Секция "О компании"
 export const FOOTER_COMPANY_ITEMS: FooterItem[] = [
   {
-    href: '/about',
+    href: '/about/',
     title: 'О нас',
   },
   {
-    href: '/contacts',
+    href: '/contacts/',
     title: 'Контакты',
   },
 ] as const;
