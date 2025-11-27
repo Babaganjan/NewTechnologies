@@ -1,14 +1,17 @@
 import type { ProductConfig } from '@/shared/types/products.types';
 
 export const TURNSTILES_NT_NT02: ProductConfig = {
-  id: 4,
+  id: 2,
   model: 'nt02',
   name: 'Тумбовый турникет',
   category: 'TURNSTILES',
   feature: '35-50 чел/мин',
 
   gallery: {
-    images: ['/img/turnstile-nt-nto2-image1.png', '/img/turnstile-nt-nto2-image2.png'],
+    images: [
+      '/img/product/turnstiles/nt02/gallery/0.webp',
+      '/img/product/turnstiles/nt02/gallery/1.webp',
+    ],
   },
 
   keySpecs: {
@@ -60,7 +63,10 @@ export const TURNSTILES_NT_NT02: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/turnstile-nt-nto2-dimensions.jpg'],
+    images: [
+      '/img/product/turnstiles/nt02/size/1.webp',
+      '/img/product/turnstiles/nt02/size/2.webp',
+    ],
   },
 
   specifications: {

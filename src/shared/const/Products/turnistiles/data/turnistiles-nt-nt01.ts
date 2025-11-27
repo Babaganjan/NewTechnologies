@@ -1,14 +1,17 @@
 import type { ProductConfig } from '@/shared/types/products.types';
 
 export const TURNSTILES_NT_NT01: ProductConfig = {
-  id: 3,
+  id: 1,
   model: 'nt01',
   name: 'Турникет-трипод',
   category: 'TURNSTILES',
   feature: '30 чел/мин',
 
   gallery: {
-    images: ['/img/turnstile-nt-nto1-image1.png', '/img/turnstile-nt-nto1-image2.png'],
+    images: [
+      '/img/product/turnstiles/nt01/gallery/0.webp',
+      '/img/product/turnstiles/nt01/gallery/1.webp',
+    ],
   },
 
   keySpecs: {
@@ -59,7 +62,10 @@ export const TURNSTILES_NT_NT01: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/turnstile-nt-nto1-dimensions.jpg'],
+    images: [
+      '/img/product/turnstiles/nt01/size/1.webp',
+      '/img/product/turnstiles/nt01/size/2.webp',
+    ],
   },
 
   specifications: {

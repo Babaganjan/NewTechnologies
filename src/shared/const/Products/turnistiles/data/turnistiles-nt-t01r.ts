@@ -1,14 +1,17 @@
 import type { ProductConfig } from '@/shared/types/products.types';
 
 export const TURNSTILES_NT_T01R: ProductConfig = {
-  id: 1,
+  id: 4,
   model: 'nt-t01r',
   name: 'Турникет полноростовой',
   category: 'TURNSTILES',
   feature: '15-20 чел/мин',
 
   gallery: {
-    images: ['/img/turnstile-nt-t01r-image1.png', '/img/turnstile-nt-t01r-image2.png'],
+    images: [
+      '/img/product/turnstiles/nt-t01r/gallery/0.webp',
+      '/img/product/turnstiles/nt-t01r/gallery/1.webp',
+    ],
   },
 
   keySpecs: {
@@ -42,7 +45,10 @@ export const TURNSTILES_NT_T01R: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/turnstile-nt-t01r-dimensions.jpg'],
+    images: [
+      '/img/product/turnstiles/nt-t01r/size/1.webp',
+      '/img/product/turnstiles/nt-t01r/size/2.webp',
+    ],
   },
 
   specifications: {
