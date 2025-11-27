@@ -7,60 +7,6 @@ interface ProductMenuInterface {
   title: string;
 }
 
-export const PRODUCTMENUDATA__NVR: ProductMenuInterface[] = [
-  {
-    id: 9,
-    model: 'NT-NVR5016E1',
-    feature: '320 Мбит/сек',
-    title: '16-ти канальный Ip-видеорегистратор с 1 hdd',
-  },
-];
-
-export const PRODUCTMENUDATA__SWITCHES: ProductMenuInterface[] = [
-  {
-    id: 1,
-    model: 'NT-PG-F2R10',
-    feature: '20 гбит/сек',
-    title: '10-ти портовой коммутатор + 2 sfp ports gigabyte',
-  },
-  {
-    id: 2,
-    model: 'NT-PAG-F1R18',
-    feature: '16 Мбит/сек',
-    title: '18-ти портовой коммутатор + 1 sfp port',
-  },
-  {
-    id: 3,
-    model: 'NT-PAG-F1R26',
-    feature: '20 гбит/сек',
-    title: '26-ти портовой коммутатор + 1 sfp port',
-  },
-  {
-    id: 4,
-    model: 'NT-PG-FR10',
-    feature: '28 гбит/сек',
-    title: '8-ми портовой коммутатор poe + 2 uplink ports gigabyte',
-  },
-  {
-    id: 5,
-    model: 'NT-PG-F2R18',
-    feature: '44 гбит/сек',
-    title: '16-ти портовой коммутатор + 2 uplink ports + 2 sfp ports ',
-  },
-  {
-    id: 6,
-    model: 'NT-PG-F2R26',
-    feature: '56 Гбит/сек',
-    title: '24-х портовой коммутатор + 2 uplink ports + 2 sfp ports ',
-  },
-  {
-    id: 7,
-    model: 'NT-PM-R10',
-    feature: '2.8 гбит/сек',
-    title: '8-ми портовой коммутатор poe + 2 uplink ports ',
-  },
-];
-
 export const PRODUCTMENUDATA__TURNISTILES: ProductMenuInterface[] = [
   {
     id: 1,
@@ -108,8 +54,6 @@ export const PRODUCTMENUDATA__SERVERCABINETS: ProductMenuInterface[] = [
     title: 'НАСТЕННЫЙ СЕРВЕРНЫЙ ШКАФ 19 ДЮЙМОВ ',
   },
 ];
-
-export const PRODUCTMENUDATA__CAMERAS: ProductMenuInterface[] = [];
 
 export const PRODUCTMENUDATA__ALL: Record<ProductMenuTypes, ProductMenuInterface[]> = {
   CAMERAS: PRODUCTMENUDATA__CAMERAS,

@@ -1284,6 +1284,7 @@ export const KEYSPECPG = {
       },
     ],
   },
+
   'nt-pg-f2r18': {
     layout: 'layout3',
     item: [
@@ -1323,6 +1324,7 @@ export const KEYSPECPG = {
       },
     ],
   },
+
   'nt-pg-f2r26': {
     layout: 'layout3',
     item: [
@@ -1362,6 +1364,7 @@ export const KEYSPECPG = {
       },
     ],
   },
+
   'nt-pm-r10': {
     layout: 'layout3',
     item: [
