@@ -2,13 +2,13 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
+import { PRODUCTS_MAP } from '@/shared/config/products.config';
 import { ArrowBreadcrumbs } from '@/shared/icons';
 
 import { BREADCRUMBSWORDS } from './Breadcrumbs.const';
 import styles from './Breadcrumbs.module.scss';
 import type { BreadcrumbWord } from './breadcrumbs.types';
 
-import { PRODUCTS_MAP } from '@/shared/config/products.config';
 
 interface BreadcrumbsProps {
   productName?: string;
