@@ -8,7 +8,11 @@ export const NVR_NT_NVR3932E2_P16: ProductConfig = {
   feature: '80/160 Мбит/сек',
 
   gallery: {
-    images: ['/img/nvr3932-image1.png', '/img/nvr3932-image2.png', '/img/nvr3932-image3.png'],
+    images: [
+      '/img/product/nvr/nt-nvr3932e2-p16/gallery/0.webp',
+      '/img/product/nvr/nt-nvr3932e2-p16/gallery/1.webp',
+      '/img/product/nvr/nt-nvr3932e2-p16/gallery/2.webp',
+    ],
   },
 
   keySpecs: {
@@ -63,7 +67,10 @@ export const NVR_NT_NVR3932E2_P16: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/nvr3932-dimensions.jpg'],
+    images: [
+      '/img/product/nvr/nt-nvr3932e2-p16/size/1.webp',
+      '/img/product/nvr/nt-nvr3932e2-p16/size/2.webp',
+    ],
   },
 
   specifications: {

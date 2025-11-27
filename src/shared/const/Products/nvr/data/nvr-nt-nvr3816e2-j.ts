@@ -8,7 +8,11 @@ export const NVR_NT_NVR3816E2_J: ProductConfig = {
   feature: '160 мбит/сек',
 
   gallery: {
-    images: ['/img/nvr3816-image1.png', '/img/nvr3816-image2.png', '/img/nvr3816-image3.png'],
+    images: [
+      '/img/product/nvr/nt-nvr3816e2-j/gallery/0.webp',
+      '/img/product/nvr/nt-nvr3816e2-j/gallery/1.webp',
+      '/img/product/nvr/nt-nvr3816e2-j/gallery/2.webp',
+    ],
   },
 
   keySpecs: {
@@ -69,7 +73,10 @@ export const NVR_NT_NVR3816E2_J: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/nvr3816-dimensions.jpg'],
+    images: [
+      '/img/product/nvr/nt-nvr3816e2-j/size/1.webp',
+      '/img/product/nvr/nt-nvr3816e2-j/size/2.webp',
+    ],
   },
 
   specifications: {

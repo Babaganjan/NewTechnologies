@@ -8,7 +8,11 @@ export const NVR_NT_NVR5008E1: ProductConfig = {
   feature: '320 Мбит/сек',
 
   gallery: {
-    images: ['/img/nvr5008-image1.png', '/img/nvr5008-image2.png', '/img/nvr5008-image3.png'],
+    images: [
+      '/img/product/nvr/nt-nvr5008e1/gallery/0.webp',
+      '/img/product/nvr/nt-nvr5008e1/gallery/1.webp',
+      '/img/product/nvr/nt-nvr5008e1/gallery/2.webp',
+    ],
   },
 
   keySpecs: {
@@ -70,7 +74,10 @@ export const NVR_NT_NVR5008E1: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/nvr5008-dimensions.jpg'],
+    images: [
+      '/img/product/nvr/nt-nvr5008e1/size/1.webp',
+      '/img/product/nvr/nt-nvr5008e1/size/2.webp',
+    ],
   },
 
   specifications: {
