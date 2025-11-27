@@ -3,12 +3,13 @@
 
 .consultation-modal {
   width: 100%;
-  height: 100vh;
+  height: auto;
   display: grid;
   gap: 40px;
   grid-template-columns: 1fr;
   padding-bottom: 94px;
   margin: 0 auto;
+  position: relative;
 
   &::after,
   &::before {
@@ -63,7 +64,7 @@
     padding-inline: 10px;
 
     &__input--error::placeholder {
-      @include typography(#ff4444, 500, 12px, 1.2);
+      @include typography(#ff4444, 500, 14px, 1.1);
     }
 
     &__field {
