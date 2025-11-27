@@ -1,18 +1,24 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { getProductsByCategory } from '@/shared/const/Products/utils/getProductsByCategory';
 import type { AliasPagesProps } from '@/shared/types/productsPages.types';
-import { findProductBySlug } from '@/shared/utils/findProduct';
 import { slugify } from '@/shared/utils/slugify';
 import { ProductsPages } from '@/widgets';
-import { PRODUCTMENUDATA__CAMERAS } from '@/widgets/ProductsMenu/productMenus.const';
 
+import { findProductBySlug } from '@/shared/utils/findProduct';
+
+// 1. Генерация статических параметров для КАМЕР
 export async function generateStaticParams() {
-  return PRODUCTMENUDATA__CAMERAS.map((item) => ({
+  // Получаем только продукты категории CAMERAS из нового каталога
+  const cameras = getProductsByCategory('CAMERAS');
+
+  return cameras.map((item) => ({
     alias: slugify(item.model),
   }));
 }
 
+// 2. Генерация метаданных
 export async function generateMetadata({ params }: AliasPagesProps): Promise<Metadata> {
   const { alias } = await params;
   const product = findProductBySlug(alias);
@@ -23,20 +29,25 @@ export async function generateMetadata({ params }: AliasPagesProps): Promise<Met
     };
   }
 
+  // Обратите внимание: в ProductConfig поле называется 'name', а не 'title'
   return {
-    title: `${product.title} ${product.model} | NTOUCH`,
-    description: `${product.title} - ${product.feature}`,
+    title: `${product.name} ${product.model} | NTOUCH`,
+    description: `${product.name} - ${product.feature}`,
   };
 }
 
+// 3. Компонент страницы
 export default async function CamerasPages({ params }: AliasPagesProps) {
   const { alias } = await params;
 
   const product = findProductBySlug(alias);
 
-  if (!product) {
+  console.log(product?.model);
+
+  // Дополнительная проверка: убедимся, что это именно камера (опционально, но полезно)
+  if (!product || product.category !== 'CAMERAS') {
     notFound();
   }
 
-  return <ProductsPages product={product} />;
+  return <ProductsPages productModel={product.model} />;
 }

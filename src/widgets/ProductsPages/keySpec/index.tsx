@@ -1,6 +1,8 @@
 import type { KeySpecItem, KeySpecLayout } from '@/shared/types/products.types';
 import { H } from '@/shared/ui';
 
+import './keySpec.scss';
+
 import { SpecItem } from './SpecItem';
 
 interface KeySpecsProps {
