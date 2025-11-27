@@ -1,5 +1,6 @@
 'use client';
 import clsx from 'clsx';
+import Image from 'next/image';
 import Link from 'next/link';
 import type { FormEvent } from 'react';
 import React, { useState } from 'react';
@@ -36,7 +37,7 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
     firstName: '',
     phone: '',
     message: '',
-    agree: false, // Явно устанавливаем false
+    agree: false,
   });
 
   const [errors, setErrors] = useState<FormErrors>({});
@@ -227,21 +228,29 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
         >
           <CloseForm />
         </button>
-        {/* <div className="wrapper_bg">
-          <picture>
-            <source
-              media="(min-width: 1024px)"
-              srcSet="/img/desktop.jpg, /img/modal-form-1920.png 2x"
-            />
-            <Image
-              src="/img/modal-form-768.png"
-              alt="Описание изображения"
-              className="responsive-img"
-              width={360}
-              height={278}
-            />
-          </picture>
-        </div> */}
+        <div className="wrapper_bg">
+          <Image
+            src="/img/modal-form.png"
+            alt="Описание изображения"
+            className="responsive-img--mobil"
+            width={360}
+            height={278}
+          />
+          <Image
+            src="/img/modal-form-768.png"
+            alt="Описание изображения"
+            className="responsive-img--table"
+            width={768}
+            height={458}
+          />
+          <Image
+            src="/img/modal-form-1920.png"
+            alt="Описание изображения"
+            className="responsive-img--desktop "
+            width={955}
+            height={1120}
+          />
+        </div>
         <form onSubmit={handleSubmit} className={clsx('consult-form', className)} noValidate>
           <h3 className="consult-form__title">
             Индивидуальная консультация&nbsp;по&nbsp;вашему вопросу
@@ -260,9 +269,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                   className={getFieldClassName('firstName')}
                   placeholder="Имя и фамилия"
                 />
-                {touched.firstName && errors.firstName && (
-                  <span className="consult-form__error">{errors.firstName}</span>
-                )}
               </label>
             </div>
 
@@ -278,9 +284,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                   className={getFieldClassName('phone')}
                   placeholder="Телефон"
                 />
-                {touched.phone && errors.phone && (
-                  <span className="consult-form__error">{errors.phone}</span>
-                )}
               </label>
             </div>
 
@@ -296,9 +299,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                   className={getFieldClassName('message')}
                   placeholder="Сообщение"
                 />
-                {touched.message && errors.message && (
-                  <span className="consult-form__error">{errors.message}</span>
-                )}
               </label>
             </div>
           </div>
@@ -326,11 +326,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                 </Link>
               </p>
             </label>
-            {touched.agree && errors.agree && (
-              <span className="consult-form__error consult-form__error--checkbox">
-                {errors.agree}
-              </span>
-            )}
           </div>
 
           <Button
