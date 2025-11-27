@@ -8,7 +8,10 @@ export const SERVERCABINETS_600: ProductConfig = {
   feature: 'до 45 кг',
 
   gallery: {
-    images: ['/img/servercabinets-600-image1.png', '/img/servercabinets-600-image2.png'],
+    images: [
+      '/img/product/servercabinets/600/gallery/0.webp',
+      '/img/product/servercabinets/600/gallery/1.webp',
+    ],
   },
 
   keySpecs: {
@@ -45,10 +48,6 @@ export const SERVERCABINETS_600: ProductConfig = {
         description: 'Простой монтаж и подключение.',
       },
     ],
-  },
-
-  dimensions: {
-    images: ['/img/servercabinets-600-dimensions.jpg'],
   },
 
   specifications: {
