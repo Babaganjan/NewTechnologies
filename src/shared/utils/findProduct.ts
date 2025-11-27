@@ -1,4 +1,4 @@
-import { slugify } from '@/shared/utils/slugidy';
+import { slugify } from '@/shared/utils/slugify';
 import {
   PRODUCTMENUDATA__ALL,
   type ProductMenuTypes,
@@ -23,10 +23,9 @@ export const findProductBySlug = (slug: string): ProductData | null => {
     const product = products.find((item) => slugify(item.model) === slug);
 
     if (product) {
-      return {
-        ...product,
-        category,
-      };
+      const productOne = { ...product, model: slugify(product.model), category };
+
+      return productOne;
     }
   }
 

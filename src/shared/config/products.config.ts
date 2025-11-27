@@ -1,4 +1,4 @@
-import { slugify } from '@/shared/utils/slugidy';
+import { slugify } from '@/shared/utils/slugify';
 import {
   PRODUCTMENUDATA__CAMERAS,
   PRODUCTMENUDATA__NVR,

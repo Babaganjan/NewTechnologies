@@ -3,7 +3,7 @@ import { notFound } from 'next/navigation';
 
 import type { AliasPagesProps } from '@/shared/types/productsPages.types';
 import { findProductBySlug } from '@/shared/utils/findProduct';
-import { slugify } from '@/shared/utils/slugidy';
+import { slugify } from '@/shared/utils/slugify';
 import { ProductsPages } from '@/widgets';
 import { PRODUCTMENUDATA__TURNISTILES } from '@/widgets/ProductsMenu/productMenus.const';
 

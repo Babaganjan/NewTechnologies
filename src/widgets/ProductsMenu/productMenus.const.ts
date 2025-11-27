@@ -20,7 +20,7 @@ export const PRODUCTMENUDATA__NVR: ProductMenuInterface[] = [
   },
   {
     id: 3,
-    model: 'NT-NVR3808E2-P8',
+    model: 'NT-NVR3808E2-P8-J',
     feature: '80 Мбит/сек',
     title: '8-ми канальный ip-регистратор ',
   },
@@ -32,7 +32,7 @@ export const PRODUCTMENUDATA__NVR: ProductMenuInterface[] = [
   },
   {
     id: 5,
-    model: 'NT-NVR3816E2-P16',
+    model: 'NT-NVR3816E2-P16-J',
     feature: '10/100/1000 мбит/сек',
     title: 'видеорегистратор 16ch, 2 hdd',
   },

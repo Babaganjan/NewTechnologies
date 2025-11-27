@@ -9,11 +9,12 @@ import { Spec } from './spec';
 
 export const ProductsPages = ({ product }: ProductsPagesProps) => {
   if (!product) return null;
+  console.log(product);
 
   return (
     <>
       <GallerySpec productName={product.title} productModel={product.model} />
-      <KeySpecs type="NT-NVR3808E1-J" />
+      <KeySpecs model={product.model} type={product.category} />
       <Spec model={product.model} />
       <SizeSpec />
 

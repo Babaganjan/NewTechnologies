@@ -3,7 +3,7 @@ import Link from 'next/link';
 
 import { Arrow } from '@/shared/icons';
 import { Breadcrumbs, H } from '@/shared/ui';
-import { slugify } from '@/shared/utils/slugidy';
+import { slugify } from '@/shared/utils/slugify';
 
 import type { ProductMenuTypes } from './productMenus.const';
 import { PRODUCTMENUDATA__ALL, PRODUCTMENUDATA__TITLE } from './productMenus.const';

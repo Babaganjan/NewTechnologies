@@ -268,3 +268,5 @@ export const ProductSpec: ProductItem = {
   dimensions: '600×9000×2000',
   units: '42',
 };
+
+export const ProductVariant = {};

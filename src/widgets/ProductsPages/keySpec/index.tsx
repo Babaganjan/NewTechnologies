@@ -1,12 +1,13 @@
 import { H } from '@/shared/ui';
 
 import { SpecItem } from './SpecItem';
-import { specKeyData } from './keySpec.const';
+import { ALLSPECTYPES } from './keySpec.const';
 import './keySpec.scss';
 import type { KeySpecsProps } from './keySpec.types';
 
-export const KeySpecs = ({ title = 'Основные характеристики', type }: KeySpecsProps) => {
-  const data = specKeyData[type];
+export const KeySpecs = ({ title = 'Основные характеристики', model, type }: KeySpecsProps) => {
+  const typesData = ALLSPECTYPES[type];
+  const data = typesData[model];
 
   const listClassName = `keySpecs__list keySpecs__list--${data.layout}`;
 
