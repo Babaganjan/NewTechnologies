@@ -71,17 +71,14 @@
   top: 0;
   width: 100%;
   z-index: 1000;
-  transition:
-    background-color 0.3s ease,
-    backdrop-filter 0.3s ease;
-  backdrop-filter: blur(10px);
+  transition: background-color 0.3s ease;
   margin-bottom: -1px;
 
   // Добавляем стандартные фоны по умолчанию
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: rgba(255, 255, 255, 0.5);
 
   &[data-theme='dark'] {
-    background-color: rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.5);
   }
 
   &__container {
@@ -135,23 +132,20 @@
   // Добавляем стили для прозрачного фона
   &.header--transparent {
     background-color: transparent;
-    backdrop-filter: none;
   }
 
   // Добавляем стили для черного фона приватной страницы
   &.header--privacy {
     background-color: #000000;
-    backdrop-filter: none;
 
     // При скролле возвращаем обычные стили
     &.header-scrolled {
       &[data-theme='dark'] {
-        background-color: rgba(0, 0, 0, 0.1);
+        background-color: rgba(0, 0, 0, 0.5);
       }
       &[data-theme='light'] {
-        background-color: rgba(255, 255, 255, 0.1);
+        background-color: rgba(255, 255, 255, 0.5);
       }
-      backdrop-filter: blur(10px);
     }
   }
 }

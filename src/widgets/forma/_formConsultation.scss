@@ -4,13 +4,11 @@
 .consultation-modal {
   width: 100%;
   height: 100vh;
-  display: flex;
+  display: grid;
+  gap: 40px;
+  grid-template-columns: 1fr;
   padding-bottom: 94px;
   margin: 0 auto;
-  background-image: url('/img/modal-form.png');
-  background-repeat: no-repeat;
-  // background-size: cover;
-  background-position: top center;
 
   &::after,
   &::before {
@@ -23,9 +21,11 @@
     width: fluid(102px, 502px);
     height: fluid(12px, 32px);
   }
+
   &::after {
     left: 0;
   }
+
   &::before {
     right: 0;
     transform: scaleX(-1);
@@ -38,153 +38,148 @@
     color: var(--vector-white);
     z-index: 10;
   }
-}
 
-.consult-form {
-  max-width: 887px;
-  padding-inline: 10px;
-  display: flex;
-  flex-direction: column;
-  align-self: flex-end;
-  align-items: center;
-  margin: 0 auto;
-
-  &__input--error,
-  &__textarea--error {
-    border: 2px solid #ff4444 !important;
-    background-color: #fff5f5 !important;
+  .wrapper_bg {
+    height: 278px;
   }
 
-  &__input--valid {
-    border: 2px solid #00c851 !important;
-  }
-
-  &__error {
-    @include typography(#ff4444, 500, 12px, 1.2);
-    display: block;
-    margin-top: 4px;
-    padding-left: 10px;
-
-    &--checkbox {
-      margin-top: 8px;
+  .responsive-img {
+    &--mobil {
       display: block;
+      height: 100%;
+    }
+    &--table,
+    &--desktop {
+      display: none;
     }
   }
 
-  &__field {
-    position: relative;
-  }
+  .consult-form {
+    max-width: 887px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    padding-inline: 10px;
 
-  &__title {
-    @include typography(#030608, 500, 31px, 1, uppercase, -2.17px);
-    text-align: center;
-    margin-bottom: 30px;
-  }
+    &__input--error::placeholder {
+      @include typography(#ff4444, 500, 12px, 1.2);
+    }
 
-  &__input,
-  &__textarea {
-    @include clip-shape();
-    @include typography(var(--text-gray), 500, 14px, 1.1);
-    padding: 10px;
-    width: 100%;
-    height: 41px;
-    background-color: var(--bg-light-gray);
-  }
+    &__field {
+      position: relative;
+    }
 
-  &__field:last-child {
-    height: 83px;
-  }
+    &__title {
+      @include typography(#030608, 500, 31px, 1, uppercase, -2.17px);
+      text-align: center;
+      margin-bottom: 30px;
+    }
 
-  &__textarea {
-    height: 83px;
-    background-color: var(--bg-light-gray);
-    resize: none;
-  }
+    &__input,
+    &__textarea {
+      @include clip-shape();
+      @include typography(var(--text-gray), 500, 14px, 1.1);
+      padding: 10px;
+      width: 100%;
+      height: 41px;
+      background-color: var(--bg-light-gray);
+    }
 
-  &__checkbox-label {
-    position: relative;
-  }
+    &__field:last-child {
+      height: 83px;
+    }
 
-  &__checkbox {
-    position: absolute;
-    width: 1px;
-    height: 1px;
-    overflow: hidden;
-    clip: rect(0 0 0 0);
-  }
+    &__textarea {
+      height: 83px;
+      background-color: var(--bg-light-gray);
+      resize: none;
+    }
 
-  .check-style {
-    position: absolute;
-    width: 16px;
-    height: 16px;
-    transform: translateY(-100%);
-    top: 16px;
-    left: 0;
-    border: 1px solid var(--vector-almost-black);
-    cursor: pointer;
-  }
+    &__checkbox-label {
+      position: relative;
+    }
 
-  &__checkbox:checked + .check-style {
-    border: 1px solid var(--vector-almost-black);
-    background-color: var(--bg-black);
-    background-image: url('/img/checked-form.svg');
-    background-position: center;
-    background-size: 8px 6px;
-    background-repeat: no-repeat;
-  }
+    &__checkbox {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
 
-  .check-style:focus-visible {
-    outline-offset: 2px;
-    outline: 1 solid rgb(129, 148, 225);
-  }
+    .check-style {
+      position: absolute;
+      width: 16px;
+      height: 16px;
+      transform: translateY(-100%);
+      top: 16px;
+      left: 0;
+      border: 1px solid var(--vector-almost-black);
+      cursor: pointer;
+    }
 
-  &__checkbox-field {
-    margin-top: 20px;
-  }
+    &__checkbox:checked + .check-style {
+      border: 1px solid var(--vector-almost-black);
+      background-color: var(--bg-black);
+      background-image: url('/img/checked-form.svg');
+      background-position: center;
+      background-size: 8px 6px;
+      background-repeat: no-repeat;
+    }
 
-  &__checkbox-text {
-    @include typography(var(--text-light-gray), 500, 14px, 1.1, none);
-    width: fluid(340px, 416px);
-    font-family: var(--second-family);
-    padding-left: 24px;
-  }
+    .check-style:focus-visible {
+      outline-offset: 2px;
+      outline: 1 solid rgb(129, 148, 225);
+    }
 
-  &__link {
-    text-decoration: underline;
-    text-decoration-skip-ink: none;
-    color: #565656;
-  }
+    &__checkbox-field {
+      margin-top: 20px;
+    }
 
-  &__checkbox-label:has(:checked) &__link {
-    color: var(--text-black);
-  }
+    &__checkbox-text {
+      @include typography(var(--text-light-gray), 500, 14px, 1.1, none);
+      width: fluid(340px, 416px);
+      font-family: var(--second-family);
+      padding-left: 24px;
+    }
 
-  &__submit {
-    display: inline-flex;
-    padding-inline: 50px;
-    justify-content: center;
-    width: 340px;
-    margin-top: 10px;
-  }
+    &__link {
+      text-decoration: underline;
+      text-decoration-skip-ink: none;
+      color: #565656;
+    }
 
-  &__submit:disabled {
-    background-color: #565656;
+    &__checkbox-label:has(:checked) &__link {
+      color: var(--text-black);
+    }
+
+    &__submit {
+      display: inline-flex;
+      padding-inline: 50px;
+      justify-content: center;
+      width: 340px;
+      margin-top: 10px;
+    }
+
+    &__submit:disabled {
+      background-color: #565656;
+    }
   }
 }
 
 .wrapper-data {
-  width: 340px;
+  width: 100%;
+  max-width: 340px;
   display: flex;
   flex-direction: column;
   gap: 4px;
 }
 
 // tablet
-@include respond-min(768) {
+@include respond-min(768px) {
   .consultation-modal {
-    padding-bottom: 184px;
-    background-image: url('/img/modal-form-768.png');
-
+    gap: 60px;
     &__close {
       top: 20px;
       right: 20px;
@@ -193,6 +188,21 @@
     &__close svg {
       width: 38px;
       height: 38px;
+    }
+
+    .wrapper_bg {
+      height: 458px;
+    }
+
+    .responsive-img {
+      &--mobil,
+      &--desktop {
+        display: none;
+      }
+      &--table {
+        display: block;
+        height: 100%;
+      }
     }
 
     .consult-form {
@@ -243,25 +253,38 @@
   }
 
   .wrapper-data {
-    width: 530px;
+    width: 71%;
+    max-width: 530px;
     gap: 10px;
   }
 }
 
 // desktop
-@include respond-min(1024) {
+@include respond-min(1280px) {
   .consultation-modal {
-    justify-content: flex-end;
-    align-items: center;
-    padding: 0;
-    background-size: 45%;
-    background-image: url('/img/modal-form-1920.png');
-    background-position: left center; // Подтверждаем для desktop
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    &__close svg {
+      color: var(--vector-deep-gray);
+    }
+
+    .responsive-img {
+      &--mobil,
+      &--table {
+        display: none;
+      }
+      &--desktop {
+        display: block;
+        height: 100vh;
+      }
+    }
 
     .consult-form {
-      width: 50.25%;
-      padding: 271px 50px 272px 28px;
+      grid-column: 2/-1;
       margin: 0;
+      align-self: center;
+      justify-self: center;
       &__title {
         font-size: fluid(58px, 68px);
       }
