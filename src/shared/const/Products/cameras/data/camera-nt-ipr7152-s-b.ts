@@ -8,7 +8,7 @@ export const CAMERA_NT_IPR7152_S_B: ProductConfig = {
   feature: '2880×1620 / 25-30 fps',
 
   gallery: {
-    images: ['/img/image3.png', '/img/image2.png', '/img/image3.png'],
+    images: ['/img/product/cameras/nt-ipr7152-s-b/gallery/0.webp'],
   },
 
   keySpecs: {
@@ -71,7 +71,10 @@ export const CAMERA_NT_IPR7152_S_B: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/camera1.jpg', '/img/camera1.png'],
+    images: [
+      '/img/product/cameras/nt-ipr7152-s-b/size/1.webp',
+      '/img/product/cameras/nt-ipr7152-s-b/size/2.webp',
+    ],
   },
 
   specifications: {

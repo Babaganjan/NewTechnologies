@@ -8,7 +8,11 @@ export const CAMERA_NT_IPR5122_M: ProductConfig = {
   feature: '',
 
   gallery: {
-    images: ['/img/image3.png', '/img/image2.png', '/img/image3.png'],
+    images: [
+      '/img/product/cameras/nt-ipr5122-m/gallery/0.webp',
+      '/img/product/cameras/nt-ipr5122-m/gallery/1.webp',
+      '/img/product/cameras/nt-ipr5122-m/gallery/2.webp',
+    ],
   },
 
   keySpecs: {
@@ -68,7 +72,10 @@ export const CAMERA_NT_IPR5122_M: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/camera1.jpg', '/img/camera1.png'],
+    images: [
+      '/img/product/cameras/nt-ipr5122-m/size/1.webp',
+      '/img/product/cameras/nt-ipr5122-m/size/2.webp',
+    ],
   },
 
   specifications: {

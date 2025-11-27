@@ -8,7 +8,7 @@ export const CAMERA_NT_IPV7140_Z: ProductConfig = {
   feature: '2880×1620 / 25-30 fps',
 
   gallery: {
-    images: ['/img/image3.png', '/img/image2.png', '/img/image3.png'],
+    images: ['/img/product/cameras/nt-ipv7140-z/gallery/0.webp'],
   },
 
   keySpecs: {
@@ -71,7 +71,10 @@ export const CAMERA_NT_IPV7140_Z: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/camera1.jpg', '/img/camera1.png'],
+    images: [
+      '/img/product/cameras/nt-ipv7140-z/size/1.webp',
+      '/img/product/cameras/nt-ipv7140-z/size/2.webp',
+    ],
   },
 
   specifications: {

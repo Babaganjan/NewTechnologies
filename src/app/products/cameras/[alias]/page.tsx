@@ -41,8 +41,6 @@ export default async function CamerasPages({ params }: AliasPagesProps) {
 
   const product = findProductBySlug(alias);
 
-  console.log(product?.model);
-
   // Дополнительная проверка: убедимся, что это именно камера (опционально, но полезно)
   if (!product || product.category !== 'CAMERAS') {
     notFound();
