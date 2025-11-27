@@ -1405,6 +1405,7 @@ export const KEYSPECPG = {
     ],
   },
 };
+
 export const KEYSPECTURNISTILES = {
   'nt-t01r': {
     layout: 'layout2',
@@ -1435,6 +1436,7 @@ export const KEYSPECTURNISTILES = {
       },
     ],
   },
+
   'nt-t05': {
     layout: 'layout4',
     item: [
@@ -1482,6 +1484,7 @@ export const KEYSPECTURNISTILES = {
       },
     ],
   },
+
   nt01: {
     layout: 'layout4',
     item: [
@@ -1575,6 +1578,7 @@ export const KEYSPECTURNISTILES = {
       },
     ],
   },
+
   nt04: {
     layout: 'layout1',
     item: [

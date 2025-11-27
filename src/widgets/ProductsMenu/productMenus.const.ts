@@ -9,30 +9,6 @@ interface ProductMenuInterface {
 
 export const PRODUCTMENUDATA__TURNISTILES: ProductMenuInterface[] = [
   {
-    id: 1,
-    model: 'NT-T01R',
-    feature: '15-20 чел/мин',
-    title: 'Турникет полноростовой',
-  },
-  {
-    id: 2,
-    model: 'NT-T05',
-    feature: '35-45 чел/мин',
-    title: 'Труникет тумбовый с распашными створками',
-  },
-  {
-    id: 3,
-    model: 'NT01',
-    feature: '30 чел/мин',
-    title: 'турникет-трипод',
-  },
-  {
-    id: 4,
-    model: 'NT02',
-    feature: '35-50 чел/мин',
-    title: 'Тумбовый турникет',
-  },
-  {
     id: 5,
     model: 'NT04',
     feature: '35-50 чел/мин',
