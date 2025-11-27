@@ -1,8 +1,7 @@
 import { slugify } from '@/shared/utils/slugify';
-import {
-  PRODUCTMENUDATA__ALL,
-  type ProductMenuTypes,
-} from '@/widgets/ProductsMenu/productMenus.const';
+import { PRODUCTMENUDATA__ALL } from '@/widgets/ProductsMenu/productMenus.const';
+
+import type { ProductMenuTypes } from '../types/products.types';
 
 export interface ProductData {
   id: number;

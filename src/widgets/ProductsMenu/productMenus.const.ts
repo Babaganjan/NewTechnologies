@@ -1,3 +1,5 @@
+import type { ProductMenuTypes } from '@/shared/types/products.types';
+
 interface ProductMenuInterface {
   id: number;
   model: string;
@@ -155,82 +157,7 @@ export const PRODUCTMENUDATA__SERVERCABINETS: ProductMenuInterface[] = [
   },
 ];
 
-export const PRODUCTMENUDATA__CAMERAS: ProductMenuInterface[] = [
-  {
-    id: 1,
-    model: 'NT-ipr5122-m',
-    feature: '',
-    title: 'сетевая цилиндрическая ик-камера',
-  },
-  {
-    id: 2,
-    model: 'NT-IPR5123-B',
-    feature: '1920×1080 / 25 fps',
-    title: 'цилиндрическая камера',
-  },
-  {
-    id: 3,
-    model: 'NT-IPR5142-B',
-    feature: '2560×1440 / 25 fps',
-    title: 'сетевая цилиндрическая камера с ик-подсветкой',
-  },
-  {
-    id: 4,
-    model: 'NT-IPR5142-M',
-    feature: '2560×1440 / 25 fps',
-    title: 'сетевая цилиндрическая камера с ик-подсветкой',
-  },
-  {
-    id: 5,
-    model: 'NT-IPR5180-B',
-    feature: '3840×2160 / 20 fps',
-    title: 'сетевая цилиндрическая камера с ик-подсветкой',
-  },
-  {
-    id: 6,
-    model: 'NT-IPR7120-Z',
-    feature: '1920×1080 / 25-30 fps',
-    title: 'Сетевая уличная камера с ИК-подсветкой и моторизованным объективом',
-  },
-  {
-    id: 7,
-    model: 'NT-IPR7140-Z',
-    feature: '2880×1620 / 25-30 fps',
-    title: 'сетевая буллет-камера с ИК-подсветкой и моторизованным объективом ',
-  },
-  {
-    id: 8,
-    model: 'NT-IPR7152-S-B',
-    feature: '2880×1620 / 25-30 fps',
-    title: 'сетевая купольная камера с ИК-подсветкой и моторизованным объективом',
-  },
-  {
-    id: 9,
-    model: 'NT-IPV7120-B',
-    feature: '1920×1080 / 25-30 fps',
-    title: 'сетевая купольная камера с ИК-подсветкой и фиксированным объективом  ',
-  },
-  {
-    id: 10,
-    model: 'NT-IPV7140-Z',
-    feature: '2880×1620 / 25-30 fps',
-    title: 'сетевая купольная камера с ИК-подсветкой и моторизованным объективом',
-  },
-  {
-    id: 11,
-    model: 'NT-IPV7152-B',
-    feature: '2880×1620 / 25-30 fps',
-    title: 'сетевая купольная камера с интеллектуальной двойной подсветкой',
-  },
-  {
-    id: 12,
-    model: 'NT-IPV7180-Z',
-    feature: '3840×2160 / 25 fps',
-    title: 'сетевая купольная камера с ИК-подсветкой и моторизованным объективом',
-  },
-];
-
-export type ProductMenuTypes = 'CAMERAS' | 'NVR' | 'SERVERCABINETS' | 'SWITCHES' | 'TURNSTILES';
+export const PRODUCTMENUDATA__CAMERAS: ProductMenuInterface[] = [];
 
 export const PRODUCTMENUDATA__ALL: Record<ProductMenuTypes, ProductMenuInterface[]> = {
   CAMERAS: PRODUCTMENUDATA__CAMERAS,
