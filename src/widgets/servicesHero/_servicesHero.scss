@@ -49,6 +49,10 @@
     // Фиксы для производительности
     transform: translateZ(0);
     backface-visibility: hidden;
+    &--mobile {
+      top: -26px;
+    }
+
     &--tablet {
       display: none;
     }
