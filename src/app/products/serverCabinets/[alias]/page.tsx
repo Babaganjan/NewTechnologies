@@ -3,10 +3,9 @@ import { notFound } from 'next/navigation';
 
 import { getProductsByCategory } from '@/shared/const/Products/utils/getProductsByCategory';
 import type { AliasPagesProps } from '@/shared/types/productsPages.types';
+import { findProductBySlug } from '@/shared/utils/findProduct';
 import { slugify } from '@/shared/utils/slugify';
 import { ProductsPages } from '@/widgets';
-
-import { findProductBySlug } from '@/shared/utils/findProduct';
 
 export async function generateStaticParams() {
   const SERVERCABINETS = getProductsByCategory('SERVERCABINETS');
