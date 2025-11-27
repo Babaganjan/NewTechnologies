@@ -4,7 +4,11 @@ import { H } from '@/shared/ui';
 
 import './sizeSpec.scss';
 
-export const SizeSpec = () => {
+interface SizeSpecProps {
+  images: string[];
+}
+
+export const SizeSpec = ({ images }: SizeSpecProps) => {
   return (
     <section className="sizeSpec">
       <div className="container">
@@ -14,12 +18,11 @@ export const SizeSpec = () => {
           </H>
         </div>
         <div className="sizeSpec__img-container">
-          <div className="sizeSpec__img">
-            <Image src="/img/camera1.jpg" alt="" fill />
-          </div>
-          <div className="sizeSpec__img">
-            <Image src="/img/camera1.png" alt="" fill />
-          </div>
+          {images.map((src, index) => (
+            <div key={index} className="sizeSpec__img">
+              <Image src={src} alt={`Размеры ${index + 1}`} fill />
+            </div>
+          ))}
         </div>
       </div>
     </section>

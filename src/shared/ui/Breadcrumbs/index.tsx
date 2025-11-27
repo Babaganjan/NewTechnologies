@@ -9,6 +9,7 @@ import { BREADCRUMBSWORDS } from './Breadcrumbs.const';
 import styles from './Breadcrumbs.module.scss';
 import type { BreadcrumbWord } from './breadcrumbs.types';
 
+
 interface BreadcrumbsProps {
   productName?: string;
 }

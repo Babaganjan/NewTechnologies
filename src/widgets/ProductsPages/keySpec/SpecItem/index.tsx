@@ -1,7 +1,8 @@
-import type { SpecItem as SpecItemType } from '../keySpec.types';
+import type { KeySpecItem } from '@/shared/types/products.types';
+
 import { getItemClasses } from '../utils/getItemClasses';
 
-export const SpecItem = ({ item, index }: { item: SpecItemType; index: number }) => {
+export const SpecItem = ({ item, index }: { item: KeySpecItem; index: number }) => {
   const itemClasses = getItemClasses(item, index);
 
   return (

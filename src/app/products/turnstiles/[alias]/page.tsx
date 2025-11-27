@@ -1,18 +1,19 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { getProductsByCategory } from '@/shared/const/Products/utils/getProductsByCategory';
 import type { AliasPagesProps } from '@/shared/types/productsPages.types';
 import { findProductBySlug } from '@/shared/utils/findProduct';
-import { slugify } from '@/shared/utils/slugidy';
+import { slugify } from '@/shared/utils/slugify';
 import { ProductsPages } from '@/widgets';
-import { PRODUCTMENUDATA__TURNISTILES } from '@/widgets/ProductsMenu/productMenus.const';
 
 export async function generateStaticParams() {
-  return PRODUCTMENUDATA__TURNISTILES.map((item) => ({
+  const TURNISTILES = getProductsByCategory('TURNSTILES');
+
+  return TURNISTILES.map((item) => ({
     alias: slugify(item.model),
   }));
 }
-
 export async function generateMetadata({ params }: AliasPagesProps): Promise<Metadata> {
   const { alias } = await params;
   const product = findProductBySlug(alias);
@@ -24,8 +25,8 @@ export async function generateMetadata({ params }: AliasPagesProps): Promise<Met
   }
 
   return {
-    title: `${product.title} ${product.model} | NTOUCH`,
-    description: `${product.title} - ${product.feature}`,
+    title: `${product.name} ${product.model} | NTOUCH`,
+    description: `${product.name} - ${product.feature}`,
   };
 }
 
@@ -38,5 +39,5 @@ export default async function TurnistilesPages({ params }: AliasPagesProps) {
     notFound();
   }
 
-  return <ProductsPages product={product} />;
+  return <ProductsPages productModel={product.model} />;
 }

@@ -1,17 +1,19 @@
+// widgets/ProductsMenu/index.tsx
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { PRODUCT_MENU_TITLES } from '@/shared/const/Products/catalog';
+import { getFeatureTitle } from '@/shared/const/Products/utils/getFeatureTitle';
+import { getProductsByCategory } from '@/shared/const/Products/utils/getProductsByCategory';
 import { Arrow } from '@/shared/icons';
+import type { ProductCategory } from '@/shared/types/products.types';
 import { Breadcrumbs, H } from '@/shared/ui';
-import { slugify } from '@/shared/utils/slugidy';
+import { slugify } from '@/shared/utils/slugify';
 
-import type { ProductMenuTypes } from './productMenus.const';
-import { PRODUCTMENUDATA__ALL, PRODUCTMENUDATA__TITLE } from './productMenus.const';
 import './productsMenu.scss';
-import { getTitleHeader } from './utils/titleHeader';
 
 interface ProductsMenuProps {
-  type: ProductMenuTypes;
+  type: ProductCategory;
   excludeProductId?: number;
   isRelatedProducts?: boolean;
 }
@@ -21,12 +23,13 @@ export const ProductsMenu = ({
   excludeProductId,
   isRelatedProducts = false,
 }: ProductsMenuProps) => {
-  const allData = PRODUCTMENUDATA__ALL[type];
-  const dataTitle = PRODUCTMENUDATA__TITLE[type];
+  const allData = getProductsByCategory(type);
+  const menuTitle = PRODUCT_MENU_TITLES[type];
+  const featureTitle = getFeatureTitle(type);
 
   const data = excludeProductId ? allData.filter((item) => item.id !== excludeProductId) : allData;
-  const title = isRelatedProducts && 'Другие модели';
-  const titleHeader = getTitleHeader(type);
+
+  const title = isRelatedProducts ? 'Другие модели' : menuTitle.title;
 
   return (
     <section className="productsMenu" aria-labelledby="products-menu-title">
@@ -35,7 +38,7 @@ export const ProductsMenu = ({
       <div className="productsMenu__container container">
         {!isRelatedProducts ? (
           <h1 id="products-menu-title" className="productsMenu__title">
-            {dataTitle.title}
+            {title}
           </h1>
         ) : (
           <div className="products-menu-title">
@@ -44,7 +47,7 @@ export const ProductsMenu = ({
             </H>
           </div>
         )}
-        {!isRelatedProducts && <p className="productsMenu__subtitle">{dataTitle.subtitle}</p>}
+        {!isRelatedProducts && <p className="productsMenu__subtitle">{menuTitle.subtitle}</p>}
 
         <div className="productsMenu__item-header" aria-hidden="true">
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--one">
@@ -54,7 +57,7 @@ export const ProductsMenu = ({
             модель
           </span>
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--three">
-            {titleHeader}
+            {featureTitle}
           </span>
         </div>
 
@@ -68,26 +71,23 @@ export const ProductsMenu = ({
                 <Link
                   href={`/products/${categorySlug}/${productSlug}`}
                   className="productsMenu__item"
-                  aria-label={`${item.model} ${item.title}, ${item.feature}`}
+                  aria-label={`${item.model} ${item.name}, ${item.feature}`}
                 >
                   <div className="productsMenu__item-title-wrapper">
                     <span className="productsMenu__item-model">{item.model}</span>
-
-                    <span className="productsMenu__item-title">{item.title}</span>
-
+                    <span className="productsMenu__item-title">{item.name}</span>
                     <span
                       className="productsMenu__item-subtitle productsMenu__item-subtitle--three"
                       aria-hidden="true"
                     >
-                      пропускная способность
+                      {featureTitle}
                     </span>
-
                     <span className="productsMenu__item-feature">{item.feature}</span>
                   </div>
 
                   <div className="productsMenu__item-img" aria-hidden="true">
                     <Image
-                      src="/img/SN-IPR7140BZBN-Z.png"
+                      src={item.gallery.images[0] || '/img/placeholder.png'}
                       alt=""
                       fill
                       sizes="(max-width: 768px) 47vw, 0vw"

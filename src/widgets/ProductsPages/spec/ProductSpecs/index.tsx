@@ -1,6 +1,6 @@
-import type { ProductItem } from '../spec.types';
+import type { ProductInfoItem } from '@/shared/types/products.types';
 
-export const ProductSpecs = ({ items }: { items: ProductItem }) => {
+export const ProductSpecs = ({ items }: { items: ProductInfoItem }) => {
   return (
     <div className="productSpecs">
       {/* Блок модели */}

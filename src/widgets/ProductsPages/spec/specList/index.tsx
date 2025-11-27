@@ -1,6 +1,6 @@
-import type { SpecItem } from '../spec.types';
+import type { TextItem } from '@/shared/types/products.types';
 
-export const SpecList = ({ data }: { data: SpecItem[] }) => (
+export const SpecList = ({ data }: { data: TextItem[] }) => (
   <dl className="specList-list">
     <div>
       {data.map((item) => (

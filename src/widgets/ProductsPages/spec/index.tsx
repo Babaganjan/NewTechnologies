@@ -2,39 +2,26 @@
 
 import { useState } from 'react';
 
+import type { SpecSection } from '@/shared/types/products.types';
 import { Button, H } from '@/shared/ui';
 
 import './spec.scss';
 
 import { AssemblyScheme } from './AssemblyScheme';
 import { ProductSpecs } from './ProductSpecs';
-import {
-  DATAGENERAL,
-  DATALSPECIFICATION,
-  Images,
-  ProductSpec,
-  Scheme,
-  tabPanelsGeneral,
-  tabPanelsSpecification,
-} from './spec.const';
-import type { TabLabel } from './spec.types';
 import { SpecImages } from './specImages';
 import { SpecList } from './specList';
 import { TabPanel } from './tabPanel';
 
 interface SpecProps {
   title?: string;
-  model: string;
+  section: SpecSection;
   button?: boolean;
 }
 
-export const Spec = ({ title = 'Общие характеристики', model, button = false }: SpecProps) => {
-  const tab = title === 'Спецификация';
-  const tabs = tab ? tabPanelsSpecification : tabPanelsGeneral;
-  const data = tab ? DATALSPECIFICATION : DATAGENERAL;
-  const [activeTab, setActiveTab] = useState<TabLabel>(tabs[0]);
-
-  const activeTabData = data.find((item) => item.label === activeTab);
+export const Spec = ({ title = 'Общие характеристики', section, button = false }: SpecProps) => {
+  const [activeTab, setActiveTab] = useState(section.tabs[0]);
+  const activeTabData = section.data.find((item) => item.label === activeTab);
 
   return (
     <section className="spec">
@@ -44,11 +31,14 @@ export const Spec = ({ title = 'Общие характеристики', model,
             {title}
           </H>
         </div>
-        <TabPanel activeTab={activeTab} onTabChange={setActiveTab} tabs={tabs} />
-        {activeTabData?.variant === 'text' && <SpecList data={activeTabData?.item ?? []} />}
-        {activeTabData?.variant === 'images' && <SpecImages data={Images} />}
-        {activeTabData?.variant === 'schema' && <AssemblyScheme items={Scheme} />}
-        {activeTabData?.variant === 'product' && <ProductSpecs items={ProductSpec} />}
+
+        <TabPanel activeTab={activeTab} onTabChange={setActiveTab} tabs={section.tabs} />
+
+        {activeTabData?.variant === 'text' && <SpecList data={activeTabData.item} />}
+        {activeTabData?.variant === 'images' && <SpecImages data={activeTabData.item} />}
+        {activeTabData?.variant === 'schema' && <AssemblyScheme items={activeTabData.item} />}
+        {activeTabData?.variant === 'product' && <ProductSpecs items={activeTabData.item[0]} />}
+
         {button && (
           <div className="spec__button">
             <Button variant="feedback" icon>

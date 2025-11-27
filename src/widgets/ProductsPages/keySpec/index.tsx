@@ -1,14 +1,18 @@
+import type { KeySpecItem, KeySpecLayout } from '@/shared/types/products.types';
 import { H } from '@/shared/ui';
 
-import { SpecItem } from './SpecItem';
-import { specKeyData } from './keySpec.const';
 import './keySpec.scss';
-import type { KeySpecsProps } from './keySpec.types';
 
-export const KeySpecs = ({ title = 'Основные характеристики', type }: KeySpecsProps) => {
-  const data = specKeyData[type];
+import { SpecItem } from './SpecItem';
 
-  const listClassName = `keySpecs__list keySpecs__list--${data.layout}`;
+interface KeySpecsProps {
+  title?: string;
+  layout: KeySpecLayout;
+  items: KeySpecItem[];
+}
+
+export const KeySpecs = ({ title = 'Основные характеристики', layout, items }: KeySpecsProps) => {
+  const listClassName = `keySpecs__list keySpecs__list--${layout}`;
 
   return (
     <section className="keySpecs" aria-labelledby="keyspecs-title">
@@ -19,7 +23,7 @@ export const KeySpecs = ({ title = 'Основные характеристик�
           </H>
         </div>
         <ul className={listClassName}>
-          {data.item.map((item, index) => (
+          {items.map((item, index) => (
             <SpecItem key={item.id} item={item} index={index} />
           ))}
         </ul>

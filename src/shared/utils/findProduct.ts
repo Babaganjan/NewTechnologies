@@ -1,34 +1,20 @@
-import { slugify } from '@/shared/utils/slugidy';
-import {
-  PRODUCTMENUDATA__ALL,
-  type ProductMenuTypes,
-} from '@/widgets/ProductsMenu/productMenus.const';
+import type { ProductConfig } from '@/shared/types/products.types';
+import { slugify } from '@/shared/utils/slugify';
 
-export interface ProductData {
-  id: number;
-  model: string;
-  feature: string;
-  title: string;
-  category: ProductMenuTypes;
-}
+import { PRODUCT_CATALOG } from '../const/Products/catalog';
 
-function typedEntries<T extends Record<string, unknown>>(obj: T) {
-  return Object.entries(obj) as {
-    [K in keyof T]: [K, T[K]];
-  }[keyof T][];
-}
+export const findProductBySlug = (slug: string): ProductConfig | undefined => {
+  // Проходимся по всем категориям в каталоге
+  for (const category of Object.values(PRODUCT_CATALOG)) {
+    // Проходимся по всем продуктам в категории
+    const foundProduct = Object.values(category).find((product) => {
+      const productSlug = slugify(product.model);
 
-export const findProductBySlug = (slug: string): ProductData | null => {
-  for (const [category, products] of typedEntries(PRODUCTMENUDATA__ALL)) {
-    const product = products.find((item) => slugify(item.model) === slug);
+      return productSlug === slug;
+    });
 
-    if (product) {
-      return {
-        ...product,
-        category,
-      };
-    }
+    if (foundProduct) return foundProduct;
   }
 
-  return null;
+  return undefined;
 };
