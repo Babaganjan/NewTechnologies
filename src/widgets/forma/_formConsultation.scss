@@ -9,7 +9,7 @@
   grid-template-columns: 1fr;
   padding-bottom: 94px;
   margin: 0 auto;
-  position: relative;
+  overflow-y: auto;
 
   &::after,
   &::before {
@@ -265,6 +265,7 @@
   .consultation-modal {
     display: grid;
     grid-template-columns: 1fr 1fr;
+    height: 100vh;
 
     &__close svg {
       color: var(--vector-deep-gray);
