@@ -8,7 +8,7 @@ export const SWITCH_NT_PAG_F1R26: ProductConfig = {
   feature: '20 гбит/сек',
 
   gallery: {
-    images: ['/img/switches/nt-pag-f1r26/gallery/nt-pag-f1r26.webp'],
+    images: ['/img/switches/nt-pag-f1r26/gallery/0.webp'],
   },
 
   keySpecs: {

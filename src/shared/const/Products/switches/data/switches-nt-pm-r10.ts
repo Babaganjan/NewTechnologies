@@ -8,7 +8,7 @@ export const SWITCH_NT_PM_R10: ProductConfig = {
   feature: '2.8 гбит/сек',
 
   gallery: {
-    images: ['/img/switches/nt-pm-r10/gallery/nt-pm-r10.webp'],
+    images: ['/img/switches/nt-pm-r10/gallery/0.webp'],
   },
 
   keySpecs: {

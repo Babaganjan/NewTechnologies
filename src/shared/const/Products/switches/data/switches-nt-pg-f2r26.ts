@@ -8,7 +8,7 @@ export const SWITCH_NT_PG_F2R26: ProductConfig = {
   feature: '56 гбит/сек',
 
   gallery: {
-    images: ['/img/switches/nt-pg-f2r26/gallery/nt-pg-f2r26.webp'],
+    images: ['/img/switches/nt-pg-f2r26/gallery/0.webp'],
   },
 
   keySpecs: {
