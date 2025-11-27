@@ -3,7 +3,7 @@
 
 .consultation-modal {
   width: 100%;
-  height: auto;
+  height: 100vh;
   display: grid;
   gap: 40px;
   grid-template-columns: 1fr;
@@ -180,7 +180,6 @@
 // tablet
 @include respond-min(768px) {
   .consultation-modal {
-    height: 100vh;
     gap: 60px;
     &__close {
       top: 20px;
@@ -264,7 +263,6 @@
 // desktop
 @include respond-min(1280px) {
   .consultation-modal {
-    height: 100vh;
     display: grid;
     grid-template-columns: 1fr 1fr;
 
