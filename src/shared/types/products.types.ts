@@ -48,6 +48,16 @@ export interface SpecSection {
 
 export type ProductCategory = 'CAMERAS' | 'NVR' | 'SWITCHES' | 'TURNSTILES' | 'SERVERCABINETS';
 
+export interface ProductData {
+  id: number;
+  model: string;
+  feature: string;
+  title: string;
+  category: ProductCategory;
+}
+export interface ProductsPagesProps {
+  product: ProductData | null;
+}
 export interface ProductConfig {
   // Базовая информация
   id: number;

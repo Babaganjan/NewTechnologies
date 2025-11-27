@@ -1,4 +1,4 @@
-import type { ProductsPagesProps } from '@/shared/types/productsPages.types';
+import { getProductByModel } from '@/shared/const/Products/utils/getProductByModel';
 
 import { ProductsMenu } from '../ProductsMenu';
 
@@ -7,26 +7,40 @@ import { KeySpecs } from './keySpec';
 import { SizeSpec } from './sizeSpec';
 import { Spec } from './spec';
 
-export const ProductsPages = ({ product }: ProductsPagesProps) => {
+interface ProductsPagesProps {
+  productModel: string;
+}
+
+export const ProductsPages = ({ productModel }: ProductsPagesProps) => {
+  const product = getProductByModel(productModel);
+
   if (!product) return null;
-  console.log(product);
 
   return (
     <>
-      <GallerySpec productName={product.title} productModel={product.model} />
-      <KeySpecs model={product.model} type={product.category} />
-      <Spec model={product.model} />
-      <SizeSpec />
-
-      {product.category === 'CAMERAS' || product.category === 'SWITCHES' ? (
-        <Spec title="Спецификация" model={product.model} button />
-      ) : null}
-
-      <ProductsMenu
-        type={product.category}
-        excludeProductId={product.id}
-        isRelatedProducts={true}
+      <GallerySpec
+        productName={product.name}
+        productModel={product.model}
+        images={product.gallery.images}
       />
+
+      <KeySpecs layout={product.keySpecs.layout} items={product.keySpecs.items} />
+
+      {product.dimensions && <SizeSpec images={product.dimensions.images} />}
+
+      {product.specifications.general && (
+        <Spec title="Общие характеристики" section={product.specifications.general} />
+      )}
+
+      {product.specifications.technical && (
+        <Spec
+          title="Спецификация"
+          section={product.specifications.technical}
+          button={product.category === 'CAMERAS' || product.category === 'SWITCHES'}
+        />
+      )}
+
+      <ProductsMenu type={product.category} excludeProductId={product.id} isRelatedProducts />
     </>
   );
 };

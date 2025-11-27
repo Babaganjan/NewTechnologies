@@ -4,7 +4,7 @@ import { TURNSTILES_NT_NT04 } from './data/turnistiles-nt-nt04';
 import { TURNSTILES_NT_T01R } from './data/turnistiles-nt-t01r';
 import { TURNSTILES_NT_T05 } from './data/turnistiles-nt-t05';
 
-export const SWITCHES = {
+export const TURNSTILES = {
   'nt-t01r': TURNSTILES_NT_T01R,
   'nt-t05': TURNSTILES_NT_T05,
   nt01: TURNSTILES_NT_NT01,
