@@ -8,7 +8,7 @@ export const SWITCH_NT_PG_FR10: ProductConfig = {
   feature: '28 гбит/сек',
 
   gallery: {
-    images: ['/img/switches/nt-pg-fr10/gallery/0.webp'],
+    images: ['/img/product/switches/nt-pg-fr10/gallery/0.webp'],
   },
 
   keySpecs: {
