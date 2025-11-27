@@ -1,8 +1,8 @@
 import Image from 'next/image';
 
-import type { SpecItemImages } from '../spec.types';
+import type { ImageItem } from '@/shared/types/products.types';
 
-export const SpecImages = ({ data }: { data: SpecItemImages[] }) => {
+export const SpecImages = ({ data }: { data: ImageItem[] }) => {
   return (
     <ul className="specImages__list">
       {data.map((item, index) => (

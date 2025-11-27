@@ -1,11 +1,10 @@
 import Image from 'next/image';
 
+import type { SchemeItem } from '@/shared/types/products.types';
 import { Button } from '@/shared/ui';
 
-import type { AssemblyItem } from '../spec.types';
-
 interface AssemblySchemeProps {
-  items: AssemblyItem[];
+  items: SchemeItem[];
 }
 
 export const AssemblyScheme = ({ items }: AssemblySchemeProps) => {
@@ -18,7 +17,7 @@ export const AssemblyScheme = ({ items }: AssemblySchemeProps) => {
           fill
           loading="eager"
           priority
-          style={{ objectFit: 'contain', padding: '20px' }}
+          style={{ objectFit: 'contain' }}
         />
       </div>
 
