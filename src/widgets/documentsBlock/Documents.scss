@@ -154,6 +154,7 @@
         grid-area: icon;
         justify-self: end;
         padding-right: 5px;
+        width: 20px;
       }
 
       .document__size {
@@ -162,7 +163,6 @@
         font-family: var(--second-family);
         @include typography(var(--text-white), 500, 22px, 1.1, uppercase, -0.05em);
       }
-
     }
   }
 }
