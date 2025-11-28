@@ -61,6 +61,7 @@ export const FavoritesProject = ({
                   width={340}
                   height={242}
                   className="favorites-project__img-item"
+                  loading="eager"
                 />
               </div>
               <div className="favorites-project__wrapper">
