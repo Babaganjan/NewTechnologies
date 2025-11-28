@@ -23,7 +23,6 @@ export const ProjectServiceItem = ({
     onMouseEnter={() => onMouseEnter(index)}
     onMouseLeave={onMouseLeave}
     onClick={() => onActiveRow(index)}
-    role="button"
     tabIndex={0}
     aria-label={`Тип услуги: ${item.service}`}
     aria-pressed={isActive}
