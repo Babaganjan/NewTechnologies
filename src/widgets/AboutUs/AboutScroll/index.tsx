@@ -95,7 +95,7 @@ export const AboutScroll = () => {
               preload="auto"
               aria-hidden="true"
             >
-              <source src="/video/about-desktop.mp4" type="video/mp4" />
+              <source src="/video/about-desktop.webm" type="video/webm" />
             </video>
           </div>
         </motion.div>
