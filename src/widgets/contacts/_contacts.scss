@@ -64,6 +64,7 @@ $large-screen-bottom-padding: 190px;
       }
 
       address,
+      a,
       p {
         margin-top: auto;
         @include typography(
@@ -74,6 +75,7 @@ $large-screen-bottom-padding: 190px;
           uppercase,
           -0.06em
         );
+
         span {
           display: flex;
           flex-direction: column;
