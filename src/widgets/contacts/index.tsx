@@ -85,7 +85,7 @@ export const Contacts = memo(() => {
         <iframe
           className="contacts__map-iframe"
           src={MAPS_EMBED_URL}
-          width="100%"
+          width="100"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

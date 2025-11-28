@@ -24,7 +24,6 @@ export const FeedbackMenu = () => {
             onClick={handleOpenConsultation}
             aria-haspopup="dialog"
             aria-expanded={isConsultationModalOpen}
-            aria-controls="consultation-modal"
           >
             Подобрать решение
           </Button>
