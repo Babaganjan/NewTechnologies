@@ -14,8 +14,8 @@ export const AboutScroll = () => {
     offset: ['start start', 'end end'],
   });
 
-  const topBlockY = useTransform(scrollYProgress, [0, 0.5], [0, -700]);
-  const bottomBlockY = useTransform(scrollYProgress, [0, 0.5], [0, 700]);
+  const topBlockY = useTransform(scrollYProgress, [0, 0.5], [0, -550]);
+  const bottomBlockY = useTransform(scrollYProgress, [0, 0.5], [0, 550]);
 
   return (
     <section
