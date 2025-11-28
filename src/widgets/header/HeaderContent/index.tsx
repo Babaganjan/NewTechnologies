@@ -128,7 +128,7 @@ export const HeaderContent = ({
 
           <motion.div>
             {selectedContact && (
-              <Link className="header__phone" href={`tel:${selectedContact.phone}`}>
+              <Link className="header__phone" href={`tel:${selectedContact.href}`}>
                 {selectedContact.phone}
               </Link>
             )}
