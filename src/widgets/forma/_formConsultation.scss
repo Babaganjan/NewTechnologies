@@ -10,27 +10,36 @@
   padding-bottom: 94px;
   margin: 0 auto;
   overflow-y: auto;
+  @include decor-pseudo-elements(
+    $color: var(--text-black),
+    $after-top: auto,
+    $after-bottom: -2px,
+    $after-transform: scaleX(1),
+    $before-top: auto,
+    $before-bottom: -1px,
+    $before-transform: scaleX(-1)
+  );
 
-  &::after,
-  &::before {
-    position: absolute;
-    content: '';
-    background-image: url('/img/modal-form-decor.svg');
-    background-size: 100%;
-    background-repeat: no-repeat;
-    bottom: 0;
-    width: fluid(102px, 502px);
-    height: fluid(12px, 32px);
-  }
+  // &::after,
+  // &::before {
+  //   position: absolute;
+  //   content: '';
+  //   background-image: url('/img/modal-form-decor.svg');
+  //   background-size: 100%;
+  //   background-repeat: no-repeat;
+  //   bottom: 0;
+  //   width: fluid(102px, 502px);
+  //   height: fluid(12px, 32px);
+  // }
 
-  &::after {
-    left: 0;
-  }
+  // &::after {
+  //   left: 0;
+  // }
 
-  &::before {
-    right: 0;
-    transform: scaleX(-1);
-  }
+  // &::before {
+  //   right: 0;
+  //   transform: scaleX(-1);
+  // }
 
   &__close {
     position: absolute;
