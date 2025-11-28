@@ -34,7 +34,7 @@
   }
 }
 
-@include respond-min(766px) {
+@include respond-min(768px) {
   .advantage__list {
     grid-template-columns: repeat(2, 1fr);
     grid-template-areas:
@@ -42,6 +42,10 @@
       'pos2 pos3'
       'pos4 pos5'
       'pos6 pos6';
+
+    .advantage__item {
+      min-height: 316px;
+    }
 
     .advantage__item--pos-1 {
       grid-area: pos1;
@@ -70,9 +74,6 @@
     grid-template-areas:
       'pos1 pos2 . pos3 pos4'
       'pos5 . pos6 pos6 .';
-    .advantage__item {
-      min-height: 216px;
-    }
 
     .advantage__item--pos-1 {
       grid-area: pos1;
