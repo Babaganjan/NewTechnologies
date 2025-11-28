@@ -6,6 +6,7 @@ import { GallerySpec } from './gallerySpec';
 import { KeySpecs } from './keySpec';
 import { SizeSpec } from './sizeSpec';
 import { Spec } from './spec';
+import { DescriptiosSpec } from './spec/desctiptionSpec';
 
 interface ProductsPagesProps {
   productModel: string;
@@ -23,6 +24,8 @@ export const ProductsPages = ({ productModel }: ProductsPagesProps) => {
         productModel={product.model}
         images={product.gallery.images}
       />
+
+      {product.description && <DescriptiosSpec item={product.description} />}
 
       <KeySpecs layout={product.keySpecs.layout} items={product.keySpecs.items} />
 

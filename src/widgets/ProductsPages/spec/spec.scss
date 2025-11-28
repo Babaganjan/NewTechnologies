@@ -61,6 +61,33 @@
   }
 }
 
+.descriptionsSpec {
+  background-color: var(--bg-black);
+
+  &__title {
+    position: relative;
+    margin-left: 10px;
+  }
+
+  &__text-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 10px;
+    p {
+      display: inline-flex;
+      font-family: var(--second-family);
+      @include typography(#d0d0d0, 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
+    }
+  }
+  @include respond-min(1024px) {
+    &__container-wrapper {
+      display: grid;
+      grid-template-columns: 0.3fr 0.5fr;
+    }
+  }
+}
+
 .specImages__list {
   display: flex;
   flex-direction: column;

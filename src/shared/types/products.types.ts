@@ -35,6 +35,12 @@ export interface ProductInfoItem {
   units: string | number;
 }
 
+export interface descriptionItem {
+  title1?: string;
+  title2?: string;
+  title3?: string;
+}
+
 export type TabData =
   | { label: string; variant: 'text'; item: TextItem[] }
   | { label: string; variant: 'images'; item: ImageItem[] }
@@ -72,6 +78,8 @@ export interface ProductConfig {
   gallery: {
     images: string[];
   };
+
+  description?: descriptionItem;
 
   // Основные характеристики (KeySpecs)
   keySpecs: {
