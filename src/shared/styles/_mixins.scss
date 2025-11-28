@@ -1,373 +1,9 @@
-// @use 'sass:math';
-// @use 'sass:list';
-// @use 'sass:map';
-// @use 'sass:meta';
-// @use 'functions' as *;
-
-// @mixin decor-pseudo-elements(
-//   $color: null,
-//   // Цвет для окрашивания SVG (если задан, используется маска; иначе обычное изображение)
-//   $count: 'both',
-//   // Количество: 'both', 'after', 'before', 'none'
-//   $image: '/img/modal-form-decor.svg',
-//   // URL изображения (SVG)
-//   $width: fluid(102px, 502px),
-//   // Ширина
-//   $height: fluid(12px, 32px),
-//   // Высота
-//   $z-index: 1,
-
-//   // Z-index
-//   // Параметры позиционирования для &::after
-//   $after-top: -2px,
-//   $after-bottom: auto,
-//   $after-left: -1px,
-//   $after-transform: rotateX(180deg),
-//   // Трансформация по умолчанию
-//   // Параметры позиционирования для &::before
-//   $before-top: -1px,
-//   $before-bottom: auto,
-//   $before-right: -1px,
-//   $before-transform: scaleY(-1) scaleX(-1)
-// ) {
-//   @if $count != 'none' {
-//     @if $count == 'both' or $count == 'after' {
-//       &::after {
-//         position: absolute;
-//         content: '';
-//         width: $width;
-//         height: $height;
-//         z-index: $z-index;
-//         top: $after-top;
-//         bottom: $after-bottom;
-//         left: $after-left;
-//         transform: $after-transform;
-
-//         @if $color {
-//           background-color: $color; // Цвет фона для маски
-//           mask-image: url($image); // Маска по изображению
-//           mask-size: 100%;
-//           mask-repeat: no-repeat;
-//         } @else {
-//           background-image: url($image);
-//           background-size: 100%;
-//           background-repeat: no-repeat;
-//         }
-//       }
-//     }
-
-//     @if $count == 'both' or $count == 'before' {
-//       &::before {
-//         position: absolute;
-//         content: '';
-//         width: $width;
-//         height: $height;
-//         z-index: $z-index;
-//         top: $before-top;
-//         bottom: $before-bottom;
-//         right: $before-right;
-//         transform: $before-transform;
-
-//         @if $color {
-//           background-color: $color; // Цвет фона для маски
-//           mask-image: url($image); // Маска по изображению
-//           mask-size: 100%;
-//           mask-repeat: no-repeat;
-//         } @else {
-//           background-image: url($image);
-//           background-size: 100%;
-//           background-repeat: no-repeat;
-//         }
-//       }
-//     }
-//   }
-// }
-
-// @mixin clip-shape($position: top-right) {
-//   --clip-size: #{fluid(20px, 30px)};
-//   --clip-half: calc(var(--clip-size) / 2);
-
-//   @if $position == top-right {
-//     clip-path: polygon(
-//       0% 0%,
-//       calc(100% - var(--clip-size)) 0%,
-//       calc(100% - var(--clip-size)) var(--clip-half),
-//       calc(100% - var(--clip-half)) var(--clip-half),
-//       calc(100% - var(--clip-half)) var(--clip-size),
-//       100% var(--clip-size),
-//       100% 100%,
-//       0% 100%
-//     );
-//   } @else if $position == bottom-left {
-//     clip-path: polygon(
-//       0% 0%,
-//       100% 0%,
-//       100% 100%,
-//       var(--clip-size) 100%,
-//       var(--clip-size) calc(100% - var(--clip-half)),
-//       var(--clip-half) calc(100% - var(--clip-half)),
-//       var(--clip-half) calc(100% - var(--clip-size)),
-//       0% calc(100% - var(--clip-size))
-//     );
-//   }
-// }
-
-// @mixin typography(
-//   $color: var(--text-white),
-//   $weight: 500,
-//   $size: 1.125rem,
-//   $line: 120%,
-//   $transform: uppercase,
-//   $spacing: -0.06em
-// ) {
-//   font-weight: $weight;
-//   font-size: $size;
-//   line-height: $line;
-//   letter-spacing: $spacing;
-//   text-transform: $transform;
-//   color: $color;
-// }
-
-// @mixin decoration(
-//   $color: var(--text-white),
-//   $size: 0.75rem,
-//   $image: '/img/kvadrat.svg',
-//   $pos: (
-//     right: -1px,
-//     top: -1px,
-//   )
-// ) {
-//   position: absolute;
-//   width: $size;
-//   height: $size;
-//   background-color: $color;
-//   mask-image: url(#{$image});
-//   mask-position: center;
-//   mask-size: contain;
-//   mask-repeat: no-repeat;
-//   pointer-events: none;
-//   @each $k, $v in $pos {
-//     #{$k}: $v;
-//   }
-// }
-
-// @mixin respond-min($breakpoint, $type: min) {
-//   @if $type == min {
-//     @media (min-width: $breakpoint) {
-//       @content;
-//     }
-//   } @else if $type == max {
-//     @media (max-width: ($breakpoint - 1px)) {
-//       @content;
-//     }
-//   } @else if $type == between {
-//     @media (min-width: list.nth($breakpoint, 1)) and (max-width: list.nth($breakpoint, 2)) {
-//       @content;
-//     }
-//   }
-// }
-
-// $trapezoid-configs: (
-//   'small': (
-//     width: 21px,
-//     height: 13px,
-//     color: var(--vector-black),
-//     size: fluid(198px, 300px),
-//     shift: -11px,
-//   ),
-//   'medium': (
-//     width: 31px,
-//     height: 19px,
-//     color: var(--vector-black),
-//     size: fluid(300px, 500px),
-//     shift: -17px,
-//   ),
-//   'large': (
-//     width: 42px,
-//     height: 25px,
-//     color: var(--vector-black),
-//     size: fluid(500px, 800px),
-//     shift: -24px,
-//   ),
-//   'xlarge': (
-//     width: 56px,
-//     height: 33px,
-//     color: var(--vector-black),
-//     size: fluid(800px, 1030px),
-//     shift: -32px,
-//   ),
-// );
-
-// @mixin trapezoid-decor(
-//   $config: null,
-//   $width: null,
-//   $height: null,
-//   $color: null,
-//   $position: both,
-//   $size: null,
-//   $shift: null
-// ) {
-//   // Базовые значения по умолчанию
-//   $default-width: 21px;
-//   $default-height: 13px;
-//   $default-color: var(--vector-black);
-//   $default-size: 198px;
-//   $default-shift: -11px;
-
-//   // Если передан конфиг, используем как базовые значения
-//   @if $config !=
-//     null and
-//     meta.type-of($config) ==
-//     'string' and
-//     map.has-key($trapezoid-configs, $config)
-//   {
-//     $config-map: map.get($trapezoid-configs, $config);
-//     $default-width: map.get($config-map, 'width');
-//     $default-height: map.get($config-map, 'height');
-//     $default-color: map.get($config-map, 'color');
-//     $default-size: map.get($config-map, 'size');
-//     $default-shift: map.get($config-map, 'shift');
-//   }
-
-//   // Используем переданные значения или значения по умолчанию
-//   $width: if($width != null, $width, $default-width);
-//   $height: if($height != null, $height, $default-height);
-//   $color: if($color != null, $color, $default-color);
-//   $size: if($size != null, $size, $default-size);
-//   $shift: if($shift != null, $shift, $default-shift);
-
-//   position: relative;
-
-//   @if $position == top or $position == both {
-//     &::before {
-//       content: '';
-//       position: absolute;
-//       left: 50%;
-//       transform: translateX(-50%) rotate(180deg);
-//       width: $size;
-//       border-left: $width solid transparent;
-//       border-right: $width solid transparent;
-//       top: $shift;
-//       border-top: $height solid $color;
-//     }
-//   }
-
-//   @if $position == bottom or $position == both {
-//     &::after {
-//       content: '';
-//       position: absolute;
-//       left: 50%;
-//       transform: translateX(-50%) rotate(180deg);
-//       width: $size;
-//       border-left: $width solid transparent;
-//       border-right: $width solid transparent;
-//       bottom: $shift;
-//       border-bottom: $height solid $color;
-//     }
-//   }
-// }
-
-// @mixin bracket-decor(
-//   $color: #fff,
-//   $pos: (
-//     top: -2px,
-//     left: -10px,
-//   )
-// ) {
-//   @include typography($color, 700, fluid(14px, 22px), 1.2);
-//   padding-left: fluid(10px, 22px);
-//   &::after {
-//     content: '[';
-//     position: absolute;
-//     @each $k, $v in $pos {
-//       #{$k}: $v;
-//     }
-//   }
-// }
-
-// @mixin line-decor($positions: 38.7% 50% 61.3%, $color: #212121, $thickness: 1px, $angle: 90deg) {
-//   position: relative;
-//   &::before {
-//     content: '';
-//     position: absolute;
-//     inset: 0;
-//     z-index: -1;
-//     pointer-events: none;
-//     background-repeat: no-repeat;
-
-//     $gradients: ();
-//     @each $pos in $positions {
-//       $half: calc($thickness / 2);
-//       $gradient: linear-gradient(
-//         $angle,
-//         transparent calc(#{$pos} - #{$half}),
-//         $color calc(#{$pos} - #{$half}),
-//         $color calc(#{$pos} + #{$half}),
-//         transparent calc(#{$pos} + #{$half})
-//       );
-//       $gradients: list.append($gradients, $gradient, comma);
-//     }
-//     background-image: $gradients;
-//   }
-// }
-
-// @mixin item-decor(
-//   $color: var(--text-black),
-//   $sizeItem: fluid(12px, 20px),
-//   $before-position: (
-//     top: 3px,
-//     left: 3px,
-//   ),
-//   $after-position: (
-//     bottom: 3px,
-//     right: 3px,
-//   )
-// ) {
-//   position: relative;
-
-//   &::before,
-//   &::after {
-//     content: '';
-//     position: absolute;
-//     width: $sizeItem;
-//     height: $sizeItem;
-//     background-color: $color;
-//     mask-image: url(/img/decoration.svg);
-//     mask-position: center;
-//     mask-size: contain;
-//     mask-repeat: no-repeat;
-//     z-index: 3;
-//   }
-
-//   &::before {
-//     @each $k, $v in $before-position {
-//       #{$k}: $v;
-//     }
-//   }
-
-//   &::after {
-//     @each $k, $v in $after-position {
-//       #{$k}: $v;
-//     }
-//     transform: rotate(180deg);
-//   }
-// }
-
-// ============================================================================
-// ОПТИМИЗИРОВАННЫЕ ФУНКЦИИ
-// ============================================================================
-
 @use 'sass:math';
 @use 'sass:list';
 @use 'sass:map';
-@use 'sass:meta'; // для meta.type-of()
-@use 'functions' as *; // для использования функции fluid()
+@use 'sass:meta';
+@use 'functions' as *;
 
-// ============================================================================
-// ОПТИМИЗИРОВАННЫЕ МИКСИНЫ
-// ============================================================================
-
-// Внутренний миксин для генерации псевдоэлемента (DRY принцип)
 @mixin _pseudo-element-base(
   $width,
   $height,
@@ -391,11 +27,9 @@
   transform: $transform;
 
   @if $color {
-    // Оптимизация: группируем свойства маски
     background-color: $color;
     mask: url($image) no-repeat 0 0 / 100%;
   } @else {
-    // Оптимизация: сокращенная запись background
     background: url($image) no-repeat 0 0 / 100%;
   }
 }
@@ -416,7 +50,6 @@
   $before-right: -1px,
   $before-transform: scaleY(-1) scaleX(-1)
 ) {
-  // Оптимизация: используем условие вместо раннего выхода
   @if $count != 'none' {
     @if $count == 'both' or $count == 'after' {
       &::after {
@@ -455,11 +88,9 @@
 }
 
 @mixin clip-shape($position: top-right) {
-  // Оптимизация: вычисляем переменные один раз
   --clip-size: #{fluid(20px, 30px)};
   --clip-half: calc(var(--clip-size) / 2);
 
-  // Оптимизация: используем @if/@else вместо двух отдельных @if
   @if $position == top-right {
     clip-path: polygon(
       0 0,
@@ -493,7 +124,6 @@
   $transform: uppercase,
   $spacing: -0.06em
 ) {
-  // Используем отдельные свойства для корректной работы с fluid() и процентами
   font-weight: $weight;
   font-size: $size;
   line-height: $line;
@@ -515,7 +145,6 @@
   width: $size;
   height: $size;
   background-color: $color;
-  // Оптимизация: сокращенная запись mask
   mask: url(#{$image}) center / contain no-repeat;
   pointer-events: none;
 
@@ -525,7 +154,6 @@
 }
 
 @mixin respond-min($breakpoint, $type: min) {
-  // Оптимизация: используем @if/@else вместо трех @if
   @if $type == min {
     @media (min-width: $breakpoint) {
       @content;
@@ -573,7 +201,6 @@ $trapezoid-configs: (
   ),
 );
 
-// Внутренний миксин для генерации трапеции (DRY)
 @mixin _trapezoid-pseudo($is-before, $width, $height, $color, $size, $shift) {
   content: '';
   position: absolute;
@@ -601,14 +228,12 @@ $trapezoid-configs: (
   $size: null,
   $shift: null
 ) {
-  // Оптимизация: определяем значения один раз
   $final-width: 21px;
   $final-height: 13px;
   $final-color: var(--vector-black);
   $final-size: 198px;
   $final-shift: -11px;
 
-  // Оптимизация: единственная проверка конфига
   @if $config and meta.type-of($config) == 'string' and map.has-key($trapezoid-configs, $config) {
     $config-map: map.get($trapezoid-configs, $config);
     $final-width: map.get($config-map, 'width');
@@ -618,7 +243,6 @@ $trapezoid-configs: (
     $final-shift: map.get($config-map, 'shift');
   }
 
-  // Применяем переопределения
   $final-width: $width or $final-width;
   $final-height: $height or $final-height;
   $final-color: $color or $final-color;
@@ -684,12 +308,10 @@ $trapezoid-configs: (
     pointer-events: none;
     background-repeat: no-repeat;
 
-    // Оптимизация: предварительно вычисляем половину толщины
     $half-thickness: math.div($thickness, 2);
 
     $gradients: ();
     @each $pos in $positions {
-      // Оптимизация: используем переменную вместо повторного calc()
       $gradient: linear-gradient(
         $angle,
         transparent calc(#{$pos} - #{$half-thickness}),
@@ -725,7 +347,6 @@ $trapezoid-configs: (
     width: $sizeItem;
     height: $sizeItem;
     background-color: $color;
-    // Оптимизация: сокращенная запись mask
     mask: url(/img/decoration.svg) center / contain no-repeat;
     z-index: 3;
   }
