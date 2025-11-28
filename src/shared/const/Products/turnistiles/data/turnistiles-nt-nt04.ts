@@ -1,14 +1,26 @@
 import type { ProductConfig } from '@/shared/types/products.types';
 
 export const TURNSTILES_NT_NT04: ProductConfig = {
-  id: 5,
+  id: 3,
   model: 'nt04',
   name: 'Тумбовый турникет',
   category: 'TURNSTILES',
   feature: '35-50 чел/мин',
 
   gallery: {
-    images: ['/img/turnstile-nt-nto4-image1.png', '/img/turnstile-nt-nto4-image2.png'],
+    images: [
+      '/img/product/turnstiles/nt04/gallery/0.webp',
+      '/img/product/turnstiles/nt04/gallery/1.webp',
+    ],
+  },
+
+  description: {
+    title1:
+      'Тумбовый турникет NT04 является турникетом с тремя штангами(планками) с функцией электромеханической анти-паники предназначен для использования в составе систем безопасности.',
+    title2:
+      'Основные характеристики турникета включают долговечность, высокую стабильность и высокую наработку на отказ.',
+    title3:
+      'Турникет легко интегрируется с системой контроля доступа. Изделие предназначено для использования в образовательных учреждениях, бизнес-центрах, правительственных и корпоративных офисных зданиях, детских садах и т. д',
   },
 
   keySpecs: {
@@ -66,7 +78,10 @@ export const TURNSTILES_NT_NT04: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/turnstile-nt-nto4-dimensions.jpg'],
+    images: [
+      '/img/product/turnstiles/nt04/size/1.webp',
+      '/img/product/turnstiles/nt04/size/2.webp',
+    ],
   },
 
   specifications: {

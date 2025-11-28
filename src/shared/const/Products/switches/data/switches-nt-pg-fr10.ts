@@ -1,14 +1,14 @@
 import type { ProductConfig } from '@/shared/types/products.types';
 
 export const SWITCH_NT_PG_FR10: ProductConfig = {
-  id: 4,
+  id: 6,
   model: 'nt-pg-fr10',
   name: '8-ми портовой коммутатор poe + 2 uplink ports gigabyte',
   category: 'SWITCHES',
   feature: '28 гбит/сек',
 
   gallery: {
-    images: ['/img/switch-nt-pg-fr10-image1.png', '/img/switch-nt-pg-fr10-image2.png'],
+    images: ['/img/product/switches/nt-pg-fr10/gallery/0.webp'],
   },
 
   keySpecs: {
@@ -51,172 +51,50 @@ export const SWITCH_NT_PG_FR10: ProductConfig = {
     ],
   },
 
-  dimensions: {
-    images: ['/img/switch-nt-pg-fr10-dimensions.jpg'],
-  },
-
   specifications: {
     general: {
-      tabs: ['Порты', 'Производительность', 'Передача данных'],
+      tabs: ['Артикул'],
       data: [
         {
-          label: 'Порты',
+          label: 'Артикул',
           variant: 'text',
           item: [
             {
-              title: 'PoE порты',
-              subtitle: '8×10/100/1000Base-T Gigabit PoE портов',
+              title: 'Порты',
+              subtitle: '24*порта PoE 10/100/1000Base-T 2*Гигабитный сетевой порт SFP uplink',
             },
             {
-              title: 'SFP uplink порты',
-              subtitle: '2×гигабитных оптических порта SFP uplink',
-            },
-          ],
-        },
-        {
-          label: 'Производительность',
-          variant: 'text',
-          item: [
-            {
-              title: 'Пропускная способность',
-              subtitle: '28 Гбит/с',
+              title: 'Производительность коммутации',
+              subtitle:
+                'Пропускная способность объединительной панели: 56G Таблица MAC-адресов: 16K Поддержка хранения и переадресации',
             },
             {
-              title: 'Скорость пересылки пакетов',
-              subtitle: '16 Мбит/с',
+              title: 'Среда и расстояние передачи данных',
+              subtitle:
+                'Кабель категории 5: 100 метров; Многомодовое волокно: 550 метров; Одномодовое волокно: 20/40/80/120 километров',
             },
             {
-              title: 'Таблица MAC-адресов',
-              subtitle: '4K записей',
+              title: 'РоЕ',
+              subtitle:
+                'Порты PoE: 24 Напряжение постоянного тока 48 В, максимальная мощность одного порта 30 Вт Пара источников питания: 1/2 (+), 3/6 (-)',
             },
             {
-              title: 'Метод коммутации',
-              subtitle: 'Store-and-Forward',
-            },
-          ],
-        },
-        {
-          label: 'Передача данных',
-          variant: 'text',
-          item: [
-            {
-              title: 'Кабель категории 5',
-              subtitle: '100 метров',
+              title: 'Источник питания',
+              subtitle: 'Вход переменного тока 100 ~ 240 В, 50/60 Гц Общая мощность 400 Вт',
             },
             {
-              title: 'Многомодовое волокно',
-              subtitle: '550 метров',
+              title: 'Индикаторные лампы',
+              subtitle:
+                'Индикатор питания, индикатор режима VLAN, индикатор питания, индикатор подключения электрического порта и Индикатор скорости электрического порта на расстоянии 1000 м, индикатор подключения оптического порта',
             },
             {
-              title: 'Одномодовое волокно',
-              subtitle: '20/40/80/120 километров',
-            },
-          ],
-        },
-      ],
-    },
-    technical: {
-      tabs: ['PoE', 'Питание', 'Индикаторы', 'Эксплуатация', 'Физические параметры'],
-      data: [
-        {
-          label: 'PoE',
-          variant: 'text',
-          item: [
-            {
-              title: 'PoE порты',
-              subtitle: '8 портов',
+              title: 'Условия эксплуатации',
+              subtitle:
+                'Рабочая температура: -10 ~ +55℃ Температура хранения: -40 ~ +70℃ Рабочая влажность: 10~90% без образования конденсата Влажность при хранении: 5~90% без образования конденсата',
             },
             {
-              title: 'Напряжение PoE',
-              subtitle: '50 В DC',
-            },
-            {
-              title: 'Мощность на порт',
-              subtitle: 'до 30 Вт',
-            },
-            {
-              title: 'Полярность питания',
-              subtitle: '1/2 (+), 3/6 (-)',
-            },
-          ],
-        },
-        {
-          label: 'Питание',
-          variant: 'text',
-          item: [
-            {
-              title: 'Входное напряжение AC',
-              subtitle: '100-240 В AC, 50/60 Гц',
-            },
-            {
-              title: 'Входное напряжение DC',
-              subtitle: '48-57 В DC',
-            },
-            {
-              title: 'Общая мощность',
-              subtitle: '350 Вт',
-            },
-          ],
-        },
-        {
-          label: 'Индикаторы',
-          variant: 'text',
-          item: [
-            {
-              title: 'PWR',
-              subtitle: 'Индикатор питания',
-            },
-            {
-              title: 'VLAN',
-              subtitle: 'Индикатор режима VLAN',
-            },
-            {
-              title: 'PoE',
-              subtitle: 'Индикатор питания портов',
-            },
-            {
-              title: 'LINK/SPEED',
-              subtitle: 'Индикатор подключения и скорости электрических портов',
-            },
-            {
-              title: 'SFP LINK',
-              subtitle: 'Индикатор подключения оптического порта',
-            },
-          ],
-        },
-        {
-          label: 'Эксплуатация',
-          variant: 'text',
-          item: [
-            {
-              title: 'Рабочая температура',
-              subtitle: '-10 ~ +55°C',
-            },
-            {
-              title: 'Температура хранения',
-              subtitle: '-40 ~ +70°C',
-            },
-            {
-              title: 'Рабочая влажность',
-              subtitle: '10~90% без конденсата',
-            },
-            {
-              title: 'Влажность хранения',
-              subtitle: '5~90% без конденсата',
-            },
-          ],
-        },
-        {
-          label: 'Физические параметры',
-          variant: 'text',
-          item: [
-            {
-              title: 'Размеры (Ш×Г×В)',
-              subtitle: '270×180×42 мм',
-            },
-            {
-              title: 'Вес',
-              subtitle: '2 кг',
+              title: 'Физические свойства',
+              subtitle: 'Размеры (ШхГхВ): 440×290×44 мм Вес: 4,8 кг',
             },
           ],
         },

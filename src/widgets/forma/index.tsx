@@ -193,8 +193,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
       return;
     }
 
-    console.log('Form data:', formData);
-
     if (onSubmit) {
       await onSubmit(formData);
     }

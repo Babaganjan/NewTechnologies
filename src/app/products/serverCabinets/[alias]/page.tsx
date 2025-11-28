@@ -10,9 +10,11 @@ import { ProductsPages } from '@/widgets';
 export async function generateStaticParams() {
   const SERVERCABINETS = getProductsByCategory('SERVERCABINETS');
 
-  return SERVERCABINETS.map((item) => ({
-    alias: slugify(item.model),
-  }));
+  return SERVERCABINETS.map((item) => {
+    return {
+      alias: slugify(item.model),
+    };
+  });
 }
 
 export async function generateMetadata({ params }: AliasPagesProps): Promise<Metadata> {

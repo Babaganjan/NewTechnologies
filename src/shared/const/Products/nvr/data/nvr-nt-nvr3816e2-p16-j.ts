@@ -9,9 +9,9 @@ export const NVR_NT_NVR3816E2_P16_J: ProductConfig = {
 
   gallery: {
     images: [
-      '/img/nvr3816p16-image1.png',
-      '/img/nvr3816p16-image2.png',
-      '/img/nvr3816p16-image3.png',
+      '/img/product/nvr/nt-nvr3816e2-p16-j/gallery/0.webp',
+      '/img/product/nvr/nt-nvr3816e2-p16-j/gallery/1.webp',
+      '/img/product/nvr/nt-nvr3816e2-p16-j/gallery/2.webp',
     ],
   },
 
@@ -74,7 +74,10 @@ export const NVR_NT_NVR3816E2_P16_J: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/nvr3816p16-dimensions.jpg'],
+    images: [
+      '/img/product/nvr/nt-nvr3816e2-p16-j/size/1.webp',
+      '/img/product/nvr/nt-nvr3816e2-p16-j/size/2.webp',
+    ],
   },
 
   specifications: {

@@ -8,7 +8,11 @@ export const NVR_NT_NVR3932E4_JA: ProductConfig = {
   feature: '320 Мбит/сек',
 
   gallery: {
-    images: ['/img/nvr3932e4-image1.png', '/img/nvr3932e4-image2.png', '/img/nvr3932e4-image3.png'],
+    images: [
+      '/img/product/nvr/nt-nvr3932e4-ja/gallery/0.webp',
+      '/img/product/nvr/nt-nvr3932e4-ja/gallery/1.webp',
+      '/img/product/nvr/nt-nvr3932e4-ja/gallery/2.webp',
+    ],
   },
 
   keySpecs: {
@@ -70,7 +74,10 @@ export const NVR_NT_NVR3932E4_JA: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/nvr3932e4-dimensions.jpg'],
+    images: [
+      '/img/product/nvr/nt-nvr3932e4-ja/size/1.webp',
+      '/img/product/nvr/nt-nvr3932e4-ja/size/2.webp',
+    ],
   },
 
   specifications: {

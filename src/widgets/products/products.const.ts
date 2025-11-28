@@ -24,7 +24,7 @@ export const PRODUCTS_DATA: IProductItem[] = [
   {
     id: 3,
     title: 'Серверные шкафы',
-    alias: 'serverCabinets',
+    alias: 'servercabinets',
     image: '/img/product-item-3.webp',
     amount: 9,
   },

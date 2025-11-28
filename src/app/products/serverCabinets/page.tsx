@@ -8,11 +8,11 @@ export const metadata: Metadata = {
   description: seoConfig.products.serverCabinets.description,
   keywords: seoConfig.products.serverCabinets.keywords,
   alternates: {
-    canonical: `${seoConfig.siteUrl}/products/serverCabinets`,
+    canonical: `${seoConfig.siteUrl}/products/servercabinets`,
   },
 };
 
-export default function serverCabinets() {
+export default function servercabinets() {
   return (
     <>
       <ProductsMenu type="SERVERCABINETS" />

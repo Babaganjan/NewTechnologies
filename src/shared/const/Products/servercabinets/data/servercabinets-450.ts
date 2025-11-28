@@ -8,7 +8,10 @@ export const SERVERCABINETS_450: ProductConfig = {
   feature: 'до 45 кг',
 
   gallery: {
-    images: ['/img/servercabinets-450-image1.png', '/img/servercabinets-450-image2.png'],
+    images: [
+      '/img/product/servercabinets/450/gallery/0.webp',
+      '/img/product/servercabinets/450/gallery/1.webp',
+    ],
   },
 
   keySpecs: {
@@ -45,10 +48,6 @@ export const SERVERCABINETS_450: ProductConfig = {
         description: 'Простой монтаж и подключение.',
       },
     ],
-  },
-
-  dimensions: {
-    images: ['/img/servercabinets-450-dimensions.jpg'],
   },
 
   specifications: {

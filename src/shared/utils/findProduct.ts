@@ -7,6 +7,7 @@ export const findProductBySlug = (slug: string): ProductConfig | undefined => {
   // Проходимся по всем категориям в каталоге
   for (const category of Object.values(PRODUCT_CATALOG)) {
     // Проходимся по всем продуктам в категории
+
     const foundProduct = Object.values(category).find((product) => {
       const productSlug = slugify(product.model);
 

@@ -8,7 +8,11 @@ export const NVR_NT_NVR3708E1_P8: ProductConfig = {
   feature: '40 мбит/сек',
 
   gallery: {
-    images: ['/img/nvr-image1.png', '/img/nvr-image2.png', '/img/nvr-image3.png'],
+    images: [
+      '/img/product/nvr/nt-nvr3708e1-p8/gallery/0.webp',
+      '/img/product/nvr/nt-nvr3708e1-p8/gallery/1.webp',
+      '/img/product/nvr/nt-nvr3708e1-p8/gallery/2.webp',
+    ],
   },
 
   keySpecs: {
@@ -57,7 +61,10 @@ export const NVR_NT_NVR3708E1_P8: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/nvr-dimensions.jpg'],
+    images: [
+      '/img/product/nvr/nt-nvr3708e1-p8/size/1.webp',
+      '/img/product/nvr/nt-nvr3708e1-p8/size/2.webp',
+    ],
   },
 
   specifications: {

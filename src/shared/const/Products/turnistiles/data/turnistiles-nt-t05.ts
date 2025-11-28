@@ -1,16 +1,18 @@
 import type { ProductConfig } from '@/shared/types/products.types';
 
 export const TURNSTILES_NT_T05: ProductConfig = {
-  id: 2,
+  id: 5,
   model: 'nt-t05',
   name: 'Турникет тумбовый с распашными створками',
   category: 'TURNSTILES',
   feature: '35-45 чел/мин',
 
   gallery: {
-    images: ['/img/turnstile-nt-t05-image1.png', '/img/turnstile-nt-t05-image2.png'],
+    images: [
+      '/img/product/turnstiles/nt-t05/gallery/0.webp',
+      '/img/product/turnstiles/nt-t05/gallery/1.webp',
+    ],
   },
-
   keySpecs: {
     layout: 'layout4',
     items: [
@@ -60,7 +62,10 @@ export const TURNSTILES_NT_T05: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/turnstile-nt-t05-dimensions.jpg'],
+    images: [
+      '/img/product/turnstiles/nt-t05/size/1.webp',
+      '/img/product/turnstiles/nt-t05/size/2.webp',
+    ],
   },
 
   specifications: {

@@ -8,7 +8,11 @@ export const CAMERA_NT_IPR7120_Z: ProductConfig = {
   feature: '1920×1080 / 25-30 fps',
 
   gallery: {
-    images: ['/img/image3.png', '/img/image2.png', '/img/image3.png'],
+    images: [
+      '/img/product/cameras/nt-ipr7120-z/gallery/0.webp',
+      '/img/product/cameras/nt-ipr7120-z/gallery/1.webp',
+      '/img/product/cameras/nt-ipr7120-z/gallery/2.webp',
+    ],
   },
 
   keySpecs: {
@@ -70,7 +74,10 @@ export const CAMERA_NT_IPR7120_Z: ProductConfig = {
   },
 
   dimensions: {
-    images: ['/img/camera1.jpg', '/img/camera1.png'],
+    images: [
+      '/img/product/cameras/nt-ipr7120-z/size/1.webp',
+      '/img/product/cameras/nt-ipr7120-z/size/2.webp',
+    ],
   },
 
   specifications: {

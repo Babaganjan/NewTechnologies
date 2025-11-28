@@ -8,7 +8,10 @@ export const SERVERCABINETS_600: ProductConfig = {
   feature: 'до 45 кг',
 
   gallery: {
-    images: ['/img/servercabinets-600-image1.png', '/img/servercabinets-600-image2.png'],
+    images: [
+      '/img/product/servercabinets/600/gallery/0.webp',
+      '/img/product/servercabinets/600/gallery/1.webp',
+    ],
   },
 
   keySpecs: {
@@ -45,10 +48,6 @@ export const SERVERCABINETS_600: ProductConfig = {
         description: 'Простой монтаж и подключение.',
       },
     ],
-  },
-
-  dimensions: {
-    images: ['/img/servercabinets-600-dimensions.jpg'],
   },
 
   specifications: {
@@ -136,7 +135,13 @@ export const SERVERCABINETS_600: ProductConfig = {
         {
           label: 'Боковой обзор',
           variant: 'product',
-          item: [{ id: 1, model: 'MT6422S', dimensions: '600×9000×2000', units: '42' }],
+          item: [
+            { id: 1, model: 'NT6606S', dimensions: '600×600×350', units: '6' },
+            { id: 2, model: 'NT6609S', dimensions: '600X600X500', units: '9' },
+            { id: 3, model: 'NT6612S', dimensions: '600X600X640', units: '12' },
+            { id: 4, model: 'NT6615S', dimensions: '600×600×1000', units: '15' },
+            { id: 5, model: 'NT6622', dimensions: '600×600×1200', units: '22' },
+          ],
         },
         {
           label: 'Цветовая палитра',
