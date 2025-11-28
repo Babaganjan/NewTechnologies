@@ -1,5 +1,10 @@
+import Script from 'next/script';
+
+import { seoConfig } from '@/shared/config/seo.config';
+import { getProductSEO } from '@/shared/const/Products/seo';
 import { getButtonTitle } from '@/shared/const/Products/utils/getButtonTitle';
 import { getProductByModel } from '@/shared/const/Products/utils/getProductByModel';
+import { generateBreadcrumbSchema, generateProductSchema } from '@/shared/utils/seo.utils';
 
 import { ProductsMenu } from '../ProductsMenu';
 
@@ -28,8 +33,41 @@ export const ProductsPages = ({ productModel }: ProductsPagesProps) => {
     hasGeneralSpecs && CATEGORIES_AFTER_DIMENSIONS.includes(product.category);
   const buttonForCategory = CATEGORIES_WITH_BUTTON.includes(product.category);
 
+  const productSEO = getProductSEO(product.model);
+
+  // Генерируем JSON-LD схемы
+  const productSchema = generateProductSchema(product, productSEO);
+
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Главная', url: seoConfig.siteUrl },
+    {
+      name: 'Продукция',
+      url: `${seoConfig.siteUrl}/products/${product.category.toLowerCase()}`,
+    },
+    {
+      name: `${product.name} ${product.model}`,
+      url: `${seoConfig.siteUrl}/products/${product.category.toLowerCase()}/${product.model.toLowerCase()}`,
+    },
+  ]);
+
   return (
     <>
+      <Script
+        id="product-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productSchema),
+        }}
+      />
+
+      <Script
+        id="breadcrumb-schema"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
+
       <GallerySpec
         productName={product.name}
         productModel={product.model}
