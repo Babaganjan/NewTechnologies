@@ -14,10 +14,6 @@ export const FOOTER_NAV_ITEMS: FooterItem[] = [
     title: 'Производство',
   },
   {
-    href: '/solution/',
-    title: 'IT-решения',
-  },
-  {
     href: '/about/',
     title: 'О нас',
   },
@@ -36,10 +32,6 @@ export const FOOTER_ACTIVITY_ITEMS: FooterItem[] = [
   {
     href: '/products/',
     title: 'Производство',
-  },
-  {
-    href: '/solution/',
-    title: 'IT-решения',
   },
 ] as const;
 
