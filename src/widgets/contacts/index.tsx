@@ -28,19 +28,17 @@ export const Contacts = memo(() => {
           <ContactsHeading />
         </H>
 
-        <ul className="contacts__list" role="list">
+        <ul className="contacts__list">
           {/* Телефон */}
           <ContactItem className="phone" label="телефон">
-            <p>
-              <Button
-                href={`tel:${selectedContact?.phone}`}
-                className="contacts-title-mobile"
-                variant="link"
-                aria-label={`Позвонить по номеру ${selectedContact?.phone}`}
-              >
-                {selectedContact?.phone}
-              </Button>
-            </p>
+            <Button
+              href={`tel:${selectedContact?.phone}`}
+              className="contacts-title-mobile"
+              variant="link"
+              aria-label={`Позвонить по номеру ${selectedContact?.href}`}
+            >
+              {selectedContact?.phone}
+            </Button>
           </ContactItem>
 
           {/* Адрес */}
@@ -68,31 +66,26 @@ export const Contacts = memo(() => {
 
           {/* Соцсети */}
           <ContactItem className="social" label="соцсети">
-            <p>
-              <span className="social-links-wrapper">
-                {COMMON_CONTACT_INFO.socialNetworks.map((social) => (
-                  <Button
-                    key={social.id}
-                    href={social.href}
-                    variant="social"
-                    icon
-                    className="social-link"
-                    rel="noopener noreferrer"
-                    aria-label={`Перейти в ${social.title}`}
-                  >
-                    {social.title}
-                  </Button>
-                ))}
-              </span>
-            </p>
-            <div className="contacts__decoration" aria-hidden="true"></div>
+            {COMMON_CONTACT_INFO.socialNetworks.map((social) => (
+              <Button
+                key={social.id}
+                href={social.href}
+                variant="social"
+                icon
+                className="social-link"
+                rel="noopener noreferrer"
+                aria-label={`Перейти в ${social.title}`}
+              >
+                {social.title}
+              </Button>
+            ))}
           </ContactItem>
         </ul>
 
         <iframe
           className="contacts__map-iframe"
           src={MAPS_EMBED_URL}
-          width="100%"
+          width="100"
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"

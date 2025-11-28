@@ -23,6 +23,7 @@
     display: grid;
     gap: 10px;
     padding: 10px;
+    min-height: 224px;
     align-items: center;
     text-align: center;
     @include item-decor(var(--vector-deep-gray));
@@ -75,6 +76,7 @@
 
     .stagesWork__item {
       padding: 20px;
+      min-height: 336px;
       .stagesWork__item-subTitle {
         margin-top: 16px;
       }
@@ -108,6 +110,7 @@
     grid-template-columns: repeat(2, 1fr);
 
     .stagesWork__item {
+      min-height: 360px;
       .stagesWork__item__title-container {
         margin-bottom: 0;
       }
