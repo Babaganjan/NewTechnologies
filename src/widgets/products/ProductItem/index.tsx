@@ -17,7 +17,7 @@ export const ProductItem = ({ itemData }: { itemData: IProductItem }) => {
           <Image src={itemData.image} alt={itemData.title} fill />
         </div>
         <div className="products__title">
-          <span aria-label={`${itemData.amount} моделей`}>[{itemData.amount}]</span>
+          <span>[{itemData.amount}]</span>
           <H level={'5'} variant="dark">
             {itemData.title}
           </H>
