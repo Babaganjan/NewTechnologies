@@ -27,7 +27,7 @@ export const Advertising = memo(() => {
         </div>
 
         <div className="continuous-scroll-container" aria-label="Карусель логотипов партнеров">
-          <div className="continuous-scroll-wrapper" role="list">
+          <div className="continuous-scroll-wrapper">
             {PARTNERS.map((slide) => (
               <PartnerSlide
                 key={slide.id}
