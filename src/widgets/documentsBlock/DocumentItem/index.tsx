@@ -46,7 +46,6 @@ export const DocumentItem = ({
       onBlur={onDeactivate}
       onClick={(e) => onDownload(e, item.id, index)}
       onKeyDown={(e) => handleKeyDown(e)}
-      role="button"
       tabIndex={0}
       aria-label={`Скачать ${item.title}`}
     >
