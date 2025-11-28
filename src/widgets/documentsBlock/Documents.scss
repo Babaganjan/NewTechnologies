@@ -100,7 +100,7 @@
 
 .documents-list__item--active {
   --text-black: var(--text-white);
-  background-color: black;
+  background-color: var(--bg-black);
 
   svg {
     color: var(--text-white);
@@ -113,10 +113,6 @@
 
 .documents-list__item--deactive {
   --text-black: var(--text-gray);
-
-  svg {
-    color: var(--text-gray);
-  }
 }
 
 @include respond-min(1024px) {
