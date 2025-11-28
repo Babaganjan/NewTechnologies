@@ -1,4 +1,6 @@
 import { seoConfig } from '../config/seo.config';
+import type { ProductConfig } from '../types/products.types';
+import type { ProductSEO } from '../types/seo.types';
 
 // Экспортируем функцию для генерации структурированных данных (JSON-LD)
 export const generateOrganizationSchema = () => ({
@@ -22,26 +24,42 @@ export const generateOrganizationSchema = () => ({
   },
 });
 
-export const generateProductSchema = (product: {
-  name: string;
-  description: string;
-  image?: string;
-  brand?: string;
-}) => ({
-  '@context': 'https://schema.org',
-  '@type': 'Product',
-  name: product.name,
-  description: product.description,
-  image: product.image,
-  brand: {
-    '@type': 'Brand',
-    name: product.brand || 'NTOUCH',
-  },
-  manufacturer: {
-    '@type': 'Organization',
-    name: 'ТОО «Новые Технологии – Тараз»',
-  },
-});
+export const generateProductSchema = (product: ProductConfig, seo?: ProductSEO) => {
+  const schema = seo?.schema || {
+    name: `${product.name} ${product.model}`,
+    description: product.feature,
+    brand: 'NTOUCH',
+    model: product.model,
+    category: product.category,
+  };
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: schema.name,
+    description: schema.description,
+    brand: {
+      '@type': 'Brand',
+      name: schema.brand,
+    },
+    manufacturer: {
+      '@type': 'Organization',
+      name: 'ТОО «Новые Технологии – Тараз»',
+      url: seoConfig.siteUrl,
+    },
+    model: schema.model,
+    category: schema.category,
+    offers: {
+      '@type': 'Offer',
+      availability: 'https://schema.org/InStock',
+      priceCurrency: 'KZT',
+      seller: {
+        '@type': 'Organization',
+        name: 'NTOUCH',
+      },
+    },
+  };
+};
 
 /**
  * Генерирует канонический URL

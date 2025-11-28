@@ -1,15 +1,15 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { seoConfig } from '@/shared/config/seo.config';
+import { getProductSEO } from '@/shared/const/Products/seo';
 import { getProductsByCategory } from '@/shared/const/Products/utils/getProductsByCategory';
 import type { AliasPagesProps } from '@/shared/types/productsPages.types';
 import { findProductBySlug } from '@/shared/utils/findProduct';
 import { slugify } from '@/shared/utils/slugify';
 import { ProductsPages } from '@/widgets';
 
-// 1. Генерация статических параметров для КАМЕР
 export async function generateStaticParams() {
-  // Получаем только продукты категории CAMERAS из нового каталога
   const cameras = getProductsByCategory('CAMERAS');
 
   return cameras.map((item) => ({
@@ -17,7 +17,6 @@ export async function generateStaticParams() {
   }));
 }
 
-// 2. Генерация метаданных
 export async function generateMetadata({ params }: AliasPagesProps): Promise<Metadata> {
   const { alias } = await params;
   const product = findProductBySlug(alias);
@@ -28,20 +27,51 @@ export async function generateMetadata({ params }: AliasPagesProps): Promise<Met
     };
   }
 
-  // Обратите внимание: в ProductConfig поле называется 'name', а не 'title'
+  const productSEO = getProductSEO(product.model);
+
+  if (productSEO) {
+    return {
+      title: productSEO.title,
+      description: productSEO.description,
+      keywords: productSEO.keywords,
+      alternates: {
+        canonical: `${seoConfig.siteUrl}/products/cameras/${alias}`,
+      },
+      openGraph: {
+        title: productSEO.title,
+        description: productSEO.description,
+        url: `${seoConfig.siteUrl}/products/cameras/${alias}`,
+        images: [
+          {
+            url: product.gallery.images[0] || '/og-image.jpg',
+            width: 1200,
+            height: 630,
+            alt: productSEO.schema?.name || product.name,
+          },
+        ],
+      },
+      twitter: {
+        card: 'summary_large_image',
+        title: productSEO.title,
+        description: productSEO.description,
+      },
+    };
+  }
+
   return {
     title: `${product.name} ${product.model} | NTOUCH`,
     description: `${product.name} - ${product.feature}`,
+    alternates: {
+      canonical: `${seoConfig.siteUrl}/products/cameras/${alias}`,
+    },
   };
 }
 
-// 3. Компонент страницы
 export default async function CamerasPages({ params }: AliasPagesProps) {
   const { alias } = await params;
 
   const product = findProductBySlug(alias);
 
-  // Дополнительная проверка: убедимся, что это именно камера (опционально, но полезно)
   if (!product || product.category !== 'CAMERAS') {
     notFound();
   }
