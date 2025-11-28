@@ -3,18 +3,17 @@
 
 .keySpecs {
   background-color: var(--bg-black);
-  padding-block: 100px;
+  padding-bottom: 100px;
 
   &__title {
     position: relative;
     margin-left: 10px;
-    margin-bottom: 10px;
+    margin-bottom: -30px;
   }
 
   &__list {
     display: grid;
     gap: 8px;
-    margin-block: -35px;
 
     // Layout варианты для desktop
     &--layout1 {
@@ -191,7 +190,7 @@
         margin-right: 15px;
 
         .keySpecs__item-value {
-          font-size: fluid(68px, 108px, 360px, 768px);
+          font-size: fluid(68px, 95px, 360px, 768px);
         }
       }
     }
@@ -225,6 +224,9 @@
 }
 
 .keySpecs__item--titleNone {
+  .keySpecs__item-wrapper {
+    margin-top: auto;
+  }
   .keySpecs__item-wrapper .keySpecs__item-value {
     font-size: fluid(68px, 100px, 360px, 768px);
   }
@@ -244,6 +246,7 @@
     }
 
     &--singleValue {
+      margin-top: auto;
       .keySpecs__item-wrapper {
         justify-content: start;
         margin-right: 0;
@@ -269,6 +272,16 @@
       &::after,
       &::before {
         display: none;
+      }
+
+      @include respond-min(768px) {
+        grid-column: 2;
+        grid-row: 2;
+      }
+
+      @include respond-min(1024px) {
+        grid-column: 1;
+        grid-row: 1;
       }
 
       .keySpecs__item-title,
@@ -311,6 +324,7 @@
       }
 
       .keySpecs__item-unit {
+        margin-bottom: 10px;
         font-size: fluid(18px, 22px);
       }
     }

@@ -63,6 +63,7 @@
 
 .descriptionsSpec {
   background-color: var(--bg-black);
+  padding-bottom: 150px;
 
   &__title {
     position: relative;
@@ -83,7 +84,7 @@
   @include respond-min(1024px) {
     &__container-wrapper {
       display: grid;
-      grid-template-columns: 0.3fr 0.5fr;
+      grid-template-columns: 0.2fr 0.5fr;
     }
   }
 }

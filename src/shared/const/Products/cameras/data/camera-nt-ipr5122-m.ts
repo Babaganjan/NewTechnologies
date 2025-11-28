@@ -53,7 +53,7 @@ export const CAMERA_NT_IPR5122_M: ProductConfig = {
         id: 6,
         title: 'ик-подсветка',
         value: '> 40',
-        unit: '/ 30 fps',
+        unit: 'метров',
         type: 'big',
         description: 'Обеспечит черно-белое изображение в высоком качестве даже в полной темноте.',
       },

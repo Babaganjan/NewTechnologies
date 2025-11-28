@@ -10,7 +10,7 @@ export const BREADCRUMBSWORDS: Record<BreadcrumbWord, string> = {
   turnstiles: 'Турникеты',
   products: 'Продукция',
   switches: 'Коммутаторы',
-  serverCabinets: 'Серверные шкафы',
+  servercabinets: 'Серверные шкафы',
   nvr: 'Видеорегистраторы',
   cameras: 'Камеры видеонаблюдения',
   itsolutionspublicprivate: 'Для государственных и частных организаций',

@@ -17,9 +17,15 @@ interface SpecProps {
   title?: string;
   section: SpecSection;
   button?: boolean;
+  buttonTitle?: string;
 }
 
-export const Spec = ({ title = 'Общие характеристики', section, button = false }: SpecProps) => {
+export const Spec = ({
+  title = 'Общие характеристики',
+  section,
+  button = false,
+  buttonTitle,
+}: SpecProps) => {
   const [activeTab, setActiveTab] = useState(section.tabs[0]);
   const activeTabData = section.data.find((item) => item.label === activeTab);
 
@@ -37,12 +43,12 @@ export const Spec = ({ title = 'Общие характеристики', sectio
         {activeTabData?.variant === 'text' && <SpecList data={activeTabData.item} />}
         {activeTabData?.variant === 'images' && <SpecImages data={activeTabData.item} />}
         {activeTabData?.variant === 'schema' && <AssemblyScheme items={activeTabData.item} />}
-        {activeTabData?.variant === 'product' && <ProductSpecs items={activeTabData.item[0]} />}
+        {activeTabData?.variant === 'product' && <ProductSpecs items={activeTabData.item} />}
 
         {button && (
           <div className="spec__button">
             <Button variant="feedback" icon>
-              заказать камеру
+              заказать {buttonTitle || 'камера'}
             </Button>
           </div>
         )}

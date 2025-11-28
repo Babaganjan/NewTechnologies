@@ -173,10 +173,11 @@
           .productsMenu__item-img {
             display: block;
             position: absolute;
-            width: 150px;
-            height: 100px;
-            left: 12%;
+            width: 210px;
+            height: 173px;
+            left: 10%;
             top: 50%;
+            z-index: 99;
             transform: translate(0, -50%);
           }
 

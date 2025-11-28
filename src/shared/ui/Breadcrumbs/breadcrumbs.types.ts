@@ -7,7 +7,7 @@ export type BreadcrumbWord =
   | 'pozhartushenie'
   | 'turnstiles'
   | 'switches'
-  | 'serverCabinets'
+  | 'servercabinets'
   | 'nvr'
   | 'cameras'
   | 'products'

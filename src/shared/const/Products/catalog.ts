@@ -14,6 +14,14 @@ export const PRODUCT_CATALOG = {
   SERVERCABINETS: SERVER_CABINETS,
 } as const;
 
+export const PRODUCT_CATALOG_COUNT: Record<ProductCategory, number> = {
+  CAMERAS: Object.keys(CAMERAS).length,
+  NVR: Object.keys(NVR_SYSTEMS).length,
+  SWITCHES: Object.keys(SWITCHES).length,
+  TURNSTILES: Object.keys(TURNSTILES).length,
+  SERVERCABINETS: Object.keys(SERVER_CABINETS).length,
+};
+
 export interface ProductMenuTitle {
   title: string;
   subtitle: string;

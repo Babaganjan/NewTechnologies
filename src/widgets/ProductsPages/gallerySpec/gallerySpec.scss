@@ -77,7 +77,7 @@
 /* --- DESKTOP --- */
 @include respond-min(1280px) {
   .gallery--one .gallery__item {
-    height: 50%;
+    max-height: 700px;
   }
 
   .gallery--two {

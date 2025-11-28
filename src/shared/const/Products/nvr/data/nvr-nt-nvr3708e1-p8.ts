@@ -54,6 +54,7 @@ export const NVR_NT_NVR3708E1_P8: ProductConfig = {
         id: 6,
         value: '1 sata',
         unit: '/ до 8 тб',
+        type: 'titleNone',
         description:
           'Позволяет установить внушительный жёсткий диск для записи и длительного хранения видеоархива без частого удаления файлов',
       },
