@@ -1,6 +1,11 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
+.consultationService {
+  position: relative;
+  @include decor-pseudo-elements(var(--vector-black));
+}
+
 .consultationService__title {
   margin-left: 10px;
   position: relative;
@@ -182,7 +187,7 @@
 
   .consultationService__item {
     padding: 18px;
-    min-height: 88px;
+    min-height: 136px;
     text-align: center;
     position: relative;
 
@@ -261,6 +266,9 @@
     align-items: center;
     justify-items: center;
     position: relative;
+    .consultationService__item {
+      min-height: 104px;
+    }
   }
 
   .consultationService_title-container {

@@ -51,17 +51,13 @@
 
   &__img {
     @include item-decor();
+    @include clip-shape();
     width: 100%;
     min-height: 480px;
     max-width: 728px;
     margin-bottom: 20px;
     position: relative;
     margin-inline: auto;
-
-    .includedService__img-decoration {
-      @include decoration(var(--text-black), 24px);
-      z-index: 4;
-    }
   }
 
   &__list {

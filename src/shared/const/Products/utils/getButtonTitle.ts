@@ -5,7 +5,7 @@ export const getButtonTitle = (category: ProductCategory): string => {
   if (category === 'SERVERCABINETS') return 'шкаф';
   if (category === 'NVR') return 'видеорегистратор';
   if (category === 'SWITCHES') return 'коммутатор';
-  if (category === 'TURNSTILES') return 'турник';
+  if (category === 'TURNSTILES') return 'турникет';
 
   return '';
 };
