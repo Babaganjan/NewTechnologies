@@ -66,11 +66,12 @@
     display: flex;
     justify-content: center;
     align-items: flex-end;
-    min-height: fluid(140px, 539px);
     background-image: url('/img/services-title-bg-360.webp');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: fluid(360px, 1820px) fluid(140px, 539px);
+    background-size: contain;
+    width: fluid(360px, 1820px);
+    height: fluid(140px, 271px);
     position: absolute;
     width: 100%;
     bottom: 0;
@@ -113,7 +114,8 @@
     }
     .wrapper-title {
       align-items: center;
-      background-image: url('/img/services-title-bg-768.webp');
+      background-image: url('/img/services-title-bg-768.svg');
+      height: fluid(272px, 539px);
     }
   }
 }
