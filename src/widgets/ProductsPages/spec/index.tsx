@@ -45,7 +45,7 @@ export const Spec = ({
         {activeTabData?.variant === 'schema' && <AssemblyScheme items={activeTabData.item} />}
         {activeTabData?.variant === 'product' && <ProductSpecs items={activeTabData.item} />}
 
-        {button && (
+        {button && activeTab !== 'Развернутый вид' && (
           <div className="spec__button">
             <Button variant="feedback" icon>
               заказать {buttonTitle || 'камера'}

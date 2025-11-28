@@ -1,10 +1,12 @@
+import { Fragment } from 'react';
+
 import type { ProductInfoItem } from '@/shared/types/products.types';
 
 export const ProductSpecs = ({ items }: { items: ProductInfoItem[] }) => {
   return (
     <div className="productSpecs">
       {items.map((item) => (
-        <>
+        <Fragment key={item.id}>
           <div className="productSpecs__group productSpecs__group--model">
             <span className="productSpecs__label">модель</span>
             <span className="productSpecs__value">{item.model}</span>
@@ -21,7 +23,7 @@ export const ProductSpecs = ({ items }: { items: ProductInfoItem[] }) => {
               <span className="productSpecs__value">{item.units}</span>
             </div>
           </div>
-        </>
+        </Fragment>
       ))}
     </div>
   );

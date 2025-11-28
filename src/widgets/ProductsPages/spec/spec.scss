@@ -130,6 +130,11 @@
   margin-bottom: 10px;
   @include item-decor();
   @include clip-shape();
+  @include respond-min(1024px) {
+    img {
+      padding: 50px;
+    }
+  }
 }
 
 // --- Список ---
