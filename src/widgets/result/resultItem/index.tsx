@@ -6,7 +6,7 @@ interface ResultItemProps {
 }
 
 export const ResultItem = ({ item }: ResultItemProps) => {
-  const { type, number, title, description, variant = 'dark', className = '', layout = {} } = item;
+  const { type, number, title, description, className = '', layout = {} } = item;
 
   const isNumericAchievement = type !== 'text' && number;
 
@@ -18,11 +18,6 @@ export const ResultItem = ({ item }: ResultItemProps) => {
             {number}
           </data>
         )}
-
-        {/* 
-        <H level={'4'} className={`item__title ${layout.title || ''}`} variant={variant}>
-          {title}
-        </H> */}
 
         <h3 className={`item__title ${layout.title || ''}`}>{title}</h3>
 

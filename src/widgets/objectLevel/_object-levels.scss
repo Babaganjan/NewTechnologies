@@ -29,6 +29,9 @@
     span {
       color: var(--text-black);
     }
+    @include respond-min(768px) {
+      color: var(--text-black);
+    }
     letter-spacing: -0.136rem;
   }
 

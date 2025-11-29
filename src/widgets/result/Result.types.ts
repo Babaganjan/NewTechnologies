@@ -4,7 +4,6 @@ export interface ResultItem {
   number?: string;
   title: string;
   description?: string;
-  variant?: 'light' | 'dark';
   className?: string;
   layout?: {
     item?: string;
