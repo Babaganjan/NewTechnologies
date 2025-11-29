@@ -1,7 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
 
-import { H } from '@/shared/ui';
 import type { IProductItem } from '@/widgets/products/products.const';
 
 import './_productItem.scss';
@@ -14,13 +13,17 @@ export const ProductItem = ({ itemData }: { itemData: IProductItem }) => {
         aria-label={`${itemData.title} - ${itemData.amount} моделей`}
       >
         <div className="products__img">
-          <Image src={itemData.image} alt={itemData.title} fill />
+          <Image
+            src={itemData.image}
+            alt={itemData.title}
+            fill
+            sizes="(max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+            style={{ objectFit: 'contain' }}
+          />
         </div>
         <div className="products__title">
-          <span>[{itemData.amount}]</span>
-          <H level={'5'} variant="dark">
-            {itemData.title}
-          </H>
+          <data value={itemData.amount}>[{itemData.amount}]</data>
+          <h4 className="products__section-title">{itemData.title}</h4>
         </div>
       </Link>
     </li>

@@ -42,7 +42,6 @@
   margin-bottom: 10px;
 
   img {
-    object-fit: contain;
     object-position: center;
     width: 100% !important;
     height: auto !important;
@@ -57,7 +56,7 @@
   flex-direction: column;
   width: fit-content;
 
-  span {
+  data {
     @include typography(var(--text-gray), 500, fluid(10px, 22px), 0.4, uppercase, -0.05em);
     position: absolute;
     width: 0;
@@ -65,8 +64,8 @@
     right: -3px;
   }
 
-  h5 {
-    color: var(--text-black);
+  .products__section-title {
+    @include typography(var(--text-black), 500, fluid(18px, 28px), 1.15);
     transition: color 0.2s ease;
   }
 }
