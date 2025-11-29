@@ -6,26 +6,23 @@ import './_about.scss';
 
 export const About = () => {
   return (
-    <section className="about" aria-labelledby="about-heading" aria-describedby="about-description">
+    <section className="about" aria-labelledby="about-heading">
       <div className="container about__container">
-        {/* Основной заголовок секции */}
         <H level={'2'} variant="light" className="about__title title" id="about-heading">
           Что мы делаем
         </H>
 
-        {/* Подзаголовок с правильной семантикой */}
         <H level={'3'} variant="light" className="about__subtitle subtitle">
           <span>реализуем комплексные системы</span> безопасности и оптимизируем бизнес в казахстане{' '}
           <span>С 2013 года</span>
         </H>
 
-        {/* Группа изображений с описательной ролью */}
-        <div className="about__images" role="group" aria-label="Фотографии систем безопасности">
+        <figure className="about__images">
           <div className="about__images--top">
             <div className="image__wrapper image__big">
               <Image
                 src="/img/about-1-1920.webp"
-                alt="Современная система видеонаблюдения с камерами высокого разрешения, установленная на промышленном объекте"
+                alt="Система видеонаблюдения на промышленном объекте"
                 width={340}
                 height={254}
                 loading="lazy"
@@ -36,7 +33,7 @@ export const About = () => {
             <div className="image__wrapper image__small-top">
               <Image
                 src="/img/about-2-1920.webp"
-                alt="Купольная камера видеонаблюдения с инфракрасной подсветкой для ночной съемки"
+                alt="Купольная камера видеонаблюдения"
                 width={168}
                 height={134}
                 loading="lazy"
@@ -45,18 +42,17 @@ export const About = () => {
             <div className="image__wrapper image__small-bottom">
               <Image
                 src="/img/about-3-1920.webp"
-                alt="Панель управления системой безопасности с датчиками и индикаторами"
+                alt="Панель управления системой безопасности"
                 width={168}
                 height={134}
                 loading="lazy"
               />
             </div>
           </div>
-        </div>
+        </figure>
 
-        {/* Текстовый контент с правильной структурой */}
         <div className="about__text-wrapper">
-          <div className="about__prevs-wrapper" id="about-description">
+          <div className="about__prevs-wrapper">
             <p className="about__desc">
               Мы фокусируемся на государственных, промышленных и стратегически важных объектах. А
               также обеспечиваем защиту частных школ, жилых комплексов и частных домов.
@@ -67,13 +63,8 @@ export const About = () => {
               соответствия.
             </p>
           </div>
-          <Button
-            variant="primaryLink"
-            className="about__btn"
-            icon
-            href="/about"
-            aria-label="Узнать больше о компании и наших услугах"
-          >
+
+          <Button variant="primaryLink" className="about__btn" icon href="/about">
             О компании
           </Button>
         </div>
