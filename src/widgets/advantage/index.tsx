@@ -25,12 +25,10 @@ export const Advantage = ({ type }: { type: AdvantageKeyType }) => {
               className={`advantage__item advantage__item--pos-${index + 1}`}
               key={`${type}-advantage-${index}`}
             >
-              <H level="5" variant="light">
-                {item.title}
-              </H>
-              <span className="advantage__item-number" aria-hidden="true">
+              <h3>{item.title}</h3>
+              <data value={index + 1} className="advantage__item-number" aria-hidden="true">
                 [0{index + 1}]
-              </span>
+              </data>
             </li>
           ))}
         </ul>

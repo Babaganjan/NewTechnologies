@@ -24,6 +24,10 @@
     @include item-decor(var(--vector-deep-gray));
     @include clip-shape();
 
+    h3 {
+      @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+    }
+
     .advantage__item-number {
       position: absolute;
       bottom: 0;
