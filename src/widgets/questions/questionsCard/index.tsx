@@ -23,7 +23,7 @@ export const QuestionsCard = ({ question, setActiveCard, activeCard }: Questions
     >
       <h3 className="questions__content">{question.content}</h3>
       {isExpanded && (
-        <div className="questions__description" role="region" aria-label="Ответ на вопрос">
+        <div className="questions__description" aria-label="Ответ на вопрос">
           <p>
             {question.highlight
               ? highlightText(question.description, question.highlight)
