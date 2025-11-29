@@ -1,6 +1,6 @@
 import Image from 'next/image';
 
-import { Breadcrumbs, H } from '@/shared/ui';
+import { Breadcrumbs } from '@/shared/ui';
 
 import './heroService.scss';
 import type { HeroServiceKey } from './heroService.types';
@@ -11,7 +11,7 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
       <Breadcrumbs />
       <div className="heroService__container container">
         <div className="heroService__title">
-          <H level="3">{title}</H>
+          <h1>{title}</h1>
         </div>
         <div className="heroService__img">
           <Image
