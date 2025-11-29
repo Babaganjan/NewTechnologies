@@ -15,14 +15,12 @@ export const resultData: ResultItem[] = [
     title: 'Собственная разработка по',
     description:
       'Платформы с простой интеграцией, модульной архитектурой и масштабируемостью под любые задачи.',
-    variant: 'light',
   },
   {
     id: 3,
     type: 'mixed',
     number: '12',
     title: 'Лет успешной работы',
-    variant: 'light',
     layout: {
       title: 'item__title-width',
     },
@@ -33,7 +31,6 @@ export const resultData: ResultItem[] = [
     title: 'Собственное производство оборудования',
     description:
       'От проектирования до монтажа. Надёжные решения под ключ с гарантией до 12 месяцев.',
-    variant: 'light',
   },
   {
     id: 5,
@@ -42,7 +39,6 @@ export const resultData: ResultItem[] = [
     title: 'Успешно реализованных проектов',
     description:
       'Возьмемся за проект любого масштаба: от частных владений до объектов национального значения.',
-    variant: 'light',
     className: 'result__item-layout',
     layout: {
       item: 'result__item-layout',
