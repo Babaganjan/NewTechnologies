@@ -49,10 +49,14 @@ export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
             Наши проекты
           </H>
 
-          <H level="4" variant="light" className="project-menu__subtitle">
+          {/* <H level="4" variant="light" className="project-menu__subtitle">
             {titleData.title}
             {titleData.highlightTitle && <span> {titleData.highlightTitle}</span>}
-          </H>
+          </H> */}
+          <h3 className="project-menu__subtitle">
+            {titleData.title}
+            {titleData.highlightTitle && <span> {titleData.highlightTitle}</span>}
+          </h3>
         </header>
 
         {/* Заголовки колонок (только desktop) */}

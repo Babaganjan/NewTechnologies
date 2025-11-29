@@ -15,6 +15,18 @@
 
     .project-menu__subtitle {
       margin-bottom: 30px;
+      @include typography(
+        var(--text-black),
+        600,
+        fluid(22px, 36px, 360px, 768px),
+        1,
+        uppercase,
+        -1.32px
+      );
+
+      @include respond-min(768px) {
+        font-size: fluid(36px, 42px);
+      }
 
       span {
         color: var(--text-light-gray);
