@@ -36,14 +36,17 @@ $large-screen-bottom-padding: 190px;
     .contacts__item {
       background-color: var(--bg-deep-gray);
       padding: 15px;
-      min-height: fluid(120px, 210px);
+      min-height: 120px;
       display: flex;
       flex-direction: column;
       border-radius: 8px;
       position: relative;
       @include clip-shape();
-
       @include item-decor(var(--vector-deep-gray));
+
+      @include respond-min(768px) {
+        min-height: 218px;
+      }
 
       .contacts-title-text {
         font-family: var(--second-family);
