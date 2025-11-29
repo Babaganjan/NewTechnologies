@@ -1,24 +1,26 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-body:not(:has(.questions)) {
-  .feedback-menu {
-    background-color: var(--bg-black);
-  }
-}
-
 .feedback-menu {
   position: relative;
+  background-color: var(--bg-black);
   z-index: 2;
   min-height: 51.25rem;
-  background-image: url('/img/bg-feedback-360.webp');
-  background-size: 100% 100%;
-  background-repeat: no-repeat;
-  background-position: center;
   display: flex;
   justify-content: center;
   flex-direction: column;
   margin-bottom: -0.75rem;
+
+  & > .container {
+    flex-grow: 1;
+    display: flex;
+    justify-content: center;
+
+    background-image: url('/img/bg-feedback-360.webp');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
 
   &__wrapper {
     padding: 0 0.75rem;
@@ -38,12 +40,11 @@ body:not(:has(.questions)) {
 
 @include respond-min(1024px) {
   .feedback-menu {
-    background-image: url('/img/feebback-bg.webp');
-    margin-bottom: -30px;
-    background-size: 100% 100%;
-
+    .container {
+      background-image: url('/img/feebback-bg.webp');
+    }
     &__title {
-      max-width: 633px;
+      width: 60%;
     }
   }
 }
