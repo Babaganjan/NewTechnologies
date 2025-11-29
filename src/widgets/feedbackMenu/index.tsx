@@ -4,14 +4,20 @@ import { Button, H } from '@/shared/ui';
 import { FormaConsultation } from '@/widgets';
 import './_feedback-menu.scss';
 
-export const FeedbackMenu = () => {
+interface FeedbackMenuProps {
+  theme?: 'white'; // Варианты тем
+}
+
+export const FeedbackMenu = ({ theme }: FeedbackMenuProps) => {
   const { isConsultationModalOpen, handleOpenConsultation, handleCloseConsultation } = useModal({
     initialValue: false,
   });
 
+  const sectionClass = `feedback-menu feedback-menu--${theme}`;
+
   return (
     <>
-      <section className="feedback-menu" aria-labelledby="feedback-menu-title">
+      <section className={sectionClass} aria-labelledby="feedback-menu-title">
         <div className="container">
           <div className="feedback-menu__wrapper">
             <H level={'3'} variant="dark" id="feedback-menu-title" className="feedback-menu__title">

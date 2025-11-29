@@ -6,7 +6,7 @@ export default function ServicesPage() {
       <ServicesHero />
       <Services />
       <Questions />
-      <FeedbackMenu />
+      <FeedbackMenu theme="white" />
     </>
   );
 }

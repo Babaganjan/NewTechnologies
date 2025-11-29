@@ -2,6 +2,7 @@ import {
   Advantage,
   ConsultationService,
   Description,
+  FeedbackMenu,
   HeroService,
   IncludedService,
   ProjectMenu,
@@ -24,6 +25,7 @@ export const SkdPage = () => {
       <ProjectMenu type="ACCESS_CONTROL" />
       <Questions type="ACCESS_CONTROL" />
       <SeeAlso type="Системы контроля доступом" />
+      <FeedbackMenu theme="white" />
     </>
   );
 };

@@ -2,6 +2,7 @@ import {
   Advantage,
   ConsultationService,
   Description,
+  FeedbackMenu,
   HeroService,
   IncludedService,
   ProjectMenu,
@@ -22,6 +23,7 @@ export const OpsPage = () => {
       <ProjectMenu type="FIRE_ALARM" />
       <Questions type="FIRE_ALARM" />
       <SeeAlso type="Охранно-пожарная сигнализация" />
+      <FeedbackMenu theme="white" />
     </>
   );
 };

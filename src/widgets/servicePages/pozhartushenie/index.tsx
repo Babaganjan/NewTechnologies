@@ -2,6 +2,7 @@ import {
   Advantage,
   ConsultationService,
   Description,
+  FeedbackMenu,
   HeroService,
   IncludedService,
   ProjectMenu,
@@ -24,6 +25,7 @@ export const PozhartusheniePage = () => {
       <ProjectMenu type="FIRE_SUPPRESSION" />
       <Questions type="FIRE_SUPPRESSION" />
       <SeeAlso type="Системы пожаротушения" />
+      <FeedbackMenu theme="white" />
     </>
   );
 };

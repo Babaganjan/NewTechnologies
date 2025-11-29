@@ -10,16 +10,24 @@
   justify-content: center;
   flex-direction: column;
   margin-bottom: -0.75rem;
+  background-image: url('/img/bg-feedback-360.webp');
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  @include decor-pseudo-elements(var(--bg-black));
+
+  &--white {
+    &::after,
+    &::before {
+      background-color: var(--bg-white);
+    }
+  }
 
   & > .container {
     flex-grow: 1;
     display: flex;
     justify-content: center;
-
-    background-image: url('/img/bg-feedback-360.webp');
-    background-size: 100% 100%;
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
   &__wrapper {
@@ -40,9 +48,7 @@
 
 @include respond-min(1024px) {
   .feedback-menu {
-    .container {
-      background-image: url('/img/feebback-bg.webp');
-    }
+    background-image: url('/img/feebback-bg.webp');
     &__title {
       width: 60%;
     }

@@ -42,7 +42,7 @@ export default function Home() {
       <ProjectMenu />
       <Advertising />
       <Questions />
-      <FeedbackMenu />
+      <FeedbackMenu theme="white" />
     </>
   );
 }

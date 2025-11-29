@@ -7,7 +7,7 @@ import { getProductsByCategory } from '@/shared/const/Products/utils/getProducts
 import type { AliasPagesProps } from '@/shared/types/productsPages.types';
 import { findProductBySlug } from '@/shared/utils/findProduct';
 import { slugify } from '@/shared/utils/slugify';
-import { ProductsPages } from '@/widgets';
+import { FeedbackMenu, ProductsPages } from '@/widgets';
 
 export async function generateStaticParams() {
   const cameras = getProductsByCategory('CAMERAS');
@@ -76,5 +76,10 @@ export default async function CamerasPages({ params }: AliasPagesProps) {
     notFound();
   }
 
-  return <ProductsPages productModel={product.model} />;
+  return (
+    <>
+      <ProductsPages productModel={product.model} />
+      <FeedbackMenu />
+    </>
+  );
 }

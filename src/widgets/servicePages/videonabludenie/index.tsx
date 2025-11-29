@@ -2,6 +2,7 @@ import {
   Advantage,
   ConsultationService,
   Description,
+  FeedbackMenu,
   HeroService,
   IncludedService,
   ProjectMenu,
@@ -22,6 +23,7 @@ export const VideonabludeniePage = () => {
       <ProjectMenu type="VIDEO_SURVEILLANCE" />
       <Questions type="VIDEO_SURVEILLANCE" />
       <SeeAlso type="Системы видеонаблюдения" />
+      <FeedbackMenu theme="white" />
     </>
   );
 };

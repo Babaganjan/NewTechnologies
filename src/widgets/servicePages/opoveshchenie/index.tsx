@@ -2,6 +2,7 @@ import {
   Advantage,
   ConsultationService,
   Description,
+  FeedbackMenu,
   HeroService,
   IncludedService,
   ProjectMenu,
@@ -22,6 +23,7 @@ export const OpoveshcheniePage = () => {
       <ProjectMenu type="NOTIFICATION_SYSTEM" />
       <Questions type="NOTIFICATION_SYSTEM" />
       <SeeAlso type="Системы оповещения" />
+      <FeedbackMenu theme="white" />
     </>
   );
 };
