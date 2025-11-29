@@ -20,9 +20,9 @@ export const FeedbackMenu = ({ theme }: FeedbackMenuProps) => {
       <section className={sectionClass} aria-labelledby="feedback-menu-title">
         <div className="container">
           <div className="feedback-menu__wrapper">
-            <h3 id="feedback-menu-title" className="feedback-menu__title">
+            <h2 id="feedback-menu-title" className="feedback-menu__title">
               Рассчитать решение под ваш объект?
-            </h3>
+            </h2>
             <Button
               type="button"
               variant="feedback"
