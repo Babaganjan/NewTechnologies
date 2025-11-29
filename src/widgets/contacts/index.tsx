@@ -1,25 +1,18 @@
 'use client';
 
-import { memo, useMemo } from 'react';
-
 import { useScrollContext } from '@/context/ScrollProvider';
 import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/cities.data';
 import { ContactsHeading } from '@/shared/icons';
 import { Button, H } from '@/shared/ui';
 
 import { ContactItem } from './ContactItem';
-import { MAPS_EMBED_URL } from './contacts.const';
 
 import './_contacts.scss';
 
-export const Contacts = memo(() => {
+export const Contacts = () => {
   const { selectedCity } = useScrollContext();
 
-  // Мемоизация выбранного контакта
-  const selectedContact = useMemo(
-    () => CITIES_CONTACTS.find((contact) => contact.city === selectedCity),
-    [selectedCity]
-  );
+  const selectedContact = CITIES_CONTACTS.find((contact) => contact.city === selectedCity);
 
   return (
     <section className="contacts" aria-labelledby="contacts-title">
@@ -29,7 +22,6 @@ export const Contacts = memo(() => {
         </H>
 
         <ul className="contacts__list">
-          {/* Телефон */}
           <ContactItem className="phone" label="телефон">
             <Button
               href={`tel:${selectedContact?.phone}`}
@@ -41,17 +33,14 @@ export const Contacts = memo(() => {
             </Button>
           </ContactItem>
 
-          {/* Адрес */}
           <ContactItem className="address" label="адрес">
             <address>{selectedContact?.address || 'Астана, 14/1 умай ана'}</address>
           </ContactItem>
 
-          {/* Рабочие часы */}
           <ContactItem className="work-time" label="часы работы">
             <p>{COMMON_CONTACT_INFO.workingHours}</p>
           </ContactItem>
 
-          {/* Email */}
           <ContactItem className="mail" label="email">
             <Button
               href={`mailto:${COMMON_CONTACT_INFO.email}`}
@@ -64,7 +53,6 @@ export const Contacts = memo(() => {
             </Button>
           </ContactItem>
 
-          {/* Соцсети */}
           <ContactItem className="social" label="соцсети">
             {COMMON_CONTACT_INFO.socialNetworks.map((social) => (
               <Button
@@ -84,7 +72,7 @@ export const Contacts = memo(() => {
 
         <iframe
           className="contacts__map-iframe"
-          src={MAPS_EMBED_URL}
+          src={selectedContact?.map || ''}
           width="100"
           allowFullScreen
           loading="lazy"
@@ -95,6 +83,6 @@ export const Contacts = memo(() => {
       </div>
     </section>
   );
-});
+};
 
 Contacts.displayName = 'Contacts';

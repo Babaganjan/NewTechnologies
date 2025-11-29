@@ -16,4 +16,5 @@ export interface CityContactType extends CommonContactInfoType {
   phone: string;
   href: string;
   address: string;
+  map: string;
 }
