@@ -1,4 +1,3 @@
-import { H } from '@/shared/ui';
 import type { ResultItem as ResultItemType } from '@/widgets/result/Result.types';
 import './_resultItem.scss';
 
@@ -9,19 +8,26 @@ interface ResultItemProps {
 export const ResultItem = ({ item }: ResultItemProps) => {
   const { type, number, title, description, variant = 'dark', className = '', layout = {} } = item;
 
+  const isNumericAchievement = type !== 'text' && number;
+
   return (
     <li className={`result__item ${className} ${layout.item || ''}`}>
-      <article className={`item__inner ${layout.inner || ''}`}>
-        {type !== 'text' && number && (
-          <strong className={`item__number ${layout.number || ''}`}>{number}</strong>
+      <div className={`item__inner ${layout.inner || ''}`}>
+        {isNumericAchievement && (
+          <data value={number.replace(/\D/g, '')} className={`item__number ${layout.number || ''}`}>
+            {number}
+          </data>
         )}
 
+        {/* 
         <H level={'4'} className={`item__title ${layout.title || ''}`} variant={variant}>
           {title}
-        </H>
+        </H> */}
+
+        <h3 className={`item__title ${layout.title || ''}`}>{title}</h3>
 
         {description && <p className={`item__prev ${layout.description || ''}`}>{description}</p>}
-      </article>
+      </div>
     </li>
   );
 };

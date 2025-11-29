@@ -23,11 +23,22 @@
 
   &__item {
     @include clip-shape();
+    .item__title {
+      @include typography(var(--text-black), 600, fluid(22px, 42px), 1, uppercase, -1.32px);
+    }
+
     &:not(:has(.item__number)):nth-of-type(2) {
       .item__title {
         width: 80%;
       }
     }
+
+    &:first-child {
+      .item__title {
+        color: var(--text-white);
+      }
+    }
+
     position: relative;
     background-color: var(--text-white);
     padding: 15px;
