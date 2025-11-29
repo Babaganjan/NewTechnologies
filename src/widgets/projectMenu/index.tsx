@@ -1,17 +1,14 @@
+// src/widgets/projectMenu/index.tsx
 'use client';
-import clsx from 'clsx';
-import Image from 'next/image';
-import { useState } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 
-import { Arrow } from '@/shared/icons';
 import { Button, H } from '@/shared/ui';
-import './_project-menu.scss';
 
-import { ProjectListItem } from './ProjectListItem';
-import { ProjectNumberItem } from './ProjectNumberItem';
-import { ProjectServiceItem } from './ProjectServiceItem';
+import { ProjectMenuItem } from './ProjectMenuItem';
 import { INITIAL_ITEMS_COUNT, PROJECT_MENU_DATA_TITLE, TYPEPROJECT } from './projectMenu.const';
-import type { ProjectCategory, ProjectMenuItemProps } from './projectMenu.types';
+import type { ProjectCategory } from './projectMenu.types';
+
+import './_project-menu.scss';
 
 export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
   const [hoveredRow, setHoveredRow] = useState<number | null>(null);
@@ -19,114 +16,70 @@ export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
   const [visibleCount, setVisibleCount] = useState(INITIAL_ITEMS_COUNT);
   const [isExpanding, setIsExpanding] = useState(false);
 
-  const onMouseEnter = (index: number) => {
-    if (activeRow === null) {
-      setHoveredRow(index);
-    }
-  };
-
-  const onMouseLeave = () => {
-    setHoveredRow(null);
-  };
-
-  const handleActiveRow = (index: number) => {
-    setActiveRow((prev) => (prev === index ? null : index));
-  };
-
-  const handleLoadMore = () => {
-    setIsExpanding(true);
-    setVisibleCount(projectData.length);
-  };
-
-  const createProjectProps = (index: number): Omit<ProjectMenuItemProps, 'item'> => ({
-    index,
-    isHovered: hoveredRow === index,
-    isActive: activeRow === index,
-    onMouseEnter,
-    onMouseLeave,
-    onActiveRow: handleActiveRow,
-  });
-
-  const projectData = TYPEPROJECT[type];
-  const titleData = PROJECT_MENU_DATA_TITLE[type];
-  const visibleProjects = projectData.slice(0, visibleCount);
+  const projectData = useMemo(() => TYPEPROJECT[type], [type]);
+  const titleData = useMemo(() => PROJECT_MENU_DATA_TITLE[type], [type]);
+  const visibleProjects = useMemo(
+    () => projectData.slice(0, visibleCount),
+    [projectData, visibleCount]
+  );
   const hasMore = visibleCount < projectData.length;
 
+  const handleMouseEnter = useCallback((index: number) => {
+    setHoveredRow((prev) => (prev === null ? index : prev));
+  }, []);
+
+  const handleMouseLeave = useCallback(() => {
+    setHoveredRow(null);
+  }, []);
+
+  const handleActiveRow = useCallback((index: number) => {
+    setActiveRow((prev) => (prev === index ? null : index));
+  }, []);
+
+  const handleLoadMore = useCallback(() => {
+    setIsExpanding(true);
+    setVisibleCount(projectData.length);
+  }, [projectData.length]);
+
   return (
-    <section className="project-menu" aria-labelledby="project-menu-title">
+    <section className="project-menu" aria-labelledby="projects-heading">
       <div className="project-menu__container container">
-        <H level={'2'} variant="light" id="project-menu-title" className="project-menu__title">
-          Наши проекты
-        </H>
-        <H level={'4'} variant="light" className="project-menu__subtitle">
-          {titleData.title}
-          {titleData.highlightTitle && <span> {titleData.highlightTitle}</span>}
-        </H>
+        <header className="project-menu__header-section">
+          <H level="2" variant="light" id="projects-heading" className="project-menu__title">
+            Наши проекты
+          </H>
+
+          <H level="4" variant="light" className="project-menu__subtitle">
+            {titleData.title}
+            {titleData.highlightTitle && <span> {titleData.highlightTitle}</span>}
+          </H>
+        </header>
+
+        {/* Заголовки колонок (только desktop) */}
         <div className="project-menu__headers">
-          <div className="project-menu__header project-menu__header--project">проект</div>
-          <div className="project-menu__header project-menu__header--client">клиент</div>
-          <div className="project-menu__header project-menu__header--service">тип услуги</div>
+          <div className="project-menu__header">проект</div>
+          <div className="project-menu__header">клиент</div>
+          <div className="project-menu__header">тип услуги</div>
         </div>
-        <div className="project-menu__numbers">
+
+        {/* Список проектов */}
+        <div className="project-menu__list">
           {visibleProjects.map((item, index) => (
-            <div
-              key={`number-${item.id}`}
-              className={clsx(
-                'project-menu__number-wrapper',
-                index >= INITIAL_ITEMS_COUNT &&
-                  isExpanding &&
-                  'project-menu__number-wrapper--animated'
-              )}
-            >
-              <ProjectNumberItem {...createProjectProps(index)} />
-              {(hoveredRow === index || activeRow === index) && (
-                <div
-                  className="project-menu__preview"
-                  aria-hidden="true"
-                  onMouseEnter={() => onMouseEnter(index)}
-                >
-                  <Image
-                    src={item.image}
-                    alt={item.subtitle}
-                    loading="lazy"
-                    width={150}
-                    height={173}
-                  />
-                </div>
-              )}
-            </div>
-          ))}
-        </div>
-        <ul className="project-menu__list">
-          {visibleProjects.map((item, index) => (
-            <ProjectListItem
-              key={`list-${item.id}`}
+            <ProjectMenuItem
+              key={item.id}
               item={item}
-              {...createProjectProps(index)}
+              index={index}
+              isHovered={hoveredRow === index}
+              isActive={activeRow === index}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+              onActiveRow={handleActiveRow}
               isAnimated={index >= INITIAL_ITEMS_COUNT && isExpanding}
             />
           ))}
-        </ul>
-        <div className="project-menu__services">
-          {visibleProjects.map((item, index) => (
-            <div
-              key={`service-${item.id}`}
-              className={clsx(
-                'project-menu__service-wrapper',
-                index >= INITIAL_ITEMS_COUNT &&
-                  isExpanding &&
-                  'project-menu__service-wrapper--animated'
-              )}
-            >
-              <ProjectServiceItem item={item} {...createProjectProps(index)} />
-              {(hoveredRow === index || activeRow === index) && (
-                <div className="project-menu__arrow-decoration" aria-hidden="true">
-                  <Arrow width={30} height={24} />
-                </div>
-              )}
-            </div>
-          ))}
         </div>
+
+        {/* Кнопка загрузки */}
         {hasMore && (
           <Button
             variant="primary"

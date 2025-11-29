@@ -1,0 +1,293 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+// Анимация для новых элементов
+.project-menu-row--animated {
+  animation: slideInFade 0.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+@for $i from 1 through 26 {
+  .project-menu-row--animated:nth-child(#{$i + 8}) {
+    animation-delay: #{$i * 0.05}s;
+  }
+}
+
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+// Базовая строка - мобильная версия
+.project-menu-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-bottom: 1px solid var(--vector-light-gray);
+  cursor: pointer;
+  padding: 15px 0;
+
+  &:first-child {
+    border-top: 1px solid var(--vector-light-gray);
+  }
+
+  // Колонка с номером - скрыта на mobile
+  .project-menu-row__number,
+  .project-menu-row__subtitle {
+    display: none;
+  }
+
+  // Колонка с клиентом
+  .project-menu-row__client {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+
+  .project-menu-row__label {
+    font-family: var(--second-family);
+    @include typography(var(--text-deep-black), 500, fluid(14px, 22px), 1.1, none);
+  }
+
+  .project-menu-row__title-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include respond-min(1024px) {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  }
+
+  .project-menu-row__title {
+    @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+  }
+
+  .project-menu-row__arrow {
+    transform: rotate(90deg);
+    transition: transform 0.2s ease-in-out;
+    flex-shrink: 0;
+    margin-right: 4px;
+    width: 12px;
+    height: 15px;
+  }
+
+  .project-menu-row__expanded {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 5px;
+
+    p {
+      font-family: var(--second-family);
+      @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
+    }
+  }
+
+  .project-menu-row__image-wrapper {
+    width: 50%;
+  }
+
+  .project-menu-row__service {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+
+    .project-menu-row__service-text {
+      @include typography(var(--text-light-gray), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+    }
+  }
+
+  .project-menu-row__service-arrow {
+    display: none;
+  }
+
+  .project-menu-row__preview {
+    display: none;
+  }
+
+  // Активное состояние на mobile
+  &.project-menu--active {
+    background-color: var(--bg-black);
+    margin-inline: -20px;
+    padding: 20px;
+
+    .project-menu-row__label {
+      color: var(--text-light-gray);
+    }
+
+    .project-menu-row__title {
+      color: var(--text-white);
+    }
+
+    .project-menu-row__arrow {
+      transform: rotate(-90deg);
+    }
+
+    .project-menu-row__service-text {
+      color: var(--text-deep-gray);
+    }
+  }
+}
+
+@include respond-min(1300px) {
+  .project-menu__list:has(.hovered, .project-menu--active) {
+    .project-menu-row:not(.hovered):not(.project-menu--active) {
+      .project-menu-row__number .project-menu-row__number-text,
+      .project-menu-row__title,
+      .project-menu-row__service .project-menu-row__service-text {
+        color: var(--text-gray);
+        transition: color 0.2s ease;
+      }
+    }
+  }
+  .project-menu-row {
+    grid-template-columns: 0.6fr 1.7fr 0.8fr;
+    column-gap: 10px;
+    padding: 0;
+    border-top: none;
+
+    .project-menu-row__subtitle {
+      display: block;
+      font-family: var(--second-family);
+      @include typography(var(--text-light-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
+      width: 70%;
+    }
+
+    &.project-menu--active {
+      background-color: var(--bg-white);
+    }
+
+    &:first-child {
+      border-top: none;
+    }
+
+    // Колонка с номером
+    .project-menu-row__number {
+      display: flex;
+      align-items: center;
+      position: relative;
+      font-family: var(--second-family);
+      min-height: 40px;
+      padding: 10px 5px;
+
+      .project-menu-row__number-text {
+        @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+      }
+    }
+
+    .project-menu-row__preview {
+      display: block;
+      position: absolute;
+      left: 100%;
+      top: 50%;
+      transform: translate(-110%, -60%);
+      z-index: 40;
+      width: 210px;
+      height: 173px;
+      pointer-events: auto;
+      transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        top 0.3s ease;
+      will-change: transform, opacity, top;
+      @include clip-shape();
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+      }
+    }
+
+    // Колонка с клиентом
+    .project-menu-row__client {
+      min-height: 40px;
+      padding: 10px 5px;
+    }
+
+    .project-menu-row__label {
+      display: none;
+    }
+
+    .project-menu-row__title {
+      color: var(--text-black);
+      padding-left: 0;
+    }
+
+    .project-menu-row__arrow {
+      display: none;
+    }
+
+    .project-menu-row__expanded {
+      display: none;
+    }
+
+    .project-menu-row__service {
+      position: relative;
+      min-height: 40px;
+      padding: 10px 5px;
+      .project-menu-row__service-text {
+        color: var(--text-black);
+      }
+    }
+
+    .project-menu-row__service-arrow {
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 1%;
+      transform: translateY(50%);
+      transition: transform 0.3s ease;
+
+      svg {
+        transform: rotate(90deg);
+        transition: transform 0.3s ease;
+      }
+    }
+
+    &:is(.hovered, .project-menu--active) {
+      margin-inline: 0;
+      padding: 0;
+
+      .project-menu-row__number,
+      .project-menu-row__client,
+      .project-menu-row__service {
+        background-color: var(--bg-black);
+        color: var(--text-white);
+      }
+
+      .project-menu-row__number .project-menu-row__number-text,
+      .project-menu-row__title,
+      .project-menu-row__service .project-menu-row__service-text {
+        color: var(--text-white);
+      }
+    }
+
+    &.project-menu--active {
+      .project-menu-row__number,
+      .project-menu-row__service {
+        padding-bottom: 69px;
+      }
+
+      .project-menu-row__preview {
+        top: 10px;
+        transform: translate(-110%, -40%);
+      }
+
+      .project-menu-row__service-arrow svg {
+        transform: rotate(-90deg);
+      }
+    }
+  }
+}

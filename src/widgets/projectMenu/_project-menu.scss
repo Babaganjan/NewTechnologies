@@ -1,49 +1,16 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-// Анимации для новых элементов
-.project-menu__number-wrapper--animated,
-.project-menu__list-item--animated,
-.project-menu__service-wrapper--animated {
-  animation: slideInFade 0.5s ease-out forwards;
-  opacity: 0;
-  transform: translateY(20px);
-  will-change: transform, opacity;
-}
-
-@for $i from 1 through 26 {
-  .project-menu__number-wrapper--animated:nth-child(#{$i + 8}),
-  .project-menu__list-item--animated:nth-child(#{$i + 8}),
-  .project-menu__service-wrapper--animated:nth-child(#{$i + 8}) {
-    animation-delay: #{$i * 0.05}s;
-  }
-}
-
-@keyframes slideInFade {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-// Базовые стили (мобильная версия)
+// Базовая секция
 .project-menu {
   .project-menu__container {
     display: grid;
     grid-template-columns: 1fr;
-    padding: 10px;
     margin-block: 100px;
 
     .project-menu__title {
       position: relative;
       margin-bottom: 10px;
-      &::after {
-        left: 0;
-      }
     }
 
     .project-menu__subtitle {
@@ -54,105 +21,39 @@
       }
     }
 
-    // Скрываем на мобилке
-    .project-menu__numbers,
-    .project-menu__services,
     .project-menu__headers {
       display: none;
     }
 
-    .project-menu__header {
-      font-family: var(--second-family);
-      @include typography(var(--text-deep-gray), 500, 22px, 1.1, none);
+    .project-menu__list {
+      display: flex;
+      flex-direction: column;
     }
   }
 
   .project-menu__button {
     margin-top: fluid(20px, 40px);
   }
-
-  // Активное состояние (мобильная версия)
-  .project-menu--active {
-    display: flex;
-    align-items: flex-start;
-    min-height: 100px;
-    background-color: var(--bg-black);
-    margin-inline: -20px;
-    padding: 20px;
-    transform: scaleY(1);
-    transform-origin: top;
-    opacity: 1;
-    transition:
-      transform 0.3s ease-out,
-      opacity 0.3s ease-out;
-    will-change: transform, opacity;
-
-    .project-menu-item__client {
-      color: var(--text-light-gray);
-    }
-
-    .project-menu-item__subtitle {
-      color: var(--text-white);
-    }
-
-    .project-menu-item__subtitle-title {
-      color: var(--text-white);
-    }
-
-    .project-menu-item__service-label {
-      color: var(--text-light-gray);
-    }
-
-    .project-menu-item__service {
-      color: var(--text-deep-gray);
-    }
-  }
 }
 
-// Focus стили для всех интерактивных элементов
-.project-menu-item__number,
-.project-menu-item,
-.project-menu-item__service {
-  &:focus {
-    outline: 2px solid var(--text-white);
-    outline-offset: 2px;
-  }
-
-  &:focus:not(:focus-visible) {
-    outline: none;
-  }
-
-  &:focus-visible {
-    outline: 2px solid var(--text-white);
-    outline-offset: 2px;
-  }
-}
-
-.project-menu__active-wrapper {
-  > * {
-    opacity: 1;
-    transition: opacity 0.2s ease 0.1s;
-  }
-}
-
-// Desktop версия (1300px+)
+// Desktop версия
 @include respond-min(1300px) {
   .project-menu {
-    .project-menu--active {
-      margin-inline: 0;
-      padding-left: 5px;
-      padding-top: 10px;
-      min-height: auto;
-    }
     .project-menu__container {
       grid-template-columns: 0.6fr 1.7fr 0.8fr;
       grid-template-areas:
-        'title subtitle .'
+        'header header header'
         'headers headers headers'
-        'number list type'
+        'list list list'
         '. button .';
       column-gap: 10px;
-      row-gap: 0;
+
+      .project-menu__header-section {
+        display: grid;
+        grid-area: header;
+        grid-template-columns: 0.6fr 1.7fr 0.8fr;
+        grid-template-areas: 'title subtitle .';
+      }
 
       .project-menu__title {
         grid-area: title;
@@ -168,12 +69,14 @@
       .project-menu__headers {
         grid-area: headers;
         display: grid;
-        grid-template-columns: 0.6fr 1.7fr 0.7fr;
+        grid-template-columns: 0.6fr 1.7fr 0.8fr;
         column-gap: 10px;
         margin-bottom: 20px;
         padding-left: 5px;
 
         .project-menu__header {
+          font-family: var(--second-family);
+          @include typography(var(--text-deep-gray), 500, 22px, 1.1, none);
           letter-spacing: 0.5px;
           padding-bottom: 10px;
           margin-top: 40px;
@@ -182,97 +85,17 @@
         }
       }
 
-      // Колонка с номерами
-      .project-menu__numbers {
-        grid-area: number;
-        display: block;
-        padding-left: 5px;
-
-        .project-menu__number-wrapper {
-          position: relative;
-          display: block;
-          border-bottom: 1px solid var(--vector-light-gray);
-
-          // Картинка при hover/active
-          .project-menu__preview {
-            position: absolute;
-            left: 100%;
-            top: 50%;
-            transform: translate(-110%, -60%);
-            z-index: 40;
-            width: 210px;
-            height: 173px;
-            pointer-events: auto;
-            transition:
-              transform 0.3s ease,
-              opacity 0.3s ease,
-              top 0.3s ease;
-            will-change: transform, opacity, top;
-            @include clip-shape();
-
-            img {
-              width: 100%;
-              height: 100%;
-              object-fit: cover;
-              display: block;
-            }
-          }
-
-          // Когда активен - картинка вверху
-          &:has(.project-menu--active) .project-menu__preview {
-            top: 10px;
-            transform: translate(-110%, -40%);
-          }
-        }
-      }
-
-      // Колонка с проектами (клиентами)
+      // Список проектов
       .project-menu__list {
         grid-area: list;
-        display: block;
-        padding-left: 0;
-        margin: 0;
+        display: flex;
+        flex-direction: column;
       }
 
-      // Колонка с услугами
-      .project-menu__services {
-        grid-area: type;
-        display: block;
-        padding-left: 5px;
-
-        .project-menu__service-wrapper {
-          position: relative;
-          display: block;
-
-          .project-menu__arrow-decoration {
-            position: absolute;
-            top: 0;
-            right: 1%;
-            transform: translateY(50%);
-            transition: transform 0.3s ease;
-            will-change: transform;
-
-            svg {
-              transform: rotate(90deg);
-              transition: transform 0.3s ease;
-            }
-          }
-
-          // Когда активен - стрелка разворачивается
-          &:has(.project-menu--active) .project-menu__arrow-decoration {
-            transform: translateY(50%);
-
-            svg {
-              transform: rotate(-90deg);
-            }
-          }
-        }
+      .project-menu__button {
+        grid-area: button;
+        margin-right: auto;
       }
-    }
-
-    .project-menu__button {
-      grid-area: button;
-      margin-right: auto;
     }
   }
 }
