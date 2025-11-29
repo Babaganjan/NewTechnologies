@@ -30,10 +30,11 @@
   background: var(--background-light-gray);
   @include item-decor();
 
-  h5 {
+  h4 {
     align-self: start;
     padding-top: 14px;
     margin-top: auto;
+    @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
   }
 
   a {

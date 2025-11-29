@@ -24,9 +24,11 @@ export const SeeAlso = ({ type }: { type: string }) => {
               <Link href={item.href}>
                 <Image src={item.image} alt={item.title} width={110} height={110} />
 
-                <H level="5" variant="light">
+                {/* <H level="5" variant="light">
                   {item.title}
-                </H>
+                </H> */}
+
+                <h4>{item.title}</h4>
               </Link>
             </li>
           ))}

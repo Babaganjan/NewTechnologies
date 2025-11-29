@@ -29,6 +29,14 @@
     @include item-decor(var(--vector-deep-gray));
     @include clip-shape();
 
+    .stagesWork__item-title {
+      @include typography(var(--text-white), 600, fluid(22px, 36px), 1, uppercase, -1.32px);
+
+      @include respond-min(768px) {
+        font-size: fluid(36px, 42px);
+      }
+    }
+
     .stagesWork__item-img {
       display: none;
       position: relative;

@@ -19,14 +19,15 @@ export const StagesWork = ({ type }: { type: ServiceTypeKey }) => {
         <ul className="stagesWork__list">
           {StagesWorkData.map((item, index) => (
             <li className="stagesWork__item" key={item.id}>
-              <span className="stagesWork__item-number">
+              <data value={index + 1} className="stagesWork__item-number">
                 {(index + 1).toString().padStart(2, '0')}
-              </span>
+              </data>
               <div className="stagesWork__item__container">
                 <div className="stagesWork__item__title-container">
-                  <H level="4" variant="dark" className="stagesWork__item-title">
+                  {/* <H level="4" variant="dark" className="stagesWork__item-title">
                     {item.title}
-                  </H>
+                  </H> */}
+                  <h3 className="stagesWork__item-title">{item.title}</h3>
                   <p className="stagesWork__item-subTitle">{item.subTitle}</p>
                 </div>
                 <div className="stagesWork__item-img">
