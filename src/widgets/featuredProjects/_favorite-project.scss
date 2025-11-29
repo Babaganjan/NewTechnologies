@@ -46,7 +46,7 @@
   }
 
   .item__small-title {
-    color: var(--text-black);
+    @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
   }
 }
 
@@ -79,7 +79,6 @@
         }
       }
 
-      // Если элемент один - растягиваем на всю ширину
       &:only-of-type {
         grid-column: 1/-1;
         grid-row: 2/3;

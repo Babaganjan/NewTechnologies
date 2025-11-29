@@ -34,12 +34,12 @@ export const FavoritesProject = ({
   const glitches = [glitch1, glitch2, glitch3];
 
   return (
-    <section className="favorites-project" aria-labelledby="favorites-project-title">
+    <section className="favorites-project" aria-labelledby="featured-projects-heading">
       <div className="favorites-project__container container">
         <H
           level={'2'}
           variant="light"
-          id="favorites-project-title"
+          id="featured-projects-heading"
           className="favorites-project__title"
         >
           Избранные проекты
@@ -49,7 +49,7 @@ export const FavoritesProject = ({
 
           return (
             <article className="favorites-project__item" key={item.id}>
-              <div
+              <figure
                 className="favorites-project__img"
                 ref={glitch.ref}
                 onMouseEnter={glitch.startGlitch}
@@ -57,17 +57,18 @@ export const FavoritesProject = ({
               >
                 <Image
                   src={item.image}
-                  alt={item.description}
+                  alt={item.title}
                   width={340}
                   height={242}
                   className="favorites-project__img-item"
-                  loading="eager"
+                  loading={index === 0 ? 'eager' : 'lazy'}
                 />
-              </div>
+              </figure>
               <div className="favorites-project__wrapper">
-                <H level={'5'} className="item__small-title">
+                {/* <H level={'5'} className="item__small-title">
                   {item.title}
-                </H>
+                </H> */}
+                <h3 className="item__small-title">{item.title}</h3>
                 <p className="item__prev">{item.description}</p>
               </div>
             </article>
