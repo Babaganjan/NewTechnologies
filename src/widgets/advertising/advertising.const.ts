@@ -30,12 +30,11 @@ import {
 } from '@/shared/icons';
 
 export interface IPartner {
-  readonly id: number;
-  readonly component: FC<Icons>;
-  readonly name: string; // Для SEO и accessibility
+  id: number;
+  component: FC<Icons>;
+  name: string;
 }
 
-// Заморожены для предотвращения мутаций
 export const PARTNERS: readonly IPartner[] = Object.freeze([
   { id: 1, component: Alhua, name: 'Alhua' },
   { id: 2, component: Bosch, name: 'Bosch' },
@@ -65,5 +64,4 @@ export const PARTNERS: readonly IPartner[] = Object.freeze([
   { id: 26, component: WesternDigital, name: 'Western Digital' },
 ] as const);
 
-// Для SEO - список имен партнеров в текстовом формате
 export const PARTNER_NAMES = PARTNERS.map((p) => p.name).join(', ');

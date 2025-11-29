@@ -111,7 +111,6 @@
   }
 }
 
-// tablet
 @include respond-min(768px) {
   .object-levels {
     &__container {
@@ -154,7 +153,6 @@
   }
 }
 
-// deckstop
 @include respond-min(1520px) {
   .object-levels {
     &__container {

@@ -41,7 +41,6 @@ export const HeaderContent = ({
 
   const isPrivate = pathname === '/privacy/';
 
-  // Все динамические классы применяем только после монтирования
   const computedClasses = clsx(
     'header',
     isMounted && isHeaderScrolled && 'header-scrolled',

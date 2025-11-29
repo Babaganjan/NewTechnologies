@@ -26,13 +26,11 @@ export const Services = () => {
     setActiveService(activeService === id ? null : id);
   };
 
-  // Обработчик для основной кнопки
   const handleMouseEnter = (id: number) => {
     setHoveredService(id);
     setSelectedService(null);
   };
 
-  // Обработчик для подкнопок
   const handleSelectService = (
     service: Pick<SelectedCategoryType, 'name' | 'image' | 'desc'>,
     index: number,
@@ -46,7 +44,6 @@ export const Services = () => {
     setSelectedService(null);
   };
 
-  // Рендер подкнопок для десктопа
   const renderSubItems = (item: (typeof SERVICES_ITEMS)[0]) => (
     <div
       className="services__sub-items desktop-only"
@@ -61,7 +58,7 @@ export const Services = () => {
                 variant="two"
                 className={clsx({
                   selected: selectedService?.name === subItem.name,
-                  'other-red': hoveredService !== null && hoveredService !== item.id, // Красный цвет для подкнопок других кнопок
+                  'other-red': hoveredService !== null && hoveredService !== item.id,
                 })}
                 onMouseEnter={() => handleSelectService(subItem, index, item.id)}
                 onMouseLeave={handleServiceMouseLeave}
@@ -70,7 +67,6 @@ export const Services = () => {
               </Button>
             </div>
 
-            {/* Показываем контент только если выбран этот subItem */}
             {selectedService?.name === subItem.name && (
               <div className="services__sub-item-info">
                 {subItem.image && (
@@ -106,7 +102,6 @@ export const Services = () => {
             {SERVICES_ITEMS.map((item) => (
               <li className="services__item item" key={item.id}>
                 <div className="item__inner">
-                  {/* Мобильная версия кнопки */}
                   <div className="mobile-only">
                     <button
                       className={clsx('item__btn', {
@@ -127,13 +122,12 @@ export const Services = () => {
                     </button>
                   </div>
 
-                  {/* Десктопная версия кнопки */}
                   <div className="desktop-only">
                     <button
                       className={clsx('item__btn', {
                         'item__btn--hovered': isHovered(hoveredService, item.id),
                         'item__btn--other': isOtherHovered(hoveredService, item.id),
-                        'item__btn--red': hoveredService !== null && hoveredService !== item.id, // Красный цвет для других кнопок
+                        'item__btn--red': hoveredService !== null && hoveredService !== item.id,
                       })}
                       onMouseEnter={() => handleMouseEnter(item.id)}
                       aria-label={item.title}
@@ -145,7 +139,6 @@ export const Services = () => {
 
                 {renderSubItems(item)}
 
-                {/* Мобильный слайдер */}
                 <div
                   className="services__slider-wrapper mobile-only"
                   id={`service-content-${item.id}`}

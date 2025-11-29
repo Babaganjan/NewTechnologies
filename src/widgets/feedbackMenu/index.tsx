@@ -5,7 +5,7 @@ import { FormaConsultation } from '@/widgets';
 import './_feedback-menu.scss';
 
 interface FeedbackMenuProps {
-  theme?: 'white'; // Варианты тем
+  theme?: 'white';
 }
 
 export const FeedbackMenu = ({ theme }: FeedbackMenuProps) => {
@@ -37,7 +37,6 @@ export const FeedbackMenu = ({ theme }: FeedbackMenuProps) => {
         </div>
       </section>
 
-      {/* Модалка консультации */}
       {isConsultationModalOpen && (
         <FormaConsultation
           onSubmit={() => {

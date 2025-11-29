@@ -1,7 +1,6 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-// Анимация для новых элементов
 .project-menu-row--animated {
   animation: slideInFade 0.5s ease-out forwards;
   opacity: 0;
@@ -26,7 +25,6 @@
   }
 }
 
-// Базовая строка - мобильная версия
 .project-menu-row {
   display: grid;
   grid-template-columns: 1fr;
@@ -38,13 +36,11 @@
     border-top: 1px solid var(--vector-light-gray);
   }
 
-  // Колонка с номером - скрыта на mobile
   .project-menu-row__number,
   .project-menu-row__subtitle {
     display: none;
   }
 
-  // Колонка с клиентом
   .project-menu-row__client {
     display: flex;
     flex-direction: column;
@@ -115,7 +111,6 @@
     display: none;
   }
 
-  // Активное состояние на mobile
   &.project-menu--active {
     background-color: var(--bg-black);
     margin-inline: -20px;
@@ -171,7 +166,6 @@
       border-top: none;
     }
 
-    // Колонка с номером
     .project-menu-row__number {
       display: flex;
       align-items: center;
@@ -210,7 +204,6 @@
       }
     }
 
-    // Колонка с клиентом
     .project-menu-row__client {
       min-height: 40px;
       padding: 10px 5px;

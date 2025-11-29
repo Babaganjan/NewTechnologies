@@ -7,7 +7,6 @@ export const SpecImages = ({ data }: { data: ImageItem[] }) => {
     <ul className="specImages__list">
       {data.map((item, index) => (
         <li key={item.id} className="specImages__item">
-          {/* Обертка для картинки обязательна при использовании fill */}
           <div className="specImages__imgWrap">
             <Image
               src={item.images}

@@ -2,7 +2,6 @@ import { seoConfig } from '../config/seo.config';
 import type { ProductConfig } from '../types/products.types';
 import type { ProductSEO } from '../types/seo.types';
 
-// Экспортируем функцию для генерации структурированных данных (JSON-LD)
 export const generateOrganizationSchema = () => ({
   '@context': 'https://schema.org',
   '@type': 'Organization',

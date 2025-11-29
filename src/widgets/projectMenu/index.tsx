@@ -1,4 +1,3 @@
-// src/widgets/projectMenu/index.tsx
 'use client';
 import { useCallback, useMemo, useState } from 'react';
 
@@ -49,24 +48,18 @@ export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
             Наши проекты
           </H>
 
-          {/* <H level="4" variant="light" className="project-menu__subtitle">
-            {titleData.title}
-            {titleData.highlightTitle && <span> {titleData.highlightTitle}</span>}
-          </H> */}
           <h3 className="project-menu__subtitle">
             {titleData.title}
             {titleData.highlightTitle && <span> {titleData.highlightTitle}</span>}
           </h3>
         </header>
 
-        {/* Заголовки колонок (только desktop) */}
         <div className="project-menu__headers">
           <div className="project-menu__header">проект</div>
           <div className="project-menu__header">клиент</div>
           <div className="project-menu__header">тип услуги</div>
         </div>
 
-        {/* Список проектов */}
         <div className="project-menu__list">
           {visibleProjects.map((item, index) => (
             <ProjectMenuItem
@@ -83,7 +76,6 @@ export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
           ))}
         </div>
 
-        {/* Кнопка загрузки */}
         {hasMore && (
           <Button
             variant="primary"

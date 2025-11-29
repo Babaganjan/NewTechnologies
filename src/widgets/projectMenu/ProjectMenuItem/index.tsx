@@ -67,7 +67,6 @@ export const ProjectMenuItem = memo(
             />
           </div>
 
-          {/* Развернутый контент для mobile */}
           {isActive && (
             <div className="project-menu-row__expanded">
               <p>{item.subtitle}</p>
@@ -78,13 +77,10 @@ export const ProjectMenuItem = memo(
           )}
         </div>
 
-        {/* Колонка с услугой */}
         <div className="project-menu-row__service">
           <span className="project-menu-row__label">тип услуги</span>
-          {/* <H level="5">{item.service}</H> */}
           <span className="project-menu-row__service-text">{item.service}</span>
 
-          {/* Декоративная стрелка для desktop */}
           {(isHovered || isActive) && (
             <div className="project-menu-row__service-arrow" aria-hidden="true">
               <Arrow width={30} height={24} />

@@ -1,7 +1,6 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-// Стили для слайдера
 .service-slider {
   .slider__article-title {
     min-height: 41px;
@@ -13,7 +12,7 @@
   }
 
   .service-slider__swiper .swiper-slide {
-    max-width: 156px; 
+    max-width: 156px;
     flex-shrink: 0;
   }
 
@@ -36,9 +35,9 @@
 
     &__caption {
       @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none, -0.84px);
-      font-family: "Roboto Condensed";
+      font-family: 'Roboto Condensed';
     }
-  } 
+  }
 
   &__btn {
     margin-top: auto;
@@ -52,7 +51,7 @@
 }
 
 @include respond-min(768px) {
-  .service-slider{
+  .service-slider {
     .slider__article-title {
       font-size: 28px;
     }
@@ -85,7 +84,6 @@
   }
 }
 
-// tablet
 @include respond-min(1024px) {
   .service-slider {
     .swiper-wrapper {

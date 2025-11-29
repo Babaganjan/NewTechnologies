@@ -42,7 +42,6 @@
   }
 }
 
-// dekstop
 @include respond-min(1024px) {
   .products {
     &__container {

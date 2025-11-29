@@ -1,7 +1,6 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-// Варианты с CSS переменными
 .variantDark {
   --heading-color: var(--text-light-gray);
   --heading-h3-color: var(--text-white);
@@ -37,7 +36,7 @@
 }
 
 .level5 {
-   @include typography(var(--heading-h5-color), 500, fluid(18px, 28px), 1.15);
+  @include typography(var(--heading-h5-color), 500, fluid(18px, 28px), 1.15);
 }
 
 @include respond-min(1024px) {

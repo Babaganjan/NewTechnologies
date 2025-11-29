@@ -1,4 +1,3 @@
-// products/types.ts
 export type KeySpecLayout = 'layout1' | 'layout2' | 'layout3' | 'layout4';
 
 export interface KeySpecItem {
@@ -65,34 +64,28 @@ export interface ProductsPagesProps {
   product: ProductData | null;
 }
 export interface ProductConfig {
-  // Базовая информация
   id: number;
   model: string;
   name: string;
   category: ProductCategory;
 
-  // Для ProductsMenu
-  feature: string; // "1920×1080 / 25 fps" или "20 гбит/сек"
+  feature: string;
 
-  // Галерея (GallerySpec)
   gallery: {
     images: string[];
   };
 
   description?: descriptionItem;
 
-  // Основные характеристики (KeySpecs)
   keySpecs: {
     layout: KeySpecLayout;
     items: KeySpecItem[];
   };
 
-  // Размеры (SizeSpec) - опционально
   dimensions?: {
     images: string[];
   };
 
-  // Спецификации (Spec - табы)
   specifications: {
     general?: SpecSection;
     technical?: SpecSection;

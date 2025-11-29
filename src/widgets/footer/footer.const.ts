@@ -3,7 +3,6 @@ interface FooterItem {
   title: string;
 }
 
-// Основная навигация
 export const FOOTER_NAV_ITEMS: FooterItem[] = [
   {
     href: '/services/',
@@ -23,7 +22,6 @@ export const FOOTER_NAV_ITEMS: FooterItem[] = [
   },
 ] as const;
 
-// Секция "Деятельность"
 export const FOOTER_ACTIVITY_ITEMS: FooterItem[] = [
   {
     href: '/services/',
@@ -35,7 +33,6 @@ export const FOOTER_ACTIVITY_ITEMS: FooterItem[] = [
   },
 ] as const;
 
-// Секция "О компании"
 export const FOOTER_COMPANY_ITEMS: FooterItem[] = [
   {
     href: '/about/',

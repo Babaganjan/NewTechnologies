@@ -10,7 +10,6 @@ import { Button, Modal } from '@/shared/ui';
 
 import './_formConsultation.scss';
 
-// Убираем lastName из интерфейса, так как он не используется
 interface FormConsultData {
   firstName: string;
   phone: string;
@@ -32,7 +31,6 @@ interface FormConsultProps {
 }
 
 export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultProps) => {
-  // Инициализируем состояние с явными значениями
   const [formData, setFormData] = useState<FormConsultData>({
     firstName: '',
     phone: '',
@@ -43,7 +41,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
   const [errors, setErrors] = useState<FormErrors>({});
   const [touched, setTouched] = useState<Record<string, boolean>>({});
 
-  // Валидация имени - должно содержать фамилию и имя (минимум 2 слова)
   const validateName = (name: string): string | undefined => {
     if (!name.trim()) {
       return 'Поле обязательно для заполнения';
@@ -62,7 +59,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
       return 'Каждое слово должно содержать минимум 2 буквы';
     }
 
-    // Проверка на кириллицу и латиницу
     const validNameRegex = /^[a-zA-Zа-яА-ЯёЁ\s\-]+$/;
 
     if (!validNameRegex.test(name)) {
@@ -72,20 +68,17 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
     return undefined;
   };
 
-  // Валидация телефона
   const validatePhone = (phone: string): string | undefined => {
     if (!phone.trim()) {
       return 'Поле обязательно для заполнения';
     }
 
-    // Базовая проверка номера телефона
     const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
 
     if (!phoneRegex.test(phone)) {
       return 'Введите корректный номер телефона';
     }
 
-    // Проверка на минимальное количество цифр
     const digitsOnly = phone.replace(/\D/g, '');
 
     if (digitsOnly.length < 10) {
@@ -95,7 +88,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
     return undefined;
   };
 
-  // Валидация сообщения
   const validateMessage = (message: string): string | undefined => {
     if (!message.trim()) {
       return 'Поле обязательно для заполнения';
@@ -112,7 +104,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
     return undefined;
   };
 
-  // Валидация согласия
   const validateAgree = (agree: boolean): string | undefined => {
     if (!agree) {
       return 'Необходимо согласие на обработку данных';
@@ -121,7 +112,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
     return undefined;
   };
 
-  // Общая валидация формы
   const validateForm = (): boolean => {
     const newErrors: FormErrors = {
       firstName: validateName(formData.firstName),
@@ -152,7 +142,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
       }));
     }
 
-    // Сбрасываем ошибку при вводе
     if (errors[name as keyof FormErrors]) {
       setErrors((prev) => ({ ...prev, [name]: undefined }));
     }
@@ -163,7 +152,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
 
     setTouched((prev) => ({ ...prev, [name]: true }));
 
-    // Валидация при потере фокуса
     if (name === 'firstName') {
       setErrors((prev) => ({ ...prev, firstName: validateName(value) }));
     } else if (name === 'phone') {
@@ -180,7 +168,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    // Помечаем все поля как touched
     setTouched({
       firstName: true,
       phone: true,
@@ -188,7 +175,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
       agree: true,
     });
 
-    // Валидация перед отправкой
     if (!validateForm()) {
       return;
     }
@@ -197,7 +183,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
       await onSubmit(formData);
     }
 
-    // Сброс формы
     setFormData({
       firstName: '',
       phone: '',
@@ -208,7 +193,6 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
     setTouched({});
   };
 
-  // Функция для получения класса ошибки
   const getFieldClassName = (fieldName: keyof FormErrors): string => {
     return clsx(fieldName === 'message' ? 'consult-form__textarea' : 'consult-form__input', {
       'consult-form__input--error': touched[fieldName] && errors[fieldName],
@@ -306,7 +290,7 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
               <input
                 type="checkbox"
                 name="agree"
-                checked={formData.agree} // Теперь всегда будет boolean, не undefined
+                checked={formData.agree}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 required

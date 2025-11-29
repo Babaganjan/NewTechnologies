@@ -1,12 +1,11 @@
-// contexts/ScrollProvider.tsx
 'use client';
 import {
   createContext,
-  useContext,
-  useState,
-  useRef,
   useCallback,
+  useContext,
   useEffect,
+  useRef,
+  useState,
   type Dispatch,
   type SetStateAction,
 } from 'react';
@@ -59,7 +58,6 @@ export const ScrollProvider = ({ children }: { children: React.ReactNode }) => {
   }, []);
 
   useEffect(() => {
-    // Throttle скролла - обновляем не чаще чем 60fps
     window.addEventListener('scroll', handleScroll, { passive: true });
     handleScroll();
 

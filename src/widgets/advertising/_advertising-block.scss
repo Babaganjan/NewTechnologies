@@ -119,7 +119,6 @@
   }
 }
 
-// Медиа-запросы с оптимизацией
 @include respond-min(768px) {
   .advertising {
     &.with-trapezoids {

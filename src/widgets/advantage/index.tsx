@@ -8,7 +8,6 @@ import './Advantage.scss';
 export const Advantage = ({ type }: { type: AdvantageKeyType }) => {
   const AdvantageData = ADVANTAGEALL[type];
 
-  // Генерируем уникальный ID для связи заголовка со списком
   const listId = `advantage-list-${type.toLowerCase()}`;
   const titleId = `advantage-title-${type.toLowerCase()}`;
 

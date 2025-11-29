@@ -157,10 +157,6 @@
       $before-position: (top: 5px, left: 5px),
       $after-position: (bottom: 5px, right: 5px)
     );
-
-    // span {
-    //   @include decoration(var(--text-white), 40px);
-    // }
   }
 
   .image__big {

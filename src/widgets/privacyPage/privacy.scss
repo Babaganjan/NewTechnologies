@@ -28,10 +28,7 @@
       width: 100%;
     }
   }
-  // ──────────────────
-  // Главный заголовок
-  // ──────────────────
-  // Заголовок документа
+
   h1 {
     @include typography(
       var(--text-black),
@@ -47,19 +44,16 @@
     }
   }
 
-  // Заголовки разделов
   h2 {
     font-family: var(--second-family);
     @include typography(var(--text-black), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
     margin-bottom: fluid(10px, 15px, 360px, 768px);
   }
 
-  // Основной текст
   p {
     margin-bottom: 20px;
   }
 
-  // Списки
   ul,
   ol {
     list-style: inside;
@@ -70,7 +64,6 @@
     }
   }
 
-  // Контакты
   address {
     margin-bottom: 20px;
   }

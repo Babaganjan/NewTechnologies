@@ -1,4 +1,3 @@
-// widgets/ProductsMenu/index.tsx
 import Image from 'next/image';
 import Link from 'next/link';
 

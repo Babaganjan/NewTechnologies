@@ -20,27 +20,6 @@
     $before-transform: scaleX(-1)
   );
 
-  // &::after,
-  // &::before {
-  //   position: absolute;
-  //   content: '';
-  //   background-image: url('/img/modal-form-decor.svg');
-  //   background-size: 100%;
-  //   background-repeat: no-repeat;
-  //   bottom: 0;
-  //   width: fluid(102px, 502px);
-  //   height: fluid(12px, 32px);
-  // }
-
-  // &::after {
-  //   left: 0;
-  // }
-
-  // &::before {
-  //   right: 0;
-  //   transform: scaleX(-1);
-  // }
-
   &__close {
     position: absolute;
     top: 10px;
@@ -186,7 +165,6 @@
   gap: 4px;
 }
 
-// tablet
 @include respond-min(768px) {
   .consultation-modal {
     gap: 60px;
@@ -269,7 +247,6 @@
   }
 }
 
-// desktop
 @include respond-min(1280px) {
   .consultation-modal {
     display: grid;

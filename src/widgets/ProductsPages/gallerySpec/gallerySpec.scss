@@ -48,18 +48,15 @@
   }
 }
 
-/* --- МОДИФИКАТОР: 1 Картинка --- */
 .gallery--one {
   grid-template-columns: 1fr;
 }
 
-/* --- МОДИФИКАТОР: 2 Картинки --- */
 .gallery--two {
   grid-template-columns: 1fr;
   gap: fluid(10px, 20px);
 }
 
-/* --- МОДИФИКАТОР: 3 Картинки (мобильная версия) --- */
 .gallery--three {
   grid-template-columns: 1fr 1fr;
   grid-template-rows: auto auto;
@@ -74,7 +71,6 @@
   }
 }
 
-/* --- DESKTOP --- */
 @include respond-min(1280px) {
   .gallery--one .gallery__item {
     max-height: 700px;
@@ -106,7 +102,6 @@
       grid-row: 2;
     }
 
-    // Правые блоки занимают половину высоты левого
     .gallery__item:nth-child(2),
     .gallery__item:nth-child(3) {
       aspect-ratio: 16 / 9;

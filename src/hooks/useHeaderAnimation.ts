@@ -1,5 +1,4 @@
-// hooks/useHeaderAnimation.ts
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 export const useHeaderAnimation = () => {
   const [isVisible, setIsVisible] = useState(true);
@@ -9,21 +8,21 @@ export const useHeaderAnimation = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
-      
+
       setIsScrolled(currentScrollY > 50);
-      
+
       if (currentScrollY < 50) {
         setIsVisible(true);
 
         return;
       }
-      
+
       if (currentScrollY < lastScrollY) {
         setIsVisible(true);
       } else if (currentScrollY > lastScrollY + 10) {
         setIsVisible(false);
       }
-      
+
       setLastScrollY(currentScrollY);
     };
 

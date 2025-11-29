@@ -84,7 +84,6 @@
         grid-row: 2/3;
       }
 
-      // Если элементов больше одного
       &:first-of-type:not(:only-of-type) {
         grid-column: 1/-1;
         grid-row: 2/3;

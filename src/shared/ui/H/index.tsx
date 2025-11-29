@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import type { ReactNode, HTMLAttributes } from 'react';
+import type { HTMLAttributes, ReactNode } from 'react';
 
 import styles from './heading.module.scss';
 
@@ -23,10 +23,8 @@ export function H({
 }: HeadingProps) {
   const Tag = `h${level}` as HeadingTag;
 
-  // 1. Класс для уровня заголовка
   const levelClass = styles[`level${level}`];
 
-  // 2. Класс для варианта цвета (добавляем эту строку!)
   const variantClass = styles[`variant${variant.charAt(0).toUpperCase() + variant.slice(1)}`];
 
   return (

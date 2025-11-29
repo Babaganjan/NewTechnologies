@@ -48,7 +48,6 @@ export const Breadcrumbs = ({ productName }: BreadcrumbsProps = {}) => {
           );
         })}
 
-        {/* Добавляем продукт, если он найден */}
         {hasProductSegment && displayName && (
           <li className={styles.breadcrumbsItem}>
             <Link href={pathname} aria-current="page">

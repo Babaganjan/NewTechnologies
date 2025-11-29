@@ -35,7 +35,6 @@ export const ProductsPages = ({ productModel }: ProductsPagesProps) => {
 
   const productSEO = getProductSEO(product.model);
 
-  // Генерируем JSON-LD схемы
   const productSchema = generateProductSchema(product, productSEO);
 
   const breadcrumbSchema = generateBreadcrumbSchema([

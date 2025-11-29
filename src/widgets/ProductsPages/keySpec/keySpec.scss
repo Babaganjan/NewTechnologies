@@ -15,7 +15,6 @@
     display: grid;
     gap: 8px;
 
-    // Layout варианты для desktop
     &--layout1 {
       @include respond-min(1024px) {
         .keySpecs__item--1 {
@@ -139,7 +138,6 @@
     min-height: 126px;
     white-space: pre-line;
 
-    // Первый элемент - контент внизу
     &:nth-child(1) {
       .keySpecs__item-wrapper {
         margin-top: auto;
@@ -178,7 +176,6 @@
       );
     }
 
-    // Модификаторы
     &--with-subtitle,
     &--with-value {
       display: none;
@@ -212,7 +209,6 @@
   }
 }
 
-// Исправленные классы с опечатками
 .keySpecs__item--titleEmpty {
   .keySpecs__item-description {
     display: none;
@@ -232,7 +228,6 @@
   }
 }
 
-// Tablet styles
 @include respond-min(768px) {
   .keySpecs__list {
     grid-template-columns: repeat(2, 1fr);
@@ -305,7 +300,6 @@
   }
 }
 
-// Desktop styles
 @include respond-min(1024px) {
   .keySpecs__list {
     grid-template-columns: repeat(4, 1fr);

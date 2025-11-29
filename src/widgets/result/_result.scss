@@ -25,7 +25,6 @@
   }
 }
 
-//tablet
 @include respond-min(768px) {
   .result {
     &.with-trapezoids {
@@ -103,7 +102,6 @@
   }
 }
 
-// mini-desktop
 @include respond-min(1280px) {
   .result {
     &.with-trapezoids {

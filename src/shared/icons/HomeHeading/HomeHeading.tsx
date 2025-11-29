@@ -1,16 +1,13 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
-import type { Icons, Breakpoint } from '../icon.type';
+import type { Breakpoint, Icons } from '../icon.type';
 
 const HomeHeading = ({ className, breakpoint: manualBreakpoint }: Icons) => {
-  // Функция для определения breakpoint на основе ширины экрана
   const getBreakpoint = (width: number): Breakpoint => (width < 768 ? 'mb' : 'lg');
 
-  // Состояние для динамического breakpoint
   const [dynamicBreakpoint, setDynamicBreakpoint] = useState<Breakpoint>('lg');
 
-  // Эффект для отслеживания resize
   useEffect(() => {
     const handleResize = () => {
       setDynamicBreakpoint(getBreakpoint(window.innerWidth));
@@ -18,10 +15,9 @@ const HomeHeading = ({ className, breakpoint: manualBreakpoint }: Icons) => {
 
     window.addEventListener('resize', handleResize);
 
-    return () => window.removeEventListener('resize', handleResize); // Очистка
+    return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Финальный breakpoint: ручной имеет приоритет, иначе динамический
   const breakpoint = manualBreakpoint || dynamicBreakpoint;
   const isMobileBreakpoint = breakpoint === 'mb';
 

@@ -1,4 +1,3 @@
-// src/shared/const/Products/seo/cameras.seo.ts
 import type { ProductSEO } from '@/shared/types/seo.types';
 
 export const CAMERAS_SEO: Record<string, ProductSEO> = {

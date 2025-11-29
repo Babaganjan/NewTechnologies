@@ -1,7 +1,6 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-// Базовая секция
 .project-menu {
   .project-menu__container {
     display: grid;
@@ -48,7 +47,6 @@
   }
 }
 
-// Desktop версия
 @include respond-min(1300px) {
   .project-menu {
     .project-menu__container {
@@ -77,7 +75,6 @@
         margin-bottom: 0;
       }
 
-      // Заголовки колонок
       .project-menu__headers {
         grid-area: headers;
         display: grid;
@@ -97,7 +94,6 @@
         }
       }
 
-      // Список проектов
       .project-menu__list {
         grid-area: list;
         display: flex;

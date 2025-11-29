@@ -1,4 +1,3 @@
-// src/widgets/header/Header.tsx (альтернатива с useScroll)
 'use client';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
 import { useEffect, useState } from 'react';
@@ -15,15 +14,12 @@ import { NavItemModal } from './navItemModal';
 export const Header = () => {
   const [isTopInView, setIsTopInView] = useState(true);
 
-  // Используем useScroll из framer-motion - работает на всех страницах
   const { scrollY } = useScroll();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
-    // Если скролл меньше 50px - считаем что вверху
     setIsTopInView(latest < 50);
   });
 
-  // Дополнительная проверка при загрузке
   useEffect(() => {
     setIsTopInView(window.scrollY < 50);
   }, []);

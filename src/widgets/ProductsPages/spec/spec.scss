@@ -92,21 +92,21 @@
 .specImages__list {
   display: flex;
   flex-direction: column;
-  gap: 20px; // Отступ между строками (элементами списка)
+  gap: 20px;
   padding: 0;
 }
 
 .specImages__item {
-  display: flex; // Выстраиваем картинку и текст в ряд
-  align-items: flex-start; // Выравнивание по верхнему краю
-  gap: 20px; // Отступ между картинкой и текстом
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
 }
 
 .specImages__imgWrap {
   position: relative;
-  width: 35%; // Фиксируем ширину блока картинки (подберите под макет)
-  aspect-ratio: 4/3; // Пропорции картинки
-  flex-shrink: 0; // Запрещаем картинке сжиматься
+  width: 35%;
+  aspect-ratio: 4/3;
+  flex-shrink: 0;
 }
 
 .specImages__text {
@@ -121,7 +121,6 @@
   margin: 0 auto;
 }
 
-// --- Блок с картинкой ---
 .assemblyScheme__visual {
   position: relative;
   width: 100%;
@@ -137,7 +136,6 @@
   }
 }
 
-// --- Список ---
 .assemblyScheme__list {
   display: flex;
   flex-direction: column;
@@ -164,25 +162,21 @@
 }
 
 .assemblyScheme {
-  // Увеличиваем максимальную ширину для планшета
   max-width: 900px;
-  padding: 0 40px; // Добавляем горизонтальные отступы
+  padding: 0 40px;
 }
 
-// --- Блок с картинкой ---
 .assemblyScheme__visual {
-  // Сохраняем как один блок во всю ширину
-  aspect-ratio: 16/7; // Немного корректируем пропорции для планшета
+  aspect-ratio: 16/7;
   margin-bottom: 30px;
 }
 
-// --- Список (две колонки) ---
 .assemblyScheme__list {
   display: grid;
-  grid-template-columns: 1fr 1fr; // Две колонки одинаковой ширины
-  gap: 0 40px; // Горизонтальный отступ между колонками
-  padding: 0; // Убираем padding, переносим на родительский assemblyScheme
-  position: relative; // Нужно для позиционирования вертикального разделителя
+  grid-template-columns: 1fr 1fr;
+  gap: 0 40px;
+  padding: 0;
+  position: relative;
 }
 
 .assemblyScheme__item {
@@ -257,19 +251,19 @@
 
 .productSpecs {
   width: 100%;
-  border-bottom: 1px solid #dfdfdf; // Тонкая линия в самом низу
+  border-bottom: 1px solid #dfdfdf;
 }
 
 .productSpecs__group {
   display: flex;
   flex-direction: column;
-  margin-bottom: 20px; // Отступ от Модели до нижнего ряда
+  margin-bottom: 20px;
 }
 
 .productSpecs__row {
   display: flex;
   justify-content: flex-start;
-  gap: 30%; // Большой отступ между "Размерами" и "Юнитами"
+  gap: 30%;
 }
 
 .productSpecs__label {
@@ -310,23 +304,20 @@
 @include respond-min(1280px) {
   .assemblyScheme {
     display: grid;
-    // Левая колонка (60%) | Правая колонка (40%) - настройте пропорции
     grid-template-columns: 1.2fr 1fr;
-    gap: 60px; // Большой отступ между картинкой и текстом
-    align-items: center; // Центрируем вертикально (или start)
+    gap: 60px;
+    align-items: center;
     max-width: max-content;
   }
 
-  // 1. Левая часть (Картинка)
   .assemblyScheme__visual {
     width: 100%;
-    aspect-ratio: 4/3; // На десктопе картинка чуть выше
+    aspect-ratio: 4/3;
     background-color: #f5f5f5;
-    margin-bottom: 0; // Убираем отступ снизу, так как мы сбоку
+    margin-bottom: 0;
     position: relative;
   }
 
-  // 2. Правая часть (Контент)
   .assemblyScheme__content {
     display: flex;
     flex-direction: column;
@@ -334,10 +325,8 @@
     height: 100%;
   }
 
-  // Список наследует стили Tablet (разорванные линии),
-  // здесь можно только подправить отступы
   .assemblyScheme__item {
-    gap: 20px; // На десктопе можно чуть уменьшить дырку, если текст длинный
+    gap: 20px;
     margin-bottom: 15px;
   }
 

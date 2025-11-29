@@ -1,4 +1,3 @@
-// src/widgets/header/HeaderContent/HeaderContentMobil.tsx
 'use client';
 import clsx from 'clsx';
 import Link from 'next/link';
@@ -20,7 +19,7 @@ export const HeaderContentMobil = ({
   onItemEnter,
   onItemLeave,
   onModalClose,
-  transparentBg = false, // Добавляем пропс
+  transparentBg = false,
 }: HeaderContentProps) => {
   const [selectedOption, setSelectedOption] = useState<ModalVariant[]>([]);
 
@@ -46,7 +45,6 @@ export const HeaderContentMobil = ({
       data-theme={theme}
     >
       <div className="modal-mobil__container container">
-        {/* Остальной код без изменений */}
         <button className="modal-mobil__btn" onClick={onModalClose} aria-label="Закрыть меню">
           ✕
         </button>

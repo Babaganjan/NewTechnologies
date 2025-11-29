@@ -1,6 +1,6 @@
 export const seoConfig = {
   siteName: 'NTOUCH',
-  siteUrl: 'https://new-technologies.vercel.app/',
+  siteUrl: 'https://nt-t.kz',
   defaultTitle: 'NTOUCH - Производитель систем безопасности в Казахстане',
 
   // Главная страница

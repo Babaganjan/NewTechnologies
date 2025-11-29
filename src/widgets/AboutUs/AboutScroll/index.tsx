@@ -1,4 +1,3 @@
-// AboutScroll.tsx
 'use client';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
@@ -16,14 +15,11 @@ export const AboutScroll = () => {
 
   const [hasVideoStarted, setHasVideoStarted] = useState(false);
 
-  // Анимация движения блоков
   const topBlockY = useTransform(scrollYProgress, [0, 0.5], [0, -550]);
   const bottomBlockY = useTransform(scrollYProgress, [0, 0.5], [0, 550]);
 
-  // Контроль прозрачности видео - появляется когда блоки начинают расходиться
   const videoOpacity = useTransform(scrollYProgress, [0, 0.1], [0, 1]);
 
-  // Отслеживаем когда достигли 20% скролла для запуска видео
   useEffect(() => {
     const unsubscribe = scrollYProgress.on('change', (latest) => {
       if (videoRef.current && !hasVideoStarted && latest > 0.05) {
@@ -35,7 +31,6 @@ export const AboutScroll = () => {
     return () => unsubscribe();
   }, [scrollYProgress, hasVideoStarted]);
 
-  // Останавливаем видео когда секция скрывается из viewport
   useEffect(() => {
     const handleVisibilityChange = () => {
       if (videoRef.current && document.visibilityState === 'hidden') {

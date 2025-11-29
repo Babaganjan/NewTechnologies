@@ -14,7 +14,6 @@ export const highlightText = (
   const { className = 'text-underline', tag = 'strong' } = options;
   const keywordArray = Array.isArray(keywords) ? keywords : [keywords];
 
-  // Создаем регулярку для всех ключевых слов
   const pattern = new RegExp(
     `(${keywordArray.map((k) => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|')})`,
     'gi'

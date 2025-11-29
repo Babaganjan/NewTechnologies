@@ -1,5 +1,5 @@
 import type { Icons } from '../icon.type';
-// #565656
+
 export const CloseForm = ({
   color = 'currentColor',
   width = 20,

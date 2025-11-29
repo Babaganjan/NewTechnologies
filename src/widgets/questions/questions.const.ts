@@ -73,7 +73,6 @@ export const QUESTIONS_DATA: QuestionItem[] = [
   },
 ] as const;
 
-// Видеонаблюдение FAQ
 export const VIDEO_SURVEILLANCE_FAQ: QuestionItem[] = [
   {
     id: 'video-question-1',
@@ -131,7 +130,6 @@ export const VIDEO_SURVEILLANCE_FAQ: QuestionItem[] = [
   },
 ];
 
-// Охранно-пожарная сигнализация FAQ
 export const FIRE_ALARM_FAQ: QuestionItem[] = [
   {
     id: 'fire-question-1',
@@ -192,7 +190,6 @@ export const FIRE_ALARM_FAQ: QuestionItem[] = [
   },
 ];
 
-// Системы контроля доступа FAQ
 export const ACCESS_CONTROL_FAQ: QuestionItem[] = [
   {
     id: 'access-question-1',
@@ -311,7 +308,6 @@ export const NOTIFICATION_SYSTEM_FAQ: QuestionItem[] = [
   },
 ];
 
-// Системы пожаротушения FAQ
 export const FIRE_SUPPRESSION_FAQ: QuestionItem[] = [
   {
     id: 'suppression-question-1',

@@ -1,7 +1,6 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-// CSS переменные для тем
 [data-theme='dark'] {
   --header-bg: var(--bg-black);
   --header-text: var(--text-white);
@@ -14,7 +13,6 @@
   --header-line: var(--vector-light-gray);
 }
 
-// _header.scss
 .hidden,
 .hidden__contacts {
   display: none;
@@ -129,16 +127,13 @@
     max-height: 48px;
   }
 
-  // Добавляем стили для прозрачного фона
   &.header--transparent {
     background-color: transparent;
   }
 
-  // Добавляем стили для черного фона приватной страницы
   &.header--privacy {
     background-color: #000000;
 
-    // При скролле возвращаем обычные стили
     &.header-scrolled {
       &[data-theme='dark'] {
         background-color: rgba(0, 0, 0, 0.5);
@@ -150,7 +145,6 @@
   }
 }
 
-// tablet
 @include respond-min(768px) {
   .header {
     &__container {
@@ -180,7 +174,6 @@
   }
 }
 
-// min-desktop
 @include respond-min(1280px) {
   .header {
     .hidden,
@@ -223,7 +216,6 @@
   }
 }
 
-// dekstop
 @include respond-min(1380px) {
   body:has(.wrapper-modal) .header__container {
     @include line-decor(0.5% 25.4% 50% 74.6% 99%, var(--header-line));
@@ -231,7 +223,6 @@
 
   body:has(.bottom-block) .header {
     position: fixed;
-    // background-color: transparent;
     width: 100%;
     z-index: 20;
   }
