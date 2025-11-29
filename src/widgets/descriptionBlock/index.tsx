@@ -15,10 +15,15 @@ export const Description = ({ type }: { type: DescriptionTypeKey }) => {
           <div className="description__title">
             <H level="2">Описание</H>
           </div>
-          <H level="4" className="description__subtitle">
+          {/* <H level="4" className="description__subtitle">
             {data.highlightTitle && <span>{data.highlightTitle}</span>}
             {data.title}
-          </H>
+          </H> */}
+
+          <h3 className="description__subtitle">
+            {data.highlightTitle && <span>{data.highlightTitle}</span>}
+            {data.title}
+          </h3>
         </div>
         <div className="description__wrapper">
           <div className="description__title-description">

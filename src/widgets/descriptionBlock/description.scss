@@ -12,6 +12,19 @@
   }
 
   &__subtitle {
+    @include typography(
+      var(--text-white),
+      600,
+      fluid(36px, 42px, 360px, 768px),
+      1,
+      uppercase,
+      -1.32px
+    );
+
+    @include respond-min(768px) {
+      font-size: fluid(36px, 42px);
+    }
+
     span {
       color: var(--text-deep-gray);
     }
@@ -23,7 +36,7 @@
       margin-top: 20px;
     }
     font-family: var(--second-family);
-    @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
+    @include typography(var(--text-light-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
   }
 
   &-button-container {
