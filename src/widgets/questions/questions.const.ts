@@ -4,6 +4,7 @@ export interface QuestionItem {
   id: string;
   content: string;
   description: string;
+  highlight?: string[];
   descriptionList?: string[];
   gridIndex: number;
 }
@@ -53,6 +54,7 @@ export const QUESTIONS_DATA: QuestionItem[] = [
     content: 'У вас есть оборудование в наличии или нужно ждать поставку?',
     description:
       'У нас есть собственные склады, поэтому необходимое оборудование всегда в наличии. Это позволяет нам оперативно реализовывать проекты любого масштаба без задержек.',
+    highlight: ['собственные склады'],
     gridIndex: 6,
   },
   {

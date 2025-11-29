@@ -16,12 +16,12 @@ export const Questions = ({ type = 'DEFAULT' }: { type?: QuestionFAQ }) => {
   const isDefault = type === 'DEFAULT';
 
   return (
-    <section className="questions" aria-labelledby="questions-title">
+    <section className="questions" aria-labelledby="faq-heading">
       <div className="questions__container container">
-        <H level={'2'} variant="light" id="questions-title" className="questions__title title">
+        <H level={'2'} variant="light" id="faq-heading" className="questions__title title">
           Частые вопросы
         </H>
-        <ul className={clsx('card-wrapper', !isDefault && 'card-wrapper--custom')}>
+        <div className={clsx('card-wrapper', !isDefault && 'card-wrapper--custom')}>
           {data.map((question) => (
             <QuestionsCard
               key={question.id}
@@ -30,19 +30,17 @@ export const Questions = ({ type = 'DEFAULT' }: { type?: QuestionFAQ }) => {
               activeCard={activeCard}
             />
           ))}
-          <li
+          <div
             className="questions__card--active questions__card"
             data-grid-index={ACTIVE_CARD_DATA.gridIndex}
           >
             <div className="questions__card-content">
-              <H level={'4'} className="questions__card-title">
-                Все еще есть вопросы?
-              </H>
+              <h3 className="questions__card-title">Все еще есть вопросы?</h3>
               <p className="questions__card-subtitle">Мы готовы помочь.</p>
               <Arrow width={20} height={25} className="questions__card-arrow--active" />
             </div>
-          </li>
-        </ul>
+          </div>
+        </div>
       </div>
     </section>
   );

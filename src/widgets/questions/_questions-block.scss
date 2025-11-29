@@ -95,7 +95,7 @@
 
   &__card-title {
     .questions__card--active & {
-      @include typography(var(--text-black), 500, fluid(22px, 42px), 1);
+      @include typography(var(--text-black), 500, fluid(31px, 42px, 360px, 768px), 1);
       color: inherit;
     }
   }
@@ -103,7 +103,7 @@
   &__card-subtitle {
     .questions__card--active & {
       font-family: var(--second-family);
-      @include typography(var(--text-black), 500, fluid(14px, 22px), 1.1, none);
+      @include typography(var(--text-deep-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
     }
   }
 

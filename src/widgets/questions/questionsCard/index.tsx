@@ -1,7 +1,8 @@
 'use client';
 import { Arrow } from '@/shared/icons';
-import { H } from '@/shared/ui';
 import type { QuestionItem } from '@/widgets/questions/questions.const';
+
+import { highlightText } from '../utils/highlightText';
 import './_questionsCard.scss';
 
 interface QuestionsCardProps {
@@ -13,30 +14,22 @@ interface QuestionsCardProps {
 export const QuestionsCard = ({ question, setActiveCard, activeCard }: QuestionsCardProps) => {
   const isExpanded = activeCard === question.id;
 
-  const handleFocus = () => {
-    if (!isExpanded) {
-      setActiveCard(question.id);
-    }
-  };
-
   return (
-    <li
+    <div
       className="questions__card"
       data-grid-index={question.gridIndex}
       onMouseEnter={() => setActiveCard(question.id)}
       onMouseLeave={() => setActiveCard(null)}
-      onFocus={handleFocus}
-      role="button"
-      aria-expanded={isExpanded}
-      tabIndex={0}
+      onClick={() => setActiveCard(isExpanded ? null : question.id)}
     >
-      <div className="questions__card-decorative" aria-hidden="true"></div>
-      <H level={'5'} className="questions__content">
-        {question.content}
-      </H>
+      <h3 className="questions__content">{question.content}</h3>
       {isExpanded && (
         <div className="questions__description" role="region" aria-label="Ответ на вопрос">
-          <p>{question.description}</p>
+          <p>
+            {question.highlight
+              ? highlightText(question.description, question.highlight)
+              : question.description}
+          </p>
           {question.descriptionList && (
             <ul className="questions__list">
               {question.descriptionList.map((item, index) => (
@@ -47,6 +40,6 @@ export const QuestionsCard = ({ question, setActiveCard, activeCard }: Questions
         </div>
       )}
       <Arrow width={20} height={25} className="questions__card-arrow" aria-hidden="true" />
-    </li>
+    </div>
   );
 };
