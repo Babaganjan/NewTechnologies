@@ -5,8 +5,12 @@
   position: relative;
   display: flex;
   flex-direction: column;
-  min-height: fluid(180px, 400px);
+  min-height: 127px;
   @include clip-shape();
+
+  @include respond-min(768px) {
+    min-height: 400px;
+  }
   &.questions__card--active {
     clip-path: none;
   }
