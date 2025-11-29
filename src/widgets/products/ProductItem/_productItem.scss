@@ -57,15 +57,26 @@
   width: fit-content;
 
   data {
-    @include typography(var(--text-gray), 500, fluid(10px, 22px), 0.4, uppercase, -0.05em);
+    @include typography(
+      var(--text-gray),
+      500,
+      fluid(10px, 18px, 360px, 768px),
+      0.4,
+      uppercase,
+      -0.05em
+    );
     position: absolute;
     width: 0;
     top: 0;
     right: -3px;
+
+    @include respond-min(1024px) {
+      font-size: fluid(18px, 22px);
+    }
   }
 
   .products__section-title {
-    @include typography(var(--text-black), 500, fluid(18px, 28px), 1.15);
+    @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
     transition: color 0.2s ease;
   }
 }
