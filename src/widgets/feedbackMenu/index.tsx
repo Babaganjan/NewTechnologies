@@ -1,6 +1,6 @@
 'use client';
 import useModal from '@/hooks/useModal';
-import { Button, H } from '@/shared/ui';
+import { Button } from '@/shared/ui';
 import { FormaConsultation } from '@/widgets';
 import './_feedback-menu.scss';
 
@@ -20,9 +20,9 @@ export const FeedbackMenu = ({ theme }: FeedbackMenuProps) => {
       <section className={sectionClass} aria-labelledby="feedback-menu-title">
         <div className="container">
           <div className="feedback-menu__wrapper">
-            <H level={'3'} variant="dark" id="feedback-menu-title" className="feedback-menu__title">
+            <h3 id="feedback-menu-title" className="feedback-menu__title">
               Рассчитать решение под ваш объект?
-            </H>
+            </h3>
             <Button
               type="button"
               variant="feedback"
