@@ -65,9 +65,6 @@ export const FavoritesProject = ({
                 />
               </figure>
               <div className="favorites-project__wrapper">
-                {/* <H level={'5'} className="item__small-title">
-                  {item.title}
-                </H> */}
                 <h3 className="item__small-title">{item.title}</h3>
                 <p className="item__prev">{item.description}</p>
               </div>

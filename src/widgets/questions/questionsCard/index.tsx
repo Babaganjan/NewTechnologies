@@ -20,7 +20,6 @@ export const QuestionsCard = ({ question, setActiveCard, activeCard }: Questions
       data-grid-index={question.gridIndex}
       onMouseEnter={() => setActiveCard(question.id)}
       onMouseLeave={() => setActiveCard(null)}
-      onClick={() => setActiveCard(isExpanded ? null : question.id)}
     >
       <h3 className="questions__content">{question.content}</h3>
       {isExpanded && (
