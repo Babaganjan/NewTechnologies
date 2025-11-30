@@ -18,7 +18,7 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
             src={`/img/heroService/${type}.webp`}
             alt={title}
             fill
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 1920px"
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             priority
             style={{ objectFit: 'cover' }}
           />

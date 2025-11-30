@@ -17,6 +17,7 @@ export const AssemblyScheme = ({ items }: AssemblySchemeProps) => {
           fill
           loading="eager"
           priority
+          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           style={{ objectFit: 'contain' }}
         />
       </div>

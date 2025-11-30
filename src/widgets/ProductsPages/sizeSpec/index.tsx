@@ -20,7 +20,12 @@ export const SizeSpec = ({ images }: SizeSpecProps) => {
         <div className="sizeSpec__img-container">
           {images.map((src, index) => (
             <div key={index} className="sizeSpec__img">
-              <Image src={src} alt={`Размеры ${index + 1}`} fill />
+              <Image
+                src={src}
+                alt={`Размеры ${index + 1}`}
+                fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+              />
             </div>
           ))}
         </div>

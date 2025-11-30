@@ -29,7 +29,12 @@ export const ConsultationService = ({ type }: { type: ServiceTypeKey }) => {
           {images.item.map((item, index) => (
             <Fragment key={`${item}-${index}`}>
               <div className={`consultationService__decoration${index + 1}`}>
-                <Image src={item} alt="" fill />
+                <Image
+                  src={item}
+                  alt=""
+                  fill
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                />
               </div>
             </Fragment>
           ))}
