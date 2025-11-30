@@ -4,7 +4,7 @@ import './_hero.scss';
 
 export const Hero = () => {
   return (
-    <section className="hero with-trapezoids" aria-label="Главный баннер" data-header-theme="dark">
+    <section className="hero with-trapezoids" aria-labelledby="hero-title" data-header-theme="dark">
       <div className="container hero__container">
         <video
           autoPlay
@@ -12,34 +12,19 @@ export const Hero = () => {
           loop
           playsInline
           preload="metadata"
-          className="hero__video hero__video--mobile"
+          className="hero__video"
           aria-hidden="true"
         >
-          <source src="/video/hero-video-360.mp4" type="video/mp4" />
-        </video>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="hero__video hero__video--tablet"
-          aria-hidden="true"
-        >
-          <source src="/video/hero-video-768.mp4" type="video/mp4" />
-        </video>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="metadata"
-          className="hero__video--desktop"
-          aria-hidden="true"
-        >
+          <source src="/video/hero-video-360.mp4" type="video/mp4" media="(max-width: 767px)" />
+          <source
+            src="/video/hero-video-768.mp4"
+            type="video/mp4"
+            media="(min-width: 768px) and (max-width: 1023px)"
+          />
+          <source src="/video/hero-video-1920.mp4" type="video/mp4" media="(min-width: 1024px)" />
           <source src="/video/hero-video-1920.mp4" type="video/mp4" />
         </video>
-        <H level={'1'} className="heading">
+        <H level={'1'} className="heading" id="hero-title">
           <HomeHeading />
         </H>
         <div className="hero__content">

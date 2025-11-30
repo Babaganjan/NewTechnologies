@@ -61,7 +61,7 @@ export const Contacts = () => {
                 variant="social"
                 icon
                 target="_blank"
-                className="social-link"
+                className="social-link contact__link"
                 rel="noopener noreferrer"
                 aria-label={`Перейти в ${social.title}`}
               >

@@ -48,7 +48,7 @@ export const Footer = () => {
           <ul>
             {FOOTER_NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                <Button href={item.href} variant="link">
+                <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
               </li>
@@ -86,7 +86,7 @@ export const Footer = () => {
                 href={item.href}
                 variant="social"
                 icon
-                className="social-link"
+                className="social-link footer__link"
                 rel="noopener noreferrer"
                 aria-label={`Наш ${item.title}`}
               >
@@ -101,7 +101,7 @@ export const Footer = () => {
           <ul>
             {FOOTER_ACTIVITY_ITEMS.map((item) => (
               <li key={item.href}>
-                <Button href={item.href} variant="link">
+                <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
               </li>
@@ -114,7 +114,7 @@ export const Footer = () => {
           <ul>
             {FOOTER_COMPANY_ITEMS.map((item) => (
               <li key={item.href}>
-                <Button href={item.href} variant="link">
+                <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
               </li>

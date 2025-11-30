@@ -43,6 +43,12 @@ $large-screen-bottom-padding: 190px;
       position: relative;
       @include clip-shape();
       @include item-decor(var(--vector-deep-gray));
+      .contact__link {
+        &:hover {
+          transition: color 0.2s;
+          color: var(--text-deep-gray);
+        }
+      }
 
       @include respond-min(768px) {
         min-height: 218px;
