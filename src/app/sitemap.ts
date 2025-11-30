@@ -156,7 +156,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const itSolutionsPages: MetadataRoute.Sitemap = [
     {
-      url: `${baseUrl}/itsolutionspublicprivate`,
+      url: `${baseUrl}/services/itsolutionspublicprivate`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
       priority: 0.8,

@@ -22,13 +22,13 @@ export const metadata: Metadata = {
     'безопасная школа Казахстан',
   ],
   alternates: {
-    canonical: `${seoConfig.siteUrl}/itsolutions/itsolutionspublicprivate`,
+    canonical: `${seoConfig.siteUrl}/services/itsolutionspublicprivate`,
   },
   openGraph: {
     title: 'IT-решения для государственных и частных организаций',
     description:
       'Реализованные проекты для школ, больниц, государственных учреждений по всему Казахстану.',
-    url: `${seoConfig.siteUrl}/itsolutions/itsolutionspublicprivate`,
+    url: `${seoConfig.siteUrl}/services/itsolutionspublicprivate`,
     type: 'website',
   },
 };
