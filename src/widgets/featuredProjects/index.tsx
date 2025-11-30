@@ -61,7 +61,7 @@ export const FavoritesProject = ({
                   width={340}
                   height={242}
                   className="favorites-project__img-item"
-                  loading={index === 0 ? 'eager' : 'lazy'}
+                  loading={'eager'}
                 />
               </figure>
               <div className="favorites-project__wrapper">

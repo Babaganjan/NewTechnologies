@@ -25,7 +25,7 @@ export const About = () => {
                 alt="Система видеонаблюдения на промышленном объекте"
                 width={340}
                 height={254}
-                loading="lazy"
+                loading="eager"
               />
             </div>
           </div>
@@ -36,7 +36,7 @@ export const About = () => {
                 alt="Купольная камера видеонаблюдения"
                 width={168}
                 height={134}
-                loading="lazy"
+                loading="eager"
               />
             </div>
             <div className="image__wrapper image__small-bottom">
@@ -45,7 +45,7 @@ export const About = () => {
                 alt="Панель управления системой безопасности"
                 width={168}
                 height={134}
-                loading="lazy"
+                loading="eager"
               />
             </div>
           </div>
