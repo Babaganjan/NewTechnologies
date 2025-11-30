@@ -1,3 +1,4 @@
+'use client';
 import useModal from '@/hooks/useModal';
 import { Button, H } from '@/shared/ui';
 
