@@ -12,6 +12,7 @@ export const SpecImages = ({ data }: { data: ImageItem[] }) => {
               src={item.images}
               alt={item.title}
               fill
+              sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               style={{ objectFit: 'contain' }}
               loading={index === 0 ? 'eager' : 'lazy'}
               priority={index === 0}

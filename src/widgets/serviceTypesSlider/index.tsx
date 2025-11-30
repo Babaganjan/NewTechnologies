@@ -51,7 +51,7 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
                     src={item.image}
                     alt={item.title}
                     fill
-                    sizes="(min-width: 1024px) 600px, 510px"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </div>
                 <div className="typesOfBlock__slide-item-title">

@@ -89,7 +89,7 @@ export const ProductsMenu = ({
                       src={item.gallery.images[0] || '/img/placeholder.png'}
                       alt=""
                       fill
-                      sizes="(max-width: 768px) 47vw, 0vw"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       loading={index < 3 ? 'eager' : 'lazy'}
                     />
                   </div>

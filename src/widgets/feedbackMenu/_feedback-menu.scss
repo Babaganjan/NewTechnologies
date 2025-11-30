@@ -51,6 +51,12 @@
   }
 }
 
+@include respond-min(768px) {
+  .feedback-menu {
+    background-image: url('/img/feebback-bg-768.webp');
+  }
+}
+
 @include respond-min(1024px) {
   .feedback-menu {
     background-image: url('/img/feebback-bg.webp');
