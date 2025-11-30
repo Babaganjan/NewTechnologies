@@ -58,7 +58,7 @@ export const NavItemModalMobil = ({ data = [] }: NavItemModalProps) => {
                       {selectedItem?.list?.map((subItem, index) => (
                         <li key={`${subItem.name}-${index}`}>
                           <Link
-                            href="/"
+                            href={subItem.href}
                             className={clsx(
                               'modal-mobil-link-items',
                               selectedCategory?.name === subItem.name &&
