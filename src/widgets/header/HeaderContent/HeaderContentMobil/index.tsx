@@ -72,7 +72,10 @@ export const HeaderContentMobil = ({
                         role="region"
                         aria-label={`Подменю ${item.title}`}
                       >
-                        <NavItemModalMobil data={DATA_MODAL[modalTitle] || []} />
+                        <NavItemModalMobil
+                          data={DATA_MODAL[modalTitle] || []}
+                          onModalClose={onModalClose}
+                        />
                       </div>
                     )}
                   </li>

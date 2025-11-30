@@ -11,9 +11,10 @@ import './navItemModalMobil.scss';
 
 interface NavItemModalProps {
   data?: NavListModalProps[];
+  onModalClose?: () => void;
 }
 
-export const NavItemModalMobil = ({ data = [] }: NavItemModalProps) => {
+export const NavItemModalMobil = ({ data = [], onModalClose }: NavItemModalProps) => {
   const [selectedId, setSelectedId] = useState<number[]>([]);
   const [selectedCategory, setSelectedCategory] = useState<SelectedCategoryType | null>(null);
 
@@ -27,11 +28,10 @@ export const NavItemModalMobil = ({ data = [] }: NavItemModalProps) => {
     }
   };
 
-  const handleSelectCategory = (service: Pick<SelectedCategoryType, 'name'>, index: number) => {
+  const handleSelectCategory = (service: { name: string }, index: number) => {
     setSelectedCategory({ ...service, index });
+    if (onModalClose) onModalClose();
   };
-
-  const selectedItem = data.find((item) => selectedId.includes(item.id));
 
   return (
     <div className="modal-mobil__wrapper">
@@ -45,23 +45,33 @@ export const NavItemModalMobil = ({ data = [] }: NavItemModalProps) => {
                 <button
                   className={clsx(
                     'modal-mobil__btn-list',
-                    selectedId.includes(item.id) && 'modal-mobil__btn--selected'
+                    isActive && 'modal-mobil__btn--selected'
                   )}
                   onClick={() => handleTitleClick(item.id)}
+                  aria-expanded={isActive}
+                  aria-controls={`category-${item.id}`}
                 >
                   {item.title}
-                  <Arrow width={15} height={12} />
+                  <Arrow
+                    width={15}
+                    height={12}
+                    className={clsx(
+                      'modal-mobil__arrow',
+                      isActive && 'modal-mobil__arrow--rotated'
+                    )}
+                  />
                 </button>
                 {isActive && (
-                  <div className="modal-mobil--items">
+                  <div className="modal-mobil--items" id={`category-${item.id}`}>
                     <ul className="modal-mobil__list--items">
-                      {selectedItem?.list?.map((subItem, index) => (
+                      {item.list?.map((subItem, index) => (
                         <li key={`${subItem.name}-${index}`}>
                           <Link
                             href={subItem.href}
                             className={clsx(
                               'modal-mobil-link-items',
                               selectedCategory?.name === subItem.name &&
+                                selectedCategory?.index === index &&
                                 'modal-mobil__link--selected'
                             )}
                             onClick={() => handleSelectCategory(subItem, index)}
