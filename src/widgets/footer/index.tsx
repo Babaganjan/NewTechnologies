@@ -63,7 +63,7 @@ export const Footer = () => {
           </address>
           {selectedContact && (
             <Button
-              href={`tel:${selectedContact.phone}`}
+              href={`tel:${selectedContact.href}`}
               variant="link"
               aria-label={`Позвонить по номеру ${selectedContact.phone}`}
             >

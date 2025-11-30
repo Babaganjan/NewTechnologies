@@ -213,21 +213,21 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
         <div className="wrapper_bg">
           <Image
             src="/img/modal-form.png"
-            alt="Описание изображения"
+            alt=""
             className="responsive-img--mobil"
             width={360}
             height={278}
           />
           <Image
             src="/img/modal-form-768.png"
-            alt="Описание изображения"
+            alt=""
             className="responsive-img--table"
             width={768}
             height={458}
           />
           <Image
             src="/img/modal-form-1920.png"
-            alt="Описание изображения"
+            alt=""
             className="responsive-img--desktop "
             width={955}
             height={1120}

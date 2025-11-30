@@ -38,12 +38,7 @@ export const FeedbackMenu = ({ theme }: FeedbackMenuProps) => {
       </section>
 
       {isConsultationModalOpen && (
-        <FormaConsultation
-          onSubmit={() => {
-            handleCloseConsultation();
-          }}
-          onClose={handleCloseConsultation}
-        />
+        <FormaConsultation onSubmit={handleCloseConsultation} onClose={handleCloseConsultation} />
       )}
     </>
   );

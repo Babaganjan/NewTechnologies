@@ -51,9 +51,9 @@ export const DocumentItem = ({
     >
       <span className="document__title">{item.title}</span>
       <DocumentsIcons className="documents__icons" aria-hidden="true" />
-      <span className="document__number" aria-label={`Номер ${index + 1}`}>
+      <data value={index + 1} className="document__number" aria-label={`Номер ${index + 1}`}>
         [{(index + 1).toString().padStart(2, '0')}]
-      </span>
+      </data>
       <span className="document__size" aria-label={`Размер ${item.size}`}>
         {item.size}
       </span>
