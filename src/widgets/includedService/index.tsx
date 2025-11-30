@@ -30,7 +30,6 @@ export const IncludedService = ({ type }: { type: ServiceTypeKey }) => {
             </div>
           </div>
           <div className="includedService__img">
-            <div className="includedService__img-decoration" aria-hidden="true"></div>
             <Image
               src="/img/IncludeService.webp"
               alt="Что вы получаете"

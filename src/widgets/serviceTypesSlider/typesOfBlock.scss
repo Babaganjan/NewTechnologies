@@ -119,10 +119,6 @@
   min-width: 300px;
   min-height: 510px;
   flex: 1;
-  &::after {
-    content: '';
-    @include decoration(var(--text-black), 20px);
-  }
 }
 
 @include respond-min(768px) {
