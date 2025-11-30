@@ -113,8 +113,7 @@
 
   &.project-menu--active {
     background-color: var(--bg-black);
-    margin-inline: -20px;
-    padding: 20px;
+    padding: 15px clamp(10px, 2vw, 20px);
 
     .project-menu-row__label {
       color: var(--text-light-gray);
