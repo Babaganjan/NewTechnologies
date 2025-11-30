@@ -31,6 +31,7 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
           </div>
         </div>
         <Swiper
+          className="typesOfBlock__slider"
           spaceBetween={8}
           slidesPerView="auto"
           loop={true}
