@@ -10,7 +10,7 @@ export const ContactItem = ({
   children: ReactNode;
 }) => (
   <li className={`contacts__item ${className}`}>
-    <p className="contacts-title-text">{label}</p>
+    <span className="contacts-title-text">{label}</span>
     {children}
   </li>
 );
