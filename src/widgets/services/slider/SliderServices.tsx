@@ -19,11 +19,23 @@ export const SliderServices = ({ serviceId }: SliderServicesProps) => {
     <div className="service-slider">
       <Swiper
         spaceBetween={10}
-        slidesPerView="auto"
+        slidesPerView={2.1}
         centeredSlides={false}
         centeredSlidesBounds={false}
         watchOverflow
         loop={true}
+        breakpoints={{
+          480: {
+            slidesPerView: 2.3,
+          },
+          768: {
+            slidesPerView: 3,
+          },
+          1024: {
+            slidesPerView: 3.2,
+            spaceBetween: 20,
+          },
+        }}
         className="service-slider__swiper"
         role="region"
         aria-label="Слайдер услуг"

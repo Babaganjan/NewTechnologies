@@ -2,17 +2,16 @@
 @use '@/shared/styles/mixins' as *;
 
 .service-slider {
-  // &__swiper {
-  //   padding: 0.5rem;
-  // }
-  overflow: hidden; // ← Добавьте это
+  overflow: hidden;
 
   &__swiper {
     padding: 0.5rem;
-    margin: 0 -0.5rem; // ← Компенсирует padding
+    margin: 0 -0.5rem;
   }
 
   .service-slider__swiper .swiper-slide {
+    display: flex;
+    height: auto;
     max-width: 156px;
     flex-shrink: 0;
   }
@@ -29,7 +28,6 @@
 
     &__wrapper {
       padding-top: 18px;
-      min-height: 245px;
       flex-direction: column;
     }
 
@@ -64,10 +62,6 @@
     }
 
     .slider {
-      &__wrapper {
-        min-height: 479px;
-      }
-
       &__image {
         width: 247px;
         height: 247px;
