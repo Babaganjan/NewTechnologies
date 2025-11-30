@@ -24,10 +24,10 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
             </H>
           </div>
           <div className="typesOfBlock__subTitle">
-            <H level="4" variant="dark">
+            <h3>
               {data.mainTitle}
               <span>{data.mainTitleHighlight}</span>
-            </H>
+            </h3>
           </div>
         </div>
         <Swiper
@@ -54,9 +54,7 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
                   />
                 </div>
                 <div className="typesOfBlock__slide-item-title">
-                  <H level="5" variant="light">
-                    {item.title}
-                  </H>
+                  <h4>{item.title}</h4>
                   <p>{item.subTitle}</p>
                 </div>
               </div>

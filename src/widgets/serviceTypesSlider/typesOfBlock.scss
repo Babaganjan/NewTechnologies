@@ -14,6 +14,11 @@
 .typesOfBlock {
   padding-block: 100px;
   background-color: var(--bg-black);
+  overflow: hidden;
+
+  &__container {
+    overflow: hidden;
+  }
 
   &__title {
     margin-left: 10px;
@@ -24,12 +29,18 @@
   &__subTitle {
     margin-bottom: fluid(15px, 40px);
 
-    h4 {
-      color: var(--types-white);
-    }
-
-    span {
-      color: var(--types-deep-gray);
+    h3 {
+      @include typography(
+        var(--types-white),
+        600,
+        fluid(22px, 42px, 360px, 768px),
+        1,
+        uppercase,
+        -1.32px
+      );
+      span {
+        color: var(--types-deep-gray);
+      }
     }
   }
 }
@@ -50,8 +61,12 @@
     inset: auto 0 0;
     @include clip-shape();
 
+    h4 {
+      @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+    }
+
     p {
-      @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none);
+      @include typography(var(--text-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
       font-family: var(--second-family);
       text-align: center;
       width: 90%;
@@ -60,8 +75,10 @@
 }
 
 .swiper {
-  padding-inline: 30px !important;
-  margin-inline: -30px !important;
+  padding-inline: 0 !important;
+  margin-inline: 0 !important;
+  overflow: visible;
+
   &-slide {
     max-width: 300px;
     transition:
@@ -98,6 +115,7 @@
     @include decoration(var(--text-black), 20px);
   }
 }
+
 .swiper-slide-active {
   img {
     filter: grayscale(0);
@@ -106,11 +124,11 @@
 
 @include respond-min(768px) {
   .swiper-slide {
-    min-width: 430px;
+    max-width: 430px;
     min-height: 720px;
   }
   .typesOfBlock__slide-item {
-    min-width: 430px;
+    width: 430px;
     min-height: 720px;
   }
   .typesOfBlock__slide-item-img {
@@ -133,8 +151,8 @@
   }
 
   .swiper-slide {
+    max-width: 600px;
     min-height: 115px;
-    min-width: 600px;
   }
 
   .typesOfBlock__subTitle {
@@ -143,8 +161,9 @@
     align-items: flex-start;
     align-self: center;
   }
+
   .typesOfBlock__slide-item {
-    min-width: 600px;
+    width: 600px;
     min-height: 900px;
 
     img {
