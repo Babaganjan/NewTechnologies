@@ -93,11 +93,14 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--bg-white);
-    padding: 10px;
     margin: 5px;
     inset: auto 0 0;
+    justify-content: center;
     @include clip-shape();
-
+    min-height: 76px;
+    @include respond-min(768px) {
+      min-height: 115px;
+    }
     h4 {
       @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
     }

@@ -10,7 +10,7 @@
   width: 80%;
   margin-top: fluid(80px, 100px, 360px, 768px);
   h1 {
-    @include typography(var(--text-black), 500, fluid(31px, 58px), 1, uppercase, -2.17px);
+    @include typography(var(--text-white), 500, fluid(31px, 58px), 1, uppercase, -2.17px);
 
     @include respond-min(768px) {
       font-size: fluid(58px, 68px);
