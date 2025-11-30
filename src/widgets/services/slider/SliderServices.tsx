@@ -20,6 +20,9 @@ export const SliderServices = ({ serviceId }: SliderServicesProps) => {
       <Swiper
         spaceBetween={10}
         slidesPerView="auto"
+        centeredSlides={false}
+        centeredSlidesBounds={false}
+        watchOverflow
         loop={true}
         className="service-slider__swiper"
         role="region"

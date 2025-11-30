@@ -2,8 +2,14 @@
 @use '@/shared/styles/mixins' as *;
 
 .service-slider {
+  // &__swiper {
+  //   padding: 0.5rem;
+  // }
+  overflow: hidden; // ← Добавьте это
+
   &__swiper {
     padding: 0.5rem;
+    margin: 0 -0.5rem; // ← Компенсирует padding
   }
 
   .service-slider__swiper .swiper-slide {
