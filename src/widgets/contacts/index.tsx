@@ -24,10 +24,10 @@ export const Contacts = () => {
         <ul className="contacts__list">
           <ContactItem className="phone" label="телефон">
             <Button
-              href={`tel:${selectedContact?.phone}`}
+              href={`tel:${selectedContact?.href}`}
               className="contacts-title-mobile"
               variant="link"
-              aria-label={`Позвонить по номеру ${selectedContact?.href}`}
+              aria-label={`Позвонить по номеру ${selectedContact?.phone}`}
             >
               {selectedContact?.phone}
             </Button>
@@ -60,7 +60,8 @@ export const Contacts = () => {
                 href={social.href}
                 variant="social"
                 icon
-                className="social-link"
+                target="_blank"
+                className="social-link contact__link"
                 rel="noopener noreferrer"
                 aria-label={`Перейти в ${social.title}`}
               >
@@ -77,8 +78,7 @@ export const Contacts = () => {
           allowFullScreen
           loading="lazy"
           referrerPolicy="no-referrer-when-downgrade"
-          title="Карта с расположением офиса"
-          aria-label="Интерактивная карта Google с местоположением офиса"
+          title={`Карта с расположением офиса: ${selectedContact?.address}`}
         />
       </div>
     </section>

@@ -28,7 +28,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="footer" data-header-theme="dark">
+    <footer className="footer">
       <div className="footer__container container">
         <Link href="/" className="footer__logo" aria-label="Вернуться на главную страницу">
           NT
@@ -39,7 +39,7 @@ export const Footer = () => {
           icon
           aria-label="Прокрутить страницу к началу"
           onClick={scrollToTop}
-          className="arrow-button"
+          className="arrow-button footer__link"
         >
           Наверх
         </Button>
@@ -48,7 +48,7 @@ export const Footer = () => {
           <ul>
             {FOOTER_NAV_ITEMS.map((item) => (
               <li key={item.href}>
-                <Button href={item.href} variant="link">
+                <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
               </li>
@@ -86,7 +86,7 @@ export const Footer = () => {
                 href={item.href}
                 variant="social"
                 icon
-                className="social-link"
+                className="social-link footer__link"
                 rel="noopener noreferrer"
                 aria-label={`Наш ${item.title}`}
               >
@@ -101,7 +101,7 @@ export const Footer = () => {
           <ul>
             {FOOTER_ACTIVITY_ITEMS.map((item) => (
               <li key={item.href}>
-                <Button href={item.href} variant="link">
+                <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
               </li>
@@ -114,7 +114,7 @@ export const Footer = () => {
           <ul>
             {FOOTER_COMPANY_ITEMS.map((item) => (
               <li key={item.href}>
-                <Button href={item.href} variant="link">
+                <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
               </li>

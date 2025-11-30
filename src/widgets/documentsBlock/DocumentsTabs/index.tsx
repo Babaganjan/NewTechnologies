@@ -10,14 +10,13 @@ interface DocumentsTabsProps {
 
 export const DocumentsTabs = ({ activeTab, onTabChange }: DocumentsTabsProps) => {
   return (
-    <div className="button-container" role="tablist" aria-label="Типы документов">
+    <nav className="button-container" aria-label="Типы документов">
       <Button
         variant="secondary"
         onClick={() => onTabChange('one')}
         role="tab"
         active={activeTab === 'one'}
-        aria-selected={activeTab === 'one'}
-        aria-controls="documents-panel"
+        aria-current={activeTab === 'one' ? 'page' : undefined}
       >
         Сертификаты
       </Button>
@@ -26,11 +25,10 @@ export const DocumentsTabs = ({ activeTab, onTabChange }: DocumentsTabsProps) =>
         onClick={() => onTabChange('two')}
         role="tab"
         active={activeTab === 'two'}
-        aria-selected={activeTab === 'two'}
-        aria-controls="documents-panel"
+        aria-current={activeTab === 'two' ? 'page' : undefined}
       >
         Благодарственные письма
       </Button>
-    </div>
+    </nav>
   );
 };
