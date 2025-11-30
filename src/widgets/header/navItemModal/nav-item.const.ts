@@ -39,7 +39,7 @@ const DATA_SERVICE: NavListModalProps[] = [
       {
         name: 'Для государственных и частных организаций',
         image: '/img/modalHeader/for-educational-institutions.webp',
-        href: '/itsolutions/itsolutionspublicprivate',
+        href: '/itsolutionspublicprivate',
       },
     ],
   },

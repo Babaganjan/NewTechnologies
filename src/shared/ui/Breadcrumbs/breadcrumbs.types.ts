@@ -12,5 +12,4 @@ export type BreadcrumbWord =
   | 'cameras'
   | 'products'
   | 'itsolutionspublicprivate'
-  | 'itsolutions'
   | 'workingwithntouchequipment';
