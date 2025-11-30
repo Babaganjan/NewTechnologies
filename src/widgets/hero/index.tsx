@@ -4,7 +4,7 @@ import './_hero.scss';
 
 export const Hero = () => {
   return (
-    <section className="hero with-trapezoids" aria-labelledby="hero-title" data-header-theme="dark">
+    <section className="hero with-trapezoids" aria-labelledby="hero-title">
       <div className="container hero__container">
         <video
           autoPlay

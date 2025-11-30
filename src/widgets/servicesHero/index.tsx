@@ -4,7 +4,7 @@ import './_servicesHero.scss';
 
 export const ServicesHero = () => {
   return (
-    <section className="services-hero" data-header-theme="dark">
+    <section className="services-hero">
       <div className="services-hero__container container">
         <div className="services-hero__video-in-container">
           <video

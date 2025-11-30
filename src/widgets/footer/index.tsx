@@ -28,7 +28,7 @@ export const Footer = () => {
   };
 
   return (
-    <footer className="footer" data-header-theme="dark">
+    <footer className="footer">
       <div className="footer__container container">
         <Link href="/" className="footer__logo" aria-label="Вернуться на главную страницу">
           NT
