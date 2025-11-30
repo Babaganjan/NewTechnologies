@@ -2,11 +2,6 @@
 @use '@/shared/styles/mixins' as *;
 
 .service-slider {
-  .slider__article-title {
-    min-height: 41px;
-    margin-bottom: 4px;
-  }
-
   &__swiper {
     padding: 0.5rem;
   }
@@ -21,9 +16,14 @@
   }
 
   .slider {
+    &__article-title {
+      @include typography(var(--heading-h5-color), 500, fluid(18px, 28px), 1.15);
+      margin-bottom: 10px;
+    }
+
     &__wrapper {
       padding-top: 18px;
-      min-height: 309px;
+      min-height: 245px;
       flex-direction: column;
     }
 
@@ -32,20 +32,17 @@
       height: 156px;
       margin-bottom: 8px;
     }
-
-    &__caption {
-      @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none, -0.84px);
-      font-family: 'Roboto Condensed';
-    }
   }
 
   &__btn {
     margin-top: auto;
     align-items: center;
     gap: 8px;
-    span {
-      @include typography(var(--text-white), 700, fluid(16px, 26px), 1.2, uppercase, -0.96px);
-      display: inline-block;
+    @include typography(var(--text-white), 700, fluid(16px, 26px));
+    svg {
+      display: inline-flex;
+      width: 12px;
+      height: 15px;
     }
   }
 }

@@ -8,8 +8,8 @@ import { Button, H } from '@/shared/ui';
 
 import type { SelectedCategoryType } from '../header/navItemModal/nav-Item.types';
 
-import { SliderServices } from './../../features/slider/SliderServices';
 import { SERVICES_ITEMS } from './services.const';
+import { SliderServices } from './slider/SliderServices';
 
 import './_services.scss';
 
