@@ -39,7 +39,7 @@ export const Footer = () => {
           icon
           aria-label="Прокрутить страницу к началу"
           onClick={scrollToTop}
-          className="arrow-button"
+          className="arrow-button footer__link"
         >
           Наверх
         </Button>
