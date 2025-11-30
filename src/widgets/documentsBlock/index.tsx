@@ -6,7 +6,7 @@ import { H } from '@/shared/ui';
 import { DocumentsList } from './DocumentList';
 import { DocumentsTabs } from './DocumentsTabs';
 import type { ActiveTab } from './documents.const';
-import { DOCUMENTS_ITEMS, TAB_LABELS } from './documents.const';
+import { DOCUMENTS_ITEMS } from './documents.const';
 
 import './Documents.scss';
 
@@ -22,7 +22,7 @@ export const DocumentsBlock = () => {
           </H>
         </div>
         <DocumentsTabs activeTab={activeTab} onTabChange={setActiveTab} />
-        <DocumentsList documents={DOCUMENTS_ITEMS[activeTab]} label={TAB_LABELS[activeTab]} />
+        <DocumentsList documents={DOCUMENTS_ITEMS[activeTab]} />
       </div>
     </section>
   );
