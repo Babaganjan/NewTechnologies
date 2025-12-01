@@ -4,7 +4,7 @@
 body:has(.products-page-section) {
   .products {
     margin-top: 0;
-    padding-top: fluid(100px, 190px);
+    padding-block: fluid(100px, 190px);
     background-color: var(--bg-black);
   }
   .products-page-section__container {
