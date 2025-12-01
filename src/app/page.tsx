@@ -3,7 +3,6 @@ import type { Metadata } from 'next';
 import { seoConfig } from '@/shared/config/seo.config';
 import {
   About,
-  Advertising,
   FavoritesProject,
   FeedbackMenu,
   Hero,
@@ -40,7 +39,7 @@ export default function Home() {
       <Products />
       <FavoritesProject />
       <ProjectMenu />
-      <Advertising />
+
       <Questions />
       <FeedbackMenu theme="white" />
     </>
