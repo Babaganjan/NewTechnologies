@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
 import {
+  About,
   Advertising,
   FavoritesProject,
   FeedbackMenu,
@@ -30,6 +31,7 @@ export const metadata: Metadata = {
 export default function Home() {
   return (
     <>
+      <About />
       <Result />
       <ObjectLevel />
       <Services />
