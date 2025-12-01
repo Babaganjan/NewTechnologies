@@ -49,7 +49,7 @@ const DATA_SERVICE: NavListModalProps[] = [
     list: [
       {
         name: 'Работа с оборудованием NTOUCH',
-        image: '/img/modalHeader/video-surveillance-system.webp',
+        image: '/img/modalHeader/Ntouch.webp',
         href: '/services/workingwithntouchequipment',
       },
     ],
