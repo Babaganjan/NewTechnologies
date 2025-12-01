@@ -113,7 +113,7 @@ export const seoConfig = {
     },
 
     // Серверные шкафы
-    serverCabinets: {
+    servercabinets: {
       title: 'Серверные шкафы NTOUCH | 6U-42U | Производство Казахстан',
       description:
         'Серверные шкафы 6U-42U с эффективным охлаждением. NT-6606S, NT-6612S, NT-6622, NT-6942S. Усиленная конструкция.',
