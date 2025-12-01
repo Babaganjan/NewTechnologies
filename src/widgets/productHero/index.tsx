@@ -10,9 +10,11 @@ export const ProductHero = () => {
           <p>
             {'Производим собственное \n оборудование с 2022 года \n для частных лиц и бизнеса.'}
           </p>
-          <H level={'1'} variant="light" id="products-page-title">
-            <ProductionHeading />
-          </H>
+          <div className="products-page-section__title">
+            <H level={'1'} variant="light" id="products-page-title">
+              <ProductionHeading />
+            </H>
+          </div>
         </div>
       </section>
     </>
