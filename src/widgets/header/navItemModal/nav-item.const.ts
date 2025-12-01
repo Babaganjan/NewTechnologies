@@ -73,7 +73,7 @@ const DATA_PRODUCTION: NavListModalProps[] = [
       },
       {
         name: 'Серверные шкафы',
-        href: '/products/serverCabinets/',
+        href: '/products/servercabinets/',
         image: '/img/product-item-3.webp',
       },
       {
