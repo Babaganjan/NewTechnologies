@@ -40,8 +40,8 @@ body:has(.products-page-section) {
 }
 
 .products-page-section {
+  min-height: 100vh;
   background: var(--bg-black) url('/img/products-pages-img.webp') center top / cover no-repeat;
-  min-height: 482px;
   padding-top: 118px;
   @include decor-pseudo-elements(
     $color: var(--text-black),
@@ -53,20 +53,12 @@ body:has(.products-page-section) {
     $before-transform: scaleX(-1)
   );
 
-  @include respond-min(768px) {
-    min-height: 964px;
-  }
-
   .products-page-section__container {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     gap: 0;
-    min-height: 482px;
-
-    @include respond-min(768px) {
-      min-height: 964px;
-    }
+    min-height: 100vh;
 
     h1 {
       display: flex;
