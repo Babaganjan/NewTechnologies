@@ -13,7 +13,6 @@ export const Advertising = () => {
   const [isInView, setIsInView] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
-  // Инициализируем Embla только когда секция в viewport
   const [emblaRef, emblaApi] = useEmblaCarousel(
     {
       loop: true,
@@ -32,7 +31,6 @@ export const Advertising = () => {
     ]
   );
 
-  // Intersection Observer для определения видимости секции
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -42,7 +40,7 @@ export const Advertising = () => {
       },
       {
         threshold: 0.1,
-        rootMargin: '50px', // Подгружаем чуть заранее
+        rootMargin: '50px',
       }
     );
 
@@ -53,7 +51,6 @@ export const Advertising = () => {
     return () => observer.disconnect();
   }, [isInView]);
 
-  // Останавливаем автоскролл если секция не видна (экономия ресурсов)
   useEffect(() => {
     if (!emblaApi) return;
 
@@ -96,7 +93,6 @@ export const Advertising = () => {
           </H>
         </div>
 
-        {/* Рендерим карусель только когда секция близко к viewport */}
         {isInView && (
           <div className="continuous-scroll-container" ref={emblaRef}>
             <div className="continuous-scroll-wrapper">
