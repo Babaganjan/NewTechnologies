@@ -15,7 +15,7 @@ export const PartnerSlide = memo<{ id: number; component: FC; name: string }>(
           }
         },
         {
-          rootMargin: '100px', // Загружаем чуть заранее
+          rootMargin: '100px',
           threshold: 0.01,
         }
       );
