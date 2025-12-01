@@ -55,21 +55,12 @@
   }
 }
 
-.continuous-scroll-container {
-  overflow: hidden;
-  width: 100%;
-  position: relative;
-}
-
 .continuous-scroll-wrapper {
   display: flex;
-  animation: continuousScroll 20s linear infinite;
-  width: fit-content;
-  will-change: transform;
+}
 
-  &:hover {
-    animation-play-state: paused;
-  }
+.continuous-scroll-container {
+  overflow: hidden;
 }
 
 .continuous-slide {
@@ -84,7 +75,7 @@
   flex-shrink: 0;
   margin-right: 10px;
   @include clip-shape();
-  @include item-decor(var(--text-white), fluid(12px, 20px));
+  @include item-decor(var(--text-white));
 
   svg {
     width: 100%;

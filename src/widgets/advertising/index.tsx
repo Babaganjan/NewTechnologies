@@ -1,12 +1,25 @@
-import { memo } from 'react';
+'use client';
+import AutoScroll from 'embla-carousel-auto-scroll';
+import useEmblaCarousel from 'embla-carousel-react';
 
 import { H } from '@/shared/ui';
+
 import './_advertising-block.scss';
 
 import { PartnerSlide } from './PartnerSlide';
 import { PARTNERS } from './advertising.const';
 
-export const Advertising = memo(() => {
+export const Advertising = () => {
+  const [emblaRef] = useEmblaCarousel({ loop: true, watchDrag: false }, [
+    AutoScroll({
+      speed: 3,
+      stopOnFocusIn: false,
+      stopOnMouseEnter: true,
+      stopOnInteraction: false,
+      startDelay: 0,
+    }),
+  ]);
+
   return (
     <section className="advertising with-trapezoids" aria-labelledby="advertising-title">
       <div className="advertising__container container">
@@ -26,19 +39,11 @@ export const Advertising = memo(() => {
           </H>
         </div>
 
-        <div className="continuous-scroll-container" aria-label="Карусель логотипов партнеров">
+        <div className="continuous-scroll-container" ref={emblaRef}>
           <div className="continuous-scroll-wrapper">
             {PARTNERS.map((slide) => (
               <PartnerSlide
                 key={slide.id}
-                id={slide.id}
-                component={slide.component}
-                name={slide.name}
-              />
-            ))}
-            {PARTNERS.map((slide) => (
-              <PartnerSlide
-                key={`duplicate-${slide.id}`}
                 id={slide.id}
                 component={slide.component}
                 name={slide.name}
@@ -49,6 +54,4 @@ export const Advertising = memo(() => {
       </div>
     </section>
   );
-});
-
-Advertising.displayName = 'Advertising';
+};
