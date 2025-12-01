@@ -9,7 +9,6 @@ import {
   Hero,
   ObjectLevel,
   Products,
-  ProjectMenu,
   Questions,
   Result,
   Services,
@@ -39,7 +38,7 @@ export default function Home() {
       <Services />
       <Products />
       <FavoritesProject />
-      <ProjectMenu />
+
       <Advertising />
       <Questions />
       <FeedbackMenu theme="white" />
