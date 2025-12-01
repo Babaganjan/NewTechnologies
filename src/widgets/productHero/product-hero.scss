@@ -76,7 +76,7 @@ body:has(.products-page-section) {
 
     h1 {
       display: flex;
-      justify-self: flex-start;
+      padding-bottom: fluid(18px, 54px, 360px, 768px);
       margin-top: auto;
     }
     p {
