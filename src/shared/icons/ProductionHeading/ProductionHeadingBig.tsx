@@ -1,6 +1,6 @@
 import type { Icons } from '../icon.type';
 
-export const ProductionHeading = ({ className }: Icons) => {
+export const ProductionHeadingBig = ({ className }: Icons) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -31,6 +31,7 @@ body:has(.products-page-section) {
     .products-page-section__container {
       p {
         display: block;
+        margin-bottom: 31px;
       }
     }
     .products-subtitle {
@@ -49,6 +50,20 @@ body:has(.products-page-section) {
     justify-content: flex-start;
     gap: 0;
     min-height: 100vh;
+
+    .products-page-title__big {
+      display: none;
+    }
+
+    @include respond-min(1024px) {
+      .products-page-title__big {
+        display: block;
+      }
+      .products-page-title__small {
+        display: none;
+      }
+    }
+
     @include decor-pseudo-elements(
       $color: var(--text-black),
       $after-top: auto,
