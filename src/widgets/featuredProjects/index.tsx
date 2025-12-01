@@ -58,8 +58,8 @@ export const FavoritesProject = ({
                 <Image
                   src={item.image}
                   alt={item.title}
-                  width={340}
-                  height={242}
+                  width={800}
+                  height={400}
                   className="favorites-project__img-item"
                   loading={index === 0 ? 'eager' : 'lazy'}
                 />
