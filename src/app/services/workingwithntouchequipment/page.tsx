@@ -29,7 +29,7 @@ export default function WorkingWithNtoucheQuipment() {
     <>
       <Ntouch />
       <LearningFormats />
-      <FeedbackMenu />
+      <FeedbackMenu theme="white" />
     </>
   );
 }

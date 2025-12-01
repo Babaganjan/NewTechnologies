@@ -54,7 +54,7 @@ export default function ItSolutionsPublicPrivate() {
           },
         ]}
       />
-      <FeedbackMenu />
+      <FeedbackMenu theme="white" />
     </>
   );
 }
