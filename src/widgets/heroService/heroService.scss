@@ -5,7 +5,21 @@
   background-color: var(--bg-black);
   padding-top: 120px;
 }
-
+.heroService__decoration {
+  @include decor-pseudo-elements($height: 4%);
+}
+.heroService__decoration-1 {
+  @include decor-pseudo-elements(
+    $color: var(--text-black),
+    $height: 4%,
+    $after-top: auto,
+    $after-bottom: -2px,
+    $after-transform: scaleX(1),
+    $before-top: auto,
+    $before-bottom: -1px,
+    $before-transform: scaleX(-1)
+  );
+}
 .heroService__title {
   width: 80%;
   margin-top: fluid(80px, 100px, 360px, 768px);

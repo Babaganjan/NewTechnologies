@@ -14,6 +14,7 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
           <h1>{title}</h1>
         </div>
         <div className="heroService__img">
+          <div className="heroService__decoration" aria-hidden={true}></div>
           <Image
             src={`/img/heroService/${type}.webp`}
             alt={title}
@@ -22,6 +23,7 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
             priority
             style={{ objectFit: 'cover' }}
           />
+          <div className="heroService__decoration-1" aria-hidden={true}></div>
         </div>
       </div>
     </section>
