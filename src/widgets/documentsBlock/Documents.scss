@@ -138,6 +138,7 @@
 
       .document__image {
         grid-area: img;
+        z-index: 999;
         display: block;
         position: absolute;
         justify-self: center;

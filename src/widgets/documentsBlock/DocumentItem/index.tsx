@@ -28,6 +28,7 @@ export const DocumentItem = ({
     <li onMouseEnter={() => onActivate(index)} onMouseLeave={onDeactivate}>
       <Link
         href=""
+        download={item.file}
         className={clsx(
           'documents-list__item',
           isActive && 'documents-list__item--active',
