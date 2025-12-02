@@ -22,7 +22,7 @@ export const ResultItem = ({ item }: ResultItemProps) => {
   const isNumericAchievement = type !== 'text' && number;
 
   return (
-    <AnimatedCard className={`result__item ${className} ${layout.item || ''}`}>
+    <AnimatedCard className={`result__item ${className} ${layout.item || ''}`} enableHover={false}>
       <motion.div
         className={`item__inner ${layout.inner || ''}`}
         initial="hidden"
