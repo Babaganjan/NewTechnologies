@@ -47,7 +47,7 @@ export default function ItSolutionsPublicPrivate() {
         data={[
           {
             id: 1,
-            image: '/img/favorite-2.webp',
+            image: '/img/favorite-2-it.webp',
             title: 'Проект «комфортная школа»',
             description:
               'Установили турникеты NT по всему Казахстану при поддержке фонда «Самрук-Қазына».',

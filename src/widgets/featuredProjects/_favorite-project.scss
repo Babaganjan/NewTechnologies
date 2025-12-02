@@ -88,6 +88,19 @@
       &:only-of-type {
         grid-column: 1/-1;
         grid-row: 2/3;
+
+        .favorites-project__img {
+          aspect-ratio: 2.3/1;
+        }
+
+        .favorites-project__wrapper {
+          position: absolute;
+          bottom: 40px;
+          left: 40px;
+          transform: translate(-30px, 0);
+          max-width: 480px;
+          z-index: 2;
+        }
       }
 
       &:first-of-type:not(:only-of-type) {
