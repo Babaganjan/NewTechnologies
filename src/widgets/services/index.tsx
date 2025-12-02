@@ -1,8 +1,10 @@
 'use client';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useState } from 'react';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Arrow } from '@/shared/icons';
 import { Button, H } from '@/shared/ui';
 
@@ -98,9 +100,21 @@ export const Services = () => {
         </div>
 
         <div className="services__content">
-          <ul className="services__list flex">
+          <motion.ul
+            className="services__list flex"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0.2 }}
+            variants={{
+              hidden: { opacity: 0 },
+              visible: {
+                opacity: 1,
+                transition: { staggerChildren: 0.5, delayChildren: 0.3 },
+              },
+            }}
+          >
             {SERVICES_ITEMS.map((item) => (
-              <li className="services__item item" key={item.id}>
+              <motion.li variants={fadeInUp} className="services__item item" key={item.id}>
                 <div className="item__inner">
                   <div className="mobile-only">
                     <button
@@ -147,9 +161,9 @@ export const Services = () => {
                 >
                   {activeService === item.id && <SliderServices serviceId={item.id} />}
                 </div>
-              </li>
+              </motion.li>
             ))}
-          </ul>
+          </motion.ul>
         </div>
       </div>
     </section>

@@ -1,5 +1,8 @@
+'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+import { fadeInUp, slideInLeft, slideInRight } from '@/shared/animations/scroll-animations';
 import { Button, H } from '@/shared/ui';
 
 import './_about.scss';
@@ -7,19 +10,39 @@ import './_about.scss';
 export const About = () => {
   return (
     <section className="about" aria-labelledby="about-heading">
-      <div className="container about__container">
-        <H level={'2'} variant="light" className="about__title title" id="about-heading">
-          Что мы делаем
-        </H>
+      <motion.div
+        className="container about__container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp}>
+          <H level={'2'} variant="light" className="about__title title" id="about-heading">
+            Что мы делаем
+          </H>
+        </motion.div>
 
-        <H level={'3'} variant="light" className="about__subtitle subtitle">
-          <span>реализуем комплексные системы</span> безопасности и оптимизируем бизнес в казахстане{' '}
-          <span>С 2013 года</span>
-        </H>
+        <motion.div className="about__subtitle subtitle" variants={fadeInUp}>
+          <H level={'3'} variant="light">
+            <span>реализуем комплексные системы</span> безопасности и оптимизируем бизнес в
+            казахстане <span>С 2013 года</span>
+          </H>
+        </motion.div>
 
         <figure className="about__images">
           <div className="about__images--top">
-            <div className="image__wrapper image__big">
+            <motion.div
+              variants={slideInRight}
+              transition={{ delay: 0.6 }}
+              className="image__wrapper image__big"
+            >
               <Image
                 src="/img/about-1-1920.webp"
                 alt="Система видеонаблюдения на промышленном объекте"
@@ -27,10 +50,14 @@ export const About = () => {
                 height={254}
                 loading="lazy"
               />
-            </div>
+            </motion.div>
           </div>
           <div className="about__images--bottom">
-            <div className="image__wrapper image__small-top">
+            <motion.div
+              variants={slideInLeft}
+              transition={{ delay: 0.7 }}
+              className="image__wrapper image__small-top"
+            >
               <Image
                 src="/img/about-2-1920.webp"
                 alt="Купольная камера видеонаблюдения"
@@ -38,8 +65,8 @@ export const About = () => {
                 height={134}
                 loading="lazy"
               />
-            </div>
-            <div className="image__wrapper image__small-bottom">
+            </motion.div>
+            <motion.div variants={slideInLeft} className="image__wrapper image__small-bottom">
               <Image
                 src="/img/about-3-1920.webp"
                 alt="Панель управления системой безопасности"
@@ -47,28 +74,29 @@ export const About = () => {
                 height={134}
                 loading="lazy"
               />
-            </div>
+            </motion.div>
           </div>
         </figure>
 
         <div className="about__text-wrapper">
           <div className="about__prevs-wrapper">
-            <p className="about__desc">
+            <motion.p className="about__desc" variants={fadeInUp}>
               Мы фокусируемся на государственных, промышленных и стратегически важных объектах. А
               также обеспечиваем защиту частных школ, жилых комплексов и частных домов.
-            </p>
-            <p className="about__desc">
+            </motion.p>
+            <motion.p className="about__desc" variants={fadeInUp}>
               Как лидер отрасли, мы разрабатываем и производим собственное оборудование под брендом
               <abbr title="NTOUCH"> NTOUCH</abbr>, имеющее все необходимые сертификаты качества и
               соответствия.
-            </p>
+            </motion.p>
           </div>
-
-          <Button variant="primaryLink" className="about__btn" icon href="/about">
-            О компании
-          </Button>
+          <motion.div variants={fadeInUp} transition={{ delay: 0.8 }}>
+            <Button variant="primaryLink" className="about__btn" icon href="/about">
+              О компании
+            </Button>
+          </motion.div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

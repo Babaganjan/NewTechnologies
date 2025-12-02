@@ -1,7 +1,9 @@
 'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { useGlitch } from 'react-powerglitch';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { H } from '@/shared/ui';
 
 import './_favorite-project.scss';
@@ -35,15 +37,30 @@ export const FavoritesProject = ({
 
   return (
     <section className="favorites-project" aria-labelledby="featured-projects-heading">
-      <div className="favorites-project__container container">
-        <H
-          level={'2'}
-          variant="light"
-          id="featured-projects-heading"
-          className="favorites-project__title"
-        >
-          Избранные проекты
-        </H>
+      <motion.div
+        className="favorites-project__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp}>
+          <H
+            level={'2'}
+            variant="light"
+            id="featured-projects-heading"
+            className="favorites-project__title"
+          >
+            Избранные проекты
+          </H>
+        </motion.div>
+
         {data.map((item, index) => {
           const glitch = glitches[index];
 
@@ -71,7 +88,7 @@ export const FavoritesProject = ({
             </article>
           );
         })}
-      </div>
+      </motion.div>
     </section>
   );
 };
