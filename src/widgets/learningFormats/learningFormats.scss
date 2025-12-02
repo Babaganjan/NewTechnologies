@@ -2,7 +2,8 @@
 @use '@/shared/styles/mixins' as *;
 
 .learning {
-  margin-block: 100px;
+  @include trapezoid-decor($responsive: true, $position: top, $color: var(--text-white));
+  padding-block: 100px;
 }
 
 .learning-title {

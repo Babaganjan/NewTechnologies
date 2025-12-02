@@ -2,7 +2,8 @@
 @use '@/shared/styles/mixins' as *;
 
 .programs {
-  margin-block: 100px;
+  padding-block: 100px;
+  @include trapezoid-decor($responsive: true, $position: top, $color: var(--text-white));
 }
 
 .programs__title-container {
