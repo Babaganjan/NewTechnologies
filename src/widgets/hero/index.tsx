@@ -1,4 +1,4 @@
-import { HomeHeading } from '@/shared/icons';
+import { HomeHeading, HomeHeadingBig } from '@/shared/icons';
 import { H } from '@/shared/ui';
 import './_hero.scss';
 
@@ -25,7 +25,8 @@ export const Hero = () => {
           <source src="/video/hero-video-1920.mp4" type="video/mp4" />
         </video>
         <H level={'1'} className="heading" id="hero-title">
-          <HomeHeading />
+          <HomeHeading className="home-heading_small" />
+          <HomeHeadingBig className="home-heading_big" />
         </H>
         <div className="hero__content">
           <H level={'2'} className="hero__title title">

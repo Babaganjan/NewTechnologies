@@ -118,6 +118,11 @@
         color: var(--text-deep-gray) !important;
       }
     }
+
+    &__image {
+      height: 173px;
+      object-fit: cover;
+    }
   }
 
   @include respond-min(1380px) {
