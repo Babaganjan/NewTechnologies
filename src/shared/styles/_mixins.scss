@@ -174,39 +174,38 @@ $trapezoid-configs: (
   'small': (
     width: 21px,
     height: 13px,
-    color: var(--vector-black),
-    size: fluid(198px, 300px),
     shift: -11px,
   ),
   'medium': (
     width: 31px,
     height: 19px,
-    color: var(--vector-black),
-    size: fluid(300px, 500px),
     shift: -17px,
   ),
   'large': (
     width: 42px,
     height: 25px,
-    color: var(--vector-black),
-    size: fluid(500px, 800px),
     shift: -24px,
   ),
   'xlarge': (
     width: 56px,
     height: 33px,
-    color: var(--vector-black),
-    size: fluid(800px, 1030px),
     shift: -32px,
   ),
 );
 
-@mixin _trapezoid-pseudo($is-before, $width, $height, $color, $size, $shift) {
+$trapezoid-breakpoints: (
+  'small': 0,
+  'medium': 768px,
+  'large': 1024px,
+  'xlarge': 1280px,
+);
+
+@mixin _trapezoid-pseudo($is-before, $width, $height, $color, $shift) {
   content: '';
   position: absolute;
   left: 50%;
+  width: 50%;
   transform: translateX(-50%) rotate(180deg);
-  width: $size;
   border-left: $width solid transparent;
   border-right: $width solid transparent;
 
@@ -219,61 +218,102 @@ $trapezoid-configs: (
   }
 }
 
-@mixin trapezoid-decor(
-  $config: null,
-  $width: null,
-  $height: null,
-  $color: null,
-  $position: both,
-  $size: null,
-  $shift: null
-) {
-  $final-width: 21px;
-  $final-height: 13px;
-  $final-color: var(--vector-black);
-  $final-size: 198px;
-  $final-shift: -11px;
-
-  @if $config and meta.type-of($config) == 'string' and map.has-key($trapezoid-configs, $config) {
-    $config-map: map.get($trapezoid-configs, $config);
-    $final-width: map.get($config-map, 'width');
-    $final-height: map.get($config-map, 'height');
-    $final-color: map.get($config-map, 'color');
-    $final-size: map.get($config-map, 'size');
-    $final-shift: map.get($config-map, 'shift');
-  }
-
-  $final-width: $width or $final-width;
-  $final-height: $height or $final-height;
-  $final-color: $color or $final-color;
-  $final-size: $size or $final-size;
-  $final-shift: $shift or $final-shift;
-
-  position: relative;
-
+@mixin _apply-trapezoid-styles($width, $height, $color, $shift, $position) {
   @if $position == top or $position == both {
     &::before {
-      @include _trapezoid-pseudo(
-        true,
-        $final-width,
-        $final-height,
-        $final-color,
-        $final-size,
-        $final-shift
-      );
+      border-left-width: $width;
+      border-right-width: $width;
+      border-top-width: $height;
+      border-top-color: $color;
+      top: $shift;
     }
   }
 
   @if $position == bottom or $position == both {
     &::after {
-      @include _trapezoid-pseudo(
-        false,
-        $final-width,
-        $final-height,
-        $final-color,
-        $final-size,
-        $final-shift
-      );
+      border-left-width: $width;
+      border-right-width: $width;
+      border-bottom-width: $height;
+      border-bottom-color: $color;
+      bottom: $shift;
+    }
+  }
+}
+
+@mixin trapezoid-decor(
+  $responsive: true,
+  $config: 'small',
+  $width: null,
+  $height: null,
+  $color: var(--vector-black),
+  $position: both,
+  $shift: null
+) {
+  position: relative;
+
+  @if $responsive {
+    @each $size, $breakpoint in $trapezoid-breakpoints {
+      @if map.has-key($trapezoid-configs, $size) {
+        $config-map: map.get($trapezoid-configs, $size);
+
+        @if $breakpoint == 0 {
+          @if $position == top or $position == both {
+            &::before {
+              @include _trapezoid-pseudo(
+                true,
+                map.get($config-map, 'width'),
+                map.get($config-map, 'height'),
+                $color,
+                map.get($config-map, 'shift')
+              );
+            }
+          }
+
+          @if $position == bottom or $position == both {
+            &::after {
+              @include _trapezoid-pseudo(
+                false,
+                map.get($config-map, 'width'),
+                map.get($config-map, 'height'),
+                $color,
+                map.get($config-map, 'shift')
+              );
+            }
+          }
+        } @else {
+          @media (min-width: $breakpoint) {
+            @include _apply-trapezoid-styles(
+              map.get($config-map, 'width'),
+              map.get($config-map, 'height'),
+              $color,
+              map.get($config-map, 'shift'),
+              $position
+            );
+          }
+        }
+      }
+    }
+  } @else {
+    $base-config: if(
+      $config and map.has-key($trapezoid-configs, $config),
+      map.get($trapezoid-configs, $config),
+      map.get($trapezoid-configs, 'small')
+    );
+
+    $final-width: $width or map.get($base-config, 'width');
+    $final-height: $height or map.get($base-config, 'height');
+    $final-shift: $shift or map.get($base-config, 'shift');
+
+    @if $position == top or $position == both {
+      &::before {
+        @include _trapezoid-pseudo(true, $final-width, $final-height, $color, $final-shift);
+      }
+    }
+
+    @if $position == bottom or $position == both {
+      &::after {
+        @include _trapezoid-pseudo(false, $final-width, $final-height, $color, $final-shift);
+      }
     }
   }
 }

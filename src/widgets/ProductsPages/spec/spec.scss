@@ -3,7 +3,7 @@
 
 .spec {
   padding-block: 100px;
-
+  @include trapezoid-decor($responsive: true, $color: var(--text-white));
   &__title-container {
     position: relative;
     margin-left: 10px;

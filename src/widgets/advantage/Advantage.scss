@@ -2,7 +2,8 @@
 @use '@/shared/styles/mixins' as *;
 
 .advantage {
-  margin-block: 100px;
+  padding-block: 100px;
+  @include trapezoid-decor($responsive: true, $color: var(--text-white));
 }
 
 .advantage__title {

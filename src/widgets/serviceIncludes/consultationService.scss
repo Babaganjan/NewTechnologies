@@ -3,7 +3,7 @@
 
 .consultationService {
   position: relative;
-  @include decor-pseudo-elements(var(--vector-black));
+  @include trapezoid-decor($responsive: true, $color: var(--text-white));
 }
 
 .consultationService__title {
