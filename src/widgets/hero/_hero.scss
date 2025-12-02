@@ -64,6 +64,10 @@
   max-width: 50%;
 }
 
+.home-heading_small {
+  display: none;
+}
+
 @include respond-min(768px) {
   .hero {
     &.with-trapezoids {
@@ -86,6 +90,14 @@
 
     &__prev {
       max-width: 43%;
+    }
+
+    .home-heading_big {
+      display: none;
+    }
+
+    .home-heading_small {
+      display: block;
     }
   }
 }

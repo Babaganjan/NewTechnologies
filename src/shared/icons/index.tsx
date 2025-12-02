@@ -3,7 +3,8 @@ import { AboutUsHeadingTop } from './AboutUs/AboutUsHeadingTop';
 import { Arrow } from './Arrow/Arrow';
 import { ArrowSmall } from './ArrowSmall/ArrowSmall';
 import { ContactsHeading } from './ContactsHeading/ContactsHeading';
-import HomeHeading from './HomeHeading/HomeHeading';
+import { HomeHeading } from './HomeHeading/HomeHeading';
+import { HomeHeadingBig } from './HomeHeading/HomeHeadingBig';
 import { Logo } from './Logo/Logo';
 import { ProductionHeading } from './ProductionHeading/ProductionHeading';
 import { ProductionHeadingBig } from './ProductionHeading/ProductionHeadingBig';
@@ -49,6 +50,7 @@ export {
   ContactsHeading,
   DocumentsIcons,
   HomeHeading,
+  HomeHeadingBig,
   Logo,
   ObjectLevelIcons,
   ProductionHeading,
