@@ -1,13 +1,16 @@
+'use client';
+
+import { AnimatedList } from '@/shared/animations/AnimatedList';
 import type { ResultListProps } from '@/widgets/result/Result.types';
 import { ResultItem } from '@/widgets/result/resultItem';
 import './_resultList.scss';
 
 export const ResultList = ({ items }: ResultListProps) => {
   return (
-    <ul className="result__list">
-      {items.map((item) => (
-        <ResultItem key={item.id} item={item} />
+    <AnimatedList className="result__list">
+      {items.map((item, index) => (
+        <ResultItem key={item.id} item={item} index={index} />
       ))}
-    </ul>
+    </AnimatedList>
   );
 };

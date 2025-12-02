@@ -1,28 +1,54 @@
+'use client';
+
+import { motion } from 'framer-motion';
+
+import { AnimatedCard } from '@/shared/animations/AnimatedCard';
+import {
+  defaultViewport,
+  fadeInUp,
+  numberVariants,
+  slideInLeft,
+} from '@/shared/animations/scroll-animations';
 import type { ResultItem as ResultItemType } from '@/widgets/result/Result.types';
 import './_resultItem.scss';
 
 interface ResultItemProps {
   item: ResultItemType;
+  index: number;
 }
 
 export const ResultItem = ({ item }: ResultItemProps) => {
   const { type, number, title, description, className = '', layout = {} } = item;
-
   const isNumericAchievement = type !== 'text' && number;
 
   return (
-    <li className={`result__item ${className} ${layout.item || ''}`}>
-      <div className={`item__inner ${layout.inner || ''}`}>
+    <AnimatedCard className={`result__item ${className} ${layout.item || ''}`}>
+      <motion.div
+        className={`item__inner ${layout.inner || ''}`}
+        initial="hidden"
+        whileInView="visible"
+        viewport={defaultViewport}
+      >
         {isNumericAchievement && (
-          <data value={number.replace(/\D/g, '')} className={`item__number ${layout.number || ''}`}>
+          <motion.data
+            value={number.replace(/\D/g, '')}
+            className={`item__number ${layout.number || ''}`}
+            variants={numberVariants}
+          >
             {number}
-          </data>
+          </motion.data>
         )}
 
-        <h3 className={`item__title ${layout.title || ''}`}>{title}</h3>
+        <motion.h3 className={`item__title ${layout.title || ''}`} variants={slideInLeft}>
+          {title}
+        </motion.h3>
 
-        {description && <p className={`item__prev ${layout.description || ''}`}>{description}</p>}
-      </div>
-    </li>
+        {description && (
+          <motion.p className={`item__prev ${layout.description || ''}`} variants={fadeInUp}>
+            {description}
+          </motion.p>
+        )}
+      </motion.div>
+    </AnimatedCard>
   );
 };
