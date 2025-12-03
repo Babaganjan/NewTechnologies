@@ -41,7 +41,7 @@ body:has(.products-page-section) {
 }
 
 .products-page-section {
-  min-height: 100vh;
+  min-height: 90vh;
   background: var(--bg-black) url('/img/products-pages-img.webp') center top / cover no-repeat;
 
   .products-page-section__container {
@@ -49,7 +49,7 @@ body:has(.products-page-section) {
     flex-direction: column;
     justify-content: flex-start;
     gap: 0;
-    min-height: 100vh;
+    min-height: 90vh;
 
     .products-page-title__big {
       display: none;
@@ -67,10 +67,10 @@ body:has(.products-page-section) {
     @include decor-pseudo-elements(
       $color: var(--text-black),
       $after-top: auto,
-      $after-bottom: 0,
+      $after-bottom: 10%,
       $after-transform: scaleX(1),
       $before-top: auto,
-      $before-bottom: 0,
+      $before-bottom: 10%,
       $before-transform: scaleX(-1)
     );
 
