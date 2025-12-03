@@ -3,8 +3,11 @@
 
 .breadcrumbs {
   display: flex;
+  flex-wrap: wrap;
   list-style: none;
   margin-top: 20px;
+  row-gap: 5px;
+  column-gap: 0;
 }
 
 .breadcrumbsItem {
@@ -19,6 +22,9 @@
   a {
     position: relative;
     padding-left: fluid(10px, 22px);
+    word-break: break-word;
+    hyphens: auto;
+
     &::before {
       content: '[';
       position: absolute;
@@ -29,5 +35,6 @@
   span {
     display: block;
     margin-inline: 9px;
+    flex-shrink: 0;
   }
 }

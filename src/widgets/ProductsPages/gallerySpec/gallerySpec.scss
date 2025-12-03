@@ -6,7 +6,6 @@
   background-color: var(--bg-black);
 
   h1 {
-    width: 50%;
     margin-top: fluid(62px, 100px);
     @include typography(
       var(--text-white),
@@ -19,6 +18,7 @@
 
     @include respond-min(1024px) {
       font-size: fluid(31px, 68px);
+      width: 60%;
     }
 
     span {
