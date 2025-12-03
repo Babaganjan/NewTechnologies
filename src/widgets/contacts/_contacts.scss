@@ -21,6 +21,18 @@ $large-screen-bottom-padding: 190px;
     padding: 20px 10px;
     gap: 20px;
 
+    h1 {
+      width: 100%;
+      @include respond-min(768px) {
+        width: 90%;
+      }
+      @include respond-min(1024px) {
+        width: 70%;
+      }
+      align-items: center;
+      justify-self: center;
+    }
+
     .contacts__list {
       display: grid;
       grid-template-columns: 1fr;
