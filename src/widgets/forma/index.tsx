@@ -212,25 +212,12 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
         </button>
         <div className="wrapper_bg">
           <Image
-            src="/img/modal-form.png"
+            src="/img/modalForm.webp"
             alt=""
-            className="responsive-img--mobil"
+            className="responsive-img"
             width={360}
             height={278}
-          />
-          <Image
-            src="/img/modal-form-768.png"
-            alt=""
-            className="responsive-img--table"
-            width={768}
-            height={458}
-          />
-          <Image
-            src="/img/modal-form-1920.png"
-            alt=""
-            className="responsive-img--desktop "
-            width={955}
-            height={1120}
+            style={{ objectFit: 'cover' }}
           />
         </div>
         <form onSubmit={handleSubmit} className={clsx('consult-form', className)} noValidate>

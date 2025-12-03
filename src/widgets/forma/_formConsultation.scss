@@ -33,14 +33,8 @@
   }
 
   .responsive-img {
-    &--mobil {
-      display: block;
-      height: 100%;
-    }
-    &--table,
-    &--desktop {
-      display: none;
-    }
+    display: block;
+    height: 100%;
   }
 
   .consult-form {
@@ -183,14 +177,8 @@
     }
 
     .responsive-img {
-      &--mobil,
-      &--desktop {
-        display: none;
-      }
-      &--table {
-        display: block;
-        height: 100%;
-      }
+      display: block;
+      height: 100%;
     }
 
     .consult-form {
@@ -258,14 +246,8 @@
     }
 
     .responsive-img {
-      &--mobil,
-      &--table {
-        display: none;
-      }
-      &--desktop {
-        display: block;
-        height: 100vh;
-      }
+      display: block;
+      height: 100vh;
     }
 
     .consult-form {
