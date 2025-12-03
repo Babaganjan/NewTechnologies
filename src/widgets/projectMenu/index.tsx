@@ -104,6 +104,7 @@ export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
               icon
               rotate
               onClick={handleLoadMore}
+              scrambler
             >
               Загрузить еще
             </Button>

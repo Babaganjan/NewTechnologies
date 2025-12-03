@@ -1,7 +1,9 @@
+// src/shared/ui/Button/index.tsx
 import clsx from 'clsx';
-import type { ElementType } from 'react';
+import type { ElementType, MouseEvent } from 'react';
 import { forwardRef } from 'react';
 
+import { useScrambleText } from '@/hooks/useScrambleText';
 import { Arrow, ArrowSmall } from '@/shared/icons';
 
 import styles from './Button.module.scss';
@@ -19,11 +21,15 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, IButtonP
       iconSmall,
       icon,
       active,
+      scrambler = false,
       ...props
     },
     ref
   ) => {
     const Component = tagNameByVariants[variant] as ElementType;
+
+    const textContent = typeof children === 'string' ? children : '';
+    const { displayText, trigger } = useScrambleText(textContent);
 
     const classNameMap: Record<VariantType, string> = {
       primary: styles.primary,
@@ -40,14 +46,25 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, IButtonP
       primaryLink: styles.primary,
     };
 
+    const handleMouseEnter = (e: MouseEvent) => {
+      if (scrambler && textContent) {
+        trigger();
+      }
+
+      if ('onMouseEnter' in props && props.onMouseEnter) {
+        props.onMouseEnter(e as any);
+      }
+    };
+
     return (
       <Component
         type={Component === 'button' ? type : undefined}
         ref={ref}
         className={clsx(classNameMap[variant], className, active && styles.active)}
         {...props}
+        onMouseEnter={handleMouseEnter}
       >
-        {children}
+        {scrambler && textContent ? displayText : children}
         {icon && <Arrow className={clsx(rotate && styles.rotate)} />}
         {iconSmall && <ArrowSmall />}
       </Component>

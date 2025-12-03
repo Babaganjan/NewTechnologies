@@ -83,7 +83,7 @@ export const About = () => {
             </motion.p>
           </div>
           <motion.div variants={fadeInUp}>
-            <Button variant="primaryLink" className="about__btn" icon href="/about">
+            <Button variant="primaryLink" className="about__btn" icon href="/about" scrambler>
               О компании
             </Button>
           </motion.div>

@@ -50,6 +50,7 @@ export const FeedbackMenu = ({ theme }: FeedbackMenuProps) => {
                 onClick={handleOpenConsultation}
                 aria-haspopup="dialog"
                 aria-expanded={isConsultationModalOpen}
+                scrambler
               >
                 Подобрать решение
               </Button>
