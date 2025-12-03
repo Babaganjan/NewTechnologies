@@ -1,8 +1,11 @@
 'use client';
+
 import AutoScroll from 'embla-carousel-auto-scroll';
 import useEmblaCarousel from 'embla-carousel-react';
+import { motion } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { H } from '@/shared/ui';
 
 import { PartnerSlide } from './PartnerSlide';
@@ -77,11 +80,26 @@ export const Advertising = () => {
       className="advertising with-trapezoids"
       aria-labelledby="advertising-title"
     >
-      <div className="advertising__container container">
-        <H level="2" id="advertising-title" className="advertising__title title">
-          Наши партнеры
-        </H>
-        <div className="advertising__subtitle-wrapper">
+      <motion.div
+        className="advertising__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp}>
+          <H level="2" id="advertising-title" className="advertising__title title">
+            Наши партнеры
+          </H>
+        </motion.div>
+
+        <motion.div variants={fadeInUp} className="advertising__subtitle-wrapper">
           <H level="3" className="advertising__subtitle">
             <span className="advertising__subtitle-line1">
               Работаем с лидерами <span className="advertising__subtitle-desktop-word">рынка</span>
@@ -91,7 +109,7 @@ export const Advertising = () => {
               из <span className="advertising__subtitle--break">отрасли</span>
             </span>
           </H>
-        </div>
+        </motion.div>
 
         {isInView && (
           <div className="continuous-scroll-container" ref={emblaRef}>
@@ -107,7 +125,7 @@ export const Advertising = () => {
             </div>
           </div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 };

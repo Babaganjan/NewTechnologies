@@ -1,6 +1,8 @@
 'use client';
+import { motion } from 'framer-motion';
 import { useCallback, useMemo, useState } from 'react';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Button, H } from '@/shared/ui';
 
 import { ProjectMenuItem } from './ProjectMenuItem';
@@ -42,25 +44,39 @@ export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
 
   return (
     <section className="project-menu" aria-labelledby="projects-heading">
-      <div className="project-menu__container container">
+      <motion.div
+        className="project-menu__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+          },
+        }}
+      >
         <header className="project-menu__header-section">
-          <H level="2" variant="light" id="projects-heading" className="project-menu__title">
-            Наши проекты
-          </H>
+          <motion.div variants={fadeInUp}>
+            <H level="2" variant="light" id="projects-heading" className="project-menu__title">
+              Наши проекты
+            </H>
+          </motion.div>
 
-          <h3 className="project-menu__subtitle">
+          <motion.h3 variants={fadeInUp} className="project-menu__subtitle">
             {titleData.title}
             {titleData.highlightTitle && <span> {titleData.highlightTitle}</span>}
-          </h3>
+          </motion.h3>
         </header>
 
-        <div className="project-menu__headers">
+        <motion.div variants={fadeInUp} className="project-menu__headers">
           <div className="project-menu__header">проект</div>
           <div className="project-menu__header">клиент</div>
           <div className="project-menu__header">тип услуги</div>
-        </div>
+        </motion.div>
 
-        <div className="project-menu__list">
+        <motion.div variants={fadeInUp} className="project-menu__list">
           {visibleProjects.map((item, index) => (
             <ProjectMenuItem
               key={item.id}
@@ -74,21 +90,26 @@ export const ProjectMenu = ({ type = 'ALL' }: { type?: ProjectCategory }) => {
               isAnimated={index >= INITIAL_ITEMS_COUNT && isExpanding}
             />
           ))}
-        </div>
+        </motion.div>
 
         {hasMore && (
-          <Button
-            variant="primary"
-            aria-label="Загрузить еще"
+          <motion.div
+            variants={fadeInUp}
+            transition={{ delay: 0.8 }}
             className="project-menu__button"
-            icon
-            rotate
-            onClick={handleLoadMore}
           >
-            Загрузить еще
-          </Button>
+            <Button
+              variant="primary"
+              aria-label="Загрузить еще"
+              icon
+              rotate
+              onClick={handleLoadMore}
+            >
+              Загрузить еще
+            </Button>
+          </motion.div>
         )}
-      </div>
+      </motion.div>
     </section>
   );
 };

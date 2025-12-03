@@ -1,8 +1,12 @@
 'use client';
+import { motion } from 'framer-motion';
+
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Arrow } from '@/shared/icons';
 import type { QuestionItem } from '@/widgets/questions/questions.const';
 
 import { highlightText } from '../utils/highlightText';
+
 import './_questionsCard.scss';
 
 interface QuestionsCardProps {
@@ -15,7 +19,8 @@ export const QuestionsCard = ({ question, setActiveCard, activeCard }: Questions
   const isExpanded = activeCard === question.id;
 
   return (
-    <div
+    <motion.div
+      variants={fadeInUp}
       className="questions__card"
       data-grid-index={question.gridIndex}
       onMouseEnter={() => setActiveCard(question.id)}
@@ -39,6 +44,6 @@ export const QuestionsCard = ({ question, setActiveCard, activeCard }: Questions
         </div>
       )}
       <Arrow width={20} height={25} className="questions__card-arrow" aria-hidden="true" />
-    </div>
+    </motion.div>
   );
 };

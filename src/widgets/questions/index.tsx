@@ -1,8 +1,11 @@
 'use client';
 import clsx from 'clsx';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 import useModal from '@/hooks/useModal';
+import { AnimatedList } from '@/shared/animations/AnimatedList';
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Arrow } from '@/shared/icons';
 import { H } from '@/shared/ui';
 
@@ -25,11 +28,26 @@ export const Questions = ({ type = 'DEFAULT' }: { type?: QuestionFAQ }) => {
   return (
     <>
       <section className="questions" aria-labelledby="faq-heading">
-        <div className="questions__container container">
-          <H level={'2'} variant="light" id="faq-heading" className="questions__title title">
-            Частые вопросы
-          </H>
-          <div className={clsx('card-wrapper', !isDefault && 'card-wrapper--custom')}>
+        <motion.div
+          className="questions__container container"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+            },
+          }}
+        >
+          <motion.div variants={fadeInUp}>
+            <H level={'2'} variant="light" id="faq-heading" className="questions__title title">
+              Частые вопросы
+            </H>
+          </motion.div>
+
+          <AnimatedList className={clsx('card-wrapper', !isDefault && 'card-wrapper--custom')}>
             {data.map((question) => (
               <QuestionsCard
                 key={question.id}
@@ -49,8 +67,8 @@ export const Questions = ({ type = 'DEFAULT' }: { type?: QuestionFAQ }) => {
                 <Arrow width={20} height={25} className="questions__card-arrow--active" />
               </div>
             </div>
-          </div>
-        </div>
+          </AnimatedList>
+        </motion.div>
       </section>
       {isConsultationModalOpen && (
         <FormaConsultation onSubmit={handleCloseConsultation} onClose={handleCloseConsultation} />
