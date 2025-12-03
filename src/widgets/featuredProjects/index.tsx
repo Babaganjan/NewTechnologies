@@ -97,7 +97,6 @@
 'use client';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { useEffect } from 'react';
 import { useGlitch } from 'react-powerglitch';
 
 import { fadeInUp } from '@/shared/animations/scroll-animations';
@@ -131,26 +130,6 @@ export const FavoritesProject = ({
   });
 
   const glitches = [glitch1, glitch2, glitch3];
-
-  // Добавляем начальный глитч-эффект при появлении в viewport
-  useEffect(() => {
-    // Функция для запуска начального глитча
-    const runInitialGlitch = () => {
-      glitches.forEach((glitch, index) => {
-        // Запускаем с разной задержкой для каждого элемента
-        setTimeout(() => {
-          glitch.startGlitch();
-          // Останавливаем через 0.8 секунды
-          setTimeout(() => glitch.stopGlitch(), 800);
-        }, index * 300); // Каждый следующий элемент через 300мс
-      });
-    };
-
-    // Запускаем глитч с небольшой задержкой после монтирования
-    const timer = setTimeout(runInitialGlitch, 500);
-
-    return () => clearTimeout(timer);
-  }, []); // Пустой массив зависимостей - запускаем только при монтировании
 
   return (
     <section className="favorites-project" aria-labelledby="featured-projects-heading">
