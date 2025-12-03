@@ -57,6 +57,7 @@ export const Programs = () => {
               variant="feedback"
               icon
               className="programs__button"
+              scrambler
             >
               Заказать услугу
             </Button>
@@ -89,6 +90,7 @@ export const Programs = () => {
               variant="feedback"
               icon
               className="programs__button"
+              scrambler
             >
               Заказать услугу
             </Button>

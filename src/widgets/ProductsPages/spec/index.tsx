@@ -52,7 +52,7 @@ export const Spec = ({
 
           {button && activeTab !== 'Развернутый вид' && (
             <div className="spec__button">
-              <Button variant="feedback" icon onClick={handleOpenConsultation}>
+              <Button variant="feedback" icon onClick={handleOpenConsultation} scrambler>
                 заказать {buttonTitle || 'камера'}
               </Button>
             </div>

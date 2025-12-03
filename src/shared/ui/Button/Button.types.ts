@@ -1,4 +1,3 @@
-// src/shared/ui/Button/Button.types.ts
 import type { LinkProps } from 'next/link';
 import type { ComponentPropsWithRef, ReactNode } from 'react';
 

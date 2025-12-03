@@ -46,7 +46,7 @@ export const LearningFormats = () => {
                 Обучение для наших партнеров предоставляется на <span>безвозмездной основе</span>.
               </p>
               <div className="learning__button">
-                <Button variant="feedback" icon onClick={handleOpenConsultation}>
+                <Button variant="feedback" icon onClick={handleOpenConsultation} scrambler>
                   Заказать услугу
                 </Button>
               </div>
@@ -64,7 +64,7 @@ export const LearningFormats = () => {
                 технологий безопасности.
               </p>
               <div className="learning__button">
-                <Button variant="feedback" icon onClick={handleOpenConsultation}>
+                <Button variant="feedback" icon onClick={handleOpenConsultation} scrambler>
                   Заказать услугу
                 </Button>
               </div>

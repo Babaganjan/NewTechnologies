@@ -32,7 +32,7 @@ export const AssemblyScheme = ({ items }: AssemblySchemeProps) => {
           ))}
         </ul>
 
-        <Button variant="feedback" icon className="assemblyScheme__btn">
+        <Button variant="feedback" icon className="assemblyScheme__btn" scrambler>
           заказать шкаф
         </Button>
       </div>
