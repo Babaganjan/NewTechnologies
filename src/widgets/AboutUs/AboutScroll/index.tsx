@@ -54,8 +54,6 @@ export const AboutScroll = () => {
       ref={containerRef}
       data-theme="dark"
       aria-labelledby="about-scroll-heading"
-      role="region"
-      aria-roledescription="Интерактивная секция с параллакс-эффектом"
     >
       <motion.div
         className="sticky-container container"
@@ -116,12 +114,8 @@ export const AboutScroll = () => {
           // variants={fadeInUp}
         >
           <AboutUsHeadingBottom aria-hidden="false" role="img" />
-          <motion.p
-            className="bottom-block__desc"
-            aria-label="Лидер в сфере систем безопасности и автоматизации бизнеса"
-            variants={fadeInUp}
-          >
-            Лидер в сфере систем безопасности и автоматизации бизнеса
+          <motion.p className="bottom-block__desc" variants={fadeInUp}>
+            Лидер в сфере систем безопасности
           </motion.p>
         </motion.div>
       </motion.div>
