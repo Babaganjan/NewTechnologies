@@ -21,10 +21,6 @@
       -1.32px
     );
 
-    @include respond-min(768px) {
-      font-size: fluid(36px, 42px);
-    }
-
     span {
       color: var(--text-deep-gray);
     }
@@ -50,6 +46,7 @@
     &__title-description {
       display: flex;
       gap: 10px;
+
       .description__title-one {
         width: 50%;
       }
