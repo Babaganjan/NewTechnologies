@@ -1,6 +1,11 @@
+'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { AnimatedCard } from '@/shared/animations/AnimatedCard';
+import { AnimatedList } from '@/shared/animations/AnimatedList';
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { H } from '@/shared/ui';
 
 import { seeAlsoTypeData } from './helper/seeAlsoTypeData';
@@ -11,29 +16,38 @@ export const SeeAlso = ({ type }: { type: string }) => {
 
   return (
     <section className="seeAlso">
-      <div className="seeAlso__container container">
-        <div className="seeAlso__title">
+      <motion.div
+        className="seeAlso__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp} className="seeAlso__title">
           <H level="2" variant="light">
             смотрите также
           </H>
-        </div>
-        <h3 className="seeAlso__subtitle">Дополнительные направления по безопасности</h3>
-        <ul className="seeAlso__list">
+        </motion.div>
+        <motion.h3 variants={fadeInUp} className="seeAlso__subtitle">
+          Дополнительные направления по безопасности
+        </motion.h3>
+        <AnimatedList className="seeAlso__list">
           {data.map((item) => (
-            <li className="seeAlso__item" key={item.id}>
+            <AnimatedCard className="seeAlso__item" key={item.id}>
               <Link href={item.href}>
                 <Image src={item.image} alt={item.title} width={110} height={110} />
-
-                {/* <H level="5" variant="light">
-                  {item.title}
-                </H> */}
-
                 <h4>{item.title}</h4>
               </Link>
-            </li>
+            </AnimatedCard>
           ))}
-        </ul>
-      </div>
+        </AnimatedList>
+      </motion.div>
     </section>
   );
 };

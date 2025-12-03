@@ -1,5 +1,8 @@
 'use client';
+import { motion } from 'framer-motion';
+
 import useModal from '@/hooks/useModal';
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Button, H } from '@/shared/ui';
 
 import { FormaConsultation } from '../forma';
@@ -13,14 +16,26 @@ export const LearningFormats = () => {
   return (
     <>
       <section className="learning">
-        <div className="learning__container container">
-          <div className="learning-title">
+        <motion.div
+          className="learning__container container"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+            },
+          }}
+        >
+          <motion.div variants={fadeInUp} className="learning-title">
             <H level="2" variant="light">
               Форматы обучения
             </H>
-          </div>
+          </motion.div>
           <div className="learning-card-wrapper">
-            <article className="learning-card">
+            <motion.article variants={fadeInUp} className="learning-card">
               <div className="learning-card__title-container">
                 <h3 className="learning-card__title">Для официальных партнеров</h3>
                 <p className="learning-card__subtitle learning-card__subtitle--mobile">
@@ -35,8 +50,8 @@ export const LearningFormats = () => {
                   Заказать услугу
                 </Button>
               </div>
-            </article>
-            <article className="learning-card">
+            </motion.article>
+            <motion.article variants={fadeInUp} className="learning-card">
               <div className="learning-card__title-container">
                 <h3 className="learning-card__title">Для специалистов и всех желающих</h3>
                 <p className="learning-card__subtitle learning-card__subtitle--mobile">
@@ -53,9 +68,9 @@ export const LearningFormats = () => {
                   Заказать услугу
                 </Button>
               </div>
-            </article>
+            </motion.article>
           </div>
-        </div>
+        </motion.div>
       </section>
       {isConsultationModalOpen && (
         <FormaConsultation onSubmit={handleCloseConsultation} onClose={handleCloseConsultation} />

@@ -1,4 +1,7 @@
+'use client';
 import type { ReactNode } from 'react';
+
+import { AnimatedCard } from '@/shared/animations/AnimatedCard';
 
 export const ContactItem = ({
   className,
@@ -9,8 +12,8 @@ export const ContactItem = ({
   label: string;
   children: ReactNode;
 }) => (
-  <li className={`contacts__item ${className}`}>
+  <AnimatedCard className={`contacts__item ${className}`} enableHover={false}>
     <span className="contacts-title-text">{label}</span>
     {children}
-  </li>
+  </AnimatedCard>
 );

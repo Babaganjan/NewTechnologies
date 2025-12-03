@@ -1,16 +1,32 @@
+'use client';
+import { motion } from 'framer-motion';
+
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Button, H } from '@/shared/ui';
 
 import './programs.scss';
 
 export const Programs = () => (
   <section className="programs">
-    <div className="programs__container container">
-      <div className="programs__title-container">
+    <motion.div
+      className="programs__container container"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={{
+        hidden: { opacity: 0 },
+        visible: {
+          opacity: 1,
+          transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+        },
+      }}
+    >
+      <motion.div variants={fadeInUp} className="programs__title-container">
         <H level="2" variant="light">
           Программы
         </H>
-      </div>
-      <article className="programs__card">
+      </motion.div>
+      <motion.article variants={fadeInUp} className="programs__card">
         <div className="programs__card-title-wrapper">
           <h3 className="programs__card-title">Безопасная среда</h3>
           <p className="programs__card-subtitle">
@@ -31,8 +47,8 @@ export const Programs = () => (
         <Button variant="feedback" icon className="programs__button">
           Заказать услугу
         </Button>
-      </article>
-      <article className="programs__card">
+      </motion.article>
+      <motion.article variants={fadeInUp} className="programs__card">
         <div className="programs__card-title-wrapper">
           <h3 className="programs__card-title">Антибуллинг</h3>
           <p className="programs__card-subtitle">
@@ -58,7 +74,7 @@ export const Programs = () => (
         <Button variant="feedback" icon className="programs__button">
           Заказать услугу
         </Button>
-      </article>
-    </div>
+      </motion.article>
+    </motion.div>
   </section>
 );
