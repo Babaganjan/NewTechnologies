@@ -29,7 +29,6 @@ $large-screen-bottom-padding: 190px;
       @include respond-min(1024px) {
         width: 70%;
       }
-      align-items: center;
       justify-self: center;
     }
 
