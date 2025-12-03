@@ -1,4 +1,3 @@
-// src/shared/ui/Button/index.tsx
 import clsx from 'clsx';
 import type { ElementType, MouseEvent } from 'react';
 import { forwardRef } from 'react';
@@ -46,13 +45,12 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, IButtonP
       primaryLink: styles.primary,
     };
 
-    const handleMouseEnter = (e: MouseEvent) => {
+    const handleMouseEnter = (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
       if (scrambler && textContent) {
         trigger();
       }
-
       if ('onMouseEnter' in props && props.onMouseEnter) {
-        props.onMouseEnter(e as any);
+        (props.onMouseEnter as (e: MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => void)(e);
       }
     };
 
