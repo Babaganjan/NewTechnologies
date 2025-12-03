@@ -1,3 +1,7 @@
+'use client';
+import { motion } from 'framer-motion';
+
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { HomeHeading, HomeHeadingBig } from '@/shared/icons';
 import { H } from '@/shared/ui';
 import './_hero.scss';
@@ -5,7 +9,19 @@ import './_hero.scss';
 export const Hero = () => {
   return (
     <section className="hero with-trapezoids" aria-labelledby="hero-title">
-      <div className="container hero__container">
+      <motion.div
+        className="container hero__container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+          },
+        }}
+      >
         <video
           autoPlay
           muted
@@ -24,23 +40,28 @@ export const Hero = () => {
           <source src="/video/hero-video-1920.mp4" type="video/mp4" media="(min-width: 1024px)" />
           <source src="/video/hero-video-1920.mp4" type="video/mp4" />
         </video>
-        <H level={'1'} className="heading" id="hero-title">
-          <HomeHeading className="home-heading_small" />
-          <HomeHeadingBig className="home-heading_big" />
-        </H>
-        <div className="hero__content">
-          <H level={'2'} className="hero__title title">
-            Мы предлагаем
+        <motion.div variants={fadeInUp} className="heading">
+          <H level={'1'} id="hero-title">
+            <HomeHeading className="home-heading_small" />
+            <HomeHeadingBig className="home-heading_big" />
           </H>
-          <p className="hero__prev">
+        </motion.div>
+
+        <div className="hero__content">
+          <motion.div variants={fadeInUp} className="hero__title title">
+            <H level={'2'}>Мы предлагаем</H>
+          </motion.div>
+          <motion.p variants={fadeInUp} className="hero__prev">
             инновационные решения для обеспечения безопасности: системы видеонаблюдения,
             охранно-пожарная сигнализация, пожаротушение, контроль доступа и системы оповещения.
-          </p>
+          </motion.p>
         </div>
-        <H level={'3'} className="hero__subtitle subtitle">
-          Безопасность&nbsp;нового поколения
-        </H>
-      </div>
+        <motion.div variants={fadeInUp}>
+          <H level={'3'} className="hero__subtitle subtitle">
+            Безопасность&nbsp;нового поколения
+          </H>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

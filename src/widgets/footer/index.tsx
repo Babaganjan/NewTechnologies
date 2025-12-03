@@ -3,8 +3,6 @@ import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import { useScrollContext } from '@/context/ScrollProvider';
-import { AnimatedCard } from '@/shared/animations/AnimatedCard';
-import { AnimatedList } from '@/shared/animations/AnimatedList';
 import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/cities.data';
 import { Button } from '@/shared/ui';
@@ -42,7 +40,7 @@ export const Footer = () => {
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+            transition: { staggerChildren: 0.1, delayChildren: 0.1 },
           },
         }}
       >
@@ -61,55 +59,60 @@ export const Footer = () => {
         </Button>
         <nav className="footer__pages" aria-label="Основная навигация">
           <p className="footer__title">Страницы</p>
-          <AnimatedList>
+          <ul>
             {FOOTER_NAV_ITEMS.map((item) => (
-              <AnimatedCard key={item.href}>
+              <motion.li variants={fadeInUp} key={item.href}>
                 <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
-              </AnimatedCard>
+              </motion.li>
             ))}
-          </AnimatedList>
+          </ul>
         </nav>
 
         <div className="footer__about">
           <motion.p variants={fadeInUp} className="footer__title">
             Связь с нами
           </motion.p>
-          <address className="footer__address">
+          <motion.address variants={fadeInUp} className="footer__address">
             {selectedContact?.address || 'Астана, 14/1 умай ана'}
-          </address>
+          </motion.address>
           {selectedContact && (
-            <Button
-              href={`tel:${selectedContact.href}`}
-              variant="link"
-              aria-label={`Позвонить по номеру ${selectedContact.phone}`}
-            >
-              {selectedContact.phone}
-            </Button>
+            <motion.div variants={fadeInUp}>
+              <Button
+                href={`tel:${selectedContact.href}`}
+                variant="link"
+                aria-label={`Позвонить по номеру ${selectedContact.phone}`}
+              >
+                {selectedContact.phone}
+              </Button>
+            </motion.div>
           )}
-          <Button
-            href={`mailto:${COMMON_CONTACT_INFO.email}`}
-            variant="social"
-            className="social-link"
-            rel="noopener noreferrer"
-            aria-label={`Написать на email ${COMMON_CONTACT_INFO.email}`}
-          >
-            {COMMON_CONTACT_INFO.email}
-          </Button>
+          <motion.div variants={fadeInUp}>
+            <Button
+              href={`mailto:${COMMON_CONTACT_INFO.email}`}
+              variant="social"
+              className="social-link"
+              rel="noopener noreferrer"
+              aria-label={`Написать на email ${COMMON_CONTACT_INFO.email}`}
+            >
+              {COMMON_CONTACT_INFO.email}
+            </Button>
+          </motion.div>
           <nav aria-label="Социальные сети">
             {COMMON_CONTACT_INFO.socialNetworks.map((item) => (
-              <Button
-                key={item.id}
-                href={item.href}
-                variant="social"
-                icon
-                className="social-link footer__link"
-                rel="noopener noreferrer"
-                aria-label={`Наш ${item.title}`}
-              >
-                {item.title}
-              </Button>
+              <motion.div variants={fadeInUp} key={item.id}>
+                <Button
+                  href={item.href}
+                  variant="social"
+                  icon
+                  className="social-link footer__link"
+                  rel="noopener noreferrer"
+                  aria-label={`Наш ${item.title}`}
+                >
+                  {item.title}
+                </Button>
+              </motion.div>
             ))}
           </nav>
         </div>
@@ -118,30 +121,30 @@ export const Footer = () => {
           <motion.p variants={fadeInUp} className="footer__title">
             Деятельность
           </motion.p>
-          <AnimatedList>
+          <ul>
             {FOOTER_ACTIVITY_ITEMS.map((item) => (
-              <AnimatedCard key={item.href}>
+              <motion.li variants={fadeInUp} key={item.href}>
                 <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
-              </AnimatedCard>
+              </motion.li>
             ))}
-          </AnimatedList>
+          </ul>
         </nav>
 
         <nav className="footer__about-company" aria-label="Информация о компании">
           <motion.p variants={fadeInUp} className="footer__title">
             О компании
           </motion.p>
-          <AnimatedList>
+          <ul>
             {FOOTER_COMPANY_ITEMS.map((item) => (
-              <AnimatedCard key={item.href}>
+              <motion.li variants={fadeInUp} key={item.href}>
                 <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
-              </AnimatedCard>
+              </motion.li>
             ))}
-          </AnimatedList>
+          </ul>
         </nav>
         <motion.div variants={fadeInUp} className="footer__copyright">
           <p>
