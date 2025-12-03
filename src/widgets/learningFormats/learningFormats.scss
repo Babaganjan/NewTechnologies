@@ -2,7 +2,7 @@
 @use '@/shared/styles/mixins' as *;
 
 .learning {
-  @include trapezoid-decor($responsive: true, $position: top, $color: var(--text-white));
+  @include trapezoid-decor($position: top, $color: var(--text-white));
   padding-block: 100px;
 }
 

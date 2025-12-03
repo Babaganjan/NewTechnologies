@@ -3,7 +3,7 @@
 
 .services {
   &.with-trapezoids {
-    @include trapezoid-decor($config: 'small');
+    @include trapezoid-decor();
   }
   position: relative;
   background-color: var(--bg-black);
@@ -92,19 +92,8 @@
   }
 }
 
-@include respond-min(768px) {
-  .services {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'medium');
-    }
-  }
-}
-
 @include respond-min(1280px) {
   .services {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'xlarge');
-    }
     .item__btn {
       &--red {
         span {
@@ -122,14 +111,6 @@
     &__image {
       height: 173px;
       object-fit: cover;
-    }
-  }
-
-  @include respond-min(1380px) {
-    .services {
-      &.with-trapezoids {
-        @include trapezoid-decor($config: 'xlarge');
-      }
     }
   }
 

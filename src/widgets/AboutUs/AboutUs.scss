@@ -5,10 +5,7 @@
   padding-top: 100px;
   padding-bottom: 83px;
   background-color: var(--bg-black);
-
-  & {
-    @include trapezoid-decor($config: 'small', $position: bottom);
-  }
+  @include trapezoid-decor($position: bottom);
 }
 
 .aboutUs__wrapper-container {
@@ -81,10 +78,6 @@
 }
 
 @include respond-min(1024px) {
-  .aboutUs {
-    @include trapezoid-decor(56px, 33px, var(--vector-black), bottom, 1030px, -32px);
-  }
-
   .aboutUs__wrapper-container {
     max-width: 905px;
     margin: 0 auto;
@@ -95,16 +88,3 @@
     justify-self: center;
   }
 }
-
-@include respond-min(1280px) {
-  .aboutUs {
-    @include trapezoid-decor($config: 'large', $position: bottom);
-  }
-}
-
-@include respond-min(1380px) {
-  .aboutUs {
-    @include trapezoid-decor($config: 'xlarge', $position: bottom);
-  }
-}
-

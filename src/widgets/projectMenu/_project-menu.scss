@@ -2,7 +2,7 @@
 @use '@/shared/styles/mixins' as *;
 
 .project-menu {
-  @include trapezoid-decor($responsive: true, $position: top, $color: var(--text-white));
+  @include trapezoid-decor($position: top, $color: var(--text-white));
   .project-menu__container {
     display: grid;
     grid-template-columns: 1fr;

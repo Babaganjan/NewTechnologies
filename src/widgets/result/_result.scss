@@ -3,7 +3,7 @@
 
 .result {
   &.with-trapezoids {
-    @include trapezoid-decor($config: 'small');
+    @include trapezoid-decor();
   }
   position: relative;
   background-color: var(--bg-black);
@@ -27,10 +27,6 @@
 
 @include respond-min(768px) {
   .result {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'medium');
-    }
-
     .item {
       &__inner {
         min-height: 294px;
@@ -104,10 +100,6 @@
 
 @include respond-min(1280px) {
   .result {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'large');
-    }
-
     &__container {
       @include line-decor(1% 50% 99%);
       padding-block: 90px 124px;
@@ -117,10 +109,6 @@
 
 @include respond-min(1380px) {
   .result {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'xlarge');
-    }
-
     &__container {
       @include line-decor(1% 25.4% 50% 74.6% 99%);
       display: grid;

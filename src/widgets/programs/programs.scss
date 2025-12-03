@@ -3,7 +3,7 @@
 
 .programs {
   padding-block: 100px;
-  @include trapezoid-decor($responsive: true, $position: top, $color: var(--text-white));
+  @include trapezoid-decor($position: top, $color: var(--text-white));
 }
 
 .programs__title-container {

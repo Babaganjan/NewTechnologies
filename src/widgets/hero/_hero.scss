@@ -4,7 +4,7 @@
 .hero {
   padding-top: 59px;
   &.with-trapezoids {
-    @include trapezoid-decor($config: 'small', $position: bottom);
+    @include trapezoid-decor($position: bottom);
   }
   position: relative;
   background-color: var(--bg-black);
@@ -70,10 +70,6 @@
 
 @include respond-min(768px) {
   .hero {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'medium', $position: bottom);
-    }
-
     padding-top: 96px;
     &__container {
       padding-block: 279px 20px;
@@ -131,22 +127,6 @@
       z-index: 1;
       grid-column: 1/3;
       letter-spacing: -21.87px;
-    }
-  }
-}
-
-@include respond-min(1280px) {
-  .hero {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'large');
-    }
-  }
-}
-
-@include respond-min(1380px) {
-  .hero {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'xlarge');
     }
   }
 }

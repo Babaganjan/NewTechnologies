@@ -3,7 +3,7 @@
 
 .advantage {
   padding-block: 100px;
-  @include trapezoid-decor($responsive: true, $color: var(--text-white));
+  @include trapezoid-decor($color: var(--text-white));
 }
 
 .advantage__title {
