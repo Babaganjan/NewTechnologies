@@ -2,7 +2,9 @@
 @use '@/shared/styles/mixins' as *;
 
 .project-menu {
-  @include trapezoid-decor($position: top, $color: var(--text-white));
+  &:not(body:has(.advertising) *) {
+    @include trapezoid-decor($position: top, $color: var(--text-white));
+  }
   .project-menu__container {
     display: grid;
     grid-template-columns: 1fr;
