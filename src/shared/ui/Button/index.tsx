@@ -1,3 +1,4 @@
+'use client'
 import clsx from 'clsx';
 import type { ElementType, MouseEvent } from 'react';
 import { forwardRef } from 'react';
