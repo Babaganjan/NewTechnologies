@@ -19,20 +19,21 @@ export const SliderServices = ({ serviceId }: SliderServicesProps) => {
     <div className="service-slider">
       <Swiper
         spaceBetween={10}
-        slidesPerView={2.1}
+        slidesPerView={'auto'}
         centeredSlides={false}
         centeredSlidesBounds={false}
         watchOverflow
-        loop={true}
+        loop={false}
+        freeMode={true}
         breakpoints={{
           480: {
-            slidesPerView: 2.3,
+            slidesPerView: 'auto',
           },
           768: {
-            slidesPerView: 3,
+            slidesPerView: 'auto',
           },
           1024: {
-            slidesPerView: 3.2,
+            slidesPerView: 'auto',
             spaceBetween: 20,
           },
         }}
