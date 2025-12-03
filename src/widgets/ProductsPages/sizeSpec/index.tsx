@@ -1,5 +1,8 @@
+'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { H } from '@/shared/ui';
 
 import './sizeSpec.scss';
@@ -11,13 +14,25 @@ interface SizeSpecProps {
 export const SizeSpec = ({ images }: SizeSpecProps) => {
   return (
     <section className="sizeSpec">
-      <div className="container">
-        <div className="sizeSpec__title">
+      <motion.div
+        className="container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp} className="sizeSpec__title">
           <H level="2" variant="light">
             Размеры
           </H>
-        </div>
-        <div className="sizeSpec__img-container">
+        </motion.div>
+        <motion.div variants={fadeInUp} className="sizeSpec__img-container">
           {images.map((src, index) => (
             <div key={index} className="sizeSpec__img">
               <Image
@@ -28,8 +43,8 @@ export const SizeSpec = ({ images }: SizeSpecProps) => {
               />
             </div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };

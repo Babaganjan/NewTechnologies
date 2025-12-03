@@ -1,3 +1,5 @@
+'use client';
+import { AnimatedCard } from '@/shared/animations/AnimatedCard';
 import type { KeySpecItem } from '@/shared/types/products.types';
 
 import { getItemClasses } from '../utils/getItemClasses';
@@ -6,7 +8,7 @@ export const SpecItem = ({ item, index }: { item: KeySpecItem; index: number }) 
   const itemClasses = getItemClasses(item, index);
 
   return (
-    <li className={itemClasses}>
+    <AnimatedCard className={itemClasses} enableHover={false}>
       {item.title && <h3 className="keySpecs__item-title">{item.title}</h3>}
 
       {item.value && (
@@ -18,6 +20,6 @@ export const SpecItem = ({ item, index }: { item: KeySpecItem; index: number }) 
 
       {item.description && <p className="keySpecs__item-description">{item.description}</p>}
       {item.subtitle && <p className="keySpecs__item-description">{item.subtitle}</p>}
-    </li>
+    </AnimatedCard>
   );
 };

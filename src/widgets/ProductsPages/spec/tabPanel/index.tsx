@@ -1,3 +1,7 @@
+'use client';
+import { motion } from 'framer-motion';
+
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Button } from '@/shared/ui';
 
 interface TabPanelProps<T extends string> {
@@ -14,8 +18,12 @@ export function TabPanel<T extends string>({
   activeTab,
 }: TabPanelProps<T>) {
   return (
-    <div
+    <motion.div
       className="tabList-container"
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true, amount: 0.2 }}
+      variants={fadeInUp}
       role="tablist"
       aria-label={ariaLabel}
       aria-orientation="horizontal"
@@ -35,6 +43,6 @@ export function TabPanel<T extends string>({
           {tab}
         </Button>
       ))}
-    </div>
+    </motion.div>
   );
 }

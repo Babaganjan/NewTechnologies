@@ -1,3 +1,8 @@
+'use client';
+import { motion } from 'framer-motion';
+
+import { AnimatedList } from '@/shared/animations/AnimatedList';
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import type { KeySpecItem, KeySpecLayout } from '@/shared/types/products.types';
 import { H } from '@/shared/ui';
 
@@ -16,18 +21,30 @@ export const KeySpecs = ({ title = 'Основные характеристик�
 
   return (
     <section className="keySpecs" aria-labelledby="keyspecs-title">
-      <div className="container">
-        <div className="keySpecs__title">
+      <motion.div
+        className="container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp} className="keySpecs__title">
           <H level="2" variant="dark" id="keyspecs-title">
             {title}
           </H>
-        </div>
-        <ul className={listClassName}>
+        </motion.div>
+        <AnimatedList className={listClassName}>
           {items.map((item, index) => (
             <SpecItem key={item.id} item={item} index={index} />
           ))}
-        </ul>
-      </div>
+        </AnimatedList>
+      </motion.div>
     </section>
   );
 };
