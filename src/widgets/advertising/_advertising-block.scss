@@ -13,7 +13,7 @@
   }
 
   &.with-trapezoids {
-    @include trapezoid-decor($config: 'small');
+    @include trapezoid-decor();
   }
 
   &__title {
@@ -110,14 +110,6 @@
   }
 }
 
-@include respond-min(768px) {
-  .advertising {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'medium');
-    }
-  }
-}
-
 @include respond-min(1024px) {
   .advertising {
     padding-bottom: 60px;
@@ -153,22 +145,6 @@
       &--break {
         display: inline;
       }
-    }
-  }
-}
-
-@include respond-min(1280px) {
-  .advertising {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'large');
-    }
-  }
-}
-
-@include respond-min(1380px) {
-  .advertising {
-    &.with-trapezoids {
-      @include trapezoid-decor($config: 'xlarge');
     }
   }
 }
