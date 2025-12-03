@@ -35,7 +35,7 @@ export const IncludedService = ({ type }: { type: ServiceTypeKey }) => {
             </H>
           </motion.div>
           <motion.div variants={fadeInUp} className="includedService__subtitle">
-            <H level="3">6 причин довериться нашей системе безопасности</H>
+            <H level="3">6 ПРИЧИН ДОВЕРИТЬСЯ НАМ</H>
           </motion.div>
         </div>
         <div className="includedService__wrapper">

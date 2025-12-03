@@ -12,6 +12,17 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: 15px;
+
+  h3 {
+    @include typography(
+      var(--text-white),
+      600,
+      fluid(22px, 42px, 360px, 768px),
+      1,
+      uppercase,
+      -1.32px
+    );
+  }
 }
 
 .aboutUs__title {

@@ -10,7 +10,7 @@ export const FAVORITES_PROJECT_DATA: FavoritesProjectData[] = [
     id: 1,
     image: '/img/favorite-1.webp',
     title: 'Метрополитен г. алматы',
-    description: 'Реализовали монтаж автоматического порошкового пожаротушения «Тунгус».',
+    description: 'Установили систему автоматического пожаротушения на базе оборудования «Тунгус»',
   },
   {
     id: 2,
@@ -22,7 +22,7 @@ export const FAVORITES_PROJECT_DATA: FavoritesProjectData[] = [
   {
     id: 3,
     image: '/img/favorite-3.webp',
-    title: 'Метрополитен г. алматы',
+    title: 'Двд г. Тараз',
     description: 'Оборудовали объект современными серверными шкафами.',
   },
 ] as const;
