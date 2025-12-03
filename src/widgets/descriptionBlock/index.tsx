@@ -55,6 +55,7 @@ export const Description = ({ type }: { type: DescriptionTypeKey }) => {
                 icon
                 className="description-button"
                 onClick={handleOpenConsultation}
+                scrambler
               >
                 Заказать услугу
               </Button>
