@@ -52,7 +52,12 @@ export const Programs = () => {
                 <li>Централизованный мониторинг всех объектов на одной платформе;</li>
               </ul>
             </div>
-            <Button variant="feedback" icon className="programs__button">
+            <Button
+              onClick={handleOpenConsultation}
+              variant="feedback"
+              icon
+              className="programs__button"
+            >
               Заказать услугу
             </Button>
           </motion.article>
