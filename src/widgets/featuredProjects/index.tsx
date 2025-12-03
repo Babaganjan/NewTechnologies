@@ -142,7 +142,7 @@ export const FavoritesProject = ({
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.5, delayChildren: 0.4 },
+            transition: { staggerChildren: 0.15, delayChildren: 0.1 },
           },
         }}
       >

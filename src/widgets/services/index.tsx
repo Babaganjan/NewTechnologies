@@ -101,7 +101,7 @@ export const Services = () => {
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+            transition: { staggerChildren: 0.15, delayChildren: 0.1 },
           },
         }}
       >
