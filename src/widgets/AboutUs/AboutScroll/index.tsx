@@ -2,6 +2,7 @@
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { useEffect, useRef, useState } from 'react';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { AboutUsHeadingBottom, AboutUsHeadingTop } from '@/shared/icons';
 import './AboutScroll.scss';
 
@@ -56,7 +57,19 @@ export const AboutScroll = () => {
       role="region"
       aria-roledescription="Интерактивная секция с параллакс-эффектом"
     >
-      <div className="sticky-container container">
+      <motion.div
+        className="sticky-container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.3, delayChildren: 0.2 },
+          },
+        }}
+      >
         <motion.div
           className="block top-block container"
           style={{
@@ -65,11 +78,9 @@ export const AboutScroll = () => {
           role="heading"
           aria-level={2}
           aria-label="Заголовок: О компании и наших достижениях"
+          // variants={fadeInUp}
         >
           <AboutUsHeadingTop aria-hidden="false" role="img" />
-          <span className="sr-only" id="about-scroll-heading">
-            О компании и наших достижениях
-          </span>
         </motion.div>
 
         <motion.div
@@ -102,16 +113,18 @@ export const AboutScroll = () => {
           }}
           role="contentinfo"
           aria-label="Информация о компании"
+          // variants={fadeInUp}
         >
           <AboutUsHeadingBottom aria-hidden="false" role="img" />
-          <p
+          <motion.p
             className="bottom-block__desc"
             aria-label="Лидер в сфере систем безопасности и автоматизации бизнеса"
+            variants={fadeInUp}
           >
             Лидер в сфере систем безопасности и автоматизации бизнеса
-          </p>
+          </motion.p>
         </motion.div>
-      </div>
+      </motion.div>
     </section>
   );
 };
