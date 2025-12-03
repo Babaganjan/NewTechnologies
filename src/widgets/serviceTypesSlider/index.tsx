@@ -1,9 +1,10 @@
 'use client';
-
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import { Pagination } from 'swiper/modules';
 import { Swiper, SwiperSlide } from 'swiper/react';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { H } from '@/shared/ui';
 
 import { DATA_ALL_TYPES, type TDataAllTypes } from './TypesOfBlock.const';
@@ -16,19 +17,31 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
 
   return (
     <section className="typesOfBlock" data-type={type}>
-      <div className="typesOfBlock__container container">
+      <motion.div
+        className="typesOfBlock__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+          },
+        }}
+      >
         <div className="typesOfBlock__wrapper">
-          <div className="typesOfBlock__title">
+          <motion.div variants={fadeInUp} className="typesOfBlock__title">
             <H level="2" variant="dark">
               {title}
             </H>
-          </div>
-          <div className="typesOfBlock__subTitle">
+          </motion.div>
+          <motion.div variants={fadeInUp} className="typesOfBlock__subTitle">
             <h3>
               {data.mainTitle}
               <span>{data.mainTitleHighlight}</span>
             </h3>
-          </div>
+          </motion.div>
         </div>
         <Swiper
           className="typesOfBlock__slider"
@@ -62,7 +75,7 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
             </SwiperSlide>
           ))}
         </Swiper>
-      </div>
+      </motion.div>
     </section>
   );
 };

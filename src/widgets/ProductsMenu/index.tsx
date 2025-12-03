@@ -1,6 +1,9 @@
+'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 import Link from 'next/link';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { PRODUCT_MENU_TITLES } from '@/shared/const/Products/catalog';
 import { getFeatureTitle } from '@/shared/const/Products/utils/getFeatureTitle';
 import { getProductsByCategory } from '@/shared/const/Products/utils/getProductsByCategory';
@@ -34,21 +37,33 @@ export const ProductsMenu = ({
     <section className="productsMenu" aria-labelledby="products-menu-title">
       {!isRelatedProducts && <Breadcrumbs />}
 
-      <div className="productsMenu__container container">
+      <motion.div
+        className="productsMenu__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+          },
+        }}
+      >
         {!isRelatedProducts ? (
-          <h1 id="products-menu-title" className="productsMenu__title">
+          <motion.h1 variants={fadeInUp} id="products-menu-title" className="productsMenu__title">
             {title}
-          </h1>
+          </motion.h1>
         ) : (
-          <div className="products-menu-title">
+          <motion.div variants={fadeInUp} className="products-menu-title">
             <H level="2" variant="dark">
               {title}
             </H>
-          </div>
+          </motion.div>
         )}
         {!isRelatedProducts && <p className="productsMenu__subtitle">{menuTitle.subtitle}</p>}
 
-        <div className="productsMenu__item-header" aria-hidden="true">
+        <motion.div variants={fadeInUp} className="productsMenu__item-header" aria-hidden="true">
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--one">
             модель
           </span>
@@ -58,7 +73,7 @@ export const ProductsMenu = ({
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--three">
             {featureTitle}
           </span>
-        </div>
+        </motion.div>
 
         <ul className="productsMenu__list">
           {data.map((item, index) => {
@@ -66,7 +81,7 @@ export const ProductsMenu = ({
             const productSlug = slugify(item.model);
 
             return (
-              <li key={item.id}>
+              <motion.li variants={fadeInUp} key={item.id}>
                 <Link
                   href={`/products/${categorySlug}/${productSlug}`}
                   className="productsMenu__item"
@@ -98,11 +113,11 @@ export const ProductsMenu = ({
                     <Arrow />
                   </span>
                 </Link>
-              </li>
+              </motion.li>
             );
           })}
         </ul>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,5 +1,4 @@
 'use client';
-
 import { AnimatedList } from '@/shared/animations/AnimatedList';
 import type { ResultListProps } from '@/widgets/result/Result.types';
 import { ResultItem } from '@/widgets/result/resultItem';

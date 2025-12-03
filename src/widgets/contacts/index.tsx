@@ -1,6 +1,9 @@
 'use client';
+import { motion } from 'framer-motion';
 
 import { useScrollContext } from '@/context/ScrollProvider';
+import { AnimatedList } from '@/shared/animations/AnimatedList';
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/cities.data';
 import { ContactsHeading } from '@/shared/icons';
 import { Button, H } from '@/shared/ui';
@@ -16,12 +19,26 @@ export const Contacts = () => {
 
   return (
     <section className="contacts" aria-labelledby="contacts-title">
-      <div className="contacts__container container">
-        <H level="1" id="contacts-title" className="contacts__title title">
-          <ContactsHeading />
-        </H>
+      <motion.div
+        className="contacts__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp} className="contacts__title title">
+          <H level="1" id="contacts-title">
+            <ContactsHeading />
+          </H>
+        </motion.div>
 
-        <ul className="contacts__list">
+        <AnimatedList className="contacts__list">
           <ContactItem className="phone" label="телефон">
             <Button
               href={`tel:${selectedContact?.href}`}
@@ -69,7 +86,7 @@ export const Contacts = () => {
               </Button>
             ))}
           </ContactItem>
-        </ul>
+        </AnimatedList>
 
         <iframe
           className="contacts__map-iframe"
@@ -80,7 +97,7 @@ export const Contacts = () => {
           referrerPolicy="no-referrer-when-downgrade"
           title={`Карта с расположением офиса: ${selectedContact?.address}`}
         />
-      </div>
+      </motion.div>
     </section>
   );
 };
