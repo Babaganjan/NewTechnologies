@@ -1,5 +1,8 @@
+'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+import { fadeInUp, slideInLeft } from '@/shared/animations/scroll-animations';
 import { H } from '@/shared/ui';
 
 import './AboutUs.scss';
@@ -11,19 +14,31 @@ export const AboutUs = () => {
       aria-labelledby="aboutus-heading"
       aria-describedby="aboutus-description"
     >
-      <div className="aboutUs-container container">
-        <div className="aboutUs__title">
+      <motion.div
+        className="aboutUs-container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp} className="aboutUs__title">
           <H level="2" variant="dark" id="aboutus-heading">
             О нас
           </H>
-        </div>
+        </motion.div>
         <div className="aboutUs__wrapper-container">
-          <div className="aboutUs__subtitle">
+          <motion.div variants={fadeInUp} className="aboutUs__subtitle">
             <H level="4" variant="dark">
               мы поставляем системы безопасности и контроля бизнеса по всему казахстану с 2013 года.
             </H>
-          </div>
-          <div className="aboutUs__description" id="aboutus-description">
+          </motion.div>
+          <motion.div variants={fadeInUp} className="aboutUs__description" id="aboutus-description">
             <p>
               С 2022 года развиваем собственное оборудование под брендом{' '}
               <abbr title="NTOUCH - собственный бренд оборудования систем безопасности">
@@ -42,8 +57,9 @@ export const AboutUs = () => {
               изделия соответствуют требованиям <abbr title="Стандарт Казахстана">СТ-KZ</abbr> и
               проходят многоступенчатый контроль качества перед отгрузкой заказчикам.
             </p>
-          </div>
-          <figure
+          </motion.div>
+          <motion.figure
+            variants={slideInLeft}
             className="aboutUs__img-wrapper"
             role="group"
             aria-label="Производственное помещение"
@@ -55,9 +71,9 @@ export const AboutUs = () => {
               height={190}
               loading="lazy"
             />
-          </figure>
+          </motion.figure>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

@@ -1,4 +1,7 @@
 'use client';
+import { motion } from 'framer-motion';
+
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Button } from '@/shared/ui';
 
 type ActiveTab = 'one' | 'two';
@@ -10,7 +13,7 @@ interface DocumentsTabsProps {
 
 export const DocumentsTabs = ({ activeTab, onTabChange }: DocumentsTabsProps) => {
   return (
-    <nav className="button-container" aria-label="Типы документов">
+    <motion.nav variants={fadeInUp} className="button-container" aria-label="Типы документов">
       <Button
         variant="secondary"
         onClick={() => onTabChange('one')}
@@ -29,6 +32,6 @@ export const DocumentsTabs = ({ activeTab, onTabChange }: DocumentsTabsProps) =>
       >
         Благодарственные письма
       </Button>
-    </nav>
+    </motion.nav>
   );
 };

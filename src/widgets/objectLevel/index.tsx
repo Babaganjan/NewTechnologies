@@ -2,6 +2,7 @@
 import { motion } from 'framer-motion';
 
 import { AnimatedCard } from '@/shared/animations/AnimatedCard';
+import { AnimatedList } from '@/shared/animations/AnimatedList';
 import { fadeInUp, slideInLeft, slideInRight } from '@/shared/animations/scroll-animations';
 import { H } from '@/shared/ui';
 import './_object-levels.scss';
@@ -42,11 +43,12 @@ export const ObjectLevel = () => {
             </H>
           </motion.div>
         </header>
-        <ul className="object-levels__list">
+        <AnimatedList className="object-levels__list">
           {OBJECT_LEVELS_DATA.map((item) => (
             <AnimatedCard
               className={`object-levels__item item item-layout--${item.id}`}
               key={item.id}
+              enableHover={false}
             >
               <div className="item__inner">
                 <motion.div variants={slideInLeft}>
@@ -61,7 +63,7 @@ export const ObjectLevel = () => {
               </div>
             </AnimatedCard>
           ))}
-        </ul>
+        </AnimatedList>
       </motion.div>
     </section>
   );

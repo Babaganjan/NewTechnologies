@@ -1,5 +1,8 @@
+'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Breadcrumbs } from '@/shared/ui';
 
 import './heroService.scss';
@@ -9,9 +12,21 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
   return (
     <section className="heroService">
       <Breadcrumbs />
-      <div className="heroService__container container">
+      <motion.div
+        className="heroService__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+          },
+        }}
+      >
         <div className="heroService__title">
-          <h1>{title}</h1>
+          <motion.h1 variants={fadeInUp}>{title}</motion.h1>
         </div>
         <div className="heroService__img">
           <div className="heroService__decoration" aria-hidden={true}></div>
@@ -25,7 +40,7 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
           />
           <div className="heroService__decoration-1" aria-hidden={true}></div>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

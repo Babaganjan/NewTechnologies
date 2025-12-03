@@ -3,12 +3,7 @@
 import { motion } from 'framer-motion';
 
 import { AnimatedCard } from '@/shared/animations/AnimatedCard';
-import {
-  defaultViewport,
-  fadeInUp,
-  numberVariants,
-  slideInLeft,
-} from '@/shared/animations/scroll-animations';
+import { fadeInUp, numberVariants, slideInLeft } from '@/shared/animations/scroll-animations';
 import type { ResultItem as ResultItemType } from '@/widgets/result/Result.types';
 import './_resultItem.scss';
 
@@ -23,12 +18,7 @@ export const ResultItem = ({ item }: ResultItemProps) => {
 
   return (
     <AnimatedCard className={`result__item ${className} ${layout.item || ''}`} enableHover={false}>
-      <motion.div
-        className={`item__inner ${layout.inner || ''}`}
-        initial="hidden"
-        whileInView="visible"
-        viewport={defaultViewport}
-      >
+      <div className={`item__inner ${layout.inner || ''}`}>
         {isNumericAchievement && (
           <motion.data
             value={number.replace(/\D/g, '')}
@@ -48,7 +38,7 @@ export const ResultItem = ({ item }: ResultItemProps) => {
             {description}
           </motion.p>
         )}
-      </motion.div>
+      </div>
     </AnimatedCard>
   );
 };

@@ -1,7 +1,11 @@
 'use client';
+import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 import { useScrollContext } from '@/context/ScrollProvider';
+import { AnimatedCard } from '@/shared/animations/AnimatedCard';
+import { AnimatedList } from '@/shared/animations/AnimatedList';
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { CITIES_CONTACTS, COMMON_CONTACT_INFO } from '@/shared/const/cities.data';
 import { Button } from '@/shared/ui';
 import './_footer.scss';
@@ -29,7 +33,19 @@ export const Footer = () => {
 
   return (
     <footer className="footer">
-      <div className="footer__container container">
+      <motion.div
+        className="footer__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+          },
+        }}
+      >
         <Link href="/" className="footer__logo" aria-label="Вернуться на главную страницу">
           NT
         </Link>
@@ -45,19 +61,21 @@ export const Footer = () => {
         </Button>
         <nav className="footer__pages" aria-label="Основная навигация">
           <p className="footer__title">Страницы</p>
-          <ul>
+          <AnimatedList>
             {FOOTER_NAV_ITEMS.map((item) => (
-              <li key={item.href}>
+              <AnimatedCard key={item.href}>
                 <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
-              </li>
+              </AnimatedCard>
             ))}
-          </ul>
+          </AnimatedList>
         </nav>
 
         <div className="footer__about">
-          <p className="footer__title">Связь с нами</p>
+          <motion.p variants={fadeInUp} className="footer__title">
+            Связь с нами
+          </motion.p>
           <address className="footer__address">
             {selectedContact?.address || 'Астана, 14/1 умай ана'}
           </address>
@@ -97,39 +115,43 @@ export const Footer = () => {
         </div>
 
         <nav className="footer__activity" aria-label="Навигация по деятельности">
-          <p className="footer__title">Деятельность</p>
-          <ul>
+          <motion.p variants={fadeInUp} className="footer__title">
+            Деятельность
+          </motion.p>
+          <AnimatedList>
             {FOOTER_ACTIVITY_ITEMS.map((item) => (
-              <li key={item.href}>
+              <AnimatedCard key={item.href}>
                 <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
-              </li>
+              </AnimatedCard>
             ))}
-          </ul>
+          </AnimatedList>
         </nav>
 
         <nav className="footer__about-company" aria-label="Информация о компании">
-          <p className="footer__title">О компании</p>
-          <ul>
+          <motion.p variants={fadeInUp} className="footer__title">
+            О компании
+          </motion.p>
+          <AnimatedList>
             {FOOTER_COMPANY_ITEMS.map((item) => (
-              <li key={item.href}>
+              <AnimatedCard key={item.href}>
                 <Button href={item.href} variant="link" className="footer__link">
                   {item.title}
                 </Button>
-              </li>
+              </AnimatedCard>
             ))}
-          </ul>
+          </AnimatedList>
         </nav>
-        <div className="footer__copyright">
+        <motion.div variants={fadeInUp} className="footer__copyright">
           <p>
             Тоо «новые технологии» <br />© {new Date().getFullYear()} все права защищены
           </p>
           <Button href="/privacy" variant="policy">
             Политика конфиденциальности
           </Button>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </footer>
   );
 };

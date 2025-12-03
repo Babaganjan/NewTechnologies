@@ -1,5 +1,8 @@
+'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+import { fadeInUp, slideInLeft } from '@/shared/animations/scroll-animations';
 import type { ServiceTypeKey } from '@/shared/types/service.types';
 import { H } from '@/shared/ui';
 
@@ -12,22 +15,34 @@ export const IncludedService = ({ type }: { type: ServiceTypeKey }) => {
 
   return (
     <section className="includedService">
-      <div className="includedService__container container">
+      <motion.div
+        className="includedService__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+          },
+        }}
+      >
         <div className="includedService__titleAndSubtitle-container">
-          <div className="includedService__title">
+          <motion.div variants={fadeInUp} className="includedService__title">
             <H level="2" variant="dark">
               Что вы получаете
             </H>
-          </div>
-          <div className="includedService__subtitle">
+          </motion.div>
+          <motion.div variants={fadeInUp} className="includedService__subtitle">
             <H level="3">6 причин довериться нашей системе безопасности</H>
-          </div>
+          </motion.div>
         </div>
         <div className="includedService__wrapper">
           <div className="includedService__logo-wrapper">
-            <div className="includedService__logo">
+            <motion.div variants={fadeInUp} className="includedService__logo">
               <span>NT</span>
-            </div>
+            </motion.div>
           </div>
           <div className="includedService__img">
             <Image
@@ -39,13 +54,18 @@ export const IncludedService = ({ type }: { type: ServiceTypeKey }) => {
           </div>
           <ul className="includedService__list">
             {data.map((item, index) => (
-              <li className="includedService__item" key={item.title} data-index={index + 1}>
+              <motion.li
+                variants={slideInLeft}
+                className="includedService__item"
+                key={item.title}
+                data-index={index + 1}
+              >
                 {item.title}
-              </li>
+              </motion.li>
             ))}
           </ul>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

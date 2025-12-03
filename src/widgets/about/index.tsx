@@ -19,7 +19,7 @@ export const About = () => {
           hidden: { opacity: 0 },
           visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+            transition: { staggerChildren: 0.35, delayChildren: 0.3 },
           },
         }}
       >
@@ -38,11 +38,7 @@ export const About = () => {
 
         <figure className="about__images">
           <div className="about__images--top">
-            <motion.div
-              variants={slideInRight}
-              transition={{ delay: 0.6 }}
-              className="image__wrapper image__big"
-            >
+            <motion.div variants={slideInRight} className="image__wrapper image__big">
               <Image
                 src="/img/about-1-1920.webp"
                 alt="Система видеонаблюдения на промышленном объекте"
@@ -53,11 +49,7 @@ export const About = () => {
             </motion.div>
           </div>
           <div className="about__images--bottom">
-            <motion.div
-              variants={slideInLeft}
-              transition={{ delay: 0.7 }}
-              className="image__wrapper image__small-top"
-            >
+            <motion.div variants={slideInLeft} className="image__wrapper image__small-top">
               <Image
                 src="/img/about-2-1920.webp"
                 alt="Купольная камера видеонаблюдения"
@@ -90,7 +82,7 @@ export const About = () => {
               соответствия.
             </motion.p>
           </div>
-          <motion.div variants={fadeInUp} transition={{ delay: 0.8 }}>
+          <motion.div variants={fadeInUp}>
             <Button variant="primaryLink" className="about__btn" icon href="/about">
               О компании
             </Button>

@@ -92,26 +92,35 @@ export const Services = () => {
 
   return (
     <section className="services with-trapezoids">
-      <div className="container services__container">
-        <div className="services__wrapper-title">
+      <motion.div
+        className="container services__container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <motion.div variants={fadeInUp} className="services__wrapper-title">
           <H level={'2'} className="services__title title">
             Наши услуги
           </H>
-        </div>
+        </motion.div>
 
         <div className="services__content">
           <motion.ul
-            className="services__list flex"
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0.2 }}
             variants={{
               hidden: { opacity: 0 },
               visible: {
                 opacity: 1,
-                transition: { staggerChildren: 0.5, delayChildren: 0.3 },
+                transition: { staggerChildren: 0.5, delayChildren: 0.2 },
               },
             }}
+            className="services__list flex"
           >
             {SERVICES_ITEMS.map((item) => (
               <motion.li variants={fadeInUp} className="services__item item" key={item.id}>
@@ -165,7 +174,7 @@ export const Services = () => {
             ))}
           </motion.ul>
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };

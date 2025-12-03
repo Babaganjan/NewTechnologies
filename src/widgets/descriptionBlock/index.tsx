@@ -1,5 +1,8 @@
 'use client';
+import { motion } from 'framer-motion';
+
 import useModal from '@/hooks/useModal';
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Button, H } from '@/shared/ui';
 
 import { FormaConsultation } from '../forma';
@@ -18,23 +21,35 @@ export const Description = ({ type }: { type: DescriptionTypeKey }) => {
   return (
     <>
       <section className="description">
-        <div className="description__container container">
+        <motion.div
+          className="description__container container"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.35, delayChildren: 0.1 },
+            },
+          }}
+        >
           <div className="description__title-wrapper">
-            <div className="description__title">
+            <motion.div variants={fadeInUp} className="description__title">
               <H level="2">Описание</H>
-            </div>
+            </motion.div>
 
-            <h3 className="description__subtitle">
+            <motion.h3 variants={fadeInUp} className="description__subtitle">
               {data.highlightTitle && <span>{data.highlightTitle}</span>}
               {data.title}
-            </h3>
+            </motion.h3>
           </div>
           <div className="description__wrapper">
-            <div className="description__title-description">
+            <motion.div variants={fadeInUp} className="description__title-description">
               <p className="description__title-one">{data.subtitleOne}</p>
               <p className="description__title-two">{data.subtitleTwo}</p>
-            </div>
-            <div className="description-button-container">
+            </motion.div>
+            <motion.div variants={fadeInUp} className="description-button-container">
               <Button
                 variant="description"
                 icon
@@ -43,9 +58,9 @@ export const Description = ({ type }: { type: DescriptionTypeKey }) => {
               >
                 Заказать услугу
               </Button>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </section>
       {isConsultationModalOpen && (
         <FormaConsultation onSubmit={handleCloseConsultation} onClose={handleCloseConsultation} />

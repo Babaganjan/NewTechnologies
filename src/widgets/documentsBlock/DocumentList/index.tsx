@@ -1,5 +1,8 @@
 'use client';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
+
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 
 import { DocumentItem } from '../DocumentItem';
 import type { IDocumentsItems } from '../documents.const';
@@ -12,7 +15,7 @@ export const DocumentsList = ({ documents }: DocumentsListProps) => {
   const [activeIndex, setActiveIndex] = useState<number | null>(null);
 
   return (
-    <ul className="documents-list">
+    <motion.ul variants={fadeInUp} className="documents-list">
       {documents.map((item, index) => (
         <DocumentItem
           key={item.id}
@@ -24,6 +27,6 @@ export const DocumentsList = ({ documents }: DocumentsListProps) => {
           onDeactivate={() => setActiveIndex(null)}
         />
       ))}
-    </ul>
+    </motion.ul>
   );
 };
