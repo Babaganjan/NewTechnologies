@@ -1,7 +1,9 @@
 'use client';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 
 import useModal from '@/hooks/useModal';
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import type { SpecSection } from '@/shared/types/products.types';
 import { Button, H } from '@/shared/ui';
 import { FormaConsultation } from '@/widgets/forma';
@@ -36,12 +38,24 @@ export const Spec = ({
   return (
     <>
       <section className="spec">
-        <div className="spec__container container">
-          <div className="spec__title-container">
+        <motion.div
+          className="spec__container container"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, amount: 0.2 }}
+          variants={{
+            hidden: { opacity: 0 },
+            visible: {
+              opacity: 1,
+              transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+            },
+          }}
+        >
+          <motion.div variants={fadeInUp} className="spec__title-container">
             <H level="2" variant="light">
               {title}
             </H>
-          </div>
+          </motion.div>
 
           <TabPanel activeTab={activeTab} onTabChange={setActiveTab} tabs={section.tabs} />
 
@@ -57,7 +71,7 @@ export const Spec = ({
               </Button>
             </div>
           )}
-        </div>
+        </motion.div>
       </section>
       {isConsultationModalOpen && (
         <FormaConsultation onSubmit={handleCloseConsultation} onClose={handleCloseConsultation} />

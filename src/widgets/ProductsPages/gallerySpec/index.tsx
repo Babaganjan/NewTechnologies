@@ -1,5 +1,8 @@
+'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
+import { fadeInUp } from '@/shared/animations/scroll-animations';
 import { Breadcrumbs } from '@/shared/ui';
 
 import { getModifierClass } from './helpers/getModifierClass';
@@ -20,11 +23,23 @@ export const GallerySpec = ({ productName, productModel, images }: GallerySpecPr
   return (
     <section className="gallery-section">
       <Breadcrumbs />
-      <div className="gallery__container container">
-        <h1>
+      <motion.div
+        className="gallery__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.2, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <motion.h1 variants={fadeInUp}>
           {productName} {productModel && <span>{productModel}</span>}
-        </h1>
-        <div className={`gallery ${modifierClass}`}>
+        </motion.h1>
+        <motion.div variants={fadeInUp} className={`gallery ${modifierClass}`}>
           {images.map((src, index) => (
             <div key={`gallery-${index}`} className="gallery__item">
               <Image
@@ -39,8 +54,8 @@ export const GallerySpec = ({ productName, productModel, images }: GallerySpecPr
               />
             </div>
           ))}
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     </section>
   );
 };
