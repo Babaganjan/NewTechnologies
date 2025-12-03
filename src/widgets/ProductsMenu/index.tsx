@@ -50,10 +50,10 @@ export const ProductsMenu = ({
 
         <div className="productsMenu__item-header" aria-hidden="true">
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--one">
-            номер
+            модель
           </span>
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--two">
-            модель
+            описание
           </span>
           <span className="productsMenu__item-subtitle productsMenu__item-subtitle--three">
             {featureTitle}
