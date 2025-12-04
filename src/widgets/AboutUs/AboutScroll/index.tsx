@@ -96,10 +96,10 @@ export const AboutScroll = () => {
               muted
               loop
               playsInline
-              preload="auto"
+              preload="metadata"
               aria-hidden="true"
             >
-              <source src="/video/about-desktop.webm" type="video/webm" />
+              <source src="/video/about-desktop.mp4" type="video/mp4" />
             </video>
           </div>
         </motion.div>
