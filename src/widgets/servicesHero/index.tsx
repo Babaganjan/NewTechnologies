@@ -53,6 +53,7 @@ export const ServicesHero = () => {
             playsInline
             preload="metadata"
             aria-hidden="true"
+            poster="/img/poster.jpg"
           >
             <source src="/video/camera-scan-1920.mp4" type="video/mp4" />
           </video>
