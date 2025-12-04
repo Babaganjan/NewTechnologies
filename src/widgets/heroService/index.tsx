@@ -15,22 +15,18 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
           <h1>{title}</h1>
         </div>
         <div className="heroService__img">
-          <div className="heroService__decoration" aria-hidden={true}></div>
           <Image
             src={`/img/heroService/${type}.webp`}
             alt={title}
             width={1920}
             height={1080}
             sizes="100vw"
-            priority
-            fetchPriority="high"
             style={{
-              objectFit: 'cover',
+              objectFit: 'fill',
               width: '100%',
               height: '100%',
             }}
           />
-          <div className="heroService__decoration-1" aria-hidden={true}></div>
         </div>
       </div>
     </section>
