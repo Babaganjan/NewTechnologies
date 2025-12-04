@@ -23,7 +23,6 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1200px"
             priority
             style={{ objectFit: 'cover' }}
-            quality={85}
           />
           <div className="heroService__decoration-1" aria-hidden={true}></div>
         </div>
