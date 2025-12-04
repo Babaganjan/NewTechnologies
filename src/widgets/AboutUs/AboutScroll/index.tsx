@@ -76,7 +76,6 @@ export const AboutScroll = () => {
           role="heading"
           aria-level={2}
           aria-label="Заголовок: О компании и наших достижениях"
-          // variants={fadeInUp}
         >
           <AboutUsHeadingTop aria-hidden="false" role="img" />
         </motion.div>
@@ -98,6 +97,7 @@ export const AboutScroll = () => {
               playsInline
               preload="metadata"
               aria-hidden="true"
+              poster="/video/about__poster.webp"
             >
               <source src="/video/about-desktop.mp4" type="video/mp4" />
             </video>
@@ -111,7 +111,6 @@ export const AboutScroll = () => {
           }}
           role="contentinfo"
           aria-label="Информация о компании"
-          // variants={fadeInUp}
         >
           <AboutUsHeadingBottom aria-hidden="false" role="img" />
           <motion.p className="bottom-block__desc" variants={fadeInUp}>
