@@ -3,6 +3,7 @@ import {
   ConsultationService,
   Description,
   FeedbackMenu,
+  HeroService,
   IncludedService,
   ProjectMenu,
   Questions,
@@ -14,6 +15,7 @@ import {
 export const SkdPage = () => {
   return (
     <>
+      <HeroService title="Системы контроля доступа" type="ACCESS_CONTROL" />
       <Description type="ACCESS_CONTROL" />
       <ConsultationService type="ACCESS_CONTROL" />
       <IncludedService type="ACCESS_CONTROL" />
