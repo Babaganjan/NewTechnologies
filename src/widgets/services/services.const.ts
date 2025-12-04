@@ -7,27 +7,27 @@ export const SERVICES_ITEMS: ServicesProps[] = [
     list: [
       {
         name: 'Системы видеонаблюдения',
-        image: 'img/modalHeader/video-surveillance-system.webp',
+        image: '/img/modalHeader/video-surveillance-system.webp',
         href: '/services/videonabludenie',
       },
       {
         name: 'Охранно-пожарная сигнализация',
-        image: 'img/modalHeader/security-fire-alarm-system.webp',
+        image: '/img/modalHeader/security-fire-alarm-system.webp',
         href: '/services/ops',
       },
       {
         name: 'Система контроля доступа',
-        image: 'img/modalHeader/access-control-system.webp',
+        image: '/img/modalHeader/access-control-system.webp',
         href: '/services/skd',
       },
       {
         name: 'Системы оповещения',
-        image: 'img/modalHeader/notification-system.webp',
+        image: '/img/modalHeader/notification-system.webp',
         href: '/services/opoveshchenie',
       },
       {
         name: 'Системы пожаротушения',
-        image: 'img/modalHeader/fire-extinguishing-system.webp',
+        image: '/img/modalHeader/fire-extinguishing-system.webp',
         href: '/services/pozhartushenie',
       },
     ],
@@ -38,7 +38,7 @@ export const SERVICES_ITEMS: ServicesProps[] = [
     list: [
       {
         name: 'Для государственных и частных организаций',
-        image: 'img/modalHeader/for-educational-institutions.webp',
+        image: '/img/modalHeader/for-educational-institutions.webp',
         href: '/services/itsolutionspublicprivate',
       },
     ],
