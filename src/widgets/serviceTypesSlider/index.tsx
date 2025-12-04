@@ -51,6 +51,7 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
           modules={[Pagination]}
           centeredSlides={true}
           initialSlide={0}
+          freeMode={true}
           pagination={{
             clickable: true,
             dynamicBullets: true,
