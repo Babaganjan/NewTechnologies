@@ -55,7 +55,6 @@
     &__container {
       grid-template-columns: repeat(2, 1fr);
       gap: 40px;
-      // border-bottom: 1px solid var(--vector-light-gray);
       position: relative;
       &::before {
         position: absolute;

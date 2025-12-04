@@ -2,7 +2,7 @@
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
-import { fadeInUp, slideInLeft, slideInRight } from '@/shared/animations/scroll-animations';
+import { fadeInUp, slideInLeft } from '@/shared/animations/scroll-animations';
 import { Button, H } from '@/shared/ui';
 
 import './_about.scss';
@@ -38,7 +38,7 @@ export const About = () => {
 
         <figure className="about__images">
           <div className="about__images--top">
-            <motion.div variants={slideInRight} className="image__wrapper image__big">
+            <motion.div variants={slideInLeft} className="image__wrapper image__big">
               <Image
                 src="/img/about-1-1920.webp"
                 alt="Система видеонаблюдения на промышленном объекте"
