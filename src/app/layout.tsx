@@ -105,8 +105,8 @@ export const metadata: Metadata = {
 
   category: 'technology',
   formatDetection: {
-    telephone: false,
-    email: false,
+    telephone: true,
+    email: true,
     address: false,
   },
 
