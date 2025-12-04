@@ -29,7 +29,7 @@ export const ServicesHero = () => {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-hidden="true"
           >
             <source src="/video/camera-scan-360.mp4" type="video/mp4" />
@@ -40,7 +40,7 @@ export const ServicesHero = () => {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-hidden="true"
           >
             <source src="/video/camera-scan-768.mp4" type="video/mp4" />
@@ -51,7 +51,7 @@ export const ServicesHero = () => {
             muted
             loop
             playsInline
-            preload="auto"
+            preload="metadata"
             aria-hidden="true"
           >
             <source src="/video/camera-scan-1920.mp4" type="video/mp4" />

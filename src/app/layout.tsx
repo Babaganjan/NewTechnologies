@@ -128,9 +128,6 @@ export default function RootLayout({
         className={`${oswald.variable} ${robotoCondensed.variable} ${inter.variable}`}
         suppressHydrationWarning
       >
-        <link rel="preload" as="video" href="/video/camera-scan-360.mp4" type="video/mp4" />
-        <link rel="preload" as="video" href="/video/camera-scan-768.mp4" type="video/mp4" />
-        <link rel="preload" as="video" href="/video/camera-scan-1920.mp4" type="video/mp4" />
         <StructuredData data={organizationSchema} />
         <ScrollProvider>
           <Header />
