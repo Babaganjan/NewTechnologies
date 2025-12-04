@@ -29,7 +29,6 @@ $large-screen-bottom-padding: 190px;
       @include respond-min(1024px) {
         width: 70%;
       }
-      justify-self: center;
     }
 
     .contacts__list {
@@ -41,7 +40,8 @@ $large-screen-bottom-padding: 190px;
 
     .contacts__title {
       grid-area: title;
-      text-align: center;
+      display: flex;
+      justify-content: center;
     }
 
     .contacts__item {
