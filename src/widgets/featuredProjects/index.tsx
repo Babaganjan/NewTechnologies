@@ -169,7 +169,7 @@ export const FavoritesProject = ({
             >
               <figure
                 className="favorites-project__img"
-                ref={glitch?.ref}
+                {...(glitch && { ref: glitch.ref })}
                 onMouseEnter={() => glitch?.startGlitch()}
                 onMouseLeave={() => glitch?.stopGlitch()}
               >
