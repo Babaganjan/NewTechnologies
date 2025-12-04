@@ -24,35 +24,14 @@ export const ServicesHero = () => {
       >
         <div className="services-hero__video-in-container">
           <video
-            className="services-hero__video services-hero__video--mobile"
+            className="services-hero__video"
             autoPlay
             muted
             loop
             playsInline
             preload="metadata"
             aria-hidden="true"
-          >
-            <source src="/video/camera-scan-360.mp4" type="video/mp4" />
-          </video>
-          <video
-            className="services-hero__video services-hero__video--tablet"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
-          >
-            <source src="/video/camera-scan-768.mp4" type="video/mp4" />
-          </video>
-          <video
-            className="services-hero__video services-hero__video--desktop"
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            aria-hidden="true"
+            poster="/video/service_hero/service_poster_1920.webp"
           >
             <source src="/video/camera-scan-1920.mp4" type="video/mp4" />
           </video>
