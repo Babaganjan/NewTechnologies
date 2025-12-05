@@ -13,9 +13,9 @@
 
     flex-direction: column;
     gap: 1.25rem;
-    padding-top: fluid(100px, 152px, 360px, 768px);
+    padding-block: fluid(100px, 152px, 360px, 768px);
     @include respond-min(1024px) {
-      padding-top: fluid(152px, 190px);
+      padding-block: fluid(152px, 190px);
     }
   }
 
