@@ -96,20 +96,18 @@
   .seeAlso__list {
     grid-area: list;
     display: flex;
-    margin: 0 auto;
+    flex-wrap: wrap;
   }
 
   .seeAlso__item {
+    flex: 1 1 calc((100% - 80px) / 4);
+    width: auto;
+    min-width: 200px;
     max-width: 455px;
     max-height: 455px;
 
     a {
       display: contents;
-    }
-
-    img {
-      max-width: 391px;
-      max-height: 288px;
     }
   }
 }
