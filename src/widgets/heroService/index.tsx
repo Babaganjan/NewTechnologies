@@ -22,11 +22,6 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
             height={1080}
             sizes="100vw"
             priority
-            style={{
-              objectFit: 'fill',
-              width: '100%',
-              height: '100%',
-            }}
           />
         </div>
       </div>

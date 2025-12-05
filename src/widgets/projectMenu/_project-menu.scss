@@ -7,9 +7,9 @@
   .project-menu__container {
     display: grid;
     grid-template-columns: 1fr;
-    padding-block: fluid(100px, 152px, 360px, 768px);
+    padding-top: fluid(100px, 152px, 360px, 768px);
     @include respond-min(1024px) {
-      padding-block: fluid(152px, 190px);
+      padding-top: fluid(152px, 190px);
     }
 
     .project-menu__title {

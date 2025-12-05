@@ -2,7 +2,7 @@
 @use '@/shared/styles/mixins' as *;
 
 .advantage {
-  padding-block: 100px;
+  padding-block: fluid(70px, 100px, 360px, 768px);
   @include trapezoid-decor($color: var(--text-white));
 }
 
