@@ -13,7 +13,7 @@
 .breadcrumbsItem {
   position: relative;
   font-family: var(--second-family);
-  @include typography(var(--text-light-gray), 500, fluid(14px, 22px), 1.1, none);
+  @include typography(var(--text-light-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -21,7 +21,7 @@
 
   a {
     position: relative;
-    padding-left: fluid(10px, 22px);
+    padding-left: fluid(10px, 22px, 360px, 768px);
     word-break: break-word;
     hyphens: auto;
 
@@ -34,7 +34,7 @@
 
   span {
     display: block;
-    margin-inline: 9px;
+    margin-inline: 10px;
     flex-shrink: 0;
   }
 }

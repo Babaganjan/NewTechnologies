@@ -18,5 +18,3 @@ const createProductsMap = () => {
 };
 
 export const PRODUCTS_MAP = createProductsMap();
-
-console.log(PRODUCTS_MAP);

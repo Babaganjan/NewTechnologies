@@ -29,24 +29,32 @@ export const Breadcrumbs = ({ productName }: BreadcrumbsProps = {}) => {
   const mainPart = nameParts.join(' ');
   const finalDisplayName = lastWord ? `${mainPart} ${lastWord}`.trim() : displayName;
 
+  const defaultArrowColor = 'var(--text-deep-gray)';
+  const lastArrowColor = 'var(--bg-white)';
+
   return (
     <nav aria-label="Хлебные крошки">
       <ol className={`container ${styles.breadcrumbs}`}>
         {validPath.map((item, index) => {
-          const isLast = index === validPath.length - 1 && !hasProductSegment;
-          const itemColor = !isLast ? 'var(--text-deep-gray)' : undefined;
+          const isLastInList = index === validPath.length - 1;
+          const isCurrentPage = isLastInList && !hasProductSegment;
+          const textColor = !isCurrentPage ? 'var(--text-deep-gray)' : undefined;
+          const isLastArrow = isLastInList && hasProductSegment;
+
+          const arrowColor = isLastArrow ? lastArrowColor : defaultArrowColor;
 
           return (
-            <li key={item} className={styles.breadcrumbsItem} style={{ color: itemColor }}>
+            <li key={item} className={styles.breadcrumbsItem} style={{ color: textColor }}>
               <Link
                 href={`/${path.slice(0, path.indexOf(item) + 1).join('/')}`}
-                aria-current={isLast ? 'page' : undefined}
+                aria-current={isCurrentPage ? 'page' : undefined}
               >
                 {BREADCRUMBSWORDS[item]}
               </Link>
-              {(!isLast || hasProductSegment) && (
+
+              {(!isCurrentPage || hasProductSegment) && (
                 <span aria-hidden="true">
-                  <ArrowBreadcrumbs />
+                  <ArrowBreadcrumbs color={arrowColor} />
                 </span>
               )}
             </li>
