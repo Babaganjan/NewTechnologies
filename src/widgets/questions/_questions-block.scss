@@ -2,8 +2,11 @@
 @use '@/shared/styles/mixins' as *;
 
 .questions {
+  padding-block: fluid(100px, 152px, 360px, 768px);
+  @include respond-min(1024px) {
+    padding-block: fluid(152px, 190px);
+  }
   &__container {
-    margin-block: 6.875rem 6.25rem;
     display: grid;
     grid-template-columns: 1fr;
     padding: 0.625rem;
