@@ -6,23 +6,24 @@ export const COMMON_CONTACT_INFO: CommonContactInfoType = {
   socialNetworks: [
     {
       id: 1,
-      title: 'TikTok',
-      href: 'https://www.tiktok.com/@newtech.kz?_r=1&_t=ZM-91Ya1zZb99I',
-    },
-    {
-      id: 2,
-      title: 'LinkedIn',
-      href: 'https://www.linkedin.com/company/newtechnologykz',
-    },
-    {
-      id: 3,
       title: 'YouTube',
       href: 'https://youtube.com/@newtechkz?si=5R7G1YoOVY9-mIGJ',
     },
     {
-      id: 4,
+      id: 3,
+      title: 'TikTok',
+      href: 'https://www.tiktok.com/@newtech.kz?_r=1&_t=ZM-91Ya1zZb99I',
+    },
+
+    {
+      id: 2,
       title: 'Instagram',
       href: 'https://www.instagram.com/newtechkz?igsh=MTk0NW55NjNlM2wzNg==',
+    },
+    {
+      id: 4,
+      title: 'LinkedIn',
+      href: 'https://www.linkedin.com/company/newtechnologykz',
     },
   ],
 } as const;
