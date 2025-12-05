@@ -1,4 +1,5 @@
 'use client';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 import { Breadcrumbs } from '@/shared/ui';
@@ -36,7 +37,7 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
             priority
           />
         </div>
-      </div>
+      </motion.div>
     </section>
   );
 };
