@@ -24,6 +24,11 @@ export const Breadcrumbs = ({ productName }: BreadcrumbsProps = {}) => {
 
   const displayName = productName || (productSegment ? PRODUCTS_MAP[productSegment] : null);
 
+  const nameParts = displayName ? displayName.split(' ') : [];
+  const lastWord = nameParts.pop()?.toUpperCase();
+  const mainPart = nameParts.join(' ');
+  const finalDisplayName = lastWord ? `${mainPart} ${lastWord}`.trim() : displayName;
+
   return (
     <nav aria-label="Хлебные крошки">
       <ol className={`container ${styles.breadcrumbs}`}>
@@ -49,9 +54,9 @@ export const Breadcrumbs = ({ productName }: BreadcrumbsProps = {}) => {
         })}
 
         {hasProductSegment && displayName && (
-          <li className={styles.breadcrumbsItem}>
+          <li className={`${styles.breadcrumbsItem}`}>
             <Link href={pathname} aria-current="page">
-              {displayName}
+              {finalDisplayName}
             </Link>
           </li>
         )}
