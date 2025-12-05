@@ -16,7 +16,7 @@
 
 .seeAlso__list {
   display: grid;
-  grid-template-columns: repeat(2, minmax(170px, 455px));
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .seeAlso__subtitle {
