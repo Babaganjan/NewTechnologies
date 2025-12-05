@@ -4,6 +4,7 @@
 .object-levels {
   position: relative;
   z-index: 0;
+
   &__container {
     display: flex;
     @include line-decor(2% 50% 98%, var(--vector-light-gray));
@@ -12,7 +13,10 @@
 
     flex-direction: column;
     gap: 1.25rem;
-    padding-block: 6.25rem;
+    padding-top: fluid(100px, 152px, 360px, 768px);
+    @include respond-min(1024px) {
+      padding-top: fluid(152px, 190px);
+    }
   }
 
   &__inner {

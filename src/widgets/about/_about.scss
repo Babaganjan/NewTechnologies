@@ -2,7 +2,10 @@
 @use '@/shared/styles/mixins' as *;
 
 .about {
-  padding-block: 112px 116px;
+  padding-top: fluid(100px, 152px, 360px, 768px);
+  @include respond-min(1024px) {
+    padding-top: fluid(152px, 190px);
+  }
 
   &__container {
     display: flex;
