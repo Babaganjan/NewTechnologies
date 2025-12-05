@@ -2,10 +2,6 @@
 @use '@/shared/styles/mixins' as *;
 
 .heroService {
-  // background-image: url(/img/heroService/ACCESS_CONTROL.webp);
-  // background-repeat: no-repeat;
-  // background-position: center 82%;
-  // background-size: 100% 65%;
   background-color: var(--bg-black);
 
   &__container {
