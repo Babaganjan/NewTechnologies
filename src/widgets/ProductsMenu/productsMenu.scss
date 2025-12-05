@@ -3,11 +3,18 @@
 
 .productsMenu {
   background-color: var(--bg-black);
-  padding-block: 100px;
+  padding-top: 119px;
 
   .products-menu-title {
     position: relative;
     margin-left: 10px;
+  }
+
+  &__container {
+    padding-bottom: fluid(100px, 152px, 360px, 768px);
+    @include respond-min(1024px) {
+      padding-bottom: fluid(152px, 190px);
+    }
   }
 
   &__title {
@@ -196,6 +203,8 @@
         .productsMenu__item-title {
           margin-top: 0;
           padding-left: 5px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid var(--bg-deep-gray);
         }
 
         .productsMenu__item-header {
@@ -210,10 +219,14 @@
         &-model {
           display: block;
           padding-left: 5px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid var(--bg-deep-gray);
         }
 
         &-feature {
           padding-left: 5px;
+          padding-bottom: 5px;
+          border-bottom: 1px solid var(--bg-deep-gray);
         }
 
         &-subtitle {
