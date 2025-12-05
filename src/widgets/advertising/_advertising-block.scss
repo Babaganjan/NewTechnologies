@@ -112,13 +112,13 @@
 
 @include respond-min(1024px) {
   .advertising {
-    padding-bottom: 60px;
-    padding-top: 100px;
+    padding-block: 100px;
 
     &__subtitle-wrapper {
       display: flex;
       justify-content: center;
       margin-bottom: 60px;
+      margin-top: -45px;
     }
 
     &__subtitle {
