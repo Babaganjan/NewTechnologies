@@ -15,7 +15,7 @@
       @include line-decor(1% 25.4% 50% 74.6% 99%);
     }
 
-    padding-top: 120px;
+    padding-top: fluid(59px, 120px);
     padding-bottom: fluid(40px, 80px);
     max-width: 100%;
   }
