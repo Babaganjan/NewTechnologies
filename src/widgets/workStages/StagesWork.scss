@@ -2,7 +2,10 @@
 @use '@/shared/styles/mixins' as *;
 
 .stagesWork {
-  padding-block: 100px;
+  padding-block: fluid(100px, 152px, 360px, 768px);
+  @include respond-min(1024px) {
+    padding-block: fluid(152px, 190px);
+  }
   background-color: var(--bg-black);
 }
 

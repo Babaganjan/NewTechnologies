@@ -2,7 +2,6 @@
 @use '@/shared/styles/mixins' as *;
 
 .favorites-project {
-  // padding: 10px;
   margin-top: 100px;
 
   &__container {
@@ -12,7 +11,7 @@
 
   &__title {
     position: relative;
-    margin-bottom: 10px;
+
     grid-column: 1/-1;
     grid-row: 1/2;
   }

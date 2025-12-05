@@ -2,7 +2,10 @@
 @use '@/shared/styles/mixins' as *;
 
 .seeAlso {
-  margin-block: 100px;
+  padding-bottom: fluid(100px, 152px, 360px, 768px);
+  @include respond-min(1024px) {
+    padding-bottom: fluid(152px, 190px);
+  }
 }
 
 .seeAlso__title {
@@ -24,16 +27,30 @@
   display: flex;
   align-items: center;
   flex-direction: column;
-  justify-content: center;
   padding: fluid(10px, 20px);
   border: 1px solid var(--text-light-gray);
-  background: var(--background-light-gray);
+  background-color: var(--bg-light-gray);
   @include item-decor();
+  min-height: 191px;
+  min-width: 170px;
+
+  @include respond-min(768px) {
+    min-height: 364px;
+    min-width: 364px;
+  }
+
+  @include respond-min(1024px) {
+    min-height: 455px;
+    min-width: 455px;
+  }
+
+  &:hover {
+    transition: background-color 0.2s;
+    background-color: var(--bg-white);
+  }
 
   h4 {
-    align-self: start;
-    padding-top: 14px;
-    margin-top: auto;
+    align-self: flex-start;
     @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
   }
 
@@ -41,12 +58,16 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    height: 100%;
   }
 
   img {
     object-fit: cover;
+    mix-blend-mode: darken;
     max-width: 347px;
     max-height: 250px;
+    margin: auto 0;
   }
 }
 

@@ -2,16 +2,16 @@
 @use '@/shared/styles/mixins' as *;
 
 .services {
+  padding-block: fluid(100px, 152px, 360px, 768px);
+  @include respond-min(1024px) {
+    padding-block: fluid(152px, 190px);
+  }
   &.with-trapezoids {
     @include trapezoid-decor();
   }
   position: relative;
   background-color: var(--bg-black);
   z-index: 0;
-
-  &__container {
-    padding-block: 5.5rem 6.313rem;
-  }
 
   &__wrapper-title {
     padding-bottom: 0.625rem;

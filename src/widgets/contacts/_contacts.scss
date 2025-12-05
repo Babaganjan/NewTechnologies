@@ -42,6 +42,10 @@ $large-screen-bottom-padding: 190px;
       grid-area: title;
       display: flex;
       justify-content: center;
+      margin-bottom: fluid(13px, 42px, 360px, 768px);
+      @include respond-min(1024px) {
+        margin-top: 70px;
+      }
     }
 
     .contacts__item {
@@ -108,6 +112,11 @@ $large-screen-bottom-padding: 190px;
     }
 
     .social {
+      .social-links {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        margin-top: auto;
+      }
       a {
         display: flex;
         gap: 8px;

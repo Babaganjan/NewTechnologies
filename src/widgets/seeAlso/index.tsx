@@ -39,7 +39,7 @@ export const SeeAlso = ({ type }: { type: string }) => {
         </motion.h3>
         <AnimatedList className="seeAlso__list">
           {data.map((item) => (
-            <AnimatedCard className="seeAlso__item" key={item.id}>
+            <AnimatedCard className="seeAlso__item" key={item.id} enableHover={false}>
               <Link href={item.href}>
                 <Image src={item.image} alt={item.title} width={110} height={110} />
                 <h4>{item.title}</h4>

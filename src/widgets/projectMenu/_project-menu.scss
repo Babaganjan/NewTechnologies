@@ -7,7 +7,10 @@
   .project-menu__container {
     display: grid;
     grid-template-columns: 1fr;
-    padding-block: 100px;
+    padding-block: fluid(100px, 152px, 360px, 768px);
+    @include respond-min(1024px) {
+      padding-block: fluid(152px, 190px);
+    }
 
     .project-menu__title {
       position: relative;
@@ -87,8 +90,7 @@
 
         .project-menu__header {
           font-family: var(--second-family);
-          @include typography(var(--text-deep-gray), 500, 22px, 1.1, none);
-          letter-spacing: 0.5px;
+          @include typography(var(--text-deep-gray), 500, 22px, 1.1, none, -0.05em);
           padding-bottom: 10px;
           margin-top: 40px;
           text-align: left;
@@ -116,5 +118,11 @@ body:has(.advertising) {
     &::after {
       display: none;
     }
+  }
+}
+
+body:has(.stagesWork) {
+  .project-menu__container {
+    padding-bottom: 0;
   }
 }

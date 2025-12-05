@@ -8,7 +8,7 @@ import './_productItem.scss';
 
 export const ProductItem = ({ itemData }: { itemData: IProductItem }) => {
   return (
-    <AnimatedCard className="products__item">
+    <AnimatedCard className="products__item" enableHover={false}>
       <Link
         href={`/products/${itemData.alias}`}
         aria-label={`${itemData.title} - ${itemData.amount} моделей`}

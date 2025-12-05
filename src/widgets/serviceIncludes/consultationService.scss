@@ -4,6 +4,7 @@
 .consultationService {
   position: relative;
   @include trapezoid-decor($color: var(--text-white));
+  padding-block: fluid(70px, 100px, 360px, 768px);
 }
 
 .consultationService__title {
@@ -12,7 +13,6 @@
 }
 
 .consultationService__container {
-  padding-block: 100px;
   position: relative;
 }
 
