@@ -90,7 +90,7 @@
 
         .project-menu__header {
           font-family: var(--second-family);
-          @include typography(var(--text-deep-gray), 500, 22px, 1.1, none);
+          @include typography(var(--text-deep-gray), 500, 22px, 1.1, none, -0.05em);
           letter-spacing: 0.5px;
           padding-bottom: 10px;
           margin-top: 40px;
