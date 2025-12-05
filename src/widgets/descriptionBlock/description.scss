@@ -2,8 +2,20 @@
 @use '@/shared/styles/mixins' as *;
 
 .description {
-  padding-block: 100px;
   background-color: var(--bg-black);
+  position: relative;
+  z-index: 1;
+
+  &__container {
+    @include line-decor(2% 50% 98%);
+    @include respond-min(768px) {
+      @include line-decor(1% 50% 99%);
+    }
+    @include respond-min(1380px) {
+      @include line-decor(1% 25.4% 50% 74.6% 99%);
+    }
+    padding-block: 100px;
+  }
 
   &__title {
     margin-left: 10px;

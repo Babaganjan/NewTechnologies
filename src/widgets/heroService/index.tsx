@@ -11,7 +11,6 @@ import type { HeroServiceKey } from './heroService.types';
 export const HeroService = ({ title, type }: { title: string; type: HeroServiceKey }) => {
   return (
     <section className="heroService">
-      <Breadcrumbs />
       <motion.div
         className="heroService__container container"
         initial="hidden"
@@ -25,6 +24,7 @@ export const HeroService = ({ title, type }: { title: string; type: HeroServiceK
           },
         }}
       >
+        <Breadcrumbs />
         <div className="heroService__title">
           <motion.h1 variants={fadeInUp}>{title}</motion.h1>
         </div>

@@ -25,7 +25,7 @@ export const Breadcrumbs = ({ productName }: BreadcrumbsProps = {}) => {
   const displayName = productName || (productSegment ? PRODUCTS_MAP[productSegment] : null);
 
   return (
-    <nav aria-label="Хлебные крошки">
+    <nav className={styles.nav_breadcrumbs} aria-label="Хлебные крошки">
       <ol className={`container ${styles.breadcrumbs}`}>
         {validPath.map((item, index) => {
           const isLast = index === validPath.length - 1 && !hasProductSegment;
