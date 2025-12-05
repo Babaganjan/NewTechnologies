@@ -14,7 +14,6 @@
     @include respond-min(1380px) {
       @include line-decor(1% 25.4% 50% 74.6% 99%);
     }
-    padding-block: 100px;
   }
 
   padding-bottom: fluid(100px, 152px, 360px, 768px);
