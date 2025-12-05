@@ -71,20 +71,22 @@ export const Contacts = () => {
           </ContactItem>
 
           <ContactItem className="social" label="соцсети">
-            {COMMON_CONTACT_INFO.socialNetworks.map((social) => (
-              <Button
-                key={social.id}
-                href={social.href}
-                variant="social"
-                icon
-                target="_blank"
-                className="social-link contact__link"
-                rel="noopener noreferrer"
-                aria-label={`Перейти в ${social.title}`}
-              >
-                {social.title}
-              </Button>
-            ))}
+            <div className="social-links">
+              {COMMON_CONTACT_INFO.socialNetworks.map((social) => (
+                <Button
+                  key={social.id}
+                  href={social.href}
+                  variant="social"
+                  icon
+                  target="_blank"
+                  className="social-link contact__link"
+                  rel="noopener noreferrer"
+                  aria-label={`Перейти в ${social.title}`}
+                >
+                  {social.title}
+                </Button>
+              ))}
+            </div>
           </ContactItem>
         </AnimatedList>
 

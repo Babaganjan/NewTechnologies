@@ -31,15 +31,9 @@ export const Hero = () => {
           className="hero__video"
           aria-hidden="true"
         >
-          <source src="/video/hero-video-360.mp4" type="video/mp4" media="(max-width: 767px)" />
-          <source
-            src="/video/hero-video-768.mp4"
-            type="video/mp4"
-            media="(min-width: 768px) and (max-width: 1023px)"
-          />
-          <source src="/video/hero-video-1920.mp4" type="video/mp4" media="(min-width: 1024px)" />
           <source src="/video/hero-video-1920.mp4" type="video/mp4" />
         </video>
+
         <motion.div variants={fadeInUp} className="heading">
           <H level={'1'} id="hero-title">
             <HomeHeading className="home-heading_small" />

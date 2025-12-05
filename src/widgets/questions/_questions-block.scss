@@ -2,8 +2,11 @@
 @use '@/shared/styles/mixins' as *;
 
 .questions {
+  padding-block: fluid(100px, 152px, 360px, 768px);
+  @include respond-min(1024px) {
+    padding-block: fluid(152px, 190px);
+  }
   &__container {
-    margin-block: 6.875rem 6.25rem;
     display: grid;
     grid-template-columns: 1fr;
     padding: 0.625rem;
@@ -25,72 +28,6 @@
     right: 0;
     margin: 10px;
     transition: transform 0.22s ease;
-  }
-
-  &__card--active {
-    justify-content: center;
-    align-items: flex-start;
-    gap: 0.375rem;
-    padding: 0.625rem;
-
-    background-color: var(--bg-white);
-    border: 1px solid var(--text-gray);
-    border-radius: 2px 0 2px 0;
-    cursor: pointer;
-
-    &::before {
-      content: '';
-      @include decoration(
-        var(--text-black),
-        fluid(22px, 42px),
-        '/img/decoration-card.svg',
-        (
-          top: -1px,
-          left: -1px,
-        )
-      );
-      transform: rotate(180deg);
-      background-color: currentColor;
-    }
-
-    &::after {
-      content: '';
-      @include decoration(
-        var(--text-black),
-        fluid(22px, 42px),
-        '/img/decoration-card.svg',
-        (
-          bottom: -1px,
-          right: -1px,
-        )
-      );
-      background-color: currentColor;
-    }
-
-    &:hover,
-    &:focus,
-    &:focus:not(:focus-visible),
-    &:focus-visible {
-      background-color: var(--bg-black);
-      color: var(--text-white);
-
-      &::after,
-      &::before {
-        transition: margin 0.2s ease-in-out;
-        margin: 6px;
-      }
-
-      .questions__card-title,
-      .questions__card-subtitle {
-        color: var(--text-white);
-      }
-
-      .questions__card-arrow--active {
-        color: var(--text-white);
-        margin: 16px;
-        transform: rotate(180deg);
-      }
-    }
   }
 
   &__card-title {

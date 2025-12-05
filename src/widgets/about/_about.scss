@@ -2,7 +2,10 @@
 @use '@/shared/styles/mixins' as *;
 
 .about {
-  padding-block: 112px 116px;
+  padding-block: fluid(100px, 152px, 360px, 768px);
+  @include respond-min(1024px) {
+    padding-block: fluid(152px, 190px);
+  }
 
   &__container {
     display: flex;
@@ -60,7 +63,6 @@
 
 @include respond-min(768px) {
   .about {
-    padding-block: 162px;
     &__container {
       gap: 20px;
     }
@@ -101,7 +103,6 @@
 
 @include respond-min(1024px) {
   .about {
-    padding-block: 190px;
     &__container {
       display: grid;
       grid-template-columns: repeat(4, 1fr);

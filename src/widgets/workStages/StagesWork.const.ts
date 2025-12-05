@@ -29,7 +29,7 @@ export const STAGES__DATA__VIDEO: IStagesData[] = [
   },
   {
     id: 4,
-    title: 'Проверка и диагностика',
+    title: 'Пусконаладочные работы',
     subTitle: 'Настраиваем видеорегистратор, программное обеспечение, оптимизируем углы обзора.',
     href: '/img/stagesWork/pysko.webp',
   },

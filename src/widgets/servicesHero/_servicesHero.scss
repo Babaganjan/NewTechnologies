@@ -48,17 +48,6 @@
 
     transform: translateZ(0);
     backface-visibility: hidden;
-    &--mobile {
-      top: -26px;
-    }
-
-    &--tablet {
-      display: none;
-    }
-
-    &--desktop {
-      display: none;
-    }
   }
 
   .wrapper-title {
@@ -99,18 +88,6 @@
       height: 800px;
       min-height: 800px;
     }
-    &__video {
-      &--mobile {
-        display: none;
-      }
-      &--tablet {
-        display: block;
-      }
-
-      &--desktop {
-        display: none;
-      }
-    }
     .wrapper-title {
       align-items: center;
       background-image: url('/img/services-title-bg-768.svg');
@@ -125,19 +102,6 @@
     &__container {
       height: 956px;
       min-height: 956px;
-    }
-
-    &__video {
-      &--mobile {
-        display: none;
-      }
-      &--tablet {
-        display: none;
-      }
-
-      &--desktop {
-        display: block;
-      }
     }
 
     .wrapper-title {
