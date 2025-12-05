@@ -22,6 +22,31 @@
   flex: 1;
 }
 
+// Анимация для новых элементов
+.documents-list__item--animated {
+  animation: slideInFade 0.5s ease-out forwards;
+  opacity: 0;
+  transform: translateY(20px);
+  will-change: transform, opacity;
+}
+
+@for $i from 1 through 20 {
+  .documents-list__item--animated:nth-child(#{$i + 5}) {
+    animation-delay: #{$i * 0.05}s;
+  }
+}
+
+@keyframes slideInFade {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .documents-list {
   display: flex;
   flex-direction: column;
@@ -40,7 +65,6 @@
     }
 
     border-bottom: 1px solid var(--vector-deep-gray);
-
     cursor: pointer;
     transition:
       background-color 0.2s ease,
@@ -48,6 +72,10 @@
 
     span {
       @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+      padding-right: 10px;
+      @include respond-min(768px) {
+        padding-right: 0;
+      }
     }
 
     svg {
@@ -95,6 +123,13 @@
 
 .documents-list__item--deactive {
   --text-black: var(--text-gray);
+}
+
+.documents__button {
+  display: flex;
+  margin-top: fluid(20px, 40px);
+  margin-left: 10px;
+  justify-content: center;
 }
 
 @include respond-min(1024px) {

@@ -14,6 +14,7 @@ interface DocumentItemProps {
   hasActiveItem: boolean;
   onActivate: (index: number) => void;
   onDeactivate: () => void;
+  isAnimated?: boolean;
 }
 
 export const DocumentItem = ({
@@ -23,9 +24,14 @@ export const DocumentItem = ({
   hasActiveItem,
   onActivate,
   onDeactivate,
+  isAnimated = false,
 }: DocumentItemProps) => {
   return (
-    <li onMouseEnter={() => onActivate(index)} onMouseLeave={onDeactivate}>
+    <li
+      onMouseEnter={() => onActivate(index)}
+      onMouseLeave={onDeactivate}
+      className={clsx(isAnimated && 'documents-list__item--animated')}
+    >
       <Link
         href={`/${item.file}`}
         download
