@@ -43,6 +43,9 @@ $large-screen-bottom-padding: 190px;
       display: flex;
       justify-content: center;
       margin-bottom: fluid(13px, 42px, 360px, 768px);
+      @include respond-min(1024px) {
+        margin-top: 70px;
+      }
     }
 
     .contacts__item {
