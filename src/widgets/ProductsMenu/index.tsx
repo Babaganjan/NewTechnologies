@@ -35,8 +35,6 @@ export const ProductsMenu = ({
 
   return (
     <section className="productsMenu" aria-labelledby="products-menu-title">
-      {!isRelatedProducts && <Breadcrumbs />}
-
       <motion.div
         className="productsMenu__container container"
         initial="hidden"
@@ -50,6 +48,7 @@ export const ProductsMenu = ({
           },
         }}
       >
+        {!isRelatedProducts && <Breadcrumbs />}
         {!isRelatedProducts ? (
           <motion.h1 variants={fadeInUp} id="products-menu-title" className="productsMenu__title">
             {title}

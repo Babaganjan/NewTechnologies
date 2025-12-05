@@ -48,6 +48,7 @@ export const TypesOfBlock = ({ type, title }: { type: TDataAllTypes; title: stri
           spaceBetween={8}
           slidesPerView="auto"
           loop={true}
+          freeMode={true}
           modules={[Pagination]}
           centeredSlides={true}
           initialSlide={0}

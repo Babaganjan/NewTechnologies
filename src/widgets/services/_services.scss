@@ -74,9 +74,16 @@
         counter-increment: card;
         content: '[' counter(card) ']';
         position: absolute;
-        top: fluid(24px, 53px);
-        left: 0px;
+        top: 26px;
+        left: 2px;
         letter-spacing: -0.031rem;
+        @include respond-min(768px) {
+          top: 28px;
+          left: -4px;
+        }
+        @include respond-min(768px) {
+          top: 33px;
+        }
       }
     }
 
@@ -94,6 +101,11 @@
 
 @include respond-min(1280px) {
   .services {
+    .item__inner {
+      &:has(.item__btn--other)::before {
+        color: var(--text-gray);
+      }
+    }
     .item__btn {
       &--red {
         span {

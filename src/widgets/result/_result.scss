@@ -98,7 +98,7 @@
   }
 }
 
-@include respond-min(1280px) {
+@include respond-min(768px) {
   .result {
     &__container {
       @include line-decor(1% 50% 99%);

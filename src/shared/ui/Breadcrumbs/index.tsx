@@ -33,7 +33,7 @@ export const Breadcrumbs = ({ productName }: BreadcrumbsProps = {}) => {
   const lastArrowColor = 'var(--bg-white)';
 
   return (
-    <nav aria-label="Хлебные крошки">
+    <nav className={styles.nav_breadcrumbs} aria-label="Хлебные крошки">
       <ol className={`container ${styles.breadcrumbs}`}>
         {validPath.map((item, index) => {
           const isLastInList = index === validPath.length - 1;

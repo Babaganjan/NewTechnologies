@@ -3,7 +3,18 @@
 
 .productsMenu {
   background-color: var(--bg-black);
-  padding-top: 119px;
+  position: relative;
+  z-index: 1;
+  &__container {
+    @include line-decor(2% 50% 98%);
+    @include respond-min(768px) {
+      @include line-decor(1% 50% 99%);
+    }
+    @include respond-min(1380px) {
+      @include line-decor(1% 25.4% 50% 74.6% 99%);
+    }
+    padding-block: 100px;
+  }
 
   .products-menu-title {
     position: relative;
@@ -18,7 +29,6 @@
   }
 
   &__title {
-    margin-top: fluid(80px, 110px);
     @include typography(
       var(--text-white),
       500,

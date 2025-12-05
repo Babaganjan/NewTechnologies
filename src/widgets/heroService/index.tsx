@@ -9,8 +9,20 @@ import type { HeroServiceKey } from './heroService.types';
 export const HeroService = ({ title, type }: { title: string; type: HeroServiceKey }) => {
   return (
     <section className="heroService">
-      <Breadcrumbs />
-      <div className="heroService__container container">
+      <motion.div
+        className="heroService__container container"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, amount: 0.2 }}
+        variants={{
+          hidden: { opacity: 0 },
+          visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.15, delayChildren: 0.1 },
+          },
+        }}
+      >
+        <Breadcrumbs />
         <div className="heroService__title">
           <h1>{title}</h1>
         </div>
