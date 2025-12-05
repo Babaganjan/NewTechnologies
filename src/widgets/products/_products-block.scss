@@ -2,7 +2,10 @@
 @use '@/shared/styles/mixins' as *;
 
 .products {
-  margin-top: 100px;
+  margin-top: fluid(100px, 152px, 360px, 768px);
+  @include respond-min(1024px) {
+    margin-top: fluid(152px, 190px);
+  }
 
   a {
     display: flex;

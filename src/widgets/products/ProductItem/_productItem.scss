@@ -9,6 +9,10 @@
   flex-direction: column;
   position: relative;
   @include item-decor(var(--vector-deep-gray));
+  &:hover {
+    transition: background-color 0.3s;
+    background-color: var(--text-white);
+  }
   @include respond-min(1023px, max) {
     &:last-child:nth-child(odd) {
       grid-column: 1 / -1;
@@ -24,10 +28,6 @@
     width: 100%;
     height: 100%;
     text-decoration: none;
-    &:hover {
-      transform: scale(1.02);
-      transition: all 0.2s;
-    }
   }
 }
 
@@ -47,6 +47,9 @@
     height: auto !important;
     position: relative !important;
     max-height: 100%;
+    @include respond-min(1024px) {
+      padding: 52px;
+    }
   }
 }
 
