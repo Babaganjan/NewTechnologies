@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
+import { StructuredData } from '@/shared/components/StructuredData';
 import { seoConfig } from '@/shared/config/seo.config';
+import { generateBreadcrumbSchema } from '@/shared/utils/seo.utils';
 import { OpsPage } from '@/widgets/servicePages';
 
 export const metadata: Metadata = {
@@ -13,5 +15,16 @@ export const metadata: Metadata = {
 };
 
 export default function ops() {
-  return <OpsPage />;
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Главная', url: '/' },
+    { name: 'Услуги', url: '/services' },
+    { name: 'ОПС', url: '/services/ops' },
+  ]);
+
+  return (
+    <>
+      <StructuredData data={breadcrumbSchema} />
+      <OpsPage />
+    </>
+  );
 }

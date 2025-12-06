@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
+import { StructuredData } from '@/shared/components/StructuredData';
 import { seoConfig } from '@/shared/config/seo.config';
+import { generateBreadcrumbSchema } from '@/shared/utils/seo.utils';
 import { FeedbackMenu, Questions, Services, ServicesHero } from '@/widgets';
 
 export const metadata: Metadata = {
@@ -27,8 +29,14 @@ export const metadata: Metadata = {
 };
 
 export default function ServicesPage() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Главная', url: '/' },
+    { name: 'Услуги', url: '/services' },
+  ]);
+
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
       <ServicesHero />
       <Services />
       <Questions />

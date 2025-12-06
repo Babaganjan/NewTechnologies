@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
+import { StructuredData } from '@/shared/components/StructuredData';
 import { seoConfig } from '@/shared/config/seo.config';
+import { generateBreadcrumbSchema } from '@/shared/utils/seo.utils';
 import { FeedbackMenu, LearningFormats, Ntouch } from '@/widgets';
 
 export const metadata: Metadata = {
@@ -25,8 +27,15 @@ export const metadata: Metadata = {
 };
 
 export default function WorkingWithNtoucheQuipment() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Главная', url: '/' },
+    { name: 'Услуги', url: '/services' },
+    { name: 'Обучение', url: '/services/workingwithntouchequipment' },
+  ]);
+
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
       <Ntouch />
       <LearningFormats />
       <FeedbackMenu theme="white" />
