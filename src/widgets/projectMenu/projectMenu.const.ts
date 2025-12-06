@@ -397,6 +397,7 @@ export const PROJECT__SKD: ProjectMenuData[] = [
     image: '/img/projectMenu/Project-22.webp',
   },
 ] as const;
+
 export const PROJECT__NOTIFICATIONSYSTEM: ProjectMenuData[] = [
   {
     id: 1,
@@ -420,6 +421,7 @@ export const PROJECT__NOTIFICATIONSYSTEM: ProjectMenuData[] = [
     image: '/img/projectMenu/Project-31.webp',
   },
 ] as const;
+
 export const PROJECT__OPS: ProjectMenuData[] = [
   {
     id: 1,
@@ -468,6 +470,7 @@ export const PROJECT__OPS: ProjectMenuData[] = [
     image: '/img/projectMenu/Project-23.webp',
   },
 ] as const;
+
 export const PROJECT__FIREALARM: ProjectMenuData[] = [
   {
     id: 1,
@@ -475,6 +478,20 @@ export const PROJECT__FIREALARM: ProjectMenuData[] = [
     subtitle: 'Реализовали монтаж системы пожарной сигнализации.',
     service: 'Пожарная сигнализация',
     image: '/img/projectMenu/Project-4.webp',
+  },
+  {
+    id: 2,
+    title: 'ГУ «Департамент полиции Жамбылской области» МВД РК',
+    subtitle: 'Реализовали монтаж системы пожарной сигнализации.',
+    service: 'Пожарная сигнализация',
+    image: '/img/projectMenu/Project-32.webp',
+  },
+  {
+    id: 3,
+    title: 'РГУ «Архив Президента Республики Казахстан»',
+    subtitle: 'Реализовали монтаж системы пожарной сигнализации.',
+    service: 'Пожарная сигнализация',
+    image: '/img/projectMenu/Project-33.webp',
   },
 ] as const;
 
