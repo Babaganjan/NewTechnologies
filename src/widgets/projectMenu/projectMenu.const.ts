@@ -480,14 +480,14 @@ export const PROJECT__FIREALARM: ProjectMenuData[] = [
     image: '/img/projectMenu/Project-4.webp',
   },
   {
-    id: 2,
+    id: 321313,
     title: 'ГУ «Департамент полиции Жамбылской области» МВД РК',
     subtitle: 'Реализовали монтаж системы пожарной сигнализации.',
     service: 'Пожарная сигнализация',
     image: '/img/projectMenu/Project-32.webp',
   },
   {
-    id: 3,
+    id: 3323,
     title: 'РГУ «Архив Президента Республики Казахстан»',
     subtitle: 'Реализовали монтаж системы пожарной сигнализации.',
     service: 'Пожарная сигнализация',
