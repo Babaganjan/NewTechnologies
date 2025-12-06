@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
+import { StructuredData } from '@/shared/components/StructuredData';
 import { seoConfig } from '@/shared/config/seo.config';
+import { generateBreadcrumbSchema } from '@/shared/utils/seo.utils';
 import {
   Advantage,
   Description,
@@ -34,8 +36,15 @@ export const metadata: Metadata = {
 };
 
 export default function ItSolutionsPublicPrivate() {
+  const breadcrumbSchema = generateBreadcrumbSchema([
+    { name: 'Главная', url: '/' },
+    { name: 'Услуги', url: '/services' },
+    { name: 'IT-решения', url: '/services/itsolutionspublicprivate' },
+  ]);
+
   return (
     <>
+      <StructuredData data={breadcrumbSchema} />
       <HeroService
         title="It-решения для государственных и частных организаций"
         type="itsolutionspublicprivate"

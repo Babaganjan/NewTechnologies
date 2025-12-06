@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
 
+import { StructuredData } from '@/shared/components/StructuredData';
 import { seoConfig } from '@/shared/config/seo.config';
+import { generateWebSiteSchema } from '@/shared/utils/seo.utils';
 import {
   About,
   Advertising,
@@ -30,8 +32,11 @@ export const metadata: Metadata = {
 };
 
 export default function Home() {
+  const websiteSchema = generateWebSiteSchema();
+
   return (
     <>
+      <StructuredData data={websiteSchema} />
       <Hero />
       <About />
       <Result />

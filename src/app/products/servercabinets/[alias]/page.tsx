@@ -1,13 +1,15 @@
 import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 
+import { StructuredData } from '@/shared/components/StructuredData';
 import { seoConfig } from '@/shared/config/seo.config';
 import { getProductSEO } from '@/shared/const/Products/seo';
 import { getProductsByCategory } from '@/shared/const/Products/utils/getProductsByCategory';
 import type { AliasPagesProps } from '@/shared/types/productsPages.types';
+import { generateProductSchemaAuto } from '@/shared/utils/autoSchemaGenerator';
 import { findProductBySlug } from '@/shared/utils/findProduct';
 import { slugify } from '@/shared/utils/slugify';
-import { ProductsPages } from '@/widgets';
+import { FeedbackMenu, ProductsPages } from '@/widgets';
 
 export async function generateStaticParams() {
   const SERVERCABINETS = getProductsByCategory('SERVERCABINETS');
@@ -78,5 +80,13 @@ export default async function ServerCabinetsPages({ params }: AliasPagesProps) {
     notFound();
   }
 
-  return <ProductsPages productModel={product.model} />;
+  const schemas = generateProductSchemaAuto(product, alias);
+
+  return (
+    <>
+      <StructuredData data={schemas} />
+      <ProductsPages productModel={product.model} />
+      <FeedbackMenu />
+    </>
+  );
 }
