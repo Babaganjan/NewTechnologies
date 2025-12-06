@@ -1,5 +1,7 @@
 'use client';
+import clsx from 'clsx';
 import { motion } from 'framer-motion';
+import { usePathname } from 'next/navigation';
 import { useState } from 'react';
 
 import useModal from '@/hooks/useModal';
@@ -31,13 +33,27 @@ export const Spec = ({
   const { isConsultationModalOpen, handleOpenConsultation, handleCloseConsultation } = useModal({
     initialValue: false,
   });
+  const pathname = usePathname();
+  const isTurnstilePage = pathname.includes('/products/turnstiles/');
 
   const [activeTab, setActiveTab] = useState(section.tabs[0]);
   const activeTabData = section.data.find((item) => item.label === activeTab);
 
   return (
     <>
-      <section className="spec">
+      <section
+        // className={clsx(
+        //   title === 'Общие характеристики' ? 'spec' : 'specSpecifics',
+        //   isTurnstilePage ? 'specTurnstile' : 'specOther'
+        // )}
+        className={clsx(
+          isTurnstilePage
+            ? 'specTurnstile' // если турникет - только этот класс
+            : title === 'Общие характеристики'
+              ? 'spec'
+              : 'specSpecifics' // если не турникет
+        )}
+      >
         <motion.div
           className="spec__container container"
           initial="hidden"

@@ -1,8 +1,9 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
-.sizeSpec {
-  padding-block: 100px;
+body:has(.specTurnstile) .sizeSpec {
+  @include trapezoid-decor($color: var(--text-white), $position: top);
+  padding-top: fluid(100px, 190px);
 }
 
 .sizeSpec__title {

@@ -3,7 +3,8 @@
 
 .keySpecs {
   background-color: var(--bg-black);
-  padding-bottom: 100px;
+  padding-top: fluid(100px, 190px);
+  padding-bottom: fluid(112px, 224px);
 
   &__title {
     position: relative;

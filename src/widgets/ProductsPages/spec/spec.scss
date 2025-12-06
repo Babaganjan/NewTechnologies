@@ -1,9 +1,122 @@
 @use '@/shared/styles/functions' as *;
 @use '@/shared/styles/mixins' as *;
 
+.specTurnstile {
+  @include trapezoid-decor($color: var(--text-white), $position: bottom);
+  padding-block: fluid(112px, 149px);
+  position: relative;
+  z-index: 2;
+  .spec__button {
+    margin-top: fluid(40px, 100px);
+    display: flex;
+    justify-content: center;
+  }
+  .specList-list {
+    > div {
+      display: grid;
+      gap: 11px;
+      .spec-item {
+        &__title {
+          @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+        }
+        &__subtitle {
+          font-family: var(--second-family);
+          @include typography(var(--text-gray), 500, fluid(20px, 28px, 360px, 768px), 1.15, none);
+          border-bottom: 1px solid var(--vector-light-gray);
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+  .tabList-container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: fluid(10px, 20px);
+    margin-bottom: fluid(20px, 40px, 360px, 768px);
+
+    align-items: center;
+    overflow-x: auto;
+    width: auto;
+    margin-right: -20px;
+    padding-right: 20px;
+    gap: 2px;
+
+    > button {
+      white-space: nowrap;
+      width: 100%;
+      padding-inline: 10px;
+
+      @include respond-min(1024px) {
+        &:not(:only-child) {
+          width: 100%;
+        }
+        width: 30%;
+      }
+    }
+  }
+}
+
+.specSpecifics {
+  @include trapezoid-decor($color: var(--text-white), $position: bottom);
+  padding-block: fluid(112px, 149px);
+  position: relative;
+  z-index: 2;
+  .spec__button {
+    margin-top: fluid(40px, 100px);
+    display: flex;
+    justify-content: center;
+  }
+  .specList-list {
+    > div {
+      display: grid;
+      gap: 11px;
+      .spec-item {
+        &__title {
+          @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+        }
+        &__subtitle {
+          font-family: var(--second-family);
+          @include typography(var(--text-gray), 500, fluid(20px, 28px, 360px, 768px), 1.15, none);
+          border-bottom: 1px solid var(--vector-light-gray);
+          padding-bottom: 8px;
+        }
+      }
+    }
+  }
+  .tabList-container {
+    display: flex;
+    flex-wrap: nowrap;
+    margin-top: fluid(10px, 20px);
+    margin-bottom: fluid(20px, 40px, 360px, 768px);
+
+    align-items: center;
+    overflow-x: auto;
+    width: auto;
+    margin-right: -20px;
+    padding-right: 20px;
+    gap: 2px;
+
+    > button {
+      white-space: nowrap;
+      width: 100%;
+      padding-inline: 10px;
+
+      @include respond-min(1024px) {
+        &:not(:only-child) {
+          width: 100%;
+        }
+        width: 30%;
+      }
+    }
+  }
+}
+
 .spec {
-  padding-block: 100px;
   @include trapezoid-decor($responsive: true, $color: var(--text-white));
+  // padding-top: fluid(112px, 149px);
+  padding-block: fluid(100px, 190px);
+  position: relative;
+  z-index: 2;
   &__title-container {
     position: relative;
     margin-left: 10px;
