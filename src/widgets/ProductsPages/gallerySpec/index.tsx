@@ -22,7 +22,6 @@ export const GallerySpec = ({ productName, productModel, images }: GallerySpecPr
 
   return (
     <section className="gallery-section">
-      <Breadcrumbs />
       <motion.div
         className="gallery__container container"
         initial="hidden"
@@ -36,6 +35,7 @@ export const GallerySpec = ({ productName, productModel, images }: GallerySpecPr
           },
         }}
       >
+        <Breadcrumbs />
         <motion.h1 variants={fadeInUp}>
           {productName} {productModel && <span>{productModel}</span>}
         </motion.h1>
