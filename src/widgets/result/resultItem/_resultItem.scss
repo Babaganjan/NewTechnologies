@@ -108,6 +108,76 @@
   }
 }
 
+@include respond-min(768px) {
+  .result {
+    .item {
+      &__inner {
+        min-height: 294px;
+        justify-content: space-between;
+        gap: 10px;
+        &:not(:has(.item__prev)) {
+          flex-direction: column;
+          align-items: unset;
+          gap: 0.625rem;
+        }
+      }
+      &__inner-layout {
+        display: grid;
+        grid-template-columns: 1.7fr 1fr;
+      }
+      &__number-layout {
+        align-self: flex-end;
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      &__title {
+        font-size: 36px;
+        letter-spacing: -2.52px;
+      }
+      &__title-width {
+        width: 74%;
+      }
+      &__title-layout {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      &__prev {
+        font-size: 22px;
+        letter-spacing: -1.1px;
+      }
+      &__prev-layout {
+        text-align: end;
+        align-self: flex-end;
+        grid-column: 2/3;
+        grid-row: 2/3;
+      }
+    }
+
+    &__item {
+      &:nth-child(1) {
+        grid-column: 1 / 2;
+        grid-row: 1 / 2;
+      }
+      &:nth-child(2) {
+        grid-column: 2 / 3;
+        grid-row: 1 / 2;
+      }
+      &:nth-child(3) {
+        grid-column: 2 / -1;
+        grid-row: 2 / 3;
+      }
+      &:nth-child(4) {
+        grid-column: 1 / 2;
+        grid-row: 2 / 3;
+      }
+      &:nth-child(5) {
+        grid-column: 1 / -1;
+        grid-row: 4 / 5;
+      }
+    }
+  }
+}
+
 @include respond-min(1280px) {
   .result__item {
     &--fill {
@@ -116,6 +186,51 @@
         &::before {
           display: none;
         }
+      }
+    }
+  }
+}
+
+@include respond-min(1380px) {
+  .result {
+    .item {
+      &__inner {
+        min-height: 368px;
+        justify-content: space-between;
+        gap: 20px;
+        &:not(:has(.item__prev)) {
+          flex-direction: column;
+          align-items: unset;
+          gap: 0.938rem;
+        }
+      }
+      &__inner-layout {
+        display: grid;
+        grid-template-columns: 1.7fr 1fr;
+      }
+      &__number-layout {
+        align-self: flex-end;
+        grid-column: 1/2;
+        grid-row: 2/3;
+      }
+      &__title {
+        letter-spacing: -2.52px;
+      }
+      &__title-width {
+        width: 91%;
+      }
+      &__title-layout {
+        grid-column: 1/2;
+        grid-row: 1/2;
+      }
+      &__prev {
+        letter-spacing: -1.1px;
+      }
+      &__prev-layout {
+        text-align: end;
+        align-self: flex-end;
+        grid-column: 2/3;
+        grid-row: 2/3;
       }
     }
   }

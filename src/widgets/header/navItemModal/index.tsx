@@ -86,7 +86,8 @@ export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
                 src={selectedService.image}
                 alt={selectedService.name}
                 fill
-                {...(selectedService.name !== 'Видеорегистраторы' && { objectFit: 'cover' })}
+                {...(selectedService.name !== 'Видеорегистраторы' &&
+                  selectedService.name !== 'Турникеты' && { objectFit: 'cover' })}
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
               />
             </div>

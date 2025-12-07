@@ -7,7 +7,7 @@ export const SERVICES_ITEMS: ServicesProps[] = [
     list: [
       {
         name: 'Системы видеонаблюдения',
-        image: '/img/modalHeader/video-surveillance-system.webp',
+        image: '/img/modalHeader/video-surveillance-system.png',
         href: '/services/videonabludenie',
       },
       {

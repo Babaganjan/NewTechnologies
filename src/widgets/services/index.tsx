@@ -74,11 +74,11 @@ export const Services = () => {
                 {subItem.image && (
                   <div className="services__sub-item-image">
                     <Image
-                      width={80}
-                      height={60}
                       src={subItem.image}
                       alt={subItem.name}
                       className="services__image"
+                      objectFit="cover"
+                      fill
                     />
                   </div>
                 )}
