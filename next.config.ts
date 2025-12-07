@@ -7,6 +7,7 @@ const nextConfig: NextConfig = {
   output: 'export',
   compress: true,
   trailingSlash: true,
+  reactCompiler: true,
   images: {
     unoptimized: true,
   },
