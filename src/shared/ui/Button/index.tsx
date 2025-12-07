@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import clsx from 'clsx';
 import type { ElementType, MouseEvent } from 'react';
 import { forwardRef } from 'react';
@@ -59,11 +59,25 @@ export const Button = forwardRef<HTMLButtonElement | HTMLAnchorElement, IButtonP
       <Component
         type={Component === 'button' ? type : undefined}
         ref={ref}
-        className={clsx(classNameMap[variant], className, active && styles.active)}
+        className={clsx(
+          classNameMap[variant],
+          className,
+          active && styles.active,
+          scrambler && styles.scrambler
+        )}
         {...props}
         onMouseEnter={handleMouseEnter}
       >
-        {scrambler && textContent ? displayText : children}
+        {scrambler && textContent ? (
+          <span className={styles.scramblerWrapper}>
+            <span className={styles.scramblerText} aria-hidden="true">
+              {displayText}
+            </span>
+            <span className={styles.scramblerPlaceholder}>{textContent}</span>
+          </span>
+        ) : (
+          children
+        )}
         {icon && <Arrow className={clsx(rotate && styles.rotate)} />}
         {iconSmall && <ArrowSmall />}
       </Component>

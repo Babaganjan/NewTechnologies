@@ -241,3 +241,26 @@ body:has(.modal) {
     transform: rotate(90deg);
   }
 }
+
+.scrambler {
+  width: fit-content;
+}
+
+.scramblerWrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.scramblerPlaceholder {
+  visibility: hidden;
+  display: inline-block;
+}
+
+.scramblerText {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: inline-block;
+  white-space: nowrap;
+}
