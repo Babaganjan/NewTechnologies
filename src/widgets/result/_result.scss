@@ -27,6 +27,10 @@
 
 @include respond-min(768px) {
   .result {
+    &__container {
+      @include line-decor(1% 50% 99%);
+      padding-block: 90px 124px;
+    }
     .item {
       &__inner {
         min-height: 294px;
@@ -70,7 +74,7 @@
     }
 
     .result__item:first-child .item__title {
-      width: 63%;
+      width: 65%;
     }
 
     &__item {
@@ -94,15 +98,6 @@
         grid-column: 1 / -1;
         grid-row: 4 / 5;
       }
-    }
-  }
-}
-
-@include respond-min(768px) {
-  .result {
-    &__container {
-      @include line-decor(1% 50% 99%);
-      padding-block: 90px 124px;
     }
   }
 }
