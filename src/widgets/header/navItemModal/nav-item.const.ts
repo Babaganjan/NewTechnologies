@@ -7,7 +7,7 @@ const DATA_SERVICE: NavListModalProps[] = [
     list: [
       {
         name: 'Системы видеонаблюдения',
-        image: '/img/modalHeader/video-surveillance-system.webp',
+        image: '/img/modalHeader/video-surveillance-system.png',
         href: '/services/videonabludenie',
       },
       {
