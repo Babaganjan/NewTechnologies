@@ -6,6 +6,7 @@
   @include respond-min(1024px) {
     padding-block: fluid(152px, 190px);
   }
+
   background-color: var(--bg-black);
 }
 
@@ -27,13 +28,21 @@
     gap: 10px;
     padding: 10px;
     min-height: 224px;
+    min-width: 166px;
     align-items: center;
     text-align: center;
     @include item-decor(var(--vector-deep-gray));
     @include clip-shape();
 
     .stagesWork__item-title {
-      @include typography(var(--text-white), 600, fluid(22px, 36px), 1, uppercase, -1.32px);
+      @include typography(
+        var(--text-white),
+        600,
+        fluid(22px, 36px, 360px, 768px),
+        1,
+        uppercase,
+        -1.32px
+      );
 
       @include respond-min(768px) {
         font-size: fluid(36px, 42px);
@@ -50,7 +59,7 @@
 
     .stagesWork__item-subTitle {
       font-family: var(--second-family);
-      @include typography(var(--text-gray), 500, fluid(14px, 22px), 1.1, none);
+      @include typography(var(--text-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
     }
 
     .stagesWork__item-number {

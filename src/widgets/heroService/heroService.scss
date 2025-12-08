@@ -7,6 +7,8 @@
   z-index: -1;
 
   &__container {
+    padding-top: fluid(59px, 120px);
+    padding-bottom: fluid(40px, 80px);
     @include line-decor(2% 50% 98%);
     @include respond-min(768px) {
       @include line-decor(1% 50% 99%);
@@ -14,10 +16,6 @@
     @include respond-min(1380px) {
       @include line-decor(1% 25.4% 50% 74.6% 99%);
     }
-
-    padding-top: fluid(59px, 120px);
-    padding-bottom: fluid(40px, 80px);
-    max-width: 100%;
   }
 
   &__decoration {
@@ -43,7 +41,14 @@
     margin-top: fluid(80px, 100px, 360px, 768px);
 
     h1 {
-      @include typography(var(--text-white), 500, fluid(31px, 58px), 1, uppercase, -2.17px);
+      @include typography(
+        var(--text-white),
+        500,
+        fluid(31px, 58px, 360px, 768px),
+        1,
+        uppercase,
+        -2.17px
+      );
 
       @include respond-min(768px) {
         font-size: fluid(58px, 68px);
@@ -54,14 +59,8 @@
   &__img {
     position: relative;
     width: 100%;
-    height: auto;
     padding-bottom: 0;
     margin-top: fluid(10px, 20px);
-    overflow: hidden;
-
-    @include respond-min(768px) {
-      // aspect-ratio: 4 / 3;
-    }
 
     @include respond-min(1024px) {
       // aspect-ratio: 16 / 9;
