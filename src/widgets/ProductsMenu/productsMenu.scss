@@ -135,7 +135,7 @@
 
     &__item-header {
       display: grid;
-      grid-template-columns: 0.6fr 1.3fr 0.7fr;
+      grid-template-columns: 0.6fr 1.27fr 0.6fr;
       gap: 0 20px;
       padding-bottom: 5px;
       margin-bottom: 10px;
@@ -171,7 +171,7 @@
       .productsMenu__item {
         position: relative;
         display: grid;
-        grid-template-columns: 0.6fr 1.3fr 0.7fr;
+        grid-template-columns: 0.6fr 1.27fr 0.6fr;
         grid-template-areas:
           'header header header'
           'number model feature';
