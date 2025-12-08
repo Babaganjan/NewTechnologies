@@ -1,12 +1,13 @@
 'use client';
 import clsx from 'clsx';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FormEvent } from 'react';
 import React, { useState } from 'react';
 
 import { CloseForm } from '@/shared/icons/CloseForm/CloseForm';
-import { Button, Modal } from '@/shared/ui';
+import { Button } from '@/shared/ui';
 
 import './_formConsultation.scss';
 
@@ -29,6 +30,10 @@ interface FormConsultProps {
   onSubmit?: (data: FormConsultData) => void | Promise<void>;
   onClose?: () => void;
 }
+
+const Modal = dynamic(() => import('@/shared/ui').then((mod) => mod.Modal), {
+  ssr: false,
+});
 
 export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultProps) => {
   const [formData, setFormData] = useState<FormConsultData>({

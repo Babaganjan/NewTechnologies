@@ -1,15 +1,19 @@
 'use client';
 import { useMotionValueEvent, useScroll } from 'framer-motion';
+import dynamic from 'next/dynamic';
 import { useEffect, useState } from 'react';
 
 import useModal from '@/hooks/useModal';
-import { Modal } from '@/shared/ui';
 import { DATA_MODAL } from '@/widgets/header/navItemModal/nav-item.const';
 
 import { HeaderContent } from './HeaderContent';
 import { HeaderContentMobil } from './HeaderContent/HeaderContentMobil';
 import { EXCLUDE_MAP, HEADER_NAV_ITEMS } from './header.const';
 import { NavItemModal } from './navItemModal';
+
+const Modal = dynamic(() => import('@/shared/ui').then((mod) => mod.Modal), {
+  ssr: false,
+});
 
 export const Header = () => {
   const [isTopInView, setIsTopInView] = useState(true);
