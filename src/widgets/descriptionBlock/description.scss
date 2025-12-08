@@ -7,6 +7,10 @@
   z-index: 1;
 
   &__container {
+    padding-bottom: fluid(100px, 152px, 360px, 768px);
+    @include respond-min(1024px) {
+      padding-bottom: fluid(152px, 190px);
+    }
     @include line-decor(2% 50% 98%);
     @include respond-min(768px) {
       @include line-decor(1% 50% 99%);
@@ -14,11 +18,6 @@
     @include respond-min(1380px) {
       @include line-decor(1% 25.4% 50% 74.6% 99%);
     }
-  }
-
-  padding-bottom: fluid(100px, 152px, 360px, 768px);
-  @include respond-min(1024px) {
-    padding-bottom: fluid(152px, 190px);
   }
 
   &__title {
