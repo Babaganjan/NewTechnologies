@@ -45,8 +45,15 @@
     margin: 0 auto;
     padding-inline: 10px;
 
-    &__input--error::placeholder {
-      @include typography(#ff4444, 500, 14px, 1.1);
+    // &__input--error::placeholder {
+    //   @include typography(#ff4444, 500, 14px, 1.1);
+    // }
+    // Добавьте в _formConsultation.scss
+    .consult-form__error {
+      color: #ff4444;
+      font-size: 12px;
+      margin-top: 4px;
+      display: block;
     }
 
     &__field {
@@ -147,6 +154,7 @@
 
     &__submit:disabled {
       background-color: #565656;
+      cursor: not-allowed;
     }
   }
 }

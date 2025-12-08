@@ -1,28 +1,24 @@
 'use client';
+import { zodResolver } from '@hookform/resolvers/zod';
 import clsx from 'clsx';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
 import type { FormEvent } from 'react';
-import React, { useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { z } from 'zod';
 
 import { CloseForm } from '@/shared/icons/CloseForm/CloseForm';
 import { Button } from '@/shared/ui';
 
 import './_formConsultation.scss';
 
+// ИНТЕРФЕЙСЫ - Согласованы с Zod схемой
 interface FormConsultData {
   firstName: string;
   phone: string;
   message: string;
   agree: boolean;
-}
-
-interface FormErrors {
-  firstName?: string;
-  phone?: string;
-  message?: string;
-  agree?: string;
 }
 
 interface FormConsultProps {
@@ -31,179 +27,133 @@ interface FormConsultProps {
   onClose?: () => void;
 }
 
+// Динамический импорт Modal
 const Modal = dynamic(() => import('@/shared/ui').then((mod) => mod.Modal), {
   ssr: false,
 });
 
+// Схема валидации Zod - ИСПРАВЛЕНА для agree
+const formSchema = z.object({
+  firstName: z
+    .string()
+    .min(1, 'Введите имя и фамилию')
+    .regex(/^[a-zA-Zа-яА-ЯёЁ\s\-]+$/, 'Имя может содержать только буквы и дефисы')
+    .refine(
+      (val) => {
+        const words = val
+          .trim()
+          .split(/\s+/)
+          .filter((word) => word.length > 0);
+
+        return words.length >= 2;
+      },
+      {
+        message: 'Введите имя и фамилию',
+      }
+    )
+    .refine(
+      (val) => {
+        const words = val
+          .trim()
+          .split(/\s+/)
+          .filter((word) => word.length > 0);
+
+        return words.every((word) => word.length >= 2);
+      },
+      {
+        message: 'Каждое слово должно содержать минимум 2 буквы',
+      }
+    ),
+
+  phone: z
+    .string()
+    .min(1, 'Введите номер телефона')
+    .regex(/^[\+]?[0-9\s\-\(\)]{10,}$/, 'Введите корректный номер телефона')
+    .refine(
+      (val) => {
+        const digitsOnly = val.replace(/\D/g, '');
+
+        return digitsOnly.length >= 10;
+      },
+      {
+        message: 'Номер слишком короткий',
+      }
+    ),
+
+  message: z
+    .string()
+    .min(1, 'Введите сообщение')
+    .min(10, 'Сообщение должно содержать минимум 10 символов')
+    .max(500, 'Сообщение слишком длинное'),
+
+  agree: z.boolean().refine((val) => val === true, {
+    message: 'Необходимо согласие на обработку данных',
+  }),
+});
+
+// Тип из схемы
+type FormSchemaType = z.infer<typeof formSchema>;
+
 export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultProps) => {
-  const [formData, setFormData] = useState<FormConsultData>({
-    firstName: '',
-    phone: '',
-    message: '',
-    agree: false,
-  });
-
-  const [errors, setErrors] = useState<FormErrors>({});
-  const [touched, setTouched] = useState<Record<string, boolean>>({});
-
-  const validateName = (name: string): string | undefined => {
-    if (!name.trim()) {
-      return 'Поле обязательно для заполнения';
-    }
-
-    const words = name
-      .trim()
-      .split(/\s+/)
-      .filter((word) => word.length > 0);
-
-    if (words.length < 2) {
-      return 'Введите имя и фамилию';
-    }
-
-    if (words.some((word) => word.length < 2)) {
-      return 'Каждое слово должно содержать минимум 2 буквы';
-    }
-
-    const validNameRegex = /^[a-zA-Zа-яА-ЯёЁ\s\-]+$/;
-
-    if (!validNameRegex.test(name)) {
-      return 'Имя может содержать только буквы и дефисы';
-    }
-
-    return undefined;
-  };
-
-  const validatePhone = (phone: string): string | undefined => {
-    if (!phone.trim()) {
-      return 'Поле обязательно для заполнения';
-    }
-
-    const phoneRegex = /^[\+]?[0-9\s\-\(\)]{10,}$/;
-
-    if (!phoneRegex.test(phone)) {
-      return 'Введите корректный номер телефона';
-    }
-
-    const digitsOnly = phone.replace(/\D/g, '');
-
-    if (digitsOnly.length < 10) {
-      return 'Номер слишком короткий';
-    }
-
-    return undefined;
-  };
-
-  const validateMessage = (message: string): string | undefined => {
-    if (!message.trim()) {
-      return 'Поле обязательно для заполнения';
-    }
-
-    if (message.trim().length < 10) {
-      return 'Сообщение должно содержать минимум 10 символов';
-    }
-
-    if (message.trim().length > 500) {
-      return 'Сообщение слишком длинное';
-    }
-
-    return undefined;
-  };
-
-  const validateAgree = (agree: boolean): string | undefined => {
-    if (!agree) {
-      return 'Необходимо согласие на обработку данных';
-    }
-
-    return undefined;
-  };
-
-  const validateForm = (): boolean => {
-    const newErrors: FormErrors = {
-      firstName: validateName(formData.firstName),
-      phone: validatePhone(formData.phone),
-      message: validateMessage(formData.message),
-      agree: validateAgree(formData.agree),
-    };
-
-    setErrors(newErrors);
-
-    return !Object.values(newErrors).some((error) => error !== undefined);
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, type, value } = e.target;
-
-    if (type === 'checkbox') {
-      const target = e.target as HTMLInputElement;
-
-      setFormData((prev) => ({
-        ...prev,
-        [name]: target.checked,
-      }));
-    } else {
-      setFormData((prev) => ({
-        ...prev,
-        [name]: value,
-      }));
-    }
-
-    if (errors[name as keyof FormErrors]) {
-      setErrors((prev) => ({ ...prev, [name]: undefined }));
-    }
-  };
-
-  const handleBlur = (e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value, type } = e.target;
-
-    setTouched((prev) => ({ ...prev, [name]: true }));
-
-    if (name === 'firstName') {
-      setErrors((prev) => ({ ...prev, firstName: validateName(value) }));
-    } else if (name === 'phone') {
-      setErrors((prev) => ({ ...prev, phone: validatePhone(value) }));
-    } else if (name === 'message') {
-      setErrors((prev) => ({ ...prev, message: validateMessage(value) }));
-    } else if (name === 'agree' && type === 'checkbox') {
-      const target = e.target as HTMLInputElement;
-
-      setErrors((prev) => ({ ...prev, agree: validateAgree(target.checked) }));
-    }
-  };
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-
-    setTouched({
-      firstName: true,
-      phone: true,
-      message: true,
-      agree: true,
-    });
-
-    if (!validateForm()) {
-      return;
-    }
-
-    if (onSubmit) {
-      await onSubmit(formData);
-    }
-
-    setFormData({
+  // Используем React Hook Form
+  const {
+    register,
+    handleSubmit: rhfHandleSubmit,
+    formState: { errors, touchedFields, isSubmitting, isValid },
+    reset,
+    getValues,
+  } = useForm<FormSchemaType>({
+    resolver: zodResolver(formSchema),
+    mode: 'onTouched',
+    reValidateMode: 'onChange',
+    defaultValues: {
       firstName: '',
       phone: '',
       message: '',
       agree: false,
-    });
-    setErrors({});
-    setTouched({});
+    },
+  });
+
+  // Кастомный обработчик отправки с преобразованием типов
+  const handleFormSubmit = async (data: FormSchemaType) => {
+    console.log('Отправка формы:', data); // Для отладки
+
+    if (onSubmit) {
+      // Преобразуем в ожидаемый интерфейс
+      const submitData: FormConsultData = {
+        firstName: data.firstName,
+        phone: data.phone,
+        message: data.message,
+        agree: Boolean(data.agree),
+      };
+
+      await onSubmit(submitData);
+    }
+
+    // Сбрасываем форму
+    reset();
   };
 
-  const getFieldClassName = (fieldName: keyof FormErrors): string => {
-    return clsx(fieldName === 'message' ? 'consult-form__textarea' : 'consult-form__input', {
-      'consult-form__input--error': touched[fieldName] && errors[fieldName],
-      'consult-form__input--valid': touched[fieldName] && !errors[fieldName],
+  // Хендлер для сабмита (сохраняем старый интерфейс)
+  const handleNativeSubmit = (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    rhfHandleSubmit(handleFormSubmit)(e);
+  };
+
+  // Функция для получения класса поля
+  const getFieldClassName = (fieldName: keyof FormSchemaType): string => {
+    const isError = errors[fieldName];
+    const isTouched = touchedFields[fieldName];
+    const isMessageField = fieldName === 'message';
+
+    return clsx(isMessageField ? 'consult-form__textarea' : 'consult-form__input', {
+      'consult-form__input--error': isTouched && isError,
+      'consult-form__input--valid': isTouched && !isError,
     });
   };
+
+  // Проверяем, можно ли отправить форму
+  const canSubmit = isValid && getValues('agree');
 
   return (
     <Modal>
@@ -225,69 +175,62 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <form onSubmit={handleSubmit} className={clsx('consult-form', className)} noValidate>
+        <form onSubmit={handleNativeSubmit} className={clsx('consult-form', className)} noValidate>
           <h3 className="consult-form__title">
             Индивидуальная консультация&nbsp;по&nbsp;вашему вопросу
           </h3>
 
           <div className="wrapper-data">
+            {/* Поле имени */}
             <div className="consult-form__field">
               <label>
                 <input
-                  name="firstName"
+                  {...register('firstName')}
                   type="text"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  required
                   className={getFieldClassName('firstName')}
                   placeholder="Имя и фамилия"
                 />
+                {errors.firstName && touchedFields.firstName && (
+                  <span className="consult-form__error">{errors.firstName.message}</span>
+                )}
               </label>
             </div>
 
+            {/* Поле телефона */}
             <div className="consult-form__field">
               <label>
                 <input
-                  name="phone"
+                  {...register('phone')}
                   type="tel"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  required
                   className={getFieldClassName('phone')}
                   placeholder="Телефон"
                 />
+                {errors.phone && touchedFields.phone && (
+                  <span className="consult-form__error">{errors.phone.message}</span>
+                )}
               </label>
             </div>
 
+            {/* Поле сообщения */}
             <div className="consult-form__field">
               <label>
                 <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
+                  {...register('message')}
                   rows={4}
-                  required
                   className={getFieldClassName('message')}
                   placeholder="Сообщение"
                 />
+                {errors.message && touchedFields.message && (
+                  <span className="consult-form__error">{errors.message.message}</span>
+                )}
               </label>
             </div>
           </div>
 
+          {/* Чекбокс согласия */}
           <div className="consult-form__checkbox-field">
             <label className="consult-form__checkbox-label">
-              <input
-                type="checkbox"
-                name="agree"
-                checked={formData.agree}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                required
-                className="consult-form__checkbox"
-              />
+              <input {...register('agree')} type="checkbox" className="consult-form__checkbox" />
               <span className="check-style"></span>
               <p className="consult-form__checkbox-text">
                 Нажимая, я&nbsp;согласен с&nbsp;обработкой{' '}
@@ -299,17 +242,21 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                   политики конфиденциальности
                 </Link>
               </p>
+              {errors.agree && touchedFields.agree && (
+                <span className="consult-form__error">{errors.agree.message}</span>
+              )}
             </label>
           </div>
 
+          {/* Кнопка отправки */}
           <Button
             variant="feedback"
             type="submit"
             className="consult-form__submit"
-            disabled={!formData.agree || Object.values(errors).some((error) => error !== undefined)}
+            disabled={!canSubmit || isSubmitting}
             icon
           >
-            Подобрать решение
+            {isSubmitting ? 'Отправка...' : 'Подобрать решение'}
           </Button>
         </form>
       </div>
