@@ -4,7 +4,6 @@ import clsx from 'clsx';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import Link from 'next/link';
-import type { FormEvent } from 'react';
 import { useForm } from 'react-hook-form';
 import { z } from 'zod';
 
@@ -13,30 +12,20 @@ import { Button } from '@/shared/ui';
 
 import './_formConsultation.scss';
 
-// ИНТЕРФЕЙСЫ - Согласованы с Zod схемой
-interface FormConsultData {
-  firstName: string;
-  phone: string;
-  message: string;
-  agree: boolean;
-}
-
 interface FormConsultProps {
   className?: string;
-  onSubmit?: (data: FormConsultData) => void | Promise<void>;
+  onSubmit?: (data: FormSchemaType) => void | Promise<void>;
   onClose?: () => void;
 }
 
-// Динамический импорт Modal
 const Modal = dynamic(() => import('@/shared/ui').then((mod) => mod.Modal), {
   ssr: false,
 });
 
-// Схема валидации Zod - ИСПРАВЛЕНА для agree
 const formSchema = z.object({
   firstName: z
     .string()
-    .min(1, 'Введите имя и фамилию')
+    .min(1, { error: 'Введите имя и фамилию' })
     .regex(/^[a-zA-Zа-яА-ЯёЁ\s\-]+$/, 'Имя может содержать только буквы и дефисы')
     .refine(
       (val) => {
@@ -98,7 +87,7 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
   // Используем React Hook Form
   const {
     register,
-    handleSubmit: rhfHandleSubmit,
+    handleSubmit,
     formState: { errors, touchedFields, isSubmitting, isValid },
     reset,
     getValues,
@@ -106,38 +95,15 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
     resolver: zodResolver(formSchema),
     mode: 'onTouched',
     reValidateMode: 'onChange',
-    defaultValues: {
-      firstName: '',
-      phone: '',
-      message: '',
-      agree: false,
-    },
   });
 
   // Кастомный обработчик отправки с преобразованием типов
-  const handleFormSubmit = async (data: FormSchemaType) => {
-    console.log('Отправка формы:', data); // Для отладки
-
+  const onFormSubmit = async (data: FormSchemaType) => {
     if (onSubmit) {
-      // Преобразуем в ожидаемый интерфейс
-      const submitData: FormConsultData = {
-        firstName: data.firstName,
-        phone: data.phone,
-        message: data.message,
-        agree: Boolean(data.agree),
-      };
-
-      await onSubmit(submitData);
+      await onSubmit(data);
     }
 
-    // Сбрасываем форму
     reset();
-  };
-
-  // Хендлер для сабмита (сохраняем старый интерфейс)
-  const handleNativeSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    rhfHandleSubmit(handleFormSubmit)(e);
   };
 
   // Функция для получения класса поля
@@ -175,7 +141,11 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
             style={{ objectFit: 'cover' }}
           />
         </div>
-        <form onSubmit={handleNativeSubmit} className={clsx('consult-form', className)} noValidate>
+        <form
+          onSubmit={handleSubmit(onFormSubmit)}
+          className={clsx('consult-form', className)}
+          noValidate
+        >
           <h3 className="consult-form__title">
             Индивидуальная консультация&nbsp;по&nbsp;вашему вопросу
           </h3>
