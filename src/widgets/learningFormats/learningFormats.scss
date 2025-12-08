@@ -82,7 +82,7 @@
   }
 }
 
-@include respond-min(1024px) {
+@include respond-min(1201px) {
   .learning-card-wrapper {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

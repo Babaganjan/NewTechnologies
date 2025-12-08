@@ -7,7 +7,6 @@ import './ntouch.scss';
 export const Ntouch = () => {
   return (
     <section className="ntouch">
-      <Breadcrumbs />
       <motion.div
         className="ntouch__container container"
         initial="hidden"
@@ -21,6 +20,7 @@ export const Ntouch = () => {
           },
         }}
       >
+        <Breadcrumbs />
         <motion.h1 variants={fadeInUp} className="ntouch__title">
           ТОО «Новые технологии – Тараз» проводит теоретические и практические курсы, посвященные
           работе с оборудованием торговой марки NTOUCH
