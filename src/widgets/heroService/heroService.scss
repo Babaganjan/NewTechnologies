@@ -60,11 +60,11 @@
     overflow: hidden;
 
     @include respond-min(768px) {
-      aspect-ratio: 4 / 3;
+      // aspect-ratio: 4 / 3;
     }
 
     @include respond-min(1024px) {
-      aspect-ratio: 16 / 9;
+      // aspect-ratio: 16 / 9;
     }
   }
 }
