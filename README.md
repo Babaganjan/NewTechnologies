@@ -1,45 +1,50 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with
-[`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## О проекте
 
-## Getting Started
+- Сайт компании NTOUCH (ТОО «Новые Технологии – Тараз») — производство систем безопасности и
+  IT‑оборудования в Казахстане.
+- Назначение: показать продукцию, услуги и реализованные проекты, собирать заявки на консультации и
+  расчеты.
 
-First, run the development server:
+## Технологии (для понимания без деталей кода)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+- Next.js 16 (App Router), React 19, TypeScript, Turbopack.
+- Стили: SCSS/SCSS‑modules, PostCSS (pxtorem, autoprefixer).
+- Формы: react-hook-form + zod (валидация).
+- Анимации/слайдеры: framer-motion, swiper, embla-carousel.
+- SEO: собственный `seo.config.ts`, разметка Schema.org через `schema-dts`.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Быстрый старт локально
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the
-file.
+1. Установите Node.js 18+ и npm.
+2. В корне проекта: `npm install`
+3. Запуск разработки: `npm run dev` → открыть http://localhost:3000
+4. Прод-сборка: `npm run build`, запуск сборки: `npm start`
 
-This project uses
-[`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to
-automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Скрипты
 
-## Learn More
+- `npm run dev` — локальная разработка (Turbopack).
+- `npm run build` — продакшн-сборка.
+- `npm start` — запуск собранной версии.
+- `npm run lint` / `npm run lint:fix` — проверка и автоправка кода.
+- `npm run format` / `npm run format:check` — форматирование Prettier.
 
-To learn more about Next.js, take a look at the following resources:
+## Структура (основное)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- `src/app` — страницы (главная, about, contacts, products, services, privacy, sitemap/robots).
+- `src/widgets` — готовые секции страниц (hero, services, products, projectMenu и др.).
+- `src/shared` — общие компоненты, ui, константы, хуки, иконки, SEO-конфиг.
+- `public/img`, `public/video`, `public/fonts` — статические ассеты.
+- `out/` — статический вывод, если делали экспорт.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback
-and contributions are welcome!
+## Навигация по контенту
 
-## Deploy on Vercel
+- Товары: `src/app/products/*` + изображения в `public/img/products`.
+- Услуги: `src/app/services/*` — описания направлений.
+- О компании/документы: `src/app/about` и виджеты документов.
+- Контакты и формы: `src/app/contacts`; формы обратной связи в виджетах Feedback/Questions.
+- SEO тексты/мета: `src/shared/config/seo.config.ts`.
 
-The easiest way to deploy your Next.js app is to use the
-[Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme)
-from the creators of Next.js.
+## Деплой (общее)
 
-Check out our
-[Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
-for more details.
+- Классический сервер: `npm run build` → `npm start` на Node.js 18+.
+- Платформы типа Vercel: достаточно стандартного билда `npm run build`.
