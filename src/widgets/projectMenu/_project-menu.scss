@@ -52,7 +52,7 @@
   }
 }
 
-@include respond-min(1300px) {
+@include respond-min(1280px) {
   .project-menu {
     .project-menu__container {
       grid-template-columns: 0.6fr 1.7fr 0.8fr;
