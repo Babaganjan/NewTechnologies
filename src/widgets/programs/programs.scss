@@ -2,7 +2,13 @@
 @use '@/shared/styles/mixins' as *;
 
 .programs {
-  padding-block: 100px;
+  position: relative;
+  z-index: 1;
+  padding-top: fluid(80px, 150px, 360px, 768px);
+
+  @include respond-min(1024px) {
+    padding-top: fluid(152px, 190px);
+  }
   @include trapezoid-decor($position: top, $color: var(--text-white));
 }
 
@@ -14,6 +20,7 @@
 
 .programs__card {
   background-color: var(--bg-light-gray);
+  @include clip-shape();
   padding: fluid(15px, 30px);
 }
 
@@ -83,7 +90,6 @@
 }
 
 .programs__button {
-  width: 100%;
   justify-content: center;
 }
 
@@ -93,18 +99,14 @@
     grid-template-columns: 0.7fr;
     margin-bottom: 10px;
   }
-
-  .programs__button {
-    width: 80%;
-    justify-content: center;
-  }
 }
 
-@include respond-min(1024px) {
+@include respond-min(1320px) {
   .programs__card {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 0.8fr 0.9fr 0.8fr;
     margin-bottom: 10px;
+    gap: 100px;
   }
 
   .programs__card-title-wrapper {

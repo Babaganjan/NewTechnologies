@@ -49,6 +49,14 @@
   }
 }
 
+.favorites-project:has(.favorites-project__item:only-of-type) {
+  padding-bottom: fluid(80px, 150px, 360px, 768px);
+
+  @include respond-min(1024px) {
+    padding-bottom: fluid(152px, 190px);
+  }
+}
+
 @include respond-min(1024px) {
   .favorites-project {
     &__container {
