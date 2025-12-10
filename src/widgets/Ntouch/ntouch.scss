@@ -3,16 +3,17 @@
 
 .ntouch {
   background-color: var(--bg-black);
-  padding-block: 100px;
+  padding-block: 100px 190px;
 
   &__title {
-    margin-top: fluid(80px, 133px);
     @include typography(var(--text-white), 500, fluid(22px, 58px, 360px, 768px), 1);
+    margin-top: fluid(80px, 133px);
   }
 
   &__subtitle {
-    margin-top: 30px;
     @include typography(var(--text-light-gray), 500, fluid(14px, 22px, 360px, 768px), 1.1, none);
+    margin-top: 30px;
+    font-family: var(--second-family);
   }
 }
 

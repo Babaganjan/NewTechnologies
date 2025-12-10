@@ -75,7 +75,7 @@ export const AboutUs = () => {
             aria-label="Производственное помещение"
           >
             <Image
-              src="/img/AboutUs.webp"
+              src="/img/AboutUs/about-page-desc.webp"
               alt="Производственный цех площадью 1300 квадратных метров с оборудованием для сборки систем безопасности NTOUCH"
               width={340}
               height={190}
