@@ -17,7 +17,13 @@ export interface SelectedCategoryType {
 
 export type ModalVariant = 'Производство' | 'Сервис';
 
-export type titleNav = 'Сервис' | 'Производство' | 'IT-Решения' | 'О нас' | 'Контакты';
+export type titleNav =
+  | 'Сервис'
+  | 'Производство'
+  | 'IT-Решения'
+  | 'О нас'
+  | 'Достижения'
+  | 'Контакты';
 
 export type NavItem = {
   href: string;

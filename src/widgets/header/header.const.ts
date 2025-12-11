@@ -31,6 +31,12 @@ export const HEADER_NAV_ITEMS: NavItem[] = [
     hasModal: false,
   },
   {
+    href: '/result/',
+    title: 'Достижения',
+    hasIcon: false,
+    hasModal: false,
+  },
+  {
     href: '/contacts/',
     title: 'Контакты',
     hasIcon: false,
