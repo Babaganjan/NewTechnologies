@@ -81,7 +81,7 @@ const formSchema = z.object({
 });
 
 // Тип из схемы
-type FormSchemaType = z.infer<typeof formSchema>;
+export type FormSchemaType = z.infer<typeof formSchema>;
 
 export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultProps) => {
   // Используем React Hook Form
