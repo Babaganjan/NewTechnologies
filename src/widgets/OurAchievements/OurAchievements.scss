@@ -1,0 +1,85 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.ourAchievements {
+  &__container {
+    padding-bottom: 100px;
+  }
+
+  h2 {
+    @include clip-shape();
+    margin-bottom: fluid(10px, 20px, 360px, 768px);
+    background-color: var(--bg-black);
+    padding: 12px;
+    @include typography(var(--text-white), 600, fluid(22px, 36px, 360px, 768px), 1);
+    @include respond-min(768px) {
+      font-size: fluid(36px, 42px);
+    }
+  }
+
+  &__subtitle-wrapper {
+    display: flex;
+    justify-content: space-between;
+    &:hover {
+      svg {
+        transition: transform 0.2s ease-in-out;
+        transform: rotate(90deg);
+      }
+    }
+    h3 {
+      @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+    }
+    svg {
+      transform: rotate(-90deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+
+  &__description {
+    padding-block: fluid(13px, 15px, 360px, 768px);
+    @include typography(
+      var(--text-black),
+      500,
+      fluid(14px, 22px, 360px, 768px),
+      1.1,
+      none,
+      -0.05em
+    );
+    font-family: var(--second-family);
+    span {
+      display: block;
+      color: var(--text-gray);
+    }
+  }
+
+  &__image-wrapper {
+    width: 100%;
+    height: auto;
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.embla {
+  overflow: hidden;
+}
+
+.embla__container {
+  display: flex;
+  gap: 10px;
+}
+
+.embla__slide {
+  flex: 0 0 80%;
+  min-width: 0;
+
+  @include respond-min(768px) {
+    flex: 0 0 45%;
+  }
+
+  @include respond-min(1024px) {
+    flex: 0 0 calc(33.333% - 20px); // 3 columns on desktop
+  }
+}
