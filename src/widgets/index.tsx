@@ -16,6 +16,7 @@ import { Footer } from './footer';
 import { FormaConsultation } from './forma/index';
 import { Header } from './header';
 import { Hero } from './hero';
+import { HeroResult } from './heroResult';
 import { HeroService } from './heroService';
 import { IncludedService } from './includedService';
 import { LearningFormats } from './learningFormats';
@@ -51,6 +52,7 @@ export {
   FormaConsultation,
   Header,
   Hero,
+  HeroResult,
   HeroService,
   IncludedService,
   LearningFormats,
