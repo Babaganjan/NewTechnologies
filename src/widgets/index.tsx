@@ -6,6 +6,7 @@ import { ProductsPages } from './ProductsPages';
 import { About } from './about';
 import { Advantage } from './advantage';
 import { Advertising } from './advertising';
+import { ButtonClickForma } from './buttonForma';
 import { Contacts } from './contacts';
 import { Description } from './descriptionBlock';
 import { DocumentsBlock } from './documentsBlock';
@@ -39,6 +40,7 @@ export {
   AboutUs,
   Advantage,
   Advertising,
+  ButtonClickForma,
   ConsultationService,
   Contacts,
   Description,

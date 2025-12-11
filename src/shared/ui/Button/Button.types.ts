@@ -15,7 +15,7 @@ export type VariantType =
   | 'description'
   | 'primaryLink';
 
-type BaseProps = {
+export type BaseProps = {
   icon?: boolean;
   rotate?: boolean;
   children?: ReactNode;
@@ -24,7 +24,7 @@ type BaseProps = {
   scrambler?: boolean;
 };
 
-type ButtonVariant = Extract<
+export type ButtonVariant = Extract<
   VariantType,
   'feedback' | 'upButton' | 'primary' | 'secondary' | 'one' | 'description'
 >;
