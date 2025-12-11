@@ -46,10 +46,10 @@ export const Spec = ({
     <section
       className={clsx(
         isTurnstilePage
-          ? 'specTurnstile' // если турникет - только этот класс
+          ? 'specTurnstile'
           : title === 'Общие характеристики'
             ? 'spec'
-            : 'specSpecifics' // если не турникет
+            : 'specSpecifics'
       )}
     >
       <motion.div

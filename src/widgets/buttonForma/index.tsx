@@ -1,28 +1,3 @@
-// 'use client';
-// import type { ReactNode } from 'react';
-
-// import useModal from '@/hooks/useModal';
-// import { Button } from '@/shared/ui';
-
-// import { FormaConsultation } from '../forma';
-// interface ButtonProps {
-//   className: string;
-//   children: ReactNode;
-// }
-// export const ButtonClickForma = ({ className, children, ...props }: ButtonProps) => {
-//   const { isConsultationModalOpen, handleOpenConsultation, handleCloseConsultation } = useModal({
-//     initialValue: false,
-//   });
-
-//   return (
-//     <>
-//       <Button className={className} onClick={handleOpenConsultation}>{children}</Button>
-//       {isConsultationModalOpen && (
-//         <FormaConsultation onSubmit={handleCloseConsultation} onClose={handleCloseConsultation} />
-//       )}
-//     </>
-//   );
-// };
 'use client';
 
 import type { ButtonHTMLAttributes, ReactNode } from 'react';
