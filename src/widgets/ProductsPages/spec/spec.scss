@@ -176,7 +176,10 @@
 
 .descriptionsSpec {
   background-color: var(--bg-black);
-  padding-bottom: 150px;
+
+  &__container {
+    padding-top: fluid(60px, 100px, 360px, 768px);
+  }
 
   &__title {
     position: relative;

@@ -9,7 +9,7 @@ export const DescriptiosSpec = ({ item }: { item: descriptionItem }) => {
   return (
     <section className="descriptionsSpec">
       <motion.div
-        className="container"
+        className="descriptionsSpec__container container"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, amount: 0.2 }}

@@ -38,7 +38,11 @@ export const ProductsPages = ({ productModel }: ProductsPagesProps) => {
 
       {product.description && <DescriptiosSpec item={product.description} />}
 
-      <KeySpecs layout={product.keySpecs.layout} items={product.keySpecs.items} />
+      <KeySpecs
+        layout={product.keySpecs.layout}
+        items={product.keySpecs.items}
+        title={product.category === 'TURNSTILES' ? 'Основные функции' : 'Основные характеристики'}
+      />
 
       {showBeforeDimensions && product.specifications.general && (
         <Spec
