@@ -1,0 +1,16 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.hero-result {
+  @include trapezoid-decor($position: bottom);
+  padding-top: 59px;
+  @include respond-min(768px) {
+    top: 96px;
+  }
+  @include respond-min(1024px) {
+    top: 119px;
+  }
+  background-color: var(--bg-black);
+
+  margin-bottom: 200px;
+}
