@@ -5,13 +5,18 @@ import type { Icons } from '../icon.type';
 
 import './_result-heading.scss';
 export const ResultHeading = ({ className }: Icons) => {
+  const transitionConfig = {
+    duration: 1,
+    ease: 'cubic-bezier(0.42, 0, 0.58, 1)',
+  };
   // Variants для левого SVG: появление с сдвигом влево на -150px
   const leftSvgVariants = {
     hidden: { opacity: 0, x: 0 },
     visible: {
       opacity: 1,
       x: '-55%',
-      transition: { duration: 1, ease: 'easeInOut' },
+      transitionConfig,
+      // transition: { duration: 1, ease: [0.42, 0, 0.58, 1] },
     },
   };
 
@@ -21,7 +26,8 @@ export const ResultHeading = ({ className }: Icons) => {
     visible: {
       opacity: 1,
       x: '55%',
-      transition: { duration: 1.3, ease: 'easeInOut' },
+      transitionConfig,
+      // transition: { duration: 1, ease: [0.42, 0, 0.58, 1] },
     },
   };
 
