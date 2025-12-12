@@ -1,0 +1,24 @@
+@use '@/shared/styles/functions' as *;
+@use '@/shared/styles/mixins' as *;
+
+.wrapper-heading--top {
+  display: flex;
+  justify-content: center;
+  :first-child {
+    width: fluid(68px, 277px);
+    height: fluid(48px, 193px);
+  }
+  :last-child {
+    width: fluid(78px, 321px);
+    height: fluid(48px, 193px);
+  }
+}
+
+.wrapper-heading--bottom {
+  display: flex;
+  justify-content: center;
+  svg {
+    width: fluid(337px, 1393px);
+    height: fluid(60px, 244px);
+  }
+}
