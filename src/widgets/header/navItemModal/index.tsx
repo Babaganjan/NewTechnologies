@@ -10,9 +10,10 @@ import './navItemModal.scss';
 
 interface NavItemModalProps {
   data?: NavListModalProps[];
+  onModalClose?: () => void;
 }
 
-export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
+export const NavItemModal = ({ data = [], onModalClose }: NavItemModalProps) => {
   const [selectedId, setSelectedId] = useState<number | null>(null);
   const [selectedService, setSelectedService] = useState<SelectedCategoryType | null>(null);
 
@@ -68,6 +69,7 @@ export const NavItemModal = ({ data = [] }: NavItemModalProps) => {
                   variant="two"
                   className={clsx(selectedService?.name === subItem.name && 'selected')}
                   onMouseEnter={() => handleSelectService(subItem, index)}
+                  onClick={onModalClose}
                   icon
                 >
                   {subItem.name}
