@@ -6,6 +6,7 @@ import { ResultHeading } from '@/shared/icons';
 import './_heroResult.scss';
 
 export const HeroResult = () => {
+  //f
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
