@@ -22,7 +22,7 @@
 .wrapper-heading--top {
   display: flex;
   justify-content: center;
-  gap: 25px;
+  gap: fluid(5px, 25px);
   :first-child {
     width: fluid(68px, 277px);
     height: fluid(48px, 193px);
