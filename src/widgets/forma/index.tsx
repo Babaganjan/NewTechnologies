@@ -25,7 +25,7 @@ const Modal = dynamic(() => import('@/shared/ui').then((mod) => mod.Modal), {
 const formSchema = z.object({
   firstName: z
     .string()
-    .min(1, { error: 'Введите имя и фамилию' })
+    .min(1, { error: 'Введите имя' })
     .regex(/^[a-zA-Zа-яА-ЯёЁ\s\-]+$/, 'Имя может содержать только буквы и дефисы')
     .refine(
       (val) => {
@@ -37,20 +37,7 @@ const formSchema = z.object({
         return words.length >= 2;
       },
       {
-        message: 'Введите имя и фамилию',
-      }
-    )
-    .refine(
-      (val) => {
-        const words = val
-          .trim()
-          .split(/\s+/)
-          .filter((word) => word.length > 0);
-
-        return words.every((word) => word.length >= 2);
-      },
-      {
-        message: 'Каждое слово должно содержать минимум 2 буквы',
+        message: 'Введите имя',
       }
     ),
 
@@ -69,11 +56,7 @@ const formSchema = z.object({
       }
     ),
 
-  message: z
-    .string()
-    .min(1, 'Введите сообщение')
-    .min(10, 'Сообщение должно содержать минимум 10 символов')
-    .max(500, 'Сообщение слишком длинное'),
+  message: z.string().max(500, 'Сообщение слишком длинное'),
 
   agree: z.boolean().refine((val) => val === true, {
     message: 'Необходимо согласие на обработку данных',
@@ -158,7 +141,7 @@ export const FormaConsultation = ({ className, onSubmit, onClose }: FormConsultP
                   {...register('firstName')}
                   type="text"
                   className={getFieldClassName('firstName')}
-                  placeholder="Имя и фамилия"
+                  placeholder="Имя"
                 />
                 {errors.firstName && touchedFields.firstName && (
                   <span className="consult-form__error">{errors.firstName.message}</span>
