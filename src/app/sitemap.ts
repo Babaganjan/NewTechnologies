@@ -1,8 +1,6 @@
 import type { MetadataRoute } from 'next';
 
 import { seoConfig } from '@/shared/config/seo.config';
-import { getAllProducts } from '@/shared/const/Products/utils/getAllProducts';
-import { slugify } from '@/shared/utils/slugify';
 
 export const dynamic = 'force-static';
 
@@ -33,6 +31,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
       changeFrequency: 'yearly',
       priority: 0.3,
+    },
+    {
+      url: `${baseUrl}/result`,
+      lastModified: new Date(),
+      changeFrequency: 'yearly',
+      priority: 0.8,
     },
   ];
 
@@ -75,38 +79,38 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  const allProducts = getAllProducts();
-  const dynamicProductPages: MetadataRoute.Sitemap = allProducts.map((product) => {
-    const alias = slugify(product.model);
-    let categoryPath = '';
+  // const allProducts = getAllProducts();
+  // const dynamicProductPages: MetadataRoute.Sitemap = allProducts.map((product) => {
+  //   const alias = slugify(product.model);
+  //   let categoryPath = '';
 
-    switch (product.category) {
-      case 'CAMERAS':
-        categoryPath = 'cameras';
-        break;
-      case 'NVR':
-        categoryPath = 'nvr';
-        break;
-      case 'TURNSTILES':
-        categoryPath = 'turnstiles';
-        break;
-      case 'SWITCHES':
-        categoryPath = 'switches';
-        break;
-      case 'SERVERCABINETS':
-        categoryPath = 'servercabinets';
-        break;
-      default:
-        categoryPath = 'products';
-    }
+  //   switch (product.category) {
+  //     case 'CAMERAS':
+  //       categoryPath = 'cameras';
+  //       break;
+  //     case 'NVR':
+  //       categoryPath = 'nvr';
+  //       break;
+  //     case 'TURNSTILES':
+  //       categoryPath = 'turnstiles';
+  //       break;
+  //     case 'SWITCHES':
+  //       categoryPath = 'switches';
+  //       break;
+  //     case 'SERVERCABINETS':
+  //       categoryPath = 'servercabinets';
+  //       break;
+  //     default:
+  //       categoryPath = 'products';
+  //   }
 
-    return {
-      url: `${baseUrl}/products/${categoryPath}/${alias}`,
-      lastModified: new Date(),
-      changeFrequency: 'monthly' as const,
-      priority: 0.7,
-    };
-  });
+  //   return {
+  //     url: `${baseUrl}/products/${categoryPath}/${alias}`,
+  //     lastModified: new Date(),
+  //     changeFrequency: 'monthly' as const,
+  //     priority: 0.7,
+  //   };
+  // });
 
   // Страницы услуг
   const servicePages: MetadataRoute.Sitemap = [
@@ -152,22 +156,18 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'monthly',
       priority: 0.7,
     },
-  ];
-
-  const itSolutionsPages: MetadataRoute.Sitemap = [
     {
       url: `${baseUrl}/services/itsolutionspublicprivate`,
       lastModified: new Date(),
       changeFrequency: 'weekly',
-      priority: 0.8,
+      priority: 0.85,
     },
   ];
 
   return [
     ...staticPages,
     ...productPages,
-    ...dynamicProductPages,
+    // ...dynamicProductPages,
     ...servicePages,
-    ...itSolutionsPages,
   ];
 }

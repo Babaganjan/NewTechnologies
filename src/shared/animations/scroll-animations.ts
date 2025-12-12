@@ -6,14 +6,6 @@ export const ease = {
   bounce: [0.175, 0.885, 0.32, 1.275],
 } as const;
 
-// === FADE ANIMATIONS ===
-export const fadeIn: Variants = {
-  hidden: { opacity: 0 },
-  visible: {
-    opacity: 1,
-    transition: { duration: 0.6, ease: ease.smooth },
-  },
-};
 
 export const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 30 },
@@ -52,26 +44,6 @@ export const slideInRight: Variants = {
   },
 };
 
-// === SCALE ANIMATIONS ===
-export const scaleIn: Variants = {
-  hidden: { opacity: 0, scale: 0.8 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.6, ease: ease.smooth },
-  },
-};
-
-export const scaleInBounce: Variants = {
-  hidden: { opacity: 0, scale: 0.5 },
-  visible: {
-    opacity: 1,
-    scale: 1,
-    transition: { duration: 0.7, ease: ease.bounce },
-  },
-};
-
-// === CARD ANIMATIONS ===
 export const cardVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -86,7 +58,6 @@ export const cardVariants: Variants = {
   },
 };
 
-// === STAGGER CONTAINERS ===
 export const staggerContainer = (staggerChildren = 0.1, delayChildren = 0): Variants => ({
   hidden: { opacity: 0 },
   visible: {
@@ -98,7 +69,6 @@ export const staggerContainer = (staggerChildren = 0.1, delayChildren = 0): Vari
   },
 });
 
-// === ЧИСЛО С ЭФФЕКТОМ ===
 export const numberVariants: Variants = {
   hidden: {
     opacity: 0,
@@ -117,7 +87,6 @@ export const numberVariants: Variants = {
   },
 };
 
-// === VIEWPORT НАСТРОЙКИ ===
 export const defaultViewport = {
   once: true,
   amount: 0.2 as const,

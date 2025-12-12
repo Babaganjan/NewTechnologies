@@ -3,7 +3,7 @@ import { AboutScroll } from './AboutUs/AboutScroll';
 import { Ntouch } from './Ntouch';
 import { OurAchievements } from './OurAchievements';
 import { ProductsMenu } from './ProductsMenu';
-import { ProductsPages } from './ProductsPages';
+// import { ProductsPages } from './ProductsPages';
 import { About } from './about';
 import { Advantage } from './advantage';
 import { Advertising } from './advertising';
@@ -64,7 +64,7 @@ export {
   ProductHero,
   Products,
   ProductsMenu,
-  ProductsPages,
+  // ProductsPages,
   Programs,
   ProjectMenu,
   Questions,
