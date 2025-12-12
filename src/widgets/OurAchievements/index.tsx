@@ -11,49 +11,60 @@ import './OurAchievements.scss';
 export const OurAchievements = () => {
   const [open, setOpen] = useState<string | null>(null);
 
+  const toggleOpen = (subtitle: string) => {
+    setOpen((prev) => (prev === subtitle ? null : subtitle));
+  };
+
   return (
     <section className="ourAchievements">
       <div className="ourAchievements__container container">
         <div className="ourAchievements__wrapper">
-          {OURACHIEVEMENTS__DATA.map((item) => {
-            return (
-              <Fragment key={item.mainTitle}>
-                <h2 id="our-achievements-title">{item.mainTitle}</h2>
-                {item.data.map((item, index) => {
-                  return (
-                    <div
-                      key={`${item.sliderTitle}-${index}`}
-                      className="ourAchievements__innerWrapper"
-                      onClick={() =>
-                        setOpen((prev) => (prev === item.subtitle ? null : item.subtitle))
-                      }
-                    >
-                      <div className="ourAchievements__subtitle-wrapper">
-                        <h3 id="our-achievements-subtitle">{item.subtitle}</h3>
-                        <Arrow
-                          className={clsx(
-                            'ourAchievements__arrow',
-                            open == item.subtitle && 'ourAchievements__arrow--active'
-                          )}
-                          color="var(--text-black)"
-                        />
-                      </div>
-                      {open === item.subtitle && (
-                        <>
-                          <p className="ourAchievements__description">
-                            {item.sliderTitle}
-                            <span>{item.sliderHiglightTitle}</span>
-                          </p>
-                          <InlineCarousel slides={item.sliderList} />
-                        </>
-                      )}
-                      <span className="ourAchievements__city">{item.city}</span>
+          {OURACHIEVEMENTS__DATA.map((group) => (
+            <Fragment key={group.mainTitle}>
+              <div className="ourAchievements__mainTitle">
+                <h2>{group.mainTitle}</h2>
+              </div>
+
+              {group.data.map((item, index) => {
+                const isOpen = open === item.subtitle;
+
+                return (
+                  <div
+                    key={`${item.sliderTitle}-${index}`}
+                    className={clsx('ourAchievements__innerWrapper', isOpen && 'open')}
+                    onClick={() => toggleOpen(item.subtitle)}
+                  >
+                    <span className="ourAchievements__city">{item.city}</span>
+
+                    <h3 className="ourAchievements__subtitle">{item.subtitle}</h3>
+
+                    <div className="ourAchievements__arrow-wrapper">
+                      <Arrow
+                        className={clsx(
+                          'ourAchievements__arrow',
+                          isOpen && 'ourAchievements__arrow--active'
+                        )}
+                        color="var(--text-black)"
+                      />
                     </div>
-                  );
-                })}
-              </Fragment>
-            );
-          })}
+
+                    {isOpen && (
+                      <>
+                        <p className="ourAchievements__description">
+                          {item.sliderTitle}
+                          <span>{item.sliderHiglightTitle}</span>
+                        </p>
+
+                        <div className="ourAchievements__gallery">
+                          <InlineCarousel slides={item.sliderList} />
+                        </div>
+                      </>
+                    )}
+                  </div>
+                );
+              })}
+            </Fragment>
+          ))}
         </div>
       </div>
     </section>

@@ -23,8 +23,8 @@ export const OURACHIEVEMENTS__DATA: OurAchievementsData[] = [
           '— Признание высокого качества и конкурентоспособности отечественного оборудования',
         sliderList: [
           '/img/ourAchievements/one/our-achievements.webp',
-          '/img/ourAchievements/one/our-achievements-1.webp',
           '/img/ourAchievements/one/our-achievements-2.webp',
+          '/img/ourAchievements/one/our-achievements-1.webp',
         ],
         city: 'Тараз, 2025',
       },
