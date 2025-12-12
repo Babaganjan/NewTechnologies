@@ -217,7 +217,6 @@
   &__image-wrapper {
     height: 200px;
     width: 100%;
-    border-radius: 4px;
     overflow: hidden;
 
     @include respond-min(768px) {
@@ -227,12 +226,14 @@
     @include respond-min(1024px) {
       height: 240px;
       max-width: 100%;
+      width: auto;
     }
 
     img {
       height: 100%;
       width: 100%;
       object-fit: contain;
+      @include clip-shape();
       @include respond-min(1024px) {
         object-position: left;
       }
