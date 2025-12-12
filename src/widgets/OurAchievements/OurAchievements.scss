@@ -6,6 +6,25 @@
     padding-bottom: 100px;
   }
 
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: fluid(15px, 20px, 360px, 768px);
+  }
+
+  &__innerWrapper {
+    border-bottom: 1px solid var(--vector-deep-gray);
+    padding-bottom: fluid(15px, 20px, 360px, 768px);
+    .ourAchievements__city {
+      display: flex;
+      margin-top: fluid(10px, 15px, 360px, 768px);
+      @include respond-min(1024px) {
+        margin-top: 20px;
+      }
+      @include typography(var(--text-gray), 500, fluid(18px, 28px, 360px, 768px), 1.15);
+    }
+  }
+
   h2 {
     @include clip-shape();
     margin-bottom: fluid(10px, 20px, 360px, 768px);
@@ -20,18 +39,21 @@
   &__subtitle-wrapper {
     display: flex;
     justify-content: space-between;
-    &:hover {
-      svg {
-        transition: transform 0.2s ease-in-out;
-        transform: rotate(90deg);
-      }
-    }
+
     h3 {
+      width: 90%;
       @include typography(var(--text-black), 500, fluid(18px, 28px, 360px, 768px), 1.15);
     }
+
     svg {
+      flex-shrink: 0;
       transform: rotate(-90deg);
       transition: transform 0.3s ease-in-out;
+    }
+
+    .ourAchievements__arrow--active {
+      transition: transform 0.2s ease-in-out;
+      transform: rotate(90deg);
     }
   }
 
@@ -47,39 +69,35 @@
     );
     font-family: var(--second-family);
     span {
+      white-space: pre-line;
       display: block;
       color: var(--text-gray);
     }
   }
 
   &__image-wrapper {
-    width: 100%;
-    height: auto;
+    height: 228px;
     img {
-      width: 100%;
-      height: auto;
+      height: 100%;
+      width: auto;
+      object-fit: contain;
     }
   }
-}
 
-.embla {
-  overflow: hidden;
-}
-
-.embla__container {
-  display: flex;
-  gap: 10px;
-}
-
-.embla__slide {
-  flex: 0 0 80%;
-  min-width: 0;
-
-  @include respond-min(768px) {
-    flex: 0 0 45%;
+  .embla {
+    overflow: hidden;
   }
 
-  @include respond-min(1024px) {
-    flex: 0 0 calc(33.333% - 20px); // 3 columns on desktop
+  .embla__container {
+    display: flex;
+    gap: 8px;
+  }
+
+  .embla__slide {
+    display: flex;
+    align-items: flex-end;
+    flex: 0 0 auto;
+    max-height: 228px;
+    max-width: 100%;
   }
 }
