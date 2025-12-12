@@ -7,27 +7,28 @@ import './_result-heading.scss';
 export const ResultHeading = ({ className }: Icons) => {
   const transitionConfig = {
     duration: 1,
-    ease: 'cubic-bezier(0.42, 0, 0.58, 1)',
+    ease: [0.42, 0, 0.58, 1] as const,
   };
-  // Variants для левого SVG: появление с сдвигом влево на -150px
+
   const leftSvgVariants = {
     hidden: { opacity: 0, x: 0 },
     visible: {
       opacity: 1,
       x: '-55%',
-      transitionConfig,
-      // transition: { duration: 1, ease: [0.42, 0, 0.58, 1] },
+      transition: {
+        ...transitionConfig,
+      },
     },
   };
 
-  // Variants для правого SVG: появление с сдвигом вправо на +150px
   const rightSvgVariants = {
     hidden: { opacity: 0, x: 0 },
     visible: {
       opacity: 1,
       x: '55%',
-      transitionConfig,
-      // transition: { duration: 1, ease: [0.42, 0, 0.58, 1] },
+      transition: {
+        ...transitionConfig,
+      },
     },
   };
 
@@ -42,7 +43,6 @@ export const ResultHeading = ({ className }: Icons) => {
           hidden: { opacity: 1 },
           visible: {
             opacity: 1,
-            transition: { delayChildren: 1 },
           },
         }}
       >
