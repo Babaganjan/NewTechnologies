@@ -77,7 +77,7 @@ export const Header = () => {
             isModalOpen={true}
             transparentBg={false}
           />
-          <NavItemModal data={modalData || []} />
+          <NavItemModal onModalClose={handleCloseAllModals} data={modalData || []} />
         </Modal>
       )}
 

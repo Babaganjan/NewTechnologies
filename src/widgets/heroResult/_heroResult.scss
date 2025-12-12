@@ -37,15 +37,6 @@
     flex-direction: column;
     gap: 5px;
   }
-
-  .wrapper-cubak {
-    left: 50%;
-    top: 19%;
-    position: absolute;
-    width: fluid(69px, 293px);
-    height: fluid(49px, 193px);
-    z-index: -1;
-  }
 }
 
 @include respond-min(768px) {
