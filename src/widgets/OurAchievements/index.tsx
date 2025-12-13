@@ -27,11 +27,16 @@ export const OurAchievements = () => {
 
               {group.data.map((item, index) => {
                 const isOpen = open === item.subtitle;
+                const isLastItem = index === group.data.length - 1;
 
                 return (
                   <div
                     key={`${item.sliderTitle}-${index}`}
-                    className={clsx('ourAchievements__innerWrapper', isOpen && 'open')}
+                    className={clsx(
+                      'ourAchievements__innerWrapper',
+                      isOpen && 'open',
+                      isLastItem && 'last-in-group'
+                    )}
                     onClick={() => toggleOpen(item.subtitle)}
                   >
                     <span className="ourAchievements__city">{item.city}</span>
