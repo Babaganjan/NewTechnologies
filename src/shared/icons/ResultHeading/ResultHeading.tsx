@@ -7,8 +7,8 @@ import { H } from '@/shared/ui';
 import './_result-heading.scss';
 export const ResultHeading = () => {
   const transitionConfig = {
-    duration: 1,
-    ease: [0.42, 0, 0.58, 1] as const,
+    duration: 1.4,
+    ease: [0.12, 0.85, 0.32, 0.99] as const,
   };
 
   const leftSvgVariants = {
