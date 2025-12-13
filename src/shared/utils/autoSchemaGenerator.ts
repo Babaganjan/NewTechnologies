@@ -1,6 +1,3 @@
-// src/shared/utils/autoSchemaGenerator.ts
-// Автоматический генератор schema.org разметки на основе SEO данных
-
 import { getProductSEO } from '@/shared/const/Products/seo';
 import type { ProductSEO } from '@/shared/types/seo.types';
 
@@ -25,7 +22,7 @@ interface ProductData {
   };
 }
 
-export function generateProductSchemaAuto(product: ProductData, alias: string) {
+export function generateProductSchemaAuto(product: ProductData) {
   const productSEO = getProductSEO(product.model);
   const baseUrl = 'https://ntouch.kz';
 
@@ -54,7 +51,6 @@ export function generateProductSchemaAuto(product: ProductData, alias: string) {
     { name: 'Главная', url: '/' },
     { name: 'Продукция', url: '/products' },
     { name: categoryNames[product.category], url: `/products/${categoryPath}` },
-    { name: `${product.name} ${product.model}`, url: `/products/${categoryPath}/${alias}` },
   ]);
 
   let productSchema;

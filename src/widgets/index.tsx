@@ -1,8 +1,9 @@
 import { AboutUs } from './AboutUs';
 import { AboutScroll } from './AboutUs/AboutScroll';
 import { Ntouch } from './Ntouch';
+import { OurAchievements } from './OurAchievements';
 import { ProductsMenu } from './ProductsMenu';
-import { ProductsPages } from './ProductsPages';
+// import { ProductsPages } from './ProductsPages';
 import { About } from './about';
 import { Advantage } from './advantage';
 import { Advertising } from './advertising';
@@ -58,11 +59,12 @@ export {
   LearningFormats,
   Ntouch,
   ObjectLevel,
+  OurAchievements,
   Privacy,
   ProductHero,
   Products,
   ProductsMenu,
-  ProductsPages,
+  // ProductsPages,
   Programs,
   ProjectMenu,
   Questions,

@@ -49,6 +49,7 @@ export const ProductsMenu = ({
         }}
       >
         {!isRelatedProducts && <Breadcrumbs />}
+
         {!isRelatedProducts ? (
           <motion.h1 variants={fadeInUp} id="products-menu-title" className="productsMenu__title">
             {title}
@@ -76,13 +77,13 @@ export const ProductsMenu = ({
 
         <ul className="productsMenu__list">
           {data.map((item, index) => {
-            const categorySlug = type.toLowerCase();
             const productSlug = slugify(item.model);
+            const categorySlug = type.toLowerCase();
 
             return (
               <motion.li variants={fadeInUp} key={item.id}>
                 <Link
-                  href={`/products/${categorySlug}/${productSlug}`}
+                  href={`/file/${categorySlug}/${productSlug}.pdf`}
                   className="productsMenu__item"
                   aria-label={`${item.model} ${item.name}, ${item.feature}`}
                 >
