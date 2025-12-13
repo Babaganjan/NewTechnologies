@@ -18,6 +18,7 @@
   &__mainTitle {
     background-color: var(--bg-black);
     margin-bottom: fluid(10px, 20px, 360px, 768px);
+    @include clip-shape();
 
     @include respond-min(1024px) {
       display: grid;
@@ -25,7 +26,6 @@
     }
 
     h2 {
-      @include clip-shape();
       padding: 12px;
       @include typography(var(--text-white), 600, fluid(22px, 36px, 360px, 768px), 1);
       text-transform: uppercase;
