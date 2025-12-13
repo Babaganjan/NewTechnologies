@@ -28,6 +28,7 @@ export const OurAchievements = () => {
               {group.data.map((item, index) => {
                 const isOpen = open === item.subtitle;
                 const isLastItem = index === group.data.length - 1;
+                const isFirstItem = index === 0;
 
                 return (
                   <div
@@ -35,7 +36,8 @@ export const OurAchievements = () => {
                     className={clsx(
                       'ourAchievements__innerWrapper',
                       isOpen && 'open',
-                      isLastItem && 'last-in-group'
+                      isLastItem && 'last-in-group',
+                      isFirstItem && 'first-in-group'
                     )}
                     onClick={() => toggleOpen(item.subtitle)}
                   >

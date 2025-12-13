@@ -13,7 +13,6 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    gap: fluid(15px, 20px, 360px, 768px);
   }
 
   &__mainTitle {
@@ -47,6 +46,11 @@
     border-bottom: 1px solid var(--vector-deep-gray);
     padding-bottom: fluid(15px, 20px, 360px, 768px);
     cursor: pointer;
+    margin-top: fluid(15px, 20px, 360px, 768px);
+
+    &.first-in-group {
+      margin-top: 0;
+    }
 
     display: flex;
     flex-direction: column;
